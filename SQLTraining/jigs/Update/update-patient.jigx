@@ -1,0 +1,92 @@
+name: Update Patient
+referenceId: update-patient
+type: "@jigx/jig/form"
+icon: add
+
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Update
+          formId: update-patient
+          icon: check-circle-1
+
+datasources:
+  patient-details:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - 
+          entity: get-patient
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: SELECT '$.id' , '$.firstname','$.lastname', '$.datebirth', '$.gender', '$.address', '$.createdate', '$.healthdeclaration', '$.gdpr', '$.url' FROM [get-patient] 
+      provider: DATA_PROVIDER_SQL
+
+initialValues: =@ctx.data.patient-details
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: id
+      property: id
+      isHidden: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: First Name
+      property: firstname
+      icon: archive-folder
+      nextProperty: lastname
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Last Name
+      property: lastname
+      icon: archive-folder
+      nextProperty: datebirth
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      label: Date Birth
+      property: datebirth
+      icon: calendar-3
+      nextProperty: gender
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Gender
+      property: gender
+      icon: single-neutral
+      nextProperty: address
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Address
+      property: address
+      icon: house
+      nextProperty: createdate
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      label: Create Date
+      property: createdate
+      icon: calendar-3
+      nextProperty: healthdeclaration
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Health Declaration
+      property: healthdeclaration
+      icon: love-it
+      nextProperty: gdpr
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: GDPR
+      property: gdpr
+      icon: information-circle
+      nextProperty: url
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: URL
+      property: url
+      icon: earth-3
+provider: DATA_PROVIDER_SQL
+entity: get-update-patient
+

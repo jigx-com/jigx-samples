@@ -1,0 +1,33 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: UpdateExpense
+connection: jigx1.database.windows.net
+parameters:
+  id:
+    location: input
+    type: string
+    required: true
+  date:
+    type: datetime
+    required: true
+    location: input
+  description:
+    type: string
+    required: true
+    location: input
+  category:
+    type: string
+    required: true
+    location: input
+  type:
+    type: string
+    required: true
+    location: input
+  amount:
+    type: int
+    required: true
+    location: input
+  vatinsurance:
+    type: string
+    required: true
+    location: input

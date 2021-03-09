@@ -1,0 +1,82 @@
+name: Update Expense
+referenceId: update-expense
+type: "@jigx/jig/form"
+icon: add
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Update
+          formId: update-expense
+          icon: check-circle-1
+
+
+datasources:
+  expense-details:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - 
+          entity: get-expense
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: SELECT '$.id' , '$.date','$.description', '$.category', '$.type', '$.amount', '$.vatinsurance', '$.patientID' FROM [get-expense] 
+      provider: DATA_PROVIDER_SQL
+
+
+initialValues: =@ctx.data.expense-details
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: id
+      property: id
+      isHidden: true
+      nextProperty: date
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      label: Date
+      property: date
+      icon: archive-folder
+      nextProperty: description
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Description Expense
+      property: description
+      icon: archive-folder
+      nextProperty: category
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Category Expense
+      property: category
+      icon: archive-folder
+      nextProperty: type
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Type Expense
+      property: type
+      icon: archive-folder
+      nextProperty: amount
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Amount of Expense
+      property: amount
+      icon: beer-mug
+      nextProperty: vatinsurance
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Vat Insurance
+      property: vatinsurance
+      icon: love-it
+      nextProperty: patientID
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Patient
+      property: patientID
+      icon: love-it
+      isHidden: true
+provider: DATA_PROVIDER_SQL
+entity: get-update-expense

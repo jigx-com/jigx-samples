@@ -1,0 +1,11 @@
+name: Expenses Overview
+referenceId: test-expenses
+type: "@jigx/jig/composite"
+
+children:
+  - componentId: view-expense
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: expenses-graph
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid

@@ -1,0 +1,81 @@
+name: Treatment detial
+referenceId: view-treatment
+type: "@jigx/jig/default"
+icon: multiple-neutral-2
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Update Treatment
+          linkTo: update-treatment
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      - componentId: '@jigx/ja-delete'
+        options:
+          provider: DATA_PROVIDER_SQL
+          entity: get-detele-treatment
+          entityId: =@ctx.jig.inputs.inputid
+          title: Remove Treatment
+          icon: bin-1
+          confirmModal:
+            title: Do you really want to remove this Treatment?
+            cancelText: Do not remove
+            confirmText: REMOVE
+
+datasources:
+  treatment-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-treatment
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.date',
+          '$.description',
+          '$.time',
+          '$.bodyarea',
+          '$.notes',
+          '$.charge',
+          '$.patientID'
+           FROM  [get-treatment]
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: date
+            value: =@ctx.data.treatment-data.date
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: description
+            value: =@ctx.data.treatment-data.description
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: time in minutes
+            value: =@ctx.data.treatment-data.time
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: body area
+            value: =@ctx.data.treatment-data.bodyarea
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: notes
+            value: =@ctx.data.treatment-data.notes
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: charge
+            value: =@ctx.data.treatment-data.(charge & '$')
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Patient ID
+            value: =@ctx.data.treatment-data.patientID

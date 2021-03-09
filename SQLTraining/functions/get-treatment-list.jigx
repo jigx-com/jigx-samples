@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, bodyarea, time, patientID from Treatments'
+connection: jigx1.database.windows.net

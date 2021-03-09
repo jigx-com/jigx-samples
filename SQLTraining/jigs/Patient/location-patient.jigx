@@ -1,0 +1,25 @@
+name: Patient Location
+referenceId: location-patient
+
+datasources:
+  patient:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-patient-address
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+         SELECT id, '$.firstname', '$.address' FROM [get-patient-address]
+ 
+children:
+  - componentId: "@jigx/jc-location-viewer"
+    options:
+      address: =@ctx.data.patient.address
+      locationId: =@ctx.data.patient.firstname
+      longitude: 0
+      latitude: 0

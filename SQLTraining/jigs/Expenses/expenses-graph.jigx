@@ -1,0 +1,68 @@
+name: Expenses
+referenceId: expenses-graph
+type: "@jigx/jig/default"
+
+datasources:
+  expenses:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-graph-expenses
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          '$.y', '$.color' FROM  [get-graph-expenses]
+
+  expenses-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-expense
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.date',
+          '$.description',
+          '$.category',
+          '$.type',
+          '$.amount',
+          '$.vatinsurance',
+          '$.patientID'
+           FROM  [get-expense]
+
+  expense-sum:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false 
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-full-sum-expense
+          projectId: SQLTraining
+      query: |
+        SELECT '$.suma' FROM [get-full-sum-expense]
+
+children:
+  - componentId: "@jigx/jc-pie-chart"
+    options:
+      chart:
+        title:
+          text: =@ctx.data.expenses-data.category
+          verticalAlign: center
+        subtitle:
+          text: =($round(((@ctx.data.expenses-data.amount) / (@ctx.data.expense-sum.suma))*100) & '%')
+          verticalAlign: center
+        width: 100
+        height: 100
+      legend:
+        isHidden: true
+      series:
+        - data: =@ctx.data.expenses

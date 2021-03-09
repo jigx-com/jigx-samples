@@ -1,0 +1,9 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: DeleteExpense
+connection: jigx1.database.windows.net
+parameters:
+  id:
+    location: input
+    type: string
+    required: true

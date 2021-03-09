@@ -1,0 +1,72 @@
+name: Bank detail
+referenceId: view-bank
+type: "@jigx/jig/default"
+icon: multiple-neutral-2
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Update Bank
+          linkTo: update-bank
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Bank Address
+          linkTo: bank-address
+          icon: pin
+          parameters:
+            adres: =@ctx.jig.inputs.inputid
+
+datasources:
+  bank-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-bank-details
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.bankname',
+          '$.bankaddress',
+          '$.bankacount',
+          '$.bankswift',
+          '$.bankbic',
+          '$.patientID'
+           FROM  [get-bank-details]
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: bank name
+            value: =@ctx.data.bank-data.bankname
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: bank address
+            value: =@ctx.data.bank-data.bankaddress
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: bank acount
+            value: =@ctx.data.bank-data.bankacount
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: bank swift
+            value: =@ctx.data.bank-data.bankswift
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: bank bic
+            value: =@ctx.data.bank-data.bankbic
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Patient ID
+            value: =@ctx.data.bank-data.patientID

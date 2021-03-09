@@ -1,0 +1,25 @@
+name: Bank Location
+referenceId: bank-address
+
+datasources:
+  bank:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-bank-details
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.adres
+      query: |
+         SELECT id, '$.bankname', '$.bankaddress' FROM [get-bank-details]
+ 
+children:
+  - componentId: "@jigx/jc-location-viewer"
+    options:
+      address: =@ctx.data.bank.bankaddress
+      locationId: =@ctx.data.bank.bankname
+      longitude: 0
+      latitude: 0

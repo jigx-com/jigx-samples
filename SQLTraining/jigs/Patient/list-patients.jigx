@@ -1,0 +1,54 @@
+name: Patient list
+referenceId: list-patients
+type: '@jigx/jig/list'
+
+datasources:
+  patient-list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-patient-list
+        projectId: SQLTraining
+      query: |
+         SELECT id, '$.firstname', '$.lastname','$.url' FROM [get-patient-list]
+
+data: =@ctx.data.patient-list
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title:  =@ctx.parents.list-data.item.firstname
+    subtitle: Details
+    leftElement:
+      type: avatar
+      uri: =@ctx.parents.list-data.item.url
+      text: NA
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Patient Details'
+        linkTo: detail-patient
+        parameters:
+          inputid: =@ctx.parents.list-data.item.id
+
+views:
+  4x2: 
+    componentId: '@jigx/jw-carousel'
+    options:
+      data: =@ctx.data.patient-list
+      item:
+        componentId: '@jigx/jc-image'
+        options:
+          title: =@ctx.parents.list-data.item.firstname
+          subtitle: =@ctx.parents.list-data.item.lastname
+          source:
+            uri: =@ctx.parents.list-data.item.url
+          onPress:
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: 'Patient Details'
+              linkTo: detail-patient
+              parameters:
+                inputid: =@ctx.parents.list-data.item.id

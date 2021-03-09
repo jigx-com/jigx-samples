@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: select SUM(amount) as suma from Expenses
+connection: jigx1.database.windows.net

@@ -1,0 +1,85 @@
+name: Patient details
+referenceId: view-patient
+type: "@jigx/jig/default"
+icon: multiple-neutral-2
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Update Patient
+          linkTo: update-patient
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+
+datasources:
+  patient-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-patient
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.firstname',
+          '$.lastname',
+          '$.datebirth',
+          '$.gender',
+          '$.address',
+          '$.mobilename',
+          '$.createdate',
+          '$.healthdeclaration',
+          '$.gdpr',
+          '$.url'
+           FROM  [get-patient]
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: First name
+            value: =@ctx.data.patient-data.firstname
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Last name
+            value: =@ctx.data.patient-data.lastname
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Date birth
+            value: =@ctx.data.patient-data.datebirth
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Gender
+            value: =@ctx.data.patient-data.gender
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Address
+            value: =@ctx.data.patient-data.address
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Mobile phone
+            value: =@ctx.data.patient-data.mobilename
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Create date
+            value: =@ctx.data.patient-data.createdate
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Health declaration
+            value: =@ctx.data.patient-data.healthdeclaration
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: GDPR
+            value: =@ctx.data.patient-data.gdpr
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: URL
+            value: =@ctx.data.patient-data.url

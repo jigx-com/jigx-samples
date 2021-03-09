@@ -1,0 +1,15 @@
+title: My Training
+referenceId: SQLTraining
+category: health
+
+widgets:
+  - size: 4x2
+    children: list-patients
+  - size: 2x2
+    children: list-treatments
+  - size: 2x2
+    children: list-expenses
+  - size: 4x2
+    children: overal-graph
+
+

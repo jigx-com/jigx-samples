@@ -1,0 +1,9 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, date, description , category , type , amount , vatinsurance , patientID from Expenses where id = @inputid'
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true

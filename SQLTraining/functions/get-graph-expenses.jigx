@@ -1,0 +1,11 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query:  select amount as y , 'color4' as color from Expenses where id = @inputid 
+        UNION ALL
+        select SUM(amount) as y, 'color5' as color  from Expenses
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true

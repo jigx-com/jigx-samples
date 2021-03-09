@@ -1,0 +1,71 @@
+name: Treatments
+referenceId: treatment-graph
+type: "@jigx/jig/default"
+
+datasources:
+  treatment:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-graph-treatment
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          '$.y', '$.color' FROM  [get-graph-treatment]
+
+  treatment-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-treatment
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.date',
+          '$.description',
+          '$.time',
+          '$.bodyarea',
+          '$.notes',
+          '$.charge',
+          '$.patientID'
+           FROM  [get-treatment]
+
+  treatment-sum:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false 
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-full-sum-treatment
+          projectId: SQLTraining
+      query: |
+        SELECT '$.suma' FROM [get-full-sum-treatment]
+
+children:
+  - componentId: "@jigx/jc-pie-chart"
+    options:
+      chart:
+        title:
+          text: =@ctx.data.treatment-data.bodyarea
+          verticalAlign: center
+        subtitle:
+          text: =($round(((@ctx.data.treatment-data.charge) / (@ctx.data.treatment-sum.suma))*100) & '%')
+          verticalAlign: center
+        width: 100
+        height: 100
+      legend:
+        isHidden: true
+      series:
+        - data: =@ctx.data.treatment
+
+
+

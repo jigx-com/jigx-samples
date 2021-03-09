@@ -1,0 +1,39 @@
+name: Bank Information
+referenceId: bank-details
+type: "@jigx/jig/list"
+icon: multiple-neutral-2
+
+datasources:
+  bank-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-bank
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.bankname',
+          '$.bankacount',
+          '$.patientID'
+           FROM  [get-bank]
+
+data: =@ctx.data.bank-data
+item:
+    componentId: "@jigx/jc-list-item"
+    instanceId: sample-list
+    options:
+      title: =@ctx.parents.list-data.item.bankname
+      subtitle: =@ctx.parents.list-data.item.bankacount
+      onPress:
+        componentId: "@jigx/ja-go-to"
+        options:
+          title: View Bank
+          linkTo: view-bank
+          parameters:
+            inputid: =@ctx.parents.list-data.item.id

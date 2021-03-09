@@ -1,0 +1,33 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: UpdateTreatment
+connection: jigx1.database.windows.net
+parameters:
+  id:
+    location: input
+    type: string
+    required: true
+  date:
+    type: datetime
+    required: true
+    location: input
+  description:
+    type: string
+    required: true
+    location: input
+  time:
+    type: int
+    required: true
+    location: input
+  bodyarea:
+    type: string
+    required: true
+    location: input
+  charge:
+    type: int
+    required: true
+    location: input
+  notes:
+    type: string
+    required: true
+    location: input

@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: select category , amount from Expenses
+connection: jigx1.database.windows.net

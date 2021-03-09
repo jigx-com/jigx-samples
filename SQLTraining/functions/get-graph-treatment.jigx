@@ -1,0 +1,11 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query:  select charge as y , 'color1' as color from Treatments where id = @inputid 
+        UNION ALL
+        select SUM(charge) as y, 'color2' as color  from Treatments
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true

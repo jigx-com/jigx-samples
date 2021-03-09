@@ -1,0 +1,213 @@
+name: Overal Graph
+referenceId: overal-graph
+type: "@jigx/jig/default"
+icon: pie-line-graph
+
+datasources:
+  expenses:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-overal-graph
+          projectId: SQLTraining
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, '$.category') as category,
+        json_extract(data, '$.amount') as amount
+        FROM
+        [get-overal-graph]
+        )
+        SELECT
+        category as x,
+        SUM(amount) as y,
+        'color1' as color
+        FROM cte
+        GROUP BY
+        x
+
+  treatments:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-overal-graph-treat
+          projectId: SQLTraining
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, '$.bodyarea') as bodyarea,
+        json_extract(data, '$.charge') as charge
+        FROM
+        [get-overal-graph-treat]
+        )
+        SELECT
+        bodyarea as x,
+        SUM(charge) as y,
+        'color4' as color
+        FROM cte
+        GROUP BY
+        x
+
+  treattime:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: get-overal-time-treat
+          projectId: SQLTraining
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, '$.bodyarea') as bodyarea,
+        json_extract(data, '$.time') as time
+        FROM
+        [get-overal-time-treat]
+        )
+        SELECT
+        bodyarea as x,
+        SUM(time) as y,
+        'color5' as color
+        FROM cte
+        GROUP BY
+        x
+
+  backup:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - x: Oil
+          y: 1000
+          #y: 1000
+          color: color5
+        - x: Pils
+          #y: 1000
+          y: 5000
+          color: color5
+        - x: Bandage
+          y: 1000
+          color: color5
+        - x: Other
+          y: 4000
+          color: color5
+
+children:
+  - componentId: "@jigx/jc-bar-chart"
+    options:
+      chart:
+        height: 300
+        isAnimated: true
+        title:
+          text: Expenses on Category
+          align: center
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 6
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+
+      series:
+        - data: =@ctx.data.expenses
+          animation:
+            type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: true
+
+  - componentId: "@jigx/jc-line-chart"
+    options:
+      chart:
+        height: 300
+        isAnimated: true
+        title:
+          text: Treatments Prices of Charge with Time
+          align: center
+      yAxis:
+        min: 0
+        labels:
+          format:
+            compactDisplay: short
+            notation: compact
+        tickAmount: 6
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+
+      series:
+        - data: =@ctx.data.treatments
+        - data: =@ctx.data.treattime
+          animation:
+            type: left-to-right
+          type: area-gradient
+      legend:
+        isHidden: false
+
+  - componentId: "@jigx/jc-bar-chart"
+    options:
+      chart:
+        height: 300
+        isAnimated: true
+        title:
+          text: Treatments With Time
+          align: center
+      yAxis:
+        min: 0
+        labels:
+          format:
+            compactDisplay: short
+            notation: compact
+        tickAmount: 6
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+
+      series:
+        - data: =@ctx.data.treattime
+          animation:
+            type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false
+
+  - componentId: "@jigx/jc-bar-chart"
+    options:
+      chart:
+        height: 300
+        isAnimated: true
+        title:
+          text: Treatments Charge
+          align: center
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 6
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+
+      series:
+        - data: =@ctx.data.treatments
+          animation:
+            type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false
+
+
+

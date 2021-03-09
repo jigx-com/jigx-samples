@@ -1,0 +1,74 @@
+name: Update Bank
+referenceId: update-bank
+type: "@jigx/jig/form"
+icon: add
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Update
+          formId: update-bank
+          icon: check-circle-1
+
+datasources:
+  bank-details:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - entity: get-bank-details
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+
+      query: SELECT '$.id' , '$.bankname','$.bankaddress', '$.bankacount', '$.bankswift', '$.bankbic', '$.patientID' FROM [get-bank-details] 
+      provider: DATA_PROVIDER_SQL
+
+initialValues: =@ctx.data.bank-details
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: id
+      property: id
+      isHidden: true
+      nextProperty: bankname
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Bank Name
+      property: bankname
+      icon: archive-folder
+      nextProperty: bankaddress
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Address of Bank
+      property: bankaddress
+      icon: pin
+      nextProperty: bankacount
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Bank Acount
+      property: bankacount
+      icon: archive-folder
+      nextProperty: bankswift
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Bank Swift
+      property: bankswift
+      icon: archive-folder
+      nextProperty: bankbic
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Bank Bic
+      property: bankbic
+      icon: archive-folder
+      nextProperty: patientID
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Patient
+      property: patientID
+      icon: love-it
+      isHidden: true
+provider: DATA_PROVIDER_SQL
+entity: get-update-bank

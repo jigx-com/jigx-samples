@@ -1,0 +1,60 @@
+name: Treatments list
+referenceId: list-treatments
+type: '@jigx/jig/list'
+
+datasources:
+  treatments-list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-treatment-list
+        projectId: SQLTraining
+      query: |
+         SELECT id, '$.bodyarea', '$.time','$.patientID' FROM [get-treatment-list]
+
+data: =@ctx.data.treatments-list
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.list-data.item.('Body area:' & ' ' & bodyarea)
+    subtitle: =@ctx.parents.list-data.item.('Minutes:' & ' ' & time)
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Treatment Details'
+        linkTo: test-details
+        parameters:
+          inputid: =@ctx.parents.list-data.item.id
+    progress: 1
+    colors:
+      - when: =@ctx.parents.list-data.item.bodyarea = 'Arm'
+        color: color3
+      - when: =@ctx.parents.list-data.item.bodyarea = 'Back'
+        color: color2
+      - when: =@ctx.parents.list-data.item.bodyarea = 'Leg'
+        color: color6
+      - when: =@ctx.parents.list-data.item.bodyarea = 'Chest'
+        color: color1
+      - when: =@ctx.parents.list-data.item.bodyarea = 'Head'
+        color: color4
+    swipeable:
+      left:
+        - label: Remove
+          color: error
+          icon: bin-1
+          onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              provider: DATA_PROVIDER_SQL
+              entity: get-delete-treatment
+              entityId: =@ctx.parents.list-data.item.id
+              title: Remove
+              confirmModal:
+                title: "Do you really want to remove this Treatment?"
+                description: =@ctx.parents.list-data.item.bodyarea
+                cancelText: Do not remove
+                confirmText: REMOVE

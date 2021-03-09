@@ -1,0 +1,49 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: UpdatePatient
+connection: jigx1.database.windows.net
+parameters:
+  id:
+    location: input
+    type: string
+    required: true
+  firstname:
+    type: string
+    required: true
+    location: input
+  lastname:
+    type: string
+    required: true
+    location: input
+  datebirth:
+    type: datetime
+    required: true
+    location: input
+  gender:
+    type: string
+    required: true
+    location: input
+  address:
+    type: string
+    required: true
+    location: input
+  mobilename:
+    type: string
+    required: true
+    location: input
+  createdate:
+    type: datetime
+    required: true
+    location: input
+  healthdeclaration:
+    type: string
+    required: true
+    location: input
+  gdpr:
+    type: string
+    required: true
+    location: input
+  url:
+    type: string
+    required: true
+    location: input

@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, firstname, lastname, url from Patients'
+connection: jigx1.database.windows.net

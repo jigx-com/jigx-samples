@@ -1,0 +1,20 @@
+name: Patient Overview
+referenceId: detail-patient
+type: "@jigx/jig/composite"
+
+children:
+  - componentId: view-patient
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: treatpatient-list
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: expensepatient-list
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: bank-details
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: location-patient
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid

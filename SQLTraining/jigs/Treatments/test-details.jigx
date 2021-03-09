@@ -1,0 +1,11 @@
+name: Treatment Overview
+referenceId: test-details
+type: "@jigx/jig/composite"
+
+children:
+  - componentId: view-treatment
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid
+  - componentId: treatment-graph
+    inputs:
+      inputid: =@ctx.jig.inputs.inputid

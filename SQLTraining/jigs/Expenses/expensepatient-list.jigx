@@ -1,0 +1,52 @@
+name: Expense List
+type: "@jigx/jig/list"
+referenceId: expensepatient-list
+icon: single-neutral-circle
+
+datasources:
+  expense-list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-expense-list-patient
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.category',
+          '$.type',
+          '$.amount',
+          '$.patientID'
+        FROM [get-expense-list-patient]
+
+data: =@ctx.data.expense-list
+item:
+    componentId: "@jigx/jc-list-item"
+    instanceId: sample-list
+    options:
+      title: =@ctx.parents.list-data.item.('Category:' & ' ' & category)
+      subtitle: =@ctx.parents.list-data.item.type
+      onPress:
+        componentId: "@jigx/ja-go-to"
+        options:
+          title: View Expenses
+          linkTo: test-expenses
+          parameters:
+            inputid: =@ctx.parents.list-data.item.id
+      progress: 1
+      colors:
+        - when: =@ctx.parents.list-data.item.category = 'Other'
+          color: color1
+        - when: =@ctx.parents.list-data.item.category = 'Oil'
+          color: color4
+        - when: =@ctx.parents.list-data.item.category = 'Pil'
+          color: color5
+        - when: =@ctx.parents.list-data.item.category = 'Bandage'
+          color: color3
+        - when: =@ctx.parents.list-data.item.category = 'Ointment'
+          color: color2

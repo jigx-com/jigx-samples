@@ -1,0 +1,9 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, category, amount, type , patientID from Expenses where patientID = @inputid'
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true

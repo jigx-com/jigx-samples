@@ -1,0 +1,9 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, firstname, lastname , datebirth , gender , address , mobilename , createdate, healthdeclaration, gdpr, url from Patients where id = @inputid'
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true

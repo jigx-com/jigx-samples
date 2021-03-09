@@ -1,0 +1,80 @@
+name: Update Treatment
+referenceId: update-treatment
+type: "@jigx/jig/form"
+icon: add
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Update
+          formId: update-treatment
+          icon: check-circle-1
+
+datasources:
+  treatment-details:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - 
+          entity: get-treatment
+          projectId: SQLTraining
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+      query: SELECT '$.id' , '$.date','$.description', '$.time', '$.bodyarea', '$.notes', '$.charge', '$.patientID' FROM [get-treatment] 
+      provider: DATA_PROVIDER_SQL
+
+initialValues: =@ctx.data.treatment-details
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: id
+      property: id
+      isHidden: true
+      nextProperty: date
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      label: Date
+      property: date
+      icon: archive-folder
+      nextProperty: description
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Description Treatment
+      property: description
+      icon: archive-folder
+      nextProperty: time
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Time of Treatment in minutes
+      property: time
+      icon: hourglass
+      nextProperty: bodyarea
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Body Area of Treatment
+      property: bodyarea
+      icon: single-neutral
+      nextProperty: notes
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Notes of Treatment
+      property: notes
+      icon: archive-folder
+      nextProperty: charge
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Charge of Treatment
+      property: charge
+      icon: beer-mug
+      nextProperty: patientID
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Patient
+      property: patientID
+      icon: love-it
+      isHidden: true
+provider: DATA_PROVIDER_SQL
+entity: get-update-treatment

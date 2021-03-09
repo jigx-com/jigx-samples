@@ -1,0 +1,52 @@
+name: Treatment List
+type: "@jigx/jig/list"
+referenceId: treatpatient-list
+icon: single-neutral-circle
+
+datasources:
+  treatments-list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-treatment-list-patient
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.bodyarea',
+          '$.time',
+          '$.patientID'
+        FROM [get-treatment-list-patient]
+
+
+data: =@ctx.data.treatments-list
+item:
+    componentId: "@jigx/jc-list-item"
+    instanceId: sample-list
+    options:
+      title: =@ctx.parents.list-data.item.('Body area:' & ' ' & bodyarea)
+      subtitle: =@ctx.parents.list-data.item.('time in minutes:' & ' ' & time)
+      onPress:
+        componentId: "@jigx/ja-go-to"
+        options:
+          title: View Treatment
+          linkTo: test-details
+          parameters:
+            inputid: =@ctx.parents.list-data.item.id
+      progress: 1
+      colors:
+        - when: =@ctx.parents.list-data.item.bodyarea = 'Arm'
+          color: color3
+        - when: =@ctx.parents.list-data.item.bodyarea = 'Back'
+          color: color2
+        - when: =@ctx.parents.list-data.item.bodyarea = 'Leg'
+          color: color6
+        - when: =@ctx.parents.list-data.item.bodyarea = 'Chest'
+          color: color1
+        - when: =@ctx.parents.list-data.item.bodyarea = 'Head'
+          color: color4

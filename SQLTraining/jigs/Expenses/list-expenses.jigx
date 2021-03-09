@@ -1,0 +1,61 @@
+name: Expenses list
+referenceId: list-expenses
+type: '@jigx/jig/list'
+
+datasources:
+  expenses-list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-expenses-list
+        projectId: SQLTraining
+      query: |
+         SELECT id, '$.category', '$.amount','$.patientID' FROM [get-expenses-list]
+
+data: =@ctx.data.expenses-list
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.list-data.item.('Category:' & ' ' & category)
+    subtitle: =@ctx.parents.list-data.item.('Price:' & ' ' & amount & '$')
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Expense Details'
+        linkTo: test-expenses
+        parameters:
+          inputid: =@ctx.parents.list-data.item.id
+    progress: 1 
+    colors:
+      - when: =@ctx.parents.list-data.item.category = 'Other'
+        color: color1
+      - when: =@ctx.parents.list-data.item.category = 'Oil'
+        color: color4
+      - when: =@ctx.parents.list-data.item.category = 'Pil'
+        color: color5
+      - when: =@ctx.parents.list-data.item.category = 'Bandage'
+        color: color3
+      - when: =@ctx.parents.list-data.item.category = 'Ointment'
+        color: color2
+    swipeable:
+      left:
+        - label: Remove
+          color: error
+          icon: bin-1
+          onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              provider: DATA_PROVIDER_SQL
+              entity: get-delete-expense
+              entityId: =@ctx.parents.list-data.item.id
+              title: Remove
+              confirmModal:
+                title: "Do you really want to remove this Expense?"
+                description: =@ctx.parents.list-data.item.category
+                cancelText: Do not remove
+                confirmText: REMOVE
+

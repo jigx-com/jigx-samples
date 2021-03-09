@@ -1,0 +1,29 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: UpdateBank
+connection: jigx1.database.windows.net
+parameters:
+  id:
+    location: input
+    type: string
+    required: true
+  bankname:
+    type: string
+    required: true
+    location: input
+  bankaddress:
+    type: string
+    required: true
+    location: input
+  bankacount:
+    type: string
+    required: true
+    location: input
+  bankswift:
+    type: string
+    required: true
+    location: input
+  bankbic:
+    type: string
+    required: true
+    location: input

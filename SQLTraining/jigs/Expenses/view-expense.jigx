@@ -1,0 +1,82 @@
+name: Expense detail
+referenceId: view-expense
+type: "@jigx/jig/default"
+icon: multiple-neutral-2
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Update Expense
+          linkTo: update-expense
+          parameters:
+            inputid: =@ctx.jig.inputs.inputid
+
+      - componentId: '@jigx/ja-delete'
+        options:
+          provider: DATA_PROVIDER_SQL
+          entity: get-detele-expense
+          entityId: =@ctx.jig.inputs.inputid
+          title: Remove Expense
+          icon: bin-1
+          confirmModal:
+            title: Do you really want to remove this Expense?
+            cancelText: Do not remove
+            confirmText: REMOVE
+
+datasources:
+  expense-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_SQL
+      entities:
+      -
+        entity: get-expense
+        projectId: SQLTraining
+        parameters:
+           inputid : =@ctx.jig.inputs.inputid
+      query: |
+        SELECT
+          id,
+          '$.date',
+          '$.description',
+          '$.category',
+          '$.type',
+          '$.amount',
+          '$.vatinsurance',
+          '$.patientID'
+           FROM  [get-expense]
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: date
+            value: =@ctx.data.expense-data.date
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: description
+            value: =@ctx.data.expense-data.description
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: category
+            value: =@ctx.data.expense-data.category
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: type
+            value: =@ctx.data.expense-data.type
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: amount
+            value: =@ctx.data.expense-data.(amount & '$')
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: vat insurance
+            value: =@ctx.data.expense-data.vatinsurance
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Patient ID
+            value: =@ctx.data.expense-data.patientID

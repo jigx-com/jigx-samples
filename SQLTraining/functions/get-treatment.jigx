@@ -1,0 +1,9 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'select id, date , description , time , bodyarea , notes , charge , patientID  from Treatments where id = @inputid'
+connection: jigx1.database.windows.net
+parameters:
+  inputid:
+    location: input
+    type: string
+    required: true
