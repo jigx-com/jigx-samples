@@ -1,0 +1,25 @@
+name: List Accounts
+icon: beer-mug
+title: List of Accounts
+type: "@jigx/jig/list"
+referenceId: accountlist
+
+datasources:
+  accountdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select id , '$.Name' , '$.BillingStreet' from Account order by '$.Name'
+#      parameters:
+#        TerritoryId: "00"
+
+data: =@ctx.data.accountdata
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.accountdata.item.Name
+    subtitle: =@ctx.parents.accountdata.item.BillingStreet
+    
+

@@ -1,0 +1,86 @@
+datasources:
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - x: 1,
+          y: 1285577
+        - x: 2,
+          y: 2240398
+        - x: 3,
+          y: 1314503
+        - x: 4,
+          y: 2062668
+        - x: 5,
+          y: 295725
+        - x: 6,
+          y: 0
+  linechartdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Territory2
+        - Opportunity
+      provider: DATA_PROVIDER_SALESFORCE
+      query: with ctePy as (select 0 as x UNION select 2 UNION select 4), cteCy as
+        (select 1 as x UNION select 3 UNION select 5) select ctePy.x, IFNULL(y,
+        0) as y from ctePy left join (select (row_number() over(order by
+        1*strftime('%m', json_extract(O.Data, '$.CloseDate')))-1)*2 as x,
+        total(json_extract(O.Data, '$.Amount')) as y from Opportunity O where
+        json_extract(O.Data, '$.IsClosed') = true AND json_extract(O.Data,
+        '$.IsWon') = true AND ((cast(strftime('%m', date('2020-05-07')) as
+        integer) + 2) / 3) = json_extract(O.Data, '$.FiscalQuarter') AND
+        (1*strftime('%Y', date('2020-05-07'))-1) = json_extract(O.Data,
+        '$.FiscalYear') AND (('00' = @TerritoryId AND json_extract(O.Data,
+        '$.Territory2Id') IS NOT NULL) OR json_extract(O.Data, '$.Territory2Id')
+        = @TerritoryId) group by strftime('%m', json_extract(O.Data,
+        '$.CloseDate')) order by strftime('%m', json_extract(O.Data,
+        '$.CloseDate'))) as rws on rws.x = ctePy.x UNION select cteCy.x,
+        IFNULL(y, 0) as y from cteCy left join (select (row_number() over(order
+        by 1*strftime('%m', json_extract(O.Data, '$.CloseDate')))-0.5)*2 as x,
+        total(json_extract(O.Data, '$.Amount')) as y from Opportunity O where
+        json_extract(O.Data, '$.IsClosed') = true AND json_extract(O.Data,
+        '$.IsWon') = true AND ((cast(strftime('%m', date('2020-05-07')) as
+        integer) + 2) / 3) = json_extract(O.Data, '$.FiscalQuarter') AND
+        1*strftime('%Y', date('2020-05-07')) = json_extract(O.Data,
+        '$.FiscalYear') AND (('00' = @TerritoryId AND json_extract(O.Data,
+        '$.Territory2Id') IS NOT NULL) OR json_extract(O.Data, '$.Territory2Id')
+        = @TerritoryId) group by strftime('%m', json_extract(O.Data,
+        '$.CloseDate')) order by strftime('%m', json_extract(O.Data,
+        '$.CloseDate'))) as rws on rws.x = cteCy.x
+      parameters:
+        TerritoryId: =@ctx.jig.inputs.regionId
+children:
+  - componentId: "@jigx/jc-line-chart"
+    options:
+      yAxis:
+        labels:
+          format:
+            notation: compact
+            compactDisplay: short
+            numberStyle: currency
+            currency: USD
+      xAxis:
+        categories:
+          - Apr B
+          - Apr A
+          - May B
+          - May A
+          - June B
+          - June A
+      legend:
+        isHidden: true
+      series:
+        - data: =@ctx.data.linechartdata
+          color: color5
+          type: area-gradient
+          lineWidth: 8
+          animation:
+            type: left-to-right
+      chart:
+        isAnimated: true
+        height: 170
+name: Opportunity Line Chart
+icon: beer-mug
+type: "@jigx/jig/default"
+referenceId: optlinechart

@@ -1,0 +1,60 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: viewopportunityall
+        title: View Opportunity
+        parameters:
+          OpportunityId: =@ctx.parents.list-data.item.id
+          actId: =@ctx.parents.list-data.item.AccountId
+    rightElement:
+      format:
+        notation: compact
+        compactDisplay: short
+        numberStyle: currency
+        currency: USD
+      text: =@ctx.parents.list-data.item.Amount
+      type: value
+    subtitle: =@ctx.parents.list-data.item.ActName
+    leftElement:
+      text: =@ctx.parents.list-data.item.leftAvatar
+      type: avatar
+    title: =@ctx.parents.list-data.item.OptName
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as id, 'color1' as cardColor, json_extract(O.Data, '$.Name')
+        as OptName, substr(json_extract(O.Data, '$.Name'), 1, 15) as
+        OptNameShort, json_extract(O.Data, '$.AccountId') as AccountId,
+        substr(json_extract(O.Data, '$.Name'), 1, 1) as leftAvatar,
+        json_extract(O.Data, '$.Amount') as Amount, json_extract(A.Data,
+        '$.Name') as ActName, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'true' ELSE 'false'
+        END as isError, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'false' ELSE 'true'
+        END as isPrimary from Opportunity O Left Join Account A on A.id =
+        Json_extract(O.Data, '$.AccountId') WHERE IsError = 'true' AND
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        json_extract(O.Data, '$.FiscalQuarter') AND 1*strftime('%Y',
+        date('2020-05-07')) = json_extract(O.Data, '$.FiscalYear') AND (('00' =
+        @TerritoryId AND json_extract(O.Data, '$.Territory2Id')  IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id')  = @TerritoryId) AND
+        json_extract(O.Data, '$.StageName') != 'Closed Lost' group by O.Id order
+        by Amount DESC
+      parameters:
+        TerritoryId: "00"
+data: =@ctx.data.listdata
+name: Opt At Risk
+icon: notes-paper-approve
+title: Opt At Risk
+type: "@jigx/jig/list"
+referenceId: optatrisk

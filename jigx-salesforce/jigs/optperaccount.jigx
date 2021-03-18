@@ -1,0 +1,75 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: viewopportunityall
+        title: View Opportunity
+        parameters:
+          OpportunityId: =@ctx.parents.list-data.item.id
+          actId: =@ctx.parents.list-data.item.actId
+    divider: solid
+    rightElement:
+      format:
+        notation: compact
+        compactDisplay: short
+        numberStyle: currency
+        currency: USD
+      text: =@ctx.parents.list-data.item.Amount
+      type: value
+    subtitle: =@ctx.parents.list-data.item.StageName
+    leftElement:
+      text: =$substring(@ctx.parents.list-data.item.OptName,1,2)
+      type: avatar
+    progress: =@ctx.parents.list-data.item.Probability
+    title: =@ctx.parents.list-data.item.OptName
+    colors:
+      - color: =@ctx.parents.list-data.item.cardColor
+        when: 1 = 1
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - Account
+        - OpportunityHistory
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as id, json_extract(O.Data, '$.Name') as OptName,
+        substr(json_extract(O.Data, '$.Name'), 1, 20) || '...' as OptNameShort,
+        substr(json_extract(O.Data, '$.Name'), 1, 1) as leftAvatar,
+        json_extract(O.Data, '$.Amount') as Amount, json_extract(O.Data,
+        '$.AccountId') as actId, json_extract(A.Data, '$.Name') as ActName,
+        json_extract(O.Data, '$.Territory2Id') as Territory2Id,
+        json_extract(O.Data, '$.StageName') as StageName,
+        CAST(json_extract(O.Data, '$.Probability') as decimal)*1.0/100 as
+        Probability, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'true' ELSE 'false'
+        END as isError, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'false' ELSE 'true'
+        END as isPrimary, CASE WHEN (json_extract(O.Data, '$.IsClosed') = true
+        AND json_extract(O.Data, '$.IsWon') = true) THEN 'color1' WHEN
+        (json_extract(O.Data, '$.IsClosed') = true AND json_extract(O.Data,
+        '$.IsWon') = false) THEN 'color1' WHEN (strftime('%W',
+        json_extract(O.Data, '$.CloseDate')) - strftime('%W',
+        date('2020-05-07')) < 4) AND (json_extract(O.Data, '$.Probability') <=
+        50) THEN 'color1' ELSE 'color2' END as cardColor from Opportunity O LEFT
+        JOIN Account A on json_extract(O.Data, '$.AccountId') = A.Id WHERE
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        json_extract(O.Data, '$.FiscalQuarter') AND 1*strftime('%Y',
+        date('2020-05-07')) = json_extract(O.Data, '$.FiscalYear') AND (('00' =
+        @TerritoryId AND json_extract(O.Data, '$.Territory2Id') IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id') = @TerritoryId) AND A.Id =
+        @acctid GROUP by O.id order by Amount DESC
+      parameters:
+        TerritoryId: "00"
+        acctid: =@ctx.jig.inputs.acctid
+data: =@ctx.data.listdata
+name: Active Opportunities
+isHorizontalScrollIndicatorHidden: true
+type: "@jigx/jig/list"
+referenceId: optperaccount
+isHorizontal: true

@@ -1,0 +1,33 @@
+children:
+  - componentId: optperaccount
+    inputs:
+      acctid: =@ctx.jig.inputs.acctid
+  - componentId: viewaccount
+    inputs:
+      acctid: =@ctx.jig.inputs.acctid
+  - componentId: accountlocation
+    inputs:
+      acctid: =@ctx.jig.inputs.acctid
+  - componentId: viewaccountaddress
+    inputs:
+      acctid: =@ctx.jig.inputs.acctid
+name: Account Detail
+icon: graph-stats-square
+type: "@jigx/jig/composite"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: editaccount
+          icon: checklist
+          title: Edit Account
+          parameters:
+            acctid: =@ctx.jig.inputs.acctid
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: editaccountaddress
+          icon: checklist
+          title: Edit Address Information
+          parameters:
+            acctid: =@ctx.jig.inputs.acctid
+referenceId: viewaccountall

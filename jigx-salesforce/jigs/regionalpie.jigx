@@ -1,0 +1,89 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  instanceId: repIdItem
+  options:
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: saleshubperregion
+        title: Opportunities per Region
+        parameters:
+          regionId: =@ctx.parents.list-data.item.id
+    divider: solid
+    rightElement:
+      format:
+        notation: compact
+        compactDisplay: short
+        numberStyle: currency
+        currency: USD
+      text: =@ctx.parents.list-data.item.amountClosed
+      type: value
+    subtitle: '="Quota: " & @ctx.parents.list-data.item.QuotaAmountText'
+    leftElement:
+      text: =$uppercase($substring(@ctx.parents.list-data.item.territory, 0, 2))
+      type: avatar
+    progress: =@ctx.parents.list-data.item.attained
+    title: =@ctx.parents.list-data.item.territory
+    colors:
+      - color: =@ctx.parents.list-data.item.color
+        when: 1 = 1
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Territory2
+        - Opportunity
+        - ForecastingQuota
+        - Period
+        - UserTerritory2Association
+        - User
+        - OpportunityStage
+      provider: DATA_PROVIDER_SALESFORCE
+      query: with cte as (select O.Id as id, sum(json_extract(O.Data, '$.Amount')) as
+        amountClosed, json_extract(O.Data, '$.Territory2Id') as territory from
+        Opportunity O where json_extract(O.Data, '$.IsClosed') = true AND
+        json_extract(O.Data, '$.IsWon') = true AND ((cast(strftime('%m',
+        date('2020-05-07')) as integer) + 2) / 3) = json_extract(O.Data,
+        '$.FiscalQuarter') AND 1*strftime('%Y', date('2020-05-07')) =
+        json_extract(O.Data, '$.FiscalYear') group by Territory), cteTer as
+        (select T2.Id as id, printf('$%,dK',(total(json_extract(FQ.Data,
+        '$.QuotaAmount'))/1000)) as QuotaAmountText, total(json_extract(FQ.Data,
+        '$.QuotaAmount')) as forecastAmount, total(c.amountClosed) as
+        amountClosed, printf('%.2f', (select total(c.amountClosed) as
+        amountClosed)/total(json_extract(FQ.Data, '$.QuotaAmount'))) as
+        attained, json_extract(T2.Data, '$.Name') as territory,
+        json_extract(T2.Data, '$.Id') as territoryId, json_extract(P.Data,
+        '$.FullyQualifiedLabel') as qLabel from Territory2 T2 LEFT JOIN
+        ForecastingQuota FQ on json_extract(FQ.Data, '$.Territory2Id') = T2.Id
+        LEFT JOIN Period P on json_extract(FQ.Data, '$.PeriodId') = P.Id LEFT
+        JOIN cte c on T2.id = c.territory where json_extract(FQ.Data,
+        '$.Territory2Id') IS NOT NULL AND json_extract(P.Data, '$.Type') =
+        'Quarter' AND ((cast(strftime('%m', date('2020-05-07')) as integer) + 2)
+        / 3) = ((cast(strftime('%m', json_extract(P.Data, '$.StartDate')) as
+        integer) + 2) / 3) AND strftime('%Y', date('2020-05-07')) =
+        strftime('%Y', json_extract(P.Data, '$.StartDate')) GROUP BY
+        json_extract(T2.Data, '$.Name')) select id, QuotaAmountText,
+        forecastAmount, AmountClosed, attained, territory, territoryId, CASE
+        WHEN ifnull(amountClosed/forecastAmount,0) >= 0 AND
+        ifnull(amountClosed/forecastAmount,0) < .3 THEN 'color1' WHEN
+        ifnull(amountClosed/forecastAmount,0) > .3 AND
+        ifnull(amountClosed/forecastAmount,0) < .7 THEN 'color4' ELSE 'color1'
+        END as color from cteTer UNION select '00',
+        printf('$%,dK',(total(forecastAmount/1000))) as QuotaAmountText,
+        total(forecastAmount), total(amountClosed),
+        total(amountClosed)/total(forecastAmount) as attained, 'All' as
+        territory, '00' as territoryId, CASE WHEN
+        ifnull(total(amountClosed)/total(forecastAmount),0) >= 0 AND
+        ifnull(total(amountClosed)/total(forecastAmount),0) < .3 THEN 'color1'
+        WHEN total(amountClosed)/total(forecastAmount) > .3 AND
+        total(amountClosed)/total(forecastAmount) < .7 THEN 'color4' ELSE
+        'color1' END as color from cteTer
+data: =@ctx.data.listdata
+name: Region Performance
+icon: beer-mug
+isHorizontalScrollIndicatorHidden: true
+title: Region Performance
+type: "@jigx/jig/list"
+referenceId: regionalpie
+isHorizontal: true

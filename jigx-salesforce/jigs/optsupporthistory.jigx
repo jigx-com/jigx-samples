@@ -1,0 +1,43 @@
+datasources:
+  stagehistory:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Case
+        - Account
+        - User
+      provider: DATA_PROVIDER_SALESFORCE
+      query: |
+        SELECT json_extract(C.Data, '$.CaseNumber') as CaseNumber,
+        json_extract(C.Data, '$.IsEscalated') as IsEscalated,
+        json_extract(U.Data, '$.Name') as LastModifiedByName,
+        json_extract(U2.Data, '$.Name') as CreatedByName,
+        substr(json_extract(C.Data, '$.LastModifiedDate'),1,10) as
+        LastModifiedDate, substr(json_extract(C.Data, '$.CreatedDate'),1,10) as
+        CreatedDate, json_extract(C.Data, '$.Origin') as Origin,
+        json_extract(U3.Data, '$.Name') as AssignedTo, json_extract(C.Data,
+        '$.Priority') as Priority, json_extract(C.Data, '$.Reason') as Reason,
+        json_extract(C.Data, '$.Status') as Status, json_extract(C.Data,
+        '$.Subject') as Subject, json_extract(C.Data, '$.Type') as Type FROM
+        [Case] C left join User U on U.Id = json_extract(C.Data,
+        '$.LastModifiedById') left join User U2 on U.Id = json_extract(C.Data,
+        '$.CreatedById') left join User U3 on U.Id = json_extract(C.Data,
+        '$.OwnerId') left join Account A on A.Id = json_extract(C.Data,
+        '$.AccountId') Where json_extract(C.Data, '$.AccountId') = @AccountId
+        group by CaseNumber
+      parameters:
+        OpportunityId: =@ctx.jig.inputs.OpportunityId
+children:
+  - componentId: "@jigx/jc-stepper"
+    options:
+      isExpandable: true
+      data: =@ctx.data.stagehistory
+      step:
+        componentId: "@jigx/jc-step"
+        options:
+          title: =@ctx.parents.list-data.item.Reason
+          value: =@ctx.parents.list-data.item.Status
+      finishedTitle: Deal Progress Detail
+name: Support History
+type: "@jigx/jig/default"
+referenceId: optsupporthistory

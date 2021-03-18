@@ -1,0 +1,100 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  instanceId: repIdItem
+  options:
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: =@ctx.parents.list-data.item.pageName
+        title: News Action
+    divider: solid
+    rightElement:
+      format:
+        notation: compact
+      text: =@ctx.parents.list-data.item.subTitle
+      type: value
+    leftElement:
+      icon: =@ctx.parents.list-data.item.icon
+      type: icon
+      isDuotone: true
+    title: =@ctx.parents.list-data.item.title
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - Account
+        - Case
+      provider: DATA_PROVIDER_SALESFORCE
+      query: >
+        with cteOpt as (select Id as value, CASE WHEN (strftime('%W',
+        json_extract(O.Data, '$.CloseDate')) - strftime('%W',
+        date('2020-05-07')) < 4) AND (json_extract(O.Data, '$.Probability') <=
+        50) THEN 'true' ELSE 'false' END as isError, CASE WHEN (strftime('%W',
+        json_extract(O.Data, '$.CloseDate')) - strftime('%W',
+        date('2020-05-07')) < 4) AND (json_extract(O.Data, '$.Probability') <=
+        50) THEN 'false' ELSE 'true' END as isPrimary from Opportunity O WHERE
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        json_extract(O.Data, '$.FiscalQuarter') AND 1*strftime('%Y',
+        date('2020-05-07')) = json_extract(O.Data, '$.FiscalYear') AND (('00' =
+        @TerritoryId AND json_extract(O.Data, '$.Territory2Id')  IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id')  = @TerritoryId) AND
+        json_extract(O.Data, '$.StageName') != 'Closed Lost'),
+        cteOptClosingThisQ as (select Id, json_extract(O.Data, '$.AccountId') as
+        AccountId from Opportunity O WHERE ((cast(strftime('%m',
+        date('2020-05-07')) as integer) + 2) / 3) = json_extract(O.Data,
+        '$.FiscalQuarter') AND 1*strftime('%Y', date('2020-05-07')) =
+        json_extract(O.Data, '$.FiscalYear') AND (('00' = @TerritoryId AND
+        json_extract(O.Data, '$.Territory2Id')  IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id')  = @TerritoryId) AND
+        json_extract(O.Data, '$.IsClosed') != true), cteCasesCreatedThisQ as
+        (SELECT json_extract(C.Data, '$.AccountId') as AccountId,
+        json_extract(C.Data, '$.CreatedDate') as CreatedDate FROM [Case] C WHERE
+        strftime('%W',SUBSTR(json_extract(C.Data, '$.CreatedDate'),1,10)) =
+        strftime('%W',SUBSTR(Date('2020-05-07'),1,10)) AND
+        strftime('%Y',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%Y',SUBSTR(Date('2020-05-07'),1,10)) AND json_extract(C.Data,
+        '$.IsClosed') = false)select '6' as orderBy,
+        'developer-community-stack-overflow' as icon, 'Opt at risk' as title,
+        'optatrisk' as pageName, count(cteOpt.value) as subTitle from cteOpt
+        where cteOpt.IsError = 'true' UNION select '1' as orderBy, 'beer-mug' as
+        icon, 'New this month' as title, 'optcreatedthismonth' as pageName,
+        count(*) as subTitle from Opportunity where
+        strftime('%m',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%m',SUBSTR(Date('2020-05-07'),1,10)) AND
+        strftime('%Y',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%Y',SUBSTR(Date('2020-05-07'),1,10)) AND (('00' = @TerritoryId
+        AND json_extract(Data, '$.Territory2Id') IS NOT NULL) OR
+        json_extract(Data, '$.Territory2Id')  = @TerritoryId) UNION select '2'
+        as orderBy, 'beer-mug' as icon, 'New this week' as title,
+        'optcreatedthisweek' as pageName, count(*) as subTitle from Opportunity
+        where strftime('%W',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%W',SUBSTR(Date('2020-05-07'),1,10)) AND
+        strftime('%Y',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%Y',SUBSTR(Date('2020-05-07'),1,10)) AND (('00' = @TerritoryId
+        AND json_extract(Data, '$.Territory2Id')  IS NOT NULL) OR
+        json_extract(Data, '$.Territory2Id')  = @TerritoryId) UNION select '3'
+        as orderBy, 'bin-1' as icon, 'Moved out' as title, 'movedoutofthisqPage'
+        as pageName, '0' as subTitle UNION select '4' as orderBy, 'checklist' as
+        icon, 'New Tickets' as title,  'newtickets' as pageName,
+        count(cteOptClosingThisQ.AccountId) as subTitle from cteOptClosingThisQ
+        LEFT JOIN cteCasesCreatedThisQ on cteOptClosingThisQ.AccountId =
+        cteCasesCreatedThisQ.AccountId UNION select '5' as orderBy, 'bin-1' as
+        icon, 'Lost this month' as title, 'optlostthismonth' as pageName,
+        count(*) as subTitle from Opportunity where strftime('%m',
+        SUBSTR(json_extract(Data, '$.CloseDate'),1,10)) = '05' AND
+        strftime('%Y',SUBSTR(json_extract(Data, '$.CloseDate'),1,10)) = '2020'
+        AND json_extract(Data, '$.IsClosed') = true AND json_extract(Data,
+        '$.IsWon') = false AND (('00' = @TerritoryId AND json_extract(Data,
+        '$.Territory2Id')  IS NOT NULL) OR json_extract(Data,
+        '$.Territory2Id')  = @TerritoryId)
+      parameters:
+        TerritoryId: =@ctx.jig.inputs.regionId
+data: =@ctx.data.listdata
+name: Opportunity News
+icon: beer-mug
+isHorizontalScrollIndicatorHidden: true
+type: "@jigx/jig/list"
+referenceId: optnews
+isHorizontal: true

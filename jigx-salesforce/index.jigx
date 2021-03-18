@@ -1,0 +1,30 @@
+title: Jigx SalesForce
+category: sales
+referenceId: SFDC-L1
+
+favorites:
+  - size: 2x4
+    children: saleshub
+  - size: 2x2
+    children: topopthub
+  - size: 1x1
+    children: optcreatedthismonth
+  - size: 1x1
+    children: optcreatedthisweek
+
+widgets:
+  - size: 2x4
+    children: saleshub
+  - size: 2x2
+    children: topopthub
+  - size: 1x1
+    children: optcreatedthismonth
+  - size: 1x1
+    children: optcreatedthisweek
+  - size: 1x1
+    children: saleshub
+  - size: 1x1
+    children: accountlist
+  - size: 4x4
+    children: topopthub
+

@@ -1,0 +1,59 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    rightElement:
+      format:
+        notation: compact
+        compactDisplay: short
+        numberStyle: currency
+        currency: USD
+      text: =@ctx.parents.list-data.item.Amount
+      type: value
+    subtitle: =@ctx.parents.list-data.item.ActName
+    leftElement:
+      text: =@ctx.parents.list-data.item.leftAvatar
+      type: avatar
+    title: =@ctx.parents.list-data.item.OptName
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: with cteOptClosingThisQ as (select O.Id as id, 'color1' as cardColor,
+        json_extract(O.Data, '$.Name') as OptName, substr(json_extract(O.Data,
+        '$.Name'), 1, 15) as OptNameShort, json_extract(O.Data, '$.AccountId')
+        as AccountId, substr(json_extract(O.Data, '$.Name'), 1, 1) as
+        leftAvatar, json_extract(O.Data, '$.Amount') as Amount,
+        json_extract(A.Data, '$.Name') as ActName  from Opportunity O Left Join
+        Account A on A.id = Json_extract(O.Data, '$.AccountId') WHERE
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        json_extract(O.Data, '$.FiscalQuarter') AND 1*strftime('%Y',
+        date('2020-05-07')) = json_extract(O.Data, '$.FiscalYear') AND (('00' =
+        @TerritoryId AND json_extract(O.Data, '$.Territory2Id')  IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id')  = @TerritoryId) AND
+        json_extract(O.Data, '$.IsClosed') != true ), cteCasesCreatedThisQ as
+        (SELECT  json_extract(C.Data, '$.AccountId') as AccountId,
+        json_extract(C.Data, '$.CreatedDate') as CreatedDate FROM [Case] C WHERE
+        strftime('%m',SUBSTR(json_extract(C.Data, '$.CreatedDate'),1,10)) =
+        strftime('%m',SUBSTR(Date('2020-05-07'),1,10)) AND
+        strftime('%Y',SUBSTR(json_extract(Data, '$.CreatedDate'),1,10)) =
+        strftime('%Y',SUBSTR(Date('2020-05-07'),1,10)) AND json_extract(C.Data,
+        '$.IsClosed') = false) select cteOptClosingThisQ.Id as id, 'color1' as
+        cardColor, cteOptClosingThisQ.OptName as OptName,
+        cteOptClosingThisQ.OptNameShort as OptNameShort,
+        cteOptClosingThisQ.leftAvatar as leftAvatar,  cteOptClosingThisQ.Amount
+        as Amount, cteOptClosingThisQ.ActName  as ActName from
+        cteOptClosingThisQ  LEFT JOIN cteCasesCreatedThisQ on
+        cteOptClosingThisQ.AccountId = cteCasesCreatedThisQ.AccountId group by
+        cteOptClosingThisQ.Id order by cteOptClosingThisQ.Amount DESC
+      parameters:
+        TerritoryId: "00"
+data: =@ctx.data.listdata
+name: New Tickets for Prospects
+icon: checklist
+title: New Tickets for Prospects
+type: "@jigx/jig/list"
+referenceId: newtickets

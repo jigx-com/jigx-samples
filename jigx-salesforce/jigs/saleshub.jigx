@@ -1,0 +1,138 @@
+datasources:
+  listdataw:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - Account
+        - OpportunityHistory
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as id, json_extract(O.Data, '$.Name') as OptName,
+        substr(json_extract(O.Data, '$.Name'), 1, 20) || '...' as OptNameShort,
+        substr(json_extract(O.Data, '$.Name'), 1, 1) as leftAvatar,
+        json_extract(O.Data, '$.Amount') as Amount, json_extract(O.Data,
+        '$.AccountId') as actId, json_extract(A.Data, '$.Name') as ActName,
+        json_extract(A.Data, '$.BillingCountryCode') as BillingCountryCode,
+        json_extract(O.Data, '$.Territory2Id') as Territory2Id,
+        json_extract(O.Data, '$.StageName') as StageName,
+        CAST(json_extract(O.Data, '$.Probability') as decimal)*1.0/100 as
+        Probability, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'true' ELSE 'false'
+        END as isError, CASE WHEN (strftime('%W', json_extract(O.Data,
+        '$.CloseDate')) - strftime('%W', date('2020-05-07')) < 4) AND
+        (json_extract(O.Data, '$.Probability') <= 50) THEN 'false' ELSE 'true'
+        END as isPrimary, CASE WHEN (json_extract(O.Data, '$.IsClosed') = true
+        AND json_extract(O.Data, '$.IsWon') = true) THEN 'color1' WHEN
+        (json_extract(O.Data, '$.IsClosed') = true AND json_extract(O.Data,
+        '$.IsWon') = false) THEN 'color1' WHEN (strftime('%W',
+        json_extract(O.Data, '$.CloseDate')) - strftime('%W',
+        date('2020-05-07')) < 4) AND (json_extract(O.Data, '$.Probability') <=
+        50) THEN 'color1' ELSE 'color2' END as cardColor from Opportunity O LEFT
+        JOIN Account A on json_extract(O.Data, '$.AccountId') = A.Id WHERE
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        json_extract(O.Data, '$.FiscalQuarter') AND 1*strftime('%Y',
+        date('2020-05-07')) = json_extract(O.Data, '$.FiscalYear') AND (('00' =
+        @TerritoryId AND json_extract(O.Data, '$.Territory2Id') IS NOT NULL) OR
+        json_extract(O.Data, '$.Territory2Id') = @TerritoryId) AND
+        json_extract(O.Data, '$.StageName') != 'Closed Lost' GROUP by O.id order
+        by Amount DESC Limit 15
+      parameters:
+        TerritoryId: "00"
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - y: 35
+        - y: 110
+        - y: 65
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Procter & Gamble
+          description: $ 123 K
+          avatarText: ZA
+        - name: Productboard
+          description: $ 119 K
+          avatarText: DE
+        - name: HP
+          description: $ 98 K
+          avatarText: US
+        - name: Xerox
+          description: $ 70 K
+          avatarText: US
+children:
+  - componentId: regionalpie
+    inputs:
+      regionId: "00"
+  - componentId: optlinechart
+    inputs:
+      regionId: "00"
+  - componentId: repoptbarchart
+    inputs:
+      regionId: "00"
+  - componentId: optnews
+    inputs:
+      regionId: "00"
+  - componentId: topopthub
+    inputs:
+      regionId: "00"
+name: Sales Hub
+icon: graph-stats-square
+type: "@jigx/jig/composite"
+referenceId: saleshub
+views:
+  2x4:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-chart"
+          options:
+            top:
+              componentId: "@jigx/jc-trend"
+              options:
+                style:
+                  isValueHidden: false
+                title: "Last 3 weeks:"
+                value: 12
+            chart:
+              componentId: "@jigx/jc-line-chart"
+              options:
+                yAxis:
+                  min: 0
+                  max: 150
+                  isHidden: true
+                xAxis:
+                  categories:
+                    - "1"
+                    - "2"
+                    - "3"
+                legend:
+                  isHidden: true
+                series:
+                  - data: =@ctx.data.series1
+                    color: color5
+                    type: area-gradient
+                    animation:
+                      type: left-to-right
+        - componentId: "@jigx/jw-list"
+          options:
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                onPress:
+                  componentId: "@jigx/ja-go-to"
+                  options:
+                    linkTo: viewopportunityall
+                    title: View Opportunity
+                    parameters:
+                      OpportunityId: =@ctx.parents.list-data.item.id
+                      actId: =@ctx.parents.list-data.item.actId
+                subtitle: =$formatNumber(@ctx.parents.list-data.item.Amount,'$#,###')
+                leftElement:
+                  icon: =@ctx.parents.list-data.item.BillingCountryCode
+                  type: icon
+                  isDuotone: true
+                title: =@ctx.parents.list-data.item.OptName
+            data: =@ctx.data.listdataw

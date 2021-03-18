@@ -1,0 +1,17 @@
+children:
+  - componentId: optlinechart
+    inputs:
+      regionId: =@ctx.jig.inputs.regionId
+  - componentId: repoptbarchart
+    inputs:
+      regionId: =@ctx.jig.inputs.regionId
+  - componentId: optnews
+    inputs:
+      regionId: =@ctx.jig.inputs.regionId
+  - componentId: topopthub
+    inputs:
+      regionId: =@ctx.jig.inputs.regionId
+name: Sales Hub Per Region
+icon: graph-stats-square
+type: "@jigx/jig/composite"
+referenceId: saleshubperregion

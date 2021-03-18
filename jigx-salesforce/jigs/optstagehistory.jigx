@@ -1,0 +1,80 @@
+datasources:
+  stagehistory:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - OpportunityStage
+        - OpportunityHistory
+        - Opportunity
+      provider: DATA_PROVIDER_SALESFORCE
+      query: >
+        select O.Id as id, json_extract(O.Data, '$.StageName') as
+
+        StageName,  json_extract(O.Data, '$.Amount') as Amount, json_extract(O.Data, '$.OpportunityId') as optId,
+
+        json_extract(O.Data, '$.CloseDate') as CloseDate, 'step' || ROW_NUMBER() over (order by date(json_extract(O.Data, '$.SystemModstamp'))) as value,
+
+        json_extract(O.Data, '$.StageName')  as title, 'true' as isCompleted,
+
+        'The amount was updated to ' || printf('$%,d',json_extract(O.Data, '$.Amount')) || '. The closed date was moved to ' || json_extract(O.Data, '$.CloseDate') || ' , while the probability was update to ' || json_extract(O.Data, '$.Probability') as description, 
+
+        CAST(json_extract(O.Data, '$.Probability') as real)/100 as Probability,
+
+        json_extract(O.Data, '$.ExpectedRevenue') as ExpectedRevenue,
+
+        date(substr(json_extract(O.Data, '$.CreatedDate'),1,10)) as ModifiedOn,
+
+        json_extract(U.Data, '$.Name') as ModifiedByName, json_extract(U.Data,
+
+        '$.Name') || ' on ' || date(substr(json_extract(O.Data,
+
+        '$.CreatedDate'),1,10)) as ModifiedByOn  from OpportunityHistory O Left
+
+        JOIN User U on U.Id =  json_extract(O.Data, '$.CreatedById') 
+
+        where
+
+        json_extract(O.Data, '$.OpportunityId') = @OpportunityId
+
+        Order By ModifiedOn
+      parameters:
+        OpportunityId: =@ctx.jig.inputs.OpportunityId
+  steps:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - description: Stage completed on 10/12/2020
+          title: Prospecting
+          value: step1
+          isCompleted: true
+        - description: Stage completed on 11/10/2020
+          title: Qualification
+          value: step2
+          isCompleted: true
+        - description: In stage since 62 days
+          title: Proposal
+          value: step3
+          isCompleted: false
+        - description: Expected in 12 days
+          title: Negotiation
+          value: step4
+          isCompleted: false
+        - description: Expected in 23 days
+          title: Closed Won
+          value: step5
+          isCompleted: false
+children:
+  - componentId: "@jigx/jc-stepper"
+    options:
+      isExpandable: true
+      data: =@ctx.data.stagehistory
+      step:
+        componentId: "@jigx/jc-step"
+        options:
+          description: =@ctx.parents.list-data.item.description
+          title: =@ctx.parents.list-data.item.StageName
+          value: =@ctx.parents.list-data.item.value
+          isCompleted: =@ctx.parents.list-data.item.isCompleted
+name: Opportunity Stage
+type: "@jigx/jig/default"
+referenceId: optstagehistory

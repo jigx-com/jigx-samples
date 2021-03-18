@@ -1,0 +1,80 @@
+datasources:
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - Opportunity
+        - User
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as Id, json_extract(O.Data, '$.Name') as Name,
+        json_extract(O.Data, '$.AccountId') as AccountId, json_extract(O.Data,
+        '$.StageName') as StageName, json_extract(O.Data, '$.Amount') as Amount,
+        json_extract(A.Data, '$.Name') as AccountName, json_extract(O.Data,
+        '$.Description') as Description, json_extract(O.Data,
+        '$.MainCompetitors__c') as MainCompetitors, json_extract(O.Data,
+        '$.OwnerId') as OwnerId, json_extract(U.Data, '$.FirstName') || ' ' ||
+        json_extract(U.Data, '$.LastName') as OwnerName, json_extract(O.Data,
+        '$.CloseDate') as CloseDate from Opportunity O LEFT JOIN Account A on
+        json_extract(O.Data, '$.AccountId')  = A.Id LEFT JOIN User U on
+        json_extract(O.Data, '$.OwnerId') = U.Id Where O.id = @OpportunityId
+      parameters:
+        OpportunityId: =@ctx.jig.inputs.OpportunityId
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Name
+            value: =@ctx.data.form-data.Name
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Account
+            value: =@ctx.data.form-data.AccountName
+        - - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Close Date
+              value: =@ctx.data.form-data.CloseDate
+          - componentId: "@jigx/jc-entity-field"
+            options:
+              format:
+                notation: compact
+                compactDisplay: short
+                numberStyle: currency
+                currency: USD
+              label: Amount
+              value: =@ctx.data.form-data.Amount
+        - - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Owner
+              value: =@ctx.data.form-data.OwnerName
+          - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Stage
+              value: =@ctx.data.form-data.StageName
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            isMultiline: true
+            label: Description
+            value: =@ctx.data.form-data.Description
+name: Opportunity Info
+type: "@jigx/jig/default"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: optedit
+          icon: smiley-happy
+          title: Edit Opportunity
+          parameters:
+            OpportunityId: =@ctx.jig.inputs.OpportunityId
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: viewaccountall
+          icon: smiley-happy
+          title: View Account
+          parameters:
+            acctid: =@ctx.data.form-data.AccountId
+referenceId: viewopportunity

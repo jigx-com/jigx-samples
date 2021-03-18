@@ -1,0 +1,94 @@
+datasources:
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - User
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: >
+        SELECT A.Id as id,
+
+        json_extract(A.Data, '$.CreatedById') as CreatedById,
+
+        json_extract(U.Data, '$.FirstName') || ' ' || json_extract(U.Data, '$.LastName') as CreatedByName,
+
+        date(substr(json_extract(A.Data, '$.CreatedDate'), 1,10)) as CreatedDate,
+
+        json_extract(A.Data, '$.Description') as Description,
+
+        json_extract(A.Data, '$.Industry') as Industry,
+
+        json_extract(A.Data, '$.Name') as Name,
+
+        json_extract(A.Data, '$.NumberOfEmployees') as NumberOfEmployees,
+
+        json_extract(A.Data, '$.Phone') as Phone,
+
+        json_extract(A.Data, '$.TickerSymbol') as TickerSymbol,
+
+        json_extract(A.Data, '$.Type') as Type 
+
+        FROM Account A
+
+        LEFT JOIN User U on
+
+        json_extract(A.Data, '$.CreatedById') = U.Id
+
+        where A.Id = @acctid
+      parameters:
+        acctid: =@ctx.jig.inputs.acctid
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Account Name
+            value: =@ctx.data.form-data.Name
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Added By
+            value: =@ctx.data.form-data.CreatedByName
+        - - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Added On
+              value: =@ctx.data.form-data.CreatedDate
+          - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Industry
+              value: =@ctx.data.form-data.Industry
+        - - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Phone
+              value: =@ctx.data.form-data.Phone
+          - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Employees
+              value: =@ctx.data.form-data.NumberOfEmployees
+        - - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Ticker Symbol
+              value: =@ctx.data.form-data.TickerSymbol
+          - componentId: "@jigx/jc-entity-field"
+            options:
+              label: Type
+              value: =@ctx.data.form-data.Type
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            isMultiline: true
+            label: Description
+            value: =@ctx.data.form-data.Description
+name: Account Info
+type: "@jigx/jig/default"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: editaccount
+          icon: smiley-happy
+          title: Edit Account
+          parameters:
+            acctid: =@ctx.jig.inputs.acctid
+referenceId: viewaccount

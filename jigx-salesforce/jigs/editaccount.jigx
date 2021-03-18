@@ -1,0 +1,237 @@
+datasources:
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - Account
+        - User
+      provider: DATA_PROVIDER_SALESFORCE
+      query: >
+        SELECT A.Id as id,
+
+        json_extract(A.Data, '$.CreatedById') as CreatedById,
+
+        json_extract(U.Data, '$.FirstName') || ' ' || json_extract(U.Data, '$.LastName') as CreatedByName,
+
+        date(substr(json_extract(A.Data, '$.CreatedDate'), 1,10)) as CreatedDate,
+
+        json_extract(A.Data, '$.Description') as Description,
+
+        json_extract(A.Data, '$.Industry') as Industry,
+
+        json_extract(A.Data, '$.Name') as Name,
+
+        json_extract(A.Data, '$.NumberOfEmployees') as NumberOfEmployees,
+
+        json_extract(A.Data, '$.Phone') as Phone,
+
+        json_extract(A.Data, '$.TickerSymbol') as TickerSymbol,
+
+        json_extract(A.Data, '$.Type') as Type 
+
+        FROM Account A
+
+        LEFT JOIN User U on
+
+        json_extract(A.Data, '$.CreatedById') = U.Id
+
+        where A.Id = @acctid
+      parameters:
+        acctid: =@ctx.jig.inputs.acctid
+  acctType:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - title: Prospect
+          value: Prospect
+        - title: Customer - Direct
+          value: Customer - Direct
+        - title: Customer - Channel
+          value: Customer - Channel
+        - title: Channel Partner / Reseller
+          value: Channel Partner / Reseller
+        - title: Installation Partner
+          value: Installation Partner
+        - title: Technology Partner
+          value: Technology Partner
+        - title: Other
+          value: Other
+  industry:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - title: Agriculture
+          value: Agriculture
+        - title: Apparel
+          value: Apparel
+        - title: Banking
+          value: Banking
+        - title: Biotechnology
+          value: Biotechnology
+        - title: Chemicals
+          value: Chemicals
+        - title: Communications
+          value: Communications
+        - title: Construction
+          value: Construction
+        - title: Consulting
+          value: Consulting
+        - title: Education
+          value: Education
+        - title: Electronics
+          value: Electronics
+        - title: Energy
+          value: Energy
+        - title: Engineering
+          value: Engineering
+        - title: Entertainment
+          value: Entertainment
+        - title: Environmental
+          value: Environmental
+        - title: Finance
+          value: Finance
+        - title: Food & Beverage
+          value: Food & Beverage
+        - title: Government
+          value: Government
+        - title: Healthcare
+          value: Healthcare
+        - title: Hospitality
+          value: Hospitality
+        - title: Insurance
+          value: Insurance
+        - title: Machinery
+          value: Machinery
+        - title: Manufacturing
+          value: Manufacturing
+        - title: Media
+          value: Media
+        - title: Not For Profit
+          value: Not For Profit
+        - title: Recreation
+          value: Recreation
+        - title: Retail
+          value: Retail
+        - title: Shipping
+          value: Shipping
+        - title: Technology
+          value: Technology
+        - title: Telecommunications
+          value: Telecommunications
+        - title: Transportation
+          value: Transportation
+        - title: Utilities
+          value: Utilities
+        - title: Other
+          value: Other
+provider: DATA_PROVIDER_SALESFORCE
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: true
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: id
+      label: id
+      initialValue: =@ctx.jig.inputs.acctid
+      value: =@ctx.jig.inputs.acctid
+      isHidden: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: true
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: CreatedByName
+      style:
+        isDisabled: true
+      label: Created By
+      value: =@ctx.data.form-data.CreatedByName
+  - - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        isAutoCorrected: true
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: CreatedDate
+        style:
+          isDisabled: true
+        label: Added On
+        value: =@ctx.data.form-data.CreatedDate
+    - componentId: "@jigx/jc-dropdown"
+      options:
+        mapping:
+          title: title
+          value: value
+        data: =@ctx.data.industry
+        property: Industry
+        label: Industry
+        isSearchable: true
+        type: single
+        initialValue: =@ctx.data.form-data.Industry
+        value: =@ctx.data.form-data.Industry
+  - - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        isAutoCorrected: false
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: Phone
+        label: Phone
+        initialValue: =@ctx.data.form-data.Phone
+        value: =@ctx.data.form-data.Phone
+    - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        isAutoCorrected: true
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: NumberOfEmployees
+        label: Number Of Employees
+        initialValue: =@ctx.data.form-data.NumberOfEmployees
+        value: =@ctx.data.form-data.NumberOfEmployees
+  - - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        isAutoCorrected: true
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: TickerSymbol
+        label: Ticker Symbol
+        initialValue: =@ctx.data.form-data.TickerSymbol
+        value: =@ctx.data.form-data.TickerSymbol
+    - componentId: "@jigx/jc-dropdown"
+      options:
+        mapping:
+          title: title
+          value: value
+        data: =@ctx.data.acctType
+        property: Type
+        label: Account Type
+        isSearchable: false
+        type: single
+        initialValue: =@ctx.data.form-data.Industry
+        value: =@ctx.data.form-data.Industry
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: true
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: Description
+      label: Description
+      initialValue: =@ctx.data.form-data.Description
+      value: =@ctx.data.form-data.Description
+name: Edit Account
+type: "@jigx/jig/form"
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: save_form
+        options:
+          formId: editaccount
+          title: Save
+referenceId: editaccount
+entity: Account

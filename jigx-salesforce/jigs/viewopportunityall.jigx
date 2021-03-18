@@ -1,0 +1,30 @@
+children:
+  - componentId: viewopportunity
+    inputs:
+      OpportunityId: =@ctx.jig.inputs.OpportunityId
+  - componentId: optstagehistory
+    inputs:
+      OpportunityId: =@ctx.jig.inputs.OpportunityId
+  - componentId: supportcases
+    inputs:
+      actId: =@ctx.jig.inputs.actId
+name: Opportunity Detail
+icon: graph-stats-square
+type: "@jigx/jig/composite"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: viewaccountall
+          icon: smiley-happy
+          title: View Account
+          parameters:
+            acctid: =@ctx.jig.inputs.actId
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: editopportunity
+          icon: smiley-happy
+          title: Edit Opportunity
+          parameters:
+            item: =@ctx.jig.inputs.OpportunityId
+referenceId: viewopportunityall

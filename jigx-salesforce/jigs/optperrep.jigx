@@ -1,0 +1,45 @@
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    rightElement:
+      format:
+        notation: compact
+        compactDisplay: short
+        numberStyle: currency
+        currency: USD
+      text: =@ctx.parents.list-data.item.Amount
+      type: value
+    subtitle: =@ctx.parents.list-data.item.ActName
+    leftElement:
+      text: =@ctx.parents.list-data.item.leftAvatar
+      type: avatar
+    title: =@ctx.parents.list-data.item.OptName
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Opportunity
+        - User
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as id, '#1078c2' as cardColor, json_extract(O.Data, '$.Name')
+        as OptName, substr(json_extract(O.Data, '$.Name'), 1, 15) as
+        OptNameShort, substr(json_extract(O.Data, '$.Name'), 1, 1) as
+        leftAvatar, json_extract(O.Data, '$.Amount') as Amount,
+        json_extract(A.Data, '$.Name') as ActName , substr(json_extract(U.Data,
+        '$.Name'),1,1) || '. ' || json_extract(U.Data, '$.LastName') as RepName
+        from Opportunity O Left Join Account A on A.id = Json_extract(O.Data,
+        '$.AccountId') LEFT JOIN User U on U.id = json_extract(O.Data,
+        '$.OwnerId') where ((cast(strftime('%m', date('2020-05-07')) as integer)
+        + 2) / 3) = ((cast(strftime('%m', json_extract(O.Data, '$.CloseDate'))
+        as integer) + 2) / 3) AND 1*strftime('%Y', date('2020-05-07')) =
+        1*strftime('%Y', json_extract(O.Data, '$.CloseDate')) AND
+        json_extract(O.Data, '$.OwnerId') = @OwnerId Order By Amount DESC
+      parameters:
+        OwnerId: =@ctx.inputs.repId
+data: =@ctx.data.listdata
+name: "Opt For "
+icon: beer-mug
+type: "@jigx/jig/list"
+referenceId: optperrep

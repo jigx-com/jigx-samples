@@ -1,0 +1,116 @@
+item:
+  componentId: "@jigx/jc-bar-chart"
+  options:
+    plotOptions:
+      series:
+        pointWidth: 20
+        pointInterval: 0.5
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: optperrep
+        title: See Rep Opportunities
+        parameters:
+          repId: =@ctx.parents.list-data.item.OwnerId
+    yAxis:
+      max: 1.55
+      isHidden: true
+    xAxis:
+      isHidden: true
+    legend:
+      isHidden: true
+    series:
+      - dataLabels:
+          - isEnabled: false
+        data: '=[{"y": @ctx.parents.list-data.item.y, "color":
+          @ctx.parents.list-data.item.color }, {"y": 1, "color": "color5" }]'
+        color: color2
+    chart:
+      subtitle:
+        verticalAlign: bottom
+        text: =@ctx.parents.list-data.item.RepName
+        align: center
+      width: 80
+      isAnimated: true
+      height: 100
+datasources:
+  listdata:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - Territory2
+        - Opportunity
+        - ForecastingQuota
+        - Period
+        - UserTerritory2Association
+        - User
+        - Case
+      provider: DATA_PROVIDER_SALESFORCE
+      query: |
+        with cteOpt as (select json_extract(O.Data, '$.OwnerId') as OwnerId,
+        substr(json_extract(U.Data, '$.Name'),1,1) || '. ' ||
+        json_extract(U.Data, '$.LastName') as RepName, json_extract(U.Data,
+        '$.LastName') as RepLastName, total(json_extract(O.Data,
+        '$.Amount')) as Amount, json_extract(O.Data, '$.Territory2Id') as
+        Territory2Id from Opportunity O LEFT JOIN User U on U.id =
+        json_extract(O.Data, '$.OwnerId') where json_extract(O.Data,
+        '$.IsClosed') = true AND json_extract(O.Data, '$.IsWon') = true AND
+        ((cast(strftime('%m', date('2020-05-07')) as integer) + 2) / 3) =
+        ((cast(strftime('%m', json_extract(O.Data, '$.CloseDate')) as
+        integer) + 2) / 3) AND 1*strftime('%Y', date('2020-05-07')) =
+        1*strftime('%Y', json_extract(O.Data, '$.CloseDate')) GROUP BY
+        json_extract(O.Data, '$.OwnerId'),  json_extract(O.Data,
+        '$.Territory2Id')), cteFQ as (select json_extract(FQ.Data,
+        '$.QuotaOwnerId') as UserId, json_extract(FQ.Data, '$.QuotaAmount')
+        as forecastAmount from ForecastingQuota FQ LEFT JOIN Period P on
+        json_extract(FQ.Data, '$.PeriodId') = P.Id WHERE
+        json_extract(P.Data, '$.Type') = 'Quarter' AND ((cast(strftime('%m',
+        date('2020-05-07')) as integer) + 2) / 3) = ((cast(strftime('%m',
+        json_extract(P.Data, '$.StartDate')) as integer) + 2) / 3) AND
+        strftime('%Y', date('2020-05-07')) = strftime('%Y',
+        json_extract(P.Data, '$.StartDate')) AND json_extract(FQ.Data,
+        '$.Territory2Id') IS NULL AND json_extract(FQ.Data, '$.QuotaAmount')
+        > 0), cteFinal as (select DISTINCT cteOpt.OwnerId, cteFQ.UserId,
+        cteOpt.RepName, cteOpt.RepLastName, cteOpt.Territory2Id,
+        IFNULL(cteOpt.Amount, 0) as closedAmount, CASE WHEN
+        cteFQ.forecastAmount IS NULL THEN cteOpt.Amount ELSE
+        cteFQ.forecastAmount END as forecastAmount from cteOpt LEFT JOIN
+        cteFQ on cteFQ.UserId = cteOpt.OwnerId) select cteFinal.OwnerId as
+        UserId, cteFinal.RepName as RepName, total(cteFinal.ClosedAmount) as
+        ClosedAmount, cteFinal.ForecastAmount as ForecastAmount, CASE WHEN
+        cteFinal.forecastAmount IS NULL THEN
+        printf('$%,dK',(cteFinal.ClosedAmount/1000)) ELSE
+        printf('$%,dK',(cteFinal.forecastAmount/1000)) END as
+        forecastAmountText,
+        IFNULL(total(cteFinal.ClosedAmount)/cteFinal.ForecastAmount,0) as y,
+        CASE WHEN
+        IFNULL(total(cteFinal.ClosedAmount)/cteFinal.ForecastAmount,0) < .3
+        THEN 'color1' WHEN
+        IFNULL(total(cteFinal.ClosedAmount)/cteFinal.ForecastAmount,0) < .9
+        THEN 'color4' ELSE 'color1' END as color from cteFinal where (('00'
+        = @TerritoryId) OR cteFinal.Territory2Id  = @TerritoryId) group by
+        RepName order by RepLastName
+      parameters:
+        TerritoryId: =@ctx.jig.inputs.regionId
+  series2:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - color: color4
+          y: 1,
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - color: color5
+          y: 0.5,
+        - color: color4
+          y: 1,
+data: =@ctx.data.listdata
+name: Sales Rep Performance
+icon: beer-mug
+isHorizontalScrollIndicatorHidden: true
+title: Sales Rep Performance
+type: "@jigx/jig/list"
+referenceId: repoptbarchart
+isHorizontal: true

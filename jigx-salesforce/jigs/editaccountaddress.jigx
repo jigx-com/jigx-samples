@@ -1,0 +1,660 @@
+datasources:
+  countrydata:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - title: Afghanistan
+          value: AF
+        - title: Albania
+          value: AL
+        - title: Algeria
+          value: DZ
+        - title: American Samoa
+          value: AS
+        - title: Andorra
+          value: AD
+        - title: Angola
+          value: AO
+        - title: Anguilla
+          value: AI
+        - title: Antarctica
+          value: AQ
+        - title: Antigua And Barbuda
+          value: AG
+        - title: Argentina
+          value: AR
+        - title: Armenia
+          value: AM
+        - title: Aruba
+          value: AW
+        - title: Australia
+          value: AU
+        - title: Austria
+          value: AT
+        - title: Azerbaijan
+          value: AZ
+        - title: Bahamas
+          value: BS
+        - title: Bahrain
+          value: BH
+        - title: Bangladesh
+          value: BD
+        - title: Barbados
+          value: BB
+        - title: Belarus
+          value: BY
+        - title: Belgium
+          value: BE
+        - title: Belize
+          value: BZ
+        - title: Benin
+          value: BJ
+        - title: Bermuda
+          value: BM
+        - title: Bhutan
+          value: BT
+        - title: Bolivia
+          value: BO
+        - title: Bosnia And Herzegovina
+          value: BA
+        - title: Botswana
+          value: BW
+        - title: Bouvet Island
+          value: BV
+        - title: Brazil
+          value: BR
+        - title: British Indian Ocean Territory
+          value: IO
+        - title: Brunei Darussalam
+          value: BN
+        - title: Bulgaria
+          value: BG
+        - title: Burkina Faso
+          value: BF
+        - title: Burundi
+          value: BI
+        - title: Cambodia
+          value: KH
+        - title: Cameroon
+          value: CM
+        - title: Canada
+          value: CA
+        - title: Cape Verde
+          value: CV
+        - title: Cayman Islands
+          value: KY
+        - title: Central African Republic
+          value: CF
+        - title: Chad
+          value: TD
+        - title: Chile
+          value: CL
+        - title: China
+          value: CN
+        - title: Christmas Island
+          value: CX
+        - title: Cocos (keeling) Islands
+          value: CC
+        - title: Colombia
+          value: CO
+        - title: Comoros
+          value: KM
+        - title: Congo
+          value: CG
+        - title: Congo, The Democratic Republic Of The
+          value: CD
+        - title: Cook Islands
+          value: CK
+        - title: Costa Rica
+          value: CR
+        - title: Cote D'ivoire
+          value: CI
+        - title: Croatia
+          value: HR
+        - title: Cuba
+          value: CU
+        - title: Cyprus
+          value: CY
+        - title: Czech Republic
+          value: CZ
+        - title: Denmark
+          value: DK
+        - title: Djibouti
+          value: DJ
+        - title: Dominica
+          value: DM
+        - title: Dominican Republic
+          value: DO
+        - title: East Timor
+          value: TP
+        - title: Ecuador
+          value: EC
+        - title: Egypt
+          value: EG
+        - title: El Salvador
+          value: SV
+        - title: Equatorial Guinea
+          value: GQ
+        - title: Eritrea
+          value: ER
+        - title: Estonia
+          value: EE
+        - title: Ethiopia
+          value: ET
+        - title: Falkland Islands (malvinas)
+          value: FK
+        - title: Faroe Islands
+          value: FO
+        - title: Fiji
+          value: FJ
+        - title: Finland
+          value: FI
+        - title: France
+          value: FR
+        - title: French Guiana
+          value: GF
+        - title: French Polynesia
+          value: PF
+        - title: French Southern Territories
+          value: TF
+        - title: Gabon
+          value: GA
+        - title: Gambia
+          value: GM
+        - title: Georgia
+          value: GE
+        - title: Germany
+          value: DE
+        - title: Ghana
+          value: GH
+        - title: Gibraltar
+          value: GI
+        - title: Greece
+          value: GR
+        - title: Greenland
+          value: GL
+        - title: Grenada
+          value: GD
+        - title: Guadeloupe
+          value: GP
+        - title: Guam
+          value: GU
+        - title: Guatemala
+          value: GT
+        - title: Guinea
+          value: GN
+        - title: Guinea-bissau
+          value: GW
+        - title: Guyana
+          value: GY
+        - title: Haiti
+          value: HT
+        - title: Heard Island And Mcdonald Islands
+          value: HM
+        - title: Holy See (vatican City State)
+          value: VA
+        - title: Honduras
+          value: HN
+        - title: Hong Kong
+          value: HK
+        - title: Hungary
+          value: HU
+        - title: Iceland
+          value: IS
+        - title: India
+          value: IN
+        - title: Indonesia
+          value: ID
+        - title: Iran, Islamic Republic Of
+          value: IR
+        - title: Iraq
+          value: IQ
+        - title: Ireland
+          value: IE
+        - title: Israel
+          value: IL
+        - title: Italy
+          value: IT
+        - title: Jamaica
+          value: JM
+        - title: Japan
+          value: JP
+        - title: Jordan
+          value: JO
+        - title: Kazakstan
+          value: KZ
+        - title: Kenya
+          value: KE
+        - title: Kiribati
+          value: KI
+        - title: Korea, Democratic People's Republic Of
+          value: KP
+        - title: Korea, Republic Of
+          value: KR
+        - title: Kosovo
+          value: KV
+        - title: Kuwait
+          value: KW
+        - title: Kyrgyzstan
+          value: KG
+        - title: Lao People's Democratic Republic
+          value: LA
+        - title: Latvia
+          value: LV
+        - title: Lebanon
+          value: LB
+        - title: Lesotho
+          value: LS
+        - title: Liberia
+          value: LR
+        - title: Libyan Arab Jamahiriya
+          value: LY
+        - title: Liechtenstein
+          value: LI
+        - title: Lithuania
+          value: LT
+        - title: Luxembourg
+          value: LU
+        - title: Macau
+          value: MO
+        - title: Macedonia, The Former Yugoslav Republic Of
+          value: MK
+        - title: Madagascar
+          value: MG
+        - title: Malawi
+          value: MW
+        - title: Malaysia
+          value: MY
+        - title: Maldives
+          value: MV
+        - title: Mali
+          value: ML
+        - title: Malta
+          value: MT
+        - title: Marshall Islands
+          value: MH
+        - title: Martinique
+          value: MQ
+        - title: Mauritania
+          value: MR
+        - title: Mauritius
+          value: MU
+        - title: Mayotte
+          value: YT
+        - title: Mexico
+          value: MX
+        - title: Micronesia, Federated States Of
+          value: FM
+        - title: Moldova, Republic Of
+          value: MD
+        - title: Monaco
+          value: MC
+        - title: Mongolia
+          value: MN
+        - title: Montserrat
+          value: MS
+        - title: Montenegro
+          value: ME
+        - title: Morocco
+          value: MA
+        - title: Mozambique
+          value: MZ
+        - title: Myanmar
+          value: MM
+        - title: Namibia
+          value: NA
+        - title: Nauru
+          value: NR
+        - title: Nepal
+          value: NP
+        - title: Netherlands
+          value: NL
+        - title: Netherlands Antilles
+          value: AN
+        - title: New Caledonia
+          value: NC
+        - title: New Zealand
+          value: NZ
+        - title: Nicaragua
+          value: NI
+        - title: Niger
+          value: NE
+        - title: Nigeria
+          value: NG
+        - title: Niue
+          value: NU
+        - title: Norfolk Island
+          value: NF
+        - title: Northern Mariana Islands
+          value: MP
+        - title: Norway
+          value: NO
+        - title: Oman
+          value: OM
+        - title: Pakistan
+          value: PK
+        - title: Palau
+          value: PW
+        - title: Palestinian Territory, Occupied
+          value: PS
+        - title: Panama
+          value: PA
+        - title: Papua New Guinea
+          value: PG
+        - title: Paraguay
+          value: PY
+        - title: Peru
+          value: PE
+        - title: Philippines
+          value: PH
+        - title: Pitcairn
+          value: PN
+        - title: Poland
+          value: PL
+        - title: Portugal
+          value: PT
+        - title: Puerto Rico
+          value: PR
+        - title: Qatar
+          value: QA
+        - title: Reunion
+          value: RE
+        - title: Romania
+          value: RO
+        - title: Russian Federation
+          value: RU
+        - title: Rwanda
+          value: RW
+        - title: Saint Helena
+          value: SH
+        - title: Saint Kitts And Nevis
+          value: KN
+        - title: Saint Lucia
+          value: LC
+        - title: Saint Pierre And Miquelon
+          value: PM
+        - title: Saint Vincent And The Grenadines
+          value: VC
+        - title: Samoa
+          value: WS
+        - title: San Marino
+          value: SM
+        - title: Sao Tome And Principe
+          value: ST
+        - title: Saudi Arabia
+          value: SA
+        - title: Senegal
+          value: SN
+        - title: Serbia
+          value: RS
+        - title: Seychelles
+          value: SC
+        - title: Sierra Leone
+          value: SL
+        - title: Singapore
+          value: SG
+        - title: Slovakia
+          value: SK
+        - title: Slovenia
+          value: SI
+        - title: Solomon Islands
+          value: SB
+        - title: Somalia
+          value: SO
+        - title: South Africa
+          value: ZA
+        - title: South Georgia And The South Sandwich Islands
+          value: GS
+        - title: Spain
+          value: ES
+        - title: Sri Lanka
+          value: LK
+        - title: Sudan
+          value: SD
+        - title: Suriname
+          value: SR
+        - title: Svalbard And Jan Mayen
+          value: SJ
+        - title: Swaziland
+          value: SZ
+        - title: Sweden
+          value: SE
+        - title: Switzerland
+          value: CH
+        - title: Syrian Arab Republic
+          value: SY
+        - title: Taiwan, Province Of China
+          value: TW
+        - title: Tajikistan
+          value: TJ
+        - title: Tanzania, United Republic Of
+          value: TZ
+        - title: Thailand
+          value: TH
+        - title: Togo
+          value: TG
+        - title: Tokelau
+          value: TK
+        - title: Tonga
+          value: TO
+        - title: Trinidad And Tobago
+          value: TT
+        - title: Tunisia
+          value: TN
+        - title: Turkey
+          value: TR
+        - title: Turkmenistan
+          value: TM
+        - title: Turks And Caicos Islands
+          value: TC
+        - title: Tuvalu
+          value: TV
+        - title: Uganda
+          value: UG
+        - title: Ukraine
+          value: UA
+        - title: United Arab Emirates
+          value: AE
+        - title: United Kingdom
+          value: GB
+        - title: United States
+          value: US
+        - title: United States Minor Outlying Islands
+          value: UM
+        - title: Uruguay
+          value: UY
+        - title: Uzbekistan
+          value: UZ
+        - title: Vanuatu
+          value: VU
+        - title: Venezuela
+          value: VE
+        - title: Viet Nam
+          value: VN
+        - title: Virgin Islands, British
+          value: VG
+        - title: Virgin Islands, U.s.
+          value: VI
+        - title: Wallis And Futuna
+          value: WF
+        - title: Western Sahara
+          value: EH
+        - title: Yemen
+          value: YE
+        - title: Zambia
+          value: ZM
+        - title: Zimbabwe
+          value: ZW
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: |
+        SELECT Id as id,
+        json_extract(Data, '$.BillingCity') as BillingCity,
+        json_extract(Data, '$.BillingCountry') as BillingCountry,
+        json_extract(Data, '$.BillingCountryCode') as BillingCountryCode,
+        json_extract(Data, '$.BillingPostalCode') as BillingPostalCode,
+        json_extract(Data, '$.BillingState') as BillingState,
+        json_extract(Data, '$.BillingStateCode') as BillingStateCode,
+        json_extract(Data, '$.BillingStreet') as BillingStreet,
+        json_extract(Data, '$.ShippingCity') as ShippingCity,
+        json_extract(Data, '$.ShippingCountry') as ShippingCountry,
+        json_extract(Data, '$.ShippingCountryCode') as ShippingCountryCode,
+        json_extract(Data, '$.ShippingPostalCode') as ShippingPostalCode,
+        json_extract(Data, '$.ShippingState') as ShippingState,
+        json_extract(Data, '$.ShippingStateCode') as ShippingStateCode,
+        json_extract(Data, '$.ShippingStreet') as ShippingStreet 
+        FROM Account
+        where Id = @acctid
+      parameters:
+        acctid: =@ctx.jig.inputs.acctid
+provider: DATA_PROVIDER_SALESFORCE
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: false
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: id
+      label: id
+      initialValue: =@ctx.jig.inputs.acctid
+      isHidden: true
+  - children:
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: BillingStreet
+          label: Billing Street
+          value: =@ctx.data.form-data.BillingStreet
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: BillingCity
+          label: Billing City
+          value: =@ctx.data.form-data.BillingCity
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: BillingStateCode
+          label: Billing State
+          value: =@ctx.data.form-data.BillingStateCode
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: BillingPostalCode
+          label: Billing Zip
+          value: =@ctx.data.form-data.BillingPostalCode
+      - componentId: "@jigx/jc-dropdown"
+        instanceId: ccode
+        options:
+          mapping:
+            title: title
+            value: value
+          data: =@ctx.data.countrydata
+          property: BillingCountryCode
+          label: Billing Country
+          isSearchable: true
+          type: single
+          value: =@ctx.data.form-data.BillingCountryCode
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: BillingCountry
+          style:
+            isDisabled: true
+          label: Billing Country
+          value: =@ctx.jig.state.ccode.selected.title
+          isHidden: false
+    title: Billing Address
+  - children:
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: ShippingStreet
+          label: Shipping Street
+          value: =@ctx.data.form-data.ShippingStreet
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: ShippingCity
+          label: Shipping City
+          value: =@ctx.data.form-data.ShippingCity
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: ShippingStateCode
+          label: Shipping State
+          value: =@ctx.data.form-data.ShippingStateCode
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: ShippingPostalCode
+          label: Shipping Zip
+          value: =@ctx.data.form-data.ShippingPostalCode
+      - componentId: "@jigx/jc-dropdown"
+        instanceId: shippingccode
+        options:
+          mapping:
+            title: title
+            value: value
+          data: =@ctx.data.countrydata
+          property: ShippingCountryCode
+          label: Shipping Country
+          isSearchable: true
+          type: single
+          value: =@ctx.data.form-data.ShippingCountryCode
+      - componentId: "@jigx/jc-text-field"
+        options:
+          isMultiline: false
+          isAutoCorrected: false
+          isSensitive: false
+          isReturnKeyEnabledAutomatically: false
+          property: ShippingCountry
+          style:
+            isDisabled: true
+          label: Shipping Country
+          value: =@ctx.jigs.state.shippingccode.selected.title
+    title: Shipping Address
+name: Edit Account Address
+type: "@jigx/jig/form"
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: save_form
+        options:
+          formId: edit-form
+          title: Save
+referenceId: editaccountaddress
+entity: Account

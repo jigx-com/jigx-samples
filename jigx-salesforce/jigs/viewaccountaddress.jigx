@@ -1,0 +1,76 @@
+datasources:
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: |
+        SELECT Id as id,
+        json_extract(Data, '$.BillingCity') as BillingCity,
+        json_extract(Data, '$.BillingCountry') as BillingCountry,
+        json_extract(Data, '$.BillingCountryCode') as BillingCountryCode,
+        json_extract(Data, '$.BillingPostalCode') as BillingPostalCode,
+        json_extract(Data, '$.BillingState') as BillingState,
+        json_extract(Data, '$.BillingStateCode') as BillingStateCode,
+        json_extract(Data, '$.BillingStreet') as BillingStreet,
+        json_extract(Data, '$.ShippingCity') as ShippingCity,
+        json_extract(Data, '$.ShippingCountry') as ShippingCountry,
+        json_extract(Data, '$.ShippingCountryCode') as ShippingCountryCode,
+        json_extract(Data, '$.ShippingPostalCode') as ShippingPostalCode,
+        json_extract(Data, '$.ShippingState') as ShippingState,
+        json_extract(Data, '$.ShippingStateCode') as ShippingStateCode,
+        json_extract(Data, '$.ShippingStreet') as ShippingStreet 
+        FROM Account
+        where Id = @acctid
+      parameters:
+        acctid: =@ctx.jig.inputs.acctid
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            isMultiline: true
+            label: Billing Address j
+            value: >
+              =@ctx.data.form-data.(($boolean(BillingStreet) = true ?
+
+              BillingStreet)  & '\n' &
+
+              ($boolean(BillingCity) = true ? (BillingCity & ', ')) & ($boolean(BillingStateCode) = true ? (BillingStateCode
+
+              & '\n')) & ($boolean(BillingPostalCode) = true ?
+
+              (BillingPostalCode & '\n')) & ($boolean(BillingCountry) =
+
+              true ? (BillingCountry)))
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            isMultiline: true
+            label: Shipping Address
+            value: >
+              =@ctx.data.form-data.(($boolean(ShippingStreet) = true ?
+
+              ShippingStreet)  & '\n' &
+
+              ($boolean(ShippingCity) = true ? (ShippingCity & ', ')) & ($boolean(ShippingStateCode) = true ? (ShippingStateCode
+
+              & '\n')) & ($boolean(ShippingPostalCode) = true ?
+
+              (ShippingPostalCode & '\n')) & ($boolean(ShippingCountry) =
+
+              true ? (ShippingCountry)))                 
+name: Account Address
+type: "@jigx/jig/default"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          linkTo: editaccountaddress
+          title: Edit Address Information
+          parameters:
+            acctid: =@ctx.jig.inputs.acctid
+    editaddress: null
+referenceId: viewaccountaddress

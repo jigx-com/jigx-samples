@@ -1,0 +1,135 @@
+datasources:
+  form-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      entities:
+        - Opportunity
+        - User
+        - Account
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select O.Id as id, json_extract(O.Data, '$.Name') as Name,
+        json_extract(O.Data, '$.AccountId') as AccountId, json_extract(O.Data,
+        '$.StageName') as StageName, json_extract(O.Data, '$.Amount') as Amount,
+        json_extract(A.Data, '$.Name') as AccountName, json_extract(O.Data,
+        '$.Description') as Description, json_extract(O.Data,
+        '$.MainCompetitors__c') as MainCompetitors, json_extract(O.Data,
+        '$.OwnerId') as OwnerId, json_extract(U.Data, '$.FirstName') || ' ' ||
+        json_extract(U.Data, '$.LastName') as OwnerName, json_extract(O.Data,
+        '$.CloseDate') as CloseDate from Opportunity O LEFT JOIN Account A on
+        json_extract(O.Data, '$.AccountId')  = A.Id LEFT JOIN User U on
+        json_extract(O.Data, '$.OwnerId') = U.Id Where O.id = @OpportunityId
+      parameters:
+        OpportunityId: =@ctx.jig.inputs.OpportunityId
+  sfstages:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      entities:
+        - OpportunityStage
+      provider: DATA_PROVIDER_SALESFORCE
+      query: select Id as id, json_extract(Data, '$.ApiName') as value,
+        json_extract(Data, '$.MasterLabel') as title from OpportunityStage where
+        json_extract(Data, '$.IsActive') = true order by json_extract(Data,
+        '$.SortOrder')
+provider: DATA_PROVIDER_SALESFORCE
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: true
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: Id
+      label: Id
+      initialValue: =@ctx.jig.inputs.OpportunityId
+      isHidden: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: false
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: Name
+      label: Opportunity Name
+      value: =@ctx.data.form-data.Name
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: false
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: ""
+      style:
+        isDisabled: true
+      label: Account Name
+      value: =@ctx.data.form-data.AccountName
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: false
+      isAutoCorrected: false
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: AccountId
+      style:
+        isDisabled: true
+      label: Account Id
+      value: =@ctx.data.form-data.AccountId
+      isHidden: false
+  - - componentId: "@jigx/jc-date-picker"
+      options:
+        property: CloseDate
+        label: Close Date
+        type: date
+        value: =@ctx.data.form-data.CloseDate
+    - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        keyboardType: decimal-pad
+        isAutoCorrected: false
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: Amount
+        label: Amount
+        value: =@ctx.data.form-data.Amount
+  - - componentId: "@jigx/jc-text-field"
+      options:
+        isMultiline: false
+        isAutoCorrected: false
+        isSensitive: false
+        isReturnKeyEnabledAutomatically: false
+        property: ""
+        style:
+          isDisabled: true
+        label: Opportunity Owner
+        value: =@ctx.data.form-data.OwnerName
+    - componentId: "@jigx/jc-dropdown"
+      options:
+        isRequired: true
+        data: =@ctx.data.sfstages
+        property: StageName
+        label: Stage
+        type: single
+        value: =@ctx.data.form-data.StageName
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isMultiline: true
+      keyboardType: decimal-pad
+      isAutoCorrected: true
+      isSensitive: false
+      isReturnKeyEnabledAutomatically: false
+      property: Description
+      label: Description
+      initialValue: =@ctx.data.form-data.Description
+      value: =@ctx.data.form-data.Description
+name: Edit Opportunity
+type: "@jigx/jig/form"
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: save_form
+        options:
+          formId: optedit
+          icon: floppy-disk
+          title: Save
+referenceId: optedit
+entity: Opportunity
