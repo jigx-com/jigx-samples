@@ -1,0 +1,37 @@
+name: Carousel - dynamic data 
+referenceId: jw-carousel-dynamic
+
+datasources:
+  photo:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/photo
+      query: |
+        SELECT
+          id,
+          '$.photo',
+          '$.photo-name'
+        FROM [jigxDocs/photo]
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  4x2:
+    componentId: "@jigx/jw-carousel"
+    options:
+      data: =@ctx.data.photo
+      item:
+        componentId: "@jigx/jc-image"
+        options:
+          title: =@ctx.parents.list-data.item.photo-name
+          source:
+            uri: =@ctx.parents.list-data.item.photo         

@@ -1,0 +1,25 @@
+name: New users - Static Data
+referenceId: jw-value
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Status: Full view'
+            value: Not implemented yet
+
+views:
+  2x2:
+    componentId: '@jigx/jw-value'
+    options:
+      value: '6'
+      bottom: 
+        componentId: '@jigx/jc-trend'
+        options:
+          title: 'New users this week'
+          value: +3
+          style:
+            isValueBottom: true
+            isAlignRight: true

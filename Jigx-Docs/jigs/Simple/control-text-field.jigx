@@ -1,0 +1,21 @@
+name: Text field
+referenceId: control-text-field
+icon: cog
+type: '@jigx/jig/form'
+
+entity: ''
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      label: 'Name'
+      property: customer_name
+  - componentId: '@jigx/jc-text-field'
+    options:
+      label: 'Address'
+      property: address
+  - componentId: '@jigx/jc-text-field'
+    options:
+      label: 'Phone number'
+      property: phone_number
+

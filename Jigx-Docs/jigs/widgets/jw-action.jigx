@@ -1,0 +1,37 @@
+name: Action 
+type: '@jigx/jig/composite'
+referenceId: jw-action
+
+
+children:
+  - componentId: jw-action
+    options:
+      title: Hello
+      subtitle: User
+      primary:
+        title: Primary
+        onPress: first-action
+      secondary:
+        title: Secondary
+        onPress: second-action
+        
+views:
+  2x2:
+    componentId: '@jigx/jw-actions'
+    options:
+      title: Hello
+      subtitle: User
+      primary:
+        title: Avatar info
+        onPress: 
+          componentId: '@jigx/ja-go-to'
+          options:
+            title: Avatar
+            linkTo: avatar-description
+      secondary:
+        title: Color palete
+        onPress: 
+          componentId: '@jigx/ja-go-to'
+          options:
+            title: Color Palete
+            linkTo: color-palete

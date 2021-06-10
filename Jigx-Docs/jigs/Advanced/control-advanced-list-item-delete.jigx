@@ -1,0 +1,64 @@
+name: List item delete
+referenceId: control-advanced-list-item-delete
+type: '@jigx/jig/list'
+icon: list-add
+
+# Try to create your own shopping list 
+# Try to edit item by swipe to right
+# Try to delete item by swipe to left
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Add item to shopping list
+        linkTo: add-item
+
+datasources:
+  list:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/shopping-list
+      query: |
+        SELECT
+          id,
+          '$.product-name'
+        FROM [jigxDocs/shopping-list]  
+        
+data: =@ctx.data.list        
+        
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.product-name    
+    swipeable:
+    # This line code avilable to you to delete item from shopping list
+      left:
+        - label: Delete
+          color: error
+          onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete item
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: jigxDocs/shopping-list
+              entityId: =@ctx.parents.list-data.item.id
+              confirmModal:
+                title: Do you really want to delete this item?
+                description: =@ctx.parents.list-data.item.product-name
+                confirmText: REMOVE      
+      right:
+        - label: Update
+          color: primary
+          onPress:  
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: Update item
+              linkTo: update-item
+              parameters:
+                itemId: =@ctx.parents.list-data.item.id
+            
+            

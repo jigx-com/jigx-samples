@@ -1,0 +1,35 @@
+name: List Horizontal
+referenceId: control-list-item-horizontal
+type: '@jigx/jig/list'
+icon: list
+
+datasources:
+  items:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/shopping-cart
+      query: |
+        SELECT
+          id,
+          '$.product-name',
+          '$.product-category',
+          '$.product-picture',
+          '$.product-price'
+        FROM [jigxDocs/shopping-cart]   
+
+data: =@ctx.data.items
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: false
+
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    # divider: solid
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =(@ctx.parents.list-data.item.product-price & ' €')
+    leftElement: 
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.product-picture

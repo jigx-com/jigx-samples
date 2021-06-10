@@ -1,0 +1,32 @@
+name: Add fruit
+type: '@jigx/jig/form'
+referenceId: add-fruit
+
+entity: jigxDocs/dropdown
+provider: DATA_PROVIDER_DYNAMIC
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-fruit
+      options:
+        title: Fruits
+        onSuccess:
+          actions:
+            - componentId: '@jigx/ja-go-to'
+              options:
+                title: Dropdown
+                linkTo: control-dropdown
+                
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      isHidden: true
+      isRequired: true
+      
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: fruit-name
+      label:  Add fruit      

@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+connection: jigx1.database.windows.net
+query: 'select product_id, product_name, product_description, product_category, product_photo, product_price, product_amount from products'

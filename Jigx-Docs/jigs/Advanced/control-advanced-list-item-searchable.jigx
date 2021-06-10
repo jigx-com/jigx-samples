@@ -1,0 +1,38 @@
+name: List Searchable
+referenceId: control-advanced-list-item-searchable
+type: '@jigx/jig/list'
+icon: list
+
+datasources:
+  items:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/shopping-cart
+      queryParameters:
+        "search": =@ctx.jig.state.items.searchText
+      query: |
+        SELECT
+        json_extract(data, '$.id') as id,
+        json_extract(data, '$.product-name') as name,
+        json_extract(data, '$.product-category') as category,
+        json_extract(data, '$.product-picture') as picture,
+        json_extract(data, '$.product-price') as price
+        FROM [jigxDocs/shopping-cart]
+        WHERE name LIKE '%'||@search||'%' OR @search IS NULL
+        ORDER BY name DESC
+
+isSearchable: true
+data: =@ctx.data.items
+
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    # divider: solid
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =(@ctx.parents.list-data.item.price & ' €')
+    leftElement: 
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.picture

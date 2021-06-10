@@ -1,0 +1,19 @@
+name: Videoplayer
+referenceId: control-video-player
+icon: button-play
+type: '@jigx/jig/default'
+
+datasources:
+  video:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - uri: "https://www.youtube.com/watch?v=XEEasR7hVh"
+          title: Slipknot
+
+children:
+  - componentId: '@jigx/jc-video-player'
+    options:
+      # Change video link for some of your favourite video
+      url: "https://www.youtube.com/watch?v=XEEasR7hVhA"
+

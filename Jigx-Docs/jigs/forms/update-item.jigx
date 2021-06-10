@@ -1,0 +1,47 @@
+name: Update item
+referenceId: update-item
+type: '@jigx/jig/form'
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: jigxDocs/shopping-list
+solutionId: Jigx-Docs
+method: update
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: update-item
+      options:
+        title: Update item
+
+datasources:
+  item:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/shopping-list
+      queryParameters:
+        itemId: =@ctx.jig.inputs.itemId
+      query: |
+        SELECT
+          id,
+          '$.product-name'
+        FROM [jigxDocs/shopping-list]  
+        WHERE id = @itemId
+        
+initialValues: =@ctx.data.item 
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      value: =@ctx.data.item.id
+      isHidden: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: product-name
+      label: Item name
+      value: =@ctx.data.item.product-name
+      

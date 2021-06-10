@@ -1,0 +1,85 @@
+name: Advanced Bar Chart
+referenceId: control-advanced-bar-chart
+type: '@jigx/jig/default'
+icon: chart
+
+# Create your own graph and try to add new line
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        # Try to change x and y values ! max color value is: color14 !
+        - x: Q1/20
+          y: 25000
+          color: color2
+        - x: Q2/20
+          y: 32000
+          color: color2
+        - x: Q3/20
+          y: 45000
+          color: color2
+        - x: Q4/20
+          y: 86000
+          color: color2
+          
+  series2:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        # Try to change x and y values ! max color value is: color14 !
+        - x: Q1/20
+          y: 12000
+          color: color3
+        - x: Q2/20
+          y: 48000
+          color: color3
+        - x: Q3/20
+          y: 36000
+          color: color3
+        - x: Q4/20
+          y: 120000
+          color: color3
+
+children:
+  - componentId: '@jigx/jc-bar-chart'
+    options:
+      chart:
+        # try to change height
+        height: 200
+        isAnimated: true
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 8
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+      xAxis:
+        # Try to change categories
+        categories:
+          - Q1
+          - Q2
+          - Q3
+          - Q4
+          # try to turn on/ff data labels on graphs 
+      series:
+        - data: =@ctx.data.series1
+          name: year 2019
+          animation:
+              type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: false
+        - data: =@ctx.data.series2
+          name: year 2020
+          animation:
+              type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false

@@ -1,0 +1,71 @@
+name: User revenue - Dynamic data
+referenceId: jw-chart-combine-dynamic
+
+datasources:
+  user:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/user
+      query: |
+        SELECT
+          id,
+          '$.firstname',
+          '$.lastname',
+          '$.user-photo'
+        FROM [jigxDocs/user]
+
+  graph:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/graph
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, id) as id,
+        json_extract(data, '$.x-value') as x,
+        json_extract(data, '$.y-vaule') as y
+        FROM [jigxDocs/graph])
+        SELECT
+        x as x,
+        y as y,
+        'color12' as color
+        FROM cte        
+        ORDER BY x
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+            
+views:
+  4x2:
+    componentId: '@jigx/jw-group'
+    options:
+      children:
+        - componentId: '@jigx/jw-chart'
+          options:
+            chart: 
+              componentId: '@jigx/jc-bar-chart'
+              options:
+                series:
+                  - data: =@ctx.data.graph
+        - componentId: '@jigx/jw-list'
+          options:
+            data: =@ctx.data.user
+            item:
+              componentId: '@jigx/jc-list-item'
+              options:
+                title: =@ctx.parents.list-data.item.firstname 
+                subtitle: =@ctx.parents.list-data.item.lastname
+                leftElement: 
+                  type: avatar
+                  text: ''
+                  uri: =@ctx.parents.list-data.item.user-photo  

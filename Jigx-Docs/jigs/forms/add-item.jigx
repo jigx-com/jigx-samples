@@ -1,0 +1,31 @@
+name: Add item
+referenceId: add-item
+type: '@jigx/jig/form'
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: 'jigxDocs/shopping-list'
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-item
+      options:
+        title: Add Item to shopping list
+        onSuccess:
+          actions:
+            - componentId: '@jigx/ja-go-to'
+              options:
+                title: Shopping list
+                linkTo: control-advanced-list-item-delete
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      isHidden: true
+      isRequired: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: product-name
+      label: Item name

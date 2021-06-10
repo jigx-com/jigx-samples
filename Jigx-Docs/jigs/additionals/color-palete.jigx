@@ -1,0 +1,64 @@
+name: Color Reference
+referenceId: color-palete
+type: '@jigx/jig/default'
+
+datasources:
+  colors:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - y: 2
+          color: color
+        - y: 2
+          color: color2
+        - y: 2
+          color: color3
+        - y: 2
+          color: color4
+        - y: 2
+          color: color5
+        - y: 2
+          color: color6
+        - y: 2
+          color: color7
+        - y: 2
+          color: color8
+        - y: 2
+          color: color9
+        - y: 2
+          color: color10
+        - y: 2
+          color: color11
+        - y: 2
+          color: color12
+        - y: 2
+          color: color13
+        - y: 2
+          color: color14
+     
+
+children:
+  - componentId: '@jigx/jc-pie-chart'
+    options:
+          yAxis:
+            labels:
+              format:
+                unitDisplay: long
+          chart:
+            height: 150
+            # try to change text for a title
+            title:
+              text: Color
+              verticalAlign: center
+              
+            # change text for subtitle
+            subtitle:
+              text: Palete
+              verticalAlign: center
+              
+          legend:
+            isHidden: false
+          series:
+          - data: =@ctx.data.colors 
+            dataLabels:
+              - isEnabled: true                              

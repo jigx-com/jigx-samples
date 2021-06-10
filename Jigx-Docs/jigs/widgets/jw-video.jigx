@@ -1,0 +1,32 @@
+name: Video - dynamic data
+referenceId: jw-video
+
+datasources:
+  video:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/videos
+      query: |
+        SELECT
+          id,
+          '$.video-link'
+        FROM [jigxDocs/videos]
+
+data: =@ctx.data.video
+
+children:
+  - componentId: '@jigx/jc-video-player'
+    options:
+      url: =@ctx.data.video.video-link   
+      
+views:
+  4x2: 
+    componentId: '@jigx/jw-carousel'
+    options:
+      data: =@ctx.data.video
+      item: 
+        componentId: '@jigx/jc-video-player'
+        options:
+          url: =@ctx.data.video.video-link  

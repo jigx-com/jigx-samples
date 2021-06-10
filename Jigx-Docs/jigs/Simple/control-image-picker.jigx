@@ -1,0 +1,14 @@
+name: Image Picker
+referenceId: control-image-picker
+type: '@jigx/jig/form'
+icon: picture-landscape
+
+entity: ''
+
+children:
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      property: photograph
+      # change the type on multiple and select more of your photos
+      type: single
+      

@@ -1,0 +1,35 @@
+name: Avatar - sql data
+
+datasources:
+  profile:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - 
+          entity: patients
+          function: fn-select-users
+      query: |
+        SELECT
+          '$.patient_id',
+          '$.firstname',
+          '$.lastname',
+          '$.photo'
+        FROM [patients]  
+        
+children:
+  - componentId: '@jigx/jc-avatar'
+    options:
+      text: NA
+      uri: =@ctx.data.profile.photo
+      
+views:
+  2x2:
+    componentId: '@jigx/jw-universal'
+    options:
+      center:
+        componentId: '@jigx/jc-avatar'
+        options:
+          text: 'NA'
+          uri: =@ctx.data.profile.photo

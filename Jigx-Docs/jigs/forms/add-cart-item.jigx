@@ -1,0 +1,53 @@
+name: Add item
+referenceId: add-cart-item
+type: '@jigx/jig/form'
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: 'jigxDocs/shopping-cart'
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-item
+      options:
+        title: Add Item to shopping list
+        onSuccess:
+          actions:
+            - componentId: '@jigx/ja-go-to'
+              options:
+                title: Shopping cart
+                linkTo: control-advanced-list-item-amount                
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      isHidden: true
+      isRequired: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: product-name
+      label: Item name
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: product-amount
+      label: Amount
+      isHidden: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: product-price
+      label: Price
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      property: product-picture
+      isHidden: true
+  - componentId: '@jigx/jc-dropdown'
+    options:
+      property: product-category
+      data: 
+        - title: Mobile
+          value: mobile
+        - title: Notebook
+          value: notebook   
+      label: Category
