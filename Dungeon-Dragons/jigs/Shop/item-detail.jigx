@@ -1,0 +1,88 @@
+name: =@ctx.data.player.name
+referenceId: item-detail
+type: '@jigx/jig/default'
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.data.player.name
+      source:
+        uri: =@ctx.data.player.photo
+
+datasources:       
+  player:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: ItemDetail
+        function: shop-item-details
+        functionParameters: 
+          id: =@ctx.jig.inputs.id 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.rarity',
+          '$.hp',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.gold',
+          '$.photo'
+          FROM [ItemDetail]
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Category
+            value: =@ctx.data.player.category
+      
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Health points
+            value: =@ctx.data.player.hp & ' ♥'
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Minimum damage
+              value: =@ctx.data.player.min_dmg & ' ⚔'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Maximum damage
+              value: =@ctx.data.player.max_dmg & ' ⚔'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Average damage
+              value: =@ctx.data.player.avg_dmg & ' ⚔'
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Strength
+              value: =@ctx.data.player.strength & ' 💪'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Armor
+              value: =@ctx.data.player.armor & ' 🛡️'
+        -      
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Price
+              value: =@ctx.data.player.gold & ' 💰'
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.player.story
+            isMultiline: true
+
+
+ 

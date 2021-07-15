@@ -1,0 +1,56 @@
+name: =@ctx.data.player.name
+referenceId: player-story
+type: '@jigx/jig/default'
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.data.player.name
+      source:
+        uri: =@ctx.data.player.photo
+
+
+datasources:
+  player:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: PlayerStory
+        function: get-player-stats
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.level',
+          '$.health',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.exp',
+          '$.gold',
+          '$.stamina',
+          '$.photo'
+          FROM [PlayerStory]
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.player.story
+            isMultiline: true
+
+
+
+
+
+ 

@@ -1,0 +1,111 @@
+name: Monsters
+type: '@jigx/jig/list'
+icon: add
+isSearchable: true
+referenceId: monsters-list
+badge: =$count(@ctx.data.monster.id)
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: Monsters
+      source:
+        uri: https://im.tiscali.cz/games/2021/01/18/1254330-dungeons-dragons-base_16x9.jpg.1152?1610973019.0
+
+
+
+datasources:
+  monster:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: Monsters
+        function: get-player-monsters
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      queryParameters:
+        '@search': =@ctx.jig.state.monsters-list.searchText  
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.level',
+          '$.status',
+          '$.difficulty',
+          '$.health',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.exp',
+          '$.gold',
+          '$.itemid',
+          '$.photo'
+          FROM [Monsters]
+          WHERE '$.name' LIKE '%'||@search||'%' OR @search IS NULL ORDER BY '$.difficulty'
+
+
+data: =@ctx.data.monster
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: monsters-list
+  options:
+    style: 
+      isDisabled: =(@ctx.parents.list-data.item.status = 'Alive' ? 'False':'True')
+    title:  =@ctx.parents.list-data.item.name
+    subtitle: =('level:' & ' ' & $string(@ctx.parents.list-data.item.level) & ' ⬆')
+    description: =('reward:' & ' ' & $string(@ctx.parents.list-data.item.exp) & ' 🆇🅿' & ' ' & $string(@ctx.parents.list-data.item.gold) & ' 💰')
+    leftElement: 
+      type: avatar
+      text: EQ
+      uri: =@ctx.parents.list-data.item.photo
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Select premium'
+        linkTo: monster-detail
+        parameters:
+          id: =@ctx.parents.list-data.item.id
+    swipeable:
+      right:
+        - label: Detail
+          color: primary
+          icon: share
+          onPress: 
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: Detail
+              linkTo: monster-detail
+              parameters:
+                id: =@ctx.parents.list-data.item.id
+              
+
+views:
+  4x2:
+    componentId: "@jigx/jw-list"
+    options:
+      data: =@ctx.data.monster
+      item: 
+        componentId: '@jigx/jc-list-item'
+        options:
+          style: 
+            isDisabled: =(@ctx.parents.list-data.item.status = 'Alive' ? 'False':'True')
+          title:  =@ctx.parents.list-data.item.name
+          description: =('⭐ ' & '(' & $string(@ctx.parents.list-data.item.difficulty) & ')')
+          leftElement: 
+            type: avatar
+            text: EQ
+            uri: =@ctx.parents.list-data.item.photo
+          rightElement: 
+            type: value
+            text: =('reward:' & '\n' & $string(@ctx.parents.list-data.item.exp) & ' 🆇🅿' & ' ' & $string(@ctx.parents.list-data.item.gold) & ' 💰')
+          onPress:
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: 'Select premium'
+              linkTo: monster-detail
+              parameters:
+                id: =@ctx.parents.list-data.item.id

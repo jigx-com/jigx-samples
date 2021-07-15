@@ -1,0 +1,62 @@
+name: Quests
+type: '@jigx/jig/list'
+referenceId: player-quests
+icon: add
+isSearchable: true
+   
+datasources: 
+  quests:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: PlayerQuests
+        function: get-player-quests
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      queryParameters:
+        '@search': =@ctx.jig.state.player-quests.searchText  
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.progress',
+          '$.difficulty',
+          '$.exp',
+          '$.gold',
+          '$.playerid',
+          '$.photo',
+          '$.itemid'
+          FROM [PlayerQuests]
+          WHERE '$.name' LIKE '%'||@search||'%' OR @search IS NULL ORDER BY '$.progress' DESC
+
+
+data: =@ctx.data.quests
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: player-quests
+  options:
+    title:  =@ctx.parents.list-data.item.name
+    subtitle: =('reward:' & ' ' & $string(@ctx.parents.list-data.item.gold) & ' 💰' & ' ' & $string(@ctx.parents.list-data.item.exp) & ' 🆇🅿')
+    description: ='difficulty:' & ' ' & @ctx.parents.list-data.item.difficulty & ' ⭐'
+    progress: =@ctx.parents.list-data.item.progress
+    colors:
+      - when: true
+        color: color1
+    leftElement: 
+      type: avatar
+      text: QE
+      uri: =@ctx.parents.list-data.item.photo
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Details'
+        linkTo: quest-details
+        parameters:
+          id: =@ctx.parents.list-data.item.id    
+                
+
+        

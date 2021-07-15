@@ -1,0 +1,81 @@
+#view 2x4 , Level , Attack, Hp, Armor 
+name: Profile
+type: "@jigx/jig/composite"
+referenceId: profile-overview
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.data.player.name
+      source:
+        uri: =@ctx.data.player.photo
+children:
+  - componentId: profile-stats
+  - componentId: profile-equipment
+
+
+datasources:       
+  player:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: Player
+        function: get-player-stats
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.level',
+          '$.health',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.exp',
+          '$.gold',
+          '$.stamina',
+          '$.photo'
+          FROM [Player]
+
+
+views:
+  2x4:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-universal"
+          options:
+            center:
+              componentId: "@jigx/jc-avatar"
+              options:
+                text: Profile
+                uri: =@ctx.data.player.photo
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =[{ "title":"Level","value":$string(@ctx.data.player.level) & ' ⬆'},{ "title":"Health","value":$string(@ctx.data.player.health) & ' ♥'}, { "title":"Damage","value":$string(@ctx.data.player.avg_dmg) & ' ⚔'}, { "title":"Armor","value":$string(@ctx.data.player.armor) & ' 🛡️'}]
+            bottom:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: Stats
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.title
+                rightElement: 
+                  type: value
+                  text: =@ctx.parents.list-data.item.value
+                onPress: 
+                  componentId: '@jigx/ja-go-to'
+                  options:
+                    title: goto
+                    linkTo: profile-overview
+ 
+
+
+

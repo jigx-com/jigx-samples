@@ -1,0 +1,44 @@
+name: The mountain bandits
+referenceId: journal-detail
+type: '@jigx/jig/default'
+description: "Finished on: 07/06/2021"
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: The mountain bandits
+      source:
+        uri: http://connorscampaigns.wdfiles.com/local--files/realms-society-crime/Bandit%20Gang.jpg
+        
+datasources:
+  stats:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: The mountain bandits
+          description: "Finished on: 07/06/2021"
+          difficulty: 4
+          reward:  1000 💰 750 🆇🅿
+          story: Mountain bandits were a confedaracy in Misty Mountains terrorizing local villages. Their leader Boque Fuyun Wang was the strongest amongs them all. But one day mighty adventurer came to our village and lead the attack on the Bandits. The fights lasts for 2 days, and after 2 days the final clash happen between you and the leader of bandits. Both were already exhausted but you were able to strike a final blow and pierce the sword through his heart. After defeating the bandits you have recieved huge amount of rewards!
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children: 
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Reward
+            value: =@ctx.data.stats.reward 
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Difficulty
+            value: =@ctx.data.stats.difficulty & ' ⭐'
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.stats.story
+            isMultiline: true
+
+
+ 

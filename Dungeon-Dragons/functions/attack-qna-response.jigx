@@ -1,0 +1,22 @@
+method: POST
+provider: DATA_PROVIDER_REST
+inputTransform: >-
+  $.{"question": question}
+parameters:
+  question:
+    location: body
+    type: string
+    required: true
+  Authorization:
+    location: header
+    type: jigx
+    value: EndpointKey 59951e69-90f2-497d-b9d7-dde8c27f0d66
+    required: true
+  Content-type:
+    location: header
+    type: string
+    value: application/json
+    required: true
+url: "https://shinelawyersfaq.azurewebsites.net/qnamaker/knowledgebases/da026028-1a88-46ad-ba4f-21f1fb669539/generateAnswer"
+outputTransform: >-
+  $.answers{"questions":questions[0],"answer":answer,"score":$number(score)}

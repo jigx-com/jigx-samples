@@ -1,0 +1,74 @@
+name: Sold items
+type: '@jigx/jig/list'
+referenceId: sold-items
+
+datasources:
+  sold:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: sold-item
+          function: get-sold-items
+          functionParameters:
+            useremail: =@ctx.user.email
+      query: |
+        SELECT
+          '$.id', 
+          '$.story', 
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.rarity',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.hp',
+          '$.gold',
+          '$.playerid',
+          '$.photo',
+          '$.shopid'
+        FROM [sold-item]
+
+data: =@ctx.data.sold
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    divider: solid
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =('Price:' & ' ' & $string(@ctx.parents.list-data.item.gold) & ' 💰')
+    progress: 1
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.rarity
+    leftElement: 
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.photo
+    rightElement: 
+      type: button
+      title: Buy  
+      onPress: 
+        componentId: '@jigx/ja-execute-entity'
+        instanceId: buy
+        options:
+          title: Buy
+          provider: DATA_PROVIDER_SQL
+          entity: BuyItem
+          method: functionCall
+          function: sp-buy-sold-item
+          functionParameters:
+            useremail: =@ctx.user.email
+            id: =@ctx.parents.list-data.item.id 
+          goBack: home      
+    # onPress:
+    #   componentId: '@jigx/ja-go-to'
+    #   options:
+    #     title: Details
+    #     linkTo: item-detail
+    #     parameters:
+    #       id: =@ctx.parents.list-data.item.id

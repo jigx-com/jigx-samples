@@ -1,0 +1,83 @@
+name: =@ctx.data.quests.name
+referenceId: quest-details
+type: '@jigx/jig/default'
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.data.quests.name
+      source:
+        uri: =@ctx.data.quests.photo
+        
+actions:
+  - children:
+    - componentId: '@jigx/ja-execute-entity'
+      instanceId: quests
+      options:
+        title: Finish quest
+        provider: DATA_PROVIDER_SQL
+        entity: finish-quest
+        method: functionCall
+        function: finish-quest
+        functionParameters:
+          id: =@ctx.jig.inputs.id
+          useremail: =@ctx.user.email
+        goBack: home 
+
+
+datasources: 
+  quests:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: PlayerQuestDetail
+        function: get-player-quests-detail
+        functionParameters: 
+          id: =@ctx.jig.inputs.id   
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.progress',
+          '$.difficulty',
+          '$.exp',
+          '$.gold',
+          '$.playerid',
+          '$.photo',
+          '$.itemid'
+          FROM [PlayerQuestDetail]
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.quests.story
+            isMultiline: true
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Category
+            value: =@ctx.data.quests.category
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Difficulty
+              value: =@ctx.data.quests.difficulty
+        -      
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Exp reward
+              value: =$string(@ctx.data.quests.exp) & ' 🆇🅿'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Gold reward
+              value: =$string(@ctx.data.quests.gold) & ' 💰'
+
+ 

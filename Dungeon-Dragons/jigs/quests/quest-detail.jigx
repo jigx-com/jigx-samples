@@ -1,0 +1,77 @@
+name: =@ctx.data.quest.name
+type: '@jigx/jig/default'
+referenceId: quest-detail
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      source:
+        uri: =@ctx.data.quest.photo
+        
+actions:
+  - children:
+    - componentId: '@jigx/ja-execute-entity'
+      instanceId: quest
+      options:
+        title: Accept quest
+        provider: DATA_PROVIDER_SQL
+        entity: player-quest
+        method: functionCall
+        function: quest-accept
+        functionParameters:
+          id: =@ctx.jig.inputs.id
+          useremail: =@ctx.user.email
+        goBack: home  
+        
+datasources:
+  quest:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      isDocument: true
+      entities:
+        - entity: quest-details
+          function: get-quest-detail
+          functionParameters:
+            id: =@ctx.jig.inputs.id
+      query: |
+        SELECT
+          id,
+          '$.story',
+          '$.name', 
+          '$.category',
+          '$.status',
+          '$.progress',
+          '$.difficulty',
+          '$.exp',
+          '$.gold',
+          '$.playerid',
+          '$.photo',
+          '$.itemid'
+        FROM [quest-details]
+
+data: =@ctx.data.quest
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.quest.story
+            isMultiline: true
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Diffuclty
+            value: =@ctx.data.quest.difficulty    
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Experience
+              value: =(@ctx.data.quest.exp & ' 🆇🅿')
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Gold
+              value: =(@ctx.data.quest.gold & ' 💰')

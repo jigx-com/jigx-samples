@@ -1,0 +1,84 @@
+name: =@ctx.data.shop.name & ' - Vendor'
+type: '@jigx/jig/default'
+referenceId: shopper
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      source:
+        uri: https://www.residentevil.com/village/assets/images/character_img-duke.jpg
+
+datasources:
+  shop:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: shopper
+          function: get-shopper
+          functionParameters:
+            useremail: =@ctx.user.email 
+      query: |
+        SELECT
+          id,
+          '$.story',
+          '$.name',
+          '$.status',
+          '$.photo',
+          '$.playerid'
+        FROM [shopper]
+
+  shopping-menu:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Buy
+          icon:
+          link: shop-buy
+        - name: Buyback
+          icon:
+          link: sold-items
+
+data: =@ctx.data.shop
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: =(@ctx.data.shop.name & ' saying:')
+            value: =@ctx.data.shop.story
+            isMultiline: true
+                     
+  - componentId: '@jigx/jc-list'
+    options:
+      data: =@ctx.data.shopping-menu
+      item:           
+        componentId: '@jigx/jc-list-item'
+        options:
+          title: =@ctx.parents.list-data.item.name
+          leftElement: 
+            type: avatar
+            text: ''
+            uri: =@ctx.parents.list-data.item.icon
+          rightElement: 
+            type: icon
+            icon: arrow-right-1  
+          onPress: 
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: ''
+              linkTo: =@ctx.parents.list-data.item.link
+            
+views:
+  2x2: 
+    componentId: '@jigx/jw-universal'
+    options:
+      center:
+        componentId: '@jigx/jc-avatar'
+        options:
+          text: Shopper
+          uri: https://www.residentevil.com/village/assets/images/character_img-duke.jpg
+      

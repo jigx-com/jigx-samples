@@ -1,0 +1,54 @@
+name: Fight overview
+referenceId: attack-system
+type: '@jigx/jig/default'
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Confirm
+        linkTo: profile-overview
+  
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: Fight overview
+      source:
+        uri: https://i.pinimg.com/originals/92/32/9a/92329a8f9c70f6caf2ad0388380ce8fa.jpg
+
+datasources:
+  answer:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+      - entity: QnAAttack
+        function: attack-qna-response
+        functionParameters:
+          question: =@ctx.jig.inputs.avg_dmg
+      query: |
+        SELECT
+          '$.answer'
+           FROM [QnAAttack]
+
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Damage'
+            value: =($number(@ctx.jig.inputs.avg_dmg) * $number(@ctx.jig.inputs.strength) & ' ⚔')
+            isMultiline: true
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Prolog'
+            value: =@ctx.data.answer.answer
+            isMultiline: true
+
+
+
+ 

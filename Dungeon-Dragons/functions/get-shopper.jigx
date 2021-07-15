@@ -1,0 +1,10 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+connection: jigx1.database.windows.net
+procedure: sp_get_player_shopper
+
+parameters:
+  useremail:
+    location: input
+    type: string
+    required: true

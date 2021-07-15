@@ -1,0 +1,51 @@
+name: Storybook
+type: '@jigx/jig/list'
+icon: add
+referenceId: journal-overview
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: Storybook
+      source:
+        uri: https://slyflourish.com/images/The_Magnetic_Rock.jpg
+
+
+
+datasources:
+  journal:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: The mountain bandits
+          description: "Finished on: 07/06/2021"
+          right: ✅
+          photo: http://connorscampaigns.wdfiles.com/local--files/realms-society-crime/Bandit%20Gang.jpg
+        - name: Slay the dragon
+          description: "Canceled on: 13/03/2021"
+          right: ❌
+          photo: https://static.scientificamerican.com/blogs/cache/file/9C720750-2370-44E1-ACE260270EB7EA75_source.jpg?w=590&h=800&FAECB764-BEBE-4D3D-A7705363D7C3BF12
+
+data: =@ctx.data.journal
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: monsters-list
+  options:
+    title:  =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    leftElement: 
+      type: avatar
+      text: ST
+      uri: =@ctx.parents.list-data.item.photo
+    rightElement: 
+      type: value
+      text: =@ctx.parents.list-data.item.right
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Select premium'
+        linkTo: journal-detail
+
+              
+

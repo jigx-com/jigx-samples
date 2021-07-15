@@ -1,0 +1,151 @@
+name: =@ctx.data.stats.name
+referenceId: monster-detail
+type: '@jigx/jig/default'
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.data.stats.name
+      source:
+        uri: =@ctx.data.stats.photo
+        
+actions:
+  - children:
+    - componentId: "@jigx/ja-action-list"
+      options:
+        style: 
+          isDisabled: =(@ctx.data.stats.status = 'Alive' ? 'False':'True')
+        title: Attack
+        actions:
+          - componentId: "@jigx/ja-go-to"
+            options:
+              title: Go to
+              linkTo: attack-system
+              parameters:
+                avg_dmg: =@ctx.data.player.avg_dmg
+                strength: =@ctx.data.player.strength
+                
+          - componentId: "@jigx/ja-execute-entity"
+            instanceId: execute
+            options:
+              title: Attack
+              provider: DATA_PROVIDER_SQL
+              entity: attack
+              method: functionCall
+              function: sp-attack-monster
+              functionParameters:
+                useremail: =@ctx.user.email
+                id: =@ctx.data.stats.id
+              goBack: off
+
+
+datasources:
+  stats:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: MonsterDetail
+        function: monster-detail
+        functionParameters: 
+          id: =@ctx.jig.inputs.id 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.level',
+          '$.status',
+          '$.difficulty',
+          '$.health',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.exp',
+          '$.gold',
+          '$.itemid',
+          '$.photo'
+          FROM [MonsterDetail]
+          
+  player:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: PlayerAttack
+        function: get-player-stats
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.level',
+          '$.health',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.exp',
+          '$.gold',
+          '$.stamina',
+          '$.photo'
+          FROM [PlayerAttack]
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Level
+              value: =@ctx.data.stats.level & ' ⬆'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Difficulty
+              value: =@ctx.data.stats.difficulty & ' ⭐'
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Health points
+            value: =@ctx.data.stats.health & ' ♥'
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Minimum damage
+              value: =@ctx.data.stats.min_dmg & ' ⚔'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Maximum damage
+              value: =@ctx.data.stats.max_dmg & ' ⚔'
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Strength
+              value: =@ctx.data.stats.strength & ' 💪'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Armor
+              value: =@ctx.data.stats.armor & ' 🛡️'
+        -      
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Reward experience
+              value: =@ctx.data.stats.exp & ' 🆇🅿'
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: Reward gold
+              value: =@ctx.data.stats.gold & ' 💰'
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Story
+            value: =@ctx.data.stats.story
+            isMultiline: true
+
+
+ 

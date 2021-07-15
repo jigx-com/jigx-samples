@@ -1,0 +1,14 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+connection: jigx1.database.windows.net
+procedure: sp_buy_player_sold_item
+
+parameters:
+  useremail:
+    location: input
+    type: string
+    required: true
+  id:
+    location: input
+    type: string
+    required: true

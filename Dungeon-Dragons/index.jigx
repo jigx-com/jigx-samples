@@ -1,0 +1,30 @@
+title: Dungeons&Dragons
+category: operations
+
+
+favorites: 
+  - children: profile-overview
+    size: 2x4
+  - children: shopper
+    size: 2x2
+  - children: quest-giver
+    size: 2x2   
+  - children: monsters-list
+    size: 4x2
+  - children: journal-overview
+    size: 4x2 
+
+
+    
+widgets: 
+
+  - children: profile-overview
+    size: 2x4
+  - children: shopper
+    size: 2x2
+  - children: quest-giver
+    size: 2x2 
+  - children: monsters-list
+    size: 4x2
+  - children: journal-overview
+    size: 4x2 

@@ -1,0 +1,132 @@
+name: Inventory
+type: '@jigx/jig/list'
+referenceId: inventory
+icon: add
+isSearchable: true
+   
+datasources: 
+  inventory:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: Inventory
+        function: get-player-inventory
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      queryParameters:
+        '@search': =@ctx.jig.state.inventory.searchText  
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.rarity',
+          '$.hp',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.gold',
+          '$.photo'
+          FROM [Inventory]
+          WHERE '$.name' LIKE '%'||@search||'%' OR @search IS NULL ORDER BY '$.gold'
+  equipment:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - title: Uriziel
+          stats: (4-8) 6⚔
+          img: https://cdnb.artstation.com/p/assets/images/images/036/898/979/large/filip-jozwiak-uriziel-miecz.jpg?1618933149
+          price: price:2000 gold💰
+          color: color1
+        - title: Kings armor
+          stats: 10🛡️ 500♥
+          img: https://www.darksword-armory.com/wp-content/uploads/2019/10/game-of-thrones-armor-1-scaled.jpg
+          price: price:5000 gold💰
+          color: color1
+        - title: Oaken shield
+          stats: 8🛡️ 8💪
+          img: https://previews.123rf.com/images/andrcat/andrcat1610/andrcat161000009/64944386-oaken-shield-of-the-warrior-with-the-metal-studs-on-a-blank-background.jpg
+          price: price:3500 gold💰
+          color: color1
+        - title: Tyrfing 
+          stats: (10-20) 15⚔
+          img: https://images-na.ssl-images-amazon.com/images/I/51b3vLrL7JL._AC_UL1000_.jpg
+          price: price:6000 gold💰
+          color: color5
+        - title: Batteplate of Cursed Comrades
+          stats: 17🛡️ 760♥
+          img: https://www.kindpng.com/picc/m/82-826211_fantasy-knight-modern-knight-armor-hd-png-download.png
+          price: price:4500 gold💰
+          color: color5
+        - title: Looyar war shield
+          stats: 20🛡️ 15💪
+          img: https://images-na.ssl-images-amazon.com/images/I/81A17qKXv2L._AC_UL1500_.jpg
+          price: price:9000 gold💰
+          color: color3
+
+
+data: =@ctx.data.inventory
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: inventory
+  options:
+    title:  =@ctx.parents.list-data.item.name
+    subtitle: =$string(@ctx.parents.list-data.item.gold) & ' 💰'
+    description: =@ctx.parents.list-data.item.category
+    progress: 1
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.rarity
+    leftElement: 
+      type: avatar
+      text: EQ
+      uri: =@ctx.parents.list-data.item.photo
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Details'
+        linkTo: inv-details
+        parameters:
+          id: =@ctx.parents.list-data.item.id
+    rightElement: 
+      type: button
+      title: Equip
+      onPress: 
+        componentId: '@jigx/ja-execute-entity'
+        instanceId: equip
+        options:
+          title: Equip
+          provider: DATA_PROVIDER_SQL
+          entity: EquipItem
+          method: functionCall
+          function: sp-equip-player-item
+          functionParameters:
+            useremail: =@ctx.user.email
+            id: =@ctx.parents.list-data.item.id 
+          goBack: off      
+    swipeable:
+      left:
+        - label: Sell
+          color: error
+          icon: real-estate-action-house-dollar
+          onPress: 
+            componentId: '@jigx/ja-execute-entity'
+            instanceId: sell
+            options:
+              title: Sell
+              provider: DATA_PROVIDER_SQL
+              entity: SellItem
+              method: functionCall
+              function: sp-sell-player-item
+              functionParameters:
+                useremail: =@ctx.user.email
+                id: =@ctx.parents.list-data.item.id 
+              goBack: home
+                
+
+        

@@ -1,0 +1,103 @@
+name: =@ctx.data.quest-giver.name & ' - The quest giver'
+type: '@jigx/jig/default'
+referenceId: quest-giver
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      source:
+        uri: =@ctx.data.quest-giver.photo
+
+datasources:
+  quest-giver:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: aralan
+          function: get-quest-giver
+          functionParameters:
+            useremail: =@ctx.user.email
+      query: |
+        SELECT
+          id,
+          '$.story',
+          '$.name',
+          '$.line',
+          '$.photo',
+          '$.playerid'
+        FROM [aralan]  
+
+  quest:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      isDocument: false
+      entities:
+        - entity: quests
+          function: get-quest
+          functionParameters:
+            useremail: =@ctx.user.email
+      query: |
+        SELECT
+          id,
+          '$.story',
+          '$.name', 
+          '$.category',
+          '$.status',
+          '$.progress',
+          '$.difficulty',
+          '$.exp',
+          '$.gold',
+          '$.playerid',
+          '$.photo',
+          '$.itemid'
+        FROM [quests]
+        
+data: =@ctx.data.quest-giver        
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: =(@ctx.data.quest-giver.name & ' saying:')
+            value: =@ctx.data.quest-giver.line
+            isMultiline: true
+
+  - componentId: '@jigx/jc-list'
+    options:
+      data: =@ctx.data.quest
+      item:    
+        componentId: '@jigx/jc-list-item'
+        options:
+          divider: solid
+          title: =@ctx.parents.list-data.item.name
+          subtitle: =($string(@ctx.parents.list-data.item.gold) & ' 💰 ' & $string(@ctx.parents.list-data.item.exp) & ' 🆇🅿') 
+          description: =@ctx.parents.list-data.item.difficulty
+          leftElement: 
+            type: image
+            text: ''
+            uri: =@ctx.parents.list-data.item.photo
+          rightElement: 
+            type: value
+            text: =@ctx.parents.list-data.item.status
+          onPress: 
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: Quest detail
+              linkTo: quest-detail
+              parameters:
+                id: =@ctx.parents.list-data.item.id
+                
+views:
+  2x2: 
+    componentId: '@jigx/jw-universal'
+    options:
+      center:
+        componentId: '@jigx/jc-avatar'
+        options:
+          text: Aralan
+          uri: =@ctx.data.quest-giver.photo

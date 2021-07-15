@@ -1,0 +1,87 @@
+name: Buy
+type: '@jigx/jig/list'
+referenceId: shop-buy
+
+datasources:
+  buy:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - entity: items-to-buy
+          function: get-shop-items
+          functionParameters:
+            useremail: =@ctx.user.email
+      queryParameters:
+        category: =@ctx.jig.state.shop-buy.filter
+      query: |
+        SELECT
+        '$.id', 
+        '$.story', 
+        '$.name',
+        '$.category',
+        '$.status',
+        '$.rarity',
+        '$.min_dmg',
+        '$.max_dmg',
+        '$.avg_dmg',
+        '$.strength',
+        '$.armor',
+        '$.hp',
+        '$.gold',
+        '$.playerid',
+        '$.photo',
+        '$.shopid'
+        FROM [items-to-buy]
+        WHERE '$.category' = @category OR @category IS NULL ORDER BY gold
+          
+data: =@ctx.data.buy
+
+filter: 
+  - title: All
+    value: ''
+  - title: Weapons
+    value: Weapon
+  - title: Armor
+    value: Armor
+  - title: Shields
+    value: Shield  
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    divider: solid
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =('Price:' & ' ' & $string(@ctx.parents.list-data.item.gold) & ' 💰')
+    progress: 1
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.rarity
+    leftElement: 
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.photo
+    rightElement: 
+      type: button
+      title: Buy  
+      onPress: 
+        componentId: '@jigx/ja-execute-entity'
+        instanceId: buy
+        options:
+          title: Buy
+          provider: DATA_PROVIDER_SQL
+          entity: BuyItem
+          method: functionCall
+          function: sp-buy-player-item
+          functionParameters:
+            useremail: =@ctx.user.email
+            id: =@ctx.parents.list-data.item.id 
+          goBack: home      
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: Details
+        linkTo: item-detail
+        parameters:
+          id: =@ctx.parents.list-data.item.id

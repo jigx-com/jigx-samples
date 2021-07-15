@@ -1,0 +1,73 @@
+name: Equipment
+type: '@jigx/jig/list'
+icon: add
+   
+datasources: 
+  equipment:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+      - entity: Equipment
+        function: get-player-equipment
+        functionParameters: 
+          useremail: =@ctx.user.email 
+      query: |
+        SELECT
+          '$.id',
+          '$.story',
+          '$.name',
+          '$.category',
+          '$.status',
+          '$.rarity',
+          '$.hp',
+          '$.min_dmg',
+          '$.max_dmg',
+          '$.avg_dmg',
+          '$.strength',
+          '$.armor',
+          '$.gold',
+          '$.photo'
+          FROM [Equipment]
+
+data: =@ctx.data.equipment
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title:  =@ctx.parents.list-data.item.name
+    subtitle: =$string(@ctx.parents.list-data.item.gold) & ' 💰'
+    progress: 1
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.rarity
+    leftElement: 
+      type: avatar
+      text: NA
+      uri: =@ctx.parents.list-data.item.photo
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Select premium'
+        linkTo: equiped-details
+        parameters:
+          id: =@ctx.parents.list-data.item.id
+    rightElement: 
+      type: value
+      text: =(@ctx.parents.list-data.item.category = 'Weapon' ? (@ctx.parents.list-data.item.category & ' ⚔💪'):(@ctx.parents.list-data.item.category & ' 🛡️♥'))
+    swipeable:
+      left:
+        - label: Unequip
+          color: primary
+          onPress: 
+            componentId: '@jigx/ja-execute-entity'
+            instanceId: unquip
+            options:
+              title: Equip
+              provider: DATA_PROVIDER_SQL
+              entity: UnquipItem
+              method: functionCall
+              function: sp-unequip-player-item
+              functionParameters:
+                useremail: =@ctx.user.email
+                id: =@ctx.parents.list-data.item.id 
+              goBack: off
