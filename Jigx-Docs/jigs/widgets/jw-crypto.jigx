@@ -91,8 +91,8 @@ views:
                   labels:
                     format:
                       numberStyle: currency
-                      currencyDisplay: symbol
                       compactDisplay: short
+                      notation: compact
                       currency: EUR
                   tickAmount: 5
                 series:
@@ -117,7 +117,7 @@ views:
                     format:
                       numberStyle: currency
                       compactDisplay: short
-                      currencyDisplay: symbol
+                      notation: compact
                       currency: EUR
                   tickAmount: 6
                 series:
