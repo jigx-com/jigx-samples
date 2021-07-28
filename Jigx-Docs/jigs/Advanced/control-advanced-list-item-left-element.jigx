@@ -1,0 +1,26 @@
+name: Items List Left Element Control
+type: '@jigx/jig/list'
+referenceId: control-advanced-list-item-left-element
+icon: list
+
+datasources:
+  names:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Albert Einstein
+        - name: Elon Musk
+        - name: Thomas Edison
+        - name: Nikola Tesla
+
+data: =@ctx.data.names
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    leftElement: 
+      type: avatar
+       # Thank's to next line of code you can Select First letter from Firstname and Lastname and use them as an Avatar for left element
+      text: =($substring(@ctx.parents.list-data.item.name,0,1) & $substring($substringAfter(@ctx.parents.list-data.item.name,' '),0,1)) 
+      uri: ''

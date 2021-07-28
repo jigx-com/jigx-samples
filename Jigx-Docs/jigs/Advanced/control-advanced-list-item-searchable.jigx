@@ -11,7 +11,7 @@ datasources:
       entities:
         - jigxDocs/shopping-cart
       queryParameters:
-        "search": =@ctx.jig.state.items.searchText
+        '@search': =@ctx.jig.state.control-advanced-list-item-searchable.searchText
       query: |
         SELECT
         json_extract(data, '$.id') as id,

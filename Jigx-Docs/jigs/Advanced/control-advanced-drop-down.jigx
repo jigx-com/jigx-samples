@@ -1,0 +1,65 @@
+name: Dropdown Control
+type: '@jigx/jig/form'
+referenceId: control-advanced-drop-down
+
+entity: ''
+
+datasources:
+  names:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Adriann
+          value: Adriann
+        - name: Andrej
+          value: Andrej
+        - name: Bernard
+          value: Bernard
+        - name: Dennis
+          value: Dennis
+        - name: Filip
+          value: Filip
+        - name: Grant
+          value: Grant
+        - name: Habib
+          value: Habib
+        - name: Jim
+          value: Jim
+        - name: Jiří
+          value: Jiří
+        - name: Lukas
+          value: Lukas
+        - name: Markus
+          value: Markus
+        - name: Petter
+          value: Petter
+        - name: Reniér
+          value: Reniér
+        - name: Simmar
+          value: Simamr
+        - name: Suzette
+          value: Suzette
+        - name: Vojtěch
+          value: Vojtěch
+          
+children:
+  - componentId: '@jigx/jc-dropdown'
+    instanceId: name
+    options:
+      property: name
+      data: =@ctx.data.names
+      type: single
+      label: Select name
+      mapping:
+        title: name
+        value: value
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: something
+      label: You will see that selected name in here ↓
+      isMultiline: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: selected_name
+      label: =@ctx.jig.state.name.selected.value
+        

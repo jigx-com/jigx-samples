@@ -51,6 +51,12 @@ widgets:
     children: control-advanced-list-item-selectable  
   - size: 1x1
     children: control-advanced-list-item-sortable
+  - size: 1x1
+    children: control-advanced-list-item-with-emoji
+  - size: 1x1
+    children: control-advanced-list-item-left-element  
+  - size: 1x1
+    children: control-advanced-drop-down
   - size: 4x2
     children: jw-carousel
   - size: 2x4

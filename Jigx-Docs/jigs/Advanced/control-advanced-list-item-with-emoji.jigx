@@ -1,0 +1,40 @@
+name: Items List with Emoji
+type: '@jigx/jig/default'
+referenceId: control-advanced-list-item-with-emoji
+icon: list
+
+# You can use Emoji in text
+
+datasources:
+  emoji:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - title: I'm 💪 woman
+          subtitle: with big 🧠
+        - title: You can pay with ₿
+          subtitle: or with 💳  or with 💵
+
+children:
+  - componentId: '@jigx/jc-list'
+    options:
+      data: =@ctx.data.emoji
+      item:
+        componentId: '@jigx/jc-list-item'
+        options:
+          title: =@ctx.parents.list-data.item.title
+          subtitle: =@ctx.parents.list-data.item.subtitle
+          description: =@ctx.parents.list-data.item.name
+          leftElement:
+            type: avatar
+            text: 'NN'
+            uri: 'https://static.remove.bg/remove-bg-web/2a274ebbb5879d870a69caae33d94388a88e0e35/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'
+
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: Entity Field
+            value: 'You can also use Emoji in entity field. Here are some examples of emoji what you can use: 🙂 💰 🇸🇰  🐕  🌭 🏂 🏔️ ⏰ ❤️'               
+            isMultiline: true    
