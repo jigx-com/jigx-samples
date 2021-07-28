@@ -1,4 +1,4 @@
-name: Bar Chart
+name: Bar chart
 referenceId: control-bar-chart-simple
 type: '@jigx/jig/default'
 icon: chart

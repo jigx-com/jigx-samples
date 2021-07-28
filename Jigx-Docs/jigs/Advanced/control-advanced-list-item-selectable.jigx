@@ -1,4 +1,4 @@
-name: List Selectable
+name: List selectable
 referenceId: control-advanced-list-item-selectable
 type: '@jigx/jig/list'
 icon: list

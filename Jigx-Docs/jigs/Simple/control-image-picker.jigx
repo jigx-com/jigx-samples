@@ -1,4 +1,4 @@
-name: Image Picker
+name: Image picker
 referenceId: control-image-picker
 type: '@jigx/jig/form'
 icon: picture-landscape

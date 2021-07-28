@@ -1,4 +1,4 @@
-name: List Horizontal
+name: List horizontal
 referenceId: control-list-item-horizontal
 type: '@jigx/jig/list'
 icon: list

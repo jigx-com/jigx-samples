@@ -1,4 +1,4 @@
-name: Items List Left Element Control
+name: Items list left element control
 type: '@jigx/jig/list'
 referenceId: control-advanced-list-item-left-element
 icon: list

@@ -1,4 +1,4 @@
-name: List Sortable
+name: List sortable
 referenceId: control-advanced-list-item-sortable
 type: '@jigx/jig/list'
 icon: list

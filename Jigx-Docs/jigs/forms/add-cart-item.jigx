@@ -38,10 +38,6 @@ children:
     options:
       property: product-price
       label: Price
-  - componentId: '@jigx/jc-image-picker'
-    options:
-      property: product-picture
-      isHidden: true
   - componentId: '@jigx/jc-dropdown'
     options:
       property: product-category
@@ -50,4 +46,8 @@ children:
           value: mobile
         - title: Notebook
           value: notebook   
+        - title: Headset
+          value: headset
+        - title: Watch
+          value: watch    
       label: Category

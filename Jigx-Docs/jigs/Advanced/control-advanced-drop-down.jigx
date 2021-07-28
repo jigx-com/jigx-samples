@@ -1,6 +1,7 @@
-name: Dropdown Control
+name: Dropdown control
 type: '@jigx/jig/form'
 referenceId: control-advanced-drop-down
+icon: navigation-menu
 
 entity: ''
 

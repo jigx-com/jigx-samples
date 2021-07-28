@@ -1,4 +1,4 @@
-name: Entity Field
+name: Entity field
 referenceId: control-entity-field
 type: '@jigx/jig/default'
 icon: archive-folder

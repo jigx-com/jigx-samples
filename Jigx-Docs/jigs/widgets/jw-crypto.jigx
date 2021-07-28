@@ -24,7 +24,7 @@ datasources:
         FROM cte
         ORDER BY
           ms DESC
-        LIMIT 1 + 1 * 14
+        LIMIT 1 + 1 * 7
 
   etherum:
     componentId: "@jigx/jd-sqlite"
@@ -47,7 +47,7 @@ datasources:
         FROM cte
         ORDER BY
           ms DESC
-        LIMIT 1 + 1 * 14
+        LIMIT 1 + 1 * 7
           
         
 children:
@@ -64,12 +64,12 @@ children:
           format:
             numberStyle: currency
             currency: EUR
-        tickAmount: 8
+        tickAmount: 4
       series:
         - data: =@ctx.data.bitcoin.{'x':x,'y':y}
           lineWidth: 4
           color: color3
-          name: Bitocin EUR (last 14 days)   
+          name: Bitocin EUR (last 7 days)   
 
 views:
   4x2:
@@ -91,11 +91,13 @@ views:
                   labels:
                     format:
                       numberStyle: currency
+                      currencyDisplay: symbol
+                      compactDisplay: short
                       currency: EUR
                   tickAmount: 5
                 series:
                   - data: =@ctx.data.bitcoin.{'x':x,'y':y}
-                    lineWidth: 4
+                    lineWidth: 8
                     color: color3
                     name: Bitocin EUR (last 14 days)
 
@@ -114,10 +116,12 @@ views:
                   labels:
                     format:
                       numberStyle: currency
+                      compactDisplay: short
+                      currencyDisplay: symbol
                       currency: EUR
-                  tickAmount: 8
+                  tickAmount: 6
                 series:
                   - data: =@ctx.data.etherum.{'x':x,'y':y}
-                    lineWidth: 4
+                    lineWidth: 8
                     color: color3
                     name: Etherum EUR (last 14 days)          

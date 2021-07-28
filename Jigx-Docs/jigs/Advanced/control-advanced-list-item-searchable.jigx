@@ -1,4 +1,4 @@
-name: List Searchable
+name: List searchable
 referenceId: control-advanced-list-item-searchable
 type: '@jigx/jig/list'
 icon: list

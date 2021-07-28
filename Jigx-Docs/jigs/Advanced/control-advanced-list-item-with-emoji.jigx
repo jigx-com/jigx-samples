@@ -1,4 +1,4 @@
-name: Items List with Emoji
+name: Items list with emoji
 type: '@jigx/jig/default'
 referenceId: control-advanced-list-item-with-emoji
 icon: list
@@ -10,8 +10,8 @@ datasources:
     componentId: '@jigx/jd-static'
     options:
       data:
-        - title: I'm 💪 woman
-          subtitle: with big 🧠
+        - title: Good 🌅 
+          subtitle: Have a nice day 🙂
         - title: You can pay with ₿
           subtitle: or with 💳  or with 💵
 
