@@ -1,0 +1,13 @@
+name: Location
+referenceId: match-location
+type: '@jigx/jig/default'
+icon: arrow-down
+description: Location for your next match.
+     
+children:
+  - componentId: '@jigx/jc-location'
+    options:
+      address: "8 Tsui man street, Happy Valley, Hong Kong"
+      locationId: 'Head quarters'
+      longitude: 0
+      latitude: 0  

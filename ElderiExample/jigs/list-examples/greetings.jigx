@@ -1,0 +1,32 @@
+name: Greetings
+referenceId: greetings
+type: '@jigx/jig/list'
+icon: beer-mug
+    
+datasources:
+  greeting-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - greeting: 'Greetings'
+          firstname: 'Joe'
+          language: 'English'
+        - greeting: 'Bonjour' 
+          firstname: 'Ralph'
+          language: 'French'
+        - greeting: 'Sawubona' 
+          firstname: 'Siya'
+          language: 'Zulu'
+        - greeting: 'Dag se' 
+          firstname: 'Elderi'
+          language: 'Afrikaans'
+         
+        
+data: =@ctx.data.greeting-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.greeting
+    subtitle: =@ctx.parents.list-data.item.firstname
+    description: =@ctx.parents.list-data.item.language
+    divider: solid

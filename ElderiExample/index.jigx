@@ -1,0 +1,71 @@
+title: Elderi Intro
+category: personal
+
+favorites: 
+  - size: 1x1
+    children: greetings
+  - size: 1x1
+    children: employee
+  - size: 1x1
+    children: products
+  - size: 1x1
+    children: sales-target
+  - size: 1x1
+    children: employee-edit
+  - size: 1x1
+    children: employee-display
+  - size: 1x1
+    children: player-signup
+  - size: 1x1
+    children: players
+  - size: 1x1
+    children: match-location
+  - size: 1x1
+    children: player-participation
+
+# views:
+#   2x2: 
+#     componentId: '@jigx/jw-chart'
+#     options:
+#       title: Match Participation
+#       chart:
+#         componentId: '@jigx/jc-pie-chart'
+#         options:
+#           yAxis:
+#             labels:
+#               format:
+#                 unitDisplay: long
+#           chart:
+#             height: 130
+#             subtitle:
+#               text: Chart
+#               verticalAlign: center
+#             title:
+#               text: Title
+              
+#               verticalAlign: center
+#           legend:
+#             isHidden: false
+#           series:
+#           - data: =@ctx.data.series1
+      
+  # children:
+  #   - componentId: '@jigx/jc-pie-chart'
+  #     options:
+  #           yAxis:
+  #             labels:
+  #               format:
+  #                 unitDisplay: long
+  #           chart:
+  #             height: 130
+  #             subtitle:
+  #               text: Text
+  #               verticalAlign: center
+  #             title:
+  #               text: Title
+                
+  #               verticalAlign: center
+  #           legend:
+  #             isHidden: true
+  #           series:
+  #           - data: =@ctx.data.series1  

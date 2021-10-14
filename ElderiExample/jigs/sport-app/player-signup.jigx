@@ -1,0 +1,77 @@
+name: New Player
+referenceId: player-signup
+type: '@jigx/jig/form'
+icon: smiley-smile-2
+description: Register here as a new players by proving the relevant information.
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Player Information
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: new-player
+      options:
+        formId: new-player
+        icon: add
+        title: Add new player
+        onSuccess:
+          title: 'New player created'
+          action:
+            - componentId: '@jigx/ja-go-to'
+              option:
+                title: Capture another
+                linkTo: player-signup
+
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/player
+children:
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: first-name
+        label: 'First Name:'
+
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: last-name
+        label: 'Last Name:'
+  - 
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: gender-dropdown
+      options:
+        label: 'Gender'
+        property: gender
+        data: 
+         - title: 'Male'
+           value: 'M'
+         - title: 'Female'
+           value: 'F'
+           
+    - componentId: '@jigx/jc-date-picker'
+      options:
+       property: dob
+       label: 'Date of Birth:'
+       initialValue: '12/31/1985'
+     
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: email
+      label: 'Email:'
+      initialValue: 'elderi@gmail.com'
+      type: email
+      
+  - componentId: "@jigx/jc-image-picker"
+    options:
+      property: profile_photo
+      type: single
+      label: "Upload a profile picture"
+      isRequired: false
+  

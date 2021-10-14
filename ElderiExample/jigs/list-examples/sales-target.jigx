@@ -1,0 +1,50 @@
+name: Sales
+referenceId: sales-target
+type: '@jigx/jig/list'
+icon: currency-dollar
+    
+datasources:
+  sales-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - region: 'Americas: West'
+          short-name: 'W'
+          sales-lead: 'Samual Jones'
+          target: '100K'
+          progress: .7
+          color: 'color9'
+        - region: 'Americas: East'
+          short-name: 'E'
+          sales-lead: 'Erica Ford'
+          target: '150K'
+          progress: .4
+          color: 'color2'  
+        - region: 'Americas: Central'
+          short-name: 'C'
+          sales-lead: 'Holly Anderson'
+          target: '80K'
+          progress: .9
+          color: 'color5'    
+               
+data: =@ctx.data.sales-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.region
+    subtitle: =@ctx.parents.list-data.item.sales-lead
+    divider: solid
+    leftElement: 
+      type: avatar
+      text: =@ctx.parents.list-data.item.short-name
+    rightElement: 
+      type: value
+      text: =@ctx.parents.list-data.item.target
+    progress: =@ctx.parents.list-data.item.progress
+    colors:
+      - when: =@ctx.parents.list-data.item.color = 'color9'
+        color: color9
+      - when: =@ctx.parents.list-data.item.color = 'color2'
+        color: color2
+      - when: =@ctx.parents.list-data.item.color = 'color5'
+        color: color5

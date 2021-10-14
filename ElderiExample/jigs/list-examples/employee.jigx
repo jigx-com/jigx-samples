@@ -1,0 +1,64 @@
+name: Employee
+referenceId: employee
+type: '@jigx/jig/list'
+icon: phone
+    
+datasources:
+  user-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - id: 1
+          first-name: 'Brian'
+          last-name: 'Jones'
+          email: 'brian.jones@gmail.com'
+          dob: '08/03/1979'
+          job-title: 'Sales Director'
+          office: 'New York, NY USA'
+        - id: 2
+          first-name: 'Sarah'
+          last-name: 'Nagle'
+          email: 'sarah@gmail.com'
+          dob: '01/10/1981'
+          job-title: 'Sales Manager'
+          office: 'Snoqualmie, WA USA'
+        - id: 3
+          first-name: 'Ryan'
+          last-name: 'Weeks'
+          email: 'ryanweeks@gmail.com'
+          dob: '12/12/1983'
+          job-title: 'Support Lead'
+          office: 'Melbourne AUS'
+        - id: 4
+          first-name: 'Maggy'
+          last-name: 'Smith'
+          email: 'm.smith@gmail.com'
+          dob: '06/22/1975'
+          job-title: 'Quality Assurance Lead'
+          office: 'London UK'
+        - id: 5
+          first-name: 'Holly'
+          last-name: 'Anderson'
+          email: 'anderson.h@gmail.com'
+          dob: '01/22/1979'
+          job-title: 'Marketing Manager'
+          office: 'Denver, CO USA'
+                
+data: =@ctx.data.user-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name
+    subtitle: =@ctx.parents.list-data.item.email
+    divider: solid
+    leftElement: 
+      type: avatar
+      text: =$substring(@ctx.parents.list-data.item.first-name,0,1) & $substring(@ctx.parents.list-data.item.last-name,0,1)
+      
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'View all'
+        linkTo: placeholder
+        parameters:
+          param: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name

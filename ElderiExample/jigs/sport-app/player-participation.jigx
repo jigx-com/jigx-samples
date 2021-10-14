@@ -1,0 +1,62 @@
+name: Participation
+referenceId: player-participation
+type: '@jigx/jig/default'
+icon: checklist
+
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - y: 25000
+          color: color2
+
+
+
+views:
+  2x2: 
+    componentId: '@jigx/jw-chart'
+    options:
+      title: Match Participation
+      chart:
+        componentId: '@jigx/jc-pie-chart'
+        options:
+          yAxis:
+            labels:
+              format:
+                unitDisplay: long
+          chart:
+            height: 130
+            subtitle:
+              text: Chart
+              verticalAlign: center
+            title:
+              text: Today's progress
+              
+              verticalAlign: center
+          legend:
+            isHidden: false
+          series:
+          - data: =@ctx.data.series1
+
+children:
+  - componentId: '@jigx/jc-pie-chart'
+    options:
+          yAxis:
+            labels:
+              format:
+                unitDisplay: long
+          chart:
+            height: 130
+            subtitle:
+              text: Text 123
+              verticalAlign: center
+            title:
+              text: Today's progress
+              
+              verticalAlign: center
+          legend:
+            isHidden: true
+          series:
+          - data: =@ctx.data.series1                   
+                

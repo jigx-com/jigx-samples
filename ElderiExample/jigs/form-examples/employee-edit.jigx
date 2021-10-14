@@ -1,0 +1,67 @@
+name: Edit Form
+referenceId: employee-edit
+type: '@jigx/jig/form'
+icon: layout-dashboard
+description: Let's see some input controls in action
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Employee Details
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+
+entity: 'employee'
+children:
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: first-name
+        label: 'First Name:'
+        initialValue: 'Sarah'
+
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: last-name
+        label: 'Last Name:'
+        initialValue: 'Parker'
+
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: mobile
+      label: 'Mobile:'
+      initialValue: '+1 (425) 983-3343'
+      
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: email
+      label: 'Email:'
+      initialValue: 'sarah.parker@gmail.com'
+      type: email
+  
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: job-title
+      label: 'Job Title:'
+      initialValue: 'Sales Manager - EMEA'
+      
+  - 
+      - componentId: '@jigx/jc-date-picker'
+        options:
+          property: dob
+          label: 'Date of Birth:'
+          initialValue: '12/31/1985'
+
+      - componentId: '@jigx/jc-text-field'
+        options:
+          property: office
+          label: 'Office:'
+          initialValue: 'London UK'
+          
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: url
+      label: 'Web Site:'
+      initialValue: 'www.jigx.com'
+  

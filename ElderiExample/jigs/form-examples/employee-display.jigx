@@ -1,0 +1,64 @@
+name: Display Form
+referenceId: employee-display
+type: '@jigx/jig/default'
+icon: layout-dashboard
+description: Making boring text beautiful
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Employee Details
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'First Name:'
+              value: 'Sarah'
+          
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Last Name:'
+              value: 'Parker'
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Mobile:'
+            value: '+1 (425) 983-3343'
+            type: phone
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Email:'
+            value: 'sarah.parker@gmail.com'
+            type: email
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Job Title:'
+            value: 'Sales Manager - EMEA'
+            
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Date of Birth:'
+              value: '12/31/1985'
+              type: date
+              
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Office:'
+              value: 'London UK'
+        
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Web Site:'
+            value: 'www.jigx.com'
+            type: link
+        
+          

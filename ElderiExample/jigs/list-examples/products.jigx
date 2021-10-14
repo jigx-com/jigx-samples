@@ -1,0 +1,48 @@
+name: Products
+referenceId: products
+type: '@jigx/jig/list'
+icon: list
+    
+datasources:
+  product-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: 'iPhone SE'
+          description: 'Lots to love. Less to spend'
+          price: 399
+          image: 'https://www.pngarts.com/files/7/iPhone-12-PNG-Transparent-Image.png'  
+        - name: 'iPhone 13'
+          description: 'A total powerhouse'
+          price: 699
+          image: 'https://www.pngmart.com/files/21/iPhone-13-PNG-Transparent.png'  
+        - name: 'iPhone 13 Pro'
+          description: 'The ultimate iPhone'
+          price: 999
+          image: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f8e0aaafeac9889106b860f%2F0x0.png%3FcropX1%3D0%26cropX2%3D1462%26cropY1%3D71%26cropY2%3D1045'
+        
+data: =@ctx.data.product-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    divider: solid
+    leftElement: 
+      type: image
+      uri: =@ctx.parents.list-data.item.image
+      text: ''
+    rightElement: 
+      type: value
+      text: =@ctx.parents.list-data.item.price
+      format:
+        numberStyle: currency
+        currency: USD
+
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'View all'
+        linkTo: placeholder
+        parameters:
+          param: =@ctx.parents.list-data.item.name

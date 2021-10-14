@@ -1,0 +1,11 @@
+name: Having fun?
+referenceId: placeholder
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'I know what you pressed!'
+            value: =@ctx.jig.inputs.param
