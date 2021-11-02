@@ -16,7 +16,7 @@ datasources:
         SELECT
         json_extract(data, id) as id,
         json_extract(data, '$.x-value') as x,
-        json_extract(data, '$.y-vaule') as y
+        json_extract(data, '$.y-value') as y
         FROM [jigxDocs/graph])
         SELECT
         x as x,

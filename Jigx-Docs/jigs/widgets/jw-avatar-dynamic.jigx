@@ -10,7 +10,8 @@ datasources:
       query: |
         SELECT
           id,
-          '$.photo'
+          '$.photo',
+          '$.description'
         FROM [jigxDocs/profile]  
         
 children:
@@ -26,6 +27,6 @@ views:
       center:
         componentId: '@jigx/jc-avatar'
         options:
-          text: 'NA'
+          text: ''
           uri: =@ctx.data.profile.photo
     

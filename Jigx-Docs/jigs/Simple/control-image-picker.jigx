@@ -8,7 +8,7 @@ entity: ''
 children:
   - componentId: '@jigx/jc-image-picker'
     options:
-      property: photograph
-      # change the type on multiple and select more of your photos
-      type: single
-      
+      label: Add photo
+      isRequired: false
+      property: attachments
+      type: multiple

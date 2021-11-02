@@ -179,3 +179,7 @@ favorites:
     children: jw-list-sql  
   - size: 2x2
     children: jw-avatar-sql  
+
+stories: 
+  - s-image
+  - s-video
