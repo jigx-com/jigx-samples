@@ -1,0 +1,48 @@
+name: JD Employee
+referenceId: employee-ddlist
+type: '@jigx/jig/list'
+icon: multiple-neutral-2
+
+datasources:
+  jd-employee:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/employee
+      query: |
+        SELECT
+          id,
+          '$.first-name',
+          '$.last-name',
+          '$.email',
+          '$.mobile'
+        FROM [default/employee]
+
+data: =@ctx.data.jd-employee
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name
+    subtitle: =@ctx.parents.list-data.item.email
+    divider: solid
+    leftElement: 
+      type: avatar
+      text: =$substring(@ctx.parents.list-data.item.first-name,0,1) & $substring(@ctx.parents.list-data.item.last-name,0,1)
+    swipeable:
+      left:
+        - label: Delete
+          color: error
+          onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete item
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/employee
+              entityId: =@ctx.parents.list-data.item.id
+              confirmModal:
+                title: Do you really want to delete this person?
+                description: =@ctx.parents.list-data.item.first-name
+                confirmText: REMOVE    
+

@@ -1,2 +1,14 @@
 title: quickExpense
 category: finances
+
+favorites: 
+ - size: 2x2
+   children: employee-list
+
+widgets: 
+  - size: 2x2
+    children: employee-list
+  - size: 1x1
+    children: employee-new
+  - size: 1x1
+    children: employee-ddlist

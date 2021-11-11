@@ -1,0 +1,92 @@
+name: Employees
+referenceId: employee-list
+type: '@jigx/jig/list'
+icon: robot
+
+datasources:
+  user-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - id: 1
+          first-name: James
+          last-name: Oconner
+          email: james@jigx.com
+          job-title: Product Manager
+          department: Development
+          phone: +1 (230) 223-8975
+          image: https://www.bethesdaheadshots.com/wp-content/uploads/2020/02/Jonathan-Business-Headshot.jpg
+        - id: 2
+          first-name: Bryan
+          last-name: Jones
+          email: brian@jigx.com
+          job-title: UX Developer
+          department: Development
+          phone: +1 (230) 223-8975
+          image: https://www.andygreenwell.com/wp-content/uploads/2017/01/best-business-headshots-detroit-MI_48106.jpg
+        - id: 3
+          first-name: Sarah
+          last-name: Anderson
+          email: sarah@jigx.com
+          job-title: Sales Manager
+          department: Sales
+          phone: +1 (230) 223-8975
+          image: https://truestudios.biz/images/headshots/Free_Headshot_Columbus_7.jpg
+        - id: 4
+          first-name: William
+          last-name: Bret
+          email: william@jigx.com
+          job-title: L2 Support
+          department: Support
+          phone: +1 (230) 223-8975
+          image: https://jenworley.com/wp-content/uploads/2020/04/Pittsburgh-Headshot-Photographer-1203-min.jpg
+
+data: =@ctx.data.user-data
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name
+    subtitle: =@ctx.parents.list-data.item.department & ' - ' & @ctx.parents.list-data.item.job-title
+    divider: solid
+    leftElement: 
+      type: avatar
+      text:  ''
+      uri: =@ctx.parents.list-data.item.image
+    
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: ''
+        linkTo: employee-details
+        parameters:
+          first-name: =@ctx.parents.list-data.item.first-name
+          last-name: =@ctx.parents.list-data.item.last-name
+          email: =@ctx.parents.list-data.item.email
+          phone: =@ctx.parents.list-data.item.phone
+
+views:
+  2x2:
+    componentId: '@jigx/jw-list'
+    options:
+      data: =@ctx.data.user-data
+      item:
+        componentId: '@jigx/jc-list-item'
+        options:
+          title: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name
+          subtitle: =@ctx.parents.list-data.item.job-title
+          divider: solid
+          leftElement: 
+            type: avatar
+            text:  ''
+            uri: =@ctx.parents.list-data.item.image
+            
+          onPress: 
+            componentId: '@jigx/ja-go-to'
+            options:
+              title: ''
+              linkTo: employee-details
+              parameters:
+                first-name: =@ctx.parents.list-data.item.first-name
+                last-name: =@ctx.parents.list-data.item.last-name
+                email: =@ctx.parents.list-data.item.email
+                phone: =@ctx.parents.list-data.item.phone

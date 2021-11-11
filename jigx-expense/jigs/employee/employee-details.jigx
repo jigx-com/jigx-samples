@@ -1,0 +1,54 @@
+name: Details
+referenceId: employee-details
+type: '@jigx/jig/default'
+icon: layout-dashboard
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.jig.inputs.first-name & ' ' & @ctx.jig.inputs.last-name
+      subtitle: Personal details
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'First Name:'
+              value: =@ctx.jig.inputs.first-name
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Last Name:'
+              value: =@ctx.jig.inputs.last-name
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Email:'
+            value: =@ctx.jig.inputs.email
+            type: email
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Phone:'
+            value: =@ctx.jig.inputs.phone
+            type: phone
+        - componentId: '@jigx/jc-entity-field' 
+          options:
+            label: 'Street:'
+            value: 35317 SE Venn Street
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'City:'
+            value: Snoqualmie
+        -
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'State:'
+              value: WA
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'ZIP:'
+              value: '98065'
