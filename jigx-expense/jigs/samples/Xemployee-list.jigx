@@ -1,7 +1,7 @@
 name: Employees
-referenceId: employee-list
+referenceId: Xemployee-list
 type: '@jigx/jig/list'
-icon: robot
+icon: beer-mug
 
 datasources:
   user-data:

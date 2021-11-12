@@ -1,0 +1,14 @@
+method: GET
+provider: DATA_PROVIDER_REST
+parameters:
+  accessToken:
+    location: header
+    type: microsoft
+    value: microsoft
+    required: true
+  email:
+    location: path
+    type: string
+    required: true
+    
+url: https://graph.microsoft.com/v1.0/users/{email}

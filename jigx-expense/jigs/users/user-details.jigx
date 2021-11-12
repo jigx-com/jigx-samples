@@ -1,0 +1,108 @@
+name: Details
+referenceId: user-details
+type: '@jigx/jig/default'
+icon: layout-dashboard
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: Personal Info
+      subtitle: =@ctx.data.ms-user.displayName
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Update my info
+        linkTo: user-update
+        parameters:
+          email: =@ctx.data.ms-user.mail
+          display-name: =@ctx.data.ms-user.displayName
+
+datasources:
+  ms-user:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: ms-user
+          function: graph-getuser
+          functionParameters:
+            email: =@ctx.jig.inputs.email
+            accessToken: microsoft           
+      query: |
+        SELECT
+          '$.id',
+          '$.displayName',
+          '$.givenName',
+          '$.surname',
+          '$.mail',
+          '$.mobilePhone',
+          '$.jobTitle'
+        FROM [ms-user] WHERE '$.mail' = @email
+      queryParameters:
+        email: =@ctx.jig.inputs.email
+  
+  sql-user:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      method: query
+      entities:
+        - entity: sql-user
+          function: sql-getuser
+          functionParameters:
+            email: =@ctx.jig.inputs.email
+      query: |
+        SELECT 
+          '$.email',
+          '$.department',
+          '$.office',
+          '$.currency'
+        FROM [sql-user] WHERE '$.email' = @email
+      queryParameters:
+        email: =@ctx.jig.inputs.email
+        
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'First Name:'
+              value: =@ctx.data.ms-user.givenName
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Last Name:'
+              value: =@ctx.data.ms-user.surname
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Email:'
+            value: =@ctx.data.ms-user.mail
+            type: email
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Phone:'
+            value: =@ctx.data.ms-user.mobilePhone
+            type: phone
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Job Title:'
+            value: =@ctx.data.ms-user.jobTitle
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Department:'
+            value: =@ctx.data.sql-user.department
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Office:'
+              value: =@ctx.data.sql-user.office
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Currency:'
+              value: =@ctx.data.sql-user.currency

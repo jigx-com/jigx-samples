@@ -1,0 +1,44 @@
+name: Users
+referenceId: users-list
+type: '@jigx/jig/list'
+icon: beer-mug
+
+datasources:
+  graph-users:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: ms-users
+          function: graph-getusers
+          functionParameters:
+            accessToken: microsoft           
+      query: |
+        SELECT
+          '$.id',
+          '$.displayName',
+          '$.givenName',
+          '$.surname',
+          '$.mail',
+          '$.mobilePhone',
+          '$.jobTitle'
+        FROM [ms-users] WHERE '$.mobilePhone' IS NOT NULL
+
+data: =@ctx.data.graph-users
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.givenName & ' ' & @ctx.parents.list-data.item.surname
+    subtitle: =@ctx.parents.list-data.item.jobTitle
+    divider: solid
+    leftElement: 
+      type: avatar
+      text: =$substring(@ctx.parents.list-data.item.givenName,0,1) & $substring(@ctx.parents.list-data.item.surname,0,1)
+    
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: ''
+        linkTo: user-details
+        parameters:
+          email: =@ctx.parents.list-data.item.mail

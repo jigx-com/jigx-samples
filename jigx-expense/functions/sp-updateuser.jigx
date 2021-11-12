@@ -1,0 +1,26 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: sp_updateuser
+connection: db.quickExpenses
+
+parameters:
+  id:
+    location: input
+    type: string
+    required: true
+  email:
+    location: input
+    type: string
+    required: true
+  department:
+    location: input
+    type: string
+    required: true
+  office:
+    location: input
+    type: string
+    required: true
+  currency:
+    location: input
+    type: string
+    required: true

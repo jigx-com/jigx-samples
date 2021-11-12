@@ -1,0 +1,89 @@
+name: Update
+referenceId: user-update
+type: '@jigx/jig/form'
+icon: pencil-write
+
+header:
+  children: 
+    componentId: '@jigx/jc-image'
+    options:
+      title: Update Personal Info
+      subtitle: =@ctx.jig.inputs.display-name
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: update-user-info
+      options:
+        title: Save personal info
+        icon: add
+        onSuccess:
+          title: Your info has been updated
+       
+datasources:
+  sql-user:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_SQL
+      method: query
+      entities:
+        - entity: sql-user
+          function: sql-getuser
+          functionParameters:
+            email: =@ctx.jig.inputs.email
+      query: |
+        SELECT 
+          id,
+          '$.email',
+          '$.department',
+          '$.office',
+          '$.currency'
+        FROM [sql-user] WHERE '$.email' = @email
+      queryParameters:
+        email: =@ctx.jig.inputs.email
+
+entity: bla
+function: sp-updateuser
+method: update
+provider: DATA_PROVIDER_SQL
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isHidden: false
+      property: id
+      label: 'id:'
+      initialValue: "=$exists(@ctx.data.sql-user.email) ? @ctx.data.sql-user.id : '0'"
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: email
+      label: 'email:'
+      initialValue: =@ctx.jig.inputs.email
+      style:
+        isDisabled: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: department
+      label: 'Department:'
+      initialValue: =@ctx.data.sql-user.department
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: office
+        label: 'Office:'
+        initialValue: =@ctx.data.sql-user.office
+    - componentId: "@jigx/jc-dropdown"
+      options:
+        property: currency
+        data:
+          - title: EUR
+            value: EUR
+          - title: CZK
+            value: CZK
+          - title: GBP
+            value: GBP
+          - title: USD
+            value: USD
+        label: 'currency:'
+        initialValue: =@ctx.data.sql-user.currency
