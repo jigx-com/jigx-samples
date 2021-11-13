@@ -4,7 +4,7 @@ type: '@jigx/jig/list'
 icon: beer-mug
 
 datasources:
-  graph-users:
+  dt_graph-users:
     componentId: "@jigx/jd-sqlite"
     options:
       provider: DATA_PROVIDER_REST
@@ -24,7 +24,7 @@ datasources:
           '$.jobTitle'
         FROM [ms-users] WHERE '$.mobilePhone' IS NOT NULL
 
-data: =@ctx.data.graph-users
+data: =@ctx.data.dt_graph-users
 item: 
   componentId: '@jigx/jc-list-item'
   options:

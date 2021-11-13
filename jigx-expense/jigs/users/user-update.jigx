@@ -23,16 +23,14 @@ actions:
           title: Your info has been updated
        
 datasources:
-  sql-user:
+  dt_sql-user:
     componentId: '@jigx/jd-sqlite'
     options:
       provider: DATA_PROVIDER_SQL
       method: query
       entities:
-        - entity: sql-user
-          function: sql-getuser
-          functionParameters:
-            email: =@ctx.jig.inputs.email
+        - entity: sql-users
+          function: sql-getusers
       query: |
         SELECT 
           id,
@@ -40,21 +38,21 @@ datasources:
           '$.department',
           '$.office',
           '$.currency'
-        FROM [sql-user] WHERE '$.email' = @email
+        FROM [sql-users] WHERE '$.email' = @email
       queryParameters:
         email: =@ctx.jig.inputs.email
 
-entity: bla
+entity: sql-users
 function: sp-updateuser
 method: update
 provider: DATA_PROVIDER_SQL
 children:
   - componentId: "@jigx/jc-text-field"
     options:
-      isHidden: false
+      isHidden: true
       property: id
       label: 'id:'
-      initialValue: "=$exists(@ctx.data.sql-user.email) ? @ctx.data.sql-user.id : '0'"
+      initialValue: "=$exists(@ctx.data.dt_sql-user.email) ? @ctx.data.dt_sql-user.id : '0'"
   - componentId: "@jigx/jc-text-field"
     options:
       property: email
@@ -66,13 +64,13 @@ children:
     options:
       property: department
       label: 'Department:'
-      initialValue: =@ctx.data.sql-user.department
+      initialValue: =@ctx.data.dt_sql-user.department
   - 
     - componentId: "@jigx/jc-text-field"
       options:
         property: office
         label: 'Office:'
-        initialValue: =@ctx.data.sql-user.office
+        initialValue: =@ctx.data.dt_sql-user.office
     - componentId: "@jigx/jc-dropdown"
       options:
         property: currency
@@ -86,4 +84,4 @@ children:
           - title: USD
             value: USD
         label: 'currency:'
-        initialValue: =@ctx.data.sql-user.currency
+        initialValue: =@ctx.data.dt_sql-user.currency

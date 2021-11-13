@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'SELECT [id],[email],[department],[office],[currency] FROM [users]'
+connection: db.quickExpenses
