@@ -1,4 +1,5 @@
 CREATE OR ALTER PROCEDURE [dbo].[sp_updateuser]
+    @id INT,
     @email NVARCHAR (100),
     @department NVARCHAR (100),
     @office NVARCHAR (100),
@@ -6,10 +7,10 @@ CREATE OR ALTER PROCEDURE [dbo].[sp_updateuser]
 AS
 SET NOCOUNT ON;
 
-    IF EXISTS
-        (SELECT * FROM [dbo].[users] WHERE [email] = @email)
+IF EXISTS
+        (SELECT * FROM [dbo].[users] WHERE [id] = @id)
     BEGIN
-        UPDATE [dbo].[users] SET [department] = @department, [office] = @office, [currency] = @currency WHERE [email] = @email
+        UPDATE [dbo].[users] SET [department] = @department, [office] = @office, [currency] = @currency WHERE [id] = @id
     END
 ELSE
     BEGIN
@@ -18,6 +19,6 @@ ELSE
 
 GO
 
-EXEC sp_updateuser 'renier@jigx.com', 'Development','USA','USD'
+EXEC sp_updateuser '1', 'renier@jigx.com', 'Development','USA','USD'
 
 SELECT * FROM [dbo].[users]
