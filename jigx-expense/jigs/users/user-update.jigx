@@ -23,7 +23,7 @@ actions:
           title: Your info has been updated
        
 datasources:
-  dt_sql-user:
+  sql-user:
     componentId: '@jigx/jd-sqlite'
     options:
       provider: DATA_PROVIDER_SQL
@@ -52,7 +52,7 @@ children:
       isHidden: true
       property: id
       label: 'id:'
-      initialValue: "=$exists(@ctx.data.dt_sql-user.email) ? @ctx.data.dt_sql-user.id : '0'"
+      initialValue: "=$exists(@ctx.data.sql-user.email) ? @ctx.data.sql-user.id : '0'"
   - componentId: "@jigx/jc-text-field"
     options:
       property: email
@@ -64,13 +64,13 @@ children:
     options:
       property: department
       label: 'Department:'
-      initialValue: =@ctx.data.dt_sql-user.department
+      initialValue: =@ctx.data.sql-user.department
   - 
     - componentId: "@jigx/jc-text-field"
       options:
         property: office
         label: 'Office:'
-        initialValue: =@ctx.data.dt_sql-user.office
+        initialValue: =@ctx.data.sql-user.office
     - componentId: "@jigx/jc-dropdown"
       options:
         property: currency
@@ -84,4 +84,4 @@ children:
           - title: USD
             value: USD
         label: 'currency:'
-        initialValue: =@ctx.data.dt_sql-user.currency
+        initialValue: =@ctx.data.sql-user.currency

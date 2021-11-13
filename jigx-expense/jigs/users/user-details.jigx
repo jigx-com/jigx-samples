@@ -19,11 +19,11 @@ actions:
         title: Update my info
         linkTo: user-update
         parameters:
-          email: =@ctx.data.dt_ms-user.mail
-          display-name: =@ctx.data.dt_ms-user.displayName
+          email: =@ctx.data.ms-users.mail
+          display-name: =@ctx.data.ms-users.displayName
 
 datasources:
-  dt_ms-user:
+  ms-users:
     componentId: "@jigx/jd-sqlite"
     options:
       provider: DATA_PROVIDER_REST
@@ -45,7 +45,7 @@ datasources:
       queryParameters:
         email: =@ctx.jig.inputs.email
   
-  dt_sql-user:
+  sql-user:
     componentId: '@jigx/jd-sqlite'
     options:
       provider: DATA_PROVIDER_SQL
@@ -71,35 +71,35 @@ children:
           - componentId: '@jigx/jc-entity-field'
             options:
               label: 'First Name:'
-              value: =@ctx.data.dt_ms-user.givenName
+              value: =@ctx.data.ms-users.givenName
           - componentId: '@jigx/jc-entity-field'
             options:
               label: 'Last Name:'
-              value: =@ctx.data.dt_ms-user.surname
+              value: =@ctx.data.ms-users.surname
         - componentId: '@jigx/jc-entity-field'
           options:
             label: 'Email:'
-            value: =@ctx.data.dt_ms-user.mail
+            value: =@ctx.data.ms-users.mail
             type: email
         - componentId: '@jigx/jc-entity-field'
           options:
             label: 'Phone:'
-            value: =@ctx.data.dt_ms-user.mobilePhone
+            value: =@ctx.data.ms-users.mobilePhone
             type: phone
         - componentId: '@jigx/jc-entity-field'
           options:
             label: 'Job Title:'
-            value: =@ctx.data.dt_ms-user.jobTitle
+            value: =@ctx.data.ms-users.jobTitle
         - componentId: '@jigx/jc-entity-field'
           options:
             label: 'Department:'
-            value: =@ctx.data.dt_sql-user.department
+            value: =@ctx.data.sql-user.department
         - 
           - componentId: '@jigx/jc-entity-field'
             options:
               label: 'Office:'
-              value: =@ctx.data.dt_sql-user.office
+              value: =@ctx.data.sql-user.office
           - componentId: '@jigx/jc-entity-field'
             options:
               label: 'Currency:'
-              value: =@ctx.data.dt_sql-user.currency
+              value: =@ctx.data.sql-user.currency
