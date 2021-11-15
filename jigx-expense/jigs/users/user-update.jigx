@@ -10,7 +10,7 @@ header:
       title: Update Personal Info
       subtitle: =@ctx.jig.inputs.display-name
       source:
-        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+        uri: https://www.techrepublic.com/a/hub/i/r/2020/01/06/33a09c97-daae-47ae-a5d2-373d43fcd837/resize/1200x/16c1a0bcbf4cbda19fa1107f656d0a6c/istock-1137014758.jpg
 
 actions:
   - children:
