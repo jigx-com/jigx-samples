@@ -6,4 +6,6 @@ children:
       type: datetime
       property: date
       label: Date
+      maximumDate: =$toMillis($now()) + 1000000000
+      minimumDate: =$toMillis($now()) - 1000000000
 entity: test

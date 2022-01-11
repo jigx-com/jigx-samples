@@ -3,98 +3,114 @@ category: personal
 referenceId: Jigx-Docs
 
 widgets: 
-  # - size: 1x1
-  #   children: control-avatar-simple
-  # - size: 1x1
-  #   children: control-bar-chart-simple  
-  # - size: 1x1
-  #   children: control-date-picker  
-  # - size: 1x1
-  #   children: control-dropdown  
-  # - size: 1x1
-  #   children: control-entity-field  
-  # - size: 1x1
-  #   children: control-image-picker  
-  # - size: 1x1
-  #   children: control-image  
-  # - size: 1x1
-  #   children: control-line-chart
-  # - size: 1x1
-  #   children: control-list-item
-  # - size: 1x1
-  #   children: control-location  
-  # - size: 1x1
-  #   children: control-pie-chart  
-  # - size: 1x1
-  #   children: control-stepper  
-  # - size: 1x1
-  #   children: control-text-field  
-  # - size: 1x1
-  #   children: control-video-player  
-  # - size: 1x1
-  #   children: control-advanced-line-chart  
-  # - size: 1x1
-  #   children: control-advanced-bar-chart  
-  # - size: 1x1
-  #   children: control-advanced-list-item  
-  # - size: 1x1
-  #   children: control-advanced-list-item-delete  
-  # - size: 1x1
-  #   children: control-advanced-list-item-amount  
-  # - size: 1x1
-  #   children: control-list-item-filtring
-  # - size: 1x1
-  #   children: control-list-item-horizontal 
-  # - size: 1x1
-  #   children: control-advanced-list-item-searchable   
-  # - size: 1x1
-  #   children: control-advanced-list-item-selectable  
-  # - size: 1x1
-  #   children: control-advanced-list-item-sortable
-  # - size: 1x1
-  #   children: control-advanced-list-item-with-emoji
-  # - size: 1x1
-  #   children: control-advanced-list-item-left-element  
-  # - size: 1x1
-  #   children: control-advanced-drop-down
-  # - size: 4x2
-  #   children: jw-carousel
-  # - size: 2x4
-  #   children: jw-list
-  # - size: 2x2
-  #   children: jw-avatar
-  # - size: 2x2
-  #   children: jw-value  
-  # - size: 4x2
-  #   children: jw-line-chart
-  # - size: 2x4
-  #   children: jw-chart-combine  
-  # - size: 2x2
-  #   children: jw-action  
-  # - size: 2x2
-  #   children: jw-pie-chart  
-  # - size: 4x2
-  #   children: jw-video    
-  # - size: 4x2
-  #   children: jw-carousel-dynamic  
-  # - size: 2x4
-  #   children: jw-user-list  
-  # - size: 2x2
-  #   children: jw-avatar-dynamic  
-  # - size: 2x2
-  #   children: jw-line-chart-dynmic  
-  # - size: 4x2
-  #   children: jw-chart-combine-dynamic  
-  # - size: 4x2
-  #   children: jw-crypto
-  # - size: 4x2
-  #   children: jw-location
-  # - size: 2x4
-  #   children: jw-list-sql  
-  # - size: 2x2
-  #   children: jw-avatar-sql  
-  # - size: 4x2
-  #   children: widget-carousel
+  - size: 1x1
+    children: control-avatar-simple
+  - size: 1x1
+    children: control-bar-chart-simple  
+  - size: 1x1
+    children: control-date-picker  
+  - size: 1x1
+    children: control-dropdown  
+  - size: 1x1
+    children: control-entity-field  
+  - size: 1x1
+    children: control-image-picker  
+  - size: 1x1
+    children: control-image  
+  - size: 1x1
+    children: control-line-chart
+  - size: 1x1
+    children: control-list-item
+  - size: 1x1
+    children: control-location  
+  - size: 1x1
+    children: control-pie-chart  
+  - size: 1x1
+    children: control-stepper  
+  - size: 1x1
+    children: control-text-field  
+  - size: 1x1
+    children: control-video-player  
+  - size: 1x1
+    children: control-advanced-line-chart  
+  - size: 1x1
+    children: control-advanced-bar-chart  
+  - size: 1x1
+    children: control-advanced-list-item  
+  - size: 1x1
+    children: control-advanced-list-item-delete  
+  - size: 1x1
+    children: control-advanced-list-item-amount  
+  - size: 1x1
+    children: control-list-item-filtring
+  - size: 1x1
+    children: control-list-item-horizontal 
+  - size: 1x1
+    children: control-advanced-list-item-searchable   
+  - size: 1x1
+    children: control-advanced-list-item-selectable  
+  - size: 1x1
+    children: control-advanced-list-item-sortable
+  - size: 1x1
+    children: control-advanced-list-item-with-emoji
+  - size: 1x1
+    children: control-advanced-list-item-left-element  
+  - size: 1x1
+    children: control-advanced-drop-down
+  - size: 1x1
+    children: confirm-modal
+  - size: 1x1
+    children: confirm-modal-form
+  - size: 1x1
+    children: jc-list-avatars-labels
+  - size: 1x1
+    children: jc-document
+  - size: 1x1
+    children: jc-signature
+  - size: 2x2
+    children: jc-list-item-badge
+  - size: 2x2
+    children: jc-list-avatars-labels
+  - size: 2x2
+    children: jc-list-check
+  - size: 4x2
+    children: jw-carousel
+  - size: 2x4
+    children: jw-list
+  - size: 2x2
+    children: jw-avatar
+  - size: 2x2
+    children: jw-value  
+  - size: 4x2
+    children: jw-line-chart
+  - size: 2x4
+    children: jw-chart-combine  
+  - size: 2x2
+    children: jw-action  
+  - size: 2x2
+    children: jw-pie-chart  
+  - size: 4x2
+    children: jw-video    
+  - size: 4x2
+    children: jw-carousel-dynamic  
+  - size: 2x4
+    children: jw-user-list  
+  - size: 2x2
+    children: jw-avatar-dynamic  
+  - size: 2x2
+    children: jw-line-chart-dynmic  
+  - size: 4x2
+    children: jw-chart-combine-dynamic  
+  - size: 4x2
+    children: jw-crypto
+  - size: 4x2
+    children: jw-location
+  - size: 2x4
+    children: jw-list-sql  
+  - size: 2x2
+    children: jw-avatar-sql  
+  - size: 4x2
+    children: widget-carousel
   - size: 2x2
     children: widget-components-overview
   - size: 2x2
@@ -149,92 +165,114 @@ widgets:
     children: widget-placeholder-chart
     
 favorites: 
-  # - size: 1x1
-  #   children: control-avatar-simple
-  # - size: 1x1
-  #   children: control-bar-chart-simple  
-  # - size: 1x1
-  #   children: control-date-picker  
-  # - size: 1x1
-  #   children: control-dropdown  
-  # - size: 1x1
-  #   children: control-entity-field  
-  # - size: 1x1
-  #   children: control-image-picker  
-  # - size: 1x1
-  #   children: control-image  
-  # - size: 1x1
-  #   children: control-line-chart
-  # - size: 1x1
-  #   children: control-list-item
-  # - size: 1x1
-  #   children: control-location  
-  # - size: 1x1
-  #   children: control-pie-chart  
-  # - size: 1x1
-  #   children: control-stepper  
-  # - size: 1x1
-  #   children: control-text-field  
-  # - size: 1x1
-  #   children: control-video-player  
-  # - size: 1x1
-  #   children: control-advanced-line-chart  
-  # - size: 1x1
-  #   children: control-advanced-bar-chart  
-  # - size: 1x1
-  #   children: control-advanced-list-item  
-  # - size: 1x1
-  #   children: control-advanced-list-item-delete  
-  # - size: 1x1
-  #   children: control-advanced-list-item-amount  
-  # - size: 1x1
-  #   children: control-list-item-filtring
-  # - size: 1x1
-  #   children: control-list-item-horizontal 
-  # - size: 1x1
-  #   children: control-advanced-list-item-searchable   
-  # - size: 1x1
-  #   children: control-advanced-list-item-selectable  
-  # - size: 1x1
-  #   children: control-advanced-list-item-sortable
-  # - size: 4x2
-  #   children: jw-carousel
-  # - size: 2x4
-  #   children: jw-list
-  # - size: 2x2
-  #   children: jw-avatar
-  # - size: 2x2
-  #   children: jw-value  
-  # - size: 4x2
-  #   children: jw-line-chart
-  # - size: 2x4
-  #   children: jw-chart-combine  
-  # - size: 2x2
-  #   children: jw-action  
-  # - size: 2x2
-  #   children: jw-pie-chart  
-  # - size: 4x2
-  #   children: jw-video    
-  # - size: 4x2
-  #   children: jw-carousel-dynamic  
-  # - size: 2x4
-  #   children: jw-user-list  
-  # - size: 2x2
-  #   children: jw-avatar-dynamic  
-  # - size: 2x2
-  #   children: jw-line-chart-dynmic  
-  # - size: 4x2
-  #   children: jw-chart-combine-dynamic  
-  # - size: 4x2
-  #   children: jw-crypto
-  # - size: 4x2
-  #   children: jw-location
-  # - size: 2x4
-  #   children: jw-list-sql  
-  # - size: 2x2
-  #   children: jw-avatar-sql  
-  # - size: 4x2
-  #   children: widget-carousel
+  - size: 1x1
+    children: control-avatar-simple
+  - size: 1x1
+    children: control-bar-chart-simple  
+  - size: 1x1
+    children: control-date-picker  
+  - size: 1x1
+    children: control-dropdown  
+  - size: 1x1
+    children: control-entity-field  
+  - size: 1x1
+    children: control-image-picker  
+  - size: 1x1
+    children: control-image  
+  - size: 1x1
+    children: control-line-chart
+  - size: 1x1
+    children: control-list-item
+  - size: 1x1
+    children: control-location  
+  - size: 1x1
+    children: control-pie-chart  
+  - size: 1x1
+    children: control-stepper  
+  - size: 1x1
+    children: control-text-field  
+  - size: 1x1
+    children: control-video-player  
+  - size: 1x1
+    children: control-advanced-line-chart  
+  - size: 1x1
+    children: control-advanced-bar-chart  
+  - size: 1x1
+    children: control-advanced-list-item  
+  - size: 1x1
+    children: control-advanced-list-item-delete  
+  - size: 1x1
+    children: control-advanced-list-item-amount  
+  - size: 1x1
+    children: control-list-item-filtring
+  - size: 1x1
+    children: control-list-item-horizontal 
+  - size: 1x1
+    children: control-advanced-list-item-searchable   
+  - size: 1x1
+    children: control-advanced-list-item-selectable  
+  - size: 1x1
+    children: control-advanced-list-item-sortable
+  - size: 1x1
+    children: control-advanced-list-item-with-emoji
+  - size: 1x1
+    children: control-advanced-list-item-left-element  
+  - size: 1x1
+    children: control-advanced-drop-down
+  - size: 1x1
+    children: confirm-modal
+  - size: 1x1
+    children: confirm-modal-form
+  - size: 1x1
+    children: jc-list-avatars-labels
+  - size: 1x1
+    children: jc-document
+  - size: 1x1
+    children: jc-signature
+  - size: 2x2
+    children: jc-list-item-badge
+  - size: 2x2
+    children: jc-list-avatars-labels
+  - size: 2x2
+    children: jc-list-check
+  - size: 4x2
+    children: jw-carousel
+  - size: 2x4
+    children: jw-list
+  - size: 2x2
+    children: jw-avatar
+  - size: 2x2
+    children: jw-value  
+  - size: 4x2
+    children: jw-line-chart
+  - size: 2x4
+    children: jw-chart-combine  
+  - size: 2x2
+    children: jw-action  
+  - size: 2x2
+    children: jw-pie-chart  
+  - size: 4x2
+    children: jw-video    
+  - size: 4x2
+    children: jw-carousel-dynamic  
+  - size: 2x4
+    children: jw-user-list  
+  - size: 2x2
+    children: jw-avatar-dynamic  
+  - size: 2x2
+    children: jw-line-chart-dynmic  
+  - size: 4x2
+    children: jw-chart-combine-dynamic  
+  - size: 4x2
+    children: jw-crypto
+  - size: 4x2
+    children: jw-location
+  - size: 2x4
+    children: jw-list-sql  
+  - size: 2x2
+    children: jw-avatar-sql  
+  - size: 4x2
+    children: widget-carousel
   - size: 2x2
     children: widget-components-overview
   - size: 2x2
