@@ -1,0 +1,46 @@
+name: Company revenue
+referenceId: widget-company-revenue
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - 50
+        - 40
+        - 50
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  2x2:
+    componentId: "@jigx/jw-chart"
+    options:
+      top:
+        componentId: "@jigx/jc-trend"
+        options:
+          title: "$ 39,559.36"
+          value: 0.21
+          style:
+            isAlignRight: true
+            isValueHidden: false
+            isValueBottom: true
+      chart:
+        componentId: "@jigx/jc-line-chart"
+        options:
+          yAxis:
+            max: 80
+          xAxis:
+            categories:
+              - ""
+              - Aug
+              - Sep
+          series:
+            - data: =@ctx.data.static-data

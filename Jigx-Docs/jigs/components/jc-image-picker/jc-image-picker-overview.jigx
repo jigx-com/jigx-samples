@@ -1,0 +1,36 @@
+name: Overview (jc-image-picker)
+type: '@jigx/jig/list'
+referenceId: jc-image-picker-overview
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Multiple images
+          description: Select & upload
+          icon: layout-dashboard
+          color: primary
+          target: jc-image-picker-multiple
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: View details
+        linkTo: =@ctx.parents.list-data.item.target
+        parameters:
+          name: =@ctx.parents.list-data.item.name
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.color
+    leftElement:
+      type: icon
+      icon: =@ctx.parents.list-data.item.icon
+      isDuotone: true
+      isContained: true

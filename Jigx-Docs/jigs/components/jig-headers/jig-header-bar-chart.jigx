@@ -1,0 +1,80 @@
+name: Chart header
+referenceId: jig-header-bar-chart
+type: '@jigx/jig/default'
+
+header:
+  children:
+    componentId: '@jigx/jc-bar-chart'
+    options:
+      plotOptions:
+        series:
+          pointWidth: 25
+      chart:
+        title:
+          text: Order History
+        subtitle:
+          text: Last 6 months
+        height: 230
+        isAnimated: true
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 6
+        minPadding: 0.3
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+        isHidden: true
+      xAxis:
+        minPadding: 50
+        categories:
+          - December
+          - January
+          - February
+          - March
+          - April
+      series:
+        - data: =@ctx.data.active-orders
+          color: color3 
+          name: Orders
+          animation:
+            type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: false
+      legend:
+        isHidden: true
+        
+datasources:
+  active-orders:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - x: 1-7
+          y: 1000
+          color: color18
+        - x: 8-14
+          y: 2500
+          color: color18
+        - x: 15-21
+          y: 1750
+          color: color18
+        - x: 22-28
+          y: 5000
+          color: color18
+        - x: 29-31
+          y: 3600
+          color: color18
+  
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+        

@@ -1,0 +1,65 @@
+name: Misc options
+type: "@jigx/jig/form"
+referenceId: jc-form-misc
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: "@jigx/jc-number-field"
+    options:
+      property: number1
+      label: Number with min max
+      minimum: -5
+      maximum: 500
+  - componentId: "@jigx/jc-email-field"
+    options:
+      property: email1
+      label: Email
+
+  - componentId: "@jigx/jc-text-field"
+    options:
+      icon: list-add
+      label: icon
+      property: field1
+  - componentId: "@jigx/jc-text-field"
+    options:
+      helperText: I am a helperText
+      label: helperText
+      property: field2
+  - componentId: "@jigx/jc-text-field"
+    options:
+      errorText: I am an errorText
+      label: errorText
+      property: field3
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isRequired: true
+      label: isRequired
+      property: field4
+  - componentId: "@jigx/jc-text-field"
+    options:
+      initialValue: I have an initialValue
+      label: Text-Field
+      property: field5
+  - componentId: "@jigx/jc-text-field"
+    options:
+      initialValue: Press me and i get cleared
+      isTextClearedOnFocus: true
+      label: isTextClearedOnFocus
+      property: field6
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isSensitive: true
+      label: isSensitive
+      property: field7

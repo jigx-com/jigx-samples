@@ -12,7 +12,13 @@ datasources:
           url: https://jigx.com/wp-content/uploads/adriaan_join_jigx.mp4
 
 children:
-  - 
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: tbd
+            value: tbd
 
 stories:
   componentId: "@jigx/jc-story-group"

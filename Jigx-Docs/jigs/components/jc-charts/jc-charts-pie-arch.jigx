@@ -1,0 +1,28 @@
+name: Pie Chart (Arch)
+referenceId: jc-charts-pie-arch
+
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - y: 1
+        - y: 2
+        - y: 3
+        - y: 2
+
+children:
+  - componentId: '@jigx/jc-pie-chart'
+    options:
+      chart:
+        height: 250
+      yAxis:
+        max: 25
+      xAxis:
+        categories:
+          - 'Sample Data'
+      series:
+        - data: =@ctx.data.series1
+          name: Arch
+          description: Chart
+          type: arch

@@ -1,0 +1,33 @@
+name: Horizontal List
+type: '@jigx/jig/list'
+referenceId: jc-list-horizontal
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+        - name: Item 2
+          description: Description of item 2
+        - name: Item 3
+          description: Description of item 3
+        - name: Item 4
+          description: Description of item 4
+        - name: Item 5
+          description: Description of item 5
+
+
+data: =@ctx.data.components
+isHorizontal: true
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    progress: =$random()
+    leftElement:
+      type: avatar
+      text: 'NN'
+      uri: 'https://i.picsum.photos/id/63/400/300.jpg?hmac=oUHQ8QSv-_k6SECYdJjqg2tqpOpjUE2Jyt6HUyALdiE'

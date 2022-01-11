@@ -1,0 +1,49 @@
+name: Today's patient plan
+icon: list-add
+referenceId: widget-todays-patient-plan
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: John Doe
+          session: "10:00 - 11:30"
+        - name: Lisa Black
+          session: "13:00 - 14:00"
+        - name: Stella Lennon
+          session: "15:00 - 15:30"
+
+views:
+  4x2:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-universal"
+          options:
+            center:
+              componentId: "@jigx/jc-avatar"
+              options:
+                text: J
+                uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.data.static-data
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.name
+                subtitle: =@ctx.parents.list-data.item.session
+                leftElement:
+                  type: avatar
+                  text: "NN"
+                  uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"

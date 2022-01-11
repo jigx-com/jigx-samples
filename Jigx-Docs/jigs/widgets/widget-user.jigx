@@ -1,0 +1,57 @@
+name: User
+referenceId: widget-user
+type: "@jigx/jig/default"
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        name: Berry Test
+        sub: Second line
+        email: "this@that.com"
+        phone: "+20 567 849"
+
+children:
+  # root:
+  #   componentId: '@jigx/jc-user'
+  #   options:
+  #     avatar: 'https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg'
+  #     name: =@ctx.data.static-data.name
+  #     email: =@ctx.data.static-data.email
+  #     phone: =@ctx.data.static-data.phone
+  #     children:
+  #       - text-name-field
+  #       - - name-field
+  #         - sub-field
+  #       - email-field
+  #       - phone-field
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Name
+            value: =@ctx.data.static-data.name
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Sub
+            value: =@ctx.data.static-data.sub
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Email
+            value: =@ctx.data.static-data.email
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Phone
+            value: =@ctx.data.static-data.phone
+
+views:
+  2x2:
+    componentId: "@jigx/jw-universal"
+    options:
+      center:
+        componentId: "@jigx/jc-avatar"
+        options:
+          text: J
+          uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"

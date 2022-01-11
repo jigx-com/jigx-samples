@@ -1,0 +1,9 @@
+type: "@jigx/jig/form"
+name: Date picker
+children:
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      type: datetime
+      property: date
+      label: Date
+entity: test

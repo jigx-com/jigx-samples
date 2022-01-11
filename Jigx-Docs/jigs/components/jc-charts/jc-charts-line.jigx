@@ -1,0 +1,7 @@
+name: Line Chart
+type: '@jigx/jig/composite'
+referenceId: jc-charts-line
+
+children:
+  - componentId: jc-charts-line-one-series
+  - componentId: jc-charts-line-n-series

@@ -1,0 +1,41 @@
+name: Simple list
+type: '@jigx/jig/list'
+referenceId: jc-list-simple
+
+header:
+  children:
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.jig.state.jc-list-simple.activeItem.name
+      subtitle: =@ctx.jig.state.jc-list-simple.activeItem.description
+      source:
+        uri: =@ctx.jig.state.jc-list-simple.activeItem.image
+
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+          image: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
+        - name: Item 2
+          description: Description of item 2
+          image: https://i.picsum.photos/id/380/500/300.jpg?hmac=VqLmu_4FsHVNoUgB9jhBWmMKzEWGBhZvoRxPDquMbNE
+        - name: Item 3
+          description: Description of item 3
+          image: https://i.picsum.photos/id/441/200/300.jpg?hmac=QKMN_HV9XLlzyUWdanPyq2Qz8FJmYYH5Q0CjPACcnsI
+        - name: Item 4
+          description: Description of item 4
+          image: https://i.picsum.photos/id/535/200/200.jpg?hmac=0vK1wlOyeZ3PfsgTuPgZfCyZeBmx_aNys09auM4tXgw
+        - name: Item 5
+          description: Description of item 5
+          image: https://i.picsum.photos/id/204/200/200.jpg?hmac=gppQCOIV43fSCLsdUCoPQxrc16lrOEvVu2u5nH-I4Zo
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description

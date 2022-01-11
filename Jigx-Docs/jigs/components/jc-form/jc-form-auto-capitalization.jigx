@@ -1,0 +1,43 @@
+name: Auto Capitalization
+type: '@jigx/jig/form'
+referenceId: jc-form-auto-capitalization
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: submit-form
+      options:
+        title: Submit
+        formId: sample-form
+    - componentId: '@jigx/ja-go-back'
+      options:
+        title: Cancel
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      isAutoFocused: true
+      isAutoCorrected: false
+      autoCapitalize: none
+      label: autoCapitalize - none
+      property: field1
+  - componentId: '@jigx/jc-text-field'
+    options:
+      autoCapitalize: sentences
+      isAutoCorrected: false
+      label: autoCapitalize - sentences
+      property: field2
+  - componentId: '@jigx/jc-text-field'
+    options:
+      autoCapitalize: words
+      isAutoCorrected: false
+      label: autoCapitalize - words
+      property: field3
+  - componentId: '@jigx/jc-text-field'
+    options:
+      autoCapitalize: characters
+      isAutoCorrected: false
+      label: autoCapitalize - characters
+      property: field4

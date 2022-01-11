@@ -1,0 +1,8 @@
+name: Pie Chart
+type: '@jigx/jig/composite'
+referenceId: jc-charts-pie
+
+children:
+  - componentId: jc-charts-pie-one-series
+  - componentId: jc-charts-pie-arch
+  

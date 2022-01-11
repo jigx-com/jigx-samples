@@ -1,0 +1,84 @@
+name: Keyboard Types
+type: "@jigx/jig/form"
+referenceId: jc-form-keyboards
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isAutoFocused: true
+      keyboardType: default
+      label: Keyboard - default
+      property: field1
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: email-address
+      label: Keyboard - email-address
+      property: field2
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: numeric
+      label: Keyboard - email-numeric
+      property: field3
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: phone-pad
+      label: Keyboard - phone-pad
+      property: field4
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: ascii-capable
+      label: Keyboard - ascii-capable
+      property: field5
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: numbers-and-punctuation
+      label: Keyboard - numbers-and-punctuation
+      property: field6
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: url
+      label: Keyboard - url
+      property: field7
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: number-pad
+      label: Keyboard - number-pad
+      property: field8
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: name-phone-pad
+      label: Keyboard - name-phone-pad
+      property: field9
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: decimal-pad
+      label: Keyboard - decimal-pad
+      property: field10
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: twitter
+      label: Keyboard - twitter
+      property: field11
+  - componentId: "@jigx/jc-text-field"
+    options:
+      keyboardType: web-search
+      label: Keyboard - web-search
+      property: field12
+  # - componentId: '@jigx/jc-text-field'
+  #   options:
+  #     keyboardType: visible-password
+  #     label: Keyboard - visible-password
+  #     property: field13

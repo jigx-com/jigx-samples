@@ -1,4 +1,4 @@
-name: Dropdown menu
+name: Dropdown
 referenceId: control-dropdown
 type: '@jigx/jig/form'
 icon: navigation-menu

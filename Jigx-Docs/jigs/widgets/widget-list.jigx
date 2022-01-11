@@ -1,0 +1,152 @@
+name: List 1
+icon: list-add
+type: "@jigx/jig/list"
+referenceId: widget-list
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Go back
+          icon: list-add
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Second back
+          icon: list-add
+          style:
+            isError: true
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Third back
+          icon: list-add
+
+sort:
+  - title: Name
+    value: name
+  - title: Email
+    value: email
+  - title: Phone
+    value: phone
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      # data:
+      #   - name: Title of first item
+      #     sub: Second line
+      #   - name: Title of second item
+      #     sub: Second line
+      data:
+        - title: Section 1
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+        - title: Section 2
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+        - title: Section 3
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+        - title: Section 4
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+        - title: Section 5
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+        - title: Section 6
+          data:
+            - name: Title of first item
+              sub: Second line
+            - name: Title of second item
+              sub: Second line
+  student-list-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        name: Jiri Otahal
+        delay: 14 minutes
+
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.sub
+    rightElement:
+      type: switch
+      initialValue: true
+
+views:
+  2x2:
+    componentId: "@jigx/jw-actions"
+    options:
+      title: Hello
+      subtitle: Description
+      primary:
+        title: Primary
+        onPress:
+          componentId: "@jigx/ja-go-to"
+          options:
+            title: View details
+            linkTo: component-user
+      secondary:
+        title: Secondary
+        onPress:
+          componentId: "@jigx/ja-go-to"
+          options:
+            title: View details
+            linkTo: component-entity-field
+
+  2x4:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-universal"
+          options:
+            title: Jeremy Lion
+            subtitle: 14 minutes late
+            center:
+              componentId: "@jigx/jc-avatar"
+              options:
+                text: J
+                uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.data.static-data
+            bottom:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: 2 more items
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.name
+                subtitle: =@ctx.parents.list-data.item.email
+                progress: =@ctx.parents.list-data.item.progress
+                colors:
+                  - when: =@ctx.parents.list-data.item.isColor
+                    color: color1
+                  - when: false
+                    color: color2
+                  - when: true
+                    color: color3
+                style:
+                  isError: =@ctx.parents.list-data.item.isLate
+                  # isError: false
+                leftElement:
+                  type: avatar
+                  text: =@ctx.parents.list-data.item.avatarText
