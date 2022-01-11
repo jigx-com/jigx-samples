@@ -1,4 +1,5 @@
 name: New users - Static Data
+type: '@jigx/jig/default'
 referenceId: jw-value
 
 children:

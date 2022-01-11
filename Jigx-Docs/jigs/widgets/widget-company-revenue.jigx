@@ -1,4 +1,5 @@
 name: Company revenue
+type: '@jigx/jig/default'
 referenceId: widget-company-revenue
 
 datasources:

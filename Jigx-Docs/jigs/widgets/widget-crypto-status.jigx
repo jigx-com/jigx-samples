@@ -1,5 +1,6 @@
 name: Crypto status
 icon: button-play
+type: '@jigx/jig/default'
 referenceId: widget-crypto-status
 
 children:

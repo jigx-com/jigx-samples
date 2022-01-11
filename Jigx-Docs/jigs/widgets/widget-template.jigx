@@ -1,5 +1,6 @@
 name: Widget Template
 icon: calendar
+type: '@jigx/jig/default'
 referenceId: widget-template
 
 children:

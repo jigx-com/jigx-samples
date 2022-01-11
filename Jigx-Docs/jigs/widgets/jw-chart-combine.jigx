@@ -1,5 +1,6 @@
 name: Monthly revenue - Static Data
 referenceId: jw-chart-combine
+type: '@jigx/jig/default'
 
 datasources:
   series1:

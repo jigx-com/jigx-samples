@@ -1,4 +1,5 @@
 name: Line chart - Static Data
+type: '@jigx/jig/default'
 referenceId: jw-line-chart
 
 datasources:

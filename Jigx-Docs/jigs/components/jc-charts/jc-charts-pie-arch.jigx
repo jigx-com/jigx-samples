@@ -1,4 +1,5 @@
 name: Pie Chart (Arch)
+type: '@jigx/jig/default'
 referenceId: jc-charts-pie-arch
 
 datasources:

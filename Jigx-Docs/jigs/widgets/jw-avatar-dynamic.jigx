@@ -1,4 +1,5 @@
 name: Avatar - dynamic data
+type: '@jigx/jig/default'
 
 datasources:
   profile:

@@ -1,4 +1,5 @@
 name: Stepper
+type: '@jigx/jig/default'
 referenceId: control-stepper
 icon: checklist
 

@@ -1,5 +1,6 @@
 name: New monthly deals
 icon: list-add
+type: '@jigx/jig/default'
 referenceId: widget-new-monthly-deals
 
 children:

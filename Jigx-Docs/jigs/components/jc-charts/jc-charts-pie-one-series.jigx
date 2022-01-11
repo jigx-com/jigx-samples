@@ -1,4 +1,5 @@
 name: Pie Chart (1 series)
+type: '@jigx/jig/default'
 referenceId: jc-charts-pie-one-series
 
 datasources:

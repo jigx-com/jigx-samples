@@ -1,4 +1,5 @@
 name: Patient Visits
+type: '@jigx/jig/default'
 referenceId: widget-patient-visits
 
 children:

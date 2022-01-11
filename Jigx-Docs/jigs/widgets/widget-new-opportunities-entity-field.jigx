@@ -1,5 +1,6 @@
 name: New opportunities
 referenceId: widget-new-opportunities-entity-field
+type: '@jigx/jig/default'
 
 children:
   - componentId: "@jigx/jc-entity"

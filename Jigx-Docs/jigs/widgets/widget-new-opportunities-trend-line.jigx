@@ -1,5 +1,6 @@
 name: New opportunities
 referenceId: widget-new-opportunities-trend-line
+type: '@jigx/jig/default'
 
 children:
   - componentId: "@jigx/jc-entity"

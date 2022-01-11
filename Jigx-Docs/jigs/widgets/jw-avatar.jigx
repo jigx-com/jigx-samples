@@ -1,4 +1,5 @@
 name: Avatar - Static Data
+type: '@jigx/jig/default'
 
 children:
   - componentId: '@jigx/jc-avatar'

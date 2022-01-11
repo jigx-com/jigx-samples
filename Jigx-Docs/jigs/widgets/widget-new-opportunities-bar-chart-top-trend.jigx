@@ -1,5 +1,6 @@
 name: New opportunities
 icon: button-play
+type: '@jigx/jig/default'
 referenceId: widget-new-opportunities-bar-chart-top-trend
 
 children:

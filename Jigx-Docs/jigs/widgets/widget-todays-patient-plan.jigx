@@ -1,5 +1,6 @@
 name: Today's patient plan
 icon: list-add
+type: '@jigx/jig/default'
 referenceId: widget-todays-patient-plan
 
 children:

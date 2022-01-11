@@ -1,5 +1,6 @@
 name: My patients
 icon: calendar
+type: '@jigx/jig/default'
 referenceId: widget-my-patients
 
 children:

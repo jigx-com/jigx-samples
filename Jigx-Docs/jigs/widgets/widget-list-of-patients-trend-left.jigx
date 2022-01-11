@@ -1,6 +1,7 @@
 name: List of patients
 icon: list-add
 referenceId: widget-list-of-patients-trend-left
+type: '@jigx/jig/default'
 
 children:
   - componentId: "@jigx/jc-entity"

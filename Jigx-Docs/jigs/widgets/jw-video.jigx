@@ -1,4 +1,5 @@
 name: Video - dynamic data
+type: '@jigx/jig/default'
 referenceId: jw-video
 
 datasources:

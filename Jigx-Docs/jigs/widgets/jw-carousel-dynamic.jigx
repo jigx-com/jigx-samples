@@ -1,4 +1,5 @@
 name: Carousel - dynamic data 
+type: '@jigx/jig/default'
 referenceId: jw-carousel-dynamic
 
 datasources:

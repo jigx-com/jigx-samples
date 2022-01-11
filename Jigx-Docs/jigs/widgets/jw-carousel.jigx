@@ -1,4 +1,5 @@
 name: Carousel - Static Data
+type: '@jigx/jig/default'
 referenceId: jw-carousel
 
 datasources:

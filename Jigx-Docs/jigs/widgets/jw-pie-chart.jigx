@@ -1,4 +1,5 @@
 name: Monthly cap - Static Data
+type: '@jigx/jig/default'
 referenceId: jw-pie-chart
 
 datasources:

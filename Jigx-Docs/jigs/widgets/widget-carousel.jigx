@@ -1,4 +1,5 @@
 name: Carousel
+type: '@jigx/jig/default'
 icon: list-add
 referenceId: widget-carousel
 

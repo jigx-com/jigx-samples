@@ -1,4 +1,5 @@
 name: Overview (jc-stepper)
+type: "@jigx/jig/default"
 referenceId: jc-stepper-overview
 
 datasources:

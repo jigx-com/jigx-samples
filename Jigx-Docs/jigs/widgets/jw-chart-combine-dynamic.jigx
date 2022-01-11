@@ -1,4 +1,5 @@
 name: User revenue - Dynamic data
+type: '@jigx/jig/default'
 referenceId: jw-chart-combine-dynamic
 
 datasources:

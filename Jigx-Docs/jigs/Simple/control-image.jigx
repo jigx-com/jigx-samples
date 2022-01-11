@@ -1,4 +1,5 @@
 name: Image
+type: '@jigx/jig/default'
 referenceId: control-image
 icon: picture-landscape
 
