@@ -1,0 +1,47 @@
+name: List with avatars and labels sql
+type: '@jigx/jig/list'
+referenceId: jc-list-avatars-labels-sql
+isPreviewEnabled: true
+
+datasources:
+  list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: jigxdocs
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.birth_date',
+          '$.photo',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs] WHERE '$.category' = @category
+      
+      queryParameters:
+        category: 'list'
+          
+
+
+data: =@ctx.data.list
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.lastname
+    subtitle: =@ctx.parents.list-data.item.category
+    label:
+      title: "Docs"
+      color: primary
+    avatars:
+      - uri: =@ctx.parents.list-data.item.photo
+        text: =@ctx.parents.list-data.item.price
+    rightElement:
+      type: icon
+      icon: rating-star

@@ -1,0 +1,47 @@
+type: "@jigx/jig/default"
+name: Summary sql
+referenceId: summary-sql
+children:
+  - componentId: "@jigx/jc-image"
+    options:
+      source:
+        uri: =@ctx.data.summary.photo
+        
+actions:
+  - children:
+    - componentId: "@jigx/ja-go-back"
+      options:
+        title: JigxDocs
+
+datasources:
+  summary:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: jigxdocs
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.birth_date',
+          '$.photo',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs] WHERE '$.category' = @category
+      queryParameters:
+        category: 'summary'
+
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: "cart"
+      title: =@ctx.data.summary.firstname
+      subtitle: =@ctx.data.summary.lastname
+      value: =$number(@ctx.data.summary.price)

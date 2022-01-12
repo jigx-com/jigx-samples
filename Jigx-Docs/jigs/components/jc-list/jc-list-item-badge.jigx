@@ -4,6 +4,28 @@ referenceId: jc-list-item-badge
 isPreviewEnabled: true
 
 datasources:
+  docs:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - 
+          entity: jigxdocs
+          function: fn-select-docs-data
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.photo',
+          '$.birth_date',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs]
   components:
     componentId: '@jigx/jd-static'
     options:

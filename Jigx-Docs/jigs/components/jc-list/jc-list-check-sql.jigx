@@ -1,0 +1,43 @@
+name: Switch list sql
+type: "@jigx/jig/list"
+referenceId: jc-list-check-sql
+
+datasources:
+  list:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: jigxdocs
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.birth_date',
+          '$.photo',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs] WHERE '$.category' = @category and '$.price' = '1'
+      queryParameters:
+        category: 'list'
+
+data: =@ctx.data.list
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.list-data.item.firstname
+    subtitle: =@ctx.parents.list-data.item.lastname
+    isDisable: true
+    leftElement: 
+      type: avatar
+      text: S
+      uri: =@ctx.parents.list-data.item.photo
+    rightElement:
+      type: switch
+      value: =@ctx.parents.list-data.item.email

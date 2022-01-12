@@ -1,0 +1,35 @@
+name: Document sql
+type: '@jigx/jig/document'
+referenceId: jc-document-sql
+
+datasources:
+  document:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: jigxdocs
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.birth_date',
+          '$.photo',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs] WHERE '$.category' = @category
+      queryParameters:
+        category: 'document'
+
+
+source:
+  documentType: PDF
+  uri: =@ctx.data.document.url
+  # base64: =@ctx.data.pdf.data
+  # content: =@ctx.data.html.content
+  # This can use multiple content, html version, PDF base 64 version or URI pdf
