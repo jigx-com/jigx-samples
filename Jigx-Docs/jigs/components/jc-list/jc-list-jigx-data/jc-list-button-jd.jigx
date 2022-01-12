@@ -1,0 +1,34 @@
+name: List with Button
+type: '@jigx/jig/list'
+referenceId: jc-list-button-jd
+
+datasources:
+  components:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: jigxDocs/shopping-cart
+      query: |
+        SELECT
+          id,
+          '$.product-name',
+          '$.product-category',
+          '$.product-picture',
+          '$.product-price'
+        FROM [jigxDocs/shopping-cart]  
+
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =@ctx.parents.list-data.item.product-category
+    rightElement:
+      type: button
+      title: Press me
+      onPress:
+        componentId: '@jigx/ja-go-back'
+        options:
+          title: Go back

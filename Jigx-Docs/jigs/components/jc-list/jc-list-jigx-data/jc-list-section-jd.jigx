@@ -1,0 +1,51 @@
+name: Simple list
+type: "@jigx/jig/list"
+referenceId: jc-list-section-jd
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: =@ctx.jig.state.jc-list-section.activeItem.name
+      subtitle: =@ctx.jig.state.jc-list-section.activeItem.description
+      source:
+        uri: =@ctx.jig.state.jc-list-section.activeItem.image
+
+datasources:
+  components-section1:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: jigxDocs/shopping-cart
+      query: |
+        SELECT
+          id,
+          '$.product-name',
+          '$.product-category',
+          '$.product-picture',
+          '$.product-price'
+        FROM [jigxDocs/shopping-cart]  
+  components-section2:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - product-name: Item 3
+          product-category: Description of item 3
+          product-picture: https://i.picsum.photos/id/441/200/300.jpg?hmac=QKMN_HV9XLlzyUWdanPyq2Qz8FJmYYH5Q0CjPACcnsI
+        - product-name: Item 4
+          product-category: Description of item 4
+          product-picture: https://i.picsum.photos/id/535/200/200.jpg?hmac=0vK1wlOyeZ3PfsgTuPgZfCyZeBmx_aNys09auM4tXgw
+        - product-name: Item 5
+          product-category: Description of item 5
+          product-picture: https://i.picsum.photos/id/204/200/200.jpg?hmac=gppQCOIV43fSCLsdUCoPQxrc16lrOEvVu2u5nH-I4Zo
+sections:
+  - title: ='Section 1, items(' & $count(@ctx.data.components-section1) & ')'
+    data: =@ctx.data.components-section1
+  - title: ='Section 2, items(' & $count(@ctx.data.components-section2) & ')'
+    data: =@ctx.data.components-section2
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =@ctx.parents.list-data.item.product-category
