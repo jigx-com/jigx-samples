@@ -1,0 +1,44 @@
+name: Overview (jc-expander)
+type: "@jigx/jig/list"
+referenceId: expander-overview
+icon: flight
+
+datasources:
+  expanders:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Expander (static data)
+          icon: flight
+          color: primary
+          target: expander
+        - name: Expander (sql-data)
+          icon: flight
+          color: primary
+          target: expander-sql
+        - name: Expander (jigx-data)
+          icon: flight
+          color: primary
+          target: expander-jd
+
+data: =@ctx.data.expanders
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        title: View details
+        linkTo: =@ctx.parents.list-data.item.target
+        parameters:
+          name: =@ctx.parents.list-data.item.name
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.color
+    leftElement:
+      type: icon
+      icon: =@ctx.parents.list-data.item.icon
+      isDuotone: true
+      isContained: true

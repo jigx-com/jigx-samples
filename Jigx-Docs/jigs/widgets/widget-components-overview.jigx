@@ -1,7 +1,6 @@
 name: Components Overview
 type: "@jigx/jig/list"
 referenceId: widget-components-overview
-
 header:
   children:
     componentId: "@jigx/jc-image"
@@ -45,7 +44,7 @@ datasources:
           description: List with various options
           color: color4
           icon: navigation-menu
-          target: jc-list-overview
+          target: list-select-data
         - name: Location (jc-location)
           description: To display map with specific location
           color: color5
@@ -61,6 +60,31 @@ datasources:
           icon: earth-3
           color: color7
           target: jc-web-view
+        - name: Jig Expander
+          description: Our custom expander
+          icon: flight
+          color: color8
+          target: expander-overview
+        - name: Jig Signature
+          description: Sign your documents
+          icon: signature
+          color: color9
+          target: jc-signature
+        - name: Document
+          description: Loading pdf documents
+          icon: document
+          color: color10
+          target: jc-document-overview
+        - name: Interactive image
+          description: Select points on image
+          icon: picture-landscape
+          color: color11
+          target: interactive-image
+        - name: Stepper
+          description: To display steps (for example in order)
+          icon: delivery-truck-5
+          color: color12
+          target: control-stepper
 
 data: =@ctx.data.components
 item:

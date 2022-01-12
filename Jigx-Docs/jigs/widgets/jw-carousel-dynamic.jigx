@@ -13,7 +13,8 @@ datasources:
         SELECT
           id,
           '$.photo',
-          '$.photo-name'
+          '$.photo-name',
+          '$.photo-description'
         FROM [jigxDocs/photo]
 
 children:
@@ -34,5 +35,6 @@ views:
         componentId: "@jigx/jc-image"
         options:
           title: =@ctx.parents.list-data.item.photo-name
+          subtitle: =@ctx.parents.list-data.item.photo-description
           source:
             uri: =@ctx.parents.list-data.item.photo         

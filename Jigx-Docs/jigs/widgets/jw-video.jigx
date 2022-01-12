@@ -20,7 +20,8 @@ data: =@ctx.data.video
 children:
   - componentId: '@jigx/jc-video-player'
     options:
-      url: =@ctx.data.video.video-link   
+      url: =@ctx.data.video.video-link  
+      autoplay: false 
       
 views:
   4x2: 
@@ -30,4 +31,5 @@ views:
       item: 
         componentId: '@jigx/jc-video-player'
         options:
+          autoplay: false
           url: =@ctx.data.video.video-link  

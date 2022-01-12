@@ -9,7 +9,7 @@ datasources:
       data:
         - uri: https://www.warsteinerlovers.it/static/img/banner_chiusura.jpg
           title: I want a beer
-          subtitle: And i want it now!
+          subtitle: And I want it now!
         - uri: https://img.resized.co/esmmagazine/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLm1hZGlzb25wdWJsaWNhdGlvbnMuZXVcXFwvdXBsb2Fkc1xcXC8yMDE1XFxcLzEyXFxcLzAyMTQzMzA5XFxcL1dhcnN0ZWluZXItZGVjMTUtOTYweDU2My1iLmpwZ1wiLFwid2lkdGhcIjo2MTUsXCJoZWlnaHRcIjo0MTAsXCJkZWZhdWx0XCI6XCJodHRwOlxcXC9cXFwvd3d3LmVzbW1hZ2F6aW5lLmNvbVxcXC9pXFxcL25vaW1hZ2UucG5nXCIsXCJvcHRpb25zXCI6W119IiwiaGFzaCI6ImY5MzJmMWFiZTliOWFkOGRiNTU1NTc0OWVmNTllNzBmYzlmNjNmZTQifQ==/warsteiner-celebrates-lufthansa-s-60th-with-new-beer-bottle.jpg
           title: I'm so thirsty
           subtitle: Let's have another one

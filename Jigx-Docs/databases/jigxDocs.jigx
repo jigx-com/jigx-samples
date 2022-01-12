@@ -8,3 +8,5 @@ tables:
   ? user
   ? profile
   ? confirms
+  ? expander
+  ? document

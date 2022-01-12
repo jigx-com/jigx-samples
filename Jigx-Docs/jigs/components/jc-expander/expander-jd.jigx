@@ -1,0 +1,84 @@
+type: "@jigx/jig/default"
+name: Expander (jigx data)
+referenceId: expander-jd
+
+actions:
+  - children:
+    - componentId: "@jigx/ja-go-back"
+      options:
+        title: test
+        
+datasources:
+  jd-expander:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: jigxDocs/expander
+      query: |
+        SELECT
+          '$.id',
+          '$.info',
+          '$.phone',
+          '$.email',
+          '$.link',
+          '$.element-text',
+          '$.left-text',
+          '$.left-time',
+          '$.right-text',
+          '$.right-time'
+        FROM [jigxDocs/expander]
+  
+
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: "counter"
+      title: "Points"
+      subtitle: "Safety critical decision"
+      value: 20
+
+children:
+  - componentId: "@jigx/jc-expander"
+    options:
+      header:
+        leftElement:
+          type: "text"
+          title: =@ctx.data.jd-expander.element-text
+        centerElement:  
+          componentId: "@jigx/jc-trip"
+          options:
+            onPress:
+              componentId: "@jigx/ja-go-back"
+              options:
+                 title: "Nevermind"
+            left: 
+              title: =@ctx.data.jd-expander.left-text
+              subtitle: =@ctx.data.jd-expander.left-time
+            right:
+              title: =@ctx.data.jd-expander.right-text
+              subtitle: =@ctx.data.jd-expander.right-time
+      children:
+        - componentId: "@jigx/jc-entity"
+          options:
+            children:
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  label: "Info"
+                  value: =@ctx.data.jd-expander.info
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  label: "Email"
+                  value: =@ctx.data.jd-expander.email
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  value: =@ctx.data.jd-expander.phone
+                  label: "Phone"
+                  type: "phone"
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  value: =@ctx.data.jd-expander.link
+                  label: "Link"
+                  type: "link"

@@ -1,5 +1,6 @@
 name: value
 type: "@jigx/jig/default"
+referenceId: interactive-image
 children:
   - componentId: "@jigx/jc-interactive-image"
     instanceId: testcompo
