@@ -1,0 +1,15 @@
+name: Enter location
+type: '@jigx/jig/form'
+referenceId: jig-with-text-fieldd
+
+outputs:
+  output-key: "=@ctx.jig.state.first-name.value"
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: '@jigx/jc-text-field'
+    instanceId: first-name
+    options:
+      label: Location
+      property: location

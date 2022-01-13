@@ -85,6 +85,16 @@ datasources:
           icon: delivery-truck-5
           color: color12
           target: control-stepper
+        - name: Calendar
+          description: Display events from calendar
+          icon: calendar-3
+          color: color13
+          target: jc-calendar-static
+        - name: Location with temperature
+          description: Display location with weather forecast
+          icon: pin
+          color: color14
+          target: jc-outputs-location
 
 data: =@ctx.data.components
 item:

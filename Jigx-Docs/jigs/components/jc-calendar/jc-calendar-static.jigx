@@ -1,0 +1,59 @@
+name: Calendar static
+referenceId: jc-calendar-static
+type: "@jigx/jig/calendar"
+
+datasources:
+  meetings:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - id: meeting1
+          location: "Redmond, WA"
+          from: "2022-01-25T07:00:00Z" #=$now() #=$round($toMillis($now()) / 1000 )
+          to: "2022-01-25T08:00:00Z" #=$fromMillis($toMillis($now()) + 3600000) #=$number("1634899578") #=$round(($toMillis($now()) + 3600000) / 1000)
+          title: "Negotiation with Microsoft"
+          people: 
+            - fullName: 'Tim Cook'
+              avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg'
+          tags:
+            -  title: 'Negotiation'
+               color: color2
+        - id: meeting2
+          location: "Palo Alto, CA"
+          from: "2022-02-25T13:00:00Z" #=$now() #=$round($toMillis($now()) / 1000 )
+          to: "2022-02-25T14:00:00Z" #=$fromMillis($toMillis($now()) + 3600000) #=$number("1634899578") #=$round(($toMillis($now()) + 3600000) / 1000)
+          title: "Demo for Facebook"
+          people: 
+            - fullName: 'Michael Tong'
+              avatarUrl: 'https://jollycontrarian.com/images/6/6c/Rickroll.jpg'
+          tags:
+            -  title: 'Qualification'
+               color: color5
+        - id: meeting3
+          location: Menlo Park, CA
+          from: "2022-04-25T15:00:00Z" #=$now() #=$round($toMillis($now()) / 1000 )
+          to: "2022-04-25T16:00:00Z" #=$fromMillis($toMillis($now()) + 3600000) #=$number("1634899578") #=$round(($toMillis($now()) + 3600000) / 1000)
+          title: "Sign contract"
+          people: 
+            - fullName: 'Michael Tong'
+              avatarUrl: 'https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg'
+          tags:
+            -  title: 'Verbal'
+               color: color6
+          
+
+
+
+
+data: =@ctx.data.meetings
+
+item: 
+  componentId: "@jigx/jc-event"
+  options:
+    title: =@ctx.parents.list-data.item.title
+    location: =@ctx.parents.list-data.item.location
+    description: =@ctx.parents.list-data.item.description
+    from: =@ctx.parents.list-data.item.from
+    to: =@ctx.parents.list-data.item.to
+    people: =@ctx.parents.list-data.item.people
+    tags: =@ctx.parents.list-data.item.tags
