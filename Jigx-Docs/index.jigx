@@ -1,4 +1,4 @@
-title: Jigx-Docs
+title: Jigx-Docs (last update 18.1.2021)
 category: personal
 referenceId: Jigx-Docs
 
@@ -91,6 +91,8 @@ widgets:
     children: jw-action  
   - size: 2x2
     children: jw-pie-chart  
+  - size: 4x2
+    children: widget-value-list
   - size: 4x2
     children: jw-video    
   - size: 4x2
@@ -253,6 +255,8 @@ favorites:
     children: jw-action  
   - size: 2x2
     children: jw-pie-chart  
+  - size: 4x2
+    children: widget-value-list
   - size: 4x2
     children: jw-video    
   - size: 4x2

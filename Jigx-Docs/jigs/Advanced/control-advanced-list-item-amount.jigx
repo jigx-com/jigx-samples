@@ -14,29 +14,25 @@ datasources:
   amount:
     componentId: '@jigx/jd-sqlite'
     options:
-      isDocument: false
       provider: DATA_PROVIDER_DYNAMIC
-      entity: jigxDocs/shopping-cart
+      entities:
+        - jigxDocs/shopping-list
       query: |
         SELECT
           id,
           '$.product-name',
-          '$.product-amount',
           '$.product-picture',
-          '$.product-category',
           '$.product-price'
-        FROM [jigxDocs/shopping-cart]
-      queryParameters:
-        product-category: =@ctx.jig.state.request-list.filter
+        FROM [jigxDocs/shopping-list]
 
 data: =@ctx.data.amount
 
-item: 
+item:
   componentId: '@jigx/jc-list-item'
   options:
-    title: =@ctx.parents.list-data.item.product-name  
-    subtitle: =(@ctx.parents.list-data.item.product-price & ' € / pcs')
-    leftElement: 
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =(@ctx.parents.list-data.item.product-price & ' € / pcs')
+    leftElement:
       type: avatar
       text: ''
       uri: =@ctx.parents.list-data.item.product-picture
@@ -54,31 +50,30 @@ item:
               confirmModal:
                 title: Do you really want to delete this item?
                 description: =@ctx.parents.list-data.item.product-name
-                confirmText: REMOVE      
-          
-    rightElement: 
+                confirmText: REMOVE
+    rightElement:
       type: amount-control
       value: =@ctx.parents.list-data.item.quantity
-      onDelete: 
+      onDelete:
         componentId: '@jigx/ja-delete'
         options:
           title: Delete Item
           provider: DATA_PROVIDER_DYNAMIC
-          entity: jigxDocs/shopping-cart
+          entity: jigxDocs/shopping-list
           function: sp-delete-cart-item
           entityId: =@ctx.parents.list-data.item.id
           confirmModal:
             title: "Do you really want to remove this item from cart?"
-            description: =@ctx.parents.list-data.item.product_name
+            description: =@ctx.parents.list-data.item.product-name
             cancelText: Cancel remove
-            confirmtext: Remove    
+            confirmtext: Remove      
       onChange:
         componentId: '@jigx/ja-execute-entity'
         options:
           title: Add to cart
           provider: DATA_PROVIDER_SQL
-          entity: jigxDocs/shopping-cart
+          entity: jigxDocs/shopping-list
           query: =@ctx.parents.list-data.item.amount
           queryParameters: =@ctx.parents.list-data.item.amount
           method: update
-          goBack: off        
+          goBack: off

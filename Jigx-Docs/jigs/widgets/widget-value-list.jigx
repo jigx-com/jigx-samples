@@ -1,0 +1,54 @@
+name: Shoping cart - static
+type: "@jigx/jig/default"
+referenceId: widget-value-list
+
+datasources:
+  basket:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: iPhone 13
+          category: mobile
+          photo: 'https://iczc.cz/054jq5qvpihoo8gat1uu030kna-1_7/obrazek'
+          price: 800
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Not implemented yet
+            value: Not implemented yet
+
+views:
+  4x2: 
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-value"
+          options:
+            value: 1
+            bottom:
+              componentId: "@jigx/jc-trend"
+              options:
+                title: "Items in cart"
+                value: 1
+                style:
+                  isValueBottom: true
+                  isAlignRight: true
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.data.basket
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.data.basket.name
+                subtitle: =@ctx.data.basket.category
+                leftElement: 
+                  type: image
+                  text: ''
+                  uri: =@ctx.data.basket.photo
+                rightElement: 
+                  type: value
+                  text: =@ctx.data.basket.price & ' €'
