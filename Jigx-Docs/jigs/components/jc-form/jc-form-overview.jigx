@@ -37,7 +37,9 @@ datasources:
         - name: Number field
           description: Showcase of number field
           target: jc-number-field
-
+        - name: Checkbox advanced form
+          description: Showcase of checkbox, title, numbers, text
+          target: form-checkbox
 data: =@ctx.data.components
 item:
   componentId: '@jigx/jc-list-item'

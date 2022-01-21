@@ -77,6 +77,16 @@ datasources:
           icon: pie-line-graph
           color: color4
           target: jc-list-amount-control
+        - name: List with avatars and labels
+          description: List with avatars and labels
+          icon: multiple-neutral-2
+          color: color5
+          target: jc-list-avatars-labels
+        - name: List with check
+          description: List with left element check
+          icon: check-1
+          color: color5
+          target: jc-list-check
 
 data: =@ctx.data.components
 item:

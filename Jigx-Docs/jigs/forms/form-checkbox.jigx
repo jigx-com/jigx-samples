@@ -1,0 +1,279 @@
+name: Form checkbox
+referenceId: form-checkbox
+type: "@jigx/jig/form"
+
+datasources:
+  weakly-job:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - x: 1
+          y: 20
+          color: color4
+        - x: 1
+          y: 5
+          color: transparent
+
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: "counter"
+      title: ''
+      subtitle: "Safety critical"
+      value: 20
+
+actions:
+  - when: true
+    children:
+    - componentId: "@jigx/ja-go-to"
+      options:
+        title: Mission decision
+        linkTo: accept-mission
+        style:
+          isDisabled: false
+
+entity: ""
+
+children:
+  - title: Human factors
+    children:
+      -
+        - componentId: "@jigx/jc-checkbox"
+          options:
+            property: Pickup
+            label: Patient pickup 02:00-06:00
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +3pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Terrain
+            label: Para terrain avoidance
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +3pt
+      -
+        - componentId: "@jigx/jc-number-field"
+          options:
+              property: number
+              label: Crew unwell
+              initialValue: '1'
+              stepper:
+                isEnabled: true
+                value: 1
+              maximumExclusive: 10
+              minimumExclusive: 0
+              helperText: 0pt
+              isRequired: false
+
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: terrain
+            label: Two pilost
+            initialValue: true
+            style:
+              isPositive: true
+            helperText: -2pt
+            isRequired: false
+          
+      - 
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Score4
+            label: Score of +4 IFLS post task
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +2pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Score14
+            label: Score of +14 IFLS post task
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +0pt
+  - title: Weather factors
+    children:
+      - 
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Moon
+            label: Moon state <20% or BKN CLD
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +1pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Gaf
+            label: GAF VIS 5000m or less
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +0pt
+      -
+        - componentId: "@jigx/jc-number-field"
+          options:
+              property: numbers
+              label: Alternate(s) required due TAF
+              initialValue: '1'
+              stepper:
+                isEnabled: true
+                value: 1
+              maximumExclusive: 10
+              minimumExclusive: 0
+              helperText: +0pt
+              isRequired: false
+
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: TS
+            label: TS
+            initialValue: true
+            isRequired: false
+            style:
+              isWarning: true
+            helperText: +0pt
+        
+      - 
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Turbulance
+            label: Severe turbulance
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +8pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Rain
+            label: Heavy rain(+RA)
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +0pt
+      -
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: BKN
+            label: BKN & FZL WI 2000 ft or LSALT
+            initialValue: true
+            style:
+              isWarning: true
+            helperText: +0pt
+            isRequired: false
+        - componentId: "@jigx/jc-number-field"
+          options:
+              property: inter
+              label: INTER(except for TS, +RA, TURB)
+              initialValue: '1'
+              stepper:
+                isEnabled: true
+                value: 1
+              maximumExclusive: 10
+              minimumExclusive: 0
+              helperText: +0pt
+              isRequired: false
+
+  - title: Day / Night ops factors
+    children:
+      - 
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Coastal
+            label: Coastal SAR
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +0pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Winch
+            label: Required winch
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +3pt
+      -
+
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Vessel
+            label: Vessel / ship / pontoon
+            isRequired: false
+            style:
+              isDanger  : true
+            helperText: +0pt
+            
+  - title: Aircraft technical factors
+    children:
+      - 
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Radal
+            label: All RADALTss inoperative
+            isRequired: false
+            initialValue: true
+            style:
+              isDanger: true
+            helperText: +1pt
+        - componentId: "@jigx/jc-checkbox"
+
+          options:
+            property: Mel
+            label: Other MEL item(s)
+            isRequired: false
+            style:
+              isDanger: true
+            helperText: +0pt
+      -
+        - componentId: "@jigx/jc-number-field"
+          options:
+              property: intermitent
+              label: Previous intermittent faults - enter manully
+              initialValue: '1'
+              isRequired: false
+        
+views:
+  2x2: 
+    componentId: "@jigx/jw-chart"
+    options:
+      footer: Safety critical
+      footerAlign: center
+      chart: 
+        componentId: "@jigx/jc-pie-chart"
+        options:
+          chart:
+                  title:
+                    text: '20'
+                    verticalAlign: center
+                  subtitle:
+                    text: Risk score
+                    verticalAlign: center 
+          series:
+            - data: =@ctx.data.weakly-job
+              type: arch 
+  
