@@ -72,7 +72,7 @@ datasources:
         #   icon: pie-line-graph
         #   color: color3
         #   target: jc-list-horizontal-pie-chart
-        - name: Amount control 6
+        - name: Amount control
           description: List with amount control
           icon: pie-line-graph
           color: color4
