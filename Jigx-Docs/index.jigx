@@ -1,10 +1,10 @@
-title: Jigx-Docs (last update 18.1.2021)
+title: Jigx-Docs (last update 14.02.2022)
 category: personal
 referenceId: Jigx-Docs
 
 widgets: 
   # - size: 1x1
-  #   children: control-avatar-simple
+  #   children: jc-entity-checkbox
   # - size: 1x1
   #   children: control-bar-chart-simple  
   # - size: 1x1
@@ -154,17 +154,17 @@ widgets:
   - size: 2x2
     children: widget-actions
   - size: 2x2
-    children: widget-composite
+    children: widget-composite-v2
   - size: 2x2
     children: widget-user
   - size: 4x2
-    children: widget-composite
+    children: widget-composite-v2
   - size: extraLarge
-    children: widget-composite
+    children: widget-composite-v2
   - size: 2x4
     children: widget-placeholder-composite
-  - size: 2x2
-    children: widget-placeholder-chart
+  # - size: 2x2
+  #   children: widget-placeholder-chart
 
 stories: 
   - s-video

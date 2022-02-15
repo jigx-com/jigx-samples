@@ -6,10 +6,9 @@ header:
   children:
     componentId: '@jigx/jc-image'
     options:
-      title: =@ctx.jig.state.jc-list-simple.activeItem.name
-      subtitle: =@ctx.jig.state.jc-list-simple.activeItem.description
+      title: Item
       source:
-        uri: =@ctx.jig.state.jc-list-simple.activeItem.image
+        uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
 
 
 datasources:

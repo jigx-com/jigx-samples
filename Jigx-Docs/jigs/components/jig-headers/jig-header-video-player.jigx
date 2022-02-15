@@ -1,4 +1,4 @@
-name: Chart header
+name: Video header
 referenceId: jig-header-video-player
 type: '@jigx/jig/default'
 
@@ -6,7 +6,7 @@ header:
   children:
     componentId: '@jigx/jc-video-player'
     options:
-      url: "https://www.youtube.com/watch?v=vx2u5uUu3DE"
+      url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 
 
 children:

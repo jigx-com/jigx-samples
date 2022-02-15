@@ -58,7 +58,7 @@ children:
               componentId: "@jigx/ja-go-to"
               options:
                 title: self
-                linkTo: jc-list-amountControl
+                linkTo: jc-list-amount-control
   - componentId: "@jigx/jc-image"
     options:
       height: 50
@@ -83,7 +83,7 @@ children:
               componentId: "@jigx/ja-go-to"
               options:
                 title: self
-                linkTo: jc-list-amountControl
+                linkTo: jc-list-amount-control
             onDelete:
               componentId: "@jigx/ja-delete"
               options:

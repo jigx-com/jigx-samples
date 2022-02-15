@@ -15,10 +15,10 @@ datasources:
           icon: navigation-menu
           color: primary
           target: jc-list-overview-jd
-        - name: jc-list with sql data
-          icon: navigation-menu
-          color: primary
-          target: jc-list-overview-sql
+        # - name: jc-list with sql data
+        #   icon: navigation-menu
+        #   color: primary
+        #   target: jc-list-overview-sql
 
 data: =@ctx.data.select
 item:

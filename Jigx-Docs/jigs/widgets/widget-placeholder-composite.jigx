@@ -1,6 +1,6 @@
 name: Placeholder composite
 referenceId: widget-placeholder-composite
-type: "@jigx/jig/composite"
+type: "@jigx/jig/default"
 
 actions:
   - children:
@@ -26,8 +26,15 @@ datasources:
       query: SELECT id FROM [default/sample-account]
       provider: DATA_PROVIDER_DYNAMIC
 
-children:
-  - componentId: empty-list
+children: 
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "To be done"
+            value: "Test"
+            isHidden: false 
 
 
 placeholders:

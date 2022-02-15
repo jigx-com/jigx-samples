@@ -30,6 +30,11 @@ datasources:
           icon: archive-folder
           color: color2
           target: jc-entity-types
+        - name: Entity with checkbox
+          description: Entity with checkbox
+          icon: check-1
+          color: color2
+          target: jc-entity-checkbox
         - name: Form (jc-form)
           description: Add/Update data
           icon: pencil-2

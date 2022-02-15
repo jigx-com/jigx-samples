@@ -10,14 +10,29 @@ datasources:
       data:
         - name: Item 1
           description: Description of item 1
+          value: true
+          color: warning
+          label: warning
         - name: Item 2
           description: Description of item 2
+          value: true
+          color: negative
+          label: Failed
         - name: Item 3
           description: Description of item 3
+          value: true
+          color: positive
+          label: Done
         - name: Item 4
           description: Description of item 4
+          value: true
+          color: primary
+          label: Progress
         - name: Item 5
           description: Description of item 5
+          value: true
+          color: color3
+          label: Cool
           
 
 
@@ -28,8 +43,11 @@ item:
     title: =@ctx.parents.list-data.item.name
     subtitle: =@ctx.parents.list-data.item.description
     label:
-      title: "Done"
-      color: color3
+      # isHidden: "=(1 > 0) ? true : false"
+      title: =@ctx.parents.list-data.item.label
+      color:
+        - when: =@ctx.parents.list-data.item.value
+          color: =@ctx.parents.list-data.item.color
     avatars:
       - uri: https://randomuser.me/api/portraits/men/1.jpg
         text: "TA"

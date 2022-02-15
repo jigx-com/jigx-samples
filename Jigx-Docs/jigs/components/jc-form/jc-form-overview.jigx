@@ -28,9 +28,6 @@ datasources:
         - name: Text-Field Styles
           description: Misc styles of text-fields
           target: jc-form-style
-        - name: Spacing
-          description: Spacing between components
-          target: jc-form-spacing
         - name: Misc options
           description: Misc form options
           target: jc-form-misc

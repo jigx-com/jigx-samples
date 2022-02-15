@@ -58,10 +58,10 @@ views:
         - componentId: "@jigx/jw-list"
           options:
             data: =@ctx.data.static-data
-            bottom:
-              componentId: "@jigx/jc-list-item"
-              options:
-                title: 2 more items
+            # bottom:
+            #   componentId: "@jigx/jc-list-item"
+            #   options:
+            #     title: 2 more items
             item:
               componentId: "@jigx/jc-list-item"
               options:

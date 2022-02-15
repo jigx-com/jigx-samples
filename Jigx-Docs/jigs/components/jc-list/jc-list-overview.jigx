@@ -12,6 +12,7 @@ datasources:
           icon: layout-dashboard
           color: primary
           target: jc-list-simple
+          
         - name: Avatar left & text right
           description: List with static avatar & text right
           icon: layout-dashboard
@@ -52,11 +53,11 @@ datasources:
           icon: layout-dashboard
           color: color2
           target: jc-list-sorting
-        - name: Searching
-          description: Searching of list data
-          icon: layout-dashboard
-          color: color2
-          target: jc-list-searching
+        # - name: Searching
+        #   description: Searching of list data
+        #   icon: layout-dashboard
+        #   color: color2
+        #   target: jc-list-searching
         - name: Filtering with header
           description: Filtering of list data with header and description
           icon: layout-dashboard

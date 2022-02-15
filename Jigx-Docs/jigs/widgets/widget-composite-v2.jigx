@@ -1,10 +1,10 @@
 name: Composite Jig
 type: "@jigx/jig/composite"
 icon: calendar
-referenceId: widget-composite
+referenceId: widget-composite-v2
 
 children:
-  - componentId: component-list
+  - componentId: widget-components-overview
 
 datasouces:
   static-data:
@@ -74,17 +74,13 @@ views:
             type: avatar
             text: =@ctx.parents.list-data.item.avatarText
 
-  2x4:
+  4x2:
     componentId: "@jigx/jw-group"
     options:
       children:
         - componentId: "@jigx/jw-list"
           options:
             data: =@ctx.data.static-data
-            bottom:
-              componentId: "@jigx/jc-list-item"
-              options:
-                title: 2 more items
             item:
               componentId: "@jigx/jc-list-item"
               options:
@@ -125,10 +121,6 @@ views:
     componentId: "@jigx/jw-list"
     options:
       data: =@ctx.data.static-data
-      bottom:
-        componentId: "@jigx/jc-list-item"
-        options:
-          title: 2 more items
       item:
         componentId: "@jigx/jc-list-item"
         options:

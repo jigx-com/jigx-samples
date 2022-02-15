@@ -2,6 +2,7 @@ name: Spacing
 type: "@jigx/jig/form"
 referenceId: jc-form-spacing
 
+
 actions:
   - children:
       - componentId: "@jigx/ja-submit-form"
@@ -15,9 +16,10 @@ actions:
 
 provider: DATA_PROVIDER_DYNAMIC
 entity: foo/foo
-spacing: =@ctx.jig.state.picker.selected.title
 children:
+  
   - componentId: "@jigx/jc-dropdown"
+    instanceId: picker
     options:
       label: Pick a spacing type
       property: picker
