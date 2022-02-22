@@ -1,4 +1,4 @@
-title: Jigx-Docs (last update 14.02.2022)
+title: Jigx-Docs (last update 22.02.2022)
 category: personal
 referenceId: Jigx-Docs
 
@@ -75,6 +75,14 @@ widgets:
     children: jc-list-avatars-labels
   - size: 2x2
     children: jc-list-check
+  - size: 2x2
+    children: jw-value-icon
+  # - size: 4x4
+  #   children: jw-value-icon
+  - size: 2x2
+    children: jw-image
+  - size: 4x4
+    children: jw-image
   - size: 4x2
     children: jw-carousel
   - size: 2x4

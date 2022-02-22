@@ -37,6 +37,9 @@ datasources:
         - name: Checkbox advanced form
           description: Showcase of checkbox, title, numbers, text
           target: form-checkbox
+        - name: Text fields with colors
+          description: Showcase of textfields and number field with color option
+          target: jc-form-textfieldcolor
 data: =@ctx.data.components
 item:
   componentId: '@jigx/jc-list-item'

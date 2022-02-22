@@ -33,5 +33,5 @@ views:
         onPress: 
           componentId: '@jigx/ja-go-to'
           options:
-            title: Color Palete
+            title: Color Palette
             linkTo: color-palete

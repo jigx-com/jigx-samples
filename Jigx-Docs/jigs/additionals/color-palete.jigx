@@ -35,6 +35,18 @@ datasources:
           color: color13
         - y: 2
           color: color14
+        - y: 2
+          color: color15
+        - y: 2
+          color: color16
+        # - y: 2
+        #   color: warning
+        # - y: 2
+        #   color: error
+        # - y: 2
+        #   color: primary
+        # - y: 2
+        #   color: secondary
      
 
 children:
