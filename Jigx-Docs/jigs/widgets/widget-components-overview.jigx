@@ -100,6 +100,11 @@ datasources:
           icon: pin
           color: color14
           target: jc-outputs-location
+        - name: All aviable icons with preview
+          description: Display all icons in list
+          icon: rating-star-1
+          color: color15
+          target: list-icons-set
 
 data: =@ctx.data.components
 item:

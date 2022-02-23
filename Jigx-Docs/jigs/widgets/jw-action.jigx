@@ -29,7 +29,7 @@ views:
             title: Avatar
             linkTo: avatar-description
       secondary:
-        title: Color palete
+        title: Color palette
         onPress: 
           componentId: '@jigx/ja-go-to'
           options:

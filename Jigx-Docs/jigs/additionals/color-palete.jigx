@@ -65,7 +65,7 @@ children:
               
             # change text for subtitle
             subtitle:
-              text: Palete
+              text: Palette
               verticalAlign: center
               
           legend:
