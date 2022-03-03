@@ -160,12 +160,14 @@ datasources:
         - name: yoga
         - name: zoom-in
         - name: zoom-out
+        - name: alert
         - name: animation
         - name: arrow-down
         - name: arrow-left
         - name: arrow-right
         - name: arrow-up
         - name: bin
+        - name: calendar-decline
         - name: chart
         - name: chat
         - name: check
@@ -179,6 +181,8 @@ datasources:
         - name: email
         - name: flight
         - name: form
+        - name: headset
+        - name: helicopter
         - name: home
         - name: jigx-solid
         - name: left-panel
@@ -187,6 +191,7 @@ datasources:
         - name: messages
         - name: minus
         - name: motul-solid
+        - name: notes
         - name: notification
         - name: palette
         - name: phone
@@ -198,9 +203,13 @@ datasources:
         - name: select
         - name: shine-lawyers-solid
         - name: signature
+        - name: suitcase
+        - name: task-list
         - name: three-dots
         - name: up
         - name: vibration
+        - name: weather
+        - name: wheelchair
         - name: world
         - name: apple
         - name: google
