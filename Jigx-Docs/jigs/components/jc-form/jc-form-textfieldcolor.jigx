@@ -54,16 +54,19 @@ children:
         - when: =@ctx.data.components.number < 10 ? true:false
           color: 'color5'
   - componentId: "@jigx/jc-number-field"
+    instanceId: numbers
     options:
       property: Number field
       label: Number field
       color:
-        - when: =@ctx.data.components.name = 'Item 1' ? true:false
-          color: 'color1'
+        - when: =@ctx.jig.state.numbers.value = 10 ? true:false
+          color: color4
+        # - when: =@ctx.data.components.name = 'Item 1' ? true:false
+        #   color: 'color1'
   - componentId: "@jigx/jc-number-field"
     options:
       property: Condition test
       label: Condition test
       color:
         - when: =@ctx.jig.state.test2.value = 'Hello' ? true:false
-          color: 'color3'
+          color: color3

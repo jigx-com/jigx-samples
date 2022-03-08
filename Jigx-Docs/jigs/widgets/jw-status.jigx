@@ -1,0 +1,49 @@
+name: Status widget
+type: '@jigx/jig/default'
+referenceId: jw-status
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Status: Full view'
+            value: Not implemented yet
+
+
+views:              
+  2x2: 
+    componentId: "@jigx/jw-status"
+    options:
+      statuses:
+        - when: true
+          icon: floppy-disk
+          color: color4
+          bottom: 
+            componentId: "@jigx/jc-titles"
+            options:
+              align: center
+              title: "Canceled"
+              subtitle: "Mission 10186"
+              icon: alert
+              iconColor: primary
+              style:
+                isPositive: true
+  4x4: 
+    componentId: "@jigx/jw-status"
+    options:
+      statuses:
+        - when: true
+          icon: floppy-disk
+          color: color4
+          bottom: 
+            componentId: "@jigx/jc-titles"
+            options:
+              align: center
+              title: "Canceled"
+              subtitle: "Mission 10186"
+              icon: alert
+              iconColor: primary
+              style:
+                isPositive: true
