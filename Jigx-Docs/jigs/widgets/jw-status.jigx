@@ -18,18 +18,17 @@ views:
     options:
       statuses:
         - when: true
-          icon: floppy-disk
-          color: color4
+          icon: robot
+          color: color14
           bottom: 
             componentId: "@jigx/jc-titles"
             options:
               align: center
-              title: "Canceled"
-              subtitle: "Mission 10186"
-              icon: alert
-              iconColor: primary
+              title: "Disconnected"
+              subtitle: "Device 365"
+              icon: no-cloud
               style:
-                isPositive: true
+                isNegative: true 
   4x4: 
     componentId: "@jigx/jw-status"
     options:

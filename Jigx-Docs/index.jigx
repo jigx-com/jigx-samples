@@ -87,8 +87,6 @@ widgets:
     children: jw-status
   - size: 4x4
     children: jw-image
-  - size: 4x2
-    children: jw-carousel
   - size: 2x4
     children: jw-list
   - size: 2x2
@@ -107,8 +105,6 @@ widgets:
     children: widget-value-list
   - size: 4x2
     children: jw-video    
-  - size: 4x2
-    children: jw-carousel-dynamic  
   - size: 2x4
     children: jw-user-list  
   - size: 2x2
@@ -125,8 +121,6 @@ widgets:
     children: jw-list-sql  
   - size: 2x2
     children: jw-avatar-sql  
-  - size: 4x2
-    children: widget-carousel
   - size: 2x2
     children: widget-new-opportunities-trend-line
   - size: 2x2

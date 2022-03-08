@@ -130,16 +130,37 @@ item:
       type: icon
       icon: arrow-right-1
 
-views:
+# views:
+#   2x2:
+#     componentId: "@jigx/jw-value"
+#     options:
+#       value: =$count(@ctx.data.components)
+#       format:
+#         unit: Components
+#       top:
+#         componentId: '@jigx/jc-titles'
+#         options:
+#           icon: space-rocket-flying
+      # bottom:
+      #   componentId: "@jigx/jc-trend"
+      #   options:
+      #     title: "Components total"
+      #     value: 1
+      #     style:
+      #       isValueBottom: true
+
+
+views:    
   2x2:
     componentId: "@jigx/jw-value"
     options:
+      align: center
       value: =$count(@ctx.data.components)
-      bottom:
-        componentId: "@jigx/jc-trend"
+      format:
+        unit: Components
+      bottom: 
+        componentId: "@jigx/jc-titles"
         options:
-          title: "Components total"
-          value: 1
-          style:
-            isValueBottom: true
-            isAlignRight: true
+          icon: synchronize-arrows-1
+          title: "Last change"
+          subtitle: "8.3.2022"
