@@ -45,7 +45,7 @@ children:
     instanceId: test2
     options:
       isAutoFocused: true
-      icon: arrow-right-1
+      icon: arrow-right
       label: First name (with auto focus)
       property: firstname
       isHidden: false

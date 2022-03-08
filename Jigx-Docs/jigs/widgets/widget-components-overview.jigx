@@ -100,7 +100,7 @@ datasources:
           icon: pin
           color: color14
           target: jc-outputs-location
-        - name: All aviable icons with preview
+        - name: All available icons with preview
           description: Display all icons in list
           icon: rating-star-1
           color: color15
@@ -128,7 +128,9 @@ item:
       isDuotone: true
     rightElement:
       type: icon
-      icon: arrow-right-1
+      icon: arrow-right
+      color: color14
+      iconColor: color14
 
 # views:
 #   2x2:
