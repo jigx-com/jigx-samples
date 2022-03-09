@@ -1,0 +1,43 @@
+name: Time widget
+type: '@jigx/jig/default'
+referenceId: jw-widget-time
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Inputs'
+            value: =@ctx.jig.inputs.test
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'How many items we send'
+            value: =@ctx.jig.inputs.ids
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Array of ids'
+            value: =$string(@ctx.jig.inputs.datasd)
+
+views:    
+  2x2:
+    componentId: "@jigx/jw-value"
+    options:
+      align: right
+      value: =$toMillis($now())
+      format:
+        unit: Hours
+        dateFormat: 'HH:mm'
+      bottom:
+        componentId: '@jigx/jc-titles'
+        options:
+          icon: "phone"
+          align: right
+          title: "CHP1235"
+      top:
+        componentId: '@jigx/jc-titles'
+        options:
+          icon: "phone"
+          align: left
+          title: "CHP1235"
+          subtitle: "Active Mission"

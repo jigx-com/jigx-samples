@@ -88,6 +88,11 @@ datasources:
           icon: check-1
           color: color5
           target: jc-list-check
+        - name: List selected
+          description: List with option to select items
+          icon: home
+          color: color6
+          target: jc-list-selected
 
 data: =@ctx.data.components
 item:

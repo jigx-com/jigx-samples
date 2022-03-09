@@ -31,6 +31,9 @@ datasources:
         - name: Misc options
           description: Misc form options
           target: jc-form-misc
+        - name: Date picker
+          description: Date picker options
+          target: datepicker-form
         - name: Number field
           description: Showcase of number field
           target: jc-number-field

@@ -4,8 +4,20 @@ children:
   - componentId: "@jigx/jc-date-picker"
     options:
       type: datetime
-      property: date
+      property: date1
       label: Date
       maximumDate: =$toMillis($now()) + 1000000000
-      minimumDate: =$toMillis($now()) - 1000000000
+      minimumDate: =$toMillis($now()) + 10000000
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      type: datetime
+      property: date2
+      label: Date
+
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      format: LL
+      type: datetime
+      property: date3
+      label: Date
 entity: test
