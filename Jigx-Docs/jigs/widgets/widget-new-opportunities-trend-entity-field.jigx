@@ -23,6 +23,9 @@ views:
     componentId: "@jigx/jw-value"
     options:
       value: 173
+      align: right
+      format:
+        unit: Opportunities
       bottom:
         componentId: "@jigx/jc-trend"
         options:

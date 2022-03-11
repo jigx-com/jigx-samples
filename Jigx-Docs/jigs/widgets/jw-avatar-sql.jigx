@@ -26,10 +26,7 @@ children:
       
 views:
   2x2:
-    componentId: '@jigx/jw-universal'
+    componentId: '@jigx/jw-avatar'
     options:
-      center:
-        componentId: '@jigx/jc-avatar'
-        options:
-          text: 'NA'
-          uri: =@ctx.data.profile.photo
+      text: 'NA'
+      uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"

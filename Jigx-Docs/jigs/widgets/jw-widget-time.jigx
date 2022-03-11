@@ -32,12 +32,14 @@ views:
         componentId: '@jigx/jc-titles'
         options:
           icon: "phone"
+          iconColor: color4
           align: right
-          title: "CHP1235"
+          title: "+420 665 778 998"
       top:
         componentId: '@jigx/jc-titles'
         options:
-          icon: "phone"
+          icon: "calendar"
+          iconColor: color9
           align: left
-          title: "CHP1235"
-          subtitle: "Active Mission"
+          title: "11.03.2022"
+          subtitle: "Friday"

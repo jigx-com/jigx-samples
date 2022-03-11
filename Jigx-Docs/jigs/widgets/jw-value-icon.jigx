@@ -19,7 +19,12 @@ views:
       value: 888
       format:
         unit: "Mission"
-      icon: checklist
+      top:
+        componentId: '@jigx/jc-titles'
+        options:
+          align: left
+          icon: "checklist"
+          iconColor: color8
       bottom:
         componentId: '@jigx/jc-titles'
         options:

@@ -132,26 +132,6 @@ item:
       color: color14
       iconColor: color14
 
-# views:
-#   2x2:
-#     componentId: "@jigx/jw-value"
-#     options:
-#       value: =$count(@ctx.data.components)
-#       format:
-#         unit: Components
-#       top:
-#         componentId: '@jigx/jc-titles'
-#         options:
-#           icon: space-rocket-flying
-      # bottom:
-      #   componentId: "@jigx/jc-trend"
-      #   options:
-      #     title: "Components total"
-      #     value: 1
-      #     style:
-      #       isValueBottom: true
-
-
 views:    
   2x2:
     componentId: "@jigx/jw-value"
@@ -164,5 +144,6 @@ views:
         componentId: "@jigx/jc-titles"
         options:
           icon: synchronize-arrows-1
+          iconColor: color3
           title: "Last change"
           subtitle: "8.3.2022"

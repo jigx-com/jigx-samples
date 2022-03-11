@@ -35,15 +35,18 @@ views:
     componentId: "@jigx/jw-group"
     options:
       children:
-        - componentId: "@jigx/jw-universal"
+        - componentId: "@jigx/jw-avatar"
           options:
-            title: Tom Seller
-            subtitle: "10:00 - 11:30"
-            center:
-              componentId: "@jigx/jc-avatar"
+            text: J
+            uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+            bottom: 
+              componentId: "@jigx/jc-titles"
               options:
-                text: J
-                uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+                align: center
+                title: "Tom Seller"
+                subtitle: "10:00 - 11:30"
+                icon: calendar
+                
         - componentId: "@jigx/jw-list"
           options:
             data: =@ctx.data.static-data

@@ -16,11 +16,19 @@ views:
     componentId: '@jigx/jw-value'
     options:
       value: '6'
+      align: right
+      format:
+        unit: "Users"
       bottom: 
         componentId: '@jigx/jc-trend'
         options:
-          title: 'New users this week'
+          title: 'New this week'
           value: +3
           style:
             isValueBottom: true
-            isAlignRight: true
+            isAlignRight: false
+      top: 
+        componentId: "@jigx/jc-titles"
+        options:
+          icon: multiple-neutral-2
+          iconColor: color6

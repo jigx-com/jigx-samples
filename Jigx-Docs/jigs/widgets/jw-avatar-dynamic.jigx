@@ -21,13 +21,15 @@ children:
       text: NA
       uri: =@ctx.data.profile.photo
       
-views:
+views:    
   2x2:
-    componentId: '@jigx/jw-universal'
+    componentId: "@jigx/jw-avatar"
     options:
-      center:
-        componentId: '@jigx/jc-avatar'
+      text: VM
+      uri: =@ctx.data.profile.photo
+      bottom: 
+        componentId: "@jigx/jc-titles"
         options:
-          text: ''
-          uri: =@ctx.data.profile.photo
-    
+          align: center
+          title: Name
+          subtitle: Position

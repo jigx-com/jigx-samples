@@ -1,4 +1,4 @@
-title: Jigx-Docs (last update 09.03.2022)
+title: Jigx-Docs (last update 11.03.2022)
 category: personal
 referenceId: Jigx-Docs
 
@@ -68,9 +68,15 @@ widgets:
   - size: 2x2
     children: widget-components-overview
   - size: 2x2
+    children: jw-pie-chart      
+  - size: 2x2
+    children: widget-trends
+  - size: 2x2
     children: jc-list-item-badge
   - size: 2x2
     children: jw-location
+  - size: 2x2
+    children: widget-user    
   - size: 2x2
     children: jw-widget-time
   - size: 2x2
@@ -79,8 +85,10 @@ widgets:
     children: jc-list-check
   - size: 2x2
     children: jw-value-icon
-  # - size: 4x4
-  #   children: jw-value-icon
+  - size: 2x2
+    children: jw-avatar    
+  - size: 4x4
+    children: jw-value-icon
   - size: 2x2
     children: jw-image
   - size: 2x2
@@ -92,8 +100,6 @@ widgets:
   - size: 2x4
     children: jw-list
   - size: 2x2
-    children: jw-avatar
-  - size: 2x2
     children: jw-value  
   - size: 4x2
     children: jw-line-chart
@@ -101,8 +107,6 @@ widgets:
     children: jw-chart-combine  
   - size: 2x2
     children: jw-action  
-  - size: 2x2
-    children: jw-pie-chart  
   - size: 4x2
     children: widget-value-list
   - size: 4x2
@@ -163,16 +167,13 @@ widgets:
     children: widget-actions
   - size: 2x2
     children: widget-composite-v2
-  - size: 2x2
-    children: widget-user
+
   - size: 4x2
     children: widget-composite-v2
-  - size: extraLarge
+  - size: 4x4
     children: widget-composite-v2
   - size: 2x4
     children: widget-placeholder-composite
-  # - size: 2x2
-  #   children: widget-placeholder-chart
 
 stories: 
   - s-video

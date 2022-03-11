@@ -23,6 +23,7 @@ views:
     componentId: "@jigx/jw-value"
     options:
       value: "2"
+      align: right
       bottom:
         componentId: "@jigx/jc-trend"
         options:

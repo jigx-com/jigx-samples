@@ -29,13 +29,10 @@ views:
     componentId: "@jigx/jw-group"
     options:
       children:
-        - componentId: "@jigx/jw-universal"
+        - componentId: "@jigx/jw-avatar"
           options:
-            center:
-              componentId: "@jigx/jc-avatar"
-              options:
-                text: J
-                uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+            text: J
+            uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
         - componentId: "@jigx/jw-list"
           options:
             data: =@ctx.data.static-data

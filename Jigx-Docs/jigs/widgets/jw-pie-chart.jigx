@@ -31,7 +31,6 @@ views:
   2x2: 
     componentId: '@jigx/jw-chart'
     options:
-      title: Goal
       chart:
         componentId: '@jigx/jc-pie-chart'
         options:
@@ -52,4 +51,8 @@ views:
             isHidden: false
           series:
           - data: =@ctx.data.series1
-              
+      bottom:
+        componentId: "@jigx/jc-trend"
+        options:
+          title: test
+          subtitle: test 2         

@@ -19,8 +19,8 @@ views:
       bottom:
         componentId: "@jigx/jc-titles"
         options:
-          title: 'Prague Czech Republic'
-          subtitle: '512/5 Prague1'
+          title: 'Home'
+          subtitle: 'Prague Czech Republic'
           align: left
           # icon: pin
           # iconColor: color4
@@ -34,8 +34,8 @@ views:
       bottom:
         componentId: "@jigx/jc-titles"
         options:
-          title: 'Prague Czech Republic'
-          subtitle: '512/5 Prague1'
+          title: 'Home'
+          subtitle: 'Prague Czech Republic'
           align: left
           icon: pin
           iconColor: color4

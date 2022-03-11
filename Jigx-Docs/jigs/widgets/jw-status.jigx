@@ -43,6 +43,6 @@ views:
               title: "Canceled"
               subtitle: "Mission 10186"
               icon: alert
-              iconColor: primary
+              color: negative
               style:
-                isPositive: true
+                isNegative: true
