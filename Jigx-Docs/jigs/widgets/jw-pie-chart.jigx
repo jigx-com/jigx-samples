@@ -54,5 +54,8 @@ views:
       bottom:
         componentId: "@jigx/jc-trend"
         options:
-          title: test
-          subtitle: test 2         
+          title: Last two weeks
+          subtitle: test 2  
+          value: 2.37  
+          style:
+            isValueBottom: true
