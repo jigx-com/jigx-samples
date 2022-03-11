@@ -84,6 +84,9 @@ widgets:
   - size: 2x2
     children: jc-list-check
   - size: 2x2
+    children: jc-list-check-selected 
+    
+  - size: 2x2
     children: jw-value-icon
   - size: 2x2
     children: jw-avatar    
