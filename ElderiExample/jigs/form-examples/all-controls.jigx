@@ -1,0 +1,294 @@
+name: All controls
+referenceId: all-controls
+type: '@jigx/jig/form'
+icon: calendar
+# description: 
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Player Information
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+datasources:
+  recycle-category:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - title: Oil
+          value: Oil
+        - title: Grease
+          value: Grease
+        - title: Other
+          value: Other
+          
+  video:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - uri: "https://www.youtube.com/watch?v=An3w61elCXM"
+          title: Spoegwolf          
+
+actions:
+  - children:
+   
+    # - componentId: "@jigx/ja-confirm"
+    #   options:
+    #     title: Add
+    #     modal:
+    #       title: Form Confirm
+    #       description: Description
+    #       confirm: Yes
+    #       cancel: No
+    #     style:
+    #       isDisabled: "=@ctx.system.isOffline"
+    #     onConfirmed:
+    #       componentId: "@jigx/ja-submit-form"
+    #       instanceId: submit-action
+    #       options:
+    #         title: Add      
+      
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: new-player
+      options:
+        formId: new-player
+        icon: add
+        title: Add new player
+        onSuccess:
+          title: 'New player created'
+          actions:
+            - componentId: '@jigx/ja-go-to'
+              options:
+                title: Capture another
+                linkTo: player-signup
+                
+
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/player
+children:
+  - 
+    - componentId: '@jigx/jc-date-picker'
+      options:
+       property: date
+       type: date
+       label: 'Date Control (with =$now)'
+      #  initialValue: '12/31/1985'
+       value: =$now()   
+       isRequired: true
+  - 
+    - componentId: '@jigx/jc-date-picker'
+      options:
+       property: time
+       type: time
+       label: 'Time Control:'
+      #  initialValue: '12/31/1985'
+       isRequired: true
+  -
+    - componentId: '@jigx/jc-date-picker'
+      options:
+       property: datetime
+       type: datetime
+       label: 'Date and Time Control: (with =$now)'
+      #  initialValue: '12/31/1985'   
+      #  value: =$now  
+       initialValue: =$now()        
+       
+  - componentId: '@jigx/jc-date-picker'
+    options:
+      property: minmax3
+      type: datetime
+      label: 'Min Max DATE & TIME:'
+      minimumDate: '2022-03-21 09:00'
+      maximumDate: '2022-04-14 11:00'
+  - componentId: '@jigx/jc-date-picker'
+    options:
+      property: minmax2
+      type: time
+      label: 'Min Max TIME:'
+      minimumDate: '2022-03-21 09:00'
+      maximumDate: '2022-03-21 18:00'  
+  - componentId: '@jigx/jc-date-picker'
+    options:
+      property: minmax1
+      type: date
+      label: 'Min Max DATE'
+      minimumDate: '2022-03-21 09:00'
+      maximumDate: '2022-03-27 11:00'   
+            
+  -
+    - componentId: "@jigx/jc-date-picker"
+      options:
+        label: 'Time picker with initial value'
+        property: delay_from_alternative
+        type: time
+        initialValue: =$now()
+ 
+  - componentId: "@jigx/jc-image-picker"
+    options:
+      property: feedback_photograph
+      type: single
+      label: "Select a single image"
+      isRequired: true 
+      
+  - componentId: "@jigx/jc-image-picker"
+    options:
+      property: feedback_photograph2
+      type: multiple
+      label: "Select multiple images"
+      isRequired: false 
+
+  # - componentId: "@jigx/jc-file-picker"
+  #   options:
+  #     property: feedback_file
+  #     type: single
+  #     label: "Select a single files"
+  #     isRequired: false 
+          
+  # - componentId: '@jigx/jc-avatar'
+  #   options:
+  #     label: "avatar image"
+  #     text: NA
+  #     uri: https://static.remove.bg/remove-bg-web/2a274ebbb5879d870a69caae33d94388a88e0e35/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg
+
+  - componentId: "@jigx/jc-dropdown"
+    instanceId: recycle-category
+    options:
+     label: "Waste type"
+     property: recycle-category
+     initialValue: Oil
+     data: =@ctx.data.recycle-category
+     isRequired: true
+
+  - componentId: "@jigx/jc-text-field"
+    instanceId: recycle-volume
+    options:
+      label: "Volume (liters)"
+      property: recycle-volume
+      # initialValue: "7"
+      value: "7"
+
+  - componentId: "@jigx/jc-checkbox"
+    instanceId: checkbox-control
+    options:
+      property: checkbox-control
+      label: "checkbox false1"
+      type: checkbox
+      initialValue: false
+      # value: false
+      isRequired: true
+
+  - componentId: "@jigx/jc-checkbox"
+    instanceId: checkbox-control2
+    options:
+      property: checkbox-control2
+      label: "checkbox true"
+      type: checkbox
+      initialValue: true      
+
+  - componentId: "@jigx/jc-email-field"
+    options:
+      value: "support@jigx.com"
+      property: email-icon
+      label: "Email 2"
+      type: "email"
+      # icon: "=@ctx.jig.state.checkbox-control.value ?  'check-1' : 'cog-double'" 
+      icon: "=@ctx.jig.state.recycle-volume.value = '7' ? 'check-1' : 'cog-double'" 
+      isRequired: true
+      
+  - componentId: '@jigx/jc-text-field'
+    options:
+      style:
+        isBusy: true
+      label: isBusy1
+      property: field2    
+
+  - componentId: '@jigx/jc-text-field'
+    options:
+      style:
+        isBusy: true
+      label: isBusy3
+      # value: "this is a value"
+      initialValue: "this is inital value"
+      property: field2
+      
+  - componentId: "@jigx/jc-number-field"
+    options:
+      property: number-counter
+      label: number-counter
+      initialValue: "2.3"
+      stepper:
+        isEnabled: true
+        value: 0.5
+      isRequired: true        
+        
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      property: type-avatar  
+      type: avatar
+      data: ''
+      label: Avatar 
+          
+  - componentId: '@jigx/jc-text-field'
+    instanceId: colourtest
+    options:
+      # isAutoFocused: true
+      icon: home
+      property: colourtest
+      label: colour test (with auto focus)
+      isHidden: false
+      # isRequired: "=(2 = 1) ? true: false"
+      color:
+        - when: =10
+          color: "negative"
+        - when: =2
+          color: "color3"
+        - when: =0
+          color: "color8"
+          
+  - componentId: "@jigx/jc-number-field"
+    options:
+      property: numbercolout
+      label: number-colour-test
+      initialValue: "2"
+      stepper:
+        isEnabled: true
+        value: 1           
+      color:
+        - when: =10
+          color: "negative"
+        - when: =2
+          color: "color3"
+        - when: =0
+          color: "color8"
+          
+  # - componentId: '@jigx/jc-entity-field'
+  #   options:
+  #     label: 'Mobile phone'
+  #     value: "737829382"
+  #     type: phone  
+  
+  # - componentId: "@jigx/jc-image"
+  #   options:
+  #     title: MyTest
+  #     subtitle: Image
+  #     label: "An image"
+  #     source:
+  #       uri: "https://yt3.ggpht.com/lI2PKd9ogtPxSGrr0sN9zqDhRBzyQAEPxUW3wsmK7ic3p8uGpr0hh40xOHoAv2DiXUVJ2FPVMw"
+
+  # - componentId: "@jigx/jc-video-player"
+  #   options:
+  #     url: "='https://www.youtube.com/watch?v=' &  @ctx.jig.state.playlist.activeItem.videoid"
+
+
+  # - componentId: '@jigx/jc-video-player'
+  #   options:
+  #     label: 'Video'
+  #     property: 'video'
+  #     # Change video link for some of your favourite video
+  #     url: "https://www.youtube.com/watch?v=An3w61elCXM"
+  #     title: MyTest
+  #     subtitle: Image
+

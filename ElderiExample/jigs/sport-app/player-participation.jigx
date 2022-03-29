@@ -1,4 +1,4 @@
-name: Participation
+name:  Participation
 referenceId: player-participation
 type: '@jigx/jig/default'
 icon: checklist
@@ -10,14 +10,15 @@ datasources:
       data:
         - y: 25000
           color: color2
+        - y: 15000
+          color: color11
 
 
 
 views:
-  2x2: 
+  2x2:
     componentId: '@jigx/jw-chart'
     options:
-      title: Match Participation
       chart:
         componentId: '@jigx/jc-pie-chart'
         options:
@@ -26,7 +27,7 @@ views:
               format:
                 unitDisplay: long
           chart:
-            height: 130
+            height: 300
             subtitle:
               text: Chart
               verticalAlign: center
@@ -47,7 +48,7 @@ children:
               format:
                 unitDisplay: long
           chart:
-            height: 130
+            height: 200
             subtitle:
               text: Text 123
               verticalAlign: center

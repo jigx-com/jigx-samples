@@ -1,0 +1,60 @@
+type: "@jigx/jig/list"
+name: Chanelle's Progress
+
+datasources: 
+  Yummyfood:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - foodtype: Starters
+          description: Yummy starters
+          price: 10
+          isColor: true
+          id: 1
+        - foodtype: Light Meals
+          description: Yummy light meals
+          price: 30
+          id: 2
+        - foodtype: Main Meals
+          description: Yummy main meals
+          price: 50
+          id: 3
+        - foodtype: Desserts
+          description: Yummy desserts
+          price: 20
+          id: 4
+        - foodtype: Sodas
+          description: Yummy sodas
+          price: 0
+          isError: true
+          id: 5
+
+data: =@ctx.data.Yummyfood
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.foodtype
+    subtitle: =@ctx.parents.list-data.item.description
+    colors:
+      - color: color1
+        when: =@ctx.parents.list-data.item.isColor
+      - color: color2
+        when: false
+      - color: color3
+        when: true
+    
+    rightElement:
+      type: value
+      text: ="$" & @ctx.parents.list-data.item.price
+      
+    leftElement:
+      value: =@ctx.parents.list-data.item.isColor
+      type: checkbox
+      
+    progress: =@ctx.parents.list-data.item.price/100
+    style:
+      isError: =@ctx.parents.list-data.item.isError
+      isPositive: =@ctx.data.foo
+      
+
+

@@ -1,0 +1,23 @@
+name: Emergency Contact
+referenceId: player-emergency
+type: '@jigx/jig/form'
+isCollapsible: true 
+isInitiallyCollapsed: true
+
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/player
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: emergency-name
+      label: 'Emergency Contact Name:'
+      
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property:  emergency-phone
+      label: 'Emergency Contact Phone number:'
+      initialValue: '52009900'
+      # type: number  dont know why its in error
+      keyboardType: phone-pad 
+      icon: mobile-phone-1

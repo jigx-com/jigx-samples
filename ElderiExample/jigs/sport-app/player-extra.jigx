@@ -1,0 +1,85 @@
+name: Extra
+referenceId: player-extra
+type: '@jigx/jig/form'
+isCollapsible: true 
+isInitiallyCollapsed: false
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/player
+children:
+  -
+    - componentId: "@jigx/jc-checkbox"
+      instanceId: status
+      options:
+        label: 'Active player?'
+        property: status
+        value: true
+  - 
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: category-dropdown
+      options:
+        label: 'Category'
+        property: category
+        data: 
+         - title: 'Adult'
+           value: 'Adult'
+         - title: 'Junior'
+           value: 'Junior'
+         - title: 'Kid'
+           value: 'Kid'
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: agegroup-dropdown
+      options:
+        label: 'Age group'
+        property: age-group
+        data: 
+         - title: 'OPEN'
+           value: 'OPEN'
+         - title: 'U35'
+           value: 'U35'
+         - title: 'U40'
+           value: 'U40' 
+         - title: 'U45'
+           value: 'U45'
+         - title: 'U50'
+           value: 'U50'
+         - title: 'U60'
+           value: 'U60'        
+  -
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: position
+        label: 'Preferred position'       
+    # - componentId: "@jigx/jc-checkbox"
+      #  change to a multiselect check box instead
+  -                
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: nationality-dropdown
+      options:
+        label: 'Nationality'
+        property: nationality
+        data: 
+         - title: 'Need to retreive data from somewhere'
+           value: 'Active'
+  -   
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: district-dropdown
+      options:
+        label: 'HK living district'
+        property: district
+        data: 
+         - title: 'Need to retreive data from somewhere'
+           value: 'Active'
+           
+    - componentId: "@jigx/jc-date-picker"
+      instanceId: residence-date
+      options:
+        label: 'Resident in HK since'
+        property: residence-date
+        type: date
+
+onFocus: 
+  componentId: "@jigx/ja-open-url"
+  options:
+    title: "On Load URL"
+    url: "https://manage-dev.jigx.com/"   

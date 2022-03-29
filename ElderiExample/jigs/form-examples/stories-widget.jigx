@@ -1,0 +1,40 @@
+name: Story
+type: '@jigx/jig/default'
+referenceId: stories-widget
+
+datasources:
+  story:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - title: Fresh orange juice
+          description: 3 Different ways of making orange juice.
+          img: https://timesofindia.indiatimes.com/thumb/msid-68562297,width-1200,height-900,resizemode-4/.jpg
+          url: https://www.alphafoodie.com/how-to-make-orange-juice/
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: tbd
+            value: tbd
+
+stories:
+  componentId: '@jigx/jc-story-group'
+  options:
+    data: =@ctx.data.story
+    groupName: Healthy lifestyle
+    item: 
+      componentId: '@jigx/jc-image'
+      options:
+        title: =@ctx.parents.list-data.item.title
+        subtitle: =@ctx.parents.list-data.item.description
+        onPress: 
+          componentId: '@jigx/ja-go-to'
+          options:
+            title: Read more
+            linkTo: =@ctx.parents.list-data.item.url
+        source:
+          uri: =@ctx.parents.list-data.item.img

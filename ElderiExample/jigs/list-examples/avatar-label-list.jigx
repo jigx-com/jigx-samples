@@ -1,0 +1,87 @@
+name: Avatar & Label list
+referenceId: avatar-label-list
+type: '@jigx/jig/list'
+icon: phone
+    
+datasources:
+  list-item:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - id: 1
+          first-name: 'Brian'
+          last-name: 'Jones'
+          email: 'brian.jones@gmail.com'
+          dob: '08/03/1979'
+          job-title: 'Sales Director'
+          office: 'New York, NY USA'
+          flag: true
+        - id: 2
+          first-name: 'Sarah'
+          last-name: 'Nagle'
+          email: 'sarah@gmail.com'
+          dob: '01/10/1981'
+          job-title: 'Sales Manager'
+          office: 'Snoqualmie, WA USA'
+          flag: true
+        - id: 3
+          first-name: 'Ryan'
+          last-name: 'Weeks'
+          email: 'ryanweeks@gmail.com'
+          dob: '12/12/1983'
+          job-title: 'Support Lead'
+          office: 'Melbourne AUS'
+          flag: false
+        - id: 4
+          first-name: 'Maggy'
+          last-name: 'Smith'
+          email: 'm.smith@gmail.com'
+          dob: '06/22/1975'
+          job-title: 'Quality Assurance Lead'
+          office: 'London UK'
+          flag: true
+        - id: 5
+          first-name: 'Holly'
+          last-name: 'Anderson'
+          email: 'anderson.h@gmail.com'
+          dob: '01/22/1979'
+          job-title: 'Marketing Manager'
+          office: 'Denver, CO USA'
+          flag: false
+                
+data: =@ctx.data.list-item
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.first-name
+    subtitle: =@ctx.parents.list-data.item.job-title
+    divider: solid
+    label:
+      # title: "Done"
+      title: "=@ctx.parents.list-data.item.flag ? '...true' : '...false'"
+      # color: "=@ctx.parents.list-data.item.flag.value ? 'color3' : 'color4'"
+      color: 
+        - when: "=@ctx.parents.list-data.item.flag = true"
+          color: 'color2' #green
+        - when: "=@ctx.parents.list-data.item.flag = false"
+          color: 'color4' #red
+      isHidden: "=@ctx.parents.list-data.item.first-name = 'Brian'"   
+    avatars:
+      - uri: https://randomuser.me/api/portraits/men/1.jpg
+        text: "TA"
+      - uri: https://randomuser.me/api/portraits/men/2.jpg
+        text: "AT"
+      - uri: https://randomuser.me/api/portraits/men/3.jpg
+        text: "AT"
+      - uri: https://randomuser.me/api/portraits/men/41.jpg
+        text: "AT"
+      - uri: https://randomuser.me/api/portraits/men/5.jpg
+        text: "AT"
+      - uri: https://randomuser.me/api/portraits/men/6.jpg
+        text: "AT"
+        
+    rightElement:
+      type: icon
+      # icon: arrow-right-1
+      icon: "=@ctx.parents.list-data.item.flag ? 'add' : 'bin'"

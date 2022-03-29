@@ -1,0 +1,27 @@
+name: Sorting
+type: '@jigx/jig/list'
+referenceId: list-sorting
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 10
+          description: Description of item 10
+        - name: Item 2
+          description: Description of item 2
+        - name: Item 30
+          description: Description of item 30
+        - name: Item 4
+          description: Description of item 4
+        - name: Item 5
+          description: Description of item 5
+
+isSortable: true
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description

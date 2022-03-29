@@ -1,0 +1,47 @@
+name: List searchable
+referenceId: list-searchable
+type: '@jigx/jig/list'
+icon: list
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Player Information
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+
+datasources:
+  items:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - jigxDocs/shopping-cart
+      queryParameters:
+        '@search': =@ctx.jig.state.list-searchable.searchText
+      query: |
+        SELECT
+        json_extract(data, '$.id') as id,
+        json_extract(data, '$.product-name') as name,
+        json_extract(data, '$.product-category') as category,
+        json_extract(data, '$.product-picture') as picture,
+        json_extract(data, '$.product-price') as price
+        FROM [jigxDocs/shopping-cart]
+        WHERE name LIKE '%'||@search||'%' OR @search IS NULL
+        ORDER BY name DESC
+
+isSearchable: true
+data: =@ctx.data.items
+
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    # divider: solid
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =(@ctx.parents.list-data.item.price & ' €')
+    leftElement: 
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.picture

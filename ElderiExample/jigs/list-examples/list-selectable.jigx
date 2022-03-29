@@ -1,0 +1,48 @@
+name: Selected list
+type: "@jigx/jig/list"
+referenceId: list-selectable
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+          checked: true
+        - name: Item 2
+          description: Description of item 2
+          checked: false
+        - name: Item 3
+          description: Description of item 3
+          checked: true
+        - name: Item 4
+          description: Description of item 4
+          checked: false
+        - name: Item 5
+          description: Description of item 5
+          checked: false
+          
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Go to
+        linkTo: placeholder2
+        parameters:
+          test: 'hello'
+          ids: =$count(@ctx.jig.state.jc-list-selected.selected)
+          data: =@ctx.jig.state.jc-list-selected.selected
+          
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    
+    leftElement:
+      type: checkbox
+      value: =@ctx.parents.list-data.item.checked
+
+      

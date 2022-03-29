@@ -1,0 +1,31 @@
+name: Signature2
+type: "@jigx/jig/form"
+icon: checklist
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/simple
+method: create
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: form
+        options:
+          title: Submit
+          formId: signature
+          
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      isHidden: true
+      label: id
+      property: id'
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Name
+      property: name
+  - componentId: "@jigx/jc-signature-field"
+    options:
+      label: Sign please...
+      property: signature
+      # value: https://images.unsplash.com/photo-1633114128729-0a8dc13406b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80

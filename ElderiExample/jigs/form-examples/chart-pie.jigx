@@ -1,0 +1,42 @@
+name: Pie Chart (1 series)
+type: "@jigx/jig/default"
+referenceId: chart-pie
+
+datasources:
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - x: Test
+          y: 1
+        - x: Test1
+          y: 2
+        - x: Test2
+          y: 3
+        - x: Test3
+          y: 2
+
+children:
+  - componentId: "@jigx/jc-pie-chart"
+    options:
+      chart:
+        height: 250
+        # title: One series
+        # subtitle: this is the subtitle of the pie chart
+        title: 
+          text: One series title x
+          verticalAlign: top
+        subtitle: 
+          text: this is the subtitle of the pie chart x 
+          verticalAlign: center 
+      legend:
+        isHidden: false
+      series:
+        - data: =@ctx.data.series1
+          description: Text
+          name: PIE TEST
+          type: arch
+      xAxis:
+        categories: =@ctx.data.series1.x
+      yAxis:
+        max: 25

@@ -3,31 +3,57 @@ referenceId: player-signup
 type: '@jigx/jig/form'
 icon: smiley-smile-2
 description: Register here as a new players by proving the relevant information.
+isCollapsible: true 
 
-header:
-  children:
-    componentId: "@jigx/jc-image"
-    options:
-      title: Player Information
-      source:
-        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
-
-
-actions:
-  - children:
-    - componentId: '@jigx/ja-submit-form'
-      instanceId: new-player
-      options:
-        formId: new-player
-        icon: add
-        title: Add new player
-        onSuccess:
-          title: 'New player created'
-          action:
-            - componentId: '@jigx/ja-go-to'
-              option:
-                title: Capture another
-                linkTo: player-signup
+# actions:
+#   - children:
+   
+#     # - componentId: "@jigx/ja-confirm"
+#     #   options:
+#     #     title: Add
+#     #     modal:
+#     #       title: Form Confirm
+#     #       description: Description
+#     #       confirm: Yes
+#     #       cancel: No
+#     #     style:
+#     #       isDisabled: "=@ctx.system.isOffline"
+#     #     onConfirmed:
+#     #       componentId: "@jigx/ja-submit-form"
+#     #       instanceId: submit-action
+#     #       options:
+#     #         title: Add      
+      
+#     - componentId: '@jigx/ja-submit-form'
+#       instanceId: new-player
+#       options:
+#         formId: new-player
+#         icon: add
+#         title: Sign new player up
+#         onSuccess:
+#           title: 'New player signed up'
+#           actions:
+#             - componentId: '@jigx/ja-go-to'
+#               options:
+#                 title: Capture another
+#                 linkTo: player-signup
+#    #Taken from motul solution 
+#     - componentId: "@jigx/ja-action-list"
+#       options:
+#         title: Cancel
+#         isSequential: true
+#         icon: bin-1
+#         style:
+#           isDanger: true
+#           isDisabled: "=@ctx.system.isOffline"
+#         actions:
+#          - componentId: "@jigx/ja-execute-entities"
+#            instanceId: clear-input
+#            options:
+#              provider: DATA_PROVIDER_DYNAMIC
+#              entity: default/player
+#              goBack: home
+#              method: delete
 
 
 provider: DATA_PROVIDER_DYNAMIC
@@ -37,12 +63,13 @@ children:
     - componentId: "@jigx/jc-text-field"
       options:
         property: first-name
-        label: 'First Name:'
+        label: 'First'
+        # errorText: "You are wrong"
 
     - componentId: "@jigx/jc-text-field"
       options:
         property: last-name
-        label: 'Last Name:'
+        label: 'Last Name'
   - 
     - componentId: "@jigx/jc-dropdown"
       instanceId: gender-dropdown
@@ -51,27 +78,54 @@ children:
         property: gender
         data: 
          - title: 'Male'
-           value: 'M'
+           value: 'Male'
          - title: 'Female'
-           value: 'F'
+           value: 'Female'
            
     - componentId: '@jigx/jc-date-picker'
       options:
        property: dob
-       label: 'Date of Birth:'
-       initialValue: '12/31/1985'
+       label: 'Date of Birth'
+       initialValue: '1985-12-31'
+       helperText: =@ctx.item.state
      
   - componentId: "@jigx/jc-text-field"
     options:
       property: email
-      label: 'Email:'
+      label: 'Email'
       initialValue: 'elderi@gmail.com'
-      type: email
+      # type: email
+      keyboardType: email-address
       
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property:  phone-number
+      label: 'Phone number'
+      initialValue: '52009900'
+      # type: number
+      keyboardType: phone-pad
+      helperText: Number used in HK
+          
   - componentId: "@jigx/jc-image-picker"
     options:
       property: profile_photo
       type: single
       label: "Upload a profile picture"
       isRequired: false
+
   
+  # - componentId: "@jigx/ja-confirm"
+  #   options:
+  #     title: Add
+  #     modal:
+  #       title: Form Confirm
+  #       description: Description
+  #       confirm: Yes
+  #       cancel: No
+  #     style:
+  #       isDisabled: "=@ctx.system.isOffline"
+  #     onConfirmed:
+  #       componentId: "@jigx/ja-submit-form"
+  #       instanceId: submit-action
+  #       options:
+  #         title: Add

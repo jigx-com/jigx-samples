@@ -1,0 +1,43 @@
+name: Calendar item detail
+type: "@jigx/jig/list"
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        instanceId: blabla
+        options:
+          title: Share
+          icon: share
+          linkTo: calendar-item-detail
+      - componentId: "@jigx/ja-go-to"
+        instanceId: blabla
+        options:
+          title: Go
+          icon: share
+          linkTo: calendar-item-detail
+      - componentId: "@jigx/ja-go-to"
+        instanceId: blabla
+        options:
+          title: To
+          icon: share
+          linkTo: calendar-item-detail
+datasources:
+  claims:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - description: Description of item 1
+          name: Item 10
+        - description: Description of item 2
+          name: Item 20
+        - description: Description of item 3
+          name: Item 30
+        - description: Description of item 4
+          name: Item 40
+        - description: Description of item 5
+          name: Item 50
+data: =@ctx.data.claims
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description

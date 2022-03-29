@@ -1,0 +1,123 @@
+name: Player Display
+referenceId: player-display
+type: '@jigx/jig/default'
+icon: layout-dashboard
+description: Player details
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: All Player Details
+      source:
+        uri: https://www.thehrdigest.com/wp-content/uploads/2019/10/Employee-Proposition-Value-EVP-Creating.jpg
+# set players profile pic as the header image
+
+datasources:
+  player-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/player
+      query: |
+        SELECT 
+          id, 
+          '$.first-name', 
+          '$.last-name', 
+          '$.gender', 
+          '$.dob', 
+          '$.email', 
+          '$.phone-number',
+          '$.profile_photo',
+          '$.status',
+          '$.category',
+          '$.age-group',
+          '$.nationality',
+          '$.district',
+          '$.residence-date',
+          '$.emergency-contactname',
+          '$.emergency-contactphone'
+        FROM [default/player]
+
+      
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'First Name'
+              value: =@ctx.data.player-data.first-name
+          
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Last Name'
+              value: =@ctx.data.player-data.last-name
+        -       
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Gender'
+              value: =@ctx.data.player-data.gender
+              
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Date of Birth'
+              value: =@ctx.data.player-data.dob
+              type: date
+              
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Phone Number'
+            value: =@ctx.data.player-data.phone-number
+            type: phone
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Email'
+            value: =@ctx.data.player-data.email
+            type: email
+
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Status'
+            value: =@ctx.data.player-data.status
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Category'
+            value: =@ctx.data.player-data.category
+        
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Age group'
+            value: =@ctx.data.player-data.age-group          
+
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Nationality'
+            value: =@ctx.data.player-data.nationality
+
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'HK district'
+            value: =@ctx.data.player-data.district            
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Resident since'
+            value: =@ctx.data.player-data.residence-date        
+            type: date  
+
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Emergency contact'
+            value: =@ctx.data.player-data.emergency-contactname
+
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Emergency contact phone number'
+            value: =@ctx.data.player-data.emergency-contactphone 
+            type: phone          

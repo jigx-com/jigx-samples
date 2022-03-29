@@ -1,0 +1,114 @@
+name: Checkbox
+referenceId: checkbox-control
+type:  "@jigx/jig/form"
+icon: navigation-menu
+
+entity: ""
+
+children:
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: hela2
+      label: Im normal 2
+      isRequired: true
+
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: dynamic3
+      label: Dynamic data dropdown   - ↓
+      helperText: Helper Text text field
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic4
+      label: Im checked from YAML
+      initialValue: true 
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic5
+      label: Im possitive
+      style:
+        isPositive: true
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic6
+      label: Im warning
+      style:
+        isWarning: true
+        
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic7
+      label: Im danger 
+      style:
+        isDanger: true
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic8
+      label: Im disabled
+      style:
+        isDisabled: true
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic9
+      label: Im disabled & true
+      initialValue: true 
+      style:
+        isDisabled: true
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic10
+      label: Im with helperText
+      helperText: Help text is here!
+  # Static data dropdown - children code
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: dynamic11
+      label: I'm with helperText 2
+      helperText: Help text is here!
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: shared
+      label: We have shared value
+      helperText: Help text is here!
+  # Static data dropdown - children code
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: shared
+      label: We have shared value
+      style:
+        isPositive: true
+      helperText: Help text is here!
+
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: press123
+      label: I have onPress event
+      onPress:
+        componentId: "@jigx/ja-go-to"
+        options:
+          title: Add item to shopping list
+          linkTo: signature
+
+                              
+  - componentId: "@jigx/jc-checkbox"
+    options:
+      property: colours
+      label: I am different colour
+      initialValue: true           
+      style: 
+        isDanger: true
+        isPositive: false
+          
+      # - when: false
+      #   color: color6
+      # - when: true  
+      #   color: color8

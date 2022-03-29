@@ -1,0 +1,117 @@
+name: Simple
+referenceId: simple-DD-form
+type: '@jigx/jig/form'
+icon: smiley-smile-2
+description: Register here as a new players by proving the relevant information.
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Player Information
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+# onLoad: 
+#   componentId: "@jigx/ja-open-url"
+#   options:
+#     title: "On Load URL"
+#     url: "https://manage-dev.jigx.com/"
+
+onRefresh: 
+  componentId: "@jigx/ja-open-url"
+  options:
+    title: "On REFRESH URL"
+    url: "https://manage-dev.jigx.com/"
+    
+
+
+actions:
+  - children:
+   
+    # - componentId: "@jigx/ja-confirm"
+    #   options:
+    #     title: Add
+    #     modal:
+    #       title: Form Confirm
+    #       description: Description
+    #       confirm: Yes
+    #       cancel: No
+    #     style:
+    #       isDisabled: "=@ctx.system.isOffline"
+    #     onConfirmed:
+    #       componentId: "@jigx/ja-submit-form"
+    #       instanceId: submit-action
+    #       options:
+    #         title: Add      
+      
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-simpple
+      options:
+        formId: add-simple
+        icon: add
+        title: Add
+        onSuccess:
+          title: 'New player created'
+          actions:
+            - componentId: '@jigx/ja-go-to'
+              options:
+                title: Capture another
+                linkTo: player-signup
+   #Taken from motul solution 
+    - componentId: "@jigx/ja-action-list"
+      options:
+        title: Clear all
+        isSequential: true
+        icon: bin-1
+        style:
+          isDanger: true
+          isDisabled: "=$count(@ctx.data.cart-items.id) < 1 or @ctx.system.isOffline"
+        actions:
+         - componentId: "@jigx/ja-execute-entities"
+           instanceId: clear-cart-items
+           options:
+            #  title: "Clear cart"
+             provider: DATA_PROVIDER_LOCAL
+             entity: default/simple
+             method: delete
+            #  data: "=@ctx.data.cart-items.{ 'id': id }[]"            
+
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/simple
+children:
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: name1
+        label: 'Name:'
+        isRequired: true
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: name2
+        label: 'Surname:'
+  - 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: name3
+        label: 'Age:'
+        isRequired: false
+  -      
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: name4
+        label: =@ctx.data.foo.one
+        initialValue:  =@ctx.data.foo.two
+        
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: counter
+      title: "Masark"
+      colors: 
+        - when: true
+          color: warning
+      value: 5

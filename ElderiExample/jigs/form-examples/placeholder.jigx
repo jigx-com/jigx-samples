@@ -1,4 +1,5 @@
 name: Having fun?
+type: '@jigx/jig/default'
 referenceId: placeholder
 
 children:

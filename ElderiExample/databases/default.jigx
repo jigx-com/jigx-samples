@@ -1,4 +1,10 @@
 tables:
   ? 'player'
+  ? 'match'
+  ? 'matchPlayerRespone'
+  ? 'simple'
+  ? 'document'
+  ? 'stories'
+  ? 'tournament'
 
   

@@ -1,0 +1,23 @@
+name: Having fun?
+type: '@jigx/jig/default'
+referenceId: placeholder2
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: een
+            value: =@ctx.jig.inputs.tests
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: twee
+            value: =@ctx.jig.inputs.ids    
+            
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: three
+            value: =@ctx.jig.inputs.data    
+            

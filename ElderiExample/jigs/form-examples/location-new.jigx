@@ -1,0 +1,47 @@
+name: 1new location
+referenceId: location-new
+type: "@jigx/jig/default"
+isFullScreen: true
+
+datasources:
+  # Static data dropdown - datasource code
+  paths:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        # - lat: 33.669
+        #   lng: 42.699
+        # - lat: 32.669
+        #   lng: 42.699
+        # - lat: 32.669
+        #   lng: 44.699
+        # - lat: 32.00
+        #   lng: 45.699
+        - lat: 22.267939
+          lng: 114.186372
+        - lat: 22.280046
+          lng: 114.184216
+        - lat: 22.276825
+          lng: 114.174897
+
+children:
+  - componentId: "@jigx/jc-location"
+    # size: 2x2
+    options:
+      # title: testxxx
+      # address: "8 King Kwong St, Happy Valley"
+      # address: "41 Chemnen Ave, Weltevredenpark"
+      # address: "Prague DMs"
+      pathsData: =@ctx.data.paths
+      # markersData: =@ctx.data.paths
+      
+views:
+  4x2:
+    componentId: '@jigx/jw-location'
+    options:
+      title: This is Hong Kong Prague address with a very very very long title to test xxxxxxx
+      pathsData: =@ctx.data.paths  
+      # address: "8 Tsui Man St, Happy Valley"
+      # address: "Prague DMs"
+      # address: "41 Chemnen Ave, Weltevredenpark"
+      address: 40° 45´ 36" N 73° 59´ 2.4" W

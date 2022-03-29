@@ -1,0 +1,120 @@
+name: Availability
+referenceId: availability-form
+type: '@jigx/jig/form'
+icon: space-rocket-flying
+description: 'Upcoming Matches availability per player'
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Responses
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: new-response
+      options:
+        formId: new-response
+        icon: add
+        title: Add new response
+        onSuccess:
+          title: 'New respone created'
+          # action:
+          #   - componentId: '@jigx/ja-go-to'
+          #     option:
+          #       title: Capture another
+          #       linkTo: venues
+
+# datasources:
+#   availability-data:
+#     componentId: '@jigx/jd-sqlite'
+#     options:
+#       provider: DATA_PROVIDER_SQL
+#       isDocument: true
+#       entities:
+#         - entity: availability
+#           function: sp-get-availability
+#       query: |
+#           SELECT
+#           id,
+#           '$.playerID', 
+#           '$.matchID', 
+#           '$.response', 
+#           '$.comment'
+#           FROM [availability]
+
+
+provider: DATA_PROVIDER_SQL
+entity: availability
+function: sp-create-response
+method: execute
+initialValues: =@ctx.data.availability-data
+
+children:
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: matchID
+        label: 'Match ID'
+        initialValue: '12ddafaa-25d6-4b04-ba39-e2945bf0fd75' 
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: playerID
+        label: 'Player ID'
+        initialValue: '7b113882-3325-4092-bc88-7c82b46766ee'
+    # - componentId: "@jigx/jc-dropdown"
+    #   instanceId: player-data
+    #   options:
+    #     label: 'Player ID'
+    #     property: first-name
+    #     data: =@ctx.data.player-data
+    # - componentId: "@jigx/jc-dropdown"
+    # instanceId: addressdropdown
+    # options:
+    #   data: =@ctx.data.address-data
+    #   label: Lieferanschrift auswählen
+    #   value: =@ctx.jig.state.addressdropdown.selected.value
+    #   property: ship_to_customerid
+    #   initialValue: =@ctx.data.existing-address-data.ship_to_customerid
+
+    - componentId: "@jigx/jc-dropdown"
+      instanceId: response-dropdown
+      options:
+        label: 'Response'
+        property: response
+        data: 
+         - title: 'YES'
+           value: 'Yes'
+         - title: 'NO'
+           value: 'No'            
+    - componentId: "@jigx/jc-text-field"
+      options:
+        property: comment
+        label: 'Comment'        
+        isMultiline: true
+           
+    # - componentId: "@jigx/jc-dropdown"
+    #   instanceId: venue-dropdown
+    #   options:
+    #     label: 'Venue'
+    #     property: venue-data
+    #     data: =@ctx.data.venue-data
+    #     item:
+    #       options:
+    #         - title: =@ctx.parents.list-data.item.venue-name
+
+
+
+      # onChange:
+      #   componentId: '@jigx/ja-execute-entity'
+      #   options:
+      #     title: Add to cart
+      #     provider: DATA_PROVIDER_SQL
+      #     entity: jigxDocs/shopping-cart
+      #     query: =@ctx.parents.list-data.item.amount
+      #     queryParameters: =@ctx.parents.list-data.item.amount
+      #     method: update
+      #     goBack: off      

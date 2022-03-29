@@ -1,0 +1,35 @@
+name: New opportunities
+type: '@jigx/jig/default'
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        value: 178
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Status Full View
+            value: Not implemented yet
+views:
+  2x2: 
+   componentId: '@jigx/jw-value'
+   options:
+     align: right
+     value: 54134
+     icon: animation
+     bottom: 
+       componentId: '@jigx/jc-trend'
+       options:
+         title: Today
+         style:
+           isAlignRight: false
+           isValueBottom: false
+         value: 0.0129
+         format:
+           numberStyle: percent
+           minimumFractionDigits: 2

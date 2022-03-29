@@ -1,0 +1,71 @@
+name: Up and coming events
+type: "@jigx/jig/default"
+referenceId: stories-events
+
+datasources:
+  story-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/stories
+          # function: rest-get-stories
+      query: |
+        SELECT
+         '$.id',
+         '$.title',
+         '$.description',
+         '$.date-from',
+         '$.date-to',
+         '$.category',
+         '$.url',
+         '$.thumbnail'
+        FROM[default/stories] WHERE '$.category' = 'New event'
+        
+# children:
+#   - componentId: "@jigx/jc-image"
+#     options:
+#       source:
+#         uri: =@ctx.jig.inputs.new.news_image_url
+#   - componentId: "@jigx/jc-entity"
+#     options:
+#       children:
+#         - componentId: "@jigx/jc-entity-field"
+#           options:
+#             isMultiline: true
+#             label: Title
+#             value: =@ctx.jig.inputs.new.news_title
+#         - componentId: "@jigx/jc-entity-field"
+#           options:
+#             isMultiline: true
+#             label: Description
+#             value: =@ctx.jig.inputs.new.news_description
+            
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: tbd
+            value: tbd
+
+            
+stories:
+  componentId: "@jigx/jc-story-group"
+  options:
+    data: =@ctx.data.story-data
+    groupName: Future Events
+    item:
+      componentId: "@jigx/jc-image"
+      options:
+        title: =@ctx.parents.list-data.item.title
+        subtitle: =@ctx.parents.list-data.item.description
+        onPress:
+          componentId: "@jigx/ja-open-url"
+          options:
+            title: Read more
+            url: =@ctx.parents.list-data.item.url
+        source:
+          uri: =@ctx.parents.list-data.item.thumbnail
+ 

@@ -1,0 +1,50 @@
+name: Players Badge
+referenceId: players-badge
+type: '@jigx/jig/list'
+icon: list-add
+    
+datasources:
+  player-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/player
+      query: |
+        SELECT 
+          id, 
+          '$.first-name', 
+          '$.last-name', 
+          '$.gender', 
+          '$.dob', 
+          '$.email', 
+          '$.profile_photo'
+        FROM [default/player]
+                
+data: =@ctx.data.player-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.first-name & ' (' & @ctx.parents.list-data.item.last-name &')'
+    subtitle: =@ctx.parents.list-data.item.gender
+    divider: solid
+    leftElement: 
+      type: avatar
+      text: 'NN'
+      # uri: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f8e0aaafeac9889106b860f%2F0x0.png%3FcropX1%3D0%26cropX2%3D1462%26cropY1%3D71%26cropY2%3D1045'
+      uri: '=@ctx.parents.list-data.item.profile_photo'
+    rightElement:
+      type: "badge" 
+      isHidden: false 
+      
+      
+      
+      
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'View all'
+        linkTo: player-signup
+        parameters:
+          param: =@ctx.parents.list-data.item.first-name & ' ' & @ctx.parents.list-data.item.last-name

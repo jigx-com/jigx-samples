@@ -1,0 +1,21 @@
+method: execute
+provider: DATA_PROVIDER_SQL
+procedure: sp_create_response
+connection: SportExampleConnection
+# parameters:
+#   playerID:
+#     location: input
+#     type: string
+#     required: true
+#   matchID:
+#       location: input
+#       type: string
+#       required: true
+#   response:
+#       location: input
+#       type: string
+#       required: true
+#   comment:
+#       location: input
+#       type: string
+#       required: true

@@ -1,0 +1,40 @@
+name: venues
+referenceId: venues
+type: '@jigx/jig/list'
+icon: picture-landscape
+    
+# datasources:
+#   venue-data:
+#     componentId: '@jigx/jd-static'
+#     options:
+#       data:
+#         - venue-name: 'Happy Valley'
+#           address: '1 Wong Nai Chung Rd, Happy Valley'
+#         - venue-name: 'Kings Park'
+#           address: 'Hong Kong Rugby Union Kings Park Sports Ground, 11 Wylie Path, Yau Ma Tei'
+#         - venue-name: 'Football Club'
+#           address: '3 Sports Rd, Happy Valley'
+         
+         
+datasources:
+  venue-data:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_SQL
+      entities:
+       - 
+        entity: venue
+        function: sql-get-venues
+        # projectId: Your Project -Update: commented out this property
+      query: |
+        SELECT id, '$.venuename', '$.address' FROM [venue]
+        
+
+        
+data: =@ctx.data.venue-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.venuename
+    subtitle: =@ctx.parents.list-data.item.address
+    divider: solid

@@ -1,7 +1,12 @@
 title: Elderi Intro
 category: personal
 
-favorites: 
+# dependencies: 
+#   mobileApp: '>1.0.0'
+
+widgets: 
+  - size: 1x1
+    children: signature
   - size: 1x1
     children: greetings
   - size: 1x1
@@ -15,57 +20,100 @@ favorites:
   - size: 1x1
     children: employee-display
   - size: 1x1
-    children: player-signup
+    children: player-add-composite
   - size: 1x1
-    children: players
-  - size: 1x1
+    children: player-list
+  - size: 2x2
     children: match-location
-  - size: 1x1
+  - size: 2x2
     children: player-participation
+  - size: 1x1
+    children: venues-list
+  - size: 1x1
+    children: match-add
+  - size: 2x2
+    children: match-list
+  - size: 1x1
+    children: availability-form
+  - size: 1x1
+    children: match-display
 
-# views:
-#   2x2: 
-#     componentId: '@jigx/jw-chart'
-#     options:
-#       title: Match Participation
-#       chart:
-#         componentId: '@jigx/jc-pie-chart'
-#         options:
-#           yAxis:
-#             labels:
-#               format:
-#                 unitDisplay: long
-#           chart:
-#             height: 130
-#             subtitle:
-#               text: Chart
-#               verticalAlign: center
-#             title:
-#               text: Title
-              
-#               verticalAlign: center
-#           legend:
-#             isHidden: false
-#           series:
-#           - data: =@ctx.data.series1
-      
-  # children:
-  #   - componentId: '@jigx/jc-pie-chart'
-  #     options:
-  #           yAxis:
-  #             labels:
-  #               format:
-  #                 unitDisplay: long
-  #           chart:
-  #             height: 130
-  #             subtitle:
-  #               text: Text
-  #               verticalAlign: center
-  #             title:
-  #               text: Title
-                
-  #               verticalAlign: center
-  #           legend:
-  #             isHidden: true
-  #           series:
-  #           - data: =@ctx.data.series1  
+  - size: 1x1
+    children: players-badge  
+  - size: 2x2
+    children: players-badge  
+  - size: 1x1
+    children: list-searchable  
+  - size: 1x1
+    children: all-controls
+    
+  - size: 2x4
+    children: calendar     
+  - size: 2x2
+    children: widget-entity-field
+  - size: 2x2
+    children: widget-entity-field-2
+    
+  - size: 4x2
+    children: jc-jw-location
+  - size: 1x1
+    children: avatar-label-list
+  - size: 1x1
+    children: checkbox-right-list
+  - size: 1x1
+    children: checkbox-switch-right-list
+  - size: 1x1
+    children: checkbox-left-list    
+  - size: 1x1
+    children: checkbox-control
+  - size: 1x1
+    children: simple-DD-form
+  - size: 1x1
+    children: document-view
+  - size: 1x1
+    children: document-jd
+    
+  - size: 1x1
+    children: list-filtering
+  - size: 1x1
+    children: list-sorting
+  - size: 1x1
+    children: default-form
+  - size: 1x1
+    children: player-display
+  - size: 1x1
+    children: tournament-list
+  - size: 4x2
+    children: location-new
+  - size: 1x1
+    children: list-horizontal
+  - size: 1x1
+    children: calendar-static  
+        
+  - size: 4x4
+    children: chart-pie
+
+  - size: 2x2
+    children: greetings
+  - size: 4x2
+    children: greetings 
+  - size: 2x4
+    children: greetings  
+  - size: 2x4
+    children: list-selectable  
+  - size: 1x1
+    children: list-chanelle
+  
+    
+stories: 
+- stories-events    
+# - stories-widget
+
+# onLoad: 
+#   componentId: "@jigx/ja-go-to"
+#   options:
+#     title: Go to 
+#     linkTo: simple-DD-form
+
+
+  

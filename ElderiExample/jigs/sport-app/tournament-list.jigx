@@ -1,0 +1,37 @@
+name: Tournaments
+referenceId: tournament-list
+type: '@jigx/jig/list'
+icon: controls-play
+    
+datasources:
+  tournament-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/tournament
+      query: |
+        SELECT 
+          id, 
+          '$.tournament', 
+          '$.month', 
+          '$.year', 
+          '$.status'
+        FROM [default/tournament]
+                
+data: =@ctx.data.tournament-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.tournament 
+    subtitle: =@ctx.parents.list-data.item.month & ' ' & @ctx.parents.list-data.item.year
+    divider: solid
+              
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'View all'
+        linkTo: placeholder
+        parameters:
+          param: =@ctx.parents.list-data.item.tournamenet

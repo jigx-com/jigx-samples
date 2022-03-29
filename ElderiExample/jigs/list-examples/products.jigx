@@ -34,10 +34,11 @@ item:
       text: ''
     rightElement: 
       type: value
-      text: =@ctx.parents.list-data.item.price
-      format:
-        numberStyle: currency
-        currency: USD
+      text: 
+        text: =@ctx.parents.list-data.item.price
+        format:
+          numberStyle: currency
+          currency: USD
 
     onPress: 
       componentId: '@jigx/ja-go-to'

@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'SELECT id, playerID, matchID, response, comment FROM availability'
+connection: jigx1.database.windows.net

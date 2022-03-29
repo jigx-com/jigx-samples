@@ -1,0 +1,119 @@
+name: Matches
+referenceId: match-list
+type: '@jigx/jig/list'
+icon: list
+    
+datasources:
+  match-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/match
+      query: |
+        SELECT 
+          id, 
+          '$.tournament',
+          '$.opponent',
+          '$.time',
+          '$.date',
+          '$.venue',
+          '$.division',
+          '$.squad-size',
+          '$.reserves',
+          '$.score-for',
+          '$.score-against',
+          '$.blablabl'
+        FROM [default/match]
+                
+data: =@ctx.data.match-data
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    leftElement:
+      type: avatar
+      # uri: =@ctx.parents.list-data.item.date
+      text: =@ctx.parents.list-data.item.date
+    
+    title: =@ctx.parents.list-data.item.opponent & ' (' & @ctx.parents.list-data.item.division & ')'
+    subtitle: =@ctx.parents.list-data.item.time
+    # subtitle : =$toMillis(@ctx.parents.list-data.item.date) ~> $fromMillis('[D01]/[M01]/[Y0001]')
+    description: =@ctx.parents.list-data.item.venue
+    label:
+      title: =@ctx.parents.list-data.item.time
+    divider: solid  
+   
+    onPress: 
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: 'Go to details of match'
+        linkTo: match-display
+        parameters:
+          paramID: =@ctx.parents.list-data.item.id
+ 
+    swipeable:
+      left:
+      - label: RSPV
+        color: primary    # secondary
+        onPress:
+          componentId: '@jigx/ja-go-to'
+          options:
+           title: 'View all'
+           linkTo: availability-form
+          # title: Do you really left?
+          # description: Test edit  Commented out both lines because of error
+      - label: All
+        color: warning
+        onPress:
+          componentId: '@jigx/ja-go-to'
+          options:
+           title: 'View all responses'
+           linkTo: availability-form # should be availability-list
+
+                        #  need to update availability table for YES/NO
+      right:
+        - label: 'NO'
+          color: error 
+          icon: currency-euro-circle
+          onPress:
+            componentId: '@jigx/ja-delete'
+            options:
+              title: Execute entity delete
+              entity: Foo
+              entityId: Bum
+              # confirmModal:
+              #   title: Do you really edit?  Commented out all 3 lines because of error
+              #   description: Test edit   
+                            
+            # componentId: '@jigx/ja-execute-entity'
+            # options:
+            #   title: Execute entity update
+            #   # provider: DATA_PROVIDER_SQL
+            #   provider: DATA_PROVIDER_SQL
+            #   entity: matchPlayerRespone #table where you update something
+            #   method: update #method for update
+            #   # function: sp-update-cart-items #function that is executing method
+            #   function: update #function that is executing method
+            #   functionParameters: #function parameters
+            #     match-id: =@ctx.parents.list-data.item.match-id
+            #     player-id: =@ctx.parents.list-data.item.player-id
+            #   confirmModal:
+            #     title: Do you really?
+            #     description: Test
+            
+        - label: 'YES'
+          color: primary
+          onPress:
+            # not sure about which action to use
+            componentId: '@jigx/ja-delete'
+            options:
+              title: Execute entity delete
+              entity: Foo
+              entityId: Bum
+              # confirmModal:
+              #   title: Do you really edit?  Commented out all 3 lines because of error
+              #   description: Test edit   
+      
+      

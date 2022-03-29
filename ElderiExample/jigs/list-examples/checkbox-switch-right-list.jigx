@@ -1,0 +1,37 @@
+name: Switch right list
+type: "@jigx/jig/list"
+referenceId: checkbox-switch-right-list
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+          checked: true
+        - name: Item 2
+          description: Description of item 2 (Disabled False)
+          checked: false
+        - name: Item 3
+          description: Description of item 3
+          checked: true
+        - name: Item 4
+          description: Description of item 4
+          checked: false
+        - name: Item 5
+          description: Description of item 5
+          checked: false
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.components.item.name
+    subtitle: =@ctx.parents.components.item.description
+    style:
+      isDisabled: false
+    rightElement:
+      type: switch
+      value: =@ctx.parents.components.item.checked

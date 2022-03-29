@@ -3,6 +3,24 @@ referenceId: employee
 type: '@jigx/jig/list'
 icon: phone
     
+onRefresh: 
+  componentId: "@jigx/ja-open-url"
+  options:
+    title: "On REFRESH URL"
+    url: "https://manage-dev.jigx.com/"
+
+# onFocus: 
+#   componentId: "@jigx/ja-open-url"
+#   options:
+#     title: "On FOCUS go to URL"
+#     url: "https://booking.qatarairways.com/"
+    
+# onLoad: 
+#   componentId: "@jigx/ja-open-url"
+#   options:
+#     title: "On LOAD first URL"
+#     url: "https://za.hotels.com/" 
+    
 datasources:
   user-data:
     componentId: '@jigx/jd-static'

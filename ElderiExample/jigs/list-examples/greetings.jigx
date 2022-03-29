@@ -30,3 +30,62 @@ item:
     subtitle: =@ctx.parents.list-data.item.firstname
     description: =@ctx.parents.list-data.item.language
     divider: solid
+
+
+views:
+  2x2:
+    componentId: "@jigx/jw-list"
+    options:
+      data: =@ctx.data.greeting-data
+      item:
+        componentId: "@jigx/jc-trip"
+        options:
+          onPress: 
+            componentId: "@jigx/ja-go-to"
+            options:
+              title: ""
+              linkTo: all-controls
+          left:
+            title: CTB
+            subtitle: 11:00
+          right:
+            title: XPD
+            subtitle: 14:00
+            
+  4x2:
+    componentId: "@jigx/jw-list"
+    options:
+      data: =@ctx.data.greeting-data
+      item:
+        componentId: "@jigx/jc-trip"
+        options:
+          onPress: 
+            componentId: "@jigx/ja-go-to"
+            options:
+              title: ""
+              linkTo: all-controls
+          left:
+            title: CTB
+            subtitle: 11:00
+          right:
+            title: XPD
+            subtitle: 14:00            
+
+  2x4:
+    componentId: "@jigx/jw-list"
+    options:
+      data: =@ctx.data.greeting-data
+      item:
+        componentId: "@jigx/jc-trip"
+        options:
+          onPress: 
+            componentId: "@jigx/ja-go-to"
+            options:
+              title: ""
+              linkTo: all-controls
+          left:
+            title: CTB
+            subtitle: 11:00
+          right:
+            title: XPD
+            subtitle: 14:00            

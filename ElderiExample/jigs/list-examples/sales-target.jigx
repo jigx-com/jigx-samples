@@ -42,8 +42,8 @@ item:
       text: =@ctx.parents.list-data.item.target
     progress: =@ctx.parents.list-data.item.progress
     colors:
-      - when: =@ctx.parents.list-data.item.color = 'color9'
-        color: color9
+      - when: =@ctx.parents.list-data.item.color = 'color6'
+        color: color6
       - when: =@ctx.parents.list-data.item.color = 'color2'
         color: color2
       - when: =@ctx.parents.list-data.item.color = 'color5'

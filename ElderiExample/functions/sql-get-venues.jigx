@@ -1,0 +1,22 @@
+method: query
+provider: DATA_PROVIDER_SQL
+query: 'SELECT id,venuename,address FROM venue'
+connection: SportExampleConnection
+
+# method: execute
+
+# provider: DATA_PROVIDER_SQL
+
+# procedure: sp_get_user
+
+# connection: jigx1.database.windows.net
+
+# parameters:
+
+# useremail:
+
+# location: input
+
+# type: string
+
+# required: true

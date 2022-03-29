@@ -1,0 +1,43 @@
+name: Checkbox left list
+type: "@jigx/jig/list"
+referenceId: checkbox-left-list
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1 (Disable False)
+          checked: true
+        - name: Item 2
+          description: Description of item 2
+          checked: false
+        - name: Item 3
+          description: Description of item 3
+          checked: true
+        - name: Item 4
+          description: Description of item 4
+          checked: false
+        - name: Item 5
+          description: Description of item 5
+          checked: false
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.components.item.name
+    subtitle: =@ctx.parents.components.item.description
+    style:
+      isDisabled: false
+    leftElement:
+      
+      type: checkbox
+      value: =@ctx.parents.components.item.checked
+   
+     
+      
+      # JC - List item: Added support for LeftElement: CheckboxElement and RightElement: CheckboxElement
+      # UI - list item: refactored API to support different types of CheckControls, currently supported leftCheckbox | rightCheckbox | rightSwitch

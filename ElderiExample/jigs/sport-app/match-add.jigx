@@ -1,0 +1,166 @@
+name: Add Match
+referenceId: match-add
+type: '@jigx/jig/form'
+icon: space-rocket-flying
+# description: 'Please rsvp to the appropriate matches'
+isCollapsible: true
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Add Upcoming Matches
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: new-match
+      options:
+        formId: new-match
+        icon: add
+        title: Add new match 
+        onSuccess:
+          title: 'New match created'
+          # actions:
+          #   - componentId: '@jigx/ja-go-to'
+          #     options:
+          #       title: Capture another
+          #       linkTo: venues
+
+        
+datasources:
+  venue-data:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - title: 'Happy Valley'
+          subtitle: '1 Wong Nai Chung Rd, Happy Valley'
+          value: 'Happy Valley'
+        - title: 'Kings Park'
+          subtitle: 'Hong Kong Rugby Union Kings Park Sports Ground, 11 Wylie Path, Yau Ma Tei'
+          value: 'Kings Park'
+        - title: 'Football Club'
+          subtitle: '3 Sports Rd, Happy Valley'
+          value: 'Football Club'
+  
+  tournament-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/tournament
+      query: |
+        SELECT 
+          id, 
+          '$.tournament' AS title,
+          '$.month' AS subtitle,
+          '$.year' AS value, 
+          '$.status'
+        FROM [default/tournament] WHERE '$.status'='true' 
+        
+  # tournament-data:
+  #   componentId: '@jigx/jd-static'
+  #   options:
+  #     data:
+  #       - title: 'Summer league'
+  #         subtitle: 'May-June 2022'
+  #         value: 'Summer league 2022'        
+  #       - title: 'Winter league'
+  #         subtitle: 'Nov-Jan 2021'
+  #         value: 'Winter league 2021'      
+  #       - title: 'Winter league'
+  #         subtitle: 'Nov-Jan 2022'
+  #         value: 'Winter league 2022'       
+  
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/match
+
+children:
+  - children:      
+      - 
+        - componentId: "@jigx/jc-dropdown"
+          instanceId: tournament-data
+          options:
+            property: tournament
+            label: 'Tournment'
+            data: =@ctx.data.tournament-data
+            # initialValue: 'Summer league 2022'
+            # how to display this from JD table? Do I need title/subject fields?
+      - 
+        - componentId: "@jigx/jc-text-field"
+          options:
+            property: opponent
+            label: 'Opponent'    
+      - 
+        - componentId: "@jigx/jc-date-picker"
+          options:
+            property: time
+            label: 'Time'
+            type: time
+
+        - componentId: '@jigx/jc-date-picker'
+          options:
+            property: date
+            label: 'Date of Match'
+            type: date
+      - 
+        - componentId: "@jigx/jc-dropdown"
+          instanceId: venue-data
+          options:
+            property: venue
+            label: 'Venue'
+            data: =@ctx.data.venue-data
+      -      
+        - componentId: "@jigx/jc-dropdown"
+          instanceId: division-dropdown
+          options:
+            label: 'Division'
+            property: division
+            data: 
+              - title: 'Men'
+                value: 'Men'
+              - title: 'Women'
+                value: 'Women'
+              - title: 'Mixed'
+                value: 'Mixed'
+              - title: 'Junior'
+                value: 'Junior'  
+    title: Section 1
+    isCollapsible: true       
+  - children:        
+      -          
+        - componentId: "@jigx/jc-number-field"
+          options:
+            property: squad-size
+            label: 'Squad size:'
+            initialValue: "14" 
+            stepper:
+              isEnabled: true
+              value: 1
+        - componentId: "@jigx/jc-number-field"
+          options:
+            property: reserves
+            label: 'Amount of reserves' 
+            initialValue: "2"  
+            stepper:
+              isEnabled: true
+              value: 1         
+      -
+        - componentId: "@jigx/jc-text-field"
+          options:
+            property: score-for
+            label: 'Score for'
+            keyboardType: number-pad
+        - componentId: "@jigx/jc-text-field"
+          options:
+            property: score-against
+            label: 'Score against'
+            keyboardType: numeric
+    title: Section 2    
+    isCollapsible: true
+    isInitiallyCollapsed: true

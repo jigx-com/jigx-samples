@@ -1,0 +1,9 @@
+# componentId: "@jigx/jd-static"
+# options:
+#   data: 678
+
+componentId: "@jigx/jd-static"
+options:
+  data: 
+    - one: "AA BB CC"
+      two: "CC DD"

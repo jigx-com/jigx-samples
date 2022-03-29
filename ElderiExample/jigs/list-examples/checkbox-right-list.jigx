@@ -1,0 +1,50 @@
+name: Checkbox right select
+type: "@jigx/jig/list"
+referenceId: checkbox-right-list
+  
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+          checked: true
+        - name: Item 2
+          description: Description of item 2
+          checked: false
+        - name: Item 3
+          description: Description of item 3
+          checked: true
+        - name: Item 4
+          description: Description of item 4
+          checked: false
+        - name: Item 5
+          description: Description of item 5
+          checked: false
+            
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.components.item.name
+    subtitle: =@ctx.parents.components.item.description
+    style:
+    #   isDisabled: true
+     isStrikeThrough: =@ctx.parents.list-data.item.checked
+    rightElement: 
+      type: checkbox
+      value: =@ctx.parents.components.item.checked
+
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: counter
+      title: "Masark"
+      colors: 
+        - when: true
+          color: warning
+      value: 5

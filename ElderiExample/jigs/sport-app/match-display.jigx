@@ -1,0 +1,95 @@
+name: Match Details
+referenceId: match-display
+type: '@jigx/jig/default'
+icon: layout-dashboard
+description: Details of the selected match
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Match Details
+      subtitle: =@ctx.data.match-data.opponent & ' ' & @ctx.data.match-data.time
+      source:
+        uri: https://static.wixstatic.com/media/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg/v1/fill/w_1280,h_453,fp_0.44_0.34,q_85/c8c1c8_2c6df3aa716b4863acd0c3ea811cee04~mv2.jpg
+
+
+datasources:
+  match-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - 
+          default/match
+      query: |
+        SELECT 
+          '$,id', 
+          '$.tournament',
+          '$.opponent',
+          '$.time',
+          '$.date',
+          '$.venue',
+          '$.division',
+          '$.squad-size',
+          '$.reserves',
+          '$.score-for',
+          '$.score-against'
+        FROM [default/match] WHERE '$.id' = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.paramID
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'tournamanet'
+              value: =@ctx.data.match-data.tournament
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Division'
+              value: =@ctx.data.match-data.division   
+              # type: 
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Opponent'
+              value: =@ctx.data.match-data.opponent              
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Date'
+              value: =@ctx.data.match-data.date
+              type: date        
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Time'
+              value: =@ctx.data.match-data.time
+              type: time
+        -  
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Venue'
+              value: =@ctx.data.match-data.venue
+        -      
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Score for'
+              value: =@ctx.data.match-data.score-for
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Score against'
+              value: =@ctx.data.match-data.score-against
+        - 
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Squad size'
+              value: =@ctx.data.match-data.squad-size
+          - componentId: '@jigx/jc-entity-field'
+            options:
+              label: 'Reserves'
+              value: =@ctx.data.match-data.reserves
+                                                              

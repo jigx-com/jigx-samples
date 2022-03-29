@@ -1,0 +1,20 @@
+name: jc vs jw location
+referenceId: jc-jw-location
+type: '@jigx/jig/default'
+icon: earth-3
+
+children:
+  - componentId: '@jigx/jc-location'
+    options:  
+      address: "Moscow"
+      # title: 'Home3' -Update: commented out this property
+
+
+views:
+  4x2:
+    componentId: '@jigx/jw-location'
+    options:
+      address: "Prague Czech Republic"
+      locationTitle: 'Home2'
+
+      

@@ -1,0 +1,75 @@
+name: Calendar static
+type: "@jigx/jig/calendar"
+datasources:
+  meetings:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - from: 2022-04-25T07:00:00Z
+          id: meeting1
+          location: Redmond, WA
+          people:
+            - avatarUrl: https://randomuser.me/api/portraits/men/1.jpg
+              fullName: Tim Cook
+          tags:
+            - color: color2
+              title: Negotiation
+          title: More than one day
+          to: 2022-04-28T07:00:00Z
+        # - from: 2022-04-26T13:00:00Z
+        #   id: meeting2
+        #   location: Palo Alto, CA
+        #   people:
+        #     - avatarUrl: https://jollycontrarian.com/images/6/6c/Rickroll.jpg
+        #       fullName: Michael Tong
+        #   tags:
+        #     - color: color5
+        #       title: Qualification
+        #   title: Overlap more than one day
+        #   to: 2022-04-29T13:00:00Z
+        # - from: 2022-04-27T15:00:00Z
+        #   id: meeting3
+        #   location: Menlo Park, CA
+        #   people:
+        #     - avatarUrl: https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg
+        #       fullName: Michael Tong
+        #   tags:
+        #     - color: color6
+        #       title: Verbal
+        #   title: One day
+        #   to: 2022-04-27T16:00:00Z
+        # - from: 2022-04-30T10:00:00Z
+        #   id: meeting3
+        #   location: Menlo Park, CA
+        #   people:
+        #     - avatarUrl: https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg
+        #       fullName: Michael Tong
+        #   tags:
+        #     - color: color6
+        #       title: Verbal
+        #   title: Single day1
+        #   to: 2022-04-30T11:00:00Z
+        # - from: 2022-04-30T11:01:00Z
+        #   id: meeting3
+        #   location: Menlo Park, CA
+        #   people:
+        #     - avatarUrl: https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg
+        #       fullName: Michael Tong
+        #   tags:
+        #     - color: color6
+        #       title: Verbal
+        #   title: Single day2
+        #   to: 2022-04-30T12:00:00Z
+                              
+data: =@ctx.data.meetings
+item:
+  componentId: "@jigx/jc-event"
+  options:
+    title: =@ctx.parents.list-data.item.title
+    description: =@ctx.parents.list-data.item.description
+    from: =@ctx.parents.list-data.item.from
+    location: =@ctx.parents.list-data.item.location
+    people: =@ctx.parents.list-data.item.people
+    tags: =@ctx.parents.list-data.item.tags
+    to: =@ctx.parents.list-data.item.to
+

@@ -1,0 +1,20 @@
+name: Document
+type: '@jigx/jig/document'
+referenceId: document-view
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+
+source:
+  documentType: PDF
+  uri: 'https://catvets.com/public/PDFs/PracticeGuidelines/FelineBehaviorGLS.pdf'
+  # uri: 'https://www.cats.org.uk/media/1050/eg01_caring_for_your_cat.pdf'
+  # uri: 'http://samples.leanpub.com/thereactnativebook-sample.pdf'
+  # base64: =@ctx.data.pdf.data
+  # content: =@ctx.data.html.content
+  # This can use multiple content, html version, PDF base 64 version or URI pdf

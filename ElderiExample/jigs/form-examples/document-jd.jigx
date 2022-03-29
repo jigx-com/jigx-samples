@@ -1,0 +1,25 @@
+name: Document (jigx-data)
+type: '@jigx/jig/document'
+referenceId: document-jd
+
+datasources:
+  jd-document:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/document
+      query: |
+        SELECT
+          '$.id',
+          '$.url'
+        FROM [default/document]
+
+
+source:
+  documentType: PDF
+  uri: =@ctx.data.jd-document.url
+  # base64: =@ctx.data.pdf.data
+  # content: =@ctx.data.html.content
+  # This can use multiple content, html version, PDF base 64 version or URI pdf

@@ -1,0 +1,37 @@
+name: Horizontal List
+type: "@jigx/jig/list"
+referenceId: list-horizontal
+datasources:
+  components:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - description: Description of item 1
+          name: Item 1
+          subtitle: Im short
+        - description: Description of item 2
+          name: Item 2
+          subtitle: Im a very long subbtitle to see if its right
+        - description: Description of item 3
+          name: Item 3
+          subtitle: Im a subtitle          
+        - description: Description of item 4 that is very very long
+          name: Item 4 that is very very very long 
+          subtitle: Im a subtitle              
+        - description: Description of item 5
+          name: Item 5
+          subtitle: Im a subtitle    
+          
+data: =@ctx.data.components
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.subtitle
+    description: =@ctx.parents.list-data.item.description
+    leftElement:
+      text: NN
+      type: avatar
+      uri: https://i.picsum.photos/id/63/400/300.jpg?hmac=oUHQ8QSv-_k6SECYdJjqg2tqpOpjUE2Jyt6HUyALdiE
+    progress: =$random()
+isHorizontal: true
