@@ -7,7 +7,7 @@ header:
     componentId: '@jigx/jc-image'
     options:
       source:
-        uri: https://www.bandofcats.com/wp-content/uploads/2014/01/kitten-care-early-stages.jpg
+        uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
       title:
         text: Do you want me? ❤️
       subtitle:

@@ -2,11 +2,17 @@ name: List with Switch
 type: '@jigx/jig/list'
 referenceId: jc-list-switch
 
+# header:
+#   children:
+#     componentId: '@jigx/jc-video-player'
+#     options:
+#       url: https://www.youtube.com/watch?v=FMuT5ZTRcQ4&t=6s
 header:
-  children:
-    componentId: '@jigx/jc-video-player'
+  children: 
+    componentId: "@jigx/jc-image"
     options:
-      url: https://www.youtube.com/watch?v=FMuT5ZTRcQ4&t=6s
+      source:
+        uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
 
 datasources:
   components:
