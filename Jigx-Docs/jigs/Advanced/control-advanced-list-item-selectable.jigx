@@ -29,7 +29,7 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/shopping-cart
+        - default/shopping-cart
       query: |
         SELECT
           id,
@@ -37,7 +37,7 @@ datasources:
           '$.product-category',
           '$.product-picture',
           '$.product-price'
-        FROM [jigxDocs/shopping-cart]   
+        FROM [default/shopping-cart]   
 
 isSelectable: true
 data: =@ctx.data.items

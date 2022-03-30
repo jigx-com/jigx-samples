@@ -3,7 +3,7 @@ referenceId: update-item
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/shopping-list
+entity: default/shopping-list
 solutionId: Jigx-Docs
 method: update
 
@@ -20,14 +20,14 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/shopping-list
+        - default/shopping-list
       queryParameters:
         itemId: =@ctx.jig.inputs.itemId
       query: |
         SELECT
           id,
           '$.product-name'
-        FROM [jigxDocs/shopping-list]  
+        FROM [default/shopping-list]  
         WHERE id = @itemId
         
 initialValues: =@ctx.data.item 

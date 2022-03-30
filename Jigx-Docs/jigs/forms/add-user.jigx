@@ -3,7 +3,7 @@ referenceId: add-user
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: 'jigxDocs/user'
+entity: 'default/user'
 
 actions:
   - children:

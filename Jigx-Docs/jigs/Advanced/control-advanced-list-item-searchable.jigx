@@ -9,7 +9,7 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/shopping-cart
+        - default/shopping-cart
       queryParameters:
         '@search': =@ctx.jig.state.control-advanced-list-item-searchable.searchText
       query: |
@@ -19,7 +19,7 @@ datasources:
         json_extract(data, '$.product-category') as category,
         json_extract(data, '$.product-picture') as picture,
         json_extract(data, '$.product-price') as price
-        FROM [jigxDocs/shopping-cart]
+        FROM [default/shopping-cart]
         WHERE name LIKE '%'||@search||'%' OR @search IS NULL
         ORDER BY name DESC
 

@@ -9,12 +9,12 @@ datasources:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - entity: jigxDocs/document
+        - entity: default/document
       query: |
         SELECT
           '$.id',
           '$.url'
-        FROM [jigxDocs/document]
+        FROM [default/document]
 
 
 source:

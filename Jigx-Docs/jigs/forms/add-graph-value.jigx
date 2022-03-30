@@ -3,7 +3,7 @@ referenceId: add-graph-value
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/graph
+entity: default/graph
 
 actions:
   - children:

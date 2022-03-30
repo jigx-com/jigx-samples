@@ -3,7 +3,7 @@ referenceId: add-profile-photo
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/profile
+entity: default/profile
 
 actions:
   - children:

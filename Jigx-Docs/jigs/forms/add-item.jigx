@@ -3,7 +3,7 @@ referenceId: add-item
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: 'jigxDocs/shopping-list'
+entity: 'default/shopping-list'
 
 actions:
   - children:

@@ -16,14 +16,14 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/shopping-list
+        - default/shopping-list
       query: |
         SELECT
           id,
           '$.product-name',
           '$.product-picture',
           '$.product-price'
-        FROM [jigxDocs/shopping-list]
+        FROM [default/shopping-list]
 
 data: =@ctx.data.amount
 
@@ -45,7 +45,7 @@ item:
             options:
               title: Delete item
               provider: DATA_PROVIDER_DYNAMIC
-              entity: jigxDocs/shopping-cart
+              entity: default/shopping-cart
               entityId: =@ctx.parents.list-data.item.id
               confirmModal:
                 title: Do you really want to delete this item?
@@ -59,7 +59,7 @@ item:
         options:
           title: Delete Item
           provider: DATA_PROVIDER_DYNAMIC
-          entity: jigxDocs/shopping-list
+          entity: default/shopping-list
           function: sp-delete-cart-item
           entityId: =@ctx.parents.list-data.item.id
           confirmModal:
@@ -72,7 +72,7 @@ item:
         options:
           title: Add to cart
           provider: DATA_PROVIDER_SQL
-          entity: jigxDocs/shopping-list
+          entity: default/shopping-list
           query: =@ctx.parents.list-data.item.amount
           queryParameters: =@ctx.parents.list-data.item.amount
           method: update

@@ -3,7 +3,7 @@ type: "@jigx/jig/form"
 icon: add
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/confirms
+entity: default/confirms
 
 children:
   - componentId: "@jigx/jc-text-field"

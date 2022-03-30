@@ -105,6 +105,16 @@ datasources:
           icon: rating-star-1
           color: color15
           target: list-icons-set
+        - name: Jig localization
+          description: Jig with translations
+          icon: career
+          color: color15
+          target: localization
+        - name: Jig global datasources
+          description: Jig with global datasource calling
+          icon: database-2
+          color: color15
+          target: jig-with-global-datasource
 
 data: =@ctx.data.components
 item:
@@ -146,4 +156,4 @@ views:
           icon: synchronize-arrows-1
           iconColor: color3
           title: "Last change"
-          subtitle: "8.3.2022"
+          subtitle: "30.3.2022"

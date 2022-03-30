@@ -4,7 +4,7 @@ type: "@jigx/jig/form"
 
 provider: DATA_PROVIDER_DYNAMIC
 method: save
-entity: jigxDocs/confirms
+entity: default/confirms
 
 actions:
   - children:

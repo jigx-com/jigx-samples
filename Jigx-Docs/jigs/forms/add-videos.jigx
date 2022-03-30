@@ -3,7 +3,7 @@ referenceId: add-videos
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/videos
+entity: default/videos
 
 actions:
   - children:

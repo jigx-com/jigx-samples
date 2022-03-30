@@ -17,7 +17,7 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - entity: jigxDocs/shopping-cart
+        - entity: default/shopping-cart
       query: |
         SELECT
           id,
@@ -25,7 +25,7 @@ datasources:
           '$.product-category',
           '$.product-picture',
           '$.product-price'
-        FROM [jigxDocs/shopping-cart]  
+        FROM [default/shopping-cart]  
   components-section2:
     componentId: "@jigx/jd-static"
     options:

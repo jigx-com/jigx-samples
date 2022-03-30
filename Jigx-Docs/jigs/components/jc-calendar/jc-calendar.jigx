@@ -10,7 +10,7 @@ datasources:
       isDocument: false
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - entity: jigxDocs/calendar
+        - entity: default/calendar
       query: |
         SELECT
           id,
@@ -24,7 +24,7 @@ datasources:
           '$.to',
           '$.avatar',
           '$.title_tag'
-        FROM[jigxDocs/calendar]
+        FROM[default/calendar]
         
 
 

@@ -7,13 +7,13 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/profile
+        - default/profile
       query: |
         SELECT
           id,
           '$.photo',
           '$.description'
-        FROM [jigxDocs/profile]  
+        FROM [default/profile]  
         
 children:
   - componentId: '@jigx/jc-avatar'

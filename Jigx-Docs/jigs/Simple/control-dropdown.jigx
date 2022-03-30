@@ -29,12 +29,12 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/dropdown
+        - default/dropdown
       query: |
         SELECT
           id,
           '$.fruit-name'
-        FROM [jigxDocs/dropdown]  
+        FROM [default/dropdown]  
 
 children:
   - componentId: '@jigx/jc-text-field'

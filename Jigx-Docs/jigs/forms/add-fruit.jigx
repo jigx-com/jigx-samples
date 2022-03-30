@@ -2,7 +2,7 @@ name: Add fruit
 type: '@jigx/jig/form'
 referenceId: add-fruit
 
-entity: jigxDocs/dropdown
+entity: default/dropdown
 provider: DATA_PROVIDER_DYNAMIC
 
 actions:

@@ -3,7 +3,7 @@ referenceId: add-photo
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: jigxDocs/photo
+entity: default/photo
 
 actions:
   - children:

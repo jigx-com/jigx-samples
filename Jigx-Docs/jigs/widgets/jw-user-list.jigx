@@ -8,14 +8,14 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/user
+        - default/user
       query: |
         SELECT
           id,
           '$.user-photo',
           '$.firstname',
           '$.lastname'
-        FROM [jigxDocs/user]  
+        FROM [default/user]  
 
 data: =@ctx.data.user
 

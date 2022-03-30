@@ -8,12 +8,12 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/videos
+        - default/videos
       query: |
         SELECT
           id,
           '$.video-link'
-        FROM [jigxDocs/videos]
+        FROM [default/videos]
 
 data: =@ctx.data.video
 

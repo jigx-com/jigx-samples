@@ -8,28 +8,28 @@ datasources:
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/user
+        - default/user
       query: |
         SELECT
           id,
           '$.firstname',
           '$.lastname',
           '$.user-photo'
-        FROM [jigxDocs/user]
+        FROM [default/user]
 
   graph:
     componentId: '@jigx/jd-sqlite'
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - jigxDocs/graph
+        - default/graph
       query: |
         WITH cte AS (
         SELECT
         json_extract(data, id) as id,
         json_extract(data, '$.x-value') as x,
         json_extract(data, '$.y-value') as y
-        FROM [jigxDocs/graph])
+        FROM [default/graph])
         SELECT
         x as x,
         y as y,

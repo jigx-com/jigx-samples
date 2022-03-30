@@ -3,7 +3,7 @@ referenceId: add-cart-item
 type: '@jigx/jig/form'
 
 provider: DATA_PROVIDER_DYNAMIC
-entity: 'jigxDocs/shopping-cart'
+entity: 'default/shopping-cart'
 
 actions:
   - children:

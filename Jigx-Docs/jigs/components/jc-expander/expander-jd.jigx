@@ -15,7 +15,7 @@ datasources:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - entity: jigxDocs/expander
+        - entity: default/expander
       query: |
         SELECT
           '$.id',
@@ -28,7 +28,7 @@ datasources:
           '$.left-time',
           '$.right-text',
           '$.right-time'
-        FROM [jigxDocs/expander]
+        FROM [default/expander]
   
 
 summary: 
