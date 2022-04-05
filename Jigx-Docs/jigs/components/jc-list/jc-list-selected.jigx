@@ -10,22 +10,27 @@ datasources:
           name: Item 1
           description: Description of item 1
           checked: true
+          highlight: true
         - id: 2
           name: Item 2
           description: Description of item 2
           checked: false
+          highlight: false
         - id: 3
           name: Item 3
           description: Description of item 3
           checked: true
+          highlight: true
         - id: 4
           name: Item 4
           description: Description of item 4
           checked: false
+          highlight: false
         - id: 5
           name: Item 5
           description: Description of item 5
           checked: false
+          highlight: false
 actions:
   - children:
     - componentId: '@jigx/ja-go-to'
@@ -43,6 +48,9 @@ item:
   options:
     title: =@ctx.parents.list-data.item.name
     subtitle: =@ctx.parents.list-data.item.description
+    style:
+      isHighlighted: =@ctx.parents.list-data.item.highlight
+
     leftElement:
       type: checkbox
       value: =@ctx.parents.list-data.item.checked

@@ -11,10 +11,12 @@ datasources:
           icon: navigation-menu
           color: primary
           target: jc-list-overview
+          label: New
         - name: jc-list with jigx data
           icon: navigation-menu
           color: primary
           target: jc-list-overview-jd
+          label: ""
         # - name: jc-list with sql data
         #   icon: navigation-menu
         #   color: primary
@@ -26,6 +28,11 @@ item:
   options:
     title: =@ctx.parents.list-data.item.name
     subtitle: =@ctx.parents.list-data.item.description
+    label:
+      title: =@ctx.parents.list-data.item.label
+      color:
+        - when: true
+          color: color2
     onPress:
       componentId: "@jigx/ja-go-to"
       options:

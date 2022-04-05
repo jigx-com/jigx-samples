@@ -1,33 +1,21 @@
-name: Horizontal List
-type: '@jigx/jig/list'
+name: Horizontal list
+type: "@jigx/jig/composite"
 referenceId: jc-list-horizontal
+description: It is a set of samples of horizontal list items that contain combinations of left and right elements
 
-datasources:
-  components:
-    componentId: '@jigx/jd-static'
+header:
+  children:
+    componentId: "@jigx/jc-image"
     options:
-      data:
-        - name: Item 1
-          description: Description of item 1
-        - name: Item 2
-          description: Description of item 2
-        - name: Item 3
-          description: Description of item 3
-        - name: Item 4
-          description: Description of item 4
-        - name: Item 5
-          description: Description of item 5
-
-
-data: =@ctx.data.components
-isHorizontal: true
-item:
-  componentId: '@jigx/jc-list-item'
-  options:
-    title: =@ctx.parents.list-data.item.name
-    subtitle: =@ctx.parents.list-data.item.description
-    progress: =$random()
-    leftElement:
-      type: avatar
-      text: 'NN'
-      uri: 'https://i.picsum.photos/id/63/400/300.jpg?hmac=oUHQ8QSv-_k6SECYdJjqg2tqpOpjUE2Jyt6HUyALdiE'
+      title: Horizontal list styles
+      source:
+        uri: https://cdn.dribbble.com/users/1517013/screenshots/16111341/media/2f3c19ad135d839b7b75cd67dafe2ecd.png
+        
+children:
+  - componentId: jc-list-horizontal-basic
+  - componentId: jc-list-horizontal-l-static
+  - componentId: jc-list-horizontal-r-static
+  - componentId: jc-list-horizontal-r-dynamic  
+  - componentId: jc-list-horizontal-l-static-r-static
+  - componentId: jc-list-horizontal-l-static-r-dynamic   
+  - componentId: jc-list-horizontal-styles           

@@ -20,101 +20,121 @@ datasources:
           icon: smiley-smile-2
           color: color1
           target: jig-headers-overview
+          label: ""
         - name: Charts
           description: Bar/Line/Pie charts
           icon: pie-line-graph
           color: color1
           target: jc-charts-overview
+          label: ""          
         - name: Entity (jc-entity)
           description: Entity with different field types
           icon: archive-folder
           color: color2
           target: jc-entity-types
+          label: ""          
         - name: Entity with checkbox
           description: Entity with checkbox
           icon: check-1
           color: color2
           target: jc-entity-checkbox
+          label: ""          
         - name: Form (jc-form)
           description: Add/Update data
           icon: pencil-2
           color: color2
           target: jc-form-overview
+          label: ""          
         - name: Image Picker (jc-image-picker)
           description: To select/upload local image
           color: color3
           icon: picture-landscape
           target: jc-image-picker-overview
+          label: ""
         - name: List (jc-list)
           description: List with various options
           color: color4
           icon: navigation-menu
           target: list-select-data
+          label: "New"
         - name: Location (jc-location)
           description: To display map with specific location
           color: color5
           icon: pin
           target: jc-location-overview
+          label: ""
         - name: Jig Outputs
           description: How to use outputs on composite Jig
           icon: hyperlink-3
           color: color6
           target: jig-outputs
+          label: ""
         - name: Jig Web View
           description: Built in browser
           icon: earth-3
           color: color7
           target: jc-web-view
+          label: ""
         - name: Jig Expander
           description: Our custom expander
           icon: flight
           color: color8
           target: expander-overview
+          label: ""
         - name: Jig Signature
           description: Sign your documents
           icon: signature
           color: color9
           target: jc-signature
+          label: ""
         - name: Document
           description: Loading pdf documents
           icon: document
           color: color10
           target: jc-document-overview
+          label: ""
         - name: Interactive image
           description: Select points on image
           icon: picture-landscape
           color: color11
           target: interactive-image
+          label: ""
         - name: Stepper
           description: To display steps (for example in order)
           icon: delivery-truck-5
           color: color12
           target: control-stepper
+          label: ""
         - name: Calendar
           description: Display events from calendar
           icon: calendar-3
           color: color13
           target: jc-calendar-static
+          label: ""
         - name: Location with temperature
           description: Display location with weather forecast
           icon: pin
           color: color14
           target: jc-outputs-location
+          label: ""
         - name: All available icons with preview
           description: Display all icons in list
           icon: rating-star-1
           color: color15
           target: list-icons-set
+          label: ""
         - name: Jig localization
           description: Jig with translations
           icon: career
           color: color15
           target: localization
+          label: "New"
         - name: Jig global datasources
           description: Jig with global datasource calling
           icon: database-2
           color: color15
           target: jig-with-global-datasource
+          label: "New" 
 
 data: =@ctx.data.components
 item:
@@ -125,6 +145,12 @@ item:
     colors:
       - when: true
         color: =@ctx.parents.list-data.item.color
+    label:
+      title: =@ctx.parents.list-data.item.label
+      color:
+        - when: true
+          color: color2
+    
     onPress:
       componentId: "@jigx/ja-go-to"
       options:
@@ -156,4 +182,4 @@ views:
           icon: synchronize-arrows-1
           iconColor: color3
           title: "Last change"
-          subtitle: "30.3.2022"
+          subtitle: "05.04.2022"

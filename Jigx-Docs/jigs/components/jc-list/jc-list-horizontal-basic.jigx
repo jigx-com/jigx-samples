@@ -1,0 +1,63 @@
+name: Basic list item
+type: "@jigx/jig/list"
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+
+datasources:
+  components:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Title 
+          subtitle: Subtitle 
+          description: Description 
+          highlight: true
+          label-title: Regular
+          label-color: color7   
+
+        - name: Title Title 
+          subtitle: Subtitle subtitle
+          description: Description description
+          highlight: true
+          label-title: ""
+          label-color: color7
+
+        - name: Title Title Title 
+          subtitle: Subtitle subtitle subtitle 
+          description: Description description description 
+          highlight: false
+          label-title: ""
+          label-color: color7
+              
+        - name: Title Title Title Title
+          subtitle: Subtitle subtitle subtitle subtitle
+          description: Description description description description
+          highlight: false
+          label-title: ""
+          label-color: color7
+
+                                  
+data: =@ctx.data.components
+item:
+  
+  componentId: "@jigx/jc-list-item"
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.subtitle
+    description: =@ctx.parents.list-data.item.description
+    label: 
+      title: =@ctx.parents.list-data.item.label-title
+      color:
+        - when: true
+          color: =@ctx.parents.list-data.item.label-color
+
+    # divider: solid
+    
+    style:
+      isPositive: false 
+      isHighlighted: =@ctx.parents.list-data.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false
