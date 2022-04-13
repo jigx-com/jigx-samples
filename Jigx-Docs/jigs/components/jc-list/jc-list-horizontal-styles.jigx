@@ -2,7 +2,29 @@ name: List styles
 type: "@jigx/jig/list"
 isHorizontal: true
 isHorizontalScrollIndicatorHidden: true
-
+isCollapsible: true
+actions:
+  - children:
+      - componentId: "@jigx/ja-confirm"
+        options:
+          title: Primary action
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete
+          modal:
+            title: Modal window
+            description: Content of the modal window
+  
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 1
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 2
+          
+          
 datasources:
   components:
     componentId: "@jigx/jd-static"

@@ -3,6 +3,27 @@ type: "@jigx/jig/composite"
 referenceId: jc-list-horizontal
 description: It is a set of samples of horizontal list items that contain combinations of left and right elements
 
+actions:
+  - children:
+      - componentId: "@jigx/ja-confirm"
+        options:
+          title: Primary action
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete
+          modal:
+            title: Modal window
+            description: Content of the modal window
+  
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 1
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 2
+
 header:
   children:
     componentId: "@jigx/jc-image"
