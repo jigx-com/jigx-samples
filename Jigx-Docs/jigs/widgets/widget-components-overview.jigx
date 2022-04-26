@@ -75,6 +75,12 @@ datasources:
           color: color7
           target: jc-web-view
           label: ""
+        - name: HTML Document
+          description: jc-document using type HTML
+          icon: earth-3
+          color: color 14
+          target: html-document
+          label: ""
         - name: Jig Expander
           description: Our custom expander
           icon: flight
