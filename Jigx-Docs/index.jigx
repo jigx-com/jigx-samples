@@ -1,4 +1,4 @@
-title: Jigx-Docs (last update 26.04.2022)
+title: Jigx-Docs (last update 27.04.2022)
 category: personal
 referenceId: Jigx-Docs
 
@@ -168,13 +168,6 @@ widgets:
     children: widget-template
   - size: 2x2
     children: widget-actions
-  - size: 2x2
-    children: widget-composite-v2
-
-  - size: 4x2
-    children: widget-composite-v2
-  - size: 4x4
-    children: widget-composite-v2
   - size: 2x4
     children: widget-placeholder-composite
 
