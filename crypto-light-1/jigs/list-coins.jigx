@@ -1,0 +1,78 @@
+name: Coin List
+type: "@jigx/jig/list"
+icon: add-circle
+
+datasources:
+  coins:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/coin
+      query: |
+        SELECT
+          id,
+          timestamp,
+          '$.symbol' AS symbol,
+          '$.name' AS name
+        FROM [default/coin]
+        ORDER BY
+          '$.symbol' ASC
+  coins-count:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/coin
+      query: |
+        SELECT
+          COUNT(1) AS count
+        FROM [default/coin]
+      isDocument: true
+
+data: =@ctx.data.coins
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.symbol
+    subtitle: =@ctx.parents.list-data.item.name
+    leftElement:
+      type: avatar
+      text: =@ctx.parents.list-data.item.symbol
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        linkTo: coin-overview #view-coin
+        title: View Coin
+        parameters:
+          coinId: =@ctx.parents.list-data.item.id
+          symbol: =@ctx.parents.list-data.item.symbol
+    swipeable:
+      left:
+        - onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/coin
+              entityId: =@ctx.parents.list-data.item.id
+              title: "Permenantly delete coin?"
+              style:
+                isDanger: true
+          color: negative
+          label: Delete
+          icon: delete-2
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Add Coin
+          linkTo: add-coin
+          icon: list-add
+
+views:
+  2x2:
+    componentId: "@jigx/jw-value"
+    options:
+      ##title: My Coins
+      value: =@ctx.data.coins-count.count

@@ -1,0 +1,6 @@
+title: CryptoLight!
+category: finances
+
+widgets:
+  - size: 2x2
+    children: list-coins

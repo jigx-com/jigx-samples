@@ -1,0 +1,28 @@
+name: Coin History
+type: "@jigx/jig/list"
+
+datasources:
+  list-coin-history:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: list-coin-history
+          functionParameters:
+            symbol: =@ctx.jig.inputs.symbol
+            granularity: =@ctx.jig.inputs.granularity
+      query: |
+        SELECT
+          '$.ms' AS ms,
+          '$.close' AS close
+        FROM [list-coin-history]
+        ORDER BY
+          '$.ms' DESC
+        LIMIT 100
+
+data: =@ctx.data.list-coin-history
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.close
+    subtitle: =$fromMillis(@ctx.parents.list-data.item.ms)

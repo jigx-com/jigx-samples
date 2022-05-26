@@ -1,0 +1,61 @@
+name: Edit Coin
+type: "@jigx/jig/form"
+icon: pencil-write
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/coin
+
+datasources:
+  coin:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/coin
+      queryParameters:
+        coinId: =@ctx.jig.inputs.coinId
+      query: |
+        SELECT
+          id,
+          '$.symbol' AS symbol,
+          '$.name' AS name
+        FROM [default/coin]
+        WHERE id = @coinId
+      isDocument: true
+
+initialValues: =@ctx.data.coin
+
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Id
+      property: id
+      isIgnored: true
+      isHidden: false
+      style:
+        isDisabled: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Symbol
+      property: symbol
+      icon: circle
+      isRequired: true
+      autoCapitalize: characters
+      isAutoCorrected: false
+      nextProperty: name
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Name
+      property: name
+      isRequired: true
+      autoCapitalize: words
+      isAutoCorrected: false
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-action
+        options:
+          title: Save
+          formId: edit-coin
+          icon: check-circle-1

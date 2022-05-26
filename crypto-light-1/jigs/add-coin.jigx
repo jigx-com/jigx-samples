@@ -1,0 +1,48 @@
+name: Add Coin
+type: "@jigx/jig/form"
+icon: add
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/coin
+
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Id
+      property: id
+      isIgnored: true
+      isHidden: false
+      style:
+        isDisabled: true
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Symbol
+      property: symbol
+      icon: circle
+      isRequired: true
+      autoCapitalize: characters
+      isAutoCorrected: false
+      nextProperty: name
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Name
+      property: name
+      isRequired: true
+      autoCapitalize: words
+      isAutoCorrected: false
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-action
+        options:
+          title: Add
+          formId: add-coin
+          icon: add
+          onSuccess:
+            title: Coin saved
+            actions:
+              - componentId: "@jigx/ja-go-to"
+                options:
+                  title: Add another coin
+                  linkTo: add-coin

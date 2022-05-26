@@ -1,0 +1,83 @@
+name: View Coin
+type: "@jigx/jig/default"
+
+datasources:
+  coin:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/coin
+      queryParameters:
+        coinId: =@ctx.jig.inputs.coinId
+      query: |
+        SELECT
+          id,
+          timestamp,
+          '$.symbol' AS symbol,
+          '$.name' AS name
+        FROM [default/coin]
+        WHERE id = @coinId
+      isDocument: true
+
+  get-coin-price:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: get-coin-price
+          functionParameters:
+            symbol: =@ctx.data.coin.symbol
+      query: |
+        SELECT
+          id,
+          timestamp,
+          '$.dt' AS dt,
+          '$.price' AS price
+        FROM [get-coin-price]
+      isDocument: true
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      #data: =@ctx.data.coin
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Symbol
+            rightIcon: circle
+            value: =@ctx.data.coin.symbol
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Name
+            value: =@ctx.data.coin.name
+
+  - componentId: "@jigx/jc-entity"
+    options:
+      #data: =@ctx.data.get-coin-price
+      #isDocument: true
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Date
+            value: =@ctx.data.get-coin-price.dt
+            type: date
+            #format:
+            #  dateFormat: 'lll'
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: Price
+            value: =@ctx.data.get-coin-price.price
+            #format:
+            #  numberStyle: 'currency'
+            #  currency: 'USD'
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-go-to"
+        options:
+          title: Edit coin
+          linkTo: edit-coin
+          parameters:
+            coinId: =@ctx.jig.inputs.coinId
+

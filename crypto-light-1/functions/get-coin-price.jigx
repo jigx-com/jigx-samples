@@ -1,0 +1,11 @@
+method: GET
+provider: DATA_PROVIDER_REST
+parameters:
+  symbol:
+    location: path
+    type: string
+    value: BTC-USD
+    required: true
+url: 'https://api.pro.coinbase.com/products/{symbol}/ticker'
+outputTransform: >-
+  $.{ "dt": time, "ms": $toMillis(time), "price" : $formatNumber($number(price), '#.00000000') }
