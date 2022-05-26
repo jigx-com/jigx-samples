@@ -1,0 +1,6 @@
+title: ArtilleryTestHarness
+category: miscellaneous
+
+widgets:
+  - size: 2x2
+    children: list-coins
