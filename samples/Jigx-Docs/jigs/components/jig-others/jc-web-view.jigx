@@ -1,7 +1,0 @@
-name: motul news
-type: "@jigx/jig/default"
-isScrollable: false
-children:
-  - componentId: "@jigx/jc-web-view"
-    options:
-      uri: https://www.motul.com/de/de/news

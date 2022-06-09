@@ -1,0 +1,9 @@
+title: Jigx-samples
+category: personal
+
+widgets: 
+  - size: 1x1
+    children: jc-avatar-dynamic
+
+# stories: 
+#   - s-video

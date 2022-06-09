@@ -1,8 +1,0 @@
-name: Location Default
-type: '@jigx/jig/default'
-referenceId: jc-location-default
-
-children:
-  - componentId: '@jigx/jc-location'
-    options:
-      address: Praha

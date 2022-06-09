@@ -1,7 +1,0 @@
-name: motul news
-type: "@jigx/jig/document"
-referenceId: html-document
-
-source:
-  documentType: HTML
-  uri: https://www.motul.com/de/de/news
