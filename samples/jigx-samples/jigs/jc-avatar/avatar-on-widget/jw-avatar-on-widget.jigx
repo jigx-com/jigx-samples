@@ -1,0 +1,47 @@
+type: "@jigx/jig/calendar"
+name: Next Meeting
+
+
+datasources:
+  events:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - title: John Doe
+          date_from: "2022-06-10T10:00:00Z"
+          date_to: "2022-06-10T10:30:00Z"
+        - title: Lucy Williams
+          date_from: "2022-06-10T13:30:00Z"
+          date_to: "2022-06-10T14:30:00Z"
+        - title: Karl Fisher
+          date_from: "2022-06-11T08:00:00Z"
+          date_to: "2022-06-11T09:00:00Z"
+        - title: Mary Gomez
+          date_from: "2022-06-11T11:00:00Z"
+          date_to: "2022-06-11T11:30:00Z"
+       
+  
+
+data: =@ctx.data.events
+item: 
+  componentId: "@jigx/jc-event"
+  options:
+    title: =@ctx.parents.list-data.item.title
+    from: 
+      text: =@ctx.parents.list-data.item.date_from
+      format: 
+        dateFormat: "l"
+    to: =@ctx.parents.list-data.item.date_to
+
+views:    
+  2x2:
+    componentId: "@jigx/jw-avatar"
+    options:
+      text: LW
+      uri: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+      bottom: 
+        componentId: "@jigx/jc-titles"
+        options:
+          align: center
+          title: John Doe
+          subtitle: 10:00 - 10:30
