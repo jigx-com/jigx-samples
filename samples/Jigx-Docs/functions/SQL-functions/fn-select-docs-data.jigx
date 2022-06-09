@@ -1,0 +1,4 @@
+method: query
+provider: DATA_PROVIDER_SQL
+connection: jigx1.database.windows.net
+query: 'select id, firstname, lastname, birth_date, photo, phone, email, url, price, category from jigxdocs'

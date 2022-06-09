@@ -1,0 +1,41 @@
+name: Calendar dynamic
+referenceId: jc-calendar
+type: "@jigx/jig/calendar"
+
+
+datasources:
+  events:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/calendar
+      query: |
+        SELECT
+          id,
+          '$.title',
+          '$.full_name',
+          '$.color',
+          '$.description',
+          '$.photo',
+          '$.location',
+          '$.from',
+          '$.to',
+          '$.avatar',
+          '$.title_tag'
+        FROM[default/calendar]
+        
+
+
+data: =@ctx.data.events
+item: 
+  componentId: "@jigx/jc-event"
+  options:
+    title: =$string(@ctx.parents.list-data.item.title)
+    location: =$string(@ctx.parents.list-data.item.location)
+    description: =$string(@ctx.parents.list-data.item.description)
+    from: =$string(@ctx.parents.list-data.item.from)
+    to: =$string(@ctx.parents.list-data.item.to)
+    people: "=[{'fullName': $string(@ctx.parents.list-data.item.full_name), 'avatarUrl': @ctx.parents.list-data.item.avatar = '' ? 'https://avatars.githubusercontent.com/u/54961807?s=200&v=4':@ctx.parents.list-data.item.avatar}]"
+    tags: "=[{'title': @ctx.parents.list-data.item.title_tag, 'color': @ctx.parents.list-data.item.color}]"

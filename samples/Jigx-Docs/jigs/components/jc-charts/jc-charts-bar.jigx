@@ -1,0 +1,16 @@
+name: Bar Chart
+type: '@jigx/jig/composite'
+referenceId: jc-charts-bar
+
+header:
+  children:
+    componentId: '@jigx/jc-image'
+    options:
+      title: Bar Chart
+      subtitle: Showroom of bar charts
+      source:
+        uri: https://i.picsum.photos/id/315/500/400.jpg?hmac=RhIZPsRY1gbbmSMI5IMBNmSb0mFPGavkcfUpp2eoz0k
+
+children:
+  - componentId: jc-charts-bar-one-series
+  - componentId: jc-charts-bar-n-series

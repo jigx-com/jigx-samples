@@ -1,0 +1,164 @@
+name: Bar chart
+referenceId: control-bar-chart-simple
+type: '@jigx/jig/default'
+icon: chart
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Add graph value
+        linkTo: add-graph-value
+
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        # Try to change x and y values 
+        # ! max color value is: color14 
+        - x: Q1/20
+          y: 25000
+          color: color1
+        - x: Q2/20
+          y: 32000
+          color: color1
+        - x: Q3/20
+          y: 45000
+          color: color1
+        - x: Q4/20
+          y: 86000
+          color: color1
+
+  series2:
+    # yaml when is used Dynamic Data
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/graph
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, id) as id,
+        json_extract(data, '$.x-value') as x,
+        json_extract(data, '$.y-value') as y
+        FROM [default/graph])
+        SELECT
+        x as x,
+        y as y,
+        'color2' as color
+        FROM cte
+        ORDER BY x
+
+  series3:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: coin-history
+          function: coin-history
+      query: |
+        WITH cte AS (
+          SELECT
+            '$.ms' AS ms,
+            '$.close' AS close
+          FROM [coin-history]
+          ORDER BY 1 DESC
+        )
+        SELECT
+          1 - ROW_NUMBER() OVER (ORDER BY ms DESC) AS x,
+          close AS y
+        FROM cte
+        ORDER BY
+          ms DESC
+        LIMIT 1 + 1 * 4
+        
+children:
+  # Static Data - yaml
+  - componentId: '@jigx/jc-bar-chart'
+    options:
+      chart:
+        title:
+          text: Static Data
+        # try to change height
+        height: 250
+        isAnimated: false
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        # spacing of values on yAxis
+        tickAmount: 6
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+      xAxis:
+        # Try to change categories
+        categories:
+          - Q1
+          - Q2
+          - Q3
+          - Q4
+      series:
+        - data: =@ctx.data.series1
+          name: Quartal revenue 2020
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false
+
+  # Dynamic data - yaml
+  - componentId: '@jigx/jc-bar-chart'
+    options:
+      chart:
+        title:
+          text: Danymic Data
+        height: 250
+        isAnimated: true
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 3
+        isFirstTickHidden: false
+        isFirstLabelHidden: false
+      series:
+        - data: =@ctx.data.series2
+          name: Quartal revenue 2020
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false
+  
+  # Rest Data - yaml 
+  - componentId: '@jigx/jc-bar-chart'
+    options:
+      chart:
+        title:
+          text: Rest Data
+        height: 250
+        isAnimated: true
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            currency: EUR
+            compactDisplay: long
+            notation: compact
+        tickAmount: 10
+        isFirstTickHidden: false
+        isFirstLabelHidden: false
+      series:
+        - data: =@ctx.data.series3.{'x':x,'y':y}
+          name: Bitocin EUR (last 5 days)
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false

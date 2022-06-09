@@ -1,0 +1,27 @@
+name: Profile
+referenceId: add-profile-photo
+type: '@jigx/jig/form'
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/profile
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-profile-photo
+      options:
+        title: Add profile
+
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      isRequired: true
+      isHidden: true
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      property: photo
+      isRequired: false  
+          

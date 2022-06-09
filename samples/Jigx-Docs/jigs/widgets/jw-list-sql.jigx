@@ -1,0 +1,35 @@
+name: List of products - SQL data
+referenceId: jw-list-sql
+type: '@jigx/jig/list'
+
+datasources:
+  products:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - 
+          entity: productss
+          function: fn-select-products
+      query: |
+        SELECT
+          '$.product_id',
+          '$.product_name',
+          '$.product_description',
+          '$.product_category',
+          '$.product_photo',
+          '$.product_price',
+          '$.product_amount'
+        FROM [productss]
+
+data: =@ctx.data.products        
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.product_name
+    subtitle: =(@ctx.parents.list-data.item.product_price & ' €')
+    leftElement: 
+      type: avatar
+      text: 'P'

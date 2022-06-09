@@ -1,0 +1,36 @@
+name: Form with images
+type: '@jigx/jig/form'
+referenceId: jc-form-images
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: jc-form-images
+      options:
+        title: Submit
+        formId: sample-form
+    - componentId: '@jigx/ja-go-back'
+      options:
+        title: Cancel
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      type: avatar
+      data: ''
+      label: Avatar Filed
+      property: type-avatar
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      type: single
+      data: ''
+      label: Single Filed
+      property: type-single
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      type: multiple
+      data: ''
+      label: Multiple Filed
+      property: type-multiple

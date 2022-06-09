@@ -1,0 +1,62 @@
+name: Monthly revenue - Static Data
+referenceId: jw-chart-combine
+type: '@jigx/jig/default'
+
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - y: 120000
+        - y: 62000
+        - y: 78000
+
+
+  series2:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Tom
+          description: $ 120 K
+          avatarText: PG
+        - name: Alfred
+          description: $ 62 K
+          avatarText: PB
+        - name: Andrew
+          description: $ 78 K
+          avatarText: HP
+          
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet          
+          
+views:
+  2x4: 
+    componentId: '@jigx/jw-group'
+    options:
+      children:
+        - componentId: '@jigx/jw-chart'
+          options:
+            chart: 
+              componentId: '@jigx/jc-bar-chart'
+              options:
+                series:
+                  - data: =@ctx.data.series1
+                    
+        - componentId: '@jigx/jw-list'
+          options:
+            data: =@ctx.data.series2
+            item:
+              componentId: '@jigx/jc-list-item'
+              options:
+                title: =@ctx.parents.list-data.item.name
+                subtitle: =@ctx.parents.list-data.item.description
+                leftElement: 
+                  type: avatar
+                  text: ''
+                  uri: 'https://static.remove.bg/remove-bg-web/2a274ebbb5879d870a69caae33d94388a88e0e35/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'

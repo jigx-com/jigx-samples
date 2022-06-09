@@ -1,0 +1,42 @@
+name: Horizontal list
+type: "@jigx/jig/composite"
+referenceId: jc-list-horizontal
+description: It is a set of samples of horizontal list items that contain combinations of left and right elements
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-confirm"
+        options:
+          title: Primary action
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete
+          modal:
+            title: Modal window
+            description: Content of the modal window
+  
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 1
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 2
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Horizontal list styles
+      source:
+        uri: https://cdn.dribbble.com/users/1517013/screenshots/16111341/media/2f3c19ad135d839b7b75cd67dafe2ecd.png
+        
+children:
+  - componentId: jc-list-horizontal-basic
+  - componentId: jc-list-horizontal-l-static
+  - componentId: jc-list-horizontal-r-static
+  - componentId: jc-list-horizontal-r-dynamic  
+  - componentId: jc-list-horizontal-l-static-r-static
+  - componentId: jc-list-horizontal-l-static-r-dynamic   
+  - componentId: jc-list-horizontal-styles           

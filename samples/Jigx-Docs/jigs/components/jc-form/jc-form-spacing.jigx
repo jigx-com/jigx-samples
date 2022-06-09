@@ -1,0 +1,59 @@
+name: Spacing
+type: "@jigx/jig/form"
+referenceId: jc-form-spacing
+
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  
+  - componentId: "@jigx/jc-dropdown"
+    instanceId: picker
+    options:
+      label: Pick a spacing type
+      property: picker
+      initialValue: "regular"
+      data:
+        - title: regular
+          value: "regular"
+        - title: tiny
+          value: "tiny"
+        - title: small
+          value: "small"
+        - title: large
+          value: "large"
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Picker Description
+      value: =@ctx.jig.state.picker.selected.value
+      property: picker-description
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: First name (with auto focus)
+      property: firstname
+  - componentId: "@jigx/jc-text-field"
+    options:
+      label: Last name
+      property: lastname
+  - componentId: "@jigx/jc-field-row"
+    options:
+      children:
+        - componentId: "@jigx/jc-text-field"
+          options:
+            label: I am left
+            property: left
+        - componentId: "@jigx/jc-text-field"
+          options:
+            label: I am right
+            property: right

@@ -1,0 +1,73 @@
+name: My patients
+icon: calendar
+type: '@jigx/jig/default'
+referenceId: widget-my-patients
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+datasources:
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: John Doe
+          session: "11:00 - 12:00"
+          avatarText: JD
+        - name: Lisa Black
+          session: "13:00 - 14:00"
+          avatarText: LB
+        - name: Stella Lennon
+          session: "15:00 - 15:30"
+          avatarText: SL
+
+  static-data-1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - 58
+        - 62
+        - 38
+
+views:
+  4x2:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-chart"
+          options:
+            title: "40 Patients"
+            chart:
+              componentId: "@jigx/jc-line-chart"
+              options:
+                yAxis:
+                  max: 150
+                xAxis:
+                  categories:
+                    - ""
+                    - Aug
+                    - Sep
+                series:
+                  - data: =@ctx.data.static-data-1
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.data.static-data
+            # bottom:
+            #   componentId: "@jigx/jc-list-item"
+            #   options:
+            #     title: 2 more items
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.name
+                subtitle: =@ctx.parents.list-data.item.session
+                leftElement:
+                  type: avatar
+                  uri: "https://upload.wikimedia.org/wikipedia/en/a/a1/NafSadh_Profile.jpg"
+                  text: =@ctx.parents.list-data.item.avatarText

@@ -1,0 +1,6 @@
+name: Location Composite
+type: '@jigx/jig/composite'
+referenceId: jc-location-composite
+
+children:
+  - componentId: jc-location-default

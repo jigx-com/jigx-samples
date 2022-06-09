@@ -1,0 +1,20 @@
+name: Searching
+type: '@jigx/jig/list'
+referenceId: jc-list-searching
+
+datasources:
+  sample-data:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      entities:
+        - samples/sampledata
+      provider: DATA_PROVIDER_DYNAMIC
+      query: SELECT id, json_extract(data, '$.name') as name, json_extract(data, '$.description') as description FROM [samples/sampledata] WHERE name LIKE '%'||@search||'%' ORDER BY title ASC
+
+isSearchable: true
+data: =@ctx.data.sample-data
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description

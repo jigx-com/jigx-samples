@@ -1,0 +1,73 @@
+name: Widget list - Static Data
+referenceId: jw-list
+type: '@jigx/jig/list'
+icon: list
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        # Change name and description and create your shopping list
+        - name: Item 1
+          description: Description of item 1
+          isError: true
+        - name: Item 2
+          description: Description of item 2
+          isColor: true
+        - name: Item 3
+          description: Description of item 3
+          isColor: false
+                
+data: =@ctx.data.components
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    leftElement:
+      type: avatar
+      text: 'NN'
+      uri: 'https://static.remove.bg/remove-bg-web/2a274ebbb5879d870a69caae33d94388a88e0e35/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'
+    rightElement:
+      type: value
+      text: =$round($random() * 100,2) & ' €'  
+    progress: =$random()
+    style:
+      isError: =@ctx.parents.list-data.item.isError
+    colors:
+      - when: =@ctx.parents.list-data.item.isColor
+        color: color1
+      - when: false
+        color: color9
+      - when: true
+        color: color6
+
+views:
+  2x4: 
+    componentId: '@jigx/jw-list'
+    options:
+      data: =@ctx.data.components
+      item:
+        componentId: '@jigx/jc-list-item'
+        options:
+          title: =@ctx.parents.list-data.item.name
+          subtitle: =@ctx.parents.list-data.item.description
+          leftElement:
+            type: avatar
+            text: 'NN'
+            uri: 'https://static.remove.bg/remove-bg-web/2a274ebbb5879d870a69caae33d94388a88e0e35/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'
+          rightElement:
+            type: value
+            text: =$round($random() * 100,2) & ' €'  
+          progress: =$random()
+          style:
+            isError: =@ctx.parents.list-data.item.isError
+          colors:
+            - when: =@ctx.parents.list-data.item.isColor
+              color: color1
+            - when: false
+              color: color9
+            - when: true
+              color: color6

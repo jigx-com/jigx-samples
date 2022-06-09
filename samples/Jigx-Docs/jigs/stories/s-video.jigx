@@ -1,0 +1,35 @@
+name: Video
+type: '@jigx/jig/default'
+referenceId: s-video
+
+datasources:
+  video:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Welcome to JIGX
+          thumbnail: https://images.zenhubusercontent.com/5f4f9b67a6de21680bff6f1a/f935d2c3-188b-401f-9a5a-fd3ce9161e26
+          url: https://jigx.com/wp-content/uploads/adriaan_join_jigx.mp4
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: tbd
+            value: tbd
+
+stories:
+  componentId: "@jigx/jc-story-group"
+  options:
+    actionButtonTitle: More videos
+    data: =@ctx.data.video
+    groupName: Video library
+    item:
+      componentId: "@jigx/jc-video-player"
+      options:
+        title: =$uppercase(@ctx.parents.list-data.item.name)
+        thumbnail: =@ctx.parents.list-data.item.thumbnail
+        url: =@ctx.parents.list-data.item.url
+  

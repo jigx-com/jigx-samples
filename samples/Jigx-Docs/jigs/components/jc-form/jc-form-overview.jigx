@@ -1,0 +1,66 @@
+name: Overview (jc-form)
+type: '@jigx/jig/list'
+referenceId: jc-form-overview
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Add Sample Data
+          description: Adds data for samples
+          target: jc-form-sample-data
+        - name: Form with images
+          description: Working with images
+          target: jc-form-images
+        - name: Simple Form
+          description: Simple form with standard fields
+          target: jc-form-simple
+        - name: Auto Capitalization
+          description: Auto capitalize inputs
+          target: jc-form-auto-capitalization
+        - name: Multiline
+          description: Multiline inouts
+          target: jc-form-multiline
+        - name: Keyboard Types
+          description: Supported keyboard types
+          target: jc-form-keyboards
+        - name: Text-Field Styles
+          description: Misc styles of text-fields
+          target: jc-form-style
+        - name: Misc options
+          description: Misc form options
+          target: jc-form-misc
+        - name: Date picker
+          description: Date picker options
+          target: datepicker-form
+        - name: Number field
+          description: Showcase of number field
+          target: jc-number-field
+        - name: Checkbox advanced form
+          description: Showcase of checkbox, title, numbers, text
+          target: form-checkbox
+        - name: Text fields with colors
+          description: Showcase of textfields and number field with color option
+          target: jc-form-textfieldcolor
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    colors:
+      - when: true
+        color: color2
+    onPress:
+      componentId: '@jigx/ja-go-to'
+      options:
+        title: View details
+        linkTo: =@ctx.parents.list-data.item.target
+        parameters:
+          name: =@ctx.parents.list-data.item.name
+    leftElement:
+      type: icon
+      icon: pencil-2
+      isContained: true
+      isDuotone: true

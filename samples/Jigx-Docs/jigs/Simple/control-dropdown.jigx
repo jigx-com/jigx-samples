@@ -1,0 +1,66 @@
+name: Dropdown
+referenceId: control-dropdown
+type: '@jigx/jig/form'
+icon: navigation-menu
+
+entity: ''
+
+datasources:
+  # Static data dropdown - datasource code
+  dropdown:
+    componentId: '@jigx/jd-static'
+    options:
+      # Cahnge title + value or add new title + value and add another fruit into the dropdown
+      data: 
+        - title: Apple
+          value: Apple
+        - title: Orange
+          value: Orange
+        - title: Peach
+          value: Peach
+        - title: Pear
+          value: Pear
+        - title: Other
+          value: Other
+
+  # Dynamic data dropdown - datasource code
+  dropdown2:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/dropdown
+      query: |
+        SELECT
+          id,
+          '$.fruit-name'
+        FROM [default/dropdown]  
+
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: static
+      label: Static data dropdown ↓
+      
+  # Static data dropdown - children code
+  - componentId: '@jigx/jc-dropdown'
+    options:
+      data: =@ctx.data.dropdown
+      label: What is your favourite fruit?  
+      property: fruit
+
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: dynamic
+      label: Dynamic data dropdown ↓
+      
+  # Dynamic data dropdown - children code 
+  - componentId: '@jigx/jc-dropdown'
+    options:
+      data: =@ctx.data.dropdown2
+      label: What is you favourite fruit?
+      property: favourite-fruit
+      type: single
+      mapping:
+        title: fruit-name
+        value: id

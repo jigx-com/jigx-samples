@@ -1,0 +1,120 @@
+name: Info about individual person
+referenceId: detail-persons
+type: '@jigx/jig/default'
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-execute-entity'
+      instanceId: Hide
+      options:
+        title: Hide person localy
+        goBack: off
+        provider: DATA_PROVIDER_LOCAL
+        entity: listpeople
+        method: delete
+        data:
+          id: =@ctx.data.people.id
+        onSuccess:
+          title: Person was hiden   
+
+
+datasources:
+  people:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: listpeople
+      query: |
+        SELECT
+          id
+          ,'$.id' as sqlid
+          ,'$.firstname'
+          ,'$.lastname'
+          ,'$.birth_date'
+          ,'$.photo'
+          ,'$.video'
+          ,'$.phone'
+          ,'$.email'
+          ,'$.url'
+          ,'$.price'
+          ,'$.category'
+          ,'$.percentage'
+          ,'$.pressed'
+        FROM [listpeople] where '$.pressed' = 1
+      
+children:
+  - componentId: "@jigx/jc-image"
+    options:
+      source:
+        uri: =@ctx.data.people.url != null ? @ctx.data.people.url:'https://www.jigx.com/wp-content/themes/jigx-elementor-child/frontpage/img/all-devices/mock_ipad-air.jpg'
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-field-row"
+          options:
+            children:
+              - componentId: '@jigx/jc-entity-field'
+                options:
+                  label: 'First name'
+                  value: =@ctx.data.people.firstname
+                  rightIcon: person
+
+              - componentId: '@jigx/jc-entity-field'
+                options:
+                  label: 'Last name'
+                  value: =@ctx.data.people.lastname
+                  rightIcon: person
+
+        - componentId: "@jigx/jc-field-row"
+          options:
+            children:
+              - componentId: '@jigx/jc-entity-field'
+                options:
+                  label: 'Birth date'
+                  value: 
+                    text: =@ctx.data.people.birth_date
+                    format:
+                      dateFormat: YYYY / MM / DD
+                  rightIcon: calendar-3
+        - componentId: "@jigx/jc-field-row"
+          options:
+            children:
+              - componentId: '@jigx/jc-entity-field'
+                options:
+                  label: Phone
+                  value: =@ctx.data.people.phone
+                  type: phone
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  label: Email
+                  value: =@ctx.data.people.email
+                  type: email
+        - componentId: "@jigx/jc-section"
+          options:
+            title: Persons Status
+            children:
+            - componentId: "@jigx/jc-field-row"
+              options:
+                children:
+                  - componentId: '@jigx/jc-entity-field'
+                    options:
+                      label: 'Progress'
+                      value: =@ctx.data.people.percentage & ' %'
+                  - componentId: '@jigx/jc-entity-field'
+                    options:
+                      label: 'Money'
+                      value: 
+                        text: =@ctx.data.people.price
+                        format:
+                          numberStyle: currency
+                          currency: USD
+                          
+  - componentId: "@jigx/jc-video-player"
+    options:
+      title: Video player
+      url: =@ctx.data.people.video != null ? @ctx.data.people.video:'https://www.jigx.com/wp-content/uploads/2022/01/hyperlapse_web.mp4'
+                      
+                      
+
+ 

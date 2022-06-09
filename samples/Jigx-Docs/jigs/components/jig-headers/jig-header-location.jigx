@@ -1,0 +1,21 @@
+name: Header Location
+referenceId: jig-header-location
+type: "@jigx/jig/default"
+icon: single-neutral-circle
+description: Location description. Hello how you doin?
+
+
+header:
+  children:
+    componentId: '@jigx/jc-location'
+    options:
+      address: 89 London Rd, Hinckley, LE10 1HH 
+
+
+children:
+  - componentId: '@jigx/jc-location'
+    options:
+      address: 89 London Rd, Hinckley, LE10 1HH 
+      locationId: 'Head quarters'
+      longitude: 0
+      latitude: 0  

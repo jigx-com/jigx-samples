@@ -1,0 +1,127 @@
+name: L-static & R-static element
+type: "@jigx/jig/list"
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+isCollapsible: true
+actions:
+  - children:
+      - componentId: "@jigx/ja-confirm"
+        options:
+          title: Primary action
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete
+          modal:
+            title: Modal window
+            description: Content of the modal window
+  
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 1
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Secondary action 2
+          
+datasources:
+  components:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Hue Table 1
+          subtitle: "Living room"
+          highlight: false
+          switch-value: false
+          icon: house-signal
+          color: color8
+
+        - name: Hue Table 2
+          subtitle: "Bedroom"
+          highlight: true
+          switch-value: true
+          icon: house-signal
+          color: color1          
+
+        - name: House lock
+          subtitle: "Unlocked"
+          highlight: false
+          switch-value: false
+          icon: lock-unlock-4
+          color: color5                
+
+data: =@ctx.data.components
+item:
+  componentId: "@jigx/jc-list-item"
+  instanceId: sample-list
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.subtitle
+    # label: 
+    #   title: new
+    #   color:
+    #     - when: true
+    #       color: color12
+
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.color
+        
+    divider: solid
+    horizontalItemSize: regular
+    
+    style:
+      isPositive: false 
+      isHighlighted: =@ctx.parents.list-data.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false
+
+ # STATIC LEFT     
+    # leftElement:
+    #   type: avatar
+    #   uri:  =@ctx.parents.list-data.item.uri
+    #   text: asd
+
+    # leftElement: 
+    #   type: progress
+    #   value: 0.3
+
+    # leftElement:
+    #   type: image
+    #   uri: https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg
+    #   text: asd
+            
+    leftElement:
+      type: icon
+      icon: =@ctx.parents.list-data.item.icon
+      isContained: true
+      isDuotone: true
+      
+
+    # leftElement: 
+    #   type: checkbox
+    #   value: true
+      
+
+
+
+# STATIC RIGHT
+    # rightElement: 
+    #   type: badge
+
+    # rightElement: 
+    #   type: checkbox
+    #   value: false
+
+    # rightElement:     
+    #   type: icon
+    #   icon: alarm-bell
+    #   isContained: true
+    #   isDuotone: true
+
+    rightElement: 
+      type: switch
+      value: =@ctx.parents.list-data.item.switch-value
+

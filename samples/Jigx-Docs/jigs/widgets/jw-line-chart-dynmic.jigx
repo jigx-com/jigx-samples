@@ -1,0 +1,81 @@
+name: Line Chart - dynamic data
+referenceId: jw-line-chart-dynmic
+type: '@jigx/jig/default'
+icon: chart
+
+datasources:
+  series1:
+    # yaml when is used Dynamic Data
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/graph
+      query: |
+        WITH cte AS (
+        SELECT
+        json_extract(data, id) as id,
+        json_extract(data, '$.x-value') as x,
+        json_extract(data, '$.y-value') as y
+        FROM [default/graph])
+        SELECT
+        x as x,
+        y as y,
+        'color10' as color
+        FROM cte        
+        ORDER BY x
+        
+children:
+  - componentId: '@jigx/jc-line-chart'      
+    options:
+      chart:
+        title:
+          text: Dynamic data
+        height: 250
+        isAnimated: false
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 3
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+      series:
+        - data: =@ctx.data.series1
+          name: Quartal revenue 2020
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false        
+        
+views:
+  2x2: 
+    componentId: '@jigx/jw-chart'
+    options:
+      chart:  
+        componentId: '@jigx/jc-line-chart'      
+        options:
+          chart:
+            title:
+              text: Dynamic data
+            isAnimated: false
+          yAxis:
+            min: 0
+            labels:
+              format:
+                numberStyle: currency
+                compactDisplay: short
+                notation: compact
+            tickAmount: 3
+            isFirstTickHidden: true
+            isFirstLabelHidden: true
+          series:
+            - data: =@ctx.data.series1
+              name: Quartal revenue 2020
+              dataLabels:
+                - isEnabled: true
+          legend:
+            isHidden: false        

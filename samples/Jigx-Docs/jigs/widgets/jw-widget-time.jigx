@@ -1,0 +1,45 @@
+name: Time widget
+type: '@jigx/jig/default'
+referenceId: jw-widget-time
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Inputs'
+            value: =@ctx.jig.inputs.test
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'How many items we send'
+            value: =@ctx.jig.inputs.ids
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Array of ids'
+            value: =$string(@ctx.jig.inputs.datasd)
+
+views:    
+  2x2:
+    componentId: "@jigx/jw-value"
+    options:
+      align: right
+      value: =$toMillis($now())
+      format:
+        unit: Hours
+        dateFormat: 'HH:mm'
+      bottom:
+        componentId: '@jigx/jc-titles'
+        options:
+          icon: "phone"
+          iconColor: color4
+          align: right
+          title: "+420 665 778 998"
+      top:
+        componentId: '@jigx/jc-titles'
+        options:
+          icon: "calendar"
+          iconColor: color9
+          align: left
+          title: "11.03.2022"
+          subtitle: "Friday"

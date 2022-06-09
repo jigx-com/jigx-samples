@@ -1,0 +1,38 @@
+name: Bar Chart (1 series)
+type: "@jigx/jig/default"
+referenceId: jc-charts-bar-one-series
+
+datasources:
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - x: 1
+          y: 10
+        - x: 2
+          y: 15
+        - x: 3
+          y: 20
+        - x: 4
+          y: 17
+
+children:
+    - componentId: '@jigx/jc-bar-chart'
+      options:
+        chart:
+          title:
+            text: 'Test'
+          subtitle:
+            text: 'Test'
+
+          height: 250
+        yAxis:
+          max: 50
+        xAxis:
+          categories:
+            - 'Sample Data'
+        series:
+          - data: =@ctx.data.series1
+            name: 'Title'
+            description: 'Subtitle'
+            lineWidth: 10

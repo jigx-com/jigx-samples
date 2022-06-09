@@ -1,0 +1,54 @@
+type: "@jigx/jig/composite"
+name: Jig with local update examples
+
+onRefresh: 
+  componentId: "@jigx/ja-action-list"
+  options:
+    title: Sync entities
+    actions:
+      - componentId: "@jigx/ja-sync-entities"
+        options:
+          provider: DATA_PROVIDER_SQL
+          entities:
+            - entity: listpeople
+              function: fn-select-docs-list
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-confirm"
+        options:
+          title: Increase percentage
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            componentId: "@jigx/ja-action-list"
+            options:
+                title: Increate percentage
+                isSequential: true
+                actions:
+                  - componentId: "@jigx/ja-execute-entities"
+                    options:
+                      goBack: off
+                      entity: listpeople
+                      provider: DATA_PROVIDER_LOCAL
+                      method: update
+                      data: "=@ctx.data.people[].{'id':id, 'percentage':100}[]"
+          modal:
+            title: ='Do you realy want to set percentage for every person to 100?'
+            
+datasources:
+  people:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: listpeople
+      query: |
+        SELECT
+          id
+          ,'$.id' as sqlid
+          ,'$.percentage'
+        FROM [listpeople]
+
+children:
+  - componentId: list-persons
+  - componentId: detail-persons

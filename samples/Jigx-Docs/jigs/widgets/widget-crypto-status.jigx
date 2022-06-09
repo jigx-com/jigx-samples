@@ -1,0 +1,59 @@
+name: Crypto status
+icon: button-play
+type: '@jigx/jig/default'
+referenceId: widget-crypto-status
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+datasources:
+  static-data-1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - 10
+        - 52
+        - 49
+        - 48
+  static-data-2:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - 20
+        - 52
+        - 52
+        - 60
+
+views:
+  4x2:
+    componentId: "@jigx/jw-chart"
+    options:
+      top:
+        componentId: "@jigx/jc-trend"
+        options:
+          title: "Bitcoin Cash"
+          value: 0.1232
+          style:
+            isValueHidden: false
+            isValueBottom: true
+            isAlignRight: true
+      chart:
+        componentId: "@jigx/jc-bar-chart"
+        options:
+          yAxis:
+            max: 150
+          xAxis:
+            categories:
+              - Jun
+              - Jul
+              - Aug
+              - Sep
+          series:
+            - data: =@ctx.data.static-data-1
+            - data: =@ctx.data.static-data-2

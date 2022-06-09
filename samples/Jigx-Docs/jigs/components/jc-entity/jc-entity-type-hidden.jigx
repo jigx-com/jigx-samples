@@ -1,0 +1,39 @@
+name: Entity types hidden
+referenceId: jc-entity-type-hidden
+type: "@jigx/jig/default"
+icon: picture-landscape
+
+header:
+  children:
+    componentId: '@jigx/jc-location'
+    options:
+      address: 'Brno'
+      locationId: 'Brno'
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Default"
+            value: "Common info"
+            isHidden: true
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "+420777888999"
+            label: "Phone"
+            type: "phone"
+            isHidden: false
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "support@jigx.com"
+            label: "Email"
+            type: "email"
+            isHidden: true
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "https://www.jigx.com"
+            label: "Link"
+            type: "link"
+

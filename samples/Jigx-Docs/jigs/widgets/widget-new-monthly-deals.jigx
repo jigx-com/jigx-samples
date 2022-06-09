@@ -1,0 +1,76 @@
+name: New monthly deals
+icon: list-add
+type: '@jigx/jig/default'
+referenceId: widget-new-monthly-deals
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+datasources:
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - y: 58
+        - y: 62
+        - y: 38
+  static-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Procter & Gamble
+          description: $ 123 K
+          avatarText: PG
+        - name: Productboard
+          description: $ 119 K
+          avatarText: PB
+        - name: HP
+          description: $ 98 K
+          avatarText: HP
+        - name: Xerox
+          description: $ 70 K
+          avatarText: X
+
+views:
+  2x4:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-chart"
+          options:
+            top:
+              componentId: "@jigx/jc-trend"
+              options:
+                title: "40 new deals"
+                value: 0.12
+                style:
+                  isValueHidden: true
+            chart:
+              componentId: "@jigx/jc-line-chart"
+              options:
+                yAxis:
+                  max: 70
+                xAxis:
+                  categories:
+                    - ""
+                    - Aug
+                    - Sep
+                series:
+                  - data: =@ctx.data.series1
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.data.static-data
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.name
+                subtitle: =@ctx.parents.list-data.item.description
+                leftElement:
+                  type: avatar
+                  text: =@ctx.parents.list-data.item.avatarText

@@ -1,0 +1,61 @@
+name: Simple Stepper
+type: '@jigx/jig/default'
+referenceId: simple-stepper
+
+datasources:
+  steps:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - description: Stage completed on 10/12/2020
+          title: Prospecting
+          value: step1
+          isCompleted: true
+        - description: Stage completed on 11/10/2020
+          title: Qualification
+          value: step2
+          isCompleted: true
+        - description: In stage since 62 days
+          title: Proposal
+          value: step3
+          isCompleted: false
+        - description: Expected in 12 days
+          title: Negotiation
+          value: step4
+          isCompleted: false
+        - description: Expected in 23 days
+          title: Closed Won
+          value: step5
+          isCompleted: false
+
+children:
+  # - componentId: "@jigx/jc-stepper"
+  #   options:
+  #     data: =@ctx.data.steps
+  #     isExpandable: true
+  #     item:
+  #       componentId: "@jigx/jc-step"
+  #       options:
+  #         description: =@ctx.parents.list-data.item.description
+  #         title: =@ctx.parents.list-data.item.title
+  #         value: =@ctx.parents.list-data.item.value
+  #         # isCompleted: =@ctx.parents.list-data.item.isCompleted
+  #         onPress:
+  #           componentId: "@jigx/ja-go-back"
+  #           options:
+  #             title: Go back
+  - componentId: "@jigx/jc-stepper"
+    options:
+      data: =@ctx.data.steps
+      isExpandable: true
+      item:
+        componentId: "@jigx/jc-step"
+        options:
+          title: =@ctx.parents.list-data.item.title
+          description: =@ctx.parents.list-data.item.description
+          value: =@ctx.parents.list-data.item.value
+      completedPercentage: '15'
+      style:
+        isPositive: false
+        isWarning: false
+        isNegative: false

@@ -1,0 +1,27 @@
+name: Jig Inputs
+type: "@jigx/jig/default"
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Default"
+            value: "=@ctx.jig.inputs.value-key"
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "+420777888999"
+            label: "Phone"
+            type: "phone"
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "support@jigx.com"
+            label: "Email"
+            type: "email"
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            value: "https://www.jigx.com"
+            label: "Link"
+            type: "link"
+

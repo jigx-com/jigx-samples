@@ -1,0 +1,9 @@
+name: Avatar simple
+referenceId: control-avatar-simple
+type: '@jigx/jig/composite'
+icon: single-neutral
+
+children:
+  - componentId: avatar-description
+  - componentId: avatar-left-element
+

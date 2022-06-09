@@ -1,0 +1,50 @@
+name: Value with icon in widget
+type: '@jigx/jig/default'
+referenceId: jw-value-icon
+
+children:
+  - componentId: '@jigx/jc-entity'
+    options:
+      children:
+        - componentId: '@jigx/jc-entity-field'
+          options:
+            label: 'Status: Full view'
+            value: Not implemented yet
+
+views:
+  2x2:
+    componentId: "@jigx/jw-value"
+    options:
+      align: right
+      value: 888
+      format:
+        unit: "Mission"
+      top:
+        componentId: '@jigx/jc-titles'
+        options:
+          align: left
+          icon: "checklist"
+          iconColor: color8
+      bottom:
+        componentId: '@jigx/jc-titles'
+        options:
+          align: left
+          title: "CHP1235"
+          subtitle: "Active Mission"
+  4x4:
+    componentId: "@jigx/jw-value"
+    options:
+      align: left
+      value: 10000
+      format:
+        unit: "Mission"
+      top:
+        componentId: "@jigx/jc-titles"
+        options: 
+          icon: home
+      bottom:
+        componentId: '@jigx/jc-titles'
+        options:
+          align: right
+          title: "I am mission Lukas"
+          subtitle: "Active status"

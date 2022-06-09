@@ -1,0 +1,42 @@
+name: Actions
+icon: list-add
+type: "@jigx/jig/default"
+referenceId: widget-actions
+
+datasources:
+  student-list-data:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        name: Jiri Otahal
+        delay: 14 minutes
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  2x2:
+    componentId: "@jigx/jw-actions"
+    options:
+      title: Hello
+      subtitle: Description
+      primary:
+        title: Primary
+        onPress:
+          componentId: "@jigx/ja-go-to"
+          options:
+            title: View details
+            linkTo: widget-user
+      secondary:
+        title: Secondary
+        onPress:
+          componentId: "@jigx/ja-go-to"
+          options:
+            title: View details
+            linkTo: widget-entity-field

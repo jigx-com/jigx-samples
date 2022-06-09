@@ -1,0 +1,65 @@
+name: Multi-Select
+type: '@jigx/jig/list'
+referenceId: jc-list-multi-select
+
+actions:
+  #1 set of actions
+  - when: =@ctx.jig.state.jc-list-multi-select.isSelectActive
+    style:
+      isDisabled: =$count(@ctx.jig.state.jc-list-multi-select.selected) <= 0
+      isEssential: true
+    children:
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: "=$count(@ctx.jig.state.jc-list-multi-select.selected) & ' selected'"
+          icon: circle
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: Move
+          icon: circle
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: Share
+          icon: circle
+
+  #2 set of actions
+  - children:
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: Go back
+          icon: circle
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: Second back
+          icon: circle
+          style:
+            isError: true
+      - componentId: '@jigx/ja-go-back'
+        options:
+          title: Third back
+          icon: circle
+
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+        - name: Item 2
+          description: Description of item 2
+        - name: Item 3
+          description: Description of item 3
+        - name: Item 4
+          description: Description of item 4
+        - name: Item 5
+          description: Description of item 5
+
+isSelectable: true
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+
+    subtitle: =@ctx.parents.list-data.item.description

@@ -1,0 +1,38 @@
+name: Line Chart (1 series)
+referenceId: jc-charts-line-one-series
+type: "@jigx/jig/default"
+
+datasources:
+  series1:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - x: 1
+          y: 10
+        - x: 2
+          y: 15
+        - x: 3
+          y: 20
+        - x: 4
+          y: 17
+
+children:
+  - componentId: "@jigx/jc-line-chart"
+    options:
+      chart:
+        title:
+          text: Title
+        height: 250
+      yAxis:
+        max: 50
+      xAxis:
+        categories:
+          - "Cat 0"
+          - "Cat 1"
+          - "Cat 2"
+      series:
+        - data: =@ctx.data.series1
+          type: area-gradient
+          lineWidth: 3
+          name: "Title"
+          description: "Subtitle"

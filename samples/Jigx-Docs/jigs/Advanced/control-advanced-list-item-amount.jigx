@@ -1,0 +1,79 @@
+name: List item amount
+referenceId: control-advanced-list-item-amount
+type: '@jigx/jig/list'
+icon: list
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-go-to'
+      options:
+        title: Add item to shopping list
+        linkTo: add-cart-item
+
+datasources:
+  amount:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/shopping-list
+      query: |
+        SELECT
+          id,
+          '$.product-name',
+          '$.product-picture',
+          '$.product-price'
+        FROM [default/shopping-list]
+
+data: =@ctx.data.amount
+
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =(@ctx.parents.list-data.item.product-price & ' € / pcs')
+    leftElement:
+      type: avatar
+      text: ''
+      uri: =@ctx.parents.list-data.item.product-picture
+    swipeable:
+      left:
+        - label: Delete
+          color: negative
+          onPress:
+            componentId: "@jigx/ja-delete"
+            options:
+              title: Delete item
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/shopping-cart
+              entityId: =@ctx.parents.list-data.item.id
+              confirmModal:
+                title: Do you really want to delete this item?
+                description: =@ctx.parents.list-data.item.product-name
+                confirmText: REMOVE
+    rightElement:
+      type: amount-control
+      value: =@ctx.parents.list-data.item.quantity
+      onDelete:
+        componentId: '@jigx/ja-delete'
+        options:
+          title: Delete Item
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/shopping-list
+          function: sp-delete-cart-item
+          entityId: =@ctx.parents.list-data.item.id
+          confirmModal:
+            title: "Do you really want to remove this item from cart?"
+            description: =@ctx.parents.list-data.item.product-name
+            cancelText: Cancel remove
+            confirmtext: Remove      
+      onChange:
+        componentId: '@jigx/ja-execute-entity'
+        options:
+          title: Add to cart
+          provider: DATA_PROVIDER_SQL
+          entity: default/shopping-list
+          query: =@ctx.parents.list-data.item.amount
+          queryParameters: =@ctx.parents.list-data.item.amount
+          method: update
+          goBack: off

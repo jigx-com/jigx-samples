@@ -1,0 +1,72 @@
+name: Textfield color form
+type: '@jigx/jig/form'
+referenceId: jc-form-textfieldcolor
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: submit-form
+      options:
+        title: Submit
+        formId: sample-form
+    - componentId: '@jigx/ja-go-back'
+      options:
+        title: Cancel
+        
+datasources:
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+          number: 8
+          text: test
+          check: true
+          color: color2
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: foo/foo
+children:
+  - componentId: '@jigx/jc-text-field'
+    instanceId: test
+    options:
+      icon: house
+      label: First name (with auto focus)
+      property: firstname
+      isHidden: false
+      isRequired: "=(2 = 1) ? true: false"
+      color:
+        - when: =@ctx.data.components.name = 'Item 1' ? true:false
+          color: =@ctx.data.components.color
+        - when: =@ctx.data.components.number > 1 ? true:false
+          color: 'color3'        
+  - componentId: '@jigx/jc-text-field'
+    instanceId: test2
+    options:
+      isAutoFocused: true
+      icon: arrow-right
+      label: First name (with auto focus)
+      property: firstname
+      isHidden: false
+      isRequired: "=(2 = 1) ? true: false"
+      color:
+        - when: =@ctx.data.components.number < 10 ? true:false
+          color: 'color5'
+  - componentId: "@jigx/jc-number-field"
+    instanceId: numbers
+    options:
+      property: Number field
+      label: Number field
+      color:
+        - when: =@ctx.jig.state.numbers.value = 10 ? true:false
+          color: color4
+        # - when: =@ctx.data.components.name = 'Item 1' ? true:false
+        #   color: 'color1'
+  - componentId: "@jigx/jc-number-field"
+    options:
+      property: Condition test
+      label: Condition test
+      color:
+        - when: =@ctx.jig.state.test2.value = 'Hello' ? true:false
+          color: color3

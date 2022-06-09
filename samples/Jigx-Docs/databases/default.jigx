@@ -1,0 +1,14 @@
+tables:
+  ? shopping-list
+  ? shopping-cart
+  ? videos
+  ? graph
+  ? dropdown
+  ? photo
+  ? user
+  ? profile
+  ? confirms
+  ? expander
+  ? document
+  ? calendar
+  ? cart

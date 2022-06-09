@@ -1,0 +1,43 @@
+name: User list - dynamic data
+referenceId: jw-user-list
+type: '@jigx/jig/list'
+
+datasources:
+  user:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/user
+      query: |
+        SELECT
+          id,
+          '$.user-photo',
+          '$.firstname',
+          '$.lastname'
+        FROM [default/user]  
+
+data: =@ctx.data.user
+
+item: 
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.firstname
+    subtitle: =@ctx.parents.list-data.item.lastname        
+    
+views:
+  2x4: 
+    componentId: '@jigx/jw-list'
+    options:
+      data: =@ctx.data.user
+      item:
+        componentId: '@jigx/jc-list-item'
+        options:
+          title: =@ctx.parents.list-data.item.firstname
+          subtitle: =@ctx.parents.list-data.item.lastname
+          leftElement: 
+            type: avatar
+            text: ''
+            uri: =@ctx.parents.list-data.item.user-photo  
+          
+      

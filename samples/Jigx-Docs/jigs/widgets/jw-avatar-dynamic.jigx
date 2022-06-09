@@ -1,0 +1,35 @@
+name: Avatar - dynamic data
+type: '@jigx/jig/default'
+
+datasources:
+  profile:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/profile
+      query: |
+        SELECT
+          id,
+          '$.photo',
+          '$.description'
+        FROM [default/profile]  
+        
+children:
+  - componentId: '@jigx/jc-avatar'
+    options:
+      text: NA
+      uri: =@ctx.data.profile.photo
+      
+views:    
+  2x2:
+    componentId: "@jigx/jw-avatar"
+    options:
+      text: VM
+      uri: =@ctx.data.profile.photo
+      bottom: 
+        componentId: "@jigx/jc-titles"
+        options:
+          align: center
+          title: Name
+          subtitle: Position

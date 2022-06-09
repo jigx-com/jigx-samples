@@ -1,0 +1,137 @@
+name: Overview (jc-list)
+type: "@jigx/jig/list"
+referenceId: jc-list-overview
+
+datasources:
+  components:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - name: Simple List
+          description: Simple list with title & subtitle
+          icon: layout-dashboard
+          color: primary
+          target: jc-list-simple
+          label: ""
+        - name: Avatar left & text right
+          description: List with static avatar & text right
+          icon: layout-dashboard
+          color: primary
+          target: jc-list-avatar-right-element
+          label: ""
+        - name: Progress bar
+          description: List with progress bar
+          icon: layout-dashboard
+          color: primary
+          target: jc-list-progress
+          label: ""
+        - name: Swipeable list
+          description: Swipeable list with left/right actions
+          icon: layout-dashboard
+          color: primary
+          target: jc-list-swipeable
+          label: ""
+        - name: List with switch
+          description: List with switch on item
+          icon: layout-dashboard
+          color: color1
+          target: jc-list-switch
+          label: ""
+        - name: List with button
+          description: List with button on item
+          icon: layout-dashboard
+          color: color1
+          target: jc-list-button
+          label: ""
+        - name: Section List
+          description: Section list groups of items
+          icon: layout-dashboard
+          color: primary
+          target: jc-list-section
+          label: ""
+        - name: Multi-Select
+          description: Select multiple items
+          icon: layout-dashboard
+          color: color2
+          target: jc-list-multi-select
+          label: ""
+        - name: Sorting
+          description: Sorting of list data
+          icon: layout-dashboard
+          color: color2
+          target: jc-list-sorting
+          label: ""
+        # - name: Searching
+        #   description: Searching of list data
+        #   icon: layout-dashboard
+        #   color: color2
+        #   target: jc-list-searching
+        - name: Filtering with header
+          description: Filtering of list data with header and description
+          icon: layout-dashboard
+          color: color2
+          target: jc-list-filtering
+          label: ""
+        - name: Horizontal list
+          description: Horizontal orientation of list
+          icon: layout-dashboard
+          color: color3
+          target: jc-list-horizontal
+          label: "New"
+        - name: Horizontal list (Pie Chart)
+          description: Horizontal orientation of list with pie chart
+          icon: pie-line-graph
+          color: color3
+          target: jc-list-horizontal-pie-chart
+          label: ""
+        - name: Amount control
+          description: List with amount control
+          icon: pie-line-graph
+          color: color4
+          target: jc-list-amount-control
+          label: ""
+        - name: List with avatars and labels
+          description: List with avatars and labels
+          icon: multiple-neutral-2
+          color: color5
+          target: jc-list-avatars-labels
+          label: ""
+        - name: List with check
+          description: List with left element check
+          icon: check-1
+          color: color5
+          target: jc-list-check
+          label: "New"
+        - name: List selected
+          description: List with option to select items
+          icon: home
+          color: color6
+          target: jc-list-selected
+          label: "New"
+
+data: =@ctx.data.components
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    label:
+      title:  =@ctx.parents.list-data.item.label
+      color:
+        - when: true
+          color: color2
+    onPress:
+      componentId: "@jigx/ja-go-to"
+      options:
+        title: View details
+        linkTo: =@ctx.parents.list-data.item.target
+        parameters:
+          name: =@ctx.parents.list-data.item.name
+    colors:
+      - when: true
+        color: =@ctx.parents.list-data.item.color
+    leftElement:
+      type: icon
+      icon: =@ctx.parents.list-data.item.icon
+      isDuotone: true
+      isContained: true

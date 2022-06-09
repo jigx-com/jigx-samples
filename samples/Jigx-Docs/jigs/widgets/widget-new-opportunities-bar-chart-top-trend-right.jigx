@@ -1,0 +1,11 @@
+name: New opportunities2
+icon: button-play
+type: '@jigx/jig/default'
+referenceId: widget-new-opportunities-bar-chart-top-trend-right
+
+children:
+  - componentId: '@jigx/jc-location'
+    options:
+      address:  "Brno"
+
+

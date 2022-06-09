@@ -1,0 +1,43 @@
+name: Simple list
+type: '@jigx/jig/list'
+referenceId: jc-list-avatar-right-element-jd
+
+header:
+  children:
+    componentId: '@jigx/jc-image'
+    options:
+      title: =@ctx.jig.state.jc-list-simple.activeItem.name
+      subtitle: =@ctx.jig.state.jc-list-simple.activeItem.description
+      source:
+        uri: =@ctx.jig.state.jc-list-simple.activeItem.image
+
+
+datasources:
+  components:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/shopping-cart
+      query: |
+        SELECT
+          id,
+          '$.product-name',
+          '$.product-category',
+          '$.product-picture',
+          '$.product-price'
+        FROM [default/shopping-cart]  
+             
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.product-name
+    subtitle: =@ctx.parents.list-data.item.product-category
+    leftElement:
+      type: avatar
+      text: 'NN'
+      uri: =@ctx.parents.list-data.item.product-picture
+    rightElement:
+      type: value
+      text: =@ctx.parents.list-data.item.product-price & ' €'

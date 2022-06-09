@@ -1,0 +1,19 @@
+name: Video header
+referenceId: jig-header-video-player
+type: '@jigx/jig/default'
+
+header:
+  children:
+    componentId: '@jigx/jc-video-player'
+    options:
+      url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+
+
+children:
+  - componentId: "@jigx/jc-entity"
+    options:
+      children:
+        - componentId: "@jigx/jc-entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet

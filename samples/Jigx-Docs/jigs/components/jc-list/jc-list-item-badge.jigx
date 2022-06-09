@@ -1,0 +1,54 @@
+name: List item badge
+type: '@jigx/jig/list'
+referenceId: jc-list-item-badge
+isPreviewEnabled: true
+
+datasources:
+  docs:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: false
+      provider: DATA_PROVIDER_SQL
+      entities:
+        - 
+          entity: jigxdocs
+          function: fn-select-docs-data
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.photo',
+          '$.birth_date',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs]
+  components:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - name: Item 1
+          description: Description of item 1
+        - name: Item 2
+          description: Description of item 2
+        - name: Item 3
+          description: Description of item 3
+        - name: Item 4
+          description: Description of item 4
+        - name: Item 5
+          description: Description of item 5
+          
+
+
+data: =@ctx.data.components
+item:
+  componentId: '@jigx/jc-list-item'
+  options:
+    title: =@ctx.parents.list-data.item.name
+    subtitle: =@ctx.parents.list-data.item.description
+    rightElement: 
+      type: "badge"
+      isHidden: false

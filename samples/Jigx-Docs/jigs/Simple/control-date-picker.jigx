@@ -1,0 +1,14 @@
+name: Date picker
+referenceId: control-date-picker
+type: '@jigx/jig/form'
+icon: calendar
+
+entity: ''
+
+# Click and select your birth date
+children:
+  - componentId: '@jigx/jc-date-picker'
+    options:
+      property: date
+      label: What is your birth date?
+      initialValue: =$now()

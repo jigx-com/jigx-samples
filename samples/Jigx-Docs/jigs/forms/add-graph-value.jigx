@@ -1,0 +1,29 @@
+name: Graph value
+referenceId: add-graph-value
+type: '@jigx/jig/form'
+
+provider: DATA_PROVIDER_DYNAMIC
+entity: default/graph
+
+actions:
+  - children:
+    - componentId: '@jigx/ja-submit-form'
+      instanceId: add-graph-value
+      options:
+        title: Add graph value
+        
+children:
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: id
+      label: id
+      isHidden: true
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: x-value
+      label: X value
+  - componentId: '@jigx/jc-text-field'
+    options:
+      property: y-vaule
+      label: Y value
+      type: number

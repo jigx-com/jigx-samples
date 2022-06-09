@@ -1,0 +1,83 @@
+type: "@jigx/jig/default"
+name: Expander sql
+referenceId: expander-sql
+
+actions:
+  - children:
+    - componentId: "@jigx/ja-go-back"
+      options:
+        title: test
+        
+datasources:
+  expander:
+    componentId: "@jigx/jd-sqlite"
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: jigxdocs
+      query: |
+        SELECT
+          '$.id',
+          '$.firstname',
+          '$.lastname',
+          '$.birth_date',
+          '$.photo',
+          '$.phone',
+          '$.email',
+          '$.url',
+          '$.price',
+          '$.category'
+        FROM [jigxdocs] WHERE '$.category' = @category
+      
+      queryParameters:
+        category: 'expander'
+  
+
+summary: 
+  children:
+    componentId: "@jigx/jc-summary"
+    options:
+      layout: "counter"
+      title: "Points"
+      subtitle: "Safety critical decision"
+      value: 20
+
+children:
+  - componentId: "@jigx/jc-expander"
+    options:
+      header:
+        leftElement:
+          type: "text"
+          title: "12."
+        centerElement:  
+          componentId: "@jigx/jc-trip"
+          options:
+            onPress:
+              componentId: "@jigx/ja-go-back"
+              options:
+                 title: "Nevermind"
+            left: 
+              title: =@ctx.data.expander.firstname
+              subtitle: =@ctx.data.expander.price
+            right:
+              title: =@ctx.data.expander.lastname
+              subtitle: =@ctx.data.expander.price
+      children:
+        - componentId: "@jigx/jc-entity"
+          options:
+            children:
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  label: "Default"
+                  value: =@ctx.data.expander.email
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  value: =@ctx.data.expander.phone
+                  label: "Phone"
+                  type: "phone"
+              - componentId: "@jigx/jc-entity-field"
+                options:
+                  value: =@ctx.data.expander.photo
+                  label: "Link"
+                  type: "link"

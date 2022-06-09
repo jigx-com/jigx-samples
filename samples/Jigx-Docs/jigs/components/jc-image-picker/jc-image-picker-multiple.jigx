@@ -1,0 +1,19 @@
+name: Multiple Images
+type: '@jigx/jig/default'
+referenceId: jc-image-picker-multiple
+
+datasources:
+  images:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'
+        - 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'
+        - 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'
+
+
+children:
+  - componentId: '@jigx/jc-image-picker'
+    options:
+      type: 'multiple'
+      data: =@ctx.data.images

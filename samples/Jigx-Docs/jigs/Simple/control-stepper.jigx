@@ -1,0 +1,47 @@
+name: Stepper
+type: '@jigx/jig/default'
+referenceId: control-stepper
+icon: checklist
+
+datasources:
+  steps:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        # Create your stepper change title and description
+        # If you feel confident try to add more steps
+        - description: Step 1 description
+          title: Step 1
+          value: step1
+          isCompleted: false
+        - description: Step 2 description
+          title: Step 2
+          value: step2
+          isCompleted: false
+        - description: Step 3 description
+          title: Step 3
+          value: step3
+          isCompleted: false
+        - description: Step 4 description
+          title: Step 4
+          value: step4
+          isCompleted: false
+
+children:
+  - componentId: "@jigx/jc-stepper"
+    options:
+      data: =@ctx.data.steps
+      isExpandable: true
+      title: Title
+      subtitle: subtitle
+      item:
+        componentId: "@jigx/jc-step"
+        options:
+          title: =@ctx.parents.list-data.item.title
+          description: =@ctx.parents.list-data.item.description
+          value: =@ctx.parents.list-data.item.value
+      completedPercentage: 0.5
+      style:
+        isPositive: false
+        isWarning: false
+        isNegative: false
