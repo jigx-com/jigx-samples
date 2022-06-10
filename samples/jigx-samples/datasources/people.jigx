@@ -1,0 +1,18 @@
+componentId: "@jigx/jd-static"
+options:
+  data:
+    - id: 1
+      firstname: Lukas
+      lastname: Otahal
+      email: lukas@gmail.com
+      mobile: 783432565
+    - id: 2
+      firstname: Andrej
+      lastname: Becka
+      email: andrej@gmail.com
+      mobile: 437874221
+    - id: 3
+      firstname: Jane
+      lastname: Doe
+      email: jane@gmail.com
+      mobile: 783432531

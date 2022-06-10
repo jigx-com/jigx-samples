@@ -1,0 +1,9 @@
+name: Static data with list
+type: "@jigx/jig/list"
+
+data: =@ctx.data.people
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.firstname
+    subtitle: =@ctx.parents.list-data.item.lastname
