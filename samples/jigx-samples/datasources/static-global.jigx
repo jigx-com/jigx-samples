@@ -1,0 +1,9 @@
+componentId: "@jigx/jd-static"
+options:
+  data:
+    - name: July Nelson
+      picture: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+      date_from: "2022-06-10T10:00:00Z"
+      date_to: "2022-06-10T10:30:00Z"
+      email: grant@first.com
+      phone: 564332345

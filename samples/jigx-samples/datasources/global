@@ -1,9 +1,0 @@
-componentId: "@jigx/jd-static"
-options:
-  data:
-    - name: Grant First
-      email: grant@first.com
-      progress: 0.3
-      avatarText: GF
-      isColor: true
-      uri: https://user-images.githubusercontent.com/78724556/158217679-f7c63611-af8c-45cf-93db-37ce1bec79d2.png
