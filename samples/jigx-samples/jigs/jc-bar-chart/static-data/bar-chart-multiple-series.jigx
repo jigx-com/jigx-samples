@@ -1,0 +1,39 @@
+type: "@jigx/jig/default"
+name: Multiple series
+
+children:
+  - componentId: '@jigx/jc-bar-chart'
+    options:
+      chart:
+        height: 250
+      yAxis:
+        max: 25
+      xAxis:
+        categories:
+          - 'Sample Data'
+      series:
+        - data: =@ctx.data.chart-data-series1
+        - data: =@ctx.data.chart-data-series2
+        - data: =@ctx.data.chart-data-series3
+          
+views:
+  4x2:
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-chart"
+          options:
+            chart:
+              componentId: "@jigx/jc-bar-chart"
+              options:
+                chart:
+                  height: 150
+                yAxis:
+                  max: 25
+                xAxis:
+                  categories:
+                    - 'Sample Data'
+                series:
+                  - data: =@ctx.data.chart-data-series1
+                  - data: =@ctx.data.chart-data-series2
+                  - data: =@ctx.data.chart-data-series3

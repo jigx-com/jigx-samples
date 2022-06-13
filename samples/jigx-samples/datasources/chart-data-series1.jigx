@@ -1,0 +1,7 @@
+componentId: '@jigx/jd-static'
+options:
+  data:
+    - 10
+    - 13
+    - 22
+    - 9
