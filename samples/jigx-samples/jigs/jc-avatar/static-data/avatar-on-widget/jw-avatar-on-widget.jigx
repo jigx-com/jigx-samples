@@ -16,11 +16,11 @@ views:
   2x2:
     componentId: "@jigx/jw-avatar"
     options:
-      text: =$substring($substringBefore(@ctx.data.static-global-multiple.name, " "), 0, 1) & $substring($substringAfter(@ctx.data.static-global-multiple.name, " "), 0, 1)
-      uri: =@ctx.data.static-global-multiple.picture
+      text: =$substring($substringBefore(@ctx.data.static-global-multiple[0].name, " "), 0, 1) & $substring($substringAfter(@ctx.data.static-global-multiple[0].name, " "), 0, 1)
+      uri: =@ctx.data.static-global-multiple[0].picture
       bottom: 
         componentId: "@jigx/jc-titles"
         options:
           align: center
-          title: =@ctx.data.static-global-multiple.name
-          subtitle: =$fromMillis($toMillis(@ctx.data.static-global-multiple.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.data.static-global-multiple.date_to),'[H01]:[m01]')
+          title: =@ctx.data.static-global-multiple[0].name
+          subtitle: =$fromMillis($toMillis(@ctx.data.static-global-multiple[0].date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.data.static-global-multiple[0].date_to),'[H01]:[m01]')
