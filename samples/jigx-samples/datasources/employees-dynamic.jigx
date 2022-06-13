@@ -1,0 +1,6 @@
+componentId: '@jigx/jd-sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/employees
+  query: SELECT id,'$.firstname','$.lastname','$.picture', '$.date_from', '$.date_to', '$.email','$.phone' FROM [default/employees]
