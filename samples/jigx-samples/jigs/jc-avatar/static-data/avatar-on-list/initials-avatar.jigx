@@ -1,31 +1,7 @@
 type: "@jigx/jig/list"
 name: Avatar on list (initials)
 
-datasources:
-  users:
-    componentId: "@jigx/jd-static"
-    options:
-      data:
-        - name: John Doe
-          picture: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
-        - name: Lucy Williams
-          picture: https://images.unsplash.com/photo-1542740348-39501cd6e2b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
-        - name: Mary Gomez
-          picture: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
-        - name: Karl Fisher
-          picture: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
-        - name: Peter Smith
-          picture: https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1442&q=80
-        - name: Gary Moore
-          picture: https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80
-        - name: Rose Allen
-          picture: https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
-        - name: July Nelson
-          picture: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
-        - name: Simon Hill
-          picture: https://images.unsplash.com/photo-1605949405965-d49ada3f9189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
-
-data: =@ctx.data.users
+data: =@ctx.data.static-global-multiple
 item:
   componentId: "@jigx/jc-list-item"
   options:
@@ -39,7 +15,7 @@ views:
   2x2:
     componentId: "@jigx/jw-list"
     options:
-      data: =@ctx.data.users
+      data: =@ctx.data.static-global-multiple
       item:
         componentId: "@jigx/jc-list-item"
         options:
