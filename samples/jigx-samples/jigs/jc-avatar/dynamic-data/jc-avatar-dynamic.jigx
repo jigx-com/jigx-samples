@@ -1,8 +1,26 @@
-name: jc-avatar
-type: "@jigx/jig/default"
+type: "@jigx/jig/list"
+name: Avatar dynamic data
 
-children:
-  - componentId: "@jigx/jc-avatar"
+data: =@ctx.data.employees-dynamic
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.firstname & ' ' & =@ctx.parents.list-data.item.lastname
+    leftElement:
+      type: avatar
+      text: =$substring(@ctx.parents.list-data.item.firstname, 0, 1) & $substring(@ctx.parents.list-data.item.lastname, 0, 1)
+      uri: =@ctx.parents.list-data.item.picture
+          
+views:
+  2x2:
+    componentId: "@jigx/jw-list"
     options:
-      text: TEXT
-      uri: 'https://i.pinimg.com/280x280_RS/31/45/40/314540c6ff0b3df1730fab660879b99e.jpg'
+      data: =@ctx.data.employees-dynamic
+      item:
+        componentId: "@jigx/jc-list-item"
+        options:
+          title: =@ctx.parents.list-data.item.firstname & ' ' & =@ctx.parents.list-data.item.lastname
+          leftElement:
+            type: avatar
+            text: =$substring(@ctx.parents.list-data.item.firstname, 0, 1) & $substring(@ctx.parents.list-data.item.lastname, 0, 1)
+            uri: =@ctx.parents.list-data.item.picture
