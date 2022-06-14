@@ -13,6 +13,9 @@ actions:
         options:
           title: Submit
           formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
 
 header:
   children:

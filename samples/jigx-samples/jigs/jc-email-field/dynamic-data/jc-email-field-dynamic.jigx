@@ -16,14 +16,7 @@ actions:
       - componentId: "@jigx/ja-go-back"
         options:
           title: Cancel
-header:
-  children:
-    componentId: "@jigx/jc-image"
-    options:
-      title: Email 
-      source:
-        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
-        
+
 datasources: 
   email-field:
     componentId: '@jigx/jd-sqlite'
@@ -37,7 +30,14 @@ datasources:
           '$.id',
           '$.email'
         FROM [default/email-field]
-  
+          
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Email 
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
   - componentId: "@jigx/jc-email-field"
