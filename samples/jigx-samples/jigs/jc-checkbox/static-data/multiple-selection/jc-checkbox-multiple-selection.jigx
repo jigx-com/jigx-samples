@@ -1,5 +1,5 @@
 name: Checkbox
-referenceId: jc-checkbox-multiple-selection-question
+referenceId: jc-checkbox-multiple-selection
 
 type: "@jigx/jig/form"
 
