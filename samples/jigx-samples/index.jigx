@@ -3,7 +3,7 @@ category: personal
 
 widgets: 
   - size: 1x1
-    children: jc-avatar-dynamic
+    children: jw-avatar-on-widget
 
 # stories: 
 #   - s-video
