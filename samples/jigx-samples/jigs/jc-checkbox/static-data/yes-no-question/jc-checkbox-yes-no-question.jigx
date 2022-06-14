@@ -1,0 +1,34 @@
+name: Checkbox
+referenceId: jc-checkbox-yes-no-question
+
+type: "@jigx/jig/form"
+
+provider: DATA_PROVIDER_DYNAMIC
+method: save
+entity: default/confirms
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Terms and Conditions
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+        
+children:
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: agreement
+      label: I agree
+      isRequired: true

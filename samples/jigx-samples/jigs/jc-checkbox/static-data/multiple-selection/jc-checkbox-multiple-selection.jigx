@@ -1,0 +1,64 @@
+name: Checkbox
+referenceId: jc-checkbox-multiple-selection-question
+
+type: "@jigx/jig/form"
+
+provider: DATA_PROVIDER_DYNAMIC
+method: save
+entity: default/confirms
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: What days do you typically work?
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+        
+children:
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: sunday
+      label: Sunday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: monday
+      label: Monday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: tuesday
+      label: Tuesday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: wednesday
+      label: Wednesday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: thursday
+      label: Thursday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: friday
+      label: Friday
+      isRequired: false
+  - componentId: "@jigx/jc-checkbox"
+    options:      
+      property: saturday
+      label: Saturday
+      isRequired: false
