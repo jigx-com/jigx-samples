@@ -8,4 +8,4 @@ tables:
   ? series3
   ? document-sources
   ? field-values
-  ? checkbox-options
+  ? checkbox
