@@ -1,5 +1,5 @@
-name: Number
-referenceId: jc-number-field
+name: Text
+referenceId: jc-text-field
 type: "@jigx/jig/form"
 
 provider: DATA_PROVIDER_DYNAMIC
@@ -21,12 +21,12 @@ header:
   children:
     componentId: "@jigx/jc-image"
     options:
-      title: Number
+      title: Text
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
-  - componentId: "@jigx/jc-number-field"
+  - componentId: "@jigx/jc-text-field"
     options:
-      property: number
-      label: Number 
+      label: Name
+      property: name

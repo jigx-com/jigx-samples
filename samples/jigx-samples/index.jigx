@@ -5,7 +5,7 @@ widgets:
   - size: 1x1
     children: jw-avatar-on-widget
   - size: 1x1
-    children: jc-email-field-dynamic
+    children: jc-text-field-dynamic
   
 # stories: 
 #   - s-video

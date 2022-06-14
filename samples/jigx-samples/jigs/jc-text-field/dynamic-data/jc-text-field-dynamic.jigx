@@ -1,5 +1,5 @@
-name: Number
-referenceId: jc-number-field
+name: Text
+referenceId: jc-text-field-dynamic
 type: "@jigx/jig/form"
 
 provider: DATA_PROVIDER_DYNAMIC
@@ -16,17 +16,32 @@ actions:
       - componentId: "@jigx/ja-go-back"
         options:
           title: Cancel
-
 header:
   children:
     componentId: "@jigx/jc-image"
     options:
-      title: Number
+      title: Text
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
-children:
-  - componentId: "@jigx/jc-number-field"
+datasources: 
+  text-field:
+    componentId: '@jigx/jd-sqlite'
     options:
-      property: number
-      label: Number 
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/field-values
+      query: |
+        SELECT
+          '$.id',
+          '$.text'
+        FROM [default/field-values]
+  
+        
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: name
+      label: Name 
+      helperText: =@ctx.datasources.text-field.text
