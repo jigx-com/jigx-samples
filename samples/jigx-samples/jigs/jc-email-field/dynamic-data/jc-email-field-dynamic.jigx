@@ -24,12 +24,12 @@ datasources:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - entity: default/email-field
+        - entity: default/field-values
       query: |
         SELECT
           '$.id',
           '$.email'
-        FROM [default/email-field]
+        FROM [default/field-values]
           
 header:
   children:
