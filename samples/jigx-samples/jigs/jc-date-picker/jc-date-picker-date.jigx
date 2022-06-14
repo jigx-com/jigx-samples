@@ -1,0 +1,11 @@
+type: "@jigx/jig/form"
+name: Date picker
+
+entity: default/employees
+  
+children:
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      property: date
+      label: Select a date
+      format: L
