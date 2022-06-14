@@ -1,0 +1,12 @@
+type: "@jigx/jig/form"
+name: Date picker
+
+entity: default/employees
+  
+children:
+  - componentId: "@jigx/jc-date-picker"
+    options:
+      property: time
+      label: Select a time
+      type: time
+      format: HH:mm
