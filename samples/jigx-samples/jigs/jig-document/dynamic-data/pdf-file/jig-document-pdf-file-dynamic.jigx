@@ -1,0 +1,27 @@
+type: "@jigx/jig/document"
+name: Document name
+description: 'Description of jig'
+icon: document
+badge: 1
+
+placeholders:
+  - when: =@ctx.system.isOffline
+    title: No data to display
+
+datasources: 
+  document-sources:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/document-sources
+      query: |
+        SELECT
+          '$.id',
+          '$.pdf'
+        FROM [default/document-sources]
+  
+source:
+  documentType: PDF
+  uri:  =@ctx.datasources.document-sources.pdf
