@@ -44,4 +44,4 @@ children:
     options:
       property: name
       label: Name 
-      initialValue: =@ctx.datasources.text-field.text
+      helperText: =@ctx.datasources.text-field.text
