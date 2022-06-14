@@ -1,0 +1,47 @@
+name: Text
+referenceId: jc-text-field-dynamic
+type: "@jigx/jig/form"
+
+provider: DATA_PROVIDER_DYNAMIC
+method: save
+entity: default/confirms
+
+actions:
+  - children:
+      - componentId: "@jigx/ja-submit-form"
+        instanceId: submit-form
+        options:
+          title: Submit
+          formId: sample-form
+      - componentId: "@jigx/ja-go-back"
+        options:
+          title: Cancel
+header:
+  children:
+    componentId: "@jigx/jc-image"
+    options:
+      title: Text
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+        
+datasources: 
+  text-field:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/field-values
+      query: |
+        SELECT
+          '$.id',
+          '$.text'
+        FROM [default/field-values]
+  
+        
+children:
+  - componentId: "@jigx/jc-text-field"
+    options:
+      property: name
+      label: Name 
+      initialValue: =@ctx.datasources.text-field.text
