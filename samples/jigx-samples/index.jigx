@@ -5,9 +5,7 @@ widgets:
   - size: 1x1
     children: jw-avatar-on-widget
   - size: 1x1
-    children: jig-document-pdf-file-dynamic
-  - size: 1x1
-    children: jc-signature-field
+    children: jc-email-field-dynamic
   
 # stories: 
 #   - s-video
