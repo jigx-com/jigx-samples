@@ -1,0 +1,13 @@
+type: "@jigx/jig/document"
+name: Document name
+description: 'Description of jig'
+icon: document
+badge: 1
+
+placeholders:
+  - when: =@ctx.system.isOffline
+    title: No data to display
+
+source:
+  documentType: PDF
+  uri: https://www2.deloitte.com/content/dam/Deloitte/global/Documents/deloitte-women-at-work-2022-a-global-outlook.pdf
