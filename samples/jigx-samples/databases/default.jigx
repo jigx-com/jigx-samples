@@ -1,5 +1,7 @@
 tables:
   ? table
+  ? avatar
+  ? value
   ? employees
   ? assets
   ? finance

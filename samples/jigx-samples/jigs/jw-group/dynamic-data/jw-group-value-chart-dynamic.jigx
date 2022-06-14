@@ -1,0 +1,52 @@
+name: Value + Chart
+type: "@jigx/jig/default"
+referenceId: jw-group-value-chart-dynamic
+
+datasources:
+  value:
+    componentId: '@jigx/jd-sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      isDocument: true
+      entities:
+        - entity: default/value
+  
+      query: SELECT id, '$.value', '$.title' FROM [default/value] 
+      
+  series1:
+    componentId: '@jigx/jd-static'
+    options:
+      data:
+        - y: 2000
+        - y: 4000
+        - y: 1500
+
+
+children:
+  - componentId: "@jigx/jc-line-chart"
+    options:
+      chart:
+        height: 120
+      series:
+        - data: =@ctx.datasource.series1
+          
+views:
+  2x4: 
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-value"
+          options:
+            value: 7500
+            top: 
+              componentId: "@jigx/jc-titles"
+              options:
+                title: Daily revenue
+        - componentId: "@jigx/jw-chart"
+          options:
+            chart: 
+              componentId: "@jigx/jc-bar-chart"
+              options:
+                series:
+                  - data: =@ctx.datasources.series1
+          

@@ -1,0 +1,8 @@
+componentId: '@jigx/jd-sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/avatar
+
+  query: SELECT id, '$.photo', '$.firstname', '$.lastname' FROM [default/avatar]

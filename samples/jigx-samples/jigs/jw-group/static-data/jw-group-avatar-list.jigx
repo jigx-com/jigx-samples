@@ -1,0 +1,50 @@
+name: Avatar + List
+type: "@jigx/jig/list"
+referenceId: jw-group-avata-list
+
+datasources:
+  group-list:
+    componentId: "@jigx/jd-static"
+    options:
+      data:
+        - id: 1
+          img:  https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+          name: Karl Fisher
+        - id: 2
+          img: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+          name: Mary Gomez
+        - id: 3
+          img: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+          name: July Nelson
+          
+data: =@ctx.datasources.group-list
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    leftElement: 
+      type: avatar
+      text: '' 
+      uri: =@ctx.parents.list-data.item.img
+
+views:
+  4x2: 
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-avatar"
+          options:
+            text: ''
+            uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.datasources.group-list
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.name
+                leftElement: 
+                  type: avatar
+                  text: '' 
+                  uri: =@ctx.parents.list-data.item.img
+              

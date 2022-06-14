@@ -1,0 +1,37 @@
+name: Avatar + List
+type: "@jigx/jig/list"
+referenceId: jw-group-avatar-list-dynamic
+          
+data: =@ctx.datasources.employees-dynamic
+item:
+  componentId: "@jigx/jc-list-item"
+  options:
+    title: =@ctx.parents.list-data.item.firstname
+    subtitle: =@ctx.parents.list-data.item.lastname
+    leftElement: 
+      type: avatar
+      text: '' 
+      uri: =@ctx.parents.list-data.item.picture
+
+views:
+  4x2: 
+    componentId: "@jigx/jw-group"
+    options:
+      children:
+        - componentId: "@jigx/jw-avatar"
+          options:
+            text: ''
+            uri: =@ctx.datasources.avatar-dynamic.photo
+        - componentId: "@jigx/jw-list"
+          options:
+            data: =@ctx.datasources.employees-dynamic
+            item:
+              componentId: "@jigx/jc-list-item"
+              options:
+                title: =@ctx.parents.list-data.item.firstname
+                subtitle: =@ctx.parents.list-data.item.lastname
+                leftElement: 
+                  type: avatar
+                  text: '' 
+                  uri: =@ctx.parents.list-data.item.picture
+                          
