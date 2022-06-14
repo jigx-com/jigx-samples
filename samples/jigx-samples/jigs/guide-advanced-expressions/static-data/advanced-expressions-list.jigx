@@ -7,47 +7,51 @@ datasources:
     options:
       data:
         - id: 1
-          firstname: Lukas
-          lastname: Otahal
-          email: lukas@gmail.com
+          firstname: Mark
+          lastname: Dobrew
+          email: mark@gmail.com
           mobile: 783432565
-          registred: false
+          registered: false
         - id: 2
-          firstname: Andrej
-          lastname: Becka
-          email: andrej@gmail.com
+          firstname: Astra
+          lastname: Courts
+          email: astra@gmail.com
           mobile: 437874221
-          registred: false
+          registered: false
         - id: 3
           firstname: Jane
           lastname: Doe
           email: jane@gmail.com
           mobile: 783432531
-          registred: true
+          registered: true
         - id: 4
           firstname: ''
           lastname: ''
           email: steve@gmail.com
           mobile: 783432531
-          registred: true
+          registered: true
 
-data: =@ctx.data.people[firstname != '' and lastname != '']
+data: =@ctx.datasources.people[firstname != '' and lastname != '']
 item:
   componentId: "@jigx/jc-list-item"
   options:
-    title: =@ctx.parents.list-data.item.firstname & ' ' & @ctx.parents.list-data.item.lastname
+    title: "=@ctx.parents.list-data.item.firstname 
+            & ' ' & 
+            @ctx.parents.list-data.item.lastname"
     subtitle: ='Phone:' & @ctx.parents.list-data.item.mobile
     description: ='Email:' & @ctx.parents.list-data.item.email
     style:
-      isHighlighted: =@ctx.parents.list-data.item.registred = true ? true:false
+      isHighlighted: =@ctx.parents.list-data.item.registered = true ? true:false
     label:
-      title: =@ctx.parents.list-data.item.registred = true ? 'Registred':'Not registred'
+      title: "=@ctx.parents.list-data.item.registered = true 
+              ? 'Registered':'Not registered'"
       color:
-        - when: =@ctx.parents.list-data.item.registred = true 
+        - when: =@ctx.parents.list-data.item.registered = true 
           color: color2
-        - when: =@ctx.parents.list-data.item.registred = false
+        - when: =@ctx.parents.list-data.item.registered = false
           color: color4
     leftElement: 
       type: avatar
-      text: =$substring(@ctx.parents.list-data.item.firstname,0,1) & $substring(@ctx.parents.list-data.item.lastname,0,1)
+      text: "=$substring(@ctx.parents.list-data.item.firstname,0,1) 
+            & $substring(@ctx.parents.list-data.item.lastname,0,1)"
     
