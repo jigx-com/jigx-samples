@@ -1,0 +1,15 @@
+type: "@jigx/jig/calendar"
+name: =$now('[D1o] [MNn] [Y]')
+
+data: =@ctx.datasources.eventVacation
+item: 
+  componentId: "@jigx/jc-event"
+  options:
+    title: =@ctx.parents.list-data.item.name
+    from: 
+      text: =@ctx.parents.list-data.item.date_from
+      format: 
+        dateFormat: "l"
+    to: =@ctx.parents.list-data.item.date_to
+    location: =@ctx.parents.list-data.item.location
+    isAllDay: true

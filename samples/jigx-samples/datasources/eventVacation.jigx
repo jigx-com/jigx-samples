@@ -1,0 +1,7 @@
+componentId: "@jigx/jd-static"
+options:
+  data:
+    - name: "Summer vacation"
+      date_from: "2022-06-15"
+      date_to: "2022-06-25"
+      location: "Crete, Greece"

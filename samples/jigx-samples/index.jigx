@@ -3,7 +3,7 @@ category: personal
 
 widgets: 
   - size: 1x1
-    children: jw-avatar-on-widget
+    children: jc-avatar-static
   - size: 1x1
     children: jc-text-field-dynamic
   
