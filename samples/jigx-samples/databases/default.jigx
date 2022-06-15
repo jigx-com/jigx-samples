@@ -11,3 +11,5 @@ tables:
   ? document-sources
   ? field-values
   ? checkbox
+  ? meeting-event
+  ? multiDay-event
