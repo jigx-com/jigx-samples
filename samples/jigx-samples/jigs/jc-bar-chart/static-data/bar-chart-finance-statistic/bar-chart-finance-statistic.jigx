@@ -21,7 +21,7 @@ children:
         isFirstTickHidden: false
         isFirstLabelHidden: false
       series:
-        - data: =@ctx.data.chart-data.{'x':x,'y':y}
+        - data: =@ctx.datasources.chart-data
           name: "2021/2022"
           color: color1
 
@@ -52,6 +52,6 @@ views:
                   isFirstTickHidden: false
                   isFirstLabelHidden: false
                 series:
-                  - data: =@ctx.data.chart-data.{'x':x,'y':y}
+                  - data: =@ctx.datasources.chart-data
                     name: "2021/2022"
                     color: color1

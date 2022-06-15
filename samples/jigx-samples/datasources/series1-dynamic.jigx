@@ -1,0 +1,6 @@
+componentId: '@jigx/jd-sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/series1
+  query: SELECT id, '$.data' FROM [default/series1]

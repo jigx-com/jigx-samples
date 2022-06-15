@@ -1,5 +1,5 @@
 type: "@jigx/jig/default"
-name: Multiple series
+name: Multiple series dynamic
 
 children:
   - componentId: '@jigx/jc-bar-chart'
@@ -12,9 +12,10 @@ children:
         categories:
           - 'Sample Data'
       series:
-        - data: =@ctx.datasources.chart-data-series1
-        - data: =@ctx.datasources.chart-data-series2
-        - data: =@ctx.datasources.chart-data-series3
+        - data: =@ctx.datasources.series1-dynamic.data
+        - data: =@ctx.datasources.series2-dynamic.data
+        - data: =@ctx.datasources.series3-dynamic.data
+    
           
 views:
   4x2:
@@ -34,6 +35,8 @@ views:
                   categories:
                     - 'Sample Data'
                 series:
-                  - data: =@ctx.datasources.chart-data-series1
-                  - data: =@ctx.datasources.chart-data-series2
-                  - data: =@ctx.datasources.chart-data-series3
+                  - data: =@ctx.datasources.series1-dynamic.data
+                  - data: =@ctx.datasources.series2-dynamic.data
+                  - data: =@ctx.datasources.series3-dynamic.data
+        
+                

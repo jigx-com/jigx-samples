@@ -21,7 +21,7 @@ children:
         isFirstTickHidden: false
         isFirstLabelHidden: false
       series:
-        - data: =@ctx.data.finance-dynamic.{'x':x,'y':y}
+        - data: =@ctx.datasources.finance-dynamic
           name: "2021/2022"
           color: color2
 
@@ -52,6 +52,6 @@ views:
                   isFirstTickHidden: false
                   isFirstLabelHidden: false
                 series:
-                  - data: =@ctx.data.finance-dynamic.{'x':x,'y':y}
+                  - data: =@ctx.datasources.finance-dynamic
                     name: "2021/2022"
                     color: color1
