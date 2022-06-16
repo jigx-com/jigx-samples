@@ -13,3 +13,4 @@ tables:
   ? checkbox
   ? meeting-event
   ? multiDay-event
+  ? meetingPeople

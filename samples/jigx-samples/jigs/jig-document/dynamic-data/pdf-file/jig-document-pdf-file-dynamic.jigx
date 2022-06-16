@@ -10,7 +10,7 @@ placeholders:
 
 datasources: 
   document-sources:
-    componentId: '@jigx/jd-sqlite'
+    componentId: '@jigx/datasource/sqlite'
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC

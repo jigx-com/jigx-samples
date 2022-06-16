@@ -8,25 +8,25 @@ entity: default/confirms
 
 actions:
   - children:
-      - componentId: "@jigx/ja-submit-form"
+      - componentId: "@jigx/action/submit-form"
         instanceId: submit-form
         options:
           title: Submit
           formId: sample-form
-      - componentId: "@jigx/ja-go-back"
+      - componentId: "@jigx/action/go-back"
         options:
           title: Cancel
 
 header:
   children:
-    componentId: "@jigx/jc-image"
+    componentId: "@jigx/component/image"
     options:
       title: Number
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
-  - componentId: "@jigx/jc-number-field"
+  - componentId: "@jigx/component/number-field"
     options:
       property: number
       label: Number 

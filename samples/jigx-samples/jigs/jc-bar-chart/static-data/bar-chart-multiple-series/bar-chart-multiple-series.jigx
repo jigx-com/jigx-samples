@@ -2,7 +2,7 @@ type: "@jigx/jig/default"
 name: Multiple series
 
 children:
-  - componentId: '@jigx/jc-bar-chart'
+  - componentId: '@jigx/component/bar-chart'
     options:
       chart:
         height: 250
@@ -18,13 +18,13 @@ children:
           
 views:
   4x2:
-    componentId: "@jigx/jw-group"
+    componentId: "@jigx/widget/group"
     options:
       children:
-        - componentId: "@jigx/jw-chart"
+        - componentId: "@jigx/widget/chart"
           options:
             chart:
-              componentId: "@jigx/jc-bar-chart"
+              componentId: "@jigx/component/bar-chart"
               options:
                 chart:
                   height: 150

@@ -3,7 +3,7 @@ name: Next Meeting
 
 data: =@ctx.data.static-global-multiple
 item: 
-  componentId: "@jigx/jc-event"
+  componentId: "@jigx/component/event"
   options:
     title: =@ctx.parents.list-data.item.name
     from: 
@@ -14,12 +14,12 @@ item:
 
 views:    
   2x2:
-    componentId: "@jigx/jw-avatar"
+    componentId: "@jigx/widget/avatar"
     options:
       text: =$substring($substringBefore(@ctx.data.static-global-multiple[0].name, " "), 0, 1) & $substring($substringAfter(@ctx.data.static-global-multiple[0].name, " "), 0, 1)
       uri: =@ctx.data.static-global-multiple[0].picture
       bottom: 
-        componentId: "@jigx/jc-titles"
+        componentId: "@jigx/component/titles"
         options:
           align: center
           title: =@ctx.data.static-global-multiple[0].name

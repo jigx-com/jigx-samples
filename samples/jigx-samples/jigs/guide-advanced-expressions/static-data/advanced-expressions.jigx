@@ -4,16 +4,16 @@ type: "@jigx/jig/default"
 
 datasources:
   number-data:
-    componentId: "@jigx/jd-static"
+    componentId: "@jigx/datasource/static"
     options:
       data:
         - id: 1
           number: 2500
 children:
-  - componentId: "@jigx/jc-entity"
+  - componentId: "@jigx/component/entity"
     options:
       children:
-        - componentId: "@jigx/jc-entity-field"
+        - componentId: "@jigx/component/entity-field"
           options:
             label: Expression to get result divided by 10
             value: =($b := function($l, $w){ $l / $w }; $b(@ctx.data.number-data.number,10);)

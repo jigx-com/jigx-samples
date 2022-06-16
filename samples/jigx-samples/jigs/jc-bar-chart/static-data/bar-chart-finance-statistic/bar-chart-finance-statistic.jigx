@@ -2,7 +2,7 @@ type: "@jigx/jig/default"
 name: Current account overview
 
 children:
-  - componentId: "@jigx/jc-bar-chart"
+  - componentId: "@jigx/component/bar-chart"
     options:
       chart:
         title:
@@ -27,13 +27,13 @@ children:
 
 views:
   4x2:
-    componentId: "@jigx/jw-group"
+    componentId: "@jigx/widget/group"
     options:
       children:
-        - componentId: "@jigx/jw-chart"
+        - componentId: "@jigx/widget/chart"
           options:
             chart:
-              componentId: "@jigx/jc-bar-chart"
+              componentId: "@jigx/component/bar-chart"
               options:
                 chart:
                   title:

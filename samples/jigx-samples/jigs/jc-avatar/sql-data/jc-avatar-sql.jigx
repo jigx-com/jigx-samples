@@ -2,7 +2,7 @@ name: jc-avatar
 type: "@jigx/jig/default"
 
 children:
-  - componentId: "@jigx/jc-avatar"
+  - componentId: "@jigx/component/avatar"
     options:
       text: TEXT
       uri: 'https://i.pinimg.com/280x280_RS/31/45/40/314540c6ff0b3df1730fab660879b99e.jpg'

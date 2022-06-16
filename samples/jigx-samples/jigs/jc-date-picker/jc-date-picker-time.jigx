@@ -4,7 +4,7 @@ name: Date picker
 entity: default/employees
   
 children:
-  - componentId: "@jigx/jc-date-picker"
+  - componentId: "@jigx/component/date-picker"
     options:
       property: time
       label: Select a time

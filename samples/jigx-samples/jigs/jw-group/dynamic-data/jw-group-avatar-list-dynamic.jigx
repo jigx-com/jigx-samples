@@ -4,7 +4,7 @@ referenceId: jw-group-avatar-list-dynamic
           
 data: =@ctx.datasources.employees-dynamic
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.firstname
     subtitle: =@ctx.parents.list-data.item.lastname
@@ -15,18 +15,18 @@ item:
 
 views:
   4x2: 
-    componentId: "@jigx/jw-group"
+    componentId: "@jigx/widget/group"
     options:
       children:
-        - componentId: "@jigx/jw-avatar"
+        - componentId: "@jigx/widget/avatar"
           options:
             text: ''
             uri: =@ctx.datasources.avatar-dynamic.photo
-        - componentId: "@jigx/jw-list"
+        - componentId: "@jigx/widget/list"
           options:
             data: =@ctx.datasources.employees-dynamic
             item:
-              componentId: "@jigx/jc-list-item"
+              componentId: "@jigx/component/list-item"
               options:
                 title: =@ctx.parents.list-data.item.firstname
                 subtitle: =@ctx.parents.list-data.item.lastname

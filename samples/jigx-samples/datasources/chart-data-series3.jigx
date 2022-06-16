@@ -1,4 +1,4 @@
-componentId: '@jigx/jd-static'
+componentId: '@jigx/datasource/static'
 options:
   data:
     - 5

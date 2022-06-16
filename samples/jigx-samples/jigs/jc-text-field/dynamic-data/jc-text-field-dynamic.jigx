@@ -8,17 +8,17 @@ entity: default/confirms
 
 actions:
   - children:
-      - componentId: "@jigx/ja-submit-form"
+      - componentId: "@jigx/action/submit-form"
         instanceId: submit-form
         options:
           title: Submit
           formId: sample-form
-      - componentId: "@jigx/ja-go-back"
+      - componentId: "@jigx/action/go-back"
         options:
           title: Cancel
 header:
   children:
-    componentId: "@jigx/jc-image"
+    componentId: "@jigx/component/image"
     options:
       title: Text
       source:
@@ -26,7 +26,7 @@ header:
         
 datasources: 
   text-field:
-    componentId: '@jigx/jd-sqlite'
+    componentId: '@jigx/datasource/sqlite'
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -40,7 +40,7 @@ datasources:
   
         
 children:
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       property: name
       label: Name 

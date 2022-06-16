@@ -3,7 +3,7 @@ name: =$now('[D1o] [MNn] [Y]')
 
 data: =@ctx.datasources.eventVacation
 item: 
-  componentId: "@jigx/jc-event"
+  componentId: "@jigx/component/event"
   options:
     title: =@ctx.parents.list-data.item.name
     from: 

@@ -3,7 +3,7 @@ name: Avatar on list (pictures)
 
 data: =@ctx.data.static-global-multiple
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.name
     leftElement:
@@ -13,11 +13,11 @@ item:
           
 views:
   2x2:
-    componentId: "@jigx/jw-list"
+    componentId: "@jigx/widget/list"
     options:
       data: =@ctx.data.static-global-multiple
       item:
-        componentId: "@jigx/jc-list-item"
+        componentId: "@jigx/component/list-item"
         options:
           title: =@ctx.parents.list-data.item.name
           leftElement:

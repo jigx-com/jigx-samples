@@ -4,7 +4,7 @@ referenceId: jw-group-avata-list
 
 datasources:
   group-list:
-    componentId: "@jigx/jd-static"
+    componentId: "@jigx/datasource/static"
     options:
       data:
         - id: 1
@@ -19,7 +19,7 @@ datasources:
           
 data: =@ctx.datasources.group-list
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.name
     leftElement: 
@@ -29,18 +29,18 @@ item:
 
 views:
   4x2: 
-    componentId: "@jigx/jw-group"
+    componentId: "@jigx/widget/group"
     options:
       children:
-        - componentId: "@jigx/jw-avatar"
+        - componentId: "@jigx/widget/avatar"
           options:
             text: ''
             uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
-        - componentId: "@jigx/jw-list"
+        - componentId: "@jigx/widget/list"
           options:
             data: =@ctx.datasources.group-list
             item:
-              componentId: "@jigx/jc-list-item"
+              componentId: "@jigx/component/list-item"
               options:
                 title: =@ctx.parents.list-data.item.name
                 leftElement: 

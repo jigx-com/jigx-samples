@@ -3,7 +3,7 @@ name: Avatar dynamic data
 
 data: =@ctx.data.employees-dynamic
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.firstname & ' ' & =@ctx.parents.list-data.item.lastname
     leftElement:
@@ -13,11 +13,11 @@ item:
           
 views:
   2x2:
-    componentId: "@jigx/jw-list"
+    componentId: "@jigx/widget/list"
     options:
       data: =@ctx.data.employees-dynamic
       item:
-        componentId: "@jigx/jc-list-item"
+        componentId: "@jigx/component/list-item"
         options:
           title: =@ctx.parents.list-data.item.firstname & ' ' & =@ctx.parents.list-data.item.lastname
           leftElement:

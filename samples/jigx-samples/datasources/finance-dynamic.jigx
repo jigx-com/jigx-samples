@@ -1,4 +1,4 @@
-componentId: '@jigx/jd-sqlite'
+componentId: '@jigx/datasource/sqlite'
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:

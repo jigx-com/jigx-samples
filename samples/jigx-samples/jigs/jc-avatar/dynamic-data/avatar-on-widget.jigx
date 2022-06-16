@@ -3,7 +3,7 @@ name: Avatar on widget dynamic
 
 data: =@ctx.data.employees-dynamic
 item: 
-  componentId: "@jigx/jc-event"
+  componentId: "@jigx/component/event"
   options:
     title: =@ctx.parents.list-data.item.firstname & ' ' & @ctx.parents.list-data.item.lastname
     from: 
@@ -14,12 +14,12 @@ item:
 
 views:    
   2x2:
-    componentId: "@jigx/jw-avatar"
+    componentId: "@jigx/widget/avatar"
     options:
       text: =$substring(@ctx.data.employees-dynamic[0].firstname, 0, 1) & $substring(@ctx.data.employees-dynamic[0].lastname, 0, 1)
       uri: =@ctx.data.employees-dynamic[0].picture
       bottom: 
-        componentId: "@jigx/jc-titles"
+        componentId: "@jigx/component/titles"
         options:
           align: center
           title: =@ctx.data.employees-dynamic[0].firstname & ' ' & @ctx.data.employees-dynamic[0].lastname

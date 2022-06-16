@@ -3,7 +3,7 @@ type: "@jigx/jig/list"
 
 datasources:
   people:
-    componentId: "@jigx/jd-static"
+    componentId: "@jigx/datasource/static"
     options:
       data:
         - id: 1
@@ -24,7 +24,7 @@ datasources:
 
 data: =@ctx.data.people
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.firstname
     subtitle: =@ctx.parents.list-data.item.lastname
