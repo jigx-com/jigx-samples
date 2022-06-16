@@ -3,7 +3,7 @@ category: personal
 
 widgets: 
   - size: 1x1
-    children: jc-avatar-static
+    children: pie-chart-arch
   - size: 1x1
     children: jc-text-field-dynamic
   

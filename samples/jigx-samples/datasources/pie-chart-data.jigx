@@ -1,0 +1,9 @@
+componentId: "@jigx/datasource/static"
+options:
+  data:
+    - y: 1
+      color: color4
+    - y: 2
+      color: color2
+    - y: 1
+      color: color3

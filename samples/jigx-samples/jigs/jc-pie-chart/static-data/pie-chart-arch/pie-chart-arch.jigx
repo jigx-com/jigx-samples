@@ -1,0 +1,43 @@
+type: "@jigx/jig/default"
+name: Arch pie chart
+
+children:
+  - componentId: "@jigx/component/pie-chart"
+    options:
+      chart:
+        title:
+          text: Stock
+          verticalAlign: center
+        width: 180
+        height: 180
+      legend:
+          isHidden: true
+      series:
+          - data: =@ctx.datasources.arch-pie-chart
+            dataLabels:
+              - isEnabled: true
+            type: arch
+          
+views:
+  2x2:
+    componentId: "@jigx/widget/group"
+    options:
+      children:
+        - componentId: "@jigx/widget/chart"
+          options:
+            chart:
+              componentId: "@jigx/component/pie-chart"
+              options:
+                chart:
+                  title:
+                    text: Stock
+                    verticalAlign: center
+                  width: 120
+                  height: 120
+                legend:
+                  isHidden: true
+                series:
+                  - data: =@ctx.datasources.arch-pie-chart
+                    dataLabels:
+                    - isEnabled: true
+                    type: arch
