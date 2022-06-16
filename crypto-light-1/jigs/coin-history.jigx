@@ -3,7 +3,7 @@ type: "@jigx/jig/list"
 
 datasources:
   list-coin-history:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_REST
       entities:
@@ -22,7 +22,7 @@ datasources:
 
 data: =@ctx.data.list-coin-history
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.close
     subtitle: =$fromMillis(@ctx.parents.list-data.item.ms)

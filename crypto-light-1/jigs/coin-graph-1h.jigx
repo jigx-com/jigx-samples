@@ -3,7 +3,7 @@ type: "@jigx/jig/default"
 
 datasources:
   series1:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_REST
       entities:
@@ -31,7 +31,7 @@ datasources:
         LIMIT 1 + 24 * 2
 
 children:
-  - componentId: "@jigx/jc-line-chart"
+  - componentId: "@jigx/component/line-chart"
     options:
       chart:
         title:

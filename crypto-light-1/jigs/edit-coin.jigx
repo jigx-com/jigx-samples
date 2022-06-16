@@ -7,7 +7,7 @@ entity: default/coin
 
 datasources:
   coin:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
@@ -26,7 +26,7 @@ datasources:
 initialValues: =@ctx.data.coin
 
 children:
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Id
       property: id
@@ -34,7 +34,7 @@ children:
       isHidden: false
       style:
         isDisabled: true
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Symbol
       property: symbol
@@ -43,7 +43,7 @@ children:
       autoCapitalize: characters
       isAutoCorrected: false
       nextProperty: name
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Name
       property: name
@@ -53,7 +53,7 @@ children:
 
 actions:
   - children:
-      - componentId: "@jigx/ja-submit-form"
+      - componentId: "@jigx/action/submit-form"
         instanceId: submit-action
         options:
           title: Save

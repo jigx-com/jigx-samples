@@ -28,20 +28,20 @@ children:
 
 actions:
   - children:
-      - componentId: "@jigx/ja-action-list"
+      - componentId: "@jigx/action/action-list"
         options:
           title: Delete Coin
           icon: delete-2
           style:
             isDanger: true
           actions:
-            - componentId: "@jigx/ja-delete"
+            - componentId: "@jigx/action/delete"
               options:
                 provider: DATA_PROVIDER_DYNAMIC
                 entity: default/coin
                 entityId: =@ctx.jig.inputs.coinId
 
-            - componentId: "@jigx/ja-go-to"
+            - componentId: "@jigx/action/go-to"
               options:
                 linkTo: list-coins
 

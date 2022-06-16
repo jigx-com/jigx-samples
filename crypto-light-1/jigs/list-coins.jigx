@@ -4,11 +4,11 @@ icon: add-circle
 
 datasources:
   coins:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - default/coin
+      entities: 
+        - 
       query: |
         SELECT
           id,
@@ -19,7 +19,7 @@ datasources:
         ORDER BY
           '$.symbol' ASC
   coins-count:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
@@ -32,7 +32,7 @@ datasources:
 
 data: =@ctx.data.coins
 item:
-  componentId: "@jigx/jc-list-item"
+  componentId: "@jigx/component/list-item"
   options:
     title: =@ctx.parents.list-data.item.symbol
     subtitle: =@ctx.parents.list-data.item.name
@@ -40,7 +40,7 @@ item:
       type: avatar
       text: =@ctx.parents.list-data.item.symbol
     onPress:
-      componentId: "@jigx/ja-go-to"
+      componentId: "@jigx/action/go-to"
       options:
         linkTo: coin-overview #view-coin
         title: View Coin
@@ -50,7 +50,7 @@ item:
     swipeable:
       left:
         - onPress:
-            componentId: "@jigx/ja-delete"
+            componentId: "@jigx/action/delete"
             options:
               provider: DATA_PROVIDER_DYNAMIC
               entity: default/coin
@@ -64,7 +64,7 @@ item:
 
 actions:
   - children:
-      - componentId: "@jigx/ja-go-to"
+      - componentId: "@jigx/action/go-to"
         options:
           title: Add Coin
           linkTo: add-coin
@@ -72,7 +72,7 @@ actions:
 
 views:
   2x2:
-    componentId: "@jigx/jw-value"
+    componentId: "@jigx/widget/value"
     options:
       ##title: My Coins
       value: =@ctx.data.coins-count.count

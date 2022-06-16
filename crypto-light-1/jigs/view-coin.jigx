@@ -3,7 +3,7 @@ type: "@jigx/jig/default"
 
 datasources:
   coin:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
@@ -21,7 +21,7 @@ datasources:
       isDocument: true
 
   get-coin-price:
-    componentId: "@jigx/jd-sqlite"
+    componentId: "@jigx/datasource/sqlite"
     options:
       provider: DATA_PROVIDER_REST
       entities:
@@ -38,33 +38,33 @@ datasources:
       isDocument: true
 
 children:
-  - componentId: "@jigx/jc-entity"
+  - componentId: "@jigx/component/entity"
     options:
       #data: =@ctx.data.coin
       children:
-        - componentId: "@jigx/jc-entity-field"
+        - componentId: "@jigx/component/entity-field"
           options:
             label: Symbol
             rightIcon: circle
             value: =@ctx.data.coin.symbol
-        - componentId: "@jigx/jc-entity-field"
+        - componentId: "@jigx/component/entity-field"
           options:
             label: Name
             value: =@ctx.data.coin.name
 
-  - componentId: "@jigx/jc-entity"
+  - componentId: "@jigx/component/entity"
     options:
       #data: =@ctx.data.get-coin-price
       #isDocument: true
       children:
-        - componentId: "@jigx/jc-entity-field"
+        - componentId: "@jigx/component/entity-field"
           options:
             label: Date
             value: =@ctx.data.get-coin-price.dt
             type: date
             #format:
             #  dateFormat: 'lll'
-        - componentId: "@jigx/jc-entity-field"
+        - componentId: "@jigx/component/entity-field"
           options:
             label: Price
             value: =@ctx.data.get-coin-price.price
@@ -74,7 +74,7 @@ children:
 
 actions:
   - children:
-      - componentId: "@jigx/ja-go-to"
+      - componentId: "@jigx/action/go-to"
         options:
           title: Edit coin
           linkTo: edit-coin

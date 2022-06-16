@@ -1,3 +1,4 @@
 {
-    "workbench.iconTheme": "jigx"
+    "workbench.iconTheme": "jigx",
+    "jigx.isJigxUser": false
 }

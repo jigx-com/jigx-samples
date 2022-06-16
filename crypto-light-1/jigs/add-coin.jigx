@@ -6,7 +6,7 @@ provider: DATA_PROVIDER_DYNAMIC
 entity: default/coin
 
 children:
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Id
       property: id
@@ -14,7 +14,7 @@ children:
       isHidden: false
       style:
         isDisabled: true
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Symbol
       property: symbol
@@ -23,7 +23,7 @@ children:
       autoCapitalize: characters
       isAutoCorrected: false
       nextProperty: name
-  - componentId: "@jigx/jc-text-field"
+  - componentId: "@jigx/component/text-field"
     options:
       label: Name
       property: name
@@ -33,7 +33,7 @@ children:
 
 actions:
   - children:
-      - componentId: "@jigx/ja-submit-form"
+      - componentId: "@jigx/action/submit-form"
         instanceId: submit-action
         options:
           title: Add
@@ -42,7 +42,7 @@ actions:
           onSuccess:
             title: Coin saved
             actions:
-              - componentId: "@jigx/ja-go-to"
+              - componentId: "@jigx/action/go-to"
                 options:
                   title: Add another coin
                   linkTo: add-coin
