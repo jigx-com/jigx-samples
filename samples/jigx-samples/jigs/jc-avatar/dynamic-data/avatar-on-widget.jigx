@@ -1,7 +1,7 @@
 type: "@jigx/jig/calendar"
 name: Avatar on widget dynamic
 
-data: =@ctx.data.employees-dynamic
+data: =@ctx.datasources.employees-dynamic
 item: 
   componentId: "@jigx/component/event"
   options:
@@ -16,11 +16,11 @@ views:
   2x2:
     componentId: "@jigx/widget/avatar"
     options:
-      text: =$substring(@ctx.data.employees-dynamic[0].firstname, 0, 1) & $substring(@ctx.data.employees-dynamic[0].lastname, 0, 1)
-      uri: =@ctx.data.employees-dynamic[0].picture
+      text: =$substring(@ctx.datasources.employees-dynamic[0].firstname, 0, 1) & $substring(@ctx.datasources.employees-dynamic[0].lastname, 0, 1)
+      uri: =@ctx.datasources.employees-dynamic[0].picture
       bottom: 
         componentId: "@jigx/component/titles"
         options:
           align: center
-          title: =@ctx.data.employees-dynamic[0].firstname & ' ' & @ctx.data.employees-dynamic[0].lastname
-          subtitle: =$fromMillis($toMillis(@ctx.data.employees-dynamic[0].date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.data.employees-dynamic[0].date_to),'[H01]:[m01]')
+          title: =@ctx.datasources.employees-dynamic[0].firstname & ' ' & @ctx.datasources.employees-dynamic[0].lastname
+          subtitle: =$fromMillis($toMillis(@ctx.datasources.employees-dynamic[0].date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.datasources.employees-dynamic[0].date_to),'[H01]:[m01]')

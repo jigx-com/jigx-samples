@@ -1,7 +1,7 @@
 type: "@jigx/jig/list"
 name: Avatar dynamic data
 
-data: =@ctx.data.employees-dynamic
+data: =@ctx.datasources.employees-dynamic
 item:
   componentId: "@jigx/component/list-item"
   options:
@@ -15,7 +15,7 @@ views:
   2x2:
     componentId: "@jigx/widget/list"
     options:
-      data: =@ctx.data.employees-dynamic
+      data: =@ctx.datasources.employees-dynamic
       item:
         componentId: "@jigx/component/list-item"
         options:

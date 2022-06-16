@@ -1,7 +1,7 @@
 type: "@jigx/jig/list"
 name: Avatar on list (initials)
 
-data: =@ctx.data.static-global-multiple
+data: =@ctx.datasources.static-global-multiple
 item:
   componentId: "@jigx/component/list-item"
   options:
@@ -15,7 +15,7 @@ views:
   2x2:
     componentId: "@jigx/widget/list"
     options:
-      data: =@ctx.data.static-global-multiple
+      data: =@ctx.datasources.static-global-multiple
       item:
         componentId: "@jigx/component/list-item"
         options:
