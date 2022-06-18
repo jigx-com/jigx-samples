@@ -7,11 +7,9 @@ widgets:
   - size: 1x1
     children: jc-text-field-dynamic
   - size: 2x2
-    children: avatar-list-sd
+    children: list-with-avatars-icons-sd
   - size: 2x2
-    children: simple-list-divider-sd
-  - size: 2x2
-    children: simple-list-divider-dd
+    children: list-with-avatars-icons-dd
   
 # stories: 
 #   - s-video

@@ -12,10 +12,10 @@ options:
     - id: 2
       description: Repairs to door handles 
       hourlyRate: 40
-      illustration: http://clipart-library.com/new_gallery/119-1194486_image-transparent-download-door-black-and-white-clipart.png
+      illustration: http://clipart-library.com/img1/1332215.jpg
       image: https://images.unsplash.com/photo-1538766017398-415434a31a5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: true
-      service: Door Handle Repairs
+      service: Door Handle/Lock Repairs
       time: 60        
     - id: 3
       description: Installation or repairs of tiled surfaces. Tiles have to be provided by client
