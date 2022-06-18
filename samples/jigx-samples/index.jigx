@@ -6,6 +6,12 @@ widgets:
     children: pie-chart-arch
   - size: 1x1
     children: jc-text-field-dynamic
+  - size: 2x2
+    children: simple-list-sd-local
+  - size: 2x2
+    children: simple-list-sd-global
+  - size: 2x2
+    children: simple-list-dd 
   
 # stories: 
 #   - s-video

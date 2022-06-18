@@ -14,3 +14,5 @@ tables:
   ? meeting-event
   ? multiDay-event
   ? meetingPeople
+  ? cleaning-services-dynamic
+  ? repair_services_static
