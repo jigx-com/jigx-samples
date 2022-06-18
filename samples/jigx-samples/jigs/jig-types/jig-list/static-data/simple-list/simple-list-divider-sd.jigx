@@ -1,0 +1,19 @@
+name: Simple Divided List - Global Static Data
+description: A simple list to display divided static data
+type: "@jigx/jig/list"
+icon: task-list
+
+header:
+  children: 
+    componentId: "@jigx/component/image"
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+
+data: =@ctx.datasources.repair_services_static
+item:
+  componentId: "@jigx/component/list-item"
+  options:
+    title: =@ctx.parents.list-data.item.service
+    subtitle: =@ctx.parents.list-data.item.description
+    divider: solid
