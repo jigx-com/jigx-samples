@@ -1,0 +1,29 @@
+name: List with Image and Value - Dynamic Data
+description: A list to display image and value functionaliy
+type: "@jigx/jig/list"
+icon: task-list
+
+header:
+  children: 
+    componentId: "@jigx/component/image"
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+
+data: =@ctx.datasources.cleaning-services-dynamic
+item:
+  componentId: "@jigx/component/list-item"
+  options:
+    title: =@ctx.parents.list-data.item.service
+    subtitle: =@ctx.parents.list-data.item.description
+    label:
+      title: =@ctx.parents.list-data.item.time & ' mins'
+    rightElement: 
+      type: value
+      text: =@ctx.parents.list-data.item.hourlyRate
+      # = NA ? '$ ' & @ctx.parents.list-data.item.onceOffRate :'$ ' & @ctx.parents.list-data.item.hourlyRate
+    leftElement: 
+      type: image
+      text: =@ctx.parents.list-data.item.service
+      uri: =@ctx.parents.list-data.item.image
+      
