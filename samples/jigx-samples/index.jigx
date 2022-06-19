@@ -7,9 +7,10 @@ widgets:
   - size: 1x1
     children: jc-text-field-dynamic
   - size: 2x2
-    children: list-with-image-value-sd
+    children: list-avatars-checkbox-badge-sd
   - size: 2x2
-    children: list-with-image-value-dd
+    children: list-avatars-checkbox-badge-dd
+  
   
 # stories: 
 #   - s-video

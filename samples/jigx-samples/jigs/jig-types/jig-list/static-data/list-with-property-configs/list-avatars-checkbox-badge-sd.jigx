@@ -1,0 +1,28 @@
+name: List with Avatars - Static Data
+description: A list to display avatars, checkboxes and badge functionality
+type: "@jigx/jig/list"
+icon: task-list
+
+header:
+  children: 
+    componentId: "@jigx/component/image"
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
+
+data: =@ctx.datasources.repair_services_static
+item:
+  componentId: "@jigx/component/list-item"
+  options:
+    title: =@ctx.parents.list-data.item.service
+    subtitle: =@ctx.parents.list-data.item.description
+    avatars:
+      - text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
+        uri: =@ctx.datasources.repair_services_static.illustration
+    rightElement: 
+      type: badge
+      isHidden:  =(@ctx.parents.list-data.item.materials) = True ? true :false
+    leftElement:
+      type: checkbox
+      initialValue: =(@ctx.parents.list-data.item.materials) = True ? true :false
+      
