@@ -1,0 +1,56 @@
+type: "@jigx/jig/default"
+name: Current account overview
+
+children:
+  - componentId: "@jigx/component/line-chart"
+    options:
+      chart:
+        title:
+          text: "12 months overview"
+        height: 260
+        isAnimated: false
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            currency: USD
+            compactDisplay: short
+            notation: compact
+        tickAmount: 5
+        isFirstTickHidden: false
+        isFirstLabelHidden: false
+      series:
+        - data: =@ctx.datasources.chart-data.{'x':x,'y':y}
+          name: "2021/2022"
+          color: color2
+
+views:
+  4x2:
+    componentId: "@jigx/widget/group"
+    options:
+      children:
+        - componentId: "@jigx/widget/chart"
+          options:
+            chart:
+              componentId: "@jigx/component/line-chart"
+              options:
+                chart:
+                  title:
+                    text: "12 months overview"
+                  height: 150
+                  isAnimated: false
+                yAxis:
+                  min: 0
+                  labels:
+                    format:
+                      numberStyle: currency
+                      currency: USD
+                      compactDisplay: short
+                      notation: compact
+                  tickAmount: 5
+                  isFirstTickHidden: false
+                  isFirstLabelHidden: false
+                series:
+                  - data: =@ctx.datasources.chart-data.{'x':x,'y':y}
+                    name: "2021/2022"

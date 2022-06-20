@@ -1,0 +1,15 @@
+componentId: "@jigx/datasource/static"
+options:
+  data:
+    - x: Q1/20
+      y: 12000
+      color: color3
+    - x: Q2/20
+      y: 48000
+      color: color3
+    - x: Q3/20
+      y: 36000
+      color: color3
+    - x: Q4/20
+      y: 120000
+      color: color3

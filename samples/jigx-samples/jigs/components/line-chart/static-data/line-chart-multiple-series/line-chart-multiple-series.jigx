@@ -1,0 +1,42 @@
+type: "@jigx/jig/default"
+name: Multiple series
+
+children:
+  - componentId: '@jigx/component/line-chart'
+    options:
+      chart:
+        height: 200
+        isAnimated: true
+      yAxis:
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 8
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
+      xAxis:
+        categories:
+          - Q1
+          - Q2
+          - Q3
+          - Q4
+      series:
+        - data: =@ctx.datasources.line-chart-series1
+          name: year 2019
+          animation:
+              type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true
+        - data: =@ctx.datasources.line-chart-series2
+          name: year 2020
+          animation:
+              type: left-to-right
+          type: area-gradient
+          dataLabels:
+            - isEnabled: true      
+      legend:
+        isHidden: false
