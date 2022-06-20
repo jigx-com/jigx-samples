@@ -1,0 +1,12 @@
+type: '@jigx/jig/default'
+name: Video player
+
+children:
+  - componentId: '@jigx/component/video-player'
+    options:
+      url: https://cdn.videvo.net/videvo_files/video/free/2015-09/large_watermarked/City_Street_preview.mp4
+      title: Street life
+      subtitle: video-player as children of the jig
+      autoplay: false
+      loop: true
+      ratio: 16:9
