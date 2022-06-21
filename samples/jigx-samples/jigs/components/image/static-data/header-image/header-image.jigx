@@ -1,0 +1,21 @@
+name: Header
+referenceId: header-image
+type: "@jigx/jig/default"
+
+
+header:
+  children:
+    componentId: "@jigx/component/image"
+    options:
+      title: Header image
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+
+children:
+  - componentId: "@jigx/component/entity"
+    options:
+      children:
+        - componentId: "@jigx/component/entity-field"
+          options:
+            label: ""
+            value: ""
