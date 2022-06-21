@@ -21,7 +21,7 @@ header:
         
 children:
   - componentId: "@jigx/component/form"
-    instanceId: number-form
+    instanceId: text-form
     options:
       children: 
         - componentId: "@jigx/component/text-field"

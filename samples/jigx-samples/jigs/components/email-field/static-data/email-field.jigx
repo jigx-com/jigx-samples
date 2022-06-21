@@ -21,7 +21,7 @@ header:
         
 children:
   - componentId: "@jigx/component/form"
-    instanceId: number-form
+    instanceId: email-form
     options:
       children: 
         - componentId: "@jigx/component/email-field"

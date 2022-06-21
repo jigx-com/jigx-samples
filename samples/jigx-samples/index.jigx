@@ -5,7 +5,7 @@ widgets:
   - size: 1x1
     children: pie-chart-arch
   - size: 1x1
-    children: text-field
+    children: text-field-dynamic
   - size: 2x2
     children: list-avatars-checkbox-badge-sd
   - size: 2x2
