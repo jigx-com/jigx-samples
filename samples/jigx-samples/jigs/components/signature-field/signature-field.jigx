@@ -7,7 +7,7 @@ actions:
       - componentId: "@jigx/action/execute-entity"
         instanceId: send-signature
         options:
-          title: Submit
+          title: Sign
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
           method: save
