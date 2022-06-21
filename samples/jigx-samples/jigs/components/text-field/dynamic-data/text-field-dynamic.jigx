@@ -1,21 +1,16 @@
 name: Text
-referenceId: jc-text-field-dynamic
-type: "@jigx/jig/form"
-
-provider: DATA_PROVIDER_DYNAMIC
-method: save
-entity: default/confirms
+referenceId: text-field-dynamic
+type: "@jigx/jig/default"
 
 actions:
   - children:
-      - componentId: "@jigx/action/submit-form"
-        instanceId: submit-form
+      - componentId: "@jigx/action/execute-entity"
         options:
           title: Submit
-          formId: sample-form
-      - componentId: "@jigx/action/go-back"
-        options:
-          title: Cancel
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          method: save
+
 header:
   children:
     componentId: "@jigx/component/image"
@@ -26,7 +21,7 @@ header:
         
 datasources: 
   text-field:
-    componentId: '@jigx/datasource/sqlite'
+    componentId: "@jigx/datasource/sqlite"
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -38,10 +33,14 @@ datasources:
           '$.text'
         FROM [default/field-values]
   
-        
+
 children:
-  - componentId: "@jigx/component/text-field"
+  - componentId: "@jigx/component/form"
+    instanceId: number-form
     options:
-      property: name
-      label: Name 
-      helperText: =@ctx.datasources.text-field.text
+      children: 
+        - componentId: "@jigx/component/text-field"
+          instanceId: name
+          options:
+            label: Name
+            helperText: =@ctx.datasources.text-field.text
