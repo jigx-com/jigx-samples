@@ -1,0 +1,82 @@
+name: Checkbox
+referenceId: checkbox-multiple-dynamic
+type: "@jigx/jig/default"
+
+actions:
+  - children:
+      - componentId: "@jigx/action/execute-entity"
+        options:
+          title: Submit
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          method: save
+          data:
+            id: =@ctx.datasources.id.state.value
+            order: =@ctx.datasources.order.state.value
+            day: =@ctx.datasources.day.state.value
+            
+          
+header:
+  children:
+    componentId: "@jigx/component/image"
+    options:
+      title: What days do you typically work?
+      source:
+        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+        
+datasources: 
+  checkbox-options:
+    componentId: "@jigx/datasource/sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/checkbox
+      query: |
+        SELECT
+          id,
+          '$.order',
+          '$.day'
+        FROM [default/checkbox] ORDER by '$.order'
+  
+children:
+  - componentId: "@jigx/component/form"
+    instanceId: work-engagement-form
+    options:
+      children: 
+         - componentId: "@jigx/component/checkbox"
+           instanceId: sunday
+           options:
+             label: =@ctx.datasources.checkbox-options[0].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: monday
+           options:
+             label: =@ctx.datasources.checkbox-options[1].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: tuesday
+           options:
+             label: =@ctx.datasources.checkbox-options[2].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: wednesday
+           options:
+             label: =@ctx.datasources.checkbox-options[3].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: thursday
+           options:
+             label: =@ctx.datasources.checkbox-options[4].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: friday
+           options:
+             label: =@ctx.datasources.checkbox-options[5].day
+             isRequired: false
+         - componentId: "@jigx/component/checkbox"
+           instanceId: saturday
+           options:
+             label: =@ctx.datasources.checkbox-options[6].day
+             isRequired: false
+
+
