@@ -1,0 +1,16 @@
+type: "@jigx/jig/list"
+name: Product item
+
+data: =@ctx.datasources.products
+isSearchable: true
+item: 
+  componentId: "@jigx/component/product-item"
+  options:
+    title: "=@ctx.parents.list-data.item.title"
+    image:
+      uri: =@ctx.parents.list-data.item.uri
+    tag: =@ctx.parents.list-data.item.tag
+    price: 
+      value: =@ctx.parents.list-data.item.price
+      format:
+        numberStyle: currency
