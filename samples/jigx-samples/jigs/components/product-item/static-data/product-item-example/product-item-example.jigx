@@ -14,3 +14,4 @@ item:
       value: =@ctx.parents.list-data.item.price
       format:
         numberStyle: currency
+    discount: =@ctx.parents.list-data.item.discount
