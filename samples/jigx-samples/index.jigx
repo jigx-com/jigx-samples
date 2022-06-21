@@ -11,7 +11,7 @@ widgets:
   - size: 2x2
     children: list-avatars-checkbox-badge-dd
   - size: 1x1
-    children: signature-field
+    children: number-field-dynamic
   
   
 # stories: 

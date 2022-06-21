@@ -1,21 +1,15 @@
 name: Number
-referenceId: jc-number-field-dynamic
-type: "@jigx/jig/form"
-
-provider: DATA_PROVIDER_DYNAMIC
-method: save
-entity: default/confirms
+referenceId: number-field-dynamic
+type: "@jigx/jig/default"
 
 actions:
   - children:
-      - componentId: "@jigx/action/submit-form"
-        instanceId: submit-form
+      - componentId: "@jigx/action/execute-entity"
         options:
           title: Submit
-          formId: sample-form
-      - componentId: "@jigx/action/go-back"
-        options:
-          title: Cancel
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          method: save
 header:
   children:
     componentId: "@jigx/component/image"
@@ -26,7 +20,7 @@ header:
         
 datasources: 
   number-field:
-    componentId: '@jigx/datasource/sqlite'
+    componentId: "@jigx/datasource/sqlite"
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -40,8 +34,12 @@ datasources:
   
         
 children:
-  - componentId: "@jigx/component/number-field"
+  - componentId: "@jigx/component/form"
+    instanceId: number-form
     options:
-      property: number
-      label: Number 
-      helperText: =@ctx.datasources.number-field.number
+      children: 
+        - componentId: "@jigx/component/number-field"
+          instanceId: number
+          options:
+            label: Number 
+            helperText: =@ctx.datasources.number-field.number
