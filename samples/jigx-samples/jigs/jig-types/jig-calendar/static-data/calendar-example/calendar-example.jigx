@@ -1,0 +1,22 @@
+type: "@jigx/jig/calendar"
+name: Calendar
+                
+data: =@ctx.datasources.calendar-data
+item:
+  componentId: "@jigx/component/event"
+  options:
+    title: =@ctx.parents.list-data.item.title
+    description: =@ctx.parents.list-data.item.description
+    from:
+      text: =$fromMillis($toMillis($now()) + ($number(@ctx.parents.list-data.item.id)- 1) * 3600000)
+      format:
+        dateFormat: "l"
+    location: =@ctx.parents.list-data.item.location
+    onPress:
+      componentId: "@jigx/action/go-to"
+      options:
+        linkTo: calendar-item-detail
+    people: =@ctx.parents.list-data.item.people
+    tags: =@ctx.parents.list-data.item.tags
+    to: =$fromMillis($toMillis($now()) + $number(@ctx.parents.list-data.item.id) *
+      3600000)
