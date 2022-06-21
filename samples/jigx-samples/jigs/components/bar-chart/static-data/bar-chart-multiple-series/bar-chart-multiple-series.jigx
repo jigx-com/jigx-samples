@@ -5,35 +5,33 @@ children:
   - componentId: '@jigx/component/bar-chart'
     options:
       chart:
-        height: 250
+        height: 200
+        isAnimated: true
       yAxis:
-        max: 25
+        min: 0
+        labels:
+          format:
+            numberStyle: currency
+            compactDisplay: short
+            notation: compact
+        tickAmount: 8
+        isFirstTickHidden: true
+        isFirstLabelHidden: true
       xAxis:
         categories:
-          - 'Sample Data'
+          - Q1
+          - Q2
+          - Q3
+          - Q4
       series:
-        - data: =@ctx.datasources.chart-data-series1
-        - data: =@ctx.datasources.chart-data-series2
-        - data: =@ctx.datasources.chart-data-series3
+        - data: =@ctx.datasources.series1
+          name: year 2019
+          dataLabels:
+            - isEnabled: false
+        - data: =@ctx.datasources.series2
+          name: year 2020
+          dataLabels:
+            - isEnabled: true
+      legend:
+        isHidden: false
           
-views:
-  4x2:
-    componentId: "@jigx/widget/group"
-    options:
-      children:
-        - componentId: "@jigx/widget/chart"
-          options:
-            chart:
-              componentId: "@jigx/component/bar-chart"
-              options:
-                chart:
-                  height: 150
-                yAxis:
-                  max: 25
-                xAxis:
-                  categories:
-                    - 'Sample Data'
-                series:
-                  - data: =@ctx.datasources.chart-data-series1
-                  - data: =@ctx.datasources.chart-data-series2
-                  - data: =@ctx.datasources.chart-data-series3

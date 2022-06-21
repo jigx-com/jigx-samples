@@ -1,7 +1,0 @@
-componentId: '@jigx/datasource/static'
-options:
-  data:
-    - 2
-    - 15
-    - 17
-    - 22
