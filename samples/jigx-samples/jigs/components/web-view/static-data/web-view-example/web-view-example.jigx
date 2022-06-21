@@ -1,0 +1,10 @@
+type: "@jigx/jig/default"
+name: Web view
+isScrollable: false
+
+children:
+  - componentId: "@jigx/component/web-view"
+    options:
+      uri: https://www.jigx.com
+      isTrackingTransparencyRequired: true
+      height: 1000
