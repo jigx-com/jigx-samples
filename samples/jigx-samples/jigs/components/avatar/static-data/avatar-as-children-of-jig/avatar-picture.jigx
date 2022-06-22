@@ -1,0 +1,21 @@
+type: "@jigx/jig/default"
+name: Avatar as children of jig
+
+children:
+  - componentId: '@jigx/component/avatar'
+    options:
+      text:  =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)
+      size: large
+      align: left
+      
+views:    
+  2x2:
+    componentId: "@jigx/widget/avatar"
+    options:
+      text: ""
+      uri: =@ctx.datasources.static-global.picture
+      bottom: 
+        componentId: "@jigx/component/titles"
+        options:
+          align: center
+          title: =@ctx.datasources.static-global.name

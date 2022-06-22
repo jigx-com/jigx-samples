@@ -22,7 +22,7 @@ views:
       bottom: 
         componentId: '@jigx/component/trend'
         options:
-          title: 'New this week'
+          title: 'Last week'
           value: +1250
           format:
             numberStyle: currency
