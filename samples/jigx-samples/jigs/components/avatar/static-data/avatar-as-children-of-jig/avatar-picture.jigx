@@ -4,7 +4,8 @@ name: Avatar as children of jig
 children:
   - componentId: '@jigx/component/avatar'
     options:
-      text:  =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)
+      text:  ""
+      uri: =@ctx.datasources.static-global.picture
       size: large
       align: left
       
