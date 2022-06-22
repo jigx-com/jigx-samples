@@ -19,9 +19,10 @@ views:
         options:
           title: "$ 39,559.36"
           value: 0.21
+          format:
+            numberStyle: percent
           style:
             isAlignRight: true
-            isValueHidden: false
             isValueBottom: true
       chart:
         componentId: "@jigx/component/line-chart"
