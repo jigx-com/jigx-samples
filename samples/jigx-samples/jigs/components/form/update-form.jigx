@@ -1,0 +1,44 @@
+name: Form
+description: My first form by Jigx
+type: "@jigx/jig/default"
+
+actions:
+  - children:
+      - componentId: "@jigx/action/execute-entity"
+        options:
+          title: Submit form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/from
+          method: update
+          data:
+            firstname: =@ctx.components.firstname.state.value
+            lastname: =@ctx.components.lastname.state.value
+            email: =@ctx.components.email.state.value
+            phone: =@ctx.components.phone.state.value
+            birthdate: =@ctx.components.birthdate.state.value
+            
+children:
+ - componentId: "@jigx/component/form"
+   options:
+     children:
+        - componentId: "@jigx/component/text-field"
+          instanceId: firstname
+          options:  
+           label: First name
+        - componentId: "@jigx/component/text-field"
+          instanceId: lastname
+          options:
+            label: Last name
+        - componentId: "@jigx/component/email-field"
+          instanceId: email
+          options:
+            label: Email
+            type: email
+        - componentId: "@jigx/component/number-field"
+          instanceId: phone
+          options:
+            label: Phone number
+            type: number
+
+
+                    

@@ -1,0 +1,71 @@
+name: Section and Rows Form
+type: "@jigx/jig/default"
+
+actions:
+  - children:
+      - componentId: "@jigx/action/execute-entity"
+        options:
+          title: Submit form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/from
+          method: save
+          data:
+            firstname: =@ctx.components.firstname.state.value
+            lastname: =@ctx.components.lastname.state.value
+            email: =@ctx.components.email.state.value
+            phone: =@ctx.components.phone.state.value
+            address: =@ctx.components.address.state.value
+            city: =@ctx.components.city.state.value
+            zip: =@ctx.components.zipcode.state.value
+
+children:
+ - componentId: "@jigx/component/form"
+   options:
+     children:
+        - componentId: "@jigx/component/section"
+          options:
+            title: Personal informations
+            children:
+                - componentId: "@jigx/component/field-row"
+                  options:
+                    children:
+                        - componentId: "@jigx/component/text-field"
+                          instanceId: firstname
+                          options:
+                            label: First name
+                        - componentId: "@jigx/component/text-field"
+                          instanceId: lastname
+                          options:
+                            label: Last name
+                - componentId: "@jigx/component/field-row"
+                  options:
+                    children:
+                      - componentId: "@jigx/component/email-field"
+                        instanceId: email
+                        options:
+                          label: Email
+                          type: email
+                      - componentId: "@jigx/component/number-field"
+                        instanceId: phone
+                        options:
+                          label: Phone number
+                          type: number
+        - componentId: "@jigx/component/section"
+          options:
+            title: Address informations
+            children:
+              - componentId: "@jigx/component/text-field"
+                instanceId: address
+                options:
+                  label: Address
+              - componentId: "@jigx/component/field-row"
+                options:
+                  children:
+                    - componentId: "@jigx/component/text-field"
+                      instanceId: city
+                      options:
+                        label: City
+                    - componentId: "@jigx/component/number-field"
+                      instanceId: zipcode
+                      options:
+                        label: Zip code
