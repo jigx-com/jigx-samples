@@ -1,18 +1,18 @@
-name: List with Switch and Progress - Static Data
+title: List with Switch and Progress - Static Data
 description: A list to display switch and item progress functionality
-type: "@jigx/jig/list"
+type: jig.list
 icon: task-list
 
 header:
   children: 
-    componentId: "@jigx/component/image"
+    componentId: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
 
-data: =@ctx.datasources.repair_services_static
+data: =@ctx.datasources.repair-services-static
 item:
-  componentId: "@jigx/component/list-item"
+  componentId: component.list-item
   options:
     title: =@ctx.parents.list-data.item.service
     subtitle: =@ctx.parents.list-data.item.description

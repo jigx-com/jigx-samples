@@ -2,6 +2,7 @@ title: Colored Progress List (Dynamic)
 description: A dynamic list displaying progress in colors
 type: jig.list
 icon: notes-paper-approve
+isSearchable: true
 
 header:
   children: 
@@ -10,18 +11,23 @@ header:
       source:
         uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
 
+datasources:
+  cleaning-services-dynamic:
+    componentId: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services-dynamic
+  
+      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE @search||'%' OR @search IS NULL
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+  
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
   componentId: component.list-item
   options:
     title: =@ctx.parents.list-data.item.service
     subtitle: =@ctx.parents.list-data.item.area
-    progress: =@ctx.parents.list-data.item.time/120
     
-    colors:
-      - when: =@ctx.parents.list-data.item.indoor
-        color: primary
-      - when: =@ctx.parents.list-data.item.indoor = 'true'
-        color: color14
-      - when:  =@ctx.parents.list-data.item.indoor = 'false'
-        color: color7

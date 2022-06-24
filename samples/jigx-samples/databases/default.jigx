@@ -12,7 +12,7 @@ tables:
   ? field-values
   ? checkbox
   ? meeting-event
-  ? multiDay-event
-  ? meetingPeople
+  ? multiday-event
+  ? meetingpeople
   ? cleaning-services-dynamic
-  ? repair_services_static
+  ? repair-services-static

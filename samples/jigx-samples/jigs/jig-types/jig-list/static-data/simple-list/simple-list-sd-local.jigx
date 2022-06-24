@@ -1,18 +1,18 @@
-name: Simple List - Local Static Data
+title: Simple List - Local Static Data
 description: A simple list to display static data
-type: "@jigx/jig/list"
+type: jig.list
 icon: task-list
 
 header:
   children: 
-    componentId: "@jigx/component/image"
+    componentId: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
 
 datasources:
-  repair_services_static:
-    componentId: "@jigx/datasource/static"
+  repair-services-static:
+    componentId: datasource.static
     options:
       data:
         - id: 1
@@ -48,9 +48,9 @@ datasources:
           service: Painting Services
           time: 120
 
-data: =@ctx.datasources.repair_services_static
+data: =@ctx.datasources.repair-services-static
 item:
-  componentId: "@jigx/component/list-item"
+  componentId: component.list-item
   options:
     title: =@ctx.parents.list-data.item.service
     subtitle: =@ctx.parents.list-data.item.description

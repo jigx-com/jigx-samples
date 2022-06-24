@@ -1,9 +1,9 @@
-type: "@jigx/jig/calendar"
-name: Calendar
+type: jig.calendar
+title: Calendar
                 
 data: =@ctx.datasources.calendar-data
 item:
-  componentId: "@jigx/component/event"
+  componentId: component.event
   options:
     title: =@ctx.parents.list-data.item.title
     description: =@ctx.parents.list-data.item.description
@@ -13,7 +13,7 @@ item:
         dateFormat: "l"
     location: =@ctx.parents.list-data.item.location
     onPress:
-      componentId: "@jigx/action/go-to"
+      componentId: action.go-to
       options:
         linkTo: calendar-item-detail
     people: =@ctx.parents.list-data.item.people

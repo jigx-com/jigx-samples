@@ -3,15 +3,15 @@ category: personal
 
 widgets: 
   - size: 1x1
-    children: pie-chart-arch
+    jigId: pie-chart-arch
   - size: 1x1
-    children: text-field-dynamic
+    jigId: text-field-dynamic
   - size: 2x2
-    children: list-avatars-checkbox-badge-sd
+    jigId: list-avatars-checkbox-badge-sd
   - size: 2x2
-    children: list-avatars-checkbox-badge-dd
+    jigId: list-avatars-checkbox-badge-dd
   - size: 1x1
-    children: number-field-dynamic
+    jigId: number-field-dynamic
   
   
 # stories: 
