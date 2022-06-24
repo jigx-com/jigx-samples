@@ -1,0 +1,24 @@
+type: '@jigx/jig/default'
+name: Next meeting
+
+children:
+  - componentId: "@jigx/component/entity"
+    options:
+      children:
+        - componentId: "@jigx/component/entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:    
+  2x2:
+    componentId: "@jigx/widget/avatar"
+    options:
+      text: =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)
+      uri: =@ctx.datasources.static-global.picture
+      bottom: 
+        componentId: "@jigx/component/titles"
+        options:
+          align: center
+          title: =@ctx.datasources.static-global.name
+          subtitle: =$fromMillis($toMillis(@ctx.datasources.static-global.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.datasources.static-global.date_to),'[H01]:[m01]')

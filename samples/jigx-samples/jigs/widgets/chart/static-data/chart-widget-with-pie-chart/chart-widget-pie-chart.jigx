@@ -1,0 +1,32 @@
+type: "@jigx/jig/default"
+name: State of issues
+
+children:
+  - componentId: "@jigx/component/entity"
+    options:
+      children:
+        - componentId: "@jigx/component/entity-field"
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  2x2:
+    componentId: "@jigx/widget/chart"
+    options:
+      chart:
+        componentId: "@jigx/component/pie-chart"
+        options:
+          chart:
+            title:
+              text: Issues
+              verticalAlign: center
+            width: 120
+            height: 120
+          legend:
+            isHidden: true
+          series:
+              - data: =@ctx.datasources.pie-chart-data
+                dataLabels:
+                  - isEnabled: true
+                type: pie
