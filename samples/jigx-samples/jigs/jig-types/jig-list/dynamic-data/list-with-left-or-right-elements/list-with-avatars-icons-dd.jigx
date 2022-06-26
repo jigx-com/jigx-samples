@@ -13,13 +13,13 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.time & 'minutes for task completion'
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.time & 'minutes for task completion'
     rightElement: 
       type: icon
-      name: =(@ctx.parents.list-data.item.indoor = "TRUE" ? 'home' :'car-garage')
+      name: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
     leftElement: 
       type: avatar
-      text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
-      uri: =@ctx.parents.list-data.item.illustration
+      text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
+      uri: =@ctx.current.item.illustration
       

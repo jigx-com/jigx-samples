@@ -25,9 +25,9 @@ views:
             item:
               componentId: component.list-item
               options:
-                title: =@ctx.parents.list-data.item.name
-                subtitle: =$fromMillis($toMillis(@ctx.parents.list-data.item.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.parents.list-data.item.date_to),'[H01]:[m01]')
+                title: =@ctx.current.item.name
+                subtitle: =$fromMillis($toMillis(@ctx.current.item.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.current.item.date_to),'[H01]:[m01]')
                 leftElement:
                   type: avatar
                   text: =$substring($substringBefore(@ctx.datasources.static-data.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-data.name, " "), 0, 1)
-                  uri: =@ctx.parents.list-data.item.picture
+                  uri: =@ctx.current.item.picture

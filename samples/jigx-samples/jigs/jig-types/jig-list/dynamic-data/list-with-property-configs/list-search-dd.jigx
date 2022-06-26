@@ -27,6 +27,6 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.area
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.area
     

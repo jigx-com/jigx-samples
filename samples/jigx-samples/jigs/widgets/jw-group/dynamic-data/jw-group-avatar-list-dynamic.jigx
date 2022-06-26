@@ -6,12 +6,12 @@ data: =@ctx.datasources.employees-dynamic
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.firstname
-    subtitle: =@ctx.parents.list-data.item.lastname
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.lastname
     leftElement: 
       type: avatar
       text: '' 
-      uri: =@ctx.parents.list-data.item.picture
+      uri: =@ctx.current.item.picture
 
 views:
   4x2: 
@@ -28,10 +28,10 @@ views:
             item:
               componentId: component.list-item
               options:
-                title: =@ctx.parents.list-data.item.firstname
-                subtitle: =@ctx.parents.list-data.item.lastname
+                title: =@ctx.current.item.firstname
+                subtitle: =@ctx.current.item.lastname
                 leftElement: 
                   type: avatar
                   text: '' 
-                  uri: =@ctx.parents.list-data.item.picture
+                  uri: =@ctx.current.item.picture
                           

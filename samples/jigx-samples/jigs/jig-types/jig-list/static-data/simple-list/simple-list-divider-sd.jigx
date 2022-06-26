@@ -13,6 +13,6 @@ data: =@ctx.datasources.repair-services-static
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     divider: solid

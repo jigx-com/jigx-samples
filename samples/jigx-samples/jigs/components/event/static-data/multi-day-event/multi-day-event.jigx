@@ -5,11 +5,11 @@ data: =@ctx.datasources.eventVacation
 item: 
   componentId: component.event
   options:
-    title: =@ctx.parents.list-data.item.name
+    title: =@ctx.current.item.name
     from: 
-      text: =@ctx.parents.list-data.item.date_from
+      text: =@ctx.current.item.date_from
       format: 
         dateFormat: "l"
-    to: =@ctx.parents.list-data.item.date_to
-    location: =@ctx.parents.list-data.item.location
+    to: =@ctx.current.item.date_to
+    location: =@ctx.current.item.location
     isAllDay: true

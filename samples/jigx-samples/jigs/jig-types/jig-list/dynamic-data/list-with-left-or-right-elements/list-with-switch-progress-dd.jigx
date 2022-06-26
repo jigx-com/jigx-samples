@@ -13,13 +13,13 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     rightElement: 
       type: switch
-      value: =@ctx.parents.list-data.item.indoor
+      value: =@ctx.current.item.indoor
     leftElement: 
       type: progress
       title: Time
-      value:  =@ctx.parents.list-data.item.time/120
+      value:  =@ctx.current.item.time/120
       

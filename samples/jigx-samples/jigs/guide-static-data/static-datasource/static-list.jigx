@@ -26,5 +26,5 @@ data: =@ctx.data.people
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.firstname
-    subtitle: =@ctx.parents.list-data.item.lastname
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.lastname

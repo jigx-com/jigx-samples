@@ -21,11 +21,11 @@ data: =@ctx.datasources.group-list
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.name
+    title: =@ctx.current.item.name
     leftElement: 
       type: avatar
       text: '' 
-      uri: =@ctx.parents.list-data.item.img
+      uri: =@ctx.current.item.img
 
 views:
   4x2: 
@@ -42,9 +42,9 @@ views:
             item:
               componentId: component.list-item
               options:
-                title: =@ctx.parents.list-data.item.name
+                title: =@ctx.current.item.name
                 leftElement: 
                   type: avatar
                   text: '' 
-                  uri: =@ctx.parents.list-data.item.img
+                  uri: =@ctx.current.item.img
               

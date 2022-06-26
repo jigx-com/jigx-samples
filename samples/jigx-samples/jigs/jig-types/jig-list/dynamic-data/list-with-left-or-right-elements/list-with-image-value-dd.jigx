@@ -13,16 +13,16 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     label:
-      title: =@ctx.parents.list-data.item.time & ' mins'
+      title: =@ctx.current.item.time & ' mins'
     rightElement: 
       type: value
-      text: =@ctx.parents.list-data.item.hourlyRate
-      # = NA ? '$ ' & @ctx.parents.list-data.item.onceOffRate :'$ ' & @ctx.parents.list-data.item.hourlyRate
+      text: =@ctx.current.item.hourlyRate
+      # = NA ? '$ ' & @ctx.current.item.onceOffRate :'$ ' & @ctx.current.item.hourlyRate
     leftElement: 
       type: image
-      text: =@ctx.parents.list-data.item.service
-      uri: =@ctx.parents.list-data.item.image
+      text: =@ctx.current.item.service
+      uri: =@ctx.current.item.image
       

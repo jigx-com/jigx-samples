@@ -13,13 +13,13 @@ data: =@ctx.datasources.repair-services-static
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     rightElement: 
       type: icon
-      name: =(@ctx.parents.list-data.item.materials = true ? 'attachment' :'alert-triangle')
+      name: =(@ctx.current.item.materials = true ? 'attachment' :'alert-triangle')
     leftElement: 
       type: avatar
-      text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
-      uri: =@ctx.parents.list-data.item.illustration
+      text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
+      uri: =@ctx.current.item.illustration
       

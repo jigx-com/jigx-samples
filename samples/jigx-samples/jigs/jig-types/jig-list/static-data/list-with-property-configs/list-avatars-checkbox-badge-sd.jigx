@@ -13,15 +13,15 @@ data: =@ctx.datasources.repair-services-static
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     avatars:
-      - text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
+      - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
         uri: =@ctx.datasources.repair_services_static.illustration
     rightElement: 
       type: badge
-      isHidden:  =(@ctx.parents.list-data.item.materials) = True ? true :false
+      isHidden:  =(@ctx.current.item.materials) = True ? true :false
     leftElement:
       type: checkbox
-      initialValue: =(@ctx.parents.list-data.item.materials) = True ? true :false
+      initialValue: =(@ctx.current.item.materials) = True ? true :false
       

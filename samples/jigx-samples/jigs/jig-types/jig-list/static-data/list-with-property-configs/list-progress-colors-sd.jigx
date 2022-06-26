@@ -13,14 +13,14 @@ data: =@ctx.datasources.repair-services-static
 item:
   componentId: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
-    progress: =@ctx.parents.list-data.item.hourlyRate/120
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
+    progress: =@ctx.current.item.hourlyRate/120
     
     colors:
-      - when: =@ctx.parents.list-data.item.materials
+      - when: =@ctx.current.item.materials
         color: primary
-      - when: =@ctx.parents.list-data.item.materials = 'true'
+      - when: =@ctx.current.item.materials = 'true'
         color: color14
-      - when:  =@ctx.parents.list-data.item.materials = 'false'
+      - when:  =@ctx.current.item.materials = 'false'
         color: color7

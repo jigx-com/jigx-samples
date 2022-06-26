@@ -28,8 +28,8 @@ views:
       item:
         componentId: "@jigx/component/list-item"
         options:
-          title: =@ctx.parents.list-data.item.name
+          title: =@ctx.current.item.name
           leftElement: 
             type: avatar
             text: NA
-            uri: =@ctx.parents.list-data.item.picture
+            uri: =@ctx.current.item.picture
