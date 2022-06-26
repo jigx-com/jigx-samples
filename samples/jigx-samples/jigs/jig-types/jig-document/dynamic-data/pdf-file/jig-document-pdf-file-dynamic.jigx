@@ -1,5 +1,5 @@
-type: "@jigx/jig/document"
-name: Document name
+type: jig.document
+title: Document name
 description: 'Description of jig'
 icon: document
 badge: 1
@@ -10,7 +10,7 @@ placeholders:
 
 datasources: 
   document-sources:
-    componentId: '@jigx/datasource/sqlite'
+    componentId: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC

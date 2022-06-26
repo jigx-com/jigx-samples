@@ -3,8 +3,7 @@ description: A simple list to display static data
 type: jig.list
 icon: task-list
 
-header:
-  children: 
+header: 
     componentId: component.image
     options:
       source:

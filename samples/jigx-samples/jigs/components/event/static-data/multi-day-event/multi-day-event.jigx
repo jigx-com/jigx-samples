@@ -1,9 +1,9 @@
-type: "@jigx/jig/calendar"
-name: =$now('[D1o] [MNn] [Y]')
+type: jig.calendar
+title: =$now('[D1o] [MNn] [Y]')
 
 data: =@ctx.datasources.eventVacation
 item: 
-  componentId: "@jigx/component/event"
+  componentId: component.event
   options:
     title: =@ctx.parents.list-data.item.name
     from: 

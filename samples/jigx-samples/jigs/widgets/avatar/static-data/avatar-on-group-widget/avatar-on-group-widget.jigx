@@ -1,29 +1,29 @@
-type: '@jigx/jig/default'
-name: Today's patient plan
+type: jig.default
+title: Today's patient plan
 
 children:
-  - componentId: "@jigx/component/entity"
+  - componentId: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   4x2:
-    componentId: "@jigx/widget/group"
+    componentId: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/avatar"
+        - componentId: widget.avatar
           options:
             text: =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)
             uri: =@ctx.datasources.static-global.picture
-        - componentId: "@jigx/widget/list"
+        - componentId: widget.list
           options:
             data: =@ctx.datasources.static-global-multiple
             item:
-              componentId: "@jigx/component/list-item"
+              componentId: component.list-item
               options:
                 title: =@ctx.parents.list-data.item.name
                 subtitle: =$fromMillis($toMillis(@ctx.parents.list-data.item.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.parents.list-data.item.date_to),'[H01]:[m01]')

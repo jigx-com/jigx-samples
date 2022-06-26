@@ -5,7 +5,6 @@ icon: notes-paper-approve
 isSearchable: true
 
 header:
-  children: 
     componentId: component.image
     options:
       source:

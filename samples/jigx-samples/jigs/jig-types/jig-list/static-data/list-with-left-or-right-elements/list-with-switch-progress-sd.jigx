@@ -4,7 +4,6 @@ type: jig.list
 icon: task-list
 
 header:
-  children: 
     componentId: component.image
     options:
       source:

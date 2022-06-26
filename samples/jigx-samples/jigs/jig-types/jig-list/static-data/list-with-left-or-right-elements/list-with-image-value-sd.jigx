@@ -3,8 +3,7 @@ description: A list to display image and value functionality
 type: jig.list
 icon: task-list
 
-header:
-  children: 
+header: 
     componentId: component.image
     options:
       source:

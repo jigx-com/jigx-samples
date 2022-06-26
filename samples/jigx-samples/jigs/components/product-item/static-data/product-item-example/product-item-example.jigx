@@ -1,10 +1,10 @@
-type: "@jigx/jig/list"
-name: Product item
+title: Product item
+type: jig.list
 
 data: =@ctx.datasources.products
 isSearchable: true
 item: 
-  componentId: "@jigx/component/product-item"
+  componentId: component.product-item
   options:
     title: "=@ctx.parents.list-data.item.title"
     image:
