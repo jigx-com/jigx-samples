@@ -1,6 +1,7 @@
 tables:
   ? table
   ? avatar
+  ? form
   ? value
   ? employees
   ? assets

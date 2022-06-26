@@ -1,8 +1,8 @@
-type: "@jigx/jig/default"
-name: Multiple series
+type: jig.default
+title: Multiple series
 
 children:
-  - componentId: '@jigx/component/line-chart'
+  - componentId: component.line-chart
     options:
       chart:
         height: 200

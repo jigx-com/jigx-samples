@@ -1,21 +1,21 @@
-type: "@jigx/jig/default"
-name: Company revenue
+type: jig.default
+title: Company revenue
 
 children:
-  - componentId: "@jigx/component/entity"
+  - componentId: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   4x2:
-    componentId: "@jigx/widget/chart"
+    componentId: widget.chart
     options:
       chart:
-        componentId: "@jigx/component/line-chart"
+        componentId: component.line-chart
         options:
           chart:
             height: 150

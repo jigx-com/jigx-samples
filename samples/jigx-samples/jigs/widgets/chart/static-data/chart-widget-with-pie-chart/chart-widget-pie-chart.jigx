@@ -1,21 +1,21 @@
-type: "@jigx/jig/default"
-name: State of issues
+type: jig.default
+title: State of issues
 
 children:
-  - componentId: "@jigx/component/entity"
+  - componentId: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   2x2:
-    componentId: "@jigx/widget/chart"
+    componentId: widget.chart
     options:
       chart:
-        componentId: "@jigx/component/pie-chart"
+        componentId: component.pie-chart
         options:
           chart:
             title:

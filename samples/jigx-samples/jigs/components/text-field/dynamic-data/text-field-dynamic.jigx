@@ -1,10 +1,10 @@
-name: Text
+title: Text
 referenceId: text-field-dynamic
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - componentId: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -12,8 +12,7 @@ actions:
           method: save
 
 header:
-  children:
-    componentId: "@jigx/component/image"
+    componentId: component.image
     options:
       title: Text
       source:
@@ -21,7 +20,7 @@ header:
         
 datasources: 
   text-field:
-    componentId: "@jigx/datasource/sqlite"
+    componentId: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -35,11 +34,11 @@ datasources:
   
 
 children:
-  - componentId: "@jigx/component/form"
+  - componentId: component.form
     instanceId: text-form
     options:
       children: 
-        - componentId: "@jigx/component/text-field"
+        - componentId: component.text-field
           instanceId: name
           options:
             label: Name

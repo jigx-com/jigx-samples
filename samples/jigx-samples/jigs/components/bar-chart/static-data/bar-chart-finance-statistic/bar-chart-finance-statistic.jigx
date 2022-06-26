@@ -1,8 +1,8 @@
-type: "@jigx/jig/default"
-name: Current account overview
+title: Current account overview
+type: jig.default
 
 children:
-  - componentId: "@jigx/component/bar-chart"
+  - componentId: component.bar-chart
     options:
       chart:
         title:

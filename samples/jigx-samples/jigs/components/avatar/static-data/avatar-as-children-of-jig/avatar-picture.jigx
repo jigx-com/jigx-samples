@@ -1,8 +1,8 @@
-type: "@jigx/jig/default"
-name: Avatar as children of jig
+title: Avatar as children of jig
+type: jig.default
 
 children:
-  - componentId: '@jigx/component/avatar'
+  - componentId: component.avatar
     options:
       text:  ""
       uri: =@ctx.datasources.static-global.picture
@@ -11,12 +11,12 @@ children:
       
 views:    
   2x2:
-    componentId: "@jigx/widget/avatar"
+    componentId: widget.avatar
     options:
       text: ""
       uri: =@ctx.datasources.static-global.picture
       bottom: 
-        componentId: "@jigx/component/titles"
+        componentId: component.titles
         options:
           align: center
           title: =@ctx.datasources.static-global.name

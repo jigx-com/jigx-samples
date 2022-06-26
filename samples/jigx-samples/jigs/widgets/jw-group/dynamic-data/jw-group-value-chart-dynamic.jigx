@@ -1,10 +1,10 @@
-name: Value + Chart
-type: "@jigx/jig/default"
+title: Value + Chart
+type: jig.default
 referenceId: jw-group-value-chart-dynamic
 
 datasources:
   value-dynamic:
-    componentId: '@jigx/datasource/sqlite'
+    componentId: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
       isDocument: true
@@ -15,27 +15,27 @@ datasources:
 
 
 children:
-  - componentId: "@jigx/component/bar-chart"
+  - componentId: component.bar-chart
     options:
       series:
         - data: =@ctx.datasources.chart-data-series1
           
 views:
   2x4: 
-    componentId: "@jigx/widget/group"
+    componentId: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/value"
+        - componentId: widget.value
           options:
             value: =@ctx.datasources.value-dynamic.value
             top: 
-              componentId: "@jigx/component/titles"
+              componentId: component.titles
               options:
                 title: Daily revenue
-        - componentId: "@jigx/widget/chart"
+        - componentId: widget.chart
           options:
             chart: 
-              componentId: "@jigx/component/bar-chart"
+              componentId: component.bar-chart
               options:
                 series:
                   - data: =@ctx.datasources.chart-data-series1

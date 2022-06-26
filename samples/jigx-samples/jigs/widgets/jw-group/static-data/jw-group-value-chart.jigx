@@ -1,10 +1,10 @@
-name: Value + Chart
-type: "@jigx/jig/default"
+title: Value + Chart
+type: jig.default
 referenceId: jw-group-value-chart
 
 datasources:
   series1:
-    componentId: '@jigx/datasource/static'
+    componentId: datasource.static
     options:
       data:
         - y: 2000
@@ -13,7 +13,7 @@ datasources:
 
 
 children:
-  - componentId: "@jigx/component/line-chart"
+  - componentId: component.line-chart
     options:
       chart:
         height: 120
@@ -22,20 +22,20 @@ children:
           
 views:
   2x4: 
-    componentId: "@jigx/widget/group"
+    componentId: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/value"
+        - componentId: widget.value
           options:
             value: 7500
             top: 
-              componentId: "@jigx/component/titles"
+              componentId: component.titles
               options:
                 title: Daily revenue
-        - componentId: "@jigx/widget/chart"
+        - componentId: widget.chart
           options:
             chart: 
-              componentId: "@jigx/component/bar-chart"
+              componentId: component.bar-chart
               options:
                 series:
                   - data: =@ctx.datasources.series1

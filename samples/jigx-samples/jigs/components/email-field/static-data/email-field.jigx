@@ -1,6 +1,6 @@
 name: Email
 referenceId: email-field
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:

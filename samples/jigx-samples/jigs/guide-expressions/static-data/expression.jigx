@@ -1,10 +1,10 @@
-name: Expressions
-type: "@jigx/jig/default"
+title: Expressions
+type: jig.default
 
 
 datasources:
   mydata: 
-    componentId: "@jigx/datasource/static"
+    componentId: datasource.static
     options:
       data:
         - name: Jane Stevens
@@ -32,34 +32,34 @@ datasources:
         #   time: '2021-11-07T15:07:54.972Z'
         #   array: [5,1,2,3,7,9]
 children:
-  - componentId: "@jigx/component/entity"
+  - componentId: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: String concat expression
             value: =@ctx.data.mydata.name & ' ' & @ctx.data.mydata.title
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Agregation expression select MAX value from array
             value: =$max(@ctx.data.mydata.array)
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Functional expression
             value: =@ctx.data.mydata.number2 > 10 ? 'Number is bigger':'Number is lower'
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Current timestamp as ISO 8601
             value: =$now()
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Current datetime in milliseconds
             value: =$toMillis($now())
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Compare expression
             value: =@ctx.data.mydata.color = 'blue' and @ctx.data.mydata.number2 != 0 ? 'Statement is true':'Statement is false'
-        - componentId: "@jigx/component/entity-field"
+        - componentId: component.entity-field
           options:
             label: Predicate expression
             value: =@ctx.data.mydata[title='Doctor' and color='blue'].name

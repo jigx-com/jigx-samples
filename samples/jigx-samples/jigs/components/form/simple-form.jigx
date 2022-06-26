@@ -1,10 +1,10 @@
-name: Form
+title: Form
 description: My first form by Jigx
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - componentId: action.execute-entity
         options:
           title: Submit form
           provider: DATA_PROVIDER_DYNAMIC
@@ -19,23 +19,23 @@ actions:
 
             
 children:
-  - componentId: "@jigx/component/form"
+  - componentId: component.form
     options:
       children:
-          - componentId: "@jigx/component/text-field"
+          - componentId: component.text-field
             instanceId: firstname
             options:  
               label: First name
-          - componentId: "@jigx/component/text-field"
+          - componentId: component.text-field
             instanceId: lastname
             options:
               label: Last name
-          - componentId: "@jigx/component/email-field"
+          - componentId: component.email-field
             instanceId: email
             options:
               label: Email
               type: email
-          - componentId: "@jigx/component/number-field"
+          - componentId: component.number-field
             instanceId: phone
             options:
               label: Phone number

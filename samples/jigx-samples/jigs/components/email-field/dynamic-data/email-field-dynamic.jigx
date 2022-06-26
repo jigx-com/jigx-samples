@@ -1,18 +1,17 @@
-name: Email
+title: Email
 referenceId: email-field-dynamic
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - componentId: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
           method: save
 header:
-  children:
-    componentId: "@jigx/component/image"
+    componentId: component.image
     options:
       title: Email 
       source:
@@ -20,7 +19,7 @@ header:
         
 datasources: 
   email-field:
-    componentId: "@jigx/datasource/sqlite"
+    componentId: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -34,11 +33,11 @@ datasources:
   
         
 children:
-  - componentId: "@jigx/component/form"
+  - componentId: component.form
     instanceId: emails-form
     options:
       children: 
-        - componentId: "@jigx/component/email-field"
+        - componentId: component.email-field
           instanceId: email
           options:
             label: Email

@@ -1,8 +1,8 @@
-type: "@jigx/jig/default"
-name: Arch pie chart
+title: Arch pie chart
+type: jig.default
 
 children:
-  - componentId: "@jigx/component/pie-chart"
+  - componentId: component.pie-chart
     options:
       chart:
         title:
@@ -20,13 +20,13 @@ children:
           
 views:
   2x2:
-    componentId: "@jigx/widget/group"
+    componentId: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/chart"
+        - componentId: widget.chart
           options:
             chart:
-              componentId: "@jigx/component/pie-chart"
+              componentId: component.pie-chart
               options:
                 chart:
                   title:
