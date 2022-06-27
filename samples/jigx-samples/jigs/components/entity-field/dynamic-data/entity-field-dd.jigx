@@ -10,10 +10,10 @@ header:
         uri: =@ctx.datasources.cleaning-services-dynamic.image
 
 children:
-  - componentId: component.entity
+  - type: component.entity
     options:
       children:
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Service
             value: =@ctx.datasources.cleaning-services-dynamic.service
