@@ -5,11 +5,7 @@ widgets:
   - size: 1x1
     jigId: text-field-dynamic
   - size: 2x2
-    jigId: list-avatars-checkbox-badge-sd
-  - size: 2x2
-    jigId: list-avatars-checkbox-badge-dd
-  - size: 1x1
-    jigId: number-field-dynamic
+    jigId: section-row-entity-example-sd
   
   
 # stories: 

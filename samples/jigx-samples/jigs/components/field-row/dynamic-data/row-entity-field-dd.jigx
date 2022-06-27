@@ -1,0 +1,70 @@
+title: Sections, Rows and Entity Fields
+description: Jig to display sections, rows & entity fields
+type: jig.default
+
+header:
+  children: 
+    componentId: component.image
+    options:
+      source:
+        uri: =@ctx.datasources.cleaning-services-dynamic.image
+
+children:
+  - componentId: component.entity
+    options:
+      children:
+        - componentId: component.field-row
+          options:
+            children:
+              - componentId: component.entity-field
+                options:
+                  label: Service
+                  value: =@ctx.datasources.cleaning-services-dynamic.service
+              - componentId: component.entity-field
+                options:
+                  label: Area
+                  value: =@ctx.datasources.cleaning-services-dynamic.area
+        - componentId: component.field-row
+          options:
+            children:
+              - componentId: component.entity-field
+                options:
+                  label: Time
+                  value: =@ctx.datasources.cleaning-services-dynamic.time & ' minutes'
+              - componentId: component.entity-field
+                options:
+                  label: Indoor
+                  value: =@ctx.datasources.cleaning-services-dynamic.indoor
+                  type: checkbox
+        - componentId: component.field-row
+          options:
+            children:
+              - componentId: component.entity-field
+                options:
+                  label: Description
+                  value: =@ctx.datasources.cleaning-services-dynamic.description
+        - componentId: component.field-row
+          options:
+            children:
+              - componentId: component.entity-field
+                options:
+                  label: Hourly Rate
+                  value: =@ctx.datasources.cleaning-services-dynamic.hourlyRate
+              - componentId: component.entity-field
+                options:
+                  label: Once Off Rate
+                  value: =@ctx.datasources.cleaning-services-dynamic.onceOffRate      
+
+datasources:
+  cleaning-services-dynamic:
+    componentId: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services-dynamic
+  
+      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+

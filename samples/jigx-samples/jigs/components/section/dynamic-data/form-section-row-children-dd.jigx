@@ -1,0 +1,105 @@
+title: Form with Sections, Rows and Children Components
+description: Jig to display a form with sections, rows & children components
+type: jig.default
+
+header:
+  children: 
+    componentId: component.image
+    options:
+      source:
+        uri: =@ctx.datasources.cleaning-services-dynamic.image
+
+actions:
+  - children:
+      - componentId: action.execute-entity
+        options:
+          title: Update Service
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/cleaning-services-dynamic
+          method: update
+          data: 
+            id: =@ctx.jig.inputs.id
+            service: =@ctx.jig.state.cleaning_serv_tf.value
+            area: =@ctx.jig.state.cleaning_serv_area_tf.value
+            time: =@ctx.jig.state.cleaning_serv_time_num.value
+            indoor: =@ctx.jig.state.cleaning_serv_indoor_checkbox.value
+            description: =@ctx.jig.state.cleaning_serv_desc_tf.value
+            hourlyRate: =@ctx.jig.state.cleaning_serv_hourly_tf.value
+            onceOffRate: =@ctx.jig.state.cleaning_serv_once_tf.value
+
+
+children:
+  - componentId: component.form
+    options:
+      children:
+        - componentId: component.section
+          options:
+            title: Cleaning Services
+            children:
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.text-field
+                      instanceId: cleaning_serv_tf
+                      options:
+                        label: Service
+                        value: =@ctx.datasources.cleaning-services-dynamic.service
+                    - componentId: component.text-field
+                      instanceId: cleaning_area_tf
+                      options:
+                        label: Area
+                        value: =@ctx.datasources.cleaning-services-dynamic.area
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.number-field
+                      instanceId: cleaning_serv_time_num
+                      options:
+                        label: Time
+                        value: =@ctx.datasources.cleaning-services-dynamic.time & ' minutes'
+                        keyboardType: number-pad
+                    - componentId: component.checkbox
+                      instanceId: cleaning_serv_indoor_checkbox
+                      options:
+                        label: Indoor
+                        value: =@ctx.datasources.cleaning-services-dynamic.indoor
+                        type: checkbox
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.text-field
+                      instanceId: cleaning_serv_desc_tf
+                      options:
+                        label: Description
+                        value: =@ctx.datasources.cleaning-services-dynamic.description
+        - componentId: component.section
+          options:
+            title: Rates
+            children:
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.text-field
+                      instanceId: cleaning_serv_hourly_tf
+                      options:
+                        label: Hourly Rate
+                        value: =@ctx.datasources.cleaning-services-dynamic.hourlyRate
+                    - componentId: component.text-field
+                      instanceId: cleaning_serv_once_tf
+                      options:
+                        label: Once Off Rate
+                        value: =@ctx.datasources.cleaning-services-dynamic.onceOffRate                         
+
+datasources:
+  cleaning-services-dynamic:
+    componentId: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services-dynamic
+  
+      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+

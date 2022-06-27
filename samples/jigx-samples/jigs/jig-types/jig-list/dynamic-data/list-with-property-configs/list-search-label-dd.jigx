@@ -1,4 +1,4 @@
-title: Colored Progress List (Dynamic)
+title: Search List (Dynamic)
 description: A dynamic list displaying progress in colors
 type: jig.list
 icon: notes-paper-approve
@@ -8,7 +8,7 @@ header:
     type: component.image
     options:
       source:
-        uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+        uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
 
 datasources:
   cleaning-services-dynamic:
@@ -19,7 +19,7 @@ datasources:
       entities:
         - entity: default/cleaning-services-dynamic
   
-      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE @search||'%' OR @search IS NULL
+      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE '%'||@search||'%' OR @search IS NULL
       queryParameters:
         search: =@ctx.jig.state.searchText
   

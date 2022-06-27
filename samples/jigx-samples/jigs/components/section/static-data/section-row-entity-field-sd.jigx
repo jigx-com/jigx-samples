@@ -1,0 +1,67 @@
+title: Sections, Rows and Entity Fields
+description: Jig to display sections, rows & entity fields
+type: jig.default
+
+header:
+  children: 
+    componentId: component.image
+    options:
+      source:
+        uri: =@ctx.datasources.repair-services-static.image
+
+children:
+  - componentId: component.entity
+    options:
+      children:
+        - componentId: component.section
+          options:
+            title: Repair Services
+            children:
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.entity-field
+                      options:
+                        label: Service
+                        value: =@ctx.datasources.repair-services-static.service
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.entity-field
+                      options:
+                        label: Description
+                        value: =@ctx.datasources.repair-services-static.description
+        - componentId: component.section
+          options:
+            title: Rates
+            children:
+              - componentId: component.field-row
+                options:
+                  children:
+                    - componentId: component.entity-field
+                      options:
+                        label: Hourly Rate
+                        value: =@ctx.datasources.repair-services-static.hourlyRate
+                    - componentId: component.entity-field
+                      options:
+                        label: Time
+                        value: =@ctx.datasources.repair-services-static.time & ' minutes'
+                    - componentId: component.entity-field
+                      options:
+                        label: Materials
+                        value: =(@ctx.datasources.repair-services-static.materials = 'True' ? true :false) 
+                        type: checkbox   
+
+datasources:
+  cleaning-services-dynamic:
+    componentId: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/repair-services-static
+  
+      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+
