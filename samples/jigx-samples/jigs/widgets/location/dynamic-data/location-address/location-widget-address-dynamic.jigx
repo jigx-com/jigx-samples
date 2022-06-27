@@ -1,0 +1,15 @@
+title: Location widget
+referenceId: location-widget-dynamic
+type: jig.default
+     
+children:
+  - type: component.location
+    options:
+      address: Národní 135/14, 110 00 Praha
+
+      
+views:
+  2x2:
+    type: widget.location
+    options:
+      address: =@ctx.datasources.location.address

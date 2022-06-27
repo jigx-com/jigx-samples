@@ -1,0 +1,11 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/location
+  query: |
+    SELECT
+      '$.id',
+      '$.address',
+      '$.addressAus',
+    FROM [default/location]
