@@ -4,14 +4,14 @@ type: jig.default
 
 actions:
   - children:
-      - componentId: action.execute-entity
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
           method: save
 header:
-    componentId: component.image
+    type: component.image
     options:
       title: Number
       source:
@@ -19,7 +19,7 @@ header:
         
 datasources: 
   number-field:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -33,11 +33,11 @@ datasources:
   
         
 children:
-  - componentId: component.form
+  - type: component.form
     instanceId: number-form
     options:
       children: 
-        - componentId: component.number-field
+        - type: component.number-field
           instanceId: number
           options:
             label: Number 

@@ -3,7 +3,7 @@ title: =$now('[D1o] [MNn] [Y]')
 
 data: =@ctx.datasources.eventVacation
 item: 
-  componentId: component.event
+  type: component.event
   options:
     title: =@ctx.current.item.name
     from: 

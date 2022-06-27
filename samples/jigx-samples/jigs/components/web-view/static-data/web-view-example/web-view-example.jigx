@@ -3,7 +3,7 @@ title: Web view
 isScrollable: false
 
 children:
-  - componentId: component.web-view
+  - type: component.web-view
     options:
       uri: https://www.jigx.com
       isTrackingTransparencyRequired: true

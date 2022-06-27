@@ -1,10 +1,9 @@
-type: '@jigx/jig/default'
-name: Video header
+type: jig.default
+title: Video header
 
 
 header:
-  children:
-    componentId: '@jigx/component/video-player'
+    type: component.video-player
     options:
       url: "https://cdn.videvo.net/videvo_files/video/free/2022-05/large_watermarked/220514_02_London%20_4k_009_preview.mp4"
       autoplay: true
@@ -15,10 +14,10 @@ header:
 
 
 children:
-  - componentId: "@jigx/component/entity"
+  - type: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: " "

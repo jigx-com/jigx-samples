@@ -4,10 +4,10 @@ type: jig.default
 
   
 children:
-  - componentId: component.form
+  - type: component.form
     options:
       children:
-        - componentId: component.date-picker
+        - type: component.date-picker
           instanceId: date
           options:
             label: Select a date

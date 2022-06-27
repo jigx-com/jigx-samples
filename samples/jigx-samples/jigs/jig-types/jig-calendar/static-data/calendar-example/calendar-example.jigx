@@ -3,7 +3,7 @@ title: Calendar
                 
 data: =@ctx.datasources.calendar-data
 item:
-  componentId: component.event
+  type: component.event
   options:
     title: =@ctx.current.item.title
     description: =@ctx.current.item.description
@@ -13,7 +13,7 @@ item:
         dateFormat: "l"
     location: =@ctx.current.item.location
     onPress:
-      componentId: action.go-to
+      type: action.go-to
       options:
         linkTo: calendar-item-detail
     people: =@ctx.current.item.people

@@ -2,7 +2,7 @@ type: jig.default
 title: Multiple series
 
 children:
-  - componentId: component.line-chart
+  - type: component.line-chart
     options:
       chart:
         height: 200

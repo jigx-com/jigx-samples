@@ -4,7 +4,7 @@ referenceId: jw-group-avatar-list-dynamic
           
 data: =@ctx.datasources.employees-dynamic
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
@@ -15,18 +15,18 @@ item:
 
 views:
   4x2: 
-    componentId: widget.group
+    type: widget.group
     options:
       children:
-        - componentId: widget.avatar
+        - type: widget.avatar
           options:
             text: ''
             uri: =@ctx.datasources.avatar-dynamic.photo
-        - componentId: widget.list
+        - type: widget.list
           options:
             data: =@ctx.datasources.employees-dynamic
             item:
-              componentId: component.list-item
+              type: component.list-item
               options:
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname

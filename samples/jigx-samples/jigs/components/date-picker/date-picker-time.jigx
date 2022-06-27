@@ -2,10 +2,10 @@ title: Date picker
 type: jig.default
   
 children:
-  - componentId: component.form
+  - type: component.form
     options:
       children:
-        - componentId: component.date-picker
+        - type: component.date-picker
           instanceId: time
           options:
             label: Select a time

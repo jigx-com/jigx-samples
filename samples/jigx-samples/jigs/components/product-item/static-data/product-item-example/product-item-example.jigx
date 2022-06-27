@@ -4,7 +4,7 @@ type: jig.list
 data: =@ctx.datasources.products
 isSearchable: true
 item: 
-  componentId: component.product-item
+  type: component.product-item
   options:
     title: "=@ctx.current.item.title"
     image:

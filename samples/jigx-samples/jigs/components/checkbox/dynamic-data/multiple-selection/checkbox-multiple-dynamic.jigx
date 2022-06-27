@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - componentId: action.execute-entity
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -17,7 +17,7 @@ actions:
             
 
 header: 
-  componentId: component.image
+  type: component.image
   options:
       title: What days do you typically work?
       source:
@@ -26,7 +26,7 @@ header:
         
 datasources: 
   checkbox-options:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
@@ -39,41 +39,41 @@ datasources:
         FROM [default/checkbox] ORDER by '$.order'
   
 children:
-  - componentId: component.form
+  - type: component.form
     instanceId: work-engagement-form
     options:
       children: 
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: sunday
            options:
              label: =@ctx.datasources.checkbox-options[0].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: monday
            options:
              label: =@ctx.datasources.checkbox-options[1].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: tuesday
            options:
              label: =@ctx.datasources.checkbox-options[2].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: wednesday
            options:
              label: =@ctx.datasources.checkbox-options[3].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: thursday
            options:
              label: =@ctx.datasources.checkbox-options[4].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: friday
            options:
              label: =@ctx.datasources.checkbox-options[5].day
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: saturday
            options:
              label: =@ctx.datasources.checkbox-options[6].day

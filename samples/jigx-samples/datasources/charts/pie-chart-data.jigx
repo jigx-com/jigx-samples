@@ -1,4 +1,4 @@
-componentId: datasource.static
+type: datasource.static
 options:
   data:
     - y: 1

@@ -10,7 +10,7 @@ placeholders:
 
 datasources: 
   document-sources:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC

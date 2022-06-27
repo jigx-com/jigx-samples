@@ -2,20 +2,20 @@ type: jig.default
 title: Company revenue
 
 children:
-  - componentId: component.entity
+  - type: component.entity
     options:
       children:
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   4x2:
-    componentId: widget.chart
+    type: widget.chart
     options:
       chart:
-        componentId: component.bar-chart
+        type: component.bar-chart
         options:
           chart:
             height: 150

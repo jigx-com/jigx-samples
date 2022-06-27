@@ -4,7 +4,7 @@ referenceId: jw-group-value-chart
 
 datasources:
   series1:
-    componentId: datasource.static
+    type: datasource.static
     options:
       data:
         - y: 2000
@@ -13,7 +13,7 @@ datasources:
 
 
 children:
-  - componentId: component.line-chart
+  - type: component.line-chart
     options:
       chart:
         height: 120
@@ -22,20 +22,20 @@ children:
           
 views:
   2x4: 
-    componentId: widget.group
+    type: widget.group
     options:
       children:
-        - componentId: widget.value
+        - type: widget.value
           options:
             value: 7500
             top: 
-              componentId: component.titles
+              type: component.titles
               options:
                 title: Daily revenue
-        - componentId: widget.chart
+        - type: widget.chart
           options:
             chart: 
-              componentId: component.bar-chart
+              type: component.bar-chart
               options:
                 series:
                   - data: =@ctx.datasources.series1

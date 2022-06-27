@@ -4,7 +4,7 @@ referenceId: jw-group-avata-list
 
 datasources:
   group-list:
-    componentId: datasource.static
+    type: datasource.static
     options:
       data:
         - id: 1
@@ -19,7 +19,7 @@ datasources:
           
 data: =@ctx.datasources.group-list
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
     title: =@ctx.current.item.name
     leftElement: 
@@ -29,18 +29,18 @@ item:
 
 views:
   4x2: 
-    componentId: widget.group
+    type: widget.group
     options:
       children:
-        - componentId: widget.avatar
+        - type: widget.avatar
           options:
             text: ''
             uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
-        - componentId: widget.list
+        - type: widget.list
           options:
             data: =@ctx.datasources.group-list
             item:
-              componentId: component.list-item
+              type: component.list-item
               options:
                 title: =@ctx.current.item.name
                 leftElement: 

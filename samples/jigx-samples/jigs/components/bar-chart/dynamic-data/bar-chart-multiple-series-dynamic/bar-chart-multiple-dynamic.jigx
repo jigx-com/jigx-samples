@@ -2,7 +2,7 @@ title: Multiple series dynamic
 type: jig.default
 
 children:
-  - componentId: component.bar-chart
+  - type: component.bar-chart
     options:
       chart:
         height: 250
@@ -19,13 +19,13 @@ children:
           
 views:
   4x2:
-    componentId: widget.group
+    type: widget.group
     options:
       children:
-        - componentId: widget.chart
+        - type: widget.chart
           options:
             chart:
-              componentId: component.bar-chart
+              type: component.bar-chart
               options:
                 chart:
                   height: 150

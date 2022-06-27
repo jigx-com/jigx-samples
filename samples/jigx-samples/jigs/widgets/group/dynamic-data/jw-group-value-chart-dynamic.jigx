@@ -4,7 +4,7 @@ referenceId: jw-group-value-chart-dynamic
 
 datasources:
   value-dynamic:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
       isDocument: true
@@ -15,27 +15,27 @@ datasources:
 
 
 children:
-  - componentId: component.bar-chart
+  - type: component.bar-chart
     options:
       series:
         - data: =@ctx.datasources.chart-data-series1
           
 views:
   2x4: 
-    componentId: widget.group
+    type: widget.group
     options:
       children:
-        - componentId: widget.value
+        - type: widget.value
           options:
             value: =@ctx.datasources.value-dynamic.value
             top: 
-              componentId: component.titles
+              type: component.titles
               options:
                 title: Daily revenue
-        - componentId: widget.chart
+        - type: widget.chart
           options:
             chart: 
-              componentId: component.bar-chart
+              type: component.bar-chart
               options:
                 series:
                   - data: =@ctx.datasources.chart-data-series1

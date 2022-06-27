@@ -1,21 +1,21 @@
-type: '@jigx/jig/default'
-name: Trend on widget/chart
+type: jig.default
+title: Trend on widget/chart
 
 children:
-  - componentId: "@jigx/component/entity"
+  - type: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   4x2:
-    componentId: "@jigx/widget/chart"
+    type: widget.chart
     options:
       top:
-        componentId: "@jigx/component/trend"
+        type: component.trend
         options:
           title: "$ 39,559.36"
           value: 0.21
@@ -25,7 +25,7 @@ views:
             isAlignRight: true
             isValueBottom: true
       chart:
-        componentId: "@jigx/component/line-chart"
+        type: component.line-chart
         options:
           chart:
             height: 100

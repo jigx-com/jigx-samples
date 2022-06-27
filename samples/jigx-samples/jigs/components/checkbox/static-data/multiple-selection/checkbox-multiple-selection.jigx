@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - componentId: action.execute-entity
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -13,53 +13,53 @@ actions:
           
 
 header:
-    componentId: component.image
+    type: component.image
     options:
       title: What days do you typically work?
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
 
 children:
-  - componentId: component.form
+  - type: component.form
     instanceId: work-engagement-form
     options:
       children:
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: sunday
            options:
              label: Sunday
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: monday
            options:
              label: Monday
              initialValue: true
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: tuesday
            options:
              label: Tuesday
              initialValue: true
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: wednesday
            options:
              label: Wednesday
              initialValue: true
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: thursday
            options:
              label: Thursday
              initialValue: true
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: friday
            options:
              label: Friday
              initialValue: true
              isRequired: false
-         - componentId: component.checkbox
+         - type: component.checkbox
            instanceId: saturday
            options:
              label: Saturday

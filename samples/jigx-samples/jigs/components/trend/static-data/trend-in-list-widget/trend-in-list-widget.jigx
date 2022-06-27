@@ -1,22 +1,22 @@
-name: List of patients
-type: '@jigx/jig/default'
+title: List of patients
+type: jig.default
 
 children:
-  - componentId: "@jigx/component/entity"
+  - type: component.entity
     options:
       children:
-        - componentId: "@jigx/component/entity-field"
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   2x2:
-    componentId: "@jigx/widget/list"
+    type: widget.list
     options:
       data: =@ctx.datasources.static-global-multiple
       top:
-        componentId: "@jigx/component/trend"
+        type: component.trend
         options:
           title: "569 Patients"
           subtitle: "Patients"
@@ -26,7 +26,7 @@ views:
             isValueBottom: true
             isValueHidden: false
       item:
-        componentId: "@jigx/component/list-item"
+        type: component.list-item
         options:
           title: =@ctx.current.item.name
           leftElement: 
