@@ -14,20 +14,6 @@ actions:
             id: =@ctx.components.id.state.value
             agreement: =@ctx.components.agreement.state.value
           
-datasources: 
-  checkbox-options:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - entity: default/checkbox
-      query: |
-        SELECT
-          '$.id',
-          '$.order',
-          '$.agreement'
-        FROM [default/checkbox] ORDER by '$.order'
-          
 header:
   type: component.image
   options:

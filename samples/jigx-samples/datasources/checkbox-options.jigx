@@ -1,0 +1,14 @@
+checkbox-options:
+  type: datasource.sqlite
+  options:
+    provider: DATA_PROVIDER_DYNAMIC
+    entities:
+      - entity: default/checkbox
+    query: |
+      SELECT
+        id,
+        '$.order',
+        '$.day',
+        '$.agreement'
+      FROM [default/checkbox] ORDER by '$.order'
+        

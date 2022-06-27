@@ -19,12 +19,12 @@ stories:
     item: 
       type: component.image
       options:
-        title: =@ctx.datasources.story-static.title
-        subtitle: =@ctx.datasources.story-static.description
+        title: =@ctx.current.item.title
+        subtitle: =@ctx.current.item.description
         onPress: 
           type: action.go-to
           options:
             title: Read more
-            linkTo: =@ctx.datasources.story-static.url
+            linkTo: =@ctx.current.item.url
         source:
-          uri: =@ctx.datasources.story-static.img
+          uri: =@ctx.current.item.img
