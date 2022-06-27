@@ -1,8 +1,8 @@
-type: "@jigx/jig/default"
-name: Current account overview
+title: Current account overview
+type: jig.default
 
 children:
-  - componentId: "@jigx/component/bar-chart"
+  - type: component.bar-chart
     options:
       chart:
         title:
@@ -27,13 +27,13 @@ children:
 
 views:
   4x2:
-    componentId: "@jigx/widget/group"
+    type: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/chart"
+        - type: widget.chart
           options:
             chart:
-              componentId: "@jigx/component/bar-chart"
+              type: component.bar-chart
               options:
                 chart:
                   title:

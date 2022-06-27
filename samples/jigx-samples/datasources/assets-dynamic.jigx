@@ -1,4 +1,4 @@
-componentId: datasource.sqlite
+type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:

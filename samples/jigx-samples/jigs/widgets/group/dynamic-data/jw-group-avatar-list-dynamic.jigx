@@ -1,0 +1,37 @@
+title: Avatar + List
+type: jig.list
+referenceId: jw-group-avatar-list-dynamic
+          
+data: =@ctx.datasources.employees-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.lastname
+    leftElement: 
+      type: avatar
+      text: '' 
+      uri: =@ctx.current.item.picture
+
+views:
+  4x2: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.avatar
+          options:
+            text: ''
+            uri: =@ctx.datasources.avatar-dynamic.photo
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.employees-dynamic
+            item:
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.firstname
+                subtitle: =@ctx.current.item.lastname
+                leftElement: 
+                  type: avatar
+                  text: '' 
+                  uri: =@ctx.current.item.picture
+                          

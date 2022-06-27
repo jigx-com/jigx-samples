@@ -1,10 +1,10 @@
-name: Avatar + List
-type: "@jigx/jig/list"
+title: Avatar + List
+type: jig.list
 referenceId: jw-group-avata-list
 
 datasources:
   group-list:
-    componentId: "@jigx/datasource/static"
+    type: datasource.static
     options:
       data:
         - id: 1
@@ -19,32 +19,32 @@ datasources:
           
 data: =@ctx.datasources.group-list
 item:
-  componentId: "@jigx/component/list-item"
+  type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.name
+    title: =@ctx.current.item.name
     leftElement: 
       type: avatar
       text: '' 
-      uri: =@ctx.parents.list-data.item.img
+      uri: =@ctx.current.item.img
 
 views:
   4x2: 
-    componentId: "@jigx/widget/group"
+    type: widget.group
     options:
       children:
-        - componentId: "@jigx/widget/avatar"
+        - type: widget.avatar
           options:
             text: ''
             uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
-        - componentId: "@jigx/widget/list"
+        - type: widget.list
           options:
             data: =@ctx.datasources.group-list
             item:
-              componentId: "@jigx/component/list-item"
+              type: component.list-item
               options:
-                title: =@ctx.parents.list-data.item.name
+                title: =@ctx.current.item.name
                 leftElement: 
                   type: avatar
                   text: '' 
-                  uri: =@ctx.parents.list-data.item.img
+                  uri: =@ctx.current.item.img
               

@@ -4,26 +4,25 @@ type: jig.list
 icon: task-list
 
 header:
-  children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
 
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     label:
-      title: =@ctx.parents.list-data.item.time & ' mins'
+      title: =@ctx.current.item.time & ' mins'
     rightElement: 
       type: value
-      text: =@ctx.parents.list-data.item.hourlyRate
-      # = NA ? '$ ' & @ctx.parents.list-data.item.onceOffRate :'$ ' & @ctx.parents.list-data.item.hourlyRate
+      text: =@ctx.current.item.hourlyRate
+      # = NA ? '$ ' & @ctx.current.item.onceOffRate :'$ ' & @ctx.current.item.hourlyRate
     leftElement: 
       type: image
-      text: =@ctx.parents.list-data.item.service
-      uri: =@ctx.parents.list-data.item.image
+      text: =@ctx.current.item.service
+      uri: =@ctx.current.item.image
       

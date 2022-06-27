@@ -1,17 +1,17 @@
-type: "@jigx/jig/calendar"
-name: =$now('[D1o] [MNn] [Y]')
+type: jig.calendar
+title: =$now('[D1o] [MNn] [Y]')
 
 data: =@ctx.datasources.eventMeeting
 item: 
-  componentId: "@jigx/component/event"
+  type: component.event
   options:
-    title: =@ctx.parents.list-data.item.name
-    description: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.name
+    description: =@ctx.current.item.description
     from: 
-      text: =@ctx.parents.list-data.item.date_from
+      text: =@ctx.current.item.date_from
       format: 
         dateFormat: "l"
-    to: =@ctx.parents.list-data.item.date_to
-    people: =@ctx.parents.list-data.item.people
-    tags: =@ctx.parents.list-data.item.tags
-    location: =@ctx.parents.list-data.item.location
+    to: =@ctx.current.item.date_to
+    people: =@ctx.current.item.people
+    tags: =@ctx.current.item.tags
+    location: =@ctx.current.item.location

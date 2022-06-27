@@ -1,0 +1,74 @@
+title: Add Coin
+type: jig.default
+icon: add
+
+actions:
+  - children:
+
+      - type: action.execute-entity
+        options:
+          title: Submit Execute Entity
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/coin
+          method: save
+          data: #=@ctx.components.add-coin.state.data
+            id: =@ctx.components.id.state.value
+            name: =@ctx.components.name.state.value
+            symbol: =@ctx.components.symbol.state.value
+          style:
+            isDisabled: =$not(@ctx.components.add-coin.state.isValid)
+
+      - type: action.submit-form
+        instanceId: submit-action
+        options:
+          title: Add
+          formId: add-coin
+          icon: add
+          onSuccess:
+            actions:
+              - type: action.go-to
+                options:
+                  title: Add another coin
+                  linkTo: add-coin
+            title: Coin saved
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Test validity of form
+            value: =@ctx.components.add-coin.state.isValid
+            
+  - type: component.form
+    instanceId: add-coin
+    options:
+      children:
+
+        - type: component.text-field
+          instanceId: id
+          options:
+            isHidden: false
+            isIgnored: true
+            label: Id
+            style:
+              isDisabled: true
+
+        - type: component.text-field
+          instanceId: name
+          options:
+            autoCapitalize: words
+            isAutoCorrected: false
+            isRequired: true
+            label: Name
+
+        - type: component.text-field
+          instanceId: symbol
+          options:
+            autoCapitalize: characters
+            icon: circle
+            isAutoCorrected: false
+            isRequired: true
+            label: Symbol
+            nextProperty: name

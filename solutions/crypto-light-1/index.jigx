@@ -1,0 +1,5 @@
+title: CryptoLight!
+category: finances
+widgets:
+  - jigId: list-coins
+    size: 2x2

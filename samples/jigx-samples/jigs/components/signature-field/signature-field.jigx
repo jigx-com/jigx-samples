@@ -1,10 +1,10 @@
-name: Signature
+title: Signature
 referenceId: signature-field
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - type: action.execute-entity
         instanceId: send-signature
         options:
           title: Sign
@@ -17,19 +17,18 @@ actions:
             title: Succesfully signed
 
 header:
-  children:
-    componentId: "@jigx/component/image"
+    type: component.image
     options:
       title: Signature
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
-  - componentId: "@jigx/component/form"
+  - type: component.form
     instanceId: new-customer-form
     options:
       children:
-        - componentId: "@jigx/component/signature-field"
+        - type: component.signature-field
           instanceId: signature
           options:
             label: Signature required

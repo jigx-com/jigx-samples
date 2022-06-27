@@ -4,26 +4,25 @@ type: jig.list
 icon: task-list
 
 header:
-  children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
 
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     avatars:
-      - text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
+      - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
         uri: =@ctx.datasources.cleaning-services-dynamic.image
     rightElement: 
       type: badge
-      isHidden:  =(@ctx.parents.list-data.item.indoor = 'TRUE' ? true :false
+      isHidden:  =(@ctx.current.item.indoor = 'TRUE' ? true :false
     leftElement:
       type: checkbox
-      initialValue: =(@ctx.parents.list-data.item.indoor) = 'TRUE' ? true :false
+      initialValue: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
 
       

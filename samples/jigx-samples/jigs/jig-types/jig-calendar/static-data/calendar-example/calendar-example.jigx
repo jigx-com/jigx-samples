@@ -3,20 +3,20 @@ title: Calendar
                 
 data: =@ctx.datasources.calendar-data
 item:
-  componentId: component.event
+  type: component.event
   options:
-    title: =@ctx.parents.list-data.item.title
-    description: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.title
+    description: =@ctx.current.item.description
     from:
-      text: =$fromMillis($toMillis($now()) + ($number(@ctx.parents.list-data.item.id)- 1) * 3600000)
+      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.id)- 1) * 3600000)
       format:
         dateFormat: "l"
-    location: =@ctx.parents.list-data.item.location
+    location: =@ctx.current.item.location
     onPress:
-      componentId: action.go-to
+      type: action.go-to
       options:
         linkTo: calendar-item-detail
-    people: =@ctx.parents.list-data.item.people
-    tags: =@ctx.parents.list-data.item.tags
-    to: =$fromMillis($toMillis($now()) + $number(@ctx.parents.list-data.item.id) *
+    people: =@ctx.current.item.people
+    tags: =@ctx.current.item.tags
+    to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.id) *
       3600000)

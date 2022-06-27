@@ -1,0 +1,67 @@
+title: Coin History (6h)
+type: jig.default
+
+datasources:
+  series1:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_REST
+      entities:
+        - entity: list-coin-history
+          functionParameters:
+            granularity: 21600
+            symbol: =@ctx.jig.inputs.symbol
+      query: |
+        WITH cte AS (
+          SELECT
+            '$.ms' AS ms,
+            '$.close' AS close
+          FROM [list-coin-history]
+          ORDER BY 1 DESC
+          LIMIT 50 * 2
+        )
+        SELECT
+          (1 - ROW_NUMBER() OVER (ORDER BY ms DESC)) / 4.0 AS x,
+          close AS y,
+          AVG(close) OVER (ORDER BY ms ASC ROWS 20 PRECEDING) AS y20,
+          AVG(close) OVER (ORDER BY ms ASC ROWS 50 PRECEDING) AS y50
+        FROM cte
+        ORDER BY
+          ms DESC
+        LIMIT 1 + 4 * 7
+
+children:
+  - type: component.line-chart
+    options:
+      chart:
+        height: 300
+        isAnimated: false
+        title:
+          text: =@ctx.jig.inputs.symbol & ' (6h for 7d)'
+      legend:
+        isHidden: false
+      plotOptions:
+        series:
+          marker:
+            isHidden: true
+      series:
+        - color: color3
+          data: =@ctx.data.series1.{'x':x,'y':y}
+          name: Close
+          type: area-gradient
+        - color: color1
+          data: =@ctx.data.series1.{'x':x,'y':y20}
+          name: "20"
+          type: line
+        - color: color5
+          data: =@ctx.data.series1.{'x':x,'y':y50}
+          name: "50"
+          type: line
+      xAxis:
+        isLastLabelHidden: true
+        tickAmount: 9
+      yAxis:
+        labels:
+          format:
+            currency: USD
+            numberStyle: currency

@@ -1,11 +1,11 @@
 
-name: Number
+title: Number
 referenceId: number-field
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -13,19 +13,18 @@ actions:
           method: save
 
 header:
-  children:
-    componentId: "@jigx/component/image"
+    type: component.image
     options:
       title: Number
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
-  - componentId: "@jigx/component/form"
+  - type: component.form
     instanceId: number-form
     options:
       children: 
-        - componentId: "@jigx/component/number-field"
+        - type: component.number-field
           instanceId: number
           options:
             label: Number

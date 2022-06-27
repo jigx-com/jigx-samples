@@ -1,12 +1,13 @@
-type: "@jigx/jig/form"
-name: Date picker
-
-entity: default/employees
+title: Date picker
+type: jig.default
   
 children:
-  - componentId: "@jigx/component/date-picker"
+  - type: component.form
     options:
-      property: time
-      label: Select a time
-      type: time
-      format: HH:mm
+      children:
+        - type: component.date-picker
+          instanceId: time
+          options:
+            label: Select a time
+            type: time
+            format: HH:mm

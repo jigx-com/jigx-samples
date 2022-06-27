@@ -1,18 +1,17 @@
-name: Number
+title: Number
 referenceId: number-field-dynamic
-type: "@jigx/jig/default"
+type: jig.default
 
 actions:
   - children:
-      - componentId: "@jigx/action/execute-entity"
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
           method: save
 header:
-  children:
-    componentId: "@jigx/component/image"
+    type: component.image
     options:
       title: Number
       source:
@@ -20,7 +19,7 @@ header:
         
 datasources: 
   number-field:
-    componentId: "@jigx/datasource/sqlite"
+    type: datasource.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
@@ -34,11 +33,11 @@ datasources:
   
         
 children:
-  - componentId: "@jigx/component/form"
+  - type: component.form
     instanceId: number-form
     options:
       children: 
-        - componentId: "@jigx/component/number-field"
+        - type: component.number-field
           instanceId: number
           options:
             label: Number 
