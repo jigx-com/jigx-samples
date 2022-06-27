@@ -20,3 +20,4 @@ tables:
   ? floorplan-static
   ? interactiveimage-dynamic
   ? image-sources
+  ? titles
