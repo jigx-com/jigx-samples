@@ -1,0 +1,46 @@
+title: Story
+type: jig.default
+referenceId: story-image-dynamic
+
+datasources: 
+  story:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/image-source
+      query: |
+        SELECT
+          '$.id',
+          '$.title',
+          '$.description',
+          '$.img',
+          '$.url'
+        FROM [default/image-source]
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: tbd
+            value: tbd
+
+stories:
+  type: component.story-group
+  options:
+    data: =@ctx.data.story
+    groupName: Work productivity
+    item: 
+      type: component.image
+      options:
+        title: =@ctx.datasources.story.title
+        subtitle: =@ctx.datasources.story.description
+        onPress: 
+          type: action.go-to
+          options:
+            title: Read more
+            linkTo: =@ctx.datasources.story.url
+        source:
+          uri: =@ctx.datasources.story.img

@@ -12,7 +12,7 @@ datasources:
       query: |
         SELECT
           '$.id',
-          '$.uri'
+          '$.image'
         FROM [default/image-source]
         
 header:
@@ -20,7 +20,7 @@ header:
     options:
       title: Header image
       source:
-        uri: =@ctx.datasources.image-source.uri
+        uri: =@ctx.datasources.image-source.image
 
 children:
   - type: component.entity

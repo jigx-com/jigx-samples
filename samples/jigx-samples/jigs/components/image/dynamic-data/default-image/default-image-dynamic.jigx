@@ -1,0 +1,24 @@
+title: Image
+type: jig.default
+referenceId: default-image-dynamic
+
+datasources: 
+  image-source:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/image-source
+      query: |
+        SELECT
+          '$.id',
+          '$.image'
+        FROM [default/image-source]
+
+children:
+  - type: component.image
+    options:
+      title: Image
+      subtitle: in jig/default
+      source:
+        uri: =@ctx.datasources.image-source.image
