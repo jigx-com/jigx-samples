@@ -4,60 +4,60 @@ type: jig.default
 
 header:
   children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: =@ctx.datasources.cleaning-services-dynamic.image
 
 children:
-  - componentId: component.entity
+  - type: component.entity
     options:
       children:
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children:
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Service
                   value: =@ctx.datasources.cleaning-services-dynamic.service
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Area
                   value: =@ctx.datasources.cleaning-services-dynamic.area
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children:
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Time
                   value: =@ctx.datasources.cleaning-services-dynamic.time & ' minutes'
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Indoor
                   value: =@ctx.datasources.cleaning-services-dynamic.indoor
                   type: checkbox
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children:
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Description
                   value: =@ctx.datasources.cleaning-services-dynamic.description
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children:
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Hourly Rate
                   value: =@ctx.datasources.cleaning-services-dynamic.hourlyRate
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Once Off Rate
                   value: =@ctx.datasources.cleaning-services-dynamic.onceOffRate      
 
 datasources:
   cleaning-services-dynamic:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
   

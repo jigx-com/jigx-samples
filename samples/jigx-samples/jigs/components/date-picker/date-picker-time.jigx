@@ -4,7 +4,7 @@ type: jig.default
 children:
   - type: component.form
     options:
-      children:
+    type:
         - type: component.date-picker
           instanceId: time
           options:

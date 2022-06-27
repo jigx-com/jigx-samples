@@ -3,74 +3,74 @@ title: Row and Entity Field Examples
 
 header:
   children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
           
 children:
-  - componentId: component.entity
+  - type: component.entity
     options:
       children:
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children: 
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: First Name
                   value: Samantha
                   type: default
                   rightIcon: person
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Surname
                   value: Jackson
                   type: default
                   rightIcon: person
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Member
                   value: true
                   type: checkbox
-        - componentId: component.field-row
+        - type: component.field-row
           options:
             children:
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Date of Birth
                   value: 1988-01-19
                   type: date
                   rightIcon: calendar
-              - componentId: component.entity-field
+              - type: component.entity-field
                 options:
                   label: Last Login Time
                   value: =$now()
                   type: time
                   rightIcon: time-clock-circle
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Clipboard Info
             value: Copy me!
             type: copy
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Contact Number
             value: +2776 123 4567
             type: phone
             rightIcon: phone
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Email Address
             value: samjax@emailaddress.com
             type: email
             rightIcon: email
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Web Address
             value: samjax@website.me
             type: link
             rightIcon: google
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: About
             value: Lorem ipsum dolor sit amet, putent viderer pericula per ex, cu ius sonet referrentur. Cu pri ubique mediocrem maluisset, eum ea assum vivendum constituto. Fierent accusata nec ut, ullum impetus omittam cu per. Perpetua consectetuer no ius. Nam error elitr no, ferri praesent te cum. An commodo aliquando dissentiet duo. Primis eripuit bonorum ius ei, usu cu posse mazim. Elitr alterum mentitum eos cu, sit te quodsi everti neglegentur. Est in diam causae, erat conceptam eum an. Sea ullum causae temporibus ex, libris delectus pro et.

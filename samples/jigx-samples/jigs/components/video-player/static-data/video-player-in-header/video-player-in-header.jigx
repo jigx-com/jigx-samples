@@ -4,7 +4,7 @@ title: Video header
 
 header:
     type: component.video-player
-    options:
+    type:
       url: "https://cdn.videvo.net/videvo_files/video/free/2022-05/large_watermarked/220514_02_London%20_4k_009_preview.mp4"
       autoplay: true
       title: Street life
@@ -15,9 +15,9 @@ header:
 
 children:
   - type: component.entity
-    options:
+    type:
       children:
         - type: component.entity-field
-          options:
+          type:
             label: "Status Full View"
             value: " "

@@ -2,7 +2,7 @@ title: Arch pie chart
 type: jig.default
 
 children:
-  - type: component.pie-chart
+  - type:ent.pie-chart
     options:
       chart:
         title:
@@ -20,13 +20,13 @@ children:
           
 views:
   2x2:
-    type: widget.group
+    type:.group
     options:
       children:
-        - type: widget.chart
+        - type:.chart
           options:
             chart:
-              type: component.pie-chart
+              type:ent.pie-chart
               options:
                 chart:
                   title:

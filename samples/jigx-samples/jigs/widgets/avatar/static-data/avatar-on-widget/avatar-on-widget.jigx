@@ -2,22 +2,22 @@ type: jig.default
 title: Next meeting
 
 children:
-  - type: component.entity
+  - type:ent.entity
     options:
       children:
-        - type: component.entity-field
+        - type:ent.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:    
   2x2:
-    type: widget.avatar
+    type:.avatar
     options:
       text: =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)
       uri: =@ctx.datasources.static-global.picture
       bottom: 
-        type: component.titles
+        type:ent.titles
         options:
           align: center
           title: =@ctx.datasources.static-global.name

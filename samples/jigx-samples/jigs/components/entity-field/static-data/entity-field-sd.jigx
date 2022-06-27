@@ -4,32 +4,32 @@ type: jig.default
 
 header:
   children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: =@ctx.datasources.repair-services-static.image
 
 children:
-  - componentId: component.entity
+  - type: component.entity
     options:
       children:
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Service
             value: =@ctx.datasources.repair-services-static.service
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Description
             value: =@ctx.datasources.repair-services-static.description
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Hourly Rate
             value: =@ctx.datasources.repair-services-static.hourlyRate
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Time
             value: =@ctx.datasources.repair-services-static.time & ' minutes'
-        - componentId: component.entity-field
+        - type: component.entity-field
           options:
             label: Materials
             value: =(@ctx.datasources.repair-services-static.materials = 'True' ? true :false) 
@@ -37,7 +37,7 @@ children:
 
 datasources:
   cleaning-services-dynamic:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
   

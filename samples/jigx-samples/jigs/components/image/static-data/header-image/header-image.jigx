@@ -5,16 +5,16 @@ type: jig.default
 
 header:
     type: component.image
-    options:
+    type:
       title: Header image
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
 
 children:
   - type: component.entity
-    options:
+    type:
       children:
         - type: component.entity-field
-          options:
+          type:
             label: ""
             value: ""

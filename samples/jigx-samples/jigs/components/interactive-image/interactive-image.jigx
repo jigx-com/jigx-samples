@@ -4,7 +4,7 @@ type: jig.default
 isScrollable: false
 
 children:
-  - componentId: component.interactive-image
+  - type: component.interactive-image
     options:
       source: 
         uri:  https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
@@ -16,7 +16,7 @@ children:
   
       data: =@ctx.datasources.floorplan-static
       item:
-        componentId: component.interactive-image-item
+        type: component.interactive-image-item
         options:
           id: =@ctx.parents.list-data.item.id
           title: =@ctx.parents.list-data.item.name
@@ -25,16 +25,16 @@ children:
             y: =@ctx.parents.list-data.item.yCoordinate
 views:
   4x2: 
-    componentId: widget.image
+    type: widget.image
     options:
       source:
         uri:     https://fpg.roomsketcher.com/image/topic/24/image/Restaurant-3D-Floor-Plan.jpg
-  # - componentId: component.interactive-image
+  # - type: component.interactive-image
   #   options:
   #     data: |
   #       =(@ctx.datasources.interactiveimg)
   #     item:
-  #       componentId: component.interactive-image-item
+  #       type: component.interactive-image-item
   #       options:
   #         id: =@ctx.parents.list-data.item.id
   #         title: =@ctx.parents.list-data.item.name
@@ -56,7 +56,7 @@ views:
   #       uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxnSPwgDIBx10pBXM2omf9twq7LnqQFtKXQZdVvOCORlcVd6h-woQc1fbvoILSKe4pqo&usqp=CAU
 
 # children:
-#   - componentId: component.interactive-image"
+#   - type: component.interactive-image"
 #     instanceId: testcompo
 #     options:
 #       groups:
@@ -88,14 +88,14 @@ views:
 #             x: 5
 #             y: 50
 #           onPress:
-#             componentId: action.go-to
+#             type: action.go-to
 #             options:
 #               title: Add item to shopping list
 #               linkTo: add-cart-item
 #         - title: Front Corner Left
 #           icon: arrow-left
 #           onPress:
-#             componentId: action.go-to
+#             type: action.go-to
 #             options:
 #               title: Add item to shopping list
 #               linkTo: add-fruit

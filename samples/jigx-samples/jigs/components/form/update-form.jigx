@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Update form
           provider: DATA_PROVIDER_DYNAMIC
@@ -18,23 +18,23 @@ actions:
             birthdate: =@ctx.components.birthdate.state.value
             
 children:
- - type: component.form
+ - type:ent.form
    options:
      children:
-        - type: component.text-field
+        - type:ent.text-field
           instanceId: firstname
           options:
            label: First name
-           value: =@ctx.datasources.form.firstname
+          type:x.datasources.form.firstname
         - type: component.text-field
           instanceId: lastname
           options:
-            label: Last name
+          type:t name
             value: =@ctx.datasources.form.lastname
         - type: component.email-field
           instanceId: email
           options:
-            label: Email
+          type:il
             value: =@ctx.datasources.form.email
             type: email
         - type: component.number-field

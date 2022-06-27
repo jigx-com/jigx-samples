@@ -3,7 +3,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Submit form
           provider: DATA_PROVIDER_DYNAMIC
@@ -19,53 +19,53 @@ actions:
             zip: =@ctx.components.zipcode.state.value
 
 children:
- - type: component.form
+ - type:ent.form
    options:
      children:
-        - type: component.section
+        - type:ent.section
           options:
             title: Personal informations
             children:
-                - type: component.field-row
+                - type:ent.field-row
                   options:
                     children:
-                        - type: component.text-field
+                        - type:ent.text-field
                           instanceId: firstname
                           options:
                             label: First name
-                        - type: component.text-field
+                        - type:ent.text-field
                           instanceId: lastname
                           options:
                             label: Last name
-                - type: component.field-row
+                - type:ent.field-row
                   options:
                     children:
-                      - type: component.email-field
+                      - type:ent.email-field
                         instanceId: email
                         options:
                           label: Email
                           type: email
-                      - type: component.number-field
+                      - type:ent.number-field
                         instanceId: phone
                         options:
                           label: Phone number
                           type: number
-        - type: component.section
+        - type:ent.section
           options:
             title: Address informations
             children:
-              - type: component.text-field
+              - type:ent.text-field
                 instanceId: address
                 options:
                   label: Address
-              - type: component.field-row
+              - type:ent.field-row
                 options:
                   children:
-                    - type: component.text-field
+                    - type:ent.text-field
                       instanceId: city
                       options:
                         label: City
-                    - type: component.number-field
+                    - type:ent.number-field
                       instanceId: zipcode
                       options:
                         label: Zip code

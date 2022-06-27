@@ -2,17 +2,17 @@ type: jig.default
 title: Company turnover
 
 children:
-  - type: component.entity
+  - type:ent.entity
     options:
       children:
-        - type: component.entity-field
+        - type:ent.entity-field
           options:
             label: 'Status: Full view'
             value: Not implemented yet
 
 views:
   2x2:
-    type: widget.value
+    type:.value
     options:
       value: '23850'
       align: right
@@ -20,7 +20,7 @@ views:
         numberStyle: currency
         currency: USD
       bottom: 
-        type: component.trend
+        type:ent.trend
         options:
           title: 'Last week'
           value: +1250
@@ -28,7 +28,7 @@ views:
             numberStyle: currency
             currency: USD
       top: 
-        type: component.titles
+        type:ent.titles
         options:
           icon: chart
           iconColor: color6

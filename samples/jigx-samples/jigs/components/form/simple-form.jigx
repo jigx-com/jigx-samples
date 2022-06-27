@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Submit form
           provider: DATA_PROVIDER_DYNAMIC
@@ -19,23 +19,23 @@ actions:
 
             
 children:
-  - type: component.form
+  - type:ent.form
     options:
       children:
-          - type: component.text-field
+          - type:ent.text-field
             instanceId: firstname
             options:  
               label: First name
-          - type: component.text-field
+          - type:ent.text-field
             instanceId: lastname
             options:
               label: Last name
-          - type: component.email-field
+          - type:ent.email-field
             instanceId: email
             options:
               label: Email
               type: email
-          - type: component.number-field
+          - type:ent.number-field
             instanceId: phone
             options:
               label: Phone number

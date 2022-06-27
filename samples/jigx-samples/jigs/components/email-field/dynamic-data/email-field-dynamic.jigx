@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -12,7 +12,7 @@ actions:
           method: save
 header:
     type: component.image
-    options:
+    type:
       title: Email 
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
@@ -20,7 +20,7 @@ header:
 datasources: 
   email-field:
     type: datasource.sqlite
-    options:
+    type:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC
       entities:
@@ -34,11 +34,11 @@ datasources:
         
 children:
   - type: component.form
-    instanceId: emails-form
+    type:emails-form
     options:
       children: 
         - type: component.email-field
-          instanceId: email
+          type:email
           options:
             label: Email
             helperText: =@ctx.datasources.email-field.email
