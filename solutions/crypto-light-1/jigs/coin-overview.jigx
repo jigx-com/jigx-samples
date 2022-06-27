@@ -1,0 +1,44 @@
+title: Coin Overview
+type: jig.composite
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Delete Coin
+          icon: delete-2
+          style:
+            isDanger: true
+          actions:
+
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/coin
+                method: delete
+                data:
+                  id: =@ctx.jig.inputs.coinId
+                goBack: off
+                
+            - type: action.go-to
+              options:
+                linkTo: list-coins
+children:
+  - jigId: view-coin
+    inputs:
+      coinId: =@ctx.jig.inputs.coinId
+  - jigId: coin-graph-1d
+    inputs:
+      symbol: =@ctx.jig.inputs.symbol
+  - jigId: coin-graph-6h
+    inputs:
+      symbol: =@ctx.jig.inputs.symbol
+  - jigId: coin-graph-1h
+    inputs:
+      symbol: =@ctx.jig.inputs.symbol
+  - jigId: coin-graph-15m
+    inputs:
+      symbol: =@ctx.jig.inputs.symbol
+  - jigId: coin-graph-1m
+    inputs:
+      symbol: =@ctx.jig.inputs.symbol
