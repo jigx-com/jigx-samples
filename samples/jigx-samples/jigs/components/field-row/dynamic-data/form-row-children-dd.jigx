@@ -3,7 +3,6 @@ description: Jig to display a form with rows & children components
 type: jig.default
 
 header:
-  children: 
     type: component.image
     options:
       source:

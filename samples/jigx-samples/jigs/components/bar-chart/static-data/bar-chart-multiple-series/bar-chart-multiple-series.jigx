@@ -2,7 +2,7 @@ title: Multiple series
 type: jig.default
 
 children:
-  - type:ent.bar-chart
+  - type: component.bar-chart
     options:
       chart:
         height: 200
