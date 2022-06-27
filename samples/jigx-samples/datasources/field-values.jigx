@@ -1,14 +1,12 @@
-field-values:
-  type: datasource.sqlite
-  options:
-    isDocument: true
-    provider: DATA_PROVIDER_DYNAMIC
-    entities:
-      - entity: default/field-values
-    query: |
-      SELECT
-        '$.id',
-        '$.number',
-        '$.text',
-        '$.email'
-      FROM [default/field-values]
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/field-values
+  query: |
+    SELECT
+      '$.id',
+      '$.number',
+      '$.text',
+      '$.email'
+    FROM [default/field-values]

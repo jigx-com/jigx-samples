@@ -10,6 +10,5 @@ options:
       '$.description',
       '$.img',
       '$.image',
-      '$.url',
       '$.videoUrl'
     FROM [default/image-sources]

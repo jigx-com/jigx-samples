@@ -21,10 +21,5 @@ stories:
       options:
         title: =@ctx.current.item.title
         subtitle: =@ctx.current.item.description
-        onPress: 
-          type: action.go-to
-          options:
-            title: Read more
-            linkTo: =@ctx.current.item.url
         source:
           uri: =@ctx.current.item.img

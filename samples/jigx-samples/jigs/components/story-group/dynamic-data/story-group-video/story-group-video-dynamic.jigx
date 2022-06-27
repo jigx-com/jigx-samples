@@ -19,6 +19,6 @@ stories:
     item: 
       type: component.video-player
       options:
-        url: =@ctx.datasources.story.videoUrl
-        thumbnailUri: =@ctx.datasources.story.img
-        title: =@ctx.datasources.story.title
+        url: =@ctx.current.item.videoUrl
+        thumbnailUri: =@ctx.current.item.img
+        title: =@ctx.current.item.title

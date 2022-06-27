@@ -14,17 +14,12 @@ children:
 stories:
   type: component.story-group
   options:
-    data: =@ctx.data.story
+    data: =@ctx.datasources.story
     groupName: Work productivity
     item: 
       type: component.image
       options:
-        title: =@ctx.datasources.story.title
-        subtitle: =@ctx.datasources.story.description
-        onPress: 
-          type: action.go-to
-          options:
-            title: Read more
-            linkTo: =@ctx.datasources.story.url
+        title: =@ctx.current.item.title
+        subtitle: =@ctx.current.item.description
         source:
-          uri: =@ctx.datasources.story.img
+          uri: =@ctx.current.item.img
