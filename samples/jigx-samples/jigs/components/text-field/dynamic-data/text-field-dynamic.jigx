@@ -17,21 +17,6 @@ header:
       title: Text
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
-        
-datasources: 
-  text-field:
-    type: datasource.sqlite
-    options:
-      isDocument: true
-      provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - entity: default/field-values
-      query: |
-        SELECT
-          '$.id',
-          '$.text'
-        FROM [default/field-values]
-  
 
 children:
   - type: component.form
@@ -42,4 +27,4 @@ children:
           instanceId: name
           options:
             label: Name
-            helperText: =@ctx.datasources.text-field.text
+            helperText: =@ctx.datasources.field-values.text

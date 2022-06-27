@@ -17,21 +17,6 @@ header:
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
-datasources: 
-  email-field:
-    type: datasource.sqlite
-    options:
-      isDocument: true
-      provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - entity: default/email-field
-      query: |
-        SELECT
-          '$.id',
-          '$.email'
-        FROM [default/email-field]
-  
-        
 children:
   - type: component.form
     instanceId: emails-form
@@ -41,4 +26,4 @@ children:
           instanceId: email
           options:
             label: Email
-            helperText: =@ctx.datasources.email-field.email
+            helperText: =@ctx.datasources.field-values.email
