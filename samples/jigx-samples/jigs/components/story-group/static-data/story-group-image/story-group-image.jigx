@@ -1,0 +1,40 @@
+title: Story
+type: jig.default
+referenceId: story-group-image
+
+datasources:
+  story:
+    type: datasource.static
+    options:
+      data:
+        - title: Work productivity
+          description: 10 Simple Ways To Be More Productive at Work
+          img: https://thedigitalprojectmanager.com/wp-content/uploads/2018/09/how-to-be-more-productive-at-work.png
+          url: https://www.indeed.com/career-advice/career-development/ways-to-be-more-productive
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: tbd
+            value: tbd
+
+stories:
+  type: component.story-group
+  options:
+    data: =@ctx.data.story
+    groupName: Work productivity
+    item: 
+      type: component.image
+      options:
+        title: =@ctx.current.item.title
+        subtitle: =@ctx.current.item.description
+        onPress: 
+          type: action.go-to
+          options:
+            title: Read more
+            linkTo: =@ctx.current.item.url
+        source:
+          uri: =@ctx.current.item.img
