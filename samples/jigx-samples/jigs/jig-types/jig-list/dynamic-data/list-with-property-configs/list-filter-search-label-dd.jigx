@@ -13,7 +13,6 @@ filter:
     value: FALSE
   
 header:
-  children: 
     type: component.image
     options:
       source:

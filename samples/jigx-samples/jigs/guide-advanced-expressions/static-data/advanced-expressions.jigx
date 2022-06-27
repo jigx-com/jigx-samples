@@ -4,16 +4,16 @@ type: jig.default
 
 datasources:
   number-data:
-    type:urce.static
+    type: datasource.static
     options:
       data:
         - id: 1
           number: 2500
 children:
-  - type:ent.entity
+  - type: component.entity
     options:
       children:
-        - type:ent.entity-field
+        - type: component.entity-field
           options:
             label: Expression to get result divided by 10
             value: =($b := function($l, $w){ $l / $w }; $b(@ctx.data.number-data.number,10);)

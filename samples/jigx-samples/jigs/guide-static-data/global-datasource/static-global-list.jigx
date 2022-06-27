@@ -3,7 +3,7 @@ type: jig.list
 
 data: =@ctx.data.people
 item:
-  type:ent.list-item
+  type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname

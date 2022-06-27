@@ -5,7 +5,7 @@ type: jig.default
 
 actions:
   - children:
-      - type:.execute-entity
+      - type: action.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -14,18 +14,18 @@ actions:
 
 header:
     type: component.image
-    type:
+    options:
       title: Number
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
   - type: component.form
-    type:number-form
+    instanceId: number-form
     options:
       children: 
         - type: component.number-field
-          type:number
+          instanceId: number
           options:
             label: Number
           

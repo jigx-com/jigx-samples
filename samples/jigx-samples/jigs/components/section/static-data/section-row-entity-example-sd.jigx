@@ -2,7 +2,6 @@ type: jig.default
 title: Section, Row and Entity Field Examples
 
 header:
-  children: 
     type: component.image
     options:
       source:

@@ -3,7 +3,7 @@ type: jig.list
 
 datasources:
   people:
-    type:urce.static
+    type: datasource.static
     options:
       data:
         - id: 1
@@ -33,7 +33,7 @@ datasources:
 
 data: =@ctx.datasources.people[firstname != '' and lastname != '']
 item:
-  type:ent.list-item
+  type: component.list-item
   options:
     title: "=@ctx.current.item.firstname 
             & ' ' & 

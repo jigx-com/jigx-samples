@@ -2,21 +2,21 @@ title: List of patients
 type: jig.default
 
 children:
-  - type:ent.entity
+  - type: component.entity
     options:
       children:
-        - type:ent.entity-field
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   2x2:
-    type:.list
+    type: widget.list
     options:
       data: =@ctx.datasources.static-global-multiple
       top:
-        type:ent.trend
+        type: component.trend
         options:
           title: "569 Patients"
           subtitle: "Patients"
@@ -26,7 +26,7 @@ views:
             isValueBottom: true
             isValueHidden: false
       item:
-        type:ent.list-item
+        type: component.list-item
         options:
           title: =@ctx.current.item.name
           leftElement: 

@@ -4,7 +4,6 @@ type: jig.list
 icon: contact 
 
 header:
-  children: 
     type: component.image
     options:
       source:

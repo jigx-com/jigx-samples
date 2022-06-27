@@ -2,20 +2,20 @@ type: jig.default
 title: State of issues
 
 children:
-  - type:ent.entity
+  - type: component.entity
     options:
       children:
-        - type:ent.entity-field
+        - type: component.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   2x2:
-    type:.chart
+    type: widget.chart
     options:
       chart:
-        type:ent.pie-chart
+        type: component.pie-chart
         options:
           chart:
             title:
