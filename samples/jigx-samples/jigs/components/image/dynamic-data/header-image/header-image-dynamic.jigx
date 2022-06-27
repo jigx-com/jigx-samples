@@ -1,0 +1,32 @@
+title: Header
+referenceId: header-image-dynamic
+type: jig.default
+
+datasources: 
+  image-source:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/image-source
+      query: |
+        SELECT
+          '$.id',
+          '$.uri'
+        FROM [default/image-source]
+        
+header:
+    type: component.image
+    options:
+      title: Header image
+      source:
+        uri: =@ctx.datasources.image-source.uri
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: ""
+            value: ""

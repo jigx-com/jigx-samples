@@ -3,8 +3,6 @@ category: personal
 
 widgets: 
   - size: 1x1
-    jigId: pie-chart-arch
-  - size: 1x1
     jigId: text-field-dynamic
   - size: 2x2
     jigId: list-avatars-checkbox-badge-sd
