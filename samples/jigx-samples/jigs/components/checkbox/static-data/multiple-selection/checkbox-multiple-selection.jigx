@@ -24,45 +24,45 @@ children:
     instanceId: work-engagement-form
     options:
       children:
-         - type: component.checkbox
-           instanceId: sunday
-           options:
-             label: Sunday
-             isRequired: false
-         - type: component.checkbox
-           instanceId: monday
-           options:
-             label: Monday
-             initialValue: true
-             isRequired: false
-         - type: component.checkbox
-           instanceId: tuesday
-           options:
-             label: Tuesday
-             initialValue: true
-             isRequired: false
-         - type: component.checkbox
-           instanceId: wednesday
-           options:
-             label: Wednesday
-             initialValue: true
-             isRequired: false
-         - type: component.checkbox
-           instanceId: thursday
-           options:
-             label: Thursday
-             initialValue: true
-             isRequired: false
-         - type: component.checkbox
-           instanceId: friday
-           options:
-             label: Friday
-             initialValue: true
-             isRequired: false
-         - type: component.checkbox
-           instanceId: saturday
-           options:
-             label: Saturday
-             isRequired: false
+        - type: component.checkbox
+          instanceId: sunday
+          options:
+            label: Sunday
+            isRequired: false
+        - type: component.checkbox
+          instanceId: monday
+          options:
+            label: Monday
+            initialValue: true
+            isRequired: false
+        - type: component.checkbox
+          instanceId: tuesday
+          options:
+            label: Tuesday
+            initialValue: true
+            isRequired: false
+        - type: component.checkbox
+          instanceId: wednesday
+          options:
+            label: Wednesday
+            initialValue: true
+            isRequired: false
+        - type: component.checkbox
+          instanceId: thursday
+          options:
+            label: Thursday
+            initialValue: true
+            isRequired: false
+        - type: component.checkbox
+          instanceId: friday
+          options:
+            label: Friday
+            initialValue: true
+            isRequired: false
+        - type: component.checkbox
+          instanceId: saturday
+          options:
+            label: Saturday
+            isRequired: false
       
     
