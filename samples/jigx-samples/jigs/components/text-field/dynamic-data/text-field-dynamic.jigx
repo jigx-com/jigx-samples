@@ -35,11 +35,11 @@ datasources:
 
 children:
   - type: component.form
-    type:text-form
+    instanceId: text-form
     options:
       children: 
         - type: component.text-field
-          type:name
+          instanceId: name
           options:
             label: Name
             helperText: =@ctx.datasources.text-field.text

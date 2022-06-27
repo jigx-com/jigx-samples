@@ -19,3 +19,4 @@ tables:
   ? repair-services-static
   ? floorplan-static
   ? interactiveimage-dynamic
+  ? image-sources
