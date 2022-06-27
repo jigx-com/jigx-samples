@@ -1,0 +1,25 @@
+title: Image widget with title
+type: jig.default
+referenceId: titles-widget-image-dynamic
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "Image widget"
+            value: ""
+
+views:
+  4x4:
+    type: widget.image
+    options:
+      isContentOverlaid: true
+      source:
+        uri: =@ctx.datasources.titles.image
+      bottom:
+        type: component.titles
+        options:
+          align: center
+          title: =@ctx.datasources.titles.title
