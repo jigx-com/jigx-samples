@@ -14,11 +14,11 @@ children:
 stories:
   type: component.story-group
   options:
-    data: =@ctx.datasources.story
+    data: =@ctx.datasources.story-static
     groupName: Work productivity
     item: 
       type: component.video-player
       options:
-        url: =@ctx.current.item.videoUrl
-        thumbnailUri: =@ctx.current.item.img
-        title: =@ctx.current.item.title
+        url: =@ctx.datasources.story-static.videoUrl
+        thumbnailUri: =@ctx.datasources.story-static.img
+        title: =@ctx.datasources.story-static.title

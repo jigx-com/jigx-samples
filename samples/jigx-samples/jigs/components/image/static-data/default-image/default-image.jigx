@@ -8,4 +8,4 @@ children:
       title: Image
       subtitle: in jig/default
       source:
-        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+        uri: =@ctx.datasources.story-static.image

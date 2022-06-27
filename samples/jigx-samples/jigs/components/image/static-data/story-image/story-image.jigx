@@ -2,16 +2,6 @@ title: Story
 type: jig.default
 referenceId: story-image
 
-datasources:
-  story:
-    type: datasource.static
-    options:
-      data:
-        - title: Work productivity
-          description: 10 Simple Ways To Be More Productive at Work
-          img: https://thedigitalprojectmanager.com/wp-content/uploads/2018/09/how-to-be-more-productive-at-work.png
-          url: https://www.indeed.com/career-advice/career-development/ways-to-be-more-productive
-
 children:
   - type: component.entity
     options:
@@ -24,17 +14,17 @@ children:
 stories:
   type: component.story-group
   options:
-    data: =@ctx.data.story
+    data: =@ctx.datasources.story-static
     groupName: Work productivity
     item: 
       type: component.image
       options:
-        title: =@ctx.current.item.title
-        subtitle: =@ctx.current.item.description
+        title: =@ctx.datasources.story-static.title
+        subtitle: =@ctx.datasources.story-static.description
         onPress: 
           type: action.go-to
           options:
             title: Read more
-            linkTo: =@ctx.current.item.url
+            linkTo: =@ctx.datasources.story-static.url
         source:
-          uri: =@ctx.current.item.img
+          uri: =@ctx.datasources.story-static.img

@@ -2,14 +2,13 @@ title: Header
 referenceId: header-image
 type: jig.default
 
-
 header:
     type: component.image
     options:
       title: Header image
       source:
-        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
-
+        uri: =@ctx.datasources.story-static.image
+        
 children:
   - type: component.entity
     options:
