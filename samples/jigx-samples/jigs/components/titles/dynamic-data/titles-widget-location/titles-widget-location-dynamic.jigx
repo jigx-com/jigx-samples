@@ -23,7 +23,6 @@ views:
         type: component.titles
         options:
           title: =@ctx.datasources.titles.locationTitle
-          subtitle: =@ctx.datasources.titles.locationSubtitle
-          align: left
+
 
 

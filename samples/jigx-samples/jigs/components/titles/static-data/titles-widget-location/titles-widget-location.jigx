@@ -6,9 +6,6 @@ children:
   - type: component.location
     options:
       address: Národní 135/14, 110 00 Praha
-      # pathsData:
-      #   - lat: 50.081847 
-      #     lng: 14.417569
 
       
 views:
@@ -16,9 +13,6 @@ views:
     type: widget.location
     options:
       address: =@ctx.datasources.titles-static.address
-      # pathsData:
-      #   - lat: 50.081847 
-      #     lng: 14.417569
       bottom:
         type: component.titles
         options:
