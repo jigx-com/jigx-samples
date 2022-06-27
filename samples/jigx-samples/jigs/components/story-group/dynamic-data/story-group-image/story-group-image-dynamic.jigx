@@ -2,22 +2,6 @@ title: Story
 type: jig.default
 referenceId: story-group-image-dynamic
 
-datasources: 
-  story:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - entity: default/image-source
-      query: |
-        SELECT
-          '$.id',
-          '$.title',
-          '$.description',
-          '$.img',
-          '$.url'
-        FROM [default/image-source]
-
 children:
   - type: component.entity
     options:

@@ -1,21 +1,6 @@
 title: Story
 type: jig.default
-referenceId: story-group-image
-
-datasources: 
-  story:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-      entities:
-        - entity: default/image-source
-      query: |
-        SELECT
-          '$.id',
-          '$.title',
-          '$.url',
-          '$.thumbnailUrl'
-        FROM [default/image-source]
+referenceId: story-group-video-dynamic
 
 children:
   - type: component.entity
@@ -29,11 +14,11 @@ children:
 stories:
   type: component.story-group
   options:
-    data: =@ctx.data.story
+    data: =@ctx.datasources.story
     groupName: Work productivity
     item: 
       type: component.video-player
       options:
-        url: =@ctx.datasources.story.url
-        thumbnailUri: =@ctx.datasources.story.thumbnailUri
+        url: =@ctx.datasources.story.videoUrl
+        thumbnailUri: =@ctx.datasources.story.img
         title: =@ctx.datasources.story.title

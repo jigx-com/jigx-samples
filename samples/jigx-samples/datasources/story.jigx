@@ -1,0 +1,14 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/image-source
+  query: |
+    SELECT
+      '$.id',
+      '$.title',
+      '$.description',
+      '$.img',
+      '$.url',
+      '$.videoUrl'
+    FROM [default/image-source]

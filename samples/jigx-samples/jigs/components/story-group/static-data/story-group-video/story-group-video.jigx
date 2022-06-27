@@ -1,15 +1,6 @@
 title: Story
 type: jig.default
-referenceId: story-group-image
-
-datasources:
-  story:
-    type: datasource.static
-    options:
-      data:
-        - title: Work productivity
-          url: https://www.videvo.net/video/overhead-shot-of-meeting/1011810/
-          thumbnailUri: https://www.videvo.net/video/overhead-shot-of-meeting/1011810/
+referenceId: story-group-video
 
 children:
   - type: component.entity
@@ -23,11 +14,11 @@ children:
 stories:
   type: component.story-group
   options:
-    data: =@ctx.data.story
+    data: =@ctx.datasources.story
     groupName: Work productivity
     item: 
       type: component.video-player
       options:
-        url: =@ctx.current.item.url
-        thumbnailUri: =@ctx.current.item.thumbnailUri
+        url: =@ctx.current.item.videoUrl
+        thumbnailUri: =@ctx.current.item.img
         title: =@ctx.current.item.title
