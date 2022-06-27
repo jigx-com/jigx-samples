@@ -1,0 +1,13 @@
+componentId: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/form
+  query: |
+    SELECT
+      id,
+      '$.firstname',
+      '$.lastname',
+      '$.phone',
+      '$.email'
+    FROM [default/form] WHERE '$.firstname' = "Jane"
