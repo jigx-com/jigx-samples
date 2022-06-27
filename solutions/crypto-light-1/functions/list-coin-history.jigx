@@ -12,5 +12,4 @@ parameters:
     required: true
     type: string
     value: BTC-USD
-outputTransform: "$.{ \"ms\": $[0] * 1000, \"close\":
-  $formatNumber($number($[4]), '#.00000000') }"
+# outputTransform: "$.{ \"ms\": $[0] * 1000, \"close\": $formatNumber($number($[4]), '#.00000000') }"

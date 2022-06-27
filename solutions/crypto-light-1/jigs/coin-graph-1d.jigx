@@ -9,7 +9,7 @@ datasources:
       entities:
         - entity: list-coin-history
           functionParameters:
-            granularity: "86400"
+            granularity: 86400
             symbol: =@ctx.jig.inputs.symbol
       query: |
         WITH cte AS (

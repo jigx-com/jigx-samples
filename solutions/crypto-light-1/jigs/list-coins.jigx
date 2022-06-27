@@ -1,6 +1,8 @@
 title: Coin List
 type: jig.list
 icon: add-circle
+data: =@ctx.data.coins
+
 actions:
   - children:
       - type: action.go-to
@@ -8,6 +10,7 @@ actions:
           title: Add Coin
           icon: list-add
           linkTo: add-coin
+
 datasources:
   coins:
     type: datasource.sqlite
@@ -24,6 +27,7 @@ datasources:
         FROM [default/coin]
         ORDER BY
           '$.symbol' ASC
+
   coins-count:
     type: datasource.sqlite
     options:
@@ -35,7 +39,7 @@ datasources:
           COUNT(1) AS count
         FROM [default/coin]
       isDocument: true
-data: =@ctx.data.coins
+
 item:
   type: component.list-item
   options:
@@ -59,12 +63,14 @@ item:
           onPress:
             type: action.execute-entity
             options:
-              title: Permenantly delete coin?
+              # title: Permenantly delete coin?
               provider: DATA_PROVIDER_DYNAMIC
               entity: default/coin
-              entityId: =@ctx.current.item.id
-              style:
-                isDanger: true
+              data:
+                id: =@ctx.current.item.id
+              #style:
+              #  isDanger: true
+
 views:
   2x2:
     type: widget.value

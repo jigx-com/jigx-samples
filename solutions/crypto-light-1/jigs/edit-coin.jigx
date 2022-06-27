@@ -1,16 +1,16 @@
 title: Edit Coin
 type: jig.default
 icon: pencil-write
-provider: DATA_PROVIDER_DYNAMIC
-entity: default/coin
+
 actions:
   - children:
-      - type: "@jigx/ja-submit-form"
+      - type: action.submit-form
         instanceId: submit-action
         options:
           title: Save
           formId: edit-coin
           icon: check-circle-1
+
 datasources:
   coin:
     type: datasource.sqlite
@@ -36,17 +36,16 @@ children:
       initialValues: =@ctx.data.coin
       children:
         - type: component.text-field
-          instanceId: coin-id
+          instanceId: id
           options:
             isHidden: false
             isIgnored: true
             label: Id
-            property: id
             style:
               isDisabled: true
 
         - type: component.text-field
-          instanceId: coin-symbol
+          instanceId: symbol
           options:
             autoCapitalize: characters
             icon: circle
@@ -54,14 +53,11 @@ children:
             isRequired: true
             label: Symbol
             nextProperty: name
-            
-            property: symbol
 
         - type: component.text-field
-          instanceId: coin-name
+          instanceId: name
           options:
             autoCapitalize: words
             isAutoCorrected: false
             isRequired: true
             label: Name
-            property: name
