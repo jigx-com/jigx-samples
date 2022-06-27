@@ -16,3 +16,5 @@ tables:
   ? meetingpeople
   ? cleaning-services-dynamic
   ? repair-services-static
+  ? floorplan-static
+  ? interactiveimage-dynamic

@@ -1,0 +1,164 @@
+title: Interactive image
+description: Description of your Jig
+type: jig.default
+isScrollable: false
+
+children:
+  - componentId: component.interactive-image
+    options:
+      source: 
+        uri:  https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
+          # https://fpg.roomsketcher.com/image/topic/24/image/Restaurant-3D-Floor-Plan.jpg
+       
+          # https://www.edrawsoft.com/templates/images/restaurant-floor-plan.png
+          # https://www.edrawsoft.com/template-restaurant-floor-plan.html
+          # https://www.edrawsoft.com/templates/pdf/restaurant-floor-plan.pdf
+  
+      data: =@ctx.datasources.floorplan-static
+      item:
+        componentId: component.interactive-image-item
+        options:
+          id: =@ctx.parents.list-data.item.id
+          title: =@ctx.parents.list-data.item.name
+          percentageCoordinates:
+            x: =@ctx.parents.list-data.item.xCoordinate
+            y: =@ctx.parents.list-data.item.yCoordinate
+views:
+  4x2: 
+    componentId: widget.image
+    options:
+      source:
+        uri:     https://fpg.roomsketcher.com/image/topic/24/image/Restaurant-3D-Floor-Plan.jpg
+  # - componentId: component.interactive-image
+  #   options:
+  #     data: |
+  #       =(@ctx.datasources.interactiveimg)
+  #     item:
+  #       componentId: component.interactive-image-item
+  #       options:
+  #         id: =@ctx.parents.list-data.item.id
+  #         title: =@ctx.parents.list-data.item.name
+  #         # groupId: =@ctx.parents.list-data.item.isReserved = true ? 'secondary' :'primary'
+  #         icon: =@ctx.parents.list-data.item.isReserved = true ? 'close' :null
+  #         color: =@ctx.parents.list-data.item.isReserved = true ? 'color3' :null
+  #         style:
+  #           isDisabled: =@ctx.parents.list-data.item.isReserved = true ? true :false
+
+  #         percentageCoordinates:
+  #           x: =@ctx.parents.list-data.item.xCoordinate
+  #           y: =@ctx.parents.list-data.item.yCoordinate
+  #     groups:
+  #       - title: Your reserved seats
+  #         id: secondary
+  #         color: color2
+  #         # requiredPoints: 14
+  #     source:
+  #       uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxnSPwgDIBx10pBXM2omf9twq7LnqQFtKXQZdVvOCORlcVd6h-woQc1fbvoILSKe4pqo&usqp=CAU
+
+# children:
+#   - componentId: component.interactive-image"
+#     instanceId: testcompo
+#     options:
+#       groups:
+#         - id: test2
+#           title: Primary Group
+#           requiredPoints: 1
+#         - icon: alarm-bell
+#           id: test3
+#           title: Secondary Group
+#           color: color3
+#           requiredPoints: 2
+#         - id: test4
+#           title: Whatever Group
+#           color: primary
+#           requiredPoints: 2
+#         - id: xy
+#           title: Xy Group
+#           color: color14
+#           requiredPoints: 3
+#           minimumPoints: 2
+#         - id: xy2
+#           title: Infinite Group
+#           color: color8
+#       points:
+#         - title: Front Center
+#           icon: arrow-left
+#           id: front-center
+#           percentageCoordinates:
+#             x: 5
+#             y: 50
+#           onPress:
+#             componentId: action.go-to
+#             options:
+#               title: Add item to shopping list
+#               linkTo: add-cart-item
+#         - title: Front Corner Left
+#           icon: arrow-left
+#           onPress:
+#             componentId: action.go-to
+#             options:
+#               title: Add item to shopping list
+#               linkTo: add-fruit
+#           id: front-corner-1
+#           percentageCoordinates:
+#             x: 9
+#             y: 20
+#         - title: Front Corner Right
+#           id: front-corner-2
+#           percentageCoordinates:
+#             x: 9
+#             y: 80
+#         - title: Front Fender
+#           id: front-fender-0
+#           percentageCoordinates:
+#             x: 22
+#             y: 15
+#         - title: Front Fender
+#           id: front-fender-1
+#           percentageCoordinates:
+#             x: 22
+#             y: 85
+#         - title: Roof Center
+#           id: center
+#           percentageCoordinates:
+#             x: 52
+#             y: 50
+#           active: false
+#         - title: Front Door Right
+#           id: front-door-0
+#           percentageCoordinates:
+#             x: 45
+#             y: 20
+#         - title: Front Door Left
+#           id: front-door-1
+#           percentageCoordinates:
+#             x: 45
+#             y: 80
+#         - title: Rear Door Right
+#           id: rear-door-0
+#           percentageCoordinates:
+#             x: 65
+#             y: 20
+#         - title: Rear Door Left
+#           id: rear-door-1
+#           percentageCoordinates:
+#             x: 65
+#             y: 80
+#         - title: XTest Right
+#           id: rear-0
+#           percentageCoordinates:
+#             x: 90
+#             y: 25
+#         - title: Atest  Left
+#           id: rear-1
+#           percentageCoordinates:
+#             x: 90
+#             y: 75
+#         - title: BTest  Center
+#           id: rear-center
+#           percentageCoordinates:
+#             x: 95
+#             y: 50
+
+#       source:
+#         uri: https://i.ibb.co/xXZBwQn/Microsoft-Teams-image-6.png

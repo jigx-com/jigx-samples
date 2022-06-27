@@ -2,16 +2,20 @@ title: Jigx-samples
 category: personal
 
 widgets: 
-  - size: 1x1
-    jigId: pie-chart-arch
-  - size: 1x1
-    jigId: text-field-dynamic
+  # - size: 1x1
+  #   jigId: pie-chart-arch
+  # - size: 1x1
+  #   jigId: text-field-dynamic
+  # - size: 1x1
+  #   jigId: number-field-dynamic
+  - size: 4x2
+    jigId: interactive-image
+  # - size: 2x2
+  #   jigId: list-with-actions-sd
+  # - size: 2x2
+  #   jigId: list-with-actions-dd
   - size: 2x2
-    jigId: list-avatars-checkbox-badge-sd
-  - size: 2x2
-    jigId: list-avatars-checkbox-badge-dd
-  - size: 1x1
-    jigId: number-field-dynamic
+    jigId: section-row-entity-example-sd
   
   
 # stories: 

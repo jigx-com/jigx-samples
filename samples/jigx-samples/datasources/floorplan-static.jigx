@@ -1,0 +1,159 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      name: Table 1
+      pax: 8
+      xCoordinate: 53
+      yCoordinate: 53
+      isReserved: true
+    - id: 2
+      name: Table 2
+      pax: 8
+      xCoordinate: 53
+      yCoordinate: 73
+      isReserved: true
+    - id: 3
+      name: Table 3
+      pax: 6
+      xCoordinate: 74
+      yCoordinate: 100
+      isReserved: false
+    # - id: 1
+    #   name: Table 1
+    #   pax: 8
+    #   xCoordinate: 222.13; 338.21
+    #   yCoordinate: 59.97; 141.45
+    #   isReserved: true
+    # - id: 2
+    #   name: Table 2
+    #   pax: 8
+    #   xCoordinate: 66.16; 184.01
+    #   yCoordinate: 59.97; 141.45
+    #   isReserved: true
+    # - id: 3
+    #   name: Table 3
+    #   pax: 6
+    #   xCoordinate: 53.42; 145.41
+    #   yCoordinate: 195.61; 257.61
+    #   isReserved: false
+    # - id: 4
+    #   name: Table 4
+    #   pax: 6
+    #   xCoordinate: 53.42; 145.41
+    #   yCoordinate: 286.61; 346.61
+    #   isReserved: true
+    # - id: 5
+    #   name: Table 5
+    #   pax: 6
+    #   xCoordinate: 53.42; 145.41
+    #   yCoordinate: 375.61; 435.61
+    #   isReserved: false
+    # - id: 6
+    #   name: Table 6
+    #   pax: 4
+    #   xCoordinate: 231.89; 293.89
+    #   yCoordinate: 356.18; 416.18
+    #   isReserved: false
+    # - id: 7
+    #   name: Table 7
+    #   pax: 4
+    #   xCoordinate: 231.89; 293.89
+    #   yCoordinate: 272.18; 331.18
+    #   isReserved: true
+    # - id: 8
+    #   name: Table 8
+    #   pax: 4
+    #   xCoordinate: 231.89; 293.89
+    #   yCoordinate: 189.18; 248.18
+    #   isReserved: false
+    # - id: 9
+    #   name: Table 9
+    #   pax: 4
+    #   xCoordinate: 312.89; 374.89
+    #   yCoordinate: 189.18; 248.18
+    #   isReserved: false
+    # - id: 10
+    #   name: Table 10
+    #   pax: 4
+    #   xCoordinate: 312.89; 374.89
+    #   yCoordinate: 272.18; 331.18
+    #   isReserved: false
+    # - id: 11
+    #   name: Table 11
+    #   pax: 4
+    #   xCoordinate: 312.89; 374.89
+    #   yCoordinate: 356.18; 416.18
+    #   isReserved: true
+    # - id: 12
+    #   name: Table 12
+    #   pax: 4
+    #   xCoordinate: 480.89; 542.89
+    #   yCoordinate: 356.18; 416.18
+    #   isReserved: true
+    # - id: 13
+    #   name: Table 13
+    #   pax: 4
+    #   xCoordinate: 480.89; 542.89
+    #   yCoordinate: 272.18; 331.18
+    #   isReserved: false
+    # - id: 14
+    #   name: Table 14
+    #   pax: 4
+    #   xCoordinate: 480.89; 542.89
+    #   yCoordinate: 189.18; 248.18
+    #   isReserved: false
+    # - id: 15
+    #   name: Table 15
+    #   pax: 4
+    #   xCoordinate: 560.89; 620.89
+    #   yCoordinate: 189.18; 248.18
+    #   isReserved: true
+    # - id: 16
+    #   name: Table 16
+    #   pax: 4
+    #   xCoordinate: 560.89; 620.89
+    #   yCoordinate: 197.06; 230.06
+    #   isReserved: true
+    # - id: 17
+    #   name: Table 17
+    #   pax: 4
+    #   xCoordinate: 560.89; 620.89
+    #   yCoordinate: 356.18; 416.18
+    #   isReserved: false
+    # - id: 18
+    #   name: Table 18
+    #   pax: 2
+    #   xCoordinate: 667.79; 777.79
+    #   yCoordinate: 375.62; 410.28  
+    #   isReserved: true
+    # - id: 19
+    #   name: Table 19
+    #   pax: 2
+    #   xCoordinate: 667.79; 777.79
+    #   yCoordinate: 316.69; 351.61
+    #   isReserved: false
+    # - id: 20
+    #   name: Table 20
+    #   pax: 2
+    #   xCoordinate: 667.79; 777.79
+    #   yCoordinate: 256.89; 292.35
+    #   isReserved: false
+    # - id: 21
+    #   name: Table 21
+    #   pax: 2
+    #   xCoordinate: 667.79; 777.79
+    #   yCoordinate: 196.55; 231.61
+    #   isReserved: true
+    # - id: 22
+    #   name: Table 22
+    #   pax: 8
+    #   xCoordinate: 504.26; 621.26
+    #   yCoordinate: 59.97; 141.45
+    #   isReserved: false
+    # - id: 23
+    #   name: Table 23
+    #   pax: 8
+    #   xCoordinate: 661.26; 785.26
+    #   yCoordinate: 59.97; 141.45
+    #   isReserved: false
