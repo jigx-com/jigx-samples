@@ -9,7 +9,7 @@ children:
 
       
 views:
-  2x2:
+  4x4:
     type: widget.location
     options:
       address: =@ctx.datasources.location.address
