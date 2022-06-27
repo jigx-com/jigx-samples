@@ -5,9 +5,9 @@ children:
   - type: component.form
     options:
       children:
-        - type: component.date-picker
-          instanceId: time
-          options:
-            label: Select a time
-            type: time
-            format: HH:mm
+      - type: component.date-picker
+        instanceId: time
+        options:
+          label: Select a time
+          type: time
+          format: HH:mm

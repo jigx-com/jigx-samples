@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -14,53 +14,53 @@ actions:
 
 header:
     type: component.image
-    options:
+    type:
       title: What days do you typically work?
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
 
 children:
   - type: component.form
-    instanceId: work-engagement-form
+    type:work-engagement-form
     options:
       children:
         - type: component.checkbox
-          instanceId: sunday
+          itype:unday
           options:
             label: Sunday
             isRequired: false
         - type: component.checkbox
-          instanceId: monday
+          itype:onday
           options:
             label: Monday
             initialValue: true
             isRequired: false
         - type: component.checkbox
-          instanceId: tuesday
+          itype:uesday
           options:
             label: Tuesday
             initialValue: true
             isRequired: false
         - type: component.checkbox
-          instanceId: wednesday
+          itype:ednesday
           options:
             label: Wednesday
             initialValue: true
             isRequired: false
         - type: component.checkbox
-          instanceId: thursday
+          itype:hursday
           options:
             label: Thursday
             initialValue: true
             isRequired: false
         - type: component.checkbox
-          instanceId: friday
+          itype:riday
           options:
             label: Friday
             initialValue: true
             isRequired: false
         - type: component.checkbox
-          instanceId: saturday
+          itype:aturday
           options:
             label: Saturday
             isRequired: false

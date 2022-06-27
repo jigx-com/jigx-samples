@@ -2,7 +2,7 @@ title: Current account overview
 type: jig.default
 
 children:
-  - type: component.line-chart
+  - type:ent.line-chart
     options:
       chart:
         title:

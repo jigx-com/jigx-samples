@@ -2,7 +2,7 @@ type: jig.default
 title: Video player
 
 children:
-  - type: component.video-player
+  - type:ent.video-player
     options:
       url: https://cdn.videvo.net/videvo_files/video/free/2015-09/large_watermarked/City_Street_preview.mp4
       title: Street life

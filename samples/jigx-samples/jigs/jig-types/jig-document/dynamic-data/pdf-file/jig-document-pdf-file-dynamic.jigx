@@ -10,7 +10,7 @@ placeholders:
 
 datasources: 
   document-sources:
-    type: datasource.sqlite
+    type:urce.sqlite
     options:
       isDocument: true
       provider: DATA_PROVIDER_DYNAMIC

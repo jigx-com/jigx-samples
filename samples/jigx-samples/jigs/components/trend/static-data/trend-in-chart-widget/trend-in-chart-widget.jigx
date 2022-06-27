@@ -2,20 +2,20 @@ type: jig.default
 title: Trend on widget/chart
 
 children:
-  - type: component.entity
+  - type:ent.entity
     options:
       children:
-        - type: component.entity-field
+        - type:ent.entity-field
           options:
             label: "Status Full View"
             value: Not implemented yet
 
 views:
   4x2:
-    type: widget.chart
+    type:.chart
     options:
       top:
-        type: component.trend
+        type:ent.trend
         options:
           title: "$ 39,559.36"
           value: 0.21
@@ -25,7 +25,7 @@ views:
             isAlignRight: true
             isValueBottom: true
       chart:
-        type: component.line-chart
+        type:ent.line-chart
         options:
           chart:
             height: 100

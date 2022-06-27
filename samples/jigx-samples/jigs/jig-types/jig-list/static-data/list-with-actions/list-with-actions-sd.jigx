@@ -5,7 +5,7 @@ icon: contact
 
 header:
   children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
@@ -13,7 +13,7 @@ header:
 
 data: =@ctx.datasources.repair-services-static
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
     title: =@ctx.parents.list-data.item.service
     subtitle: ='Service duration of' & @ctx.parents.list-data.item.time & ' minutes'
@@ -27,7 +27,7 @@ item:
       type: checkbox
       value: =(@ctx.parents.list-data.item.materials) = 'TRUE' ? 'true' :'false'
     onPress: 
-      componentId: action.go-to
+      type: action.go-to
       options:
         linkTo: section-row-entity-field-sd
         parameters:

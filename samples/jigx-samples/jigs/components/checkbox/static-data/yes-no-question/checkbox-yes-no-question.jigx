@@ -4,7 +4,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type:.execute-entity
         options:
           title: Submit
           provider: DATA_PROVIDER_DYNAMIC
@@ -13,18 +13,18 @@ actions:
 
 header:
     type: component.image
-    options:
+    type:
       title: Terms and Conditions
       source:
         uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
   - type: component.form
-    instanceId: agreement-form
+    type:agreement-form
     options:
       children:
         - type: component.checkbox
-          instanceId: agreement
+          type:agreement
           options:
             label: I agree
             isRequired: true

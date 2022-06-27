@@ -3,10 +3,10 @@ description: Description of your Jig
 type: jig.default
 
 children:
-  - componentId: component.form
+  - type: component.form
     options:
       children:
-        - componentId: component.text-field
+        - type: component.text-field
           instanceId: image_description
           options:
             label: Description
@@ -14,7 +14,7 @@ children:
             isMultiline: true
             isRequired: true
             
-        - componentId: component.image-picker
+        - type: component.image-picker
           instanceId: image_picker
           options:
             label: ImagePicker
@@ -25,7 +25,7 @@ children:
 
 actions:
   - children:
-      - componentId: action.execute-entity
+      - type: action.execute-entity
         options:
           title: Capture Images
           provider: DATA_PROVIDER_DYNAMIC

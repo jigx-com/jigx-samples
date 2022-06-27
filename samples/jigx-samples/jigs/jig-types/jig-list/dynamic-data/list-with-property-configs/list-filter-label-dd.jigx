@@ -13,14 +13,14 @@ filter:
   
 header:
   children: 
-    componentId: component.image
+    type: component.image
     options:
       source:
         uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
 
 datasources:
   cleaning-services-dynamic:
-    componentId: datasource.sqlite
+    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
   
@@ -34,7 +34,7 @@ datasources:
   
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
-  componentId: component.list-item
+  type: component.list-item
   options:
     title: =@ctx.parents.list-data.item.service
     subtitle: =@ctx.parents.list-data.item.area

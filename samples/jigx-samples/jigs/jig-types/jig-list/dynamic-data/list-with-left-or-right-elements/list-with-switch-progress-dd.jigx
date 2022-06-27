@@ -5,14 +5,14 @@ icon: task-list
 
 header:
     type: component.image
-    options:
+    type:
       source:
         uri: https://images.unsplash.com/photo-1583907659441-addbe699e921?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80
 
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
-  options:
+  type:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     rightElement: 
