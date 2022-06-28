@@ -7,7 +7,7 @@ widgets:
   - size: 2x2
     jigId: section-row-entity-example-sd
   - size: 1x1
-    jigId: pie-chart-arch-dynamic
+    jigId: line-chart-financial-dynamic
   
   
 # stories: 

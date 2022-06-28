@@ -24,14 +24,14 @@ children:
           - Q3
           - Q4
       series:
-        - data: =@ctx.datasources.series1
+        - data: =@ctx.datasources.series1-dynamic
           name: year 2019
           animation:
               type: left-to-right
           type: area-gradient
           dataLabels:
             - isEnabled: true
-        - data: =@ctx.datasources.series2
+        - data: =@ctx.datasources.series2-dynamic
           name: year 2020
           animation:
               type: left-to-right
