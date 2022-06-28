@@ -1,0 +1,27 @@
+title: Image widget
+type: jig.default
+referenceId: image-widget
+
+header:
+    type: component.image
+    options:
+      title: Header image
+      source:
+        uri: =@ctx.datasources.image-static.header
+        
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: ""
+            value: ""
+  
+views:
+  4x2: 
+    type: widget.image
+    options:
+      source: 
+        uri: =@ctx.datasources.image-static.image
+        

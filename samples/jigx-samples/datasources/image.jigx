@@ -1,0 +1,11 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/image
+  query: |
+    SELECT
+      '$.id',
+      '$.header',
+      '$.image'
+    FROM [default/image]
