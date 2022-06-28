@@ -1,0 +1,43 @@
+title: Arch pie chart
+type: jig.default
+
+children:
+  - type: component.pie-chart
+    options:
+      chart:
+        title:
+          text: Stock
+          verticalAlign: center
+        width: 180
+        height: 180
+      legend:
+          isHidden: true
+      series:
+          - data: =@ctx.datasources.pie-arch-chart-dynamic
+            dataLabels:
+              - isEnabled: true
+            type: arch
+          
+views:
+  2x2:
+    type: widget.group
+    options:
+      children:
+        - type: widget.chart
+          options:
+            chart:
+              type: component.pie-chart
+              options:
+                chart:
+                  title:
+                    text: Stock
+                    verticalAlign: center
+                  width: 120
+                  height: 120
+                legend:
+                  isHidden: true
+                series:
+                  - data: =@ctx.datasources.pie-arch-chart-dynamic
+                    dataLabels:
+                    - isEnabled: true
+                    type: arch

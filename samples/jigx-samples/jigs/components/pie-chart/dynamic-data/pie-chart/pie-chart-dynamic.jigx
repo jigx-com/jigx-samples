@@ -1,0 +1,43 @@
+type: jig.default
+title: Pie chart dynamic
+
+children:
+  - type: component.pie-chart
+    options:
+      chart:
+        title:
+          text: Issues
+          verticalAlign: center
+        width: 180
+        height: 180
+      legend:
+          isHidden: true
+      series:
+          - data: =@ctx.datasources.pie-chart-dynamic
+            dataLabels:
+              - isEnabled: true
+            type: pie
+          
+views:
+  2x2:
+    type: widget.group
+    options:
+      children:
+        - type: widget.chart
+          options:
+            chart:
+              type: component.pie-chart
+              options:
+                chart:
+                  title:
+                    text: Issues
+                    verticalAlign: center
+                  width: 120
+                  height: 120
+                legend:
+                  isHidden: true
+                series:
+                  - data: =@ctx.datasources.pie-chart-dynamic
+                    dataLabels:
+                      - isEnabled: true
+                    type: pie
