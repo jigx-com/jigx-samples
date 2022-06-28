@@ -1,0 +1,42 @@
+title: Expander
+type: jig.default
+
+children:
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.titles
+          options:
+            title: July Nelson
+            subtitle: Manager
+            icon: person
+            align: left
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Phone
+                        value: "3249432812"
+                    - type: component.entity-field
+                      options:
+                        label: Email
+                        value: july@first.com
+              - type: component.entity-field
+                options:
+                  label: Address
+                  value: 141 Harbor Dr Claymont, Delaware(DE), 19703
+        - type: component.bar-chart
+          options:
+            chart:
+              title: 
+                text: Last year revenue
+            legend:
+              isHidden: true
+            series:
+              - data: =@ctx.datasources.series1

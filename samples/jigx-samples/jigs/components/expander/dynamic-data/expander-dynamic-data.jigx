@@ -1,0 +1,42 @@
+title: Expander
+type: jig.default
+
+children:
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.titles
+          options:
+            title: =@ctx.datasources.expander-dynamic.firstname & ' ' & @ctx.datasources.expander-dynamic.lastname
+            subtitle: =@ctx.datasources.expander-dynamic.position
+            icon: person
+            align: left
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Phone
+                        value: =@ctx.datasources.expander-dynamic.phone
+                    - type: component.entity-field
+                      options:
+                        label: Email
+                        value: =@ctx.datasources.expander-dynamic.email
+              - type: component.entity-field
+                options:
+                  label: Address
+                  value: =@ctx.datasources.expander-dynamic.address
+        - type: component.bar-chart
+          options:
+            chart:
+              title: 
+                text: Last year revenue
+            legend:
+              isHidden: true
+            series:
+              - data: =@ctx.datasources.series1-dynamic

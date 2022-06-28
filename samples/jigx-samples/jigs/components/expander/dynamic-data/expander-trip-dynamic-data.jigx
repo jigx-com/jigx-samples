@@ -1,0 +1,64 @@
+title: Expander
+type: jig.default
+
+children:
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.stage
+          options:
+            right:
+              title: =@ctx.datasources.trip-dynamic.to
+            left:
+              title: =@ctx.datasources.trip-dynamic.from
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Passanger name
+                        value: =@ctx.datasources.trip-dynamic.name
+                    - type: component.entity-field
+                      options:
+                        label: Date
+                        value: =@ctx.datasources.trip-dynamic.date
+                    - type: component.entity-field
+                      options:
+                        label: Time
+                        value: =@ctx.datasources.trip-dynamic.time
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: From
+                        value: =@ctx.datasources.trip-dynamic.from
+                    - type: component.entity-field
+                      options:
+                        label: Flight
+                        value: =@ctx.datasources.trip-dynamic.flight
+                    - type: component.entity-field
+                      options:
+                        label: Seat
+                        value: =@ctx.datasources.trip-dynamic.seat
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: To
+                        value: =@ctx.datasources.trip-dynamic.to
+                    - type: component.entity-field
+                      options:
+                        label: Gate
+                        value: '16'
+                    - type: component.entity-field
+                      options:
+                        label: Board till
+                        value: =@ctx.datasources.trip-dynamic.board
+          

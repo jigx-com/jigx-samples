@@ -1,0 +1,12 @@
+type: datasource.static
+options:
+  data:
+    - name: Delta Air Lines
+      iata: DL
+      time: '16:30'
+    - name: American Airlines
+      iata: AA
+      time: '17:30'
+    - name: JetBlue
+      iata: B6
+      time: '18:15'

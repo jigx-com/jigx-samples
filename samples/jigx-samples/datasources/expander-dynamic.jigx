@@ -1,0 +1,6 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/employees
+  query: SELECT id,'$.firstname','$.lastname','$.picture', '$.date_from', '$.date_to', '$.email','$.phone', '$.position', '$.address' FROM [default/employees] WHERE '$.firstname' = "July"

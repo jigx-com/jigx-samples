@@ -1,0 +1,64 @@
+title: Expander
+type: jig.default
+
+children:
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.stage
+          options:
+            right:
+              title: Boston
+            left:
+              title: New York
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Passanger name
+                        value: July Nelson
+                    - type: component.entity-field
+                      options:
+                        label: Date
+                        value: 25 Jul
+                    - type: component.entity-field
+                      options:
+                        label: Time
+                        value: 12:30
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: From
+                        value: Boston
+                    - type: component.entity-field
+                      options:
+                        label: Flight
+                        value: A 0123
+                    - type: component.entity-field
+                      options:
+                        label: Seat
+                        value: 12F
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: To
+                        value: New York
+                    - type: component.entity-field
+                      options:
+                        label: Gate
+                        value: '16'
+                    - type: component.entity-field
+                      options:
+                        label: Board till
+                        value: 11:30
+          

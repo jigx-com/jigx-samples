@@ -3,6 +3,7 @@ tables:
   ? avatar
   ? form
   ? value
+  ? trip
   ? employees
   ? assets
   ? finance
