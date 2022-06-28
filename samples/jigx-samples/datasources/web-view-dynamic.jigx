@@ -5,5 +5,5 @@ options:
     - entity: default/web-view
   query: |
     SELECT
-      '$.url',
+      '$.url'
     FROM [default/web-view]

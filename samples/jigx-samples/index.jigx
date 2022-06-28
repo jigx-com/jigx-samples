@@ -7,7 +7,7 @@ widgets:
   - size: 2x2
     jigId: section-row-entity-example-sd
   - size: 1x1
-    jigId: video-player-header-dynamic
+    jigId: product-item-example-dynamic
   
   
 # stories: 

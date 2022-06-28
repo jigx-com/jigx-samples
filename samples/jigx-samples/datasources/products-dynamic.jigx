@@ -1,0 +1,13 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/products
+  query: |
+    SELECT
+      '$.title',
+      '$.uri',
+      '$.tag',
+      '$.price',
+      '$.discount'
+    FROM [default/products]
