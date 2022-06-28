@@ -1,0 +1,6 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/pie-chart-dynamic
+  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/pie-chart-dynamic]
