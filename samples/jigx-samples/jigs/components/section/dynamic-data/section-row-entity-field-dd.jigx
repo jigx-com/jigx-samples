@@ -1,5 +1,5 @@
 title: Sections, Rows and Entity Fields
-description: Jig to display sections, rows & entity fields
+description:   Jig to display sections, rows & entity fields
 type: jig.default
 
 header:
@@ -46,6 +46,7 @@ children:
                       options:
                         label: Description
                         value: =@ctx.datasources.cleaning-services-dynamic.description
+                        isMultiline: true
         - type: component.section
           options:
             title: Rates
@@ -56,11 +57,11 @@ children:
                     - type: component.entity-field
                       options:
                         label: Hourly Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic.hourlyRate
+                        value: =@ctx.datasources.cleaning-services-dynamic.hourlyrate
                     - type: component.entity-field
                       options:
                         label: Once Off Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic.onceOffRate
+                        value: =@ctx.datasources.cleaning-services-dynamic.onceoffrate
                          
 
 datasources:
@@ -72,7 +73,7 @@ datasources:
       entities:
         - entity: default/cleaning-services-dynamic
   
-      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
       queryParameters:
         id: =@ctx.jig.inputs.id
 

@@ -12,8 +12,7 @@ children:
             label: Description
             textArea: large
             isMultiline: true
-            isRequired: true
-            
+            isRequired: true    
         - type: component.image-picker
           instanceId: image_picker
           options:

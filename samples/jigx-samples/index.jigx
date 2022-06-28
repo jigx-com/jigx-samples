@@ -5,9 +5,12 @@ widgets:
   - size: 1x1
     jigId: text-field-dynamic
   - size: 2x2
-    jigId: section-row-entity-example-sd
+    jigId: list-with-actions-dd
+  - size: 2x2
+    jigId: list-with-actions-sd
   - size: 4x2
-    jigId: trend-in-chart-dynamic
+    jigId: media_picker
+    
   
   
 # stories: 

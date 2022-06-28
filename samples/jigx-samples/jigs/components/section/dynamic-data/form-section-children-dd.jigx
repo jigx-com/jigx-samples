@@ -62,6 +62,7 @@ children:
                 options:
                   label: Description
                   value: =@ctx.datasources.cleaning-services-dynamic.description
+                  isMultiline: true
         - type: component.section
           options:
             title: Rates

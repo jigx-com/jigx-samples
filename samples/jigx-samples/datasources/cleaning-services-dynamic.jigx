@@ -5,4 +5,4 @@ options:
   entities:
     - entity: default/cleaning-services-dynamic
 
-  query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] ORDER BY '$.service' ASC
+  query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] ORDER BY '$.service' ASC

@@ -14,24 +14,24 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: ='Service duration of' & @ctx.parents.list-data.item.time & ' minutes'
+    title: =@ctx.current.item.service
+    subtitle: ='Service duration of ' & @ctx.current.item.time & ' mins'
     leftElement: 
       type: image
       text: ''
-      uri: =@ctx.parents.list-data.item.image
+      uri: =@ctx.current.item.image
     label:
-      title: =@ctx.parents.list-data.item.time & ' minutes'
+      title: =@ctx.current.item.time & ' minutes'
     rightElement: 
       type: checkbox
-      value: =(@ctx.parents.list-data.item.indoor) = 'TRUE' ? true :false
+      value: =(@ctx.current.item.indoor) = 'TRUE' ? 'true' :'false'
     onPress: 
       type: action.go-to
       options:
-        linkTo: section-row-entity-field-dd
+        linkTo: form-section-children-dd
         parameters:
-          id: =@ctx.parents.list-data.item.id
-          service: =@ctx.parents.list-data.item.service
+          id: =@ctx.current.item.id
+          service: =@ctx.current.item.service
       
       
     
