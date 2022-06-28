@@ -1,0 +1,15 @@
+title: Location 
+referenceId: location-address
+type: jig.default
+     
+children:
+  - type: component.location
+    options:
+      address: =@ctx.datasources.location-static.addressAus
+
+      
+views:
+  4x4:
+    type: widget.location
+    options:
+      address: Albert Park VIC 3206, Australia

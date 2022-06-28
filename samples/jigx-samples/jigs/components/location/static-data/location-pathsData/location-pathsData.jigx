@@ -1,0 +1,17 @@
+title: Location
+referenceId: location-pathsData
+type: jig.default
+     
+children:
+  - type: component.location
+    options:
+      pathsData:
+        - lat: -33.835523 
+          lng: 151.258028
+
+      
+views:
+  4x4:
+    type: widget.location
+    options:
+      address: Mosman, NSW 2088, Australia
