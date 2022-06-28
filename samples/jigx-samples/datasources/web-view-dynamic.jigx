@@ -1,0 +1,9 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/web-view
+  query: |
+    SELECT
+      '$.url',
+    FROM [default/web-view]
