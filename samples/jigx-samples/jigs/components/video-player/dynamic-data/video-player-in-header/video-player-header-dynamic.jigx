@@ -5,10 +5,10 @@ title: Video header
 header:
     type: component.video-player
     options:
-      url: =@ctx.datasources.video-player.uri
+      url: =@ctx.datasources.video-player-dynamic.uri
       autoplay: true
-      title: =@ctx.datasources.video-player.title
-      subtitle: =@ctx.datasources.video-player.subtitle
+      title: =@ctx.datasources.video-player-dynamic.title
+      subtitle: =@ctx.datasources.video-player-dynamic.subtitle
       loop: true
       ratio: 16:9
 

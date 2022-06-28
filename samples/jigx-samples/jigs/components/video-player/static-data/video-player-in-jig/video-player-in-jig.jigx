@@ -4,9 +4,9 @@ title: Video player
 children:
   - type: component.video-player
     options:
-      url: https://cdn.videvo.net/videvo_files/video/free/2015-09/large_watermarked/City_Street_preview.mp4
-      title: Street life
-      subtitle: video-player as children of the jig
+      url: =@ctx.datasources.video-player.uri
+      title: =@ctx.datasources.video-player.title
+      subtitle: =@ctx.datasources.video-player.subtitle
       autoplay: false
       loop: true
       ratio: 16:9

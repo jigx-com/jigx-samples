@@ -1,0 +1,12 @@
+type: jig.default
+title: Video player
+
+children:
+  - type: component.video-player
+    options:
+      url: =@ctx.datasources.video-player-dynamic.uri
+      title: =@ctx.datasources.video-player-dynamic.title
+      subtitle: =@ctx.datasources.video-player-dynamic.subtitle
+      autoplay: false
+      loop: true
+      ratio: 16:9

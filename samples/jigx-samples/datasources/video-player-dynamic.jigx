@@ -1,0 +1,11 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/video-player
+  query: |
+    SELECT
+      '$.uri',
+      '$.title',
+      '$.subtitle'
+    FROM [default/video-player]
