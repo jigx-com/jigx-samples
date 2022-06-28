@@ -1,0 +1,58 @@
+type: jig.default
+title: Trend on widget/chart
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  4x2:
+    type: widget.chart
+    options:
+      top:
+        type: component.trend
+        options:
+          title: "$ 39,559.36"
+          value: 0.21
+          format:
+            numberStyle: percent
+          style:
+            isAlignRight: true
+            isValueBottom: true
+      chart:
+        type: component.line-chart
+        options:
+          chart:
+            height: 100
+            isAnimated: true
+          yAxis:
+            min: 0
+            labels:
+              format:
+                numberStyle: currency
+                compactDisplay: short
+                notation: compact
+            tickAmount: 4
+            isFirstTickHidden: true
+            isFirstLabelHidden: true
+          xAxis:
+            categories:
+              - Q1
+              - Q2
+              - Q3
+              - Q4
+          series:
+            - data: =@ctx.datasources.series1-dynamic
+              name: year 2019
+              animation:
+                  type: left-to-right
+              type: area-gradient
+              dataLabels:
+                - isEnabled: true   
+          legend:
+            isHidden: false

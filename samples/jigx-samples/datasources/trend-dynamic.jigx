@@ -1,0 +1,11 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/trend
+  query: |
+    SELECT
+      '$.financevalue',
+      '$.trendvalue',
+      '$.title'
+    FROM [default/trend]

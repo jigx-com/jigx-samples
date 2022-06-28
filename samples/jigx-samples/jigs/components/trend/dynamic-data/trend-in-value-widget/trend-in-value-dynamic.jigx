@@ -1,0 +1,34 @@
+type: jig.default
+title: Company turnover
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: 'Status: Full view'
+            value: Not implemented yet
+
+views:
+  2x2:
+    type: widget.value
+    options:
+      value: =@ctx.datasources.trend-dynamic.financevalue
+      align: right
+      format:
+        numberStyle: currency
+        currency: USD
+      bottom: 
+        type: component.trend
+        options:
+          title: =@ctx.datasources.trend-dynamic.title
+          value: =@ctx.datasources.trend-dynamic.trendvalue
+          format:
+            numberStyle: currency
+            currency: USD
+      top: 
+        type: component.titles
+        options:
+          icon: chart
+          iconColor: color6

@@ -1,0 +1,35 @@
+title: List of patients
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  2x2:
+    type: widget.list
+    options:
+      data: =@ctx.datasources.employees-dynamic
+      top:
+        type: component.trend
+        options:
+          title: "569 Patients"
+          subtitle: "Patients"
+          value: 12
+          style:
+            isAlignRight: false
+            isValueBottom: true
+            isValueHidden: false
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
+          leftElement: 
+            type: avatar
+            text: NA
+            uri: =@ctx.current.item.picture
