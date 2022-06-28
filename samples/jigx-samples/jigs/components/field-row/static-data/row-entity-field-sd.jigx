@@ -1,13 +1,12 @@
-title: Sections, Rows and Entity Fields
-description: Jig to display sections, rows & entity fields
+title: Rows and Entity Fields
+description: Jig to display rows & entity fields
 type: jig.default
 
 header:
-  children: 
     type: component.image
     options:
       source:
-        uri: =@ctx.datasources.repair-services-static.image
+        uri: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].image
 
 children:
   - type: component.entity
@@ -19,41 +18,28 @@ children:
               - type: component.entity-field
                 options:
                   label: Service
-                  value: =@ctx.datasources.repair-services-static.service
+                  value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].service
         - type: component.field-row
           options:
             children:
               - type: component.entity-field
                 options:
                   label: Description
-                  value: =@ctx.datasources.repair-services-static.description
+                  value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].description
         - type: component.field-row
           options:
             children:
               - type: component.entity-field
                 options:
                   label: Hourly Rate
-                  value: =@ctx.datasources.repair-services-static.hourlyRate
+                  value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].hourlyRate
               - type: component.entity-field
                 options:
                   label: Time
-                  value: =@ctx.datasources.repair-services-static.time & ' minutes'
+                  value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].time & ' minutes'
               - type: component.entity-field
                 options:
                   label: Materials
-                  value: =(@ctx.datasources.repair-services-static.materials = 'True' ? true :false) 
+                  value: =(@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].materials = 'True' ? true :false) 
                   type: checkbox   
-
-datasources:
-  cleaning-services-dynamic:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-  
-      entities:
-        - entity: default/repair-services-static
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
-      queryParameters:
-        id: =@ctx.jig.inputs.id
 

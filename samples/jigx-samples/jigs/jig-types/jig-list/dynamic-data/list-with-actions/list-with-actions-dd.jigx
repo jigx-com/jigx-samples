@@ -28,7 +28,7 @@ item:
     onPress: 
       type: action.go-to
       options:
-        linkTo: form-section-children-dd
+        linkTo: form-row-children-dd
         parameters:
           id: =@ctx.current.item.id
           service: =@ctx.current.item.service

@@ -15,6 +15,7 @@ children:
           # https://www.edrawsoft.com/templates/pdf/restaurant-floor-plan.pdf
   
       data: =@ctx.datasources.floorplan-static
+      
       item:
         type: component.interactive-image-item
         options:

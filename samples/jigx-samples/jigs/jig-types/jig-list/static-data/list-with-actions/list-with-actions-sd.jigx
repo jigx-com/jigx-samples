@@ -28,7 +28,7 @@ item:
     onPress: 
       type: action.go-to
       options:
-        linkTo: section-row-entity-field-sd
+        linkTo: entity-field-sd
         parameters:
           id: =@ctx.current.item.id
           service: =@ctx.current.item.service

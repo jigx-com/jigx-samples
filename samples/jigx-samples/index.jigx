@@ -10,6 +10,8 @@ widgets:
     jigId: list-with-actions-sd
   - size: 4x2
     jigId: media_picker
+  - size: 2x2
+    jigId: entity-field-examples-static
     
   
   
