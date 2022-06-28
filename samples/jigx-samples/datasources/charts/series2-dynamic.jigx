@@ -3,4 +3,4 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
     - entity: default/series2
-  query: SELECT id, '$.data' FROM [default/series2]
+  query: SELECT id, json_extract(data, '$.seriesx') as x, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/series2]

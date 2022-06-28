@@ -1,6 +1,0 @@
-type: datasource.sqlite
-options:
-  provider: DATA_PROVIDER_DYNAMIC
-  entities:
-    - entity: default/series3
-  query: SELECT id, '$.data' FROM [default/series3]

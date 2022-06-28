@@ -22,3 +22,5 @@ tables:
   ? image-sources
   ? titles
   ? location
+  ? pie-chart
+  ? pie-chart-arch
