@@ -12,10 +12,6 @@ item:
       format:
         dateFormat: "l"
     location: =@ctx.current.item.location
-    onPress:
-      type: action.go-to
-      options:
-        linkTo: calendar-item-detail
     people: =@ctx.current.item.people
     tags: =@ctx.current.item.tags
     to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.id) *

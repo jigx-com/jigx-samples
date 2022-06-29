@@ -1,0 +1,22 @@
+title: Avatar as children of jig
+type: jig.default
+
+children:
+  - type: component.avatar
+    options:
+      text:  ""
+      uri: =@ctx.datasources.dynamic-global.picture
+      size: large
+      align: left
+      
+views:    
+  2x2:
+    type: widget.avatar
+    options:
+      text: ""
+      uri: =@ctx.datasources.dynamic-global.picture
+      bottom: 
+        type: component.titles
+        options:
+          align: center
+          title: =@ctx.datasources.dynamic-global.name
