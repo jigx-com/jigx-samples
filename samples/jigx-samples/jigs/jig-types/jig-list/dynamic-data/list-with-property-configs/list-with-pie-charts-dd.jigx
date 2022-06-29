@@ -1,0 +1,33 @@
+title: Horizontal List (Pie Chart)
+type: jig.list
+
+datasources:
+  pie-chart:
+    type: 'datasource.sqlite'
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/pie-chart
+      query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/pie-chart]
+
+
+data: =@ctx.datasources.pie-chart-dynamic
+# isHorizontal: true
+item:
+  type: component.pie-chart
+  options:
+    chart:
+      title:
+        text: =@ctx.current.item.seriesy
+        verticalAlign: center
+      subtitle:
+        text: =@ctx.current.item.colour
+        verticalAlign: center
+      width: 100
+      height: 100
+    legend:
+      isHidden: true
+    series:
+      - data: =@ctx.current.item.seriesy
+        color: =@ctx.current.item.color

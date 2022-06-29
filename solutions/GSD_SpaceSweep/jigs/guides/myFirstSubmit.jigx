@@ -1,0 +1,18 @@
+title : Name
+description: Some description
+type: jig.default
+
+# datasources:
+#   mydata: 
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.checkbox
+          instanceId: checkbox_submit
+          options:
+            label: Boolean
+            type: checkbox
+            
+

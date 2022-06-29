@@ -1,0 +1,34 @@
+title: =(@ctx.jig.inputs.type)= 'Cleaning' ? 'Other Cleaning Services':'Cleaning Services'
+description: List of other available Cleaning Services
+
+type: jig.list
+icon: contact 
+isHorizontal: true
+isCollapsible: true
+isInitiallyCollapsed: true
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+
+
+data: =@ctx.datasources.cleaning-services-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
+    horizontalItemSize: large
+    leftElement: 
+      type: image
+      text: ''
+      uri: =@ctx.current.item.image
+    label:
+      title: =@ctx.current.item.time & ' minutes'
+    rightElement:
+      type: value
+      text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
+      
+    

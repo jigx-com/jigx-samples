@@ -5,11 +5,11 @@ widgets:
   - size: 1x1
     jigId: text-field-dynamic
   - size: 2x2
-    jigId: list-with-actions-dd
+    jigId: list-with-pie-charts-sd
   - size: 2x2
-    jigId: list-with-actions-sd
+    jigId: list-with-pie-charts-dd
   - size: 4x2
-    jigId: media_picker
+    jigId: interactive-image
   - size: 2x2
     jigId: entity-field-examples-static
     

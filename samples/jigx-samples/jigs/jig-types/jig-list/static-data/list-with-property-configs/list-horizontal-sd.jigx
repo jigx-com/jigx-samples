@@ -1,0 +1,30 @@
+title: Repair Services
+description: List of Repair Services available
+type: jig.list
+icon: contact
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: false
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1617123623686-2b7b339785da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80
+
+
+data: =@ctx.datasources.repair-services-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: ='Duration of ' & @ctx.current.item.time & ' mins'
+    leftElement: 
+      type: image
+      text: ''
+      uri: =@ctx.current.item.image
+    rightElement:
+      type: value
+      text: ='$ ' & @ctx.current.item.hourlyRate & ' p/hr'
+
+      
+    

@@ -1,0 +1,55 @@
+title: Services Request
+type: jig.default
+# datasources:
+#   service_request: 
+#     type: 'datasource.sqlite'
+#     options:
+#       provider: DATA_PROVIDER_DYNAMIC
+    
+#       entities:
+#         - entity: default/tableName
+    
+#       query: 
+#         SELECT 
+#           id, 
+#           '$.Column1', 
+#           '$.Column2' 
+#         FROM [default/tableName] WHERE '$.Column2' = @myParam
+     
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Owner and Accommodation Details
+            children:
+              - type: component.text-field
+                instanceId: owner_tf
+                options:
+                  label: Owner
+                  value: =@ctx.user.displayName
+                  style:
+                    isDisabled: true
+              - type: component.dropdown
+                instanceId: accommodation_ddl
+                options:
+                  data: =@ctx.datasources.partners-accommodation-dd
+                    # =@ctx.datasources.partners-accommodation-dd[owneremail=@ctx.user.email]
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.name & '(' & @ctx.current.item.type & ')'
+                      subtitle: =@ctx.current.item.address
+                      leftElement: 
+                        type: image
+                        text: ''
+                        uri: =@ctx.current.item.image
+                  label: Accommodation
+                  type: single
+                  value: =@ctx.datasources.partners-accommodation-dd.id
+
+
+              
+                  

@@ -1,0 +1,4 @@
+tables:
+  ? 'cleaning-services-dynamic'
+  ? 'repair-services-static'
+  ? 'partners-accommodation-dd'

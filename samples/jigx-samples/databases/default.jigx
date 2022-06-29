@@ -17,8 +17,7 @@ tables:
   ? multiday-event
   ? meetingpeople
   ? cleaning-services-dynamic
-  ? repair-services-static
-  ? floorplan-static
+  ? floorplan-dynamic
   ? interactiveimage-dynamic
   ? image-sources
   ? titles

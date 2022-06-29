@@ -1,0 +1,10 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/serviceRequest
+
+  query: SELECT id, '$.requester', '$.requested.services' FROM [default/tableName] WHERE '$.Column2' = @myParam
+  queryParameters:
+    myParam: value

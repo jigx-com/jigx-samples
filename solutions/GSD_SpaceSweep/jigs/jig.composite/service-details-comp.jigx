@@ -1,0 +1,23 @@
+type: jig.composite
+title: =@ctx.jig.inputs.type & ' Details' 
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5mb3JtYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+children:
+  - jigId: service-details
+    instanceId: service_deets
+    inputs:
+      id: =@ctx.jig.inputs.id
+      service: =@ctx.jig.inputs.service 
+      type: =@ctx.jig.inputs.type
+  - jigId: cleaning-serv-horizon-list-dd
+    instanceId: cleaning-serv-from-deets
+    inputs:
+      type: =@ctx.jig.inputs.type 
+  - jigId: repair-serv-horizon-list-sd
+    instanceId: repair-serv-from-deets
+    inputs:
+      type: =@ctx.jig.inputs.type

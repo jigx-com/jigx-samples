@@ -1,0 +1,45 @@
+title: Horizontal List (Pie Chart)
+type: jig.list
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - title: 25%
+          subtitle: As
+          data:
+            - 25
+            - y: 75
+              color: transparent
+        - title: 45%
+          subtitle: Brno
+          data:
+            - 45
+            - y: 55
+              color: transparent
+        - title: 33%
+          subtitle: Prague
+          data:
+            - 33
+            - y: 67
+              color: transparent
+
+data: =@ctx.datasources.components
+# isHorizontal: true
+item:
+  type: component.pie-chart
+  options:
+    chart:
+      title:
+        text: =@ctx.current.item.title
+        verticalAlign: center
+      subtitle:
+        text: =@ctx.current.item.subtitle
+        verticalAlign: center
+      width: 100
+      height: 100
+    legend:
+      isHidden: true
+    series:
+      - data: =@ctx.current.item.data

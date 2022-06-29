@@ -1,0 +1,33 @@
+title: Cleaning Services
+description: List of Cleaning Services available
+type: jig.list
+icon: contact
+isSearchable: true
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+
+
+# data: =$filter(@ctx.datasources.cleaning-services-dynamic, function($v){ $boolean(@ctx.jig.state.searchText) ? $contains($v.service, @ctx.jig.state.searchText):true })
+# =@ctx.datasources.cleaning-services-dynamic[service=(@ctx.jig.state.searchText)] 
+  # =(@ctx.jig.state.searchText) = null ? @ctx.datasources.cleaning-services-dynamic:@ctx.datasources.cleaning-services-dynamic[$contains(service, @ctx.jig.state.searchText]
+data: =$filter(@ctx.datasources.cleaning-services-dynamic, function($v){ $boolean(@ctx.jig.state.searchText) ? $contains($v.service, @ctx.jig.state.searchText):true}) 
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: ='Duration ' & @ctx.current.item.time & ' mins'
+    leftElement: 
+      type: image
+      text: ''
+      uri: =@ctx.current.item.image
+    label:
+      title: =@ctx.current.item.time & ' minutes'
+    rightElement: 
+      type: checkbox
+      value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
+      
+    
