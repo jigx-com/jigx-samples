@@ -1,7 +1,7 @@
 type: jig.calendar
 title: =$now('[D1o] [MNn] [Y]')
 
-data: =@ctx.datasources.eventMeeting
+data: =@ctx.datasources.event-meeting
 item: 
   type: component.event
   options:

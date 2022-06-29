@@ -1,0 +1,12 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/vacation-event
+  query: |
+    SELECT
+      '$.name',
+      '$.location',
+      '$.date-from',
+      '$.date-to'
+    FROM [default/vacation-event]
