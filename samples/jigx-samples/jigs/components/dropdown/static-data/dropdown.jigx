@@ -1,0 +1,22 @@
+title: Dropdown
+type: jig.default
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.dropdown
+          instanceId: dropdown-in
+          options:
+            data: =@ctx.datasources.employees-static
+            label: Select employees
+            item:
+              type: component.dropdown-item
+              instanceId: =@ctx.current.item.firstname
+              options:
+                title: =@ctx.current.item.firstname
+                subtitle: =@ctx.current.item.lastname
+                leftElement: 
+                  type: avatar
+                  text: ''
+                  uri: =@ctx.current.item.img

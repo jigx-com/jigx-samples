@@ -9,6 +9,7 @@ actions:
           title: Submit form
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
+          goBack: off
           method: save
           data: 
             firstname: =@ctx.components.firstname.state.value
