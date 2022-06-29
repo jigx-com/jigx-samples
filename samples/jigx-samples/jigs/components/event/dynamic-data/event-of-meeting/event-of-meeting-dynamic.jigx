@@ -1,15 +1,17 @@
 type: jig.calendar
 title: =$now('[D1o] [MNn] [Y]')
 
-data: =@ctx.datasources.event-vacation
+data: =@ctx.datasources.event-meeting-dynamic
 item: 
   type: component.event
   options:
     title: =@ctx.current.item.name
+    description: =@ctx.current.item.description
     from: 
       text: =@ctx.current.item.date_from
       format: 
         dateFormat: "l"
     to: =@ctx.current.item.date_to
+    people: =@ctx.datasources.event-people-dynamic
+    tags: =@ctx.current.item.tags
     location: =@ctx.current.item.location
-    isAllDay: true

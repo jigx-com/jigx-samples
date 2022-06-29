@@ -1,0 +1,10 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/meetingpeople
+  query: |
+    SELECT
+      json_extract(data, '$.name') as fullName,
+      json_extract(data, '$.url') as avatarUrl
+    FROM [default/meetingpeople]

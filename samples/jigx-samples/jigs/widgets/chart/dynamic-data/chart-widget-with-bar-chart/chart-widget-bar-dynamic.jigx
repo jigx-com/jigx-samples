@@ -1,0 +1,45 @@
+type: jig.default
+title: Company revenue
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  4x2:
+    type: widget.chart
+    options:
+      chart:
+        type: component.bar-chart
+        options:
+          chart:
+            height: 150
+            isAnimated: true
+          yAxis:
+            min: 0
+            labels:
+              format:
+                numberStyle: currency
+                compactDisplay: short
+                notation: compact
+            tickAmount: 4
+            isFirstTickHidden: true
+            isFirstLabelHidden: true
+          xAxis:
+            categories:
+              - Q1
+              - Q2
+              - Q3
+              - Q4
+          series:
+            - data: =@ctx.datasources.series1-dynamic
+              name: year 2019
+              dataLabels:
+                - isEnabled: false
+          legend:
+            isHidden: false
