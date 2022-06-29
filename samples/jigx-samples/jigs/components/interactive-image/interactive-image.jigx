@@ -13,9 +13,6 @@ children:
           # https://www.edrawsoft.com/templates/images/restaurant-floor-plan.png
           # https://www.edrawsoft.com/template-restaurant-floor-plan.html
           # https://www.edrawsoft.com/templates/pdf/restaurant-floor-plan.pdf
-      data: | 
-        =(@ctx.data.repair-plan)@$p.(@ctx.data.points)@$a.$a.$merge([ $,{"damagedArea":$exists($p.damageAreas[damageAreaId = $a.id])
-          ? ($p.damageAreas[damageAreaId = $a.id].isPrimary ? 'primary' : 'secondary'): ''}])
       data: =@ctx.datasources.floorplan-static
       pointColor: color10
       groups:
@@ -32,7 +29,6 @@ children:
           title: =@ctx.current.item.name
           icon: =@ctx.current.item.isReserved = true ? 'close' :null
           color: =@ctx.current.item.isReserved = true ? 'color3' :null
-          index: number item array index
           style:
             isDisabled: =@ctx.current.item.isReserved = true ? true :false
           
