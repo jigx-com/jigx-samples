@@ -1,0 +1,14 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/global
+  query: |
+    SELECT
+      '$.name',
+      '$.picture',
+      '$.date-from',
+      '$.date-to',
+      '$.email',
+      '$.phone'
+    FROM [default/global]
