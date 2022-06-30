@@ -1,0 +1,43 @@
+type: datasource.static
+options:
+  data: 
+    - id: 1
+      airline: Get Stuff Done Airlines
+      board: 11:30
+      disembark: 12:30
+      date: 30 Jul
+      flight: A 0123
+      from: Hawaii
+      fromabrv: HNL
+      gate: 16
+      name: July Nelson
+      seat: 12F
+      to: New York
+      toabrv: JFK
+    - id: 2
+      airline: Get Stuff Done Airlines
+      board: 08:10
+      disembark: 10:45
+      date: 30 Jul
+      flight: A 5738
+      from: Phoenix
+      fromabrv: PHX
+      gate: 2
+      name: Nora Gordon
+      seat: 27A
+      to: Alabama
+      toabrv: MCZ
+    - id: 3
+      airline: Get Stuff Done Airlines
+      board: 14:00
+      disembark: 19:59
+      date: 30 Jul
+      flight: A 1123
+      from: Iowa
+      fromabrv: DSM
+      gate: 15
+      name: Tracy Matthews
+      seat: 13F
+      to: Ohio
+      toabrv: DAY
+      

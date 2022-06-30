@@ -34,3 +34,4 @@ tables:
   ? calendar-people
   ? calendar-tags
   ? calendar-event
+  ? flight-schedule-dynamic

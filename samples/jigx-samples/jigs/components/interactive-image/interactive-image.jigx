@@ -13,6 +13,10 @@ children:
           # https://www.edrawsoft.com/templates/images/restaurant-floor-plan.png
           # https://www.edrawsoft.com/template-restaurant-floor-plan.html
           # https://www.edrawsoft.com/templates/pdf/restaurant-floor-plan.pdf
+        # https://i.pinimg.com/564x/9c/a0/55/9ca05554ed883235d5977daa4870788f.jpg
+        # https://i.pinimg.com/564x/b0/eb/52/b0eb52122452257e955f210e7fdb8f55.jpg
+        # https://i.pinimg.com/564x/20/03/ba/2003ba0976b9592910a73455d1ec55b3.jpg
+          
       data: =@ctx.datasources.floorplan-static
       pointColor: color10
       groups:

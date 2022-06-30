@@ -1,0 +1,92 @@
+title: Flight Schedule
+description: List with Expander with Stage as Header Element (Centre)
+type: jig.list
+icon: plane-2
+
+header: 
+  type: component.image
+  options:
+    source:
+      uri: https://images.unsplash.com/photo-1490430657723-4d607c1503fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZmxpZ2h0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
+
+data: =@ctx.datasources.flight-schedule-dynamic
+item:
+  type: component.expander
+  options:
+    header:
+      centerElement: 
+        type: component.stage
+        options:
+          right:
+            title: =@ctx.current.item.toabrv
+            subtitle: =@ctx.current.item.board
+          left:
+            title: =@ctx.current.item.fromabrv
+            subtitle: =@ctx.current.item.disembark
+    children:
+      - type: component.entity
+        options:
+          children:
+            - type: component.field-row
+              options:
+                children:
+                  - type: component.entity-field
+                    options:
+                      label: Boarding
+                      value: =@ctx.current.item.from
+                  - type: component.entity-field
+                    options:
+                      label: Destination
+                      value: =@ctx.current.item.disembark
+            - type: component.field-row
+              options:
+                children:
+                  - type: component.entity-field
+                    options:
+                      label: Board Time
+                      value: =@ctx.current.item.board
+                  - type: component.entity-field
+                    options:
+                      label: Disembark Time
+                      value: =@ctx.current.item.disembark
+            - type: component.entity-field
+              options:
+                label: Passenger
+                value: =@ctx.current.item.name
+            - type: component.field-row
+              options:
+                children:
+                  - type: component.entity-field
+                    options:
+                      label: Flight
+                      value: =@ctx.current.item.flight
+                  - type: component.entity-field
+                    options:
+                      label: Gate
+                      value: =@ctx.current.item.gate
+                  - type: component.entity-field
+                    options:
+                      label: Seat
+                      value: =@ctx.current.item.seat
+      - type: component.location
+        options:
+          address: =@ctx.current.item.to
+          
+views:
+  2x2:
+    type: widget.list
+    options:
+      data: =@ctx.datasources.flight-schedule-dynamic
+      item: 
+        type: component.stage
+        options:
+          icon: plane-2
+          right:
+            title: =@ctx.current.item.toabrv
+            subtitle: =@ctx.current.item.to
+          left:
+            title: =@ctx.current.item.fromabrv
+            subtitle: =@ctx.current.item.from
+
+          
+          
