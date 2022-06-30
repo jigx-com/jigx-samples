@@ -1,0 +1,83 @@
+type: datasource.static
+options:
+  data:
+  - title: Afghanistan
+    value: AF
+    icon: af
+    iconType: flag
+  - title: Albania
+    value: AL
+    icon: al
+    iconType: flag
+  - title: Algeria
+    value: DZ
+    icon: dz
+    iconType: flag
+  - title: American Samoa
+    value: AS
+    icon: as
+    iconType: flag
+  - title: Andorra
+    value: AD
+    icon: ad
+    iconType: flag
+  - title: Angola
+    value: AO
+    icon: ao
+    iconType: flag
+  - title: Anguilla
+    value: AI
+    icon: ai
+    iconType: flag
+  - title: Antigua And Barbuda
+    value: AG
+    icon: ag
+    iconType: flag
+  - title: Argentina
+    value: AR
+    icon: ar
+    iconType: flag
+  - title: Armenia
+    value: AM
+    icon: am
+    iconType: flag
+  - title: Aruba
+    value: AW
+    icon: aw
+    iconType: flag
+  - title: Australia
+    value: AU
+    icon: au
+    iconType: flag
+  - title: Austria
+    value: AT
+    icon: at
+    iconType: flag
+  - title: Azerbaijan
+    value: AZ
+    icon: az
+    iconType: flag
+  - title: Bahamas
+    value: BS
+    icon: ar
+    iconType: flag
+  - title: Bahrain
+    value: BH
+    icon: bh
+    iconType: flag
+  - title: Bangladesh
+    value: BD
+    icon: bd
+    iconType: flag
+  - title: Barbados
+    value: BB
+    icon: bb
+    iconType: flag
+  - title: Belarus
+    value: BY
+    icon: by
+    iconType: flag
+  - title: Belgium
+    value: BE
+    icon: be
+    iconType: flag

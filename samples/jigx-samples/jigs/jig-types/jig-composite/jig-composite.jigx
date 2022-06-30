@@ -1,0 +1,7 @@
+title: Composite Jig
+description: Composite Jig without input
+type: jig.composite
+
+children:
+  - jigId: location-address
+  - jigId: country-list-sd

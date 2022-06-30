@@ -1,0 +1,14 @@
+title: Country List
+description: List of countries and their flags
+type: jig.list
+icon: world
+
+data: =@ctx.datasources.country-data-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    subtitle: =@ctx.current.item.value
+    leftElement: 
+      type: icon
+      name: =@ctx.current.item.icon
