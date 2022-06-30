@@ -17,7 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     avatars:
       - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
-        uri: =@ctx.datasources.repair_services_static.illustration
+        uri: =[{'illustration':@ctx.datasources.repair_services_static.illustration}]
     rightElement: 
       component: badge
       isHidden:  =(@ctx.current.item.materials) = True ? true :false

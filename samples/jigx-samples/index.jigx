@@ -1,4 +1,5 @@
 title: Jigx-samples
+name: jigx-samples
 category: personal
 
 widgets: 
@@ -14,6 +15,11 @@ widgets:
     jigId: entity-field-examples-static
   - size: 1x1
     jigId: calendar-example-dynamic
+  - size: 2x2
+    jigId: list-avatars-checkbox-badge-dd
+  - size: 2x2
+    jigId: list-avatars-checkbox-badge-sd
+
 
     
   

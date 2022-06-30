@@ -17,7 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     avatars:
       - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
-        uri: =@ctx.datasources.cleaning-services-dynamic.image
+        uri: =[{'image':@ctx.datasources.cleaning-services-dynamic.image}]
     rightElement: 
       component: badge
       isHidden:  =(@ctx.current.item.indoor = 'TRUE' ? true :false
