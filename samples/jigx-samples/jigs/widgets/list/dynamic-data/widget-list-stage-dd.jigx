@@ -1,6 +1,6 @@
 type: jig.default
 title: Flight Schedule
-description: Widget List with Stagtes
+description: Widget List with Stages
 
 children:
   - type: component.entity
@@ -27,6 +27,7 @@ actions:
           title: List with Stage
           linkTo: list-with-stage-dd
 
+
 views:
   2x2:
     type: widget.list
@@ -42,3 +43,5 @@ views:
           left:
             title: =@ctx.current.item.fromabrv
             subtitle: =@ctx.current.item.from
+
+          

@@ -1,0 +1,44 @@
+type: jig.default
+title: Product List (Static)
+description: Widget List with Product Items
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "For Widget Demo Only"
+            value: Check actions to view related items
+  - type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1558420034-e98aa2ce8cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80
+        
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: List with Product Item
+          linkTo: list-with-product-item-dd
+
+
+views:
+  2x2:
+    type: widget.list
+    options:
+      data: =@ctx.datasources.products
+      item:
+        type: component.product-item
+        options:
+          title: =@ctx.current.item.title
+          image: 
+            uri: =@ctx.current.item.uri
+          price:
+            value: =@ctx.current.item.price
+            format:
+              numberStyle: currency
+
+          
+            
