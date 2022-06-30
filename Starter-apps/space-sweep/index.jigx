@@ -1,4 +1,5 @@
-title: GSD Space Sweep
+title: Space Sweep
+name: space-sweep
 category: field-services
 widgets:
   - size: 2x2
