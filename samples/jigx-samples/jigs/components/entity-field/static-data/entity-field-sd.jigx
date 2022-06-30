@@ -32,6 +32,6 @@ children:
           options:
             label: Materials
             value: =(@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].materials = 'True' ? true :false) 
-            type: checkbox   
+            contentType: checkbox   
 
 

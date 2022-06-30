@@ -47,7 +47,7 @@ item:
     subtitle: =@ctx.current.item.name
     leftElement:
       text: =@ctx.current.item.symbol
-      type: avatar
+      component: avatar
     onPress:
       type: action.go-to
       options:

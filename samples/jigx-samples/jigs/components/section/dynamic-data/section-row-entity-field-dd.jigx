@@ -38,7 +38,7 @@ children:
                       options:
                         label: Indoor
                         value: =@ctx.datasources.cleaning-services-dynamic.indoor
-                        type: checkbox
+                        contentType: checkbox
               - type: component.field-row
                 options:
                   children:

@@ -17,13 +17,13 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     leftElement: 
-      type: image
+      component: image
       text: ''
       uri: =@ctx.current.item.image
     label:
       title: =@ctx.current.item.time & ' mins'
     rightElement: 
-      type: value
+      component: value
       text: ='$' & @ctx.current.item.hourlyRate
     swipeable:
       left:

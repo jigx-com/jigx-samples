@@ -18,13 +18,13 @@ item:
     title: =@ctx.parents.list-data.item.service
     subtitle: ='Service duration of' & @ctx.parents.list-data.item.time & ' minutes'
     leftElement: 
-      type: image
+      component: image
       text: ''
       uri: =@ctx.parents.list-data.item.image
     label:
       title: =@ctx.parents.list-data.item.time & ' minutes'
     rightElement: 
-      type: checkbox
+      component: checkbox
       value: =(@ctx.parents.list-data.item.indoor) = 'TRUE' ? true :false
       
     

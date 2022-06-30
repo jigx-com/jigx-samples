@@ -17,6 +17,6 @@ children:
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname
                 leftElement: 
-                  type: avatar
+                  component: avatar
                   text: ''
                   uri: =@ctx.current.item.picture

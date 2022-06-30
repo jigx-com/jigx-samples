@@ -9,5 +9,5 @@ children:
         instanceId: time
         options:
           label: Select a time
-          type: time
+          mode: time
           format: HH:mm

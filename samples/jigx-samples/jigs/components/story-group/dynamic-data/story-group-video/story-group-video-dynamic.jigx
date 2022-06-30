@@ -1,6 +1,5 @@
 title: Story
 type: jig.default
-referenceId: story-group-video-dynamic
 
 children:
   - type: component.entity

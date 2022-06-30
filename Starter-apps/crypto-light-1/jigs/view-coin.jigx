@@ -64,7 +64,7 @@ children:
         - type: component.entity-field
           options:
             label: Date
-            type: date
+            contentType: date
             value: =@ctx.data.get-coin-price.dt
         - type: component.entity-field
           options:

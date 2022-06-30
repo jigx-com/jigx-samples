@@ -1,6 +1,5 @@
 title: Value + Chart
 type: jig.default
-referenceId: jw-group-value-chart-dynamic
 
 datasources:
   value-dynamic:

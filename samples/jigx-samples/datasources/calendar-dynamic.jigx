@@ -1,0 +1,21 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/calendar-event
+    - entity: default/calendar-people
+    - entity: default/calendar-tags
+  query: |
+    SELECT
+      json_extract(A.Data, '$.title') as title,
+      json_extract(A.Data, '$.location') as location,
+      json_extract(A.Data, '$.eventid') as eventid,
+      json_extract(B.Data, '$.fullname') as fullName,
+      json_extract(B.Data, '$.avatarurl') as avatarUrl,
+      json_extract(C.Data, '$.color') as color,
+      json_extract(C.Data, '$.title') as tagTitle
+    FROM [default/calendar-event] A
+    LEFT JOIN [default/calendar-people] B ON
+    json_extract(A.Data, '$.eventid') = json_extract(B.Data, '$.eventid')
+    LEFT JOIN [default/calendar-tags] C ON
+    json_extract(A.Data, '$.eventid') = json_extract(C.Data, '$.eventid')

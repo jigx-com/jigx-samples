@@ -1,6 +1,5 @@
 title: Image widget with title
 type: jig.default
-referenceId: titles-widget-image-dynamic
 
 children:
   - type: component.entity

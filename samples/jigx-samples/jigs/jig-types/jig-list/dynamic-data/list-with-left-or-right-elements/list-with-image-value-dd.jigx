@@ -18,11 +18,11 @@ item:
     label:
       title: =@ctx.current.item.time & ' mins'
     rightElement: 
-      type: value
+      component: value
       text: =@ctx.current.item.hourlyRate
       # = NA ? '$ ' & @ctx.current.item.onceOffRate :'$ ' & @ctx.current.item.hourlyRate
     leftElement: 
-      type: image
+      component: image
       text: =@ctx.current.item.service
       uri: =@ctx.current.item.image
       
