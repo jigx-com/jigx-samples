@@ -13,7 +13,7 @@ widgets:
   #   jigId: cleaning-serv-product-list-dd
   # - size: 2x2
   #   jigId: service-request
-  # - size: 2x2
-  #   jigId: cleaning-services-list-search
+  - size: 2x2
+    jigId: cleaning-services-list-search
 
 

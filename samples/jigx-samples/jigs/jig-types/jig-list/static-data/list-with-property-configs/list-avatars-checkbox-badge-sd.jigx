@@ -16,12 +16,12 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     avatars:
-      - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
-        uri: =[{'illustration':@ctx.datasources.repair_services_static.illustration}]
+      - text: $substring($substringBefore(@ctx.datasources.repair-services-static.service, " "), 1, 1) & $substring($substringAfter(@ctx.datasources.repair-services-static.service, " ") , 1, 1)
+        uri: =@ctx.datasources.repair-services-static.illustration
     rightElement: 
-      component: badge
+      element: badge
       isHidden:  =(@ctx.current.item.materials) = True ? true :false
     leftElement:
-      component: checkbox
+      element: checkbox
       initialValue: =(@ctx.current.item.materials) = True ? true :false
       

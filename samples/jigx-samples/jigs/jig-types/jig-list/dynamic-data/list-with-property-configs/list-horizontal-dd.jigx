@@ -20,11 +20,11 @@ item:
     subtitle: ='Duration of ' & @ctx.current.item.time & ' mins'
     horizontalItemSize: large
     leftElement: 
-      component: image
+      element: image
       text: ''
       uri: =@ctx.current.item.image
     rightElement:
-      component: value
+      element: value
       text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
       
     

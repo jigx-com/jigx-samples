@@ -18,10 +18,10 @@ item:
     label:
       title: =@ctx.current.item.time  & ' mins'
     rightElement: 
-      component: value
+      element: value
       text: = '$ ' & @ctx.current.item.hourlyRate
     leftElement: 
-      component: image
+      element: image
       text: =@ctx.current.item.service
       uri: =@ctx.current.item.image
       

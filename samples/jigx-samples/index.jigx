@@ -6,19 +6,21 @@ widgets:
   - size: 1x1
     jigId: text-field-dynamic
   - size: 2x2
-    jigId: list-with-pie-charts-sd
-  - size: 2x2
-    jigId: list-with-pie-charts-dd
-  - size: 4x2
-    jigId: interactive-image
-  - size: 2x2
-    jigId: entity-field-examples-static
+    jigId: list-filter-label-dd
   - size: 1x1
     jigId: calendar-example-dynamic
   - size: 2x2
     jigId: list-avatars-checkbox-badge-dd
   - size: 2x2
     jigId: list-avatars-checkbox-badge-sd
+  - size: 2x2
+    jigId: list-with-pie-charts-dd
+  - size: 2x2
+    jigId: list-with-pie-charts-sd
+  - size: 2x2
+    jigId: list-with-avatars-icons-dd
+  - size: 2x2
+    jigId: list-with-avatars-icons-sd
 
 
     

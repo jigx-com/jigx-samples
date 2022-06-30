@@ -13,7 +13,7 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: =@ctx.parents.list-data.item.description
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
     label:
-      title: =@ctx.parents.list-data.item.time & ' mins'
+      title: =@ctx.current.item.time & ' mins'

@@ -14,7 +14,7 @@ header:
 # data: =$filter(@ctx.datasources.cleaning-services-dynamic, function($v){ $boolean(@ctx.jig.state.searchText) ? $contains($v.service, @ctx.jig.state.searchText):true })
 # =@ctx.datasources.cleaning-services-dynamic[service=(@ctx.jig.state.searchText)] 
   # =(@ctx.jig.state.searchText) = null ? @ctx.datasources.cleaning-services-dynamic:@ctx.datasources.cleaning-services-dynamic[$contains(service, @ctx.jig.state.searchText]
-data: =$filter(@ctx.datasources.cleaning-services-dynamic, function($v){ $boolean(@ctx.jig.state.searchText) ? $contains($v.service, @ctx.jig.state.searchText):true}) 
+data: =$exists(@ctx.jig.state.searchText) ? @ctx.datasources.cleaning-services-dynamic[service=(@ctx.jig.state.searchText):@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:

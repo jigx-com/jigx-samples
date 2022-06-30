@@ -14,16 +14,16 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: ='Service duration of' & @ctx.parents.list-data.item.time & ' minutes'
+    title: =@ctx.current.item.service
+    subtitle: ='Service duration of' & @ctx.current.item.time & ' minutes'
     leftElement: 
-      component: image
+      element: image
       text: ''
-      uri: =@ctx.parents.list-data.item.image
+      uri: =@ctx.current.item.image
     label:
-      title: =@ctx.parents.list-data.item.time & ' minutes'
+      title: =@ctx.current.item.time & ' minutes'
     rightElement: 
-      component: checkbox
-      value: =(@ctx.parents.list-data.item.indoor) = 'TRUE' ? true :false
+      element: checkbox
+      value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
       
     

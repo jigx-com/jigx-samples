@@ -16,10 +16,10 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.time & 'minutes for task completion'
     rightElement: 
-      component: icon
+      element: icon
       name: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
     leftElement: 
-      component: avatar
+      element: avatar
       text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
       uri: =@ctx.current.item.illustration
       

@@ -19,11 +19,11 @@ item:
     title: =@ctx.current.item.service
     subtitle: ='Duration of ' & @ctx.current.item.time & ' mins'
     leftElement: 
-      component: image
+      element: image
       text: ''
       uri: =@ctx.current.item.image
     rightElement:
-      component: value
+      element: value
       text: ='$ ' & @ctx.current.item.hourlyRate & ' p/hr'
 
       

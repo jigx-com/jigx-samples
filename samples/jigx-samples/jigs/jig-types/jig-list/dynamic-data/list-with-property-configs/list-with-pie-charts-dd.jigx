@@ -29,5 +29,5 @@ item:
     legend:
       isHidden: true
     series:
-      - data: =@ctx.current.item.seriesy
-        color: =@ctx.current.item.color
+      - data: =@ctx.current.seriesy
+        color: =@ctx.current.color
