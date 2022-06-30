@@ -30,6 +30,6 @@ views:
         options:
           title: =@ctx.current.item.name
           leftElement: 
-            type: avatar
+            component: avatar
             text: NA
             uri: =@ctx.current.item.picture

@@ -17,13 +17,13 @@ item:
     title: =@ctx.current.item.service
     subtitle: ='Service duration of ' & @ctx.current.item.time & ' minutes'
     leftElement: 
-      type: image
+      component: image
       text: ''
       uri: =@ctx.current.item.image
     label:
       title: =@ctx.current.item.time & ' minutes'
     rightElement: 
-      type: checkbox
+      component: checkbox
       value: =(@ctx.current.item.materials) = 'TRUE' ? 'true' :'false'
     onPress: 
       type: action.go-to

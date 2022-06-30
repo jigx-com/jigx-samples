@@ -12,6 +12,9 @@ widgets:
     jigId: interactive-image
   - size: 2x2
     jigId: entity-field-examples-static
+  - size: 1x1
+    jigId: calendar-example-dynamic
+
     
   
   

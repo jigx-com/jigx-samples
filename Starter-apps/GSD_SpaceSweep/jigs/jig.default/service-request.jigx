@@ -43,11 +43,11 @@ children:
                       title: =@ctx.current.item.name & '(' & @ctx.current.item.type & ')'
                       subtitle: =@ctx.current.item.address
                       leftElement: 
-                        type: image
+                        component: image
                         text: ''
                         uri: =@ctx.current.item.image
                   label: Accommodation
-                  type: single
+                  isMultiple: false
                   value: =@ctx.datasources.partners-accommodation-dd.id
 
 

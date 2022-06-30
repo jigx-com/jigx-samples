@@ -42,7 +42,7 @@ item:
     label:
       title: =(@ctx.parents.list-data.item.indoor = "TRUE" ? 'Indoor' :'Outdoor')
     leftElement: 
-      type: avatar
+      component: avatar
       text: $substring($substringBefore(@ctx.parents.list-data.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.parents.list-data.item.service, " ") , 1, 1)
       uri: =@ctx.parents.list-data.item.image
     

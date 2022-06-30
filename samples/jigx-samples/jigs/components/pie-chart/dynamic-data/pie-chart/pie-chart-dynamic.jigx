@@ -16,7 +16,7 @@ children:
           - data: =@ctx.datasources.pie-chart-dynamic
             dataLabels:
               - isEnabled: true
-            type: pie
+            layout: pie
           
 views:
   2x2:
@@ -40,4 +40,4 @@ views:
                   - data: =@ctx.datasources.pie-chart-dynamic
                     dataLabels:
                       - isEnabled: true
-                    type: pie
+                    layout: pie

@@ -1,6 +1,6 @@
 title: Image widget
 type: jig.default
-referenceId: image-widget-dynamic
+
 
 header:
     type: component.image

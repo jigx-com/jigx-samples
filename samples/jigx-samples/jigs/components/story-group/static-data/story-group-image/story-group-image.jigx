@@ -1,6 +1,5 @@
 title: Story
 type: jig.default
-referenceId: story-group-image
 
 children:
   - type: component.entity

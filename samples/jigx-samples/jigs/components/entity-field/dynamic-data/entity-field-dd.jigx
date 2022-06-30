@@ -28,7 +28,7 @@ children:
           options:
             label: Indoor
             value: =@ctx.datasources.cleaning-services-dynamic.indoor
-            type: checkbox
+            contentType: checkbox
         - type: component.entity-field
           options:
             label: Description

@@ -1,6 +1,5 @@
 title: Avatar + List
 type: jig.list
-referenceId: jw-group-avata-list
 
 datasources:
   group-list:
@@ -23,7 +22,7 @@ item:
   options:
     title: =@ctx.current.item.name
     leftElement: 
-      type: avatar
+      component: avatar
       text: '' 
       uri: =@ctx.current.item.img
 
@@ -44,7 +43,7 @@ views:
               options:
                 title: =@ctx.current.item.name
                 leftElement: 
-                  type: avatar
+                  component: avatar
                   text: '' 
                   uri: =@ctx.current.item.img
               

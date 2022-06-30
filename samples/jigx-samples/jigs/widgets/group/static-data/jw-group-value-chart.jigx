@@ -1,6 +1,6 @@
 title: Value + Chart
 type: jig.default
-referenceId: jw-group-value-chart
+
 
 datasources:
   series1:

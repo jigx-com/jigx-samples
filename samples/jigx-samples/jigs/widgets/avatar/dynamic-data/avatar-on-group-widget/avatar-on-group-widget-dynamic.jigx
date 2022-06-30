@@ -1,0 +1,33 @@
+type: jig.default
+title: Today's patient plan
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "Status Full View"
+            value: Not implemented yet
+
+views:
+  4x2:
+    type: widget.group
+    options:
+      children:
+        - type: widget.avatar
+          options:
+            text: =$substring($substringBefore(@ctx.datasources.dynamic-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.dynamic-global.name, " "), 0, 1)
+            uri: =@ctx.datasources.dynamic-global.picture
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.employees-dynamic
+            item:
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
+                subtitle: =$fromMillis($toMillis(@ctx.current.item.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.current.item.date_to),'[H01]:[m01]')
+                leftElement:
+                  component: avatar
+                  text: =$substring(@ctx.current.item.firstname, 0, 1) & =$substring(@ctx.current.item.lastname, 0, 1)
+                  uri: =@ctx.current.item.picture

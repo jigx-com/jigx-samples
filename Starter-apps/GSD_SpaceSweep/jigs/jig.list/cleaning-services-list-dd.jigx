@@ -1,5 +1,5 @@
-title: Repair Services
-description: List of Repair Services available
+title: Cleaning Services
+description: List of Cleaning Services available
 type: jig.list
 icon: contact 
 
@@ -7,24 +7,24 @@ header:
     type: component.image
     options:
       source:
-        uri: https://images.unsplash.com/photo-1617123623686-2b7b339785da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80
+        uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 
 
-data: =@ctx.datasources.repair-services-static
+data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     leftElement: 
-      type: image
+      component: image
       text: ''
       uri: =@ctx.current.item.image
     label:
       title: =@ctx.current.item.time & ' mins'
     rightElement: 
-      type: value
-      text: ='$' & @ctx.current.item.hourlyRate
+      component: checkbox
+      value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
     swipeable:
       left:
         - icon: archive-folder
@@ -37,12 +37,13 @@ item:
                   options:
                     key: ABC123
                 - type: action.go-to
-                  instanceId: go_to_service_deets
+                  instanceId: go_to_cleaning_deets
                   options:
                     linkTo: service-details-comp
                     parameters:
                       id: =@ctx.current.item.id
                       service: =@ctx.current.item.service
-                      type: Repair
+                      type: Cleaning
+                  
       
     

@@ -1,6 +1,5 @@
 title: Avatar + List
 type: jig.list
-referenceId: jw-group-avatar-list-dynamic
           
 data: =@ctx.datasources.employees-dynamic
 item:
@@ -9,7 +8,7 @@ item:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
     leftElement: 
-      type: avatar
+      component: avatar
       text: '' 
       uri: =@ctx.current.item.picture
 
@@ -31,7 +30,7 @@ views:
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname
                 leftElement: 
-                  type: avatar
+                  component: avatar
                   text: '' 
                   uri: =@ctx.current.item.picture
                           

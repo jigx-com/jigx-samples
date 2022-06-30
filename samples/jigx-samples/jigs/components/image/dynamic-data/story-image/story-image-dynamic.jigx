@@ -1,6 +1,5 @@
 title: Story
 type: jig.default
-referenceId: story-image-dynamic
 
 children:
   - type: component.entity

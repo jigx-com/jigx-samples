@@ -19,10 +19,10 @@ item:
       - text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
         uri: =@ctx.datasources.cleaning-services-dynamic.image
     rightElement: 
-      type: badge
+      component: badge
       isHidden:  =(@ctx.current.item.indoor = 'TRUE' ? true :false
     leftElement:
-      type: checkbox
+      component: checkbox
       initialValue: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
 
       

@@ -5,6 +5,7 @@ widgets:
     jigId: cleaning-services-list-dd
   - size: 2x2
     jigId: repair-services-list-sd
+ 
 
 # TESTING:
   # - size: 2x2

@@ -22,13 +22,13 @@ item:
     subtitle: =@ctx.current.item.description
     horizontalItemSize: large
     leftElement: 
-      type: image
+      component: image
       text: ''
       uri: =@ctx.current.item.image
     label:
       title: =@ctx.current.item.time & ' minutes'
     rightElement:
-      type: value
+      component: value
       text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
       
     

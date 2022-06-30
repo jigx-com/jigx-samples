@@ -16,10 +16,10 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     rightElement: 
-      type: switch
+      component: switch
       value: =@ctx.current.item.materials
     leftElement: 
-      type: progress
+      component: progress
       title: Time
       value:  =@ctx.current.item.time/120
       
