@@ -27,15 +27,15 @@ children:
         - data: =@ctx.datasources.series1
           name: year 2019
           animation:
-              type: left-to-right
-          type: area-gradient
+              direction: left-to-right
+          layout: area-gradient
           dataLabels:
             - isEnabled: true
         - data: =@ctx.datasources.series2
           name: year 2020
           animation:
-              type: left-to-right
-          type: area-gradient
+              direction: left-to-right
+          layout: area-gradient
           dataLabels:
             - isEnabled: true      
       legend:

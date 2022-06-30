@@ -31,3 +31,6 @@ tables:
   ? trend
   ? vacation-event
   ? global
+  ? calendar-people
+  ? calendar-tags
+  ? calendar-event

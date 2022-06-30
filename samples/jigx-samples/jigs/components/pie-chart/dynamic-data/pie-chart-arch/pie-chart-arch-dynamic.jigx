@@ -16,7 +16,7 @@ children:
           - data: =@ctx.datasources.pie-arch-chart-dynamic
             dataLabels:
               - isEnabled: true
-            type: arch
+            layout: arch
           
 views:
   2x2:
@@ -40,4 +40,4 @@ views:
                   - data: =@ctx.datasources.pie-arch-chart-dynamic
                     dataLabels:
                     - isEnabled: true
-                    type: arch
+                    layout: arch
