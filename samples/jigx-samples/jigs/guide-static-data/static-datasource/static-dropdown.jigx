@@ -1,0 +1,25 @@
+title: Dropdown with values
+type: jig.default
+
+children:
+  - type: "component.form"
+    options:
+      children:
+        - type: "component.dropdown"
+          instanceId: dropdown
+          options:
+            data: 
+              - title: 'Jane Stevens'
+                value: 'Jane'
+              - title: 'Mark Anders'
+                value: 'Mark'
+              - title: 'Haley Marshall'
+                value: 'Haley'
+              - title: 'Andre Marks'
+                value: 'Andre'
+            label: Dropdown with Employees
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.title
+                value: =@ctx.current.item.value
