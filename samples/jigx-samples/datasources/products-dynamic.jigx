@@ -3,6 +3,8 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
     - entity: default/products
+  queryParameters:
+      '@search': =@ctx.jig.state.searchText
   query: |
     SELECT
       '$.title',
@@ -11,3 +13,4 @@ options:
       '$.price',
       '$.discount'
     FROM [default/products]
+    WHERE '$.title' LIKE '%'||@search||'%' OR @search IS NULL ORDER BY '$.title'

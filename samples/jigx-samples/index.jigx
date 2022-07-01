@@ -11,6 +11,8 @@ widgets:
     jigId: default-w-stage-list-dd
   - size: 2x2
     jigId: default-w-product-list-dd
+  - size: 1x1
+    jigId: product-item-example
 
 
 
