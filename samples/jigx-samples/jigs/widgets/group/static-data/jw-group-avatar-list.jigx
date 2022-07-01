@@ -22,7 +22,7 @@ item:
   options:
     title: =@ctx.current.item.name
     leftElement: 
-      component: avatar
+      element: avatar
       text: '' 
       uri: =@ctx.current.item.img
 
@@ -43,7 +43,7 @@ views:
               options:
                 title: =@ctx.current.item.name
                 leftElement: 
-                  component: avatar
+                  element: avatar
                   text: '' 
                   uri: =@ctx.current.item.img
               

@@ -8,7 +8,7 @@ item:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
     leftElement: 
-      component: avatar
+      element: avatar
       text: '' 
       uri: =@ctx.current.item.picture
 
@@ -30,7 +30,7 @@ views:
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname
                 leftElement: 
-                  component: avatar
+                  element: avatar
                   text: '' 
                   uri: =@ctx.current.item.picture
                           
