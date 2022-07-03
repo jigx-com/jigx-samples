@@ -1,0 +1,21 @@
+title: Name
+type: jig.default
+
+actions:
+  - children:
+      - type: action.set-state
+        options:
+          title: Set global key to 1
+          key: global-key
+          value: 1
+  
+
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Global key value
+            value: =@ctx.solution.state.global-key
