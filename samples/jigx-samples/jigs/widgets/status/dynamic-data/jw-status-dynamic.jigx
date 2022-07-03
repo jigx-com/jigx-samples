@@ -1,0 +1,28 @@
+title: status
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Text
+            value: This is the representations of jw-status
+
+views:
+  2x2: 
+    type: widget.status
+    options:
+      statuses:
+        - when: =@ctx.datasources.trip-dynamic.flight = 'A 0123' ? true :false
+          icon: check-circle-1
+          color: color2
+          bottom:
+            type: component.titles
+            options:
+              title: Flight was found
+              align: center
+              style:
+                isPositive: true
+          
