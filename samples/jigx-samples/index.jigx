@@ -3,14 +3,16 @@ name: jigx-samples
 category: personal
 
 widgets: 
-  # - size: 2x2
-  #   jigId: list-with-expander-stage-sd
   - size: 2x2
-    jigId: default-w-exp-stage-list-dd
+    jigId: simple-list-dd
   - size: 2x2
-    jigId: default-w-stage-list-dd
+    jigId: simple-list-sd-local
   - size: 2x2
-    jigId: default-w-product-list-dd
+    jigId: simple-list-sd-global
+  - size: 2x2
+    jigId: simple-list-divider-dd
+  - size: 2x2
+    jigId: simple-list-divider-sd
 
 
 

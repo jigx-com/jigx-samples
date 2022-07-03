@@ -1,0 +1,127 @@
+title: List styles
+type: jig.list
+# isHorizontal: true
+# isHorizontalScrollIndicatorHidden: true
+
+actions:
+  - children:
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
+
+datasources:
+  styles:
+    type: datasource.static
+    options:
+      data:
+        - name: Connection
+          subtitle: Good
+          label-title: IsPositive
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: true
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+          isContained: true
+          isDuotone: true
+          
+        - name: Connection
+          subtitle: Disconnected
+          label-title: IsError
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: true
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+          isContained: false
+          isDuotone: false
+
+        - name: Connection
+          subtitle: Poor
+          label-title: IsWarning
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: true
+          isDisabled: false
+          icon: house-signal
+          isContained: true
+          isDuotone: false
+
+        - name: Connection
+          subtitle: Not available
+          label-title: isDisabled
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: true
+          icon: house-signal
+          isContained: true
+          isDuotone: false
+
+        - name: Kitchen lamp
+          subtitle: Good
+          label-title: isHighlighted
+          isHighlighted: true
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+          isContained: false
+          isDuotone: true
+
+        - name: Daily task
+          subtitle: Build the fence
+          label-title: isStrikeThrough
+          isHighlighted: false
+          isStrikeThrough: true
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: pencil-write
+          isContained: false
+          isDuotone: true
+
+data: =@ctx.datasources.styles
+item:
+  type: component.list-item
+  instanceId: list-w-styles
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    label:
+      title: =@ctx.current.item.label-title
+      color:
+        - when: true
+          color: color14
+
+    divider: solid
+    horizontalItemSize: regular
+
+    style:
+      isPositive: =@ctx.current.item.isPositive
+      isHighlighted: =@ctx.current.item.isHighlighted
+      isStrikeThrough: =@ctx.current.item.isStrikeThrough
+      isError: =@ctx.current.item.isError
+      isWarning: =@ctx.current.item.isWarning
+      isDisabled: =@ctx.current.item.isDisabled
+
+    leftElement:
+      element: icon
+      name: =@ctx.current.item.icon
+      isContained: true
+      isDuotone: true
+     

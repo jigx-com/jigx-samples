@@ -25,16 +25,16 @@ children:
               numberStyle: currency
           discount: =@ctx.current.item.discount
 
-# views:
-#   2x2: 
-#     type: widget.list
-#     options:
-#       data: =@ctx.datasources.products-dynamic
-#       item: 
-#         type: component.list-item
-#         options:
-#           title: =@ctx.current.item.title
-#           leftElement: 
-#             element: avatar
-#             text: AB
-#             uri: =@ctx.current.item.uri
+views:
+  2x2: 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.products-dynamic
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          leftElement: 
+            element: avatar
+            text: AB
+            uri: =@ctx.current.item.uri

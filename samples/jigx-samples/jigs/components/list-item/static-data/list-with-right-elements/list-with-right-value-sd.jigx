@@ -1,0 +1,22 @@
+title: List with Right Value (Static Data)
+description: A list to display values in list items
+type: jig.list
+icon: task-list
+
+header:
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+
+data: =@ctx.datasources.repair-services-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
+    rightElement: 
+      element: value
+      text: =@ctx.current.item.hourlyRate
+   
+      

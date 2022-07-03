@@ -1,0 +1,22 @@
+title: List with Avatars & Icons - Static Data
+description: A list to display avatar and icon functionality
+type: jig.list
+icon: task-list
+
+header:
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1617123623686-2b7b339785da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80
+
+data: =@ctx.datasources.repair-services-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
+    rightElement: 
+      element: icon
+      name: =(@ctx.current.item.materials = true ? 'attachment' :'alert-triangle')
+
+      

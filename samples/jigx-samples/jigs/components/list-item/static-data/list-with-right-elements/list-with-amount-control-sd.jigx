@@ -1,0 +1,84 @@
+title: List with Amount controls
+type: jig.default
+
+datasources:
+  amount-control:
+    type: datasource.static
+    options:
+      data:
+        - name: Default
+          description: No special settings
+        - name: Step=10
+          description: Min is default 0
+          step: 10
+        - name: Min=1 Max=10
+          description: Step is default 1
+          min: 1
+          max: 10
+        - name: Step=10 Min=-50 Max=50
+          description:
+          step: 10
+          min: -50
+          max: 50
+  amount-control1:
+    type: datasource.static
+    options:
+      data:
+        - name: Default with delete
+          description: No special settings
+        - name: Step=10
+          description: Min is default 0
+          step: 10
+        - name: Min=1 Max=10
+          description: Step is default 1
+          min: 1
+          max: 10
+        - name: Step=10 Min=-50 Max=50
+          description:
+          step: 10
+          min: -50
+          max: 50
+children:
+  - type: component.list
+    instanceId: with-no-delete
+    options:
+      data: =@ctx.datasources.components
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.name
+          subtitle: =@ctx.current.item.description
+          rightElement:
+            element: amount-control
+            value: 5
+            step: =@ctx.current.item.step
+            minimum: =@ctx.current.item.min
+            maximum: =@ctx.current.item.max
+            onChange:
+              type: action.go-to
+              options:
+                linkTo: list-with-amount-control-sd
+        
+  - type: component.list
+    instanceId: with-delete
+    options:
+      data: =@ctx.datasources.components2
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.name
+          subtitle: =@ctx.current.item.description
+          rightElement:
+            element: amount-control
+            value: 2
+            step: =@ctx.current.item.step
+            minimum: =@ctx.current.item.min
+            maximum: =@ctx.current.item.max
+            onChange:
+              type: action.go-to
+              options:
+                linkTo: list-with-amount-control-sd
+            onDelete: 
+              type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC

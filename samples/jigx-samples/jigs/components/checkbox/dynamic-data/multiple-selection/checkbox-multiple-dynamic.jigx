@@ -64,3 +64,16 @@ children:
              isRequired: false
 
 
+views:
+  2x2: 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.flight-schedule-static
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.to
+          leftElement: 
+            element: avatar
+            text: AB
+            uri: =@ctx.current.item.image

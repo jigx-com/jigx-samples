@@ -35,3 +35,7 @@ tables:
   ? calendar-tags
   ? calendar-event
   ? flight-schedule-dynamic
+  ? pie-chart-list-dynamic
+  ? finance-charts
+  ? finance-review-dynamic
+  ? finances

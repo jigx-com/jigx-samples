@@ -1,0 +1,55 @@
+title: Simple List (Local Static Data)
+description: A simple list to display static data
+type: jig.list
+icon: task-list
+
+header:
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+
+datasources:
+  repair-services-static:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          description: Installation or repairs for doors. Doors to be provided by client
+          hourlyRate: 70
+          illustration: http://clipart-library.com/data_images/436224.png
+          image: https://images.unsplash.com/photo-1500281781950-6cd80847ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80
+          materials: false
+          service: Door Installation/Repair
+          time: 60       
+        - id: 3
+          description: Installation or repairs of tiled surfaces. Tiles have to be provided by client
+          hourlyRate: 110
+          illustration: http://clipart-library.com/images/kcKnbzbXi.jpg
+          image: https://images.unsplash.com/photo-1523413184730-e85dbbd04aba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          materials: false
+          service: Tile Installation/Repair
+          time: 120
+        - id: 5
+          description: Repairs to bathroom rails, toilets, etc
+          hourlyRate: 90
+          illustration: http://clipart-library.com/new_gallery/53-530190_black-and-white-toilet-png.png
+          image: https://images.unsplash.com/photo-1585313647787-7a061b5a85a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1423&q=80
+          materials: true
+          service: Bathroom Repairs
+          time: 60
+        - id: 6
+          description: Painting as required. Paint and tools not provided 
+          hourlyRate: 70
+          illustration: http://clipart-library.com/img/853166.jpg
+          image: https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1431&q=80
+          materials: false
+          service: Painting Services
+          time: 120
+
+data: =@ctx.datasources.repair-services-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description

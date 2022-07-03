@@ -1,0 +1,8 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/finance-review-dynamic
+
+  query: SELECT id, '$.title', '$.subtitle', '$.year' FROM [default/finance-review-dynamic]
