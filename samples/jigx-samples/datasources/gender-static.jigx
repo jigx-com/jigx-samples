@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: female
+      value: female
+    - title: male
+      value: male
+    - title: other
+      value: other

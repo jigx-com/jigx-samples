@@ -1,0 +1,26 @@
+title: Products
+type: jig.list
+
+summary:
+  children:
+    type: component.summary
+    options: 
+      layout: counter
+      title: Items in cart
+      value: 2
+      
+
+data: =@ctx.datasources.products
+item: 
+  type: component.product-item
+  options:
+    title: =@ctx.current.item.title
+    image:
+      uri: =@ctx.current.item.uri
+    tag: =@ctx.current.item.tag
+    price: 
+      value: =@ctx.current.item.price
+      format:
+        numberStyle: currency
+    discount: =@ctx.current.item.discount
+

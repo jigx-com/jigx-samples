@@ -1,0 +1,68 @@
+title: Form
+type: jig.default
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Submit form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          goBack: off
+          method: save
+          data: 
+            firstname: =@ctx.components.firstname.state.value
+            lastname: =@ctx.components.lastname.state.value
+            email: =@ctx.components.email.state.value
+            phone: =@ctx.components.phone.state.value
+            birthdate: =@ctx.components.birthdate.state.value
+            gender: =@ctx.components.gender.state.value
+
+            
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: firstname
+                options:  
+                  label: First name
+              - type: component.text-field
+                instanceId: lastname
+                options:
+                  label: Last name
+        - type: component.email-field
+          instanceId: email
+          options:
+            label: Email
+            keyboardType: email-address
+        - type: component.number-field
+          instanceId: phone
+          options:
+            label: Phone number
+            keyboardType: numeric
+        - type: component.field-row
+          options:
+            children:
+              - type: component.date-picker
+                instanceId: birthdate
+                options:
+                  label: Birth date
+              - type: component.dropdown
+                instanceId: dropdown-in
+                options:
+                  data: =@ctx.datasources.gender-static
+                  label: Select gender
+                  isMultiple: false
+                  item:
+                    type: component.dropdown-item
+                    instanceId: =@ctx.current.item.value
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.value
+          
+
+                      

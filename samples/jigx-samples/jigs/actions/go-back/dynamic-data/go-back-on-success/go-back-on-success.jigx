@@ -1,0 +1,30 @@
+title: Signature
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        instanceId: send-signature
+        options:
+          provider: DATA_PROVIDER_DYNAMIC
+          method: save
+          entity: default/confirms
+          formId: send-signature
+          icon: add
+          title: Sign
+          goBack: home
+          onSuccess: 
+            title: Succesfully signed
+            actions:
+              - type: action.go-back
+                options:
+                  title: ''
+        
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.signature-field
+          instanceId: signature-field
+          options:
+            label: Signature required

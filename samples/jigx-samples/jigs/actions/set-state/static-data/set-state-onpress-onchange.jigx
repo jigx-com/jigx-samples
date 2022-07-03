@@ -1,0 +1,35 @@
+title: List
+type: jig.list
+
+datasources:
+  employees-dynamic:
+    type: "datasource.sqlite"
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/employees
+      query: |
+        SELECT
+          id,
+          '$.firstname',
+          '$.email'
+        FROM [default/employees]
+
+data: =@ctx.datasources.employees-dynamic
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.email
+    onPress: 
+      type: action.set-state
+      options:
+        key: global-key
+        value: 1    
+    rightElement: 
+      element: switch
+      onChange: 
+        type: action.set-state
+        options:
+          key: global-key
+          value: 1

@@ -51,7 +51,7 @@ item:
         - when: =@ctx.current.item.registered = false
           color: color4
     leftElement: 
-      component: avatar
+      element: avatar
       text: "=$substring(@ctx.current.item.firstname,0,1) 
             & $substring(@ctx.current.item.lastname,0,1)"
     

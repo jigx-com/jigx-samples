@@ -1,0 +1,8 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/employee-detail
+
+  query: SELECT id, '$.name', '$.photo', '$.birth-date', '$.gender', '$.email', '$.phone', '$.street', '$.city', '$.state', '$.country' FROM [default/employee-detail]

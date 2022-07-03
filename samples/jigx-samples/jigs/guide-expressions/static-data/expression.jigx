@@ -1,6 +1,15 @@
 title: Expressions
 type: jig.default
 
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          style:
+            isDisabled: =@ctx.system.isOffline = true
+          title: Go to action
+          linkTo: advanced-expressions
+
 
 datasources:
   mydata: 
@@ -63,3 +72,20 @@ children:
           options:
             label: Predicate expression
             value: =@ctx.data.mydata[title='Doctor' and color='blue'].name
+        - type: component.entity-field
+          options:
+            label: Languague
+            value: =@ctx.system.locale
+        - type: component.entity-field
+          options:
+            label: Timezone name
+            value: =@ctx.system.timezone.name
+        - type: component.entity-field
+          options:
+            label: Timezone offset
+            value: =@ctx.system.timezone.offset
+        - type: component.entity-field
+          options:
+            label: Timezone convert time
+            value: "=$fromMillis($toMillis($now()), 
+                  '[D1]/[M1]/[Y0001] [h#1]:[m01]',@ctx.system.timezone.offset)"

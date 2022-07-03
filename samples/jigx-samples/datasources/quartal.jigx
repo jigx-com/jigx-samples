@@ -1,0 +1,31 @@
+type: datasource.static
+options:
+  data:
+    - title: 91%
+      subtitle: Q1/2022
+      data:
+        - y: 91
+          color: positive   
+        - y: 9
+          color: transparent
+    - title: 99%
+      subtitle: Q2/2022
+      data:
+        - y: 99
+          color: positive   
+        - y: 1
+          color: transparent
+    - title: 10%
+      subtitle: Q3/2022
+      data:
+        - y: 10
+          color: positive   
+        - y: 90
+          color: transparent
+    - title: 0%
+      subtitle: Q4/2022
+      data:
+        - y: 0
+          color: positive   
+        - y: 100
+          color: transparent

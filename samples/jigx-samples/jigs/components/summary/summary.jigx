@@ -1,0 +1,27 @@
+title: Products
+type: jig.list
+
+summary:
+  children:
+    type: component.summary
+    options: 
+      layout: default
+      title: Your cart is empty
+      leftIcon:
+        element: icon
+        name: shopping-cart-empty-1
+
+data: =@ctx.datasources.products
+item: 
+  type: component.product-item
+  options:
+    title: =@ctx.current.item.title
+    image:
+      uri: =@ctx.current.item.uri
+    tag: =@ctx.current.item.tag
+    price: 
+      value: =@ctx.current.item.price
+      format:
+        numberStyle: currency
+    discount: =@ctx.current.item.discount
+

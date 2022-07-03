@@ -44,12 +44,10 @@ children:
                         instanceId: email
                         options:
                           label: Email
-                          type: email
                       - type: component.number-field
                         instanceId: phone
                         options:
                           label: Phone number
-                          type: number
         - type: component.section
           options:
             title: Address informations

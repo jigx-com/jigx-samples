@@ -1,0 +1,90 @@
+title: Employee detail
+type: jig.default
+
+children:
+  - type: component.avatar
+    options:
+      text: ''
+      uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+      size: large
+      align: center
+  
+  - type: component.entity
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Personal information
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Birth date
+                        value: '12.02.1993'
+                    - type: component.entity-field
+                      options:
+                        label: Gender
+                        value: Male
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Email
+                        value: fisher@first.com
+                        contentType: email
+                    - type: component.entity-field
+                      options:
+                        label: Phone
+                        value: '+61 392 482 323'
+                        contentType: phone
+        - type: component.section
+          options:
+            title: Address
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Street
+                        value: 14 Argyle Street
+                    - type: component.entity-field
+                      options:
+                        label: City
+                        value: Titaatee Creek
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: State
+                        value: New South Wales
+                    - type: component.entity-field
+                      options:
+                        label: Country
+                        value: Australia
+                        
+  - type: component.list
+    options:
+      data: =@ctx.datasources.quartal
+      isHorizontal: true
+      item:
+        type: component.pie-chart
+        options:
+          chart:
+            title:
+              text: =@ctx.current.item.title
+              verticalAlign: center
+            subtitle:
+              text: =@ctx.current.item.subtitle
+              verticalAlign: center
+            width: 140
+            height: 140
+            isAnimated: true
+          legend:
+            isHidden: true
+          series:
+            - data: =@ctx.current.item.data

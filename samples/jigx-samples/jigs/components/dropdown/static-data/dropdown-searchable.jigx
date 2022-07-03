@@ -8,8 +8,9 @@ children:
         - type: component.dropdown
           instanceId: dropdown-in
           options:
-            data: =@ctx.datasources.employees-dynamic
+            data: =$filter(@ctx.datasources.employees-static, function($v){ @ctx.datasources.employees-static ? $contains($string($v.firstname),$string(@ctx.components.dropdown-in.state.searchText)) :true})[]
             label: Select employees
+            isSearchable: true
             item:
               type: component.dropdown-item
               instanceId: =@ctx.current.item.firstname
@@ -20,4 +21,4 @@ children:
                 leftElement: 
                   element: avatar
                   text: ''
-                  uri: =@ctx.current.item.picture
+                  uri: =@ctx.current.item.img

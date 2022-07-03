@@ -8,11 +8,17 @@ widgets:
   - size: 2x2
     jigId: simple-list-sd-local
   - size: 2x2
+<<<<<<< HEAD
     jigId: simple-list-sd-global
   - size: 2x2
     jigId: simple-list-divider-dd
   - size: 2x2
     jigId: simple-list-divider-sd
+=======
+    jigId: default-w-product-list-dd
+  - size: 1x1
+    jigId: product-item-example
+>>>>>>> 526d3436e4e98f01f9ec57b0e653e1c322bf5726
 
 
 

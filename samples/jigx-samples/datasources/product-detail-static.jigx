@@ -1,0 +1,25 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      title: M1 Bluetooth Wireless Mouse
+      price: $59.96
+      photo: https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+      overview: Complete your desktop with the Satechi M1 Bluetooth Mouse, featuring Bluetooth 4.0 connection, rechargeable Type-C port and modern, ergonomic design. Seamlessly connect to your favorite Bluetooth-enabled device for wireless control of your desktop or laptop, with a range of up to 32 ft. 
+      bluetooth: Bluetooth 4.0 connection
+      bluetooth-detail: Easily connect to almost any Bluetooth-enabled device for wireless navigation control, from up to 32 ft. away. Simply, place your M1 Mouse into pairing mode and finish the connection process on your Bluetooth device. Supports both Mac and Windows OS.
+      precise: Fast, Precise Tracking
+      precise-detail: Features optical sensors for precise tracking and fast scrolling when browsing the web, working or data entry. With soft touch navigation buttons and aluminum scroll wheel, the M1 Mouse becomes a natural extension of your Bluetooth device.
+      recharge: Rechargeable Type-C Port
+      recharge-detail: Equipped with a convenient Type-C recharging port, the M1 Mouse eliminates the need for single-use batteries and quickly charges to reduce downtime. Includes Type-C to Type-A charging cable.
+      desig: Modern, Ergonomic Design
+      design-detail: Its curved, ergonomic design fits comfortably in the palm of your hand and is ideal for both left- and right-hand users. The M1 Mouse features a brushed aluminum finish to complete your modern desk setup.
+      tech: Tech Specs
+      compatible: Compatible Devices
+      compatible-detial: 2020/2018 Mac Mini, 2019/2017 iMac, iMac Pro, 2020/2019/2018/2017/2016 MacBook Pro, 2020/2018 MacBook Air, 2020/2018 iPad Pro (running iOS 13), 2019 iPad, iPhone 11 Pro Max/11 Pro/11, XS Max/XS/XR/X (iOS 13), MacBook, Chromebook, Microsoft Surface Go, Dell XPS, Lenovo, HP Spectre, ASUS, most Bluetooth-enabled computers and tablets. Supports Mac, iOS devices running iOS 13, Windows, Android and Chrome OS. Due to using older Bluetooth versions (2.1), we do not recommend using with 2012 & earlier Mac devices.
+      weight: Dimensions & Weight
+      weight-detail: 4.37 x 2.25 x 1.25 inches, 6.2 oz
+      guarantee: Guarantee
+      guarantee-detail: 1 Year Manufacturer Warranty    
+      shipping: Shipping & Returns
+      shipping-detail: Free USA shipping on orders over $40 with a 30-day return policy. International duties & taxes may apply and are not calculated at checkout. Orders ship within 1-2 business days.

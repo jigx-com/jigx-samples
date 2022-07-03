@@ -28,6 +28,6 @@ views:
                 title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
                 subtitle: =$fromMillis($toMillis(@ctx.current.item.date_from),'[H01]:[m01]') & '-' & $fromMillis($toMillis(@ctx.current.item.date_to),'[H01]:[m01]')
                 leftElement:
-                  component: avatar
+                  element: avatar
                   text: =$substring(@ctx.current.item.firstname, 0, 1) & =$substring(@ctx.current.item.lastname, 0, 1)
                   uri: =@ctx.current.item.picture
