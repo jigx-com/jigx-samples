@@ -1,0 +1,32 @@
+title: Submit form example
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: simple-form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/employees
+          method: save
+          title: Save person
+
+
+children:
+  - type: component.form
+    instanceId: simple-form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: firstname
+          options:
+            label: First name
+        - type: component.text-field
+          instanceId: lastname
+          options:
+            label: Last name
+        - type: component.text-field
+          instanceId: phone
+          options:
+            label: Phone number
+            keyboardType: decimal-pad
