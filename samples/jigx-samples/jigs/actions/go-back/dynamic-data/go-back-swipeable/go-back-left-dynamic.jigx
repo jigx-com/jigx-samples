@@ -1,0 +1,19 @@
+title: Go Back action
+type: jig.list
+
+data: =@ctx.datasources.employees-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.lastname
+    subtitle: =@ctx.current.item.firstname
+    leftElement: 
+      element: avatar
+      text: " "
+      uri: =@ctx.current.item.picture
+    swipeable:
+      left:
+        - label: Go back
+          color: primary
+          onPress:
+            type: action.go-back
