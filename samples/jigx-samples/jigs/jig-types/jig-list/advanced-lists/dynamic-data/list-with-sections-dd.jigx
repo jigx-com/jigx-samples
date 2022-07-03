@@ -1,5 +1,5 @@
-title: Simple List with Labels (Dynamic Data)
-description: A simple list to display dynamic data with labels
+title: Simple List with Sections  (Dynamic Data)
+description: A simple list to display lists in various sections
 type: jig.list
 icon: task-list
 
@@ -9,7 +9,12 @@ header:
       source:
         uri: https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNsZWFuaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
 
-data: =@ctx.datasources.cleaning-services-dynamic
+sections:
+  - title: Indoor Services
+    data: =@ctx.datasources.cleaning-services-dynamic[indoor='TRUE']
+  - title: Outdoor Services
+    data: =@ctx.datasources.cleaning-services-dynamic[indoor='FALSE']
+    
 item:
   type: component.list-item
   options:

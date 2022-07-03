@@ -1,5 +1,5 @@
 title: Flight Schedule
-description: List with Expander with Stage as Header Element (Centre)
+description: List with Stage
 type: jig.list
 icon: plane-2
 

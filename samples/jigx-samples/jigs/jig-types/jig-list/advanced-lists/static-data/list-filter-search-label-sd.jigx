@@ -40,8 +40,7 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.area
     label:
-      title: =(@ctx.current.item.indoor = "TRUE" ? 'Indoor':'Outdoor')
-    
+      title: =(@ctx.current.indoor = "TRUE" ? 'Indoor' :'Outdoor')
     leftElement: 
       element: avatar
       text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)

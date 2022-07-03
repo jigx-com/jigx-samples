@@ -1,7 +1,8 @@
-title: Simple List with Labels (Dynamic Data)
-description: A simple list to display dynamic data with labels
+title: Selectable List (Dynamic Data)
+description: A simple, selectable list with labels
 type: jig.list
 icon: task-list
+isSelectable: true
 
 header: 
     type: component.image

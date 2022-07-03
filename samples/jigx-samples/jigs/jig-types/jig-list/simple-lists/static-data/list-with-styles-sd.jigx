@@ -7,10 +7,15 @@ actions:
   - children:
       - type: action.go-back
         options:
+          title: Primary Action
+      - type: action.go-back
+        options:
           title: Secondary action 1
+          icon: home
       - type: action.go-back
         options:
           title: Secondary action 2
+          icon: hourglass
 
 datasources:
   styles:
