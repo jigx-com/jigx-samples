@@ -4,6 +4,8 @@ tables:
   ? form
   ? value
   ? trip
+  ? product-detail
+  ? employee-detail
   ? employees
   ? assets
   ? finance

@@ -35,12 +35,12 @@ children:
             instanceId: email
             options:
               label: Email
-              type: email
+              keyboardType: email-address
           - type: component.number-field
             instanceId: phone
             options:
               label: Phone number
-              type: number
+              keyboardType: numeric
 
 
                       

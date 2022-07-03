@@ -1,0 +1,90 @@
+title: Employee detail
+type: jig.default
+
+children:
+  - type: component.avatar
+    options:
+      text: ''
+      uri: =@ctx.datasources.employee-detail-dynamic.photo
+      size: large
+      align: center
+  
+  - type: component.entity
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Personal information
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Birth date
+                        value: =@ctx.datasources.employee-detail-dynamic.birth-date
+                    - type: component.entity-field
+                      options:
+                        label: Gender
+                        value: =@ctx.datasources.employee-detail-dynamic.gender
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Email
+                        value: =@ctx.datasources.employee-detail-dynamic.email
+                        contentType: email
+                    - type: component.entity-field
+                      options:
+                        label: Phone
+                        value: =@ctx.datasources.employee-detail-dynamic.phone
+                        contentType: phone
+        - type: component.section
+          options:
+            title: Address
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Street
+                        value: =@ctx.datasources.employee-detail-dynamic.street
+                    - type: component.entity-field
+                      options:
+                        label: City
+                        value: =@ctx.datasources.employee-detail-dynamic.city
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: State
+                        value: =@ctx.datasources.employee-detail-dynamic.state
+                    - type: component.entity-field
+                      options:
+                        label: Country
+                        value: =@ctx.datasources.employee-detail-dynamic.country
+                        
+  - type: component.list
+    options:
+      data: =@ctx.datasources.quartal
+      isHorizontal: true
+      item:
+        type: component.pie-chart
+        options:
+          chart:
+            title:
+              text: =@ctx.current.item.title
+              verticalAlign: center
+            subtitle:
+              text: =@ctx.current.item.subtitle
+              verticalAlign: center
+            width: 140
+            height: 140
+            isAnimated: true
+          legend:
+            isHidden: true
+          series:
+            - data: =@ctx.current.item.data

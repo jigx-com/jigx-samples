@@ -8,16 +8,16 @@ children:
         - type: component.dropdown
           instanceId: dropdown-in
           options:
-            data: =@ctx.datasources.employees-dynamic
+            data: =@ctx.datasources.employees-static
             label: Select employees
+            type: multiple
             item:
               type: component.dropdown-item
               instanceId: =@ctx.current.item.firstname
               options:
-                value: =@ctx.current.item.firstname
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname
                 leftElement: 
-                  element: avatar
+                  type: avatar
                   text: ''
-                  uri: =@ctx.current.item.picture
+                  uri: =@ctx.current.item.img

@@ -1,0 +1,140 @@
+title: Name
+type: jig.default
+
+header: 
+  type: component.image
+  options:
+    title: =@ctx.datasources.product-detail-dynamic.title
+    subtitle: =@ctx.datasources.product-detail-dynamic.price
+    source:
+      uri: =@ctx.datasources.product-detail-dynamic.photo
+
+summary:
+  children:
+    type: component.summary
+    options: 
+      layout: default
+      title: Add to cart
+      leftIcon:
+        element: icon
+        name: shopping-cart-empty-1
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: ""
+            isMultiline: true
+            value: =@ctx.datasources.product-detail-dynamic.overview
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.titles
+          options:
+            title: Details
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.section
+                options:
+                  title: Bluetooth 4.0 connection
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: ""
+                        isMultiline: true
+                        value: =@ctx.datasources.product-detail-dynamic.bluetooth-detail
+              - type: component.section
+                options:
+                  title: Fast, Precise Tracking
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: ""
+                        isMultiline: true
+                        value: =@ctx.datasources.product-detail-dynamic.precise-detail
+              - type: component.section
+                options:
+                  title: Rechargeable Type-C Port
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: ""
+                        isMultiline: true
+                        value: =@ctx.datasources.product-detail-dynamic.recharge-detail
+              - type: component.section
+                options:
+                  title: Modern, Ergonomic Design
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: ""
+                        isMultiline: true
+                        value: =@ctx.datasources.product-detail-dynamic.design-detail
+                                                
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.titles
+          options:
+            title: Tech Specs
+      children:
+        - type: component.entity
+          options:
+            children:
+             - type: component.section
+               options:
+                 title: Compatible Devices
+                 children:
+                   - type: component.entity-field
+                     options:
+                       label: ""
+                       isMultiline: true
+                       value: =@ctx.datasources.product-detail-dynamic.compatible-detial
+        - type: component.entity
+          options:
+            children:
+             - type: component.section
+               options:
+                 title: Weight
+                 children:
+                   - type: component.entity-field
+                     options:
+                       label: ""
+                       isMultiline: true
+                       value: =@ctx.datasources.product-detail-dynamic.weight-detail
+        - type: component.entity
+          options:
+            children:
+             - type: component.section
+               options:
+                 title: Guarantee
+                 children:
+                   - type: component.entity-field
+                     options:
+                       label: ""
+                       isMultiline: true
+                       value: =@ctx.datasources.product-detail-dynamic.guarantee-detail                          
+                       
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.titles
+          options:
+            title: Shipping & Returns
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: ""
+                  isMultiline: true
+                  value: =@ctx.datasources.product-detail-dynamic.shipping-detail
+                       

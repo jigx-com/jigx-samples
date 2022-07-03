@@ -1,0 +1,18 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/employees
+  query: |
+    SELECT 
+      id,
+      '$.firstname',
+      '$.lastname',
+      '$.picture', 
+      '$.date_from', 
+      '$.date_to', 
+      '$.email',
+      '$.phone' 
+    FROM [default/employees]  WHERE '$.firstname' LIKE '%'||@search||'%' OR @search IS NULL
+  queryParameters:
+    '@search': =@ctx.components.dropdown-in.state.searchText
