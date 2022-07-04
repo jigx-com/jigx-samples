@@ -1,0 +1,55 @@
+title: Execute entity by action button
+type: jig.default
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: =@ctx.data.employees.picture
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Send Form
+          provider: DATA_PROVIDER_DYNAMIC
+          method: save
+          goBack: off
+          entity: default/form
+          data:
+            firstname: =@ctx.jig.state.firstname.value
+            lastname: =@ctx.jig.state.lastname.value
+            email: =@ctx.jig.state.email.value
+            phone: =@ctx.jigx.state.phone.value
+
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                instanceId: firstname
+                options:
+                  label: First Name
+                  value: =@ctx.data.employees.firstname
+              - type: component.entity-field
+                instanceId: lastname
+                options:
+                  label: Last Name
+                  value: =@ctx.data.employees.lastname
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                instanceId: email
+                options:
+                  label: Email
+                  value: =@ctx.data.employees.email
+              - type: component.entity-field
+                instanceId: phone
+                options:
+                  label: Phone
+                  value: =@ctx.data.employees.phone
