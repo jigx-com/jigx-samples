@@ -10,6 +10,7 @@ options:
       json_extract(A.Data, '$.title') as title,
       json_extract(A.Data, '$.subtitle') as subtitle,
       json_extract(A.Data, '$.year') as year,
+      json_extract(A.Data, '$.year') as x,
       json_extract(B.Data, '$.amount') as y,
       json_extract(B.Data, '$.date') as date,
       json_extract(B.Data, '$.financeid') as financeid,
