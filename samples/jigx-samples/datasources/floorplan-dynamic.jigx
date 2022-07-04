@@ -6,5 +6,3 @@ options:
     - entity: default/floorplan-dynamic
 
   query: SELECT id, '$.name', '$.pax', '$.xCoordinate', '$.yCoordinate', '$.isReserved' FROM [default/floorplan-dynamic]
-  queryParameters:
-    myParam: value

@@ -4,7 +4,9 @@ category: personal
 
 widgets: 
   - size: 2x2
-    jigId: list-with-styles-sd
+    jigId: interactive-image-sd
+  - size: 2x2
+    jigId: interactive-image-dd
   # - size: 2x2
   #   jigId: list-with-active-item-sd
   # - size: 2x2

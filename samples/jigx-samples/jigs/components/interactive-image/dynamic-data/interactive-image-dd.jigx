@@ -1,0 +1,42 @@
+title: Interactive Image
+description: Display of interactive image for table bookings
+type: jig.default
+isScrollable: false
+
+children:
+  - type: component.interactive-image
+    options:
+      imageHeight: 1500
+      source: 
+        uri:  https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
+
+          
+      data: =@ctx.datasources.floorplan-dynamic
+      pointColor: color10
+      groups:
+        - title: Reserved Tables
+          id: Reserved
+          color: color14
+
+      item:
+        type: component.interactive-image-item
+        instanceId: interactive_img_item_dd
+        options:
+          id: =@ctx.current.item.id
+          title: =@ctx.current.item.name
+          icon: =@ctx.current.item.isReserved = 'TRUE' ? 'close' :null
+          # groupId: =@ctx.current.item.isReserved = 'TRUE' ? 'Reserved':'Available'
+          color: =@ctx.current.item.isReserved = 'TRUE' ? 'color3' :null
+          style:
+            isDisabled: =@ctx.current.item.isReserved = 'TRUE' ? true :false
+          
+          percentageCoordinates:
+            x: =[{'x':@ctx.current.item.xCoordinate]]
+            y: =[{'y':@ctx.current.item.yCoordinate}]
+ 
+views:
+  2x2: 
+    type: widget.image
+    options:
+      source:
+        uri: https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
