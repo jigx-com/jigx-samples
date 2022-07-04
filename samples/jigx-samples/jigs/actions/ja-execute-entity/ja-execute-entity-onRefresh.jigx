@@ -1,0 +1,45 @@
+title: Name
+type: jig.default
+
+onRefresh: 
+  type: action.execute-entity
+  options:
+    provider: DATA_PROVIDER_DYNAMIC
+    method: save
+    goBack: off
+    entity: default/form
+    data: 
+      id: =@ctx.current.item.id
+      modify: =$now()
+
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                instanceId: firstname
+                options:
+                  label: First Name
+                  value: =@ctx.data.employees.firstname
+              - type: component.entity-field
+                instanceId: lastname
+                options:
+                  label: Last Name
+                  value: =@ctx.data.employees.lastname
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                instanceId: email
+                options:
+                  label: Email
+                  value: =@ctx.data.employees.email
+              - type: component.entity-field
+                instanceId: phone
+                options:
+                  label: Phone
+                  value: =@ctx.data.employees.phone
