@@ -32,5 +32,4 @@ item:
       - data: =@ctx.datasources.finance-charts
         # color: =@ctx.current.item.color
         layout: pie
-      # - data: =@ctx.current.item.y
-      #   layout: pie
+
