@@ -6,39 +6,28 @@ icon: notes-paper-approve
 filter: 
   - title: All
     value: ''
-  - title: Indoor
-    value: TRUE
-  - title: Outdoor
-    value: FALSE
+  - title: Materials Incl
+    value: true
+  - title: Materials Excl
+    value: false
   
 header:
     type: component.image
     options:
       source:
-        uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
+        uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
 
-# datasources:
-#   cleaning-services-dynamic:
-#     type: datasource.sqlite
-#     options:
-#       provider: DATA_PROVIDER_DYNAMIC
-  
-#       entities:
-#         - entity: default/cleaning-services-dynamic
-  
-#       query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.indoor' LIKE @filter or @filter IS NULL
-#       queryParameters:
-#         filter: =@ctx.jig.state.filter
-        
 
-data: =$exists(@ctx.jig.state.filter) ? @ctx.datasources.repair-services-static[materials=@ctx.jig.state.filter]:@ctx.datasources.repair-services-static
+
+
+data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.area
+    subtitle: =@ctx.current.item.time & ' mins'
     label:
-      title: =(@ctx.current.item.indoor = "TRUE" ? 'Indoor' :'Outdoor')
+      title: =(@ctx.current.item.materials = "true" ? 'Materials Incl' :'Materials Excl')
     leftElement: 
       element: avatar
       text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)

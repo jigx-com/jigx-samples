@@ -31,8 +31,8 @@ children:
             isDisabled: =@ctx.current.item.isReserved = 'TRUE' ? true :false
           
           percentageCoordinates:
-            x: =[{'x':@ctx.current.item.xCoordinate]]
-            y: =[{'y':@ctx.current.item.yCoordinate}]
+            x: =$number(@ctx.current.item.xCoordinate)
+            y: =$number(@ctx.current.item.yCoordinate)
  
 views:
   2x2: 
