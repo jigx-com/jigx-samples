@@ -20,7 +20,7 @@ widgets:
   # - size: 2x2
   #   jigId: simple-list-divider-sd
   - size: 1x1
-    jigId: avatar-field-example
+    jigId: media-field-example
 
 
 
