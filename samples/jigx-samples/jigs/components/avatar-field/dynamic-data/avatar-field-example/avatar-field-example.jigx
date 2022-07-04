@@ -1,0 +1,39 @@
+title: Avatar field
+type: jig.default
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Upload picture
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/avatar-field
+          method: save
+          data: 
+            picture: =@ctx.components.avatar-field.state.value
+          onSuccess: 
+            title: Your picture was uploaded
+            actions:
+              - type: action.go-back
+                options:
+                  title: ''
+      
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.avatar-field
+          instanceId: avatar-field
+          options:
+            label: Upload avatar
+            color:
+              - when: true
+                color: color2
+            style:
+              flex: 1
+            imageCropping:
+              width: 120
+              height: 120
+            isHidden: false
+            isIgnored: false
+            isRequired: false

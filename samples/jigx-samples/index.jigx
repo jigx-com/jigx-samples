@@ -19,6 +19,8 @@ widgets:
   #   jigId: list-with-sections-dd
   # - size: 2x2
   #   jigId: simple-list-divider-sd
+  - size: 1x1
+    jigId: avatar-field-example
 
 
 
