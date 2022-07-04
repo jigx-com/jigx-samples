@@ -127,6 +127,6 @@ item:
     leftElement:
       element: icon
       name: =@ctx.current.item.icon
-      isContained: true
-      isDuotone: true
+      isContained: =@ctx.current.item.isContained
+      isDuotone: =@ctx.current.item.isDuotone
      

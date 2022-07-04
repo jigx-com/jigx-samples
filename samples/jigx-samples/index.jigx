@@ -4,17 +4,17 @@ category: personal
 
 widgets: 
   - size: 2x2
-    jigId: list-selectable-sd
-  - size: 2x2
-    jigId: list-with-active-item-sd
-  - size: 2x2
-    jigId: list-with-sections-sd
-  - size: 2x2
-    jigId: list-selectable-dd
-  - size: 2x2
-    jigId: list-with-active-item-dd
-  - size: 2x2
-    jigId: list-with-sections-dd
+    jigId: list-with-styles-sd
+  # - size: 2x2
+  #   jigId: list-with-active-item-sd
+  # - size: 2x2
+  #   jigId: list-with-sections-sd
+  # - size: 2x2
+  #   jigId: list-selectable-dd
+  # - size: 2x2
+  #   jigId: list-with-active-item-dd
+  # - size: 2x2
+  #   jigId: list-with-sections-dd
   # - size: 2x2
   #   jigId: simple-list-divider-sd
 
