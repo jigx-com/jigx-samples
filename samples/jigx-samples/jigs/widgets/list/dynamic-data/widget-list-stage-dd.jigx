@@ -2,20 +2,6 @@ type: jig.default
 title: Flight Schedule
 description: Widget List with Stages
 
-children:
-  - type: component.entity
-    options:
-      children:
-        - type: component.entity-field
-          options:
-            label: "For Widget Demo Only"
-            value: Check actions to view related items
-  - type: component.image
-    options:
-      source:
-        uri: https://images.unsplash.com/photo-1558420034-e98aa2ce8cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80
-        
-
 actions:
   - children:
       - type: action.go-to
@@ -27,6 +13,21 @@ actions:
           title: List with Stage
           linkTo: list-with-stage-dd
 
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "For Widget Demo Only"
+            value: Check actions to view related items
+            
+  - type: component.image
+    options:
+      height: 1800
+      source:
+        uri: https://images.unsplash.com/photo-1558420034-e98aa2ce8cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80
+        
 
 views:
   2x2:

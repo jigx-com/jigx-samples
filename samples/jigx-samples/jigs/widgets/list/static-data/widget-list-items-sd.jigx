@@ -1,0 +1,87 @@
+type: jig.default
+title: List Widget Options
+description: Widget List with List Items
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: List with Left Avatar
+          linkTo: list-with-left-avatar-sd
+      - type: action.go-to
+        options:
+          title: List with Left Checkbox
+          linkTo: list-with-left-checkbox-sd
+      - type: action.go-to
+        options:
+          title: List with Left Icon
+          linkTo: list-with-left-icon-sd
+      - type: action.go-to
+        options:
+          title: List with Left Image
+          linkTo: list-with-left-image-sd
+      - type: action.go-to
+        options:
+          title: List with Left Progress
+          linkTo: list-with-left-progress-sd
+      - type: action.go-to
+        options:
+          title: List with Amount Control
+          linkTo: list-with-amount-control-sd
+      - type: action.go-to
+        options:
+          title: List with Right Amount Control
+          linkTo: list-with-right-amount-sd
+      - type: action.go-to
+        options:
+          title: List with Right Badge
+          linkTo: list-with-right-badge-sd
+      - type: action.go-to
+        options:
+          title: List with Right Button
+          linkTo: list-with-right-button-sd
+      - type: action.go-to
+        options:
+          title: List with Right Checkbox
+          linkTo: list-with-right-checkbox-sd
+      - type: action.go-to
+        options:
+          title: List with Right Icon
+          linkTo: list-with-right-icon-sd
+      - type: action.go-to
+        options:
+          title: List with Right Switch
+          linkTo: list-with-right-switch-sd
+      - type: action.go-to
+        options:
+          title: List with Right Value
+          linkTo: list-with-right-value-sd
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: "For Widget Demo Only"
+            value: Check actions to view related items
+            
+  - type: component.image
+    options:
+      height: 1800
+      source:
+        uri: https://images.unsplash.com/photo-1558420034-e98aa2ce8cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80
+        
+views:
+  2x2:
+    type: widget.list
+    options:
+      data: =@ctx.datasources.calendar-data
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          subtitle: =@ctx.current.item.location
+
+
+          

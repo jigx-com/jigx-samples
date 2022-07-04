@@ -30,7 +30,5 @@ item:
       isHidden: true
     series:
       - data: =[{'y':@ctx.current.item.share}]
-        # color: =@ctx.current.item.color
         layout: pie
-      # - data: =@ctx.current.item.y
-      #   layout: pie
+

@@ -4,9 +4,9 @@ category: personal
 
 widgets: 
   - size: 2x2
-    jigId: list-filter-label-sd
+    jigId: widget-list-product-item-dd
   - size: 2x2
-    jigId: interactive-image-dd
+    jigId: widget-list-items-dd
   # - size: 2x2
   #   jigId: list-with-active-item-sd
   # - size: 2x2
