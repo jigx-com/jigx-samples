@@ -19,10 +19,3 @@ item:
             type: action.go-to
             options:
               linkTo: default-employee-detail
-      right:
-        - label: Details
-          color: primary
-          onPress:
-            type: action.go-to
-            options:
-              linkTo: default-employee-detail
