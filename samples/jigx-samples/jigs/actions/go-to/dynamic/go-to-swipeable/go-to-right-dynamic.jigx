@@ -1,0 +1,21 @@
+title: Go To action
+type: jig.list
+
+data: =@ctx.datasources.employees-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.lastname
+    subtitle: =@ctx.current.item.firstname
+    leftElement: 
+      element: avatar
+      text: " "
+      uri: =@ctx.current.item.picture
+    swipeable:
+      right:
+        - label: Go to
+          color: primary
+          onPress:
+            type: action.go-to
+            options:
+              linkTo: default-employee-detail
