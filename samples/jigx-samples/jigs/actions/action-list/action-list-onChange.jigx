@@ -1,0 +1,25 @@
+title: Employees list
+type: jig.list
+
+data: =@ctx.datasources.employees-dynamic
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.email
+    rightElement: 
+      element: switch
+      onChange: 
+        type: action.action-list
+        options:
+          actions:
+            - type: action.sync-entities
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entities:
+                  - entity: default/employee-detail
+            - type: action.go-to
+              options:
+                linkTo: employee-detail-dynamic
+                parameters:
+                  id: =@ctx.current.item.id

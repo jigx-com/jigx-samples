@@ -1,0 +1,39 @@
+title: Action-list example
+type: jig.default
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          isSequential: true
+          title: Submit form
+          actions:
+            - type: action.submit-form
+              options:
+                formId: simple-form
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/employees
+                method: save
+            - type: action.go-to
+              options:
+                linkTo: employees-list
+
+
+children:
+  - type: component.form
+    instanceId: simple-form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: firstname
+          options:
+            label: First name
+        - type: component.text-field
+          instanceId: lastname
+          options:
+            label: Last name
+        - type: component.text-field
+          instanceId: phone
+          options:
+            label: Phone number
+            keyboardType: decimal-pad

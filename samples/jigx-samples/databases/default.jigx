@@ -4,6 +4,7 @@ tables:
   ? form
   ? value
   ? trip
+  ? new-orders
   ? product-detail
   ? employee-detail
   ? employees
