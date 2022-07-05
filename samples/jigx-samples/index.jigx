@@ -4,11 +4,11 @@ category: personal
 
 widgets: 
   - size: 1x1
-    jigId: interactive-image-office-dd
+    jigId: list-with-swipe-right-dd
   - size: 1x1
-    jigId: interactive-image-office-sd
+    jigId: list-with-swipe-right-sd
   - size: 2x2
-    jigId: list-with-pie-charts-dd
+    jigId: list-with-amount-control-sd
   - size: 2x2
     jigId: list-with-pie-charts-sd
   - size: 2x2

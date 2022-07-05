@@ -42,7 +42,7 @@ children:
   - type: component.list
     instanceId: with-no-delete
     options:
-      data: =@ctx.datasources.components
+      data: =@ctx.datasources.amount-control
       item:
         type: component.list-item
         options:
@@ -62,7 +62,7 @@ children:
   - type: component.list
     instanceId: with-delete
     options:
-      data: =@ctx.datasources.components2
+      data: =@ctx.datasources.amount-control1
       item:
         type: component.list-item
         options:

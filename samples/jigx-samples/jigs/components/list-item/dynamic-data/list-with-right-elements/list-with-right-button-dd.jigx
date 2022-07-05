@@ -1,5 +1,5 @@
-title: List with Avatars - Dynamic
-description: A list to display avatars, checkboxes and badge functionality
+title: List with Buttons (Dynamic Data)
+description: A list to display button functionality
 type: jig.list
 icon: task-list
 
@@ -7,7 +7,7 @@ header:
     type: component.image
     options:
       source:
-        uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
+        uri: https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2xlYW5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
 
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
@@ -18,8 +18,8 @@ item:
     rightElement: 
       element: button
       title: Press Me
-    onPress: 
-      type: action.go-back
+      onPress: 
+        type: action.go-back
 
 
       

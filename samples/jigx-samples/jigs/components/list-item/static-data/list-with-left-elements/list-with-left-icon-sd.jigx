@@ -1,4 +1,4 @@
-title: List with Left Icon
+title: List with Left Icon (Static)
 description: A list to display icon functionality
 type: jig.list
 icon: task-list
@@ -7,7 +7,7 @@ header:
     type: component.image
     options:
       source:
-        uri:  https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+        uri:  https://images.unsplash.com/photo-1597423498219-04418210827d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80
         
 data: =@ctx.datasources.repair-services-static
 item:
@@ -17,6 +17,6 @@ item:
     subtitle: =@ctx.current.item.time & 'minutes for task completion'
     leftElement: 
       element: icon
-      name: =(@ctx.current.item.materials) = "TRUE" ? 'home' :'car-garage'
+      name: =(@ctx.current.item.materials) = true ? 'home' :'car-garage'
 
       

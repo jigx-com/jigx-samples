@@ -17,5 +17,5 @@ item:
     subtitle: =@ctx.current.item.description
     leftElement:
       element: checkbox
-      initialValue: =(@ctx.current.item.materials) = True ? true :false
+      initialValue: =(@ctx.current.item.materials) = true ? true :false
       

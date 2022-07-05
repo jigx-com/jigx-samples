@@ -17,6 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement: 
       element: value
-      text: =(@ctx.current.item.hourlyRate) 'NA' ? '$ ' & @ctx.current.item.onceOffRate :'$ ' & @ctx.current.item.hourlyRate
+      text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
    
+        
       

@@ -1,5 +1,5 @@
-title: List with Avatars - Static Data
-description: A list to display avatars, checkboxes and badge functionality
+title: List with Badges (Static Data)
+description: A list to display badge functionality
 type: jig.list
 icon: task-list
 
@@ -17,5 +17,5 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement: 
       element: badge
-      isHidden: =(@ctx.current.item.materials) = True ? true :false
+      isHidden: =(@ctx.current.item.materials) = true ? true :false
       

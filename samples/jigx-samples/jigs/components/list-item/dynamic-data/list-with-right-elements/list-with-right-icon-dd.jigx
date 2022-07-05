@@ -1,5 +1,5 @@
-title: List with Avatars & Icons - Dynamic Data
-description: A list to display avatar and icon functionality
+title: List with Right Icons (Dynamic Data)
+description: A list to display icon functionality
 type: jig.list
 icon: task-list
 
@@ -7,7 +7,7 @@ header:
     type: component.image
     options:
       source:
-        uri:  https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+        uri:  https://images.unsplash.com/photo-1627905646269-7f034dcc5738?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
         
 data: =@ctx.datasources.cleaning-services-dynamic
 item:

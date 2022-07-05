@@ -1,0 +1,41 @@
+title: List with Swipe Right
+description: A list to display values and actions in a list
+type: jig.list
+icon: task-list
+
+header:
+    type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+
+data: =@ctx.datasources.cleaning-services-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.description
+    leftElement: 
+      element: icon
+      name: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
+    rightElement: 
+      element: value
+      text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
+    swipeable:
+      right:
+        - onPress: 
+            type: action.go-to
+            options:
+              linkTo: action-list-onPress
+          label: Primary Action
+          icon: alarm-bell
+          color: primary
+          # note that the secondary action is only for demo purposes, you can stop at the primary action
+        - onPress: 
+            type: action.go-to
+            options:
+              linkTo: action-list-onPress
+          label: Secondary Action
+          icon: alert-triangle
+          color: warning
+ 

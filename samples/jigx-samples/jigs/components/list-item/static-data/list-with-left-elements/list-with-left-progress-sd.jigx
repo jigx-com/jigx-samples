@@ -1,5 +1,5 @@
-title: List with Switch and Progress - Static Data
-description: A list to display switch and item progress functionality
+title: List with Progress (Static Data)
+description: A list to display item progress functionality
 type: jig.list
 icon: task-list
 

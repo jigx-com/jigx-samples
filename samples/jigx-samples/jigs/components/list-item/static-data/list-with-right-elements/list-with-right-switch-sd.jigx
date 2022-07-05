@@ -1,5 +1,5 @@
-title: List with Switch and Progress - Static Data
-description: A list to display switch and item progress functionality
+title: List with Switch (Static Data)
+description: A list to display switch functionality
 type: jig.list
 icon: task-list
 
@@ -17,7 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement: 
       element: switch
-      initialValue: =@ctx.current.item.materials
+      initialValue: =(@ctx.current.item.materials = true ? true:false)
       onChange: 
         type: action.go-back
       

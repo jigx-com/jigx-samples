@@ -1,5 +1,5 @@
-title: List with Avatars - Dynamic
-description: A list to display avatars, checkboxes and badge functionality
+title: List with Buttons (Static Data)
+description: A list to display button functionality
 type: jig.list
 icon: task-list
 
@@ -18,8 +18,9 @@ item:
     rightElement: 
       element: button
       title: Press Me
-    onPress: 
-      type: action.go-back
+      onPress: 
+        type: action.go-back
+
 
 
       

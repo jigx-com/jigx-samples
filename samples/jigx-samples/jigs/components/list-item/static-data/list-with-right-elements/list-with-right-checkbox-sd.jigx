@@ -7,7 +7,7 @@ header:
     type: component.image
     options:
       source:
-        uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+        uri: https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80
 
 
 data: =@ctx.datasources.repair-services-static
@@ -18,6 +18,6 @@ item:
     subtitle: ='Service duration of ' & @ctx.current.item.time & ' minutes'
     rightElement: 
       element: checkbox
-      value: =(@ctx.current.item.materials) = 'TRUE' ? true :false
+      value: =(@ctx.current.item.materials) = true ? true :false
       
     

@@ -1,5 +1,5 @@
-title: List with Switch and Progress - Dynamic Data
-description: A list to display switch and item progress functionality
+title: List with Progress (Dynamic Data)
+description: A list to display item progress functionality
 type: jig.list
 icon: task-list
 
@@ -18,5 +18,5 @@ item:
     leftElement: 
       element: progress
       title: Time
-      value:  =@ctx.current.item.time/120
+      value:  =$number(@ctx.current.item.time)/120
       

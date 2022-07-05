@@ -1,5 +1,5 @@
-title: List with Switch and Progress - Dynamic Data
-description: A list to display switch and item progress functionality
+title: List with Amount Control (Dynamic Data)
+description: A list to display amount control
 type: jig.list
 icon: task-list
 
