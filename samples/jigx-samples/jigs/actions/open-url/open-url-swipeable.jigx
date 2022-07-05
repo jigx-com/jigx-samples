@@ -1,0 +1,26 @@
+title: Open url action
+type: jig.list
+
+data: =@ctx.datasources.employees-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.lastname
+    subtitle: =@ctx.current.item.firstname
+    leftElement: 
+      element: avatar
+      text: " "
+      uri: =@ctx.current.item.img
+    swipeable:
+      left:
+        - label: Open Url 
+          onPress:
+            type: action.open-url
+            options:
+              url: https://docs.jigx.com/examples/open-url
+      right:
+        - label: Open Url 
+          onPress: 
+            type: action.open-url
+            options:
+              url: https://docs.jigx.com/examples/open-url
