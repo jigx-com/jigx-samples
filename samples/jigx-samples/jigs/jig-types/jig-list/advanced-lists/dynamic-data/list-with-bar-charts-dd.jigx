@@ -1,0 +1,27 @@
+title: List with Bar Charts
+  # Horizontal List (Pie Chart)
+type: jig.list
+
+
+data: =@ctx.datasources.finance-charts
+# isHorizontal: true
+item:
+  type: component.bar-chart
+  options:
+    yAxis:
+      max: 50000
+      min: 10000
+    xAxis:
+      categories:
+        - Q1
+        - Q2
+        - Q3
+        - Q4
+    series:
+      - data: =@ctx.datasources.finance-charts[2019]
+        color: color1
+      - data: =@ctx.datasources.finance-charts[2020]
+        color: color2
+      - data: =@ctx.datasources.finance-charts[2021]
+        color: color3
+      

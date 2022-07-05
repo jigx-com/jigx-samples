@@ -1,5 +1,8 @@
-title: Horizontal List (Pie Chart)
+title: =(@ctx.current.item.y)*100
+  # Horizontal List (Pie Chart)
 type: jig.list
+description: =@ctx.datasources.finance-charts.y
+
 
 # datasources:
 #   pie-chart:
@@ -19,17 +22,25 @@ item:
   options:
     chart:
       title:
-        text: =@ctx.current.item.year
+        text: =$substring(@ctx.current.item.date, 0, 3)
         verticalAlign: center
       subtitle:
-        text: =@ctx.current.item.title
+        text: =$string(@ctx.current.item.y * 100)
         verticalAlign: center
       width: 100
       height: 100
     legend:
       isHidden: true
     series:
-      - data: =@ctx.datasources.finance-charts
+      - data: =$number(@ctx.current.item.y) * 100
         # color: =@ctx.current.item.color
         layout: pie
-
+      # - data: =[@ctx.datasources.finance-charts[quarterid='2'].x, @ctx.datasources.finance-charts[quarterid='2'].y]
+      #   # color: =@ctx.current.item.color
+      #   layout: pie
+      # - data: =[@ctx.datasources.finance-charts[quarterid='3'].x, @ctx.datasources.finance-charts[quarterid='3'].y]
+      #   # color: =@ctx.current.item.color
+      #   layout: pie
+      # - data: =[@ctx.datasources.finance-charts[quarterid='4'].x, @ctx.datasources.finance-charts[quarterid='4'].y]
+      #   # color: =@ctx.current.item.color
+      #   layout: pie

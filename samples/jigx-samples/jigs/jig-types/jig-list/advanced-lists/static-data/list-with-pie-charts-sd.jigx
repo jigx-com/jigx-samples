@@ -1,4 +1,4 @@
-title: Horizontal List (Pie Chart)
+title: List with Pie Charts
 type: jig.list
 
 datasources:
@@ -26,7 +26,6 @@ datasources:
               color: transparent
 
 data: =@ctx.datasources.components
-# isHorizontal: true
 item:
   type: component.pie-chart
   options:
@@ -44,4 +43,3 @@ item:
     series:
       - data: =@ctx.current.item.data
         layout: pie
-        color: =$.[{'color':@ctx.current.item.data}]

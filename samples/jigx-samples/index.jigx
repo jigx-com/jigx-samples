@@ -7,10 +7,12 @@ widgets:
     jigId: interactive-image-office-dd
   - size: 1x1
     jigId: interactive-image-office-sd
-  - size: 1x1
-    jigId: interactive-image-rest-dd
-  - size: 1x1
-    jigId: interactive-image-rest-sd
+  - size: 2x2
+    jigId: list-with-pie-charts-dd
+  - size: 2x2
+    jigId: list-with-pie-charts-sd
+  - size: 2x2
+    jigId: list-with-bar-charts-dd
   # - size: 2x2
   #   jigId: list-with-sections-sd
   # - size: 2x2
@@ -21,9 +23,6 @@ widgets:
   #   jigId: list-with-sections-dd
   # - size: 2x2
   #   jigId: simple-list-divider-sd
-<<<<<<< HEAD
- 
-=======
   - size: 1x1
     jigId: media-field-example
 
@@ -31,7 +30,6 @@ widgets:
 
     
   
->>>>>>> 51e02c6d2a40a19c220aa7d1113367beb8f0896b
   
 # stories: 
 #   - story-image
