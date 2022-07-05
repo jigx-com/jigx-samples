@@ -1,0 +1,41 @@
+title: Media field
+type: jig.default
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Upload file
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/media-field
+          method: save
+          data: 
+            picture: =@ctx.components.media-field.state.value
+          onSuccess: 
+            title: Your file was uploaded
+            actions:
+              - type: action.go-back
+                options:
+                  title: ''
+      
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.media-field
+          instanceId: media-field
+          options:
+            mediaType: any
+            label: Upload file
+            color:
+              - when: true
+                color: color1
+            imageCropping:
+              width: 500
+              height: 450
+            isHidden: false
+            isIgnored: false
+            isMultiple: false
+            isRequired: false
+            style:
+              flex: 0

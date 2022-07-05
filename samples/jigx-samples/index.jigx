@@ -21,7 +21,17 @@ widgets:
   #   jigId: list-with-sections-dd
   # - size: 2x2
   #   jigId: simple-list-divider-sd
+<<<<<<< HEAD
  
+=======
+  - size: 1x1
+    jigId: media-field-example
+
+
+
+    
+  
+>>>>>>> 51e02c6d2a40a19c220aa7d1113367beb8f0896b
   
 # stories: 
 #   - story-image

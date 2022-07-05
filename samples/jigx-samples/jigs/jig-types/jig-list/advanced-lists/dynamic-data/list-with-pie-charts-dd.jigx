@@ -29,6 +29,7 @@ item:
     legend:
       isHidden: true
     series:
-      - data: =[{'y':@ctx.current.item.share}]
+      - data: =@ctx.datasources.finance-charts
+        # color: =@ctx.current.item.color
         layout: pie
 

@@ -1,0 +1,19 @@
+title: Open url
+type: jig.default
+
+actions:
+  - children:
+      - type: action.open-url
+        options:
+          title: Jigx Documentation
+          url: https://docs.jigx.com/examples/open-url
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            isMultiline: true
+            label: Documentation
+            value: This acction button will redirect you to the Jigx documentation about open-url.

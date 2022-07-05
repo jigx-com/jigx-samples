@@ -41,5 +41,10 @@ tables:
   ? finance-charts
   ? finance-review-dynamic
   ? finances
+<<<<<<< HEAD
   ? floorplan-restaurant-dynamic
   ? floorplan-office-dynamic
+=======
+  ? avatar-field
+  ? media-field
+>>>>>>> 51e02c6d2a40a19c220aa7d1113367beb8f0896b
