@@ -1,5 +1,5 @@
 title: Interactive Image
-description: Display of interactive image for table bookings
+description: Interactive image for Hot Seat & Meeting Room Bookings
 type: jig.default
 isScrollable: false
 
@@ -8,13 +8,13 @@ children:
     options:
       imageHeight: 1500
       source: 
-        uri:  https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
+        uri:  https://i.pinimg.com/564x/b0/eb/52/b0eb52122452257e955f210e7fdb8f55.jpg
 
           
-      data: =@ctx.datasources.floorplan-dynamic
+      data: =@ctx.datasources.floorplan-office-dynamic
       pointColor: color10
       groups:
-        - title: Reserved Tables
+        - title: Reserved Seats
           id: Reserved
           color: color14
 
@@ -24,19 +24,13 @@ children:
         options:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
-          icon: =@ctx.current.item.isReserved = 'TRUE' ? 'close' :null
+          icon: =@ctx.current.item. = 'TRUE' ? 'close' :null
           # groupId: =@ctx.current.item.isReserved = 'TRUE' ? 'Reserved':'Available'
           color: =@ctx.current.item.isReserved = 'TRUE' ? 'color3' :null
           style:
             isDisabled: =@ctx.current.item.isReserved = 'TRUE' ? true :false
           
           percentageCoordinates:
-            x: =$string(@ctx.current.item.xCoordinate)
-            y: =$string(@ctx.current.item.yCoordinate)
+            x: =@ctx.current.item.xCoordinate
+            y: =@ctx.current.item.yCoordinate
  
-views:
-  2x2: 
-    type: widget.image
-    options:
-      source:
-        uri: https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg

@@ -41,3 +41,5 @@ tables:
   ? finance-charts
   ? finance-review-dynamic
   ? finances
+  ? floorplan-restaurant-dynamic
+  ? floorplan-office-dynamic

@@ -3,12 +3,14 @@ name: jigx-samples
 category: personal
 
 widgets: 
-  - size: 2x2
-    jigId: widget-list-product-item-dd
-  - size: 2x2
-    jigId: widget-list-items-dd
-  # - size: 2x2
-  #   jigId: list-with-active-item-sd
+  - size: 1x1
+    jigId: interactive-image-office-dd
+  - size: 1x1
+    jigId: interactive-image-office-sd
+  - size: 1x1
+    jigId: interactive-image-rest-dd
+  - size: 1x1
+    jigId: interactive-image-rest-sd
   # - size: 2x2
   #   jigId: list-with-sections-sd
   # - size: 2x2
@@ -19,11 +21,7 @@ widgets:
   #   jigId: list-with-sections-dd
   # - size: 2x2
   #   jigId: simple-list-divider-sd
-
-
-
-    
-  
+ 
   
 # stories: 
 #   - story-image

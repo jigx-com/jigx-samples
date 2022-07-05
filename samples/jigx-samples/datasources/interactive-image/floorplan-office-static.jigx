@@ -1,0 +1,39 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      name: Meeting Room
+      xCoordinate: 65
+      yCoordinate: 43
+      isReserved: false
+    - id: 2
+      name: Hot Desk 1
+      xCoordinate: 22
+      yCoordinate: 12
+      isReserved: true
+    - id: 3
+      name: Hot Desk 2
+      xCoordinate: 22
+      yCoordinate: 22.5
+      isReserved: false
+    - id: 4
+      name: Hot Desk 3
+      xCoordinate: 22
+      yCoordinate: 33
+      isReserved: true
+    - id: 5
+      name: Hot Desk 4
+      xCoordinate: 22
+      yCoordinate: 44
+      isReserved: false
+    - id: 6
+      name: Hot Desk 5
+      xCoordinate: 22
+      yCoordinate: 55.5
+      isReserved: false
+    - id: 7
+      name: Hot Desk 6
+      xCoordinate: 22
+      yCoordinate: 66.5
+      isReserved: true
+  

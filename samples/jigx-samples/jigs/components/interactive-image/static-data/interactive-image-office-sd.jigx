@@ -1,0 +1,36 @@
+title: Interactive Image
+description: Interactive image for Hot Seat & Meeting Room Bookings
+type: jig.default
+isScrollable: false
+
+children:
+  - type: component.interactive-image
+    options:
+      imageHeight: 1500
+      source: 
+        uri:  https://i.pinimg.com/564x/b0/eb/52/b0eb52122452257e955f210e7fdb8f55.jpg
+
+          
+      data: =@ctx.datasources.floorplan-office-static
+      pointColor: color10
+      groups:
+        - title: Reserved Seats
+          id: Reserved
+          color: color14
+
+      item:
+        type: component.interactive-image-item
+        instanceId: interactive_img_item_sd
+        options:
+          id: =@ctx.current.item.id
+          title: =@ctx.current.item.name
+          icon: =@ctx.current.item.isReserved = true ? 'close' :null
+          # groupId: =@ctx.current.item.isReserved = true ? 'Reserved':'Available'
+          color: =@ctx.current.item.isReserved = true ? 'color3' :null
+          style:
+            isDisabled: =@ctx.current.item.isReserved = true ? true :false
+          
+          percentageCoordinates:
+            x: =@ctx.current.item.xCoordinate
+            y: =@ctx.current.item.yCoordinate
+ 

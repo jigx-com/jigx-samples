@@ -1,0 +1,25 @@
+title: Name
+type: jig.default
+
+description: Description of your Jig
+
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.dropdown
+          instanceId: country_ddl
+          options:
+            data: =$filter(@ctx.datasources.country-data-static, function($v){ $boolean(@ctx.datasources.country-data-static) ? $contains($v.title, @ctx.components.country_ddl.state.searchText) :true})
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.title
+                value: =@ctx.current.item.value
+                subtitle: =@ctx.current.item.value
+            label: Country
+            isMultiple: false
+            isSearchable: true
+            
+            

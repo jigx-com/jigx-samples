@@ -1,0 +1,8 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/floorplan-restaurant-dynamic
+
+  query: SELECT id, '$.name', '$.pax', json_extract(data, '$.xCoordinate') as x, json_extract(data, '$.yCoordinate') as y, '$.isReserved' FROM [default/floorplan-restaurant-dynamic]

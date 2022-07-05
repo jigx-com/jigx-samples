@@ -35,21 +35,32 @@ children:
               - type: component.dropdown
                 instanceId: accommodation_ddl
                 options:
-                  data: =@ctx.datasources.partners-accommodation-dd
-                    # =@ctx.datasources.partners-accommodation-dd[owneremail=@ctx.user.email]
+                  data: =$filter(@ctx.datasources.partners-accommodation-dd, function($v){ $boolean(@ctx.datasources.partners-accommodation-dd) ? $contains($v.name, @ctx.components.accommodation_ddl.state.searchText) :true})
                   item:
                     type: component.dropdown-item
                     options:
-                      title: =@ctx.current.item.name & '(' & @ctx.current.item.type & ')'
+                      title: =@ctx.current.item.name & ' (' & @ctx.current.item.type & ')'
                       subtitle: =@ctx.current.item.address
+                      value: =@ctx.current.item.id
+
                       leftElement: 
-                        component: image
+                        element: image
                         text: ''
                         uri: =@ctx.current.item.image
+                      
                   label: Accommodation
                   isMultiple: false
-                  value: =@ctx.datasources.partners-accommodation-dd.id
-
+                  isSearchable: true
+                  
+              - type: component.text-field
+                instanceId: testing
+                options:
+                  label: Testing Outputs
+                  value: =@ctx.components.accommodation_ddl.state.value
+              
+  - type: component.location
+    options:
+      address: =(@ctx.components.accommodation_ddl.state.selected.longitude,@ctx.components.accommodation_ddl.state.selected.latitude)
 
               
                   

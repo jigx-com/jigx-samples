@@ -18,5 +18,5 @@ item:
     avatars:
       - text: ''
           # =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
-        uri: =$.{'img':@ctx.datasources.employees-static.img}
+        uri: =@ctx.datasources.cleaning-services-dynamic.image
   

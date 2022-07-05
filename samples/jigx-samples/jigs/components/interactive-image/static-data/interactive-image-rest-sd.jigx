@@ -1,5 +1,5 @@
 title: Interactive Image
-description: Display of interactive image for table bookings
+description: Interactive image for Restaurant Table Bookings
 type: jig.default
 isScrollable: false
 
@@ -11,7 +11,7 @@ children:
         uri:  https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
 
           
-      data: =@ctx.datasources.floorplan-static
+      data: =@ctx.datasources.floorplan-restaurant-static
       pointColor: color10
       groups:
         - title: Reserved Tables
@@ -33,10 +33,3 @@ children:
           percentageCoordinates:
             x: =@ctx.current.item.xCoordinate
             y: =@ctx.current.item.yCoordinate
- 
-views:
-  2x2: 
-    type: widget.image
-    options:
-      source:
-        uri: https://fpg.roomsketcher.com/image/level/164/3d/Elegant-Restaurant-Plan-3D.jpg
