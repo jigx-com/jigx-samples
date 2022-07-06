@@ -1,0 +1,27 @@
+title: ''
+description: Some description
+type: jig.list
+icon: contact 
+
+onRefresh: 
+  type: action.execute-entity
+  options:
+    provider: DATA_PROVIDER_LOCAL
+    entity: default/employees
+    data:
+      time: =$now()
+  
+
+data: =@ctx.data.mydata
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.parents.list-data.item.datasourcefield
+    subtitle: =@ctx.parents.list-data.item.datasourcefield
+    onPress: 
+      type: action.sync-entities
+      options:
+        provider: DATA_PROVIDER_DYNAMIC
+        entities:
+          - entity: default/employee-detail
+          - entity: default/employees
