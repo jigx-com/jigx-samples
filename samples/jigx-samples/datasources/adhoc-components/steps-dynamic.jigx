@@ -1,0 +1,15 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/steps
+  query: |
+    SELECT
+      '$.title',
+      '$.description',
+      '$.value',
+      '$.icon',
+      '$.isactive',
+      '$.iscompleted',
+      '$.iswaiting'
+    FROM [default/steps]
