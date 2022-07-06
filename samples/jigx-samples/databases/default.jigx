@@ -13,7 +13,7 @@ tables:
   ? series1
   ? series2
   ? series3
-  ? document-sources
+  ? documents-dynamic
   ? field-values
   ? checkbox
   ? meeting-event

@@ -4,13 +4,13 @@ category: personal
 
 widgets: 
   - size: 1x1
-    jigId: list-with-swipe-right-dd
+    jigId: jig-document-html-page-dynamic
   - size: 1x1
-    jigId: list-with-swipe-right-sd
+    jigId: jig-document-html-page
   - size: 2x2
-    jigId: list-with-amount-control-sd
+    jigId: jig-document-pdf-file-dynamic
   - size: 2x2
-    jigId: list-with-pie-charts-sd
+    jigId: jig-document-pdf-file
   - size: 2x2
     jigId: list-with-bar-charts-dd
   # - size: 2x2

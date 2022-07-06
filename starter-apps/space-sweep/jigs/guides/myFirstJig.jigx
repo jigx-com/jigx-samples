@@ -7,7 +7,7 @@ icon: contact
 # header: 
 
 datasources:
-  cleaning_Services: 
+  cleaning-services: 
     type: datasource.static
     options:
       data:
@@ -25,5 +25,5 @@ data: =@ctx.datasources.cleaning_Services
 item:
   type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.Service
-    subtitle: =@ctx.parents.list-data.item.Description
+    title: =@ctx.current.item.Service
+    subtitle: =@ctx.current.item.Description

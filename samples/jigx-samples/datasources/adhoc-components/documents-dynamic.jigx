@@ -1,0 +1,8 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/documents-dynamic
+
+  query: SELECT id, '$.name', '$.description', '$.type', '$.url' FROM [default/documents-dynamic] 

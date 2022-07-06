@@ -1,0 +1,13 @@
+type: jig.document
+title: PDF Document Type (Static Data)
+description: Example of PDF Financial Report
+icon: document
+badge: 1
+
+placeholders:
+  - when: =@ctx.system.isOffline
+    title: No data to display
+
+source:
+  documentType: PDF
+  uri: https://www.stretto.com/wp-content/uploads/2021/02/Credit-Report-sample-joint.pdf

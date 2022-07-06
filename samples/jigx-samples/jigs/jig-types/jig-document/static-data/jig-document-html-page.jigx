@@ -1,0 +1,14 @@
+type: jig.document
+title: HTML Document Type (Static Data)
+description: Example of Business Offers via HTML url
+icon: document
+badge: 1
+
+placeholders:
+  - when: =@ctx.system.isOffline
+    title: No data to display
+
+source:
+  documentType: HTML
+  uri: https://mobirise.com/extensions/offeramp/business-offers/
+ 

@@ -1,0 +1,13 @@
+type: jig.document
+title: PDF Document Type (Dynamic Data)
+description: Example of PDF Financial Report
+icon: document
+badge: 1
+
+placeholders:
+  - when: =@ctx.system.isOffline
+    title: No data to display
+  
+source:
+  documentType: PDF
+  uri:  =@ctx.datasources.documents-dynamic[type='PDF'].url
