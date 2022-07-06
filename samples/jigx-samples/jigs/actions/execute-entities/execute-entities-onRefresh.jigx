@@ -1,35 +1,26 @@
-title: Name
+title: onRefresh
 type: jig.default
 
 onRefresh: 
-  type: action.execute-entity
+  type: action.execute-entities
   options:
-    provider: DATA_PROVIDER_DYNAMIC
-    method: save
+    provider: DATA_PROVIDER_LOCAL
     goBack: off
-    entity: default/form
-    data: 
-      id: =@ctx.current.item.id
-      modify: =$now()
+    entity: default/employee-detail
+    method: update
+    data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"
 
 
 children:
   - type: component.entity
     options:
       children:
-        - type: component.field-row
+        - type: component.entity-field
+          instanceId: firstname
           options:
-            children:
-              - type: component.entity-field
-                instanceId: firstname
-                options:
-                  label: First Name
-                  value: =@ctx.data.employees.firstname
-              - type: component.entity-field
-                instanceId: lastname
-                options:
-                  label: Last Name
-                  value: =@ctx.data.employees.lastname
+            label: First Name
+            value: =@ctx.datasources.employee-detail-dynamic.name
+
         - type: component.field-row
           options:
             children:
@@ -37,9 +28,13 @@ children:
                 instanceId: email
                 options:
                   label: Email
-                  value: =@ctx.data.employees.email
+                  value: =@ctx.datasources.employee-detail-dynamic.email
               - type: component.entity-field
                 instanceId: phone
                 options:
                   label: Phone
-                  value: =@ctx.data.employees.phone
+                  value: =@ctx.datasources.employee-detail-dynamic.phone
+        - type: component.entity-field
+          options:
+            label: Percentage
+            value: =@ctx.datasources.employee-detail-dynamic.percentage

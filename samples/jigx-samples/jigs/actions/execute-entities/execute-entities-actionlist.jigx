@@ -1,0 +1,40 @@
+title: Execute entity by action button
+type: jig.default
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: =@ctx.data.employees.picture
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          isSequential: true
+          title: Add
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                method: save
+                entity: default/form1
+                data: 
+                  name: =@ctx.components.name.state.value
+                  id: =@ctx.components.id.state.value  
+            - type: action.go-to
+              options:
+                linkTo: ja-execute-entity-onPress
+                
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: id
+          options:
+            label: id
+        - type: component.text-field
+          instanceId: name
+          options:
+            label: Name

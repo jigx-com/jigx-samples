@@ -2,6 +2,7 @@ tables:
   ? table
   ? avatar
   ? form
+  ? form1
   ? value
   ? trip
   ? new-orders
