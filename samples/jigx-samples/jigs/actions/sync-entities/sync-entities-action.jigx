@@ -1,0 +1,22 @@
+title: Sync Entities
+type: jig.default
+
+actions:
+  - children:
+    - type: action.sync-entities
+      options:
+        title: Sync entities
+        provider: DATA_PROVIDER_DYNAMIC
+        entities:
+          - entity: default/employee-detail
+          - entity: default/employees
+          
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Sync entities
+            isMultiline: true
+            value: This acction butt will sync our default/employee-detail and default/employees entity
