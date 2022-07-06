@@ -1,4 +1,4 @@
-title: status
+title: value
 type: jig.default
 
 children:
@@ -14,7 +14,7 @@ views:
   2x2:
     type: widget.value
     options:
-      value: =@ctx.datasources.all-orders.count
+      value: 173
       align: right
       format:
         unit: Opportunities
@@ -22,7 +22,7 @@ views:
         type: component.trend
         options:
           title: "New this week"
-          value: =@ctx.datasources.new-orders.date
+          value: 0.1232
           style:
             isValueBottom: true
             isAlignRight: true
