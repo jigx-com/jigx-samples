@@ -9,53 +9,26 @@ header:
 
 actions:
   - children:
-      - type: action.action-list
-        options:
-          isSequential: true
-          title: Submit form
-          actions:
-            - type: action.execute-entity
-              options:
-                provider: DATA_PROVIDER_DYNAMIC
-                method: save
-                goBack: off
-                entity: default/form
-                data:
-                  firstname: =@ctx.jig.state.firstname.value
-                  lastname: =@ctx.jig.state.lastname.value
-                  email: =@ctx.jig.state.email.value
-                  phone: =@ctx.jigx.state.phone.value
-            - type: action.go-to
-              options:
-                linkTo: ja-execute-entity-onPress
-                
+    - type: action.action-list
+      options:
+        title: Sync entities
+        actions:
+          - type: action.sync-entities
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entities:
+                - entity: default/employee-detail
+                - entity: default/employees
+          - type: action.go-to
+            options:
+              linkTo: default-employee-detail
+
 children:
   - type: component.entity
     options:
       children:
-        - type: component.field-row
+        - type: component.entity-field
           options:
-            children:
-              - type: component.entity-field
-                instanceId: firstname
-                options:
-                  label: First Name
-                  value: =@ctx.data.employees.firstname
-              - type: component.entity-field
-                instanceId: lastname
-                options:
-                  label: Last Name
-                  value: =@ctx.data.employees.lastname
-        - type: component.field-row
-          options:
-            children:
-              - type: component.entity-field
-                instanceId: email
-                options:
-                  label: Email
-                  value: =@ctx.data.employees.email
-              - type: component.entity-field
-                instanceId: phone
-                options:
-                  label: Phone
-                  value: =@ctx.data.employees.phone
+            label: Sync entities
+            isMultiline: true
+            value: This acction butt will sync our default/employee-detail and default/employees entity and redirect us to the employee detail.
