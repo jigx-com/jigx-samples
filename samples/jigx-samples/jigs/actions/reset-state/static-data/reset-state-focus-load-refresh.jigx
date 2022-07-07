@@ -1,0 +1,34 @@
+title: Name
+type: jig.default
+
+onFocus: 
+  type: action.reset-state
+  options:
+    key: global-key
+    
+onLoad: 
+  type: action.reset-state
+  options:
+    key: global-key
+    
+onRefresh: 
+  type: action.reset-state
+  options:
+    key: global-key
+
+
+actions:
+  - children:
+      - type: action.set-state
+        options:
+          title: Set state
+          key: global-key
+          value: 1
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: State value
+            value: =@ctx.solution.state.global-key

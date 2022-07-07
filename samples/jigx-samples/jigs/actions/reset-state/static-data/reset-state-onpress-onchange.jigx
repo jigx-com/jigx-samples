@@ -1,0 +1,19 @@
+title: List
+type: jig.list
+
+data: =@ctx.datasources.employees-dynamic
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.email
+    onPress: 
+      type: action.reset-state
+      options:
+        key: global-key
+    rightElement: 
+      element: switch
+      onChange: 
+        type: action.reset-state
+        options:
+          key: global-key

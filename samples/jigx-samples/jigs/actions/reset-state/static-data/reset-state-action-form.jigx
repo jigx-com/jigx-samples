@@ -1,0 +1,29 @@
+title: Reset state action
+type: jig.default
+
+actions:
+  - children:
+      - type: action.reset-state
+        options:
+          title: Reset state of the form
+          instanceId: form
+          key: data
+      - type: action.reset-state
+        options:
+          title: Reset state of the component
+          instanceId: myField
+          key: value
+
+children:
+  - type: component.form
+    instanceId: form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: myField
+          options:
+            label: Text1
+        - type: component.text-field
+          instanceId: myField2
+          options:
+            label: Text2
