@@ -1,0 +1,18 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      from: Boston
+      time-from: 11:30
+      to: New Yrok
+      time-to: 12:30
+    - id: 1
+      from: Las Vegas
+      time-from: 09:45
+      to: London
+      time-to: 19:00
+    - id: 1
+      from: Paris
+      time-from: 13:15
+      to: Prague
+      time-to: 17:30

@@ -2,13 +2,13 @@ title: Trip in list
 type: jig.list
 
 
-data: =@ctx.datasources.trip-dynamic
+data: =@ctx.datasources.trip-static
 item:
   type: component.stage
   options:
     right:
-      title: Boston
-      subtitle: 11:30
+      title: =@ctx.current.item.to
+      subtitle: =@ctx.current.item.time-to
     left:
-      title: New York
-      subtitle: 12:30
+      title: =@ctx.current.item.from
+      subtitle: =@ctx.current.item.time-from
