@@ -1,0 +1,14 @@
+title: Name
+type: jig.list
+
+
+data: =@ctx.datasources.trip-dynamic
+item:
+  type: component.stage
+  options:
+    right:
+      title: =@ctx.current.item.from
+      subtitle: =@ctx.current.item.board
+    left:
+      title: =@ctx.current.item.to
+      subtitle: =@ctx.current.item.time

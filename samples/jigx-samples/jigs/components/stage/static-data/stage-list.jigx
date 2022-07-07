@@ -1,0 +1,14 @@
+title: Name
+type: jig.list
+
+
+data: =@ctx.datasources.trip-dynamic
+item:
+  type: component.stage
+  options:
+    right:
+      title: Boston
+      subtitle: 11:30
+    left:
+      title: New York
+      subtitle: 12:30

@@ -1,0 +1,24 @@
+title: Stage
+type: jig.default
+
+children:
+  - type: component.expander
+    options:
+      header:
+        centerElement: 
+          type: component.stage
+          options:
+            right:
+              title: =@ctx.datasources.trip-dynamic.from
+              subtitle: =@ctx.datasources.trip-dynamic.board
+            left:
+              title: =@ctx.datasources.trip-dynamic.to
+              subtitle: =@ctx.datasources.trip-dynamic.time
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: tbd
+                  value: tbd
