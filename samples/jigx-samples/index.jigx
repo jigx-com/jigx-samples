@@ -4,32 +4,16 @@ category: personal
 
 widgets: 
   - size: 1x1
-    jigId: jig-document-html-page-dynamic
+    jigId: list-search-label-dd
   - size: 1x1
-    jigId: jig-document-html-page
-  - size: 2x2
-    jigId: jig-document-pdf-file-dynamic
-  - size: 2x2
-    jigId: jig-document-pdf-file
-  - size: 2x2
-    jigId: list-with-bar-charts-dd
-  # - size: 2x2
-  #   jigId: list-with-sections-sd
-  # - size: 2x2
-  #   jigId: list-selectable-dd
-  # - size: 2x2
-  #   jigId: list-with-active-item-dd
-  # - size: 2x2
-  #   jigId: list-with-sections-dd
-  # - size: 2x2
-  #   jigId: simple-list-divider-sd
+    jigId: document-pdf-dd
   - size: 1x1
-    jigId: media-field-example
+    jigId: web-view-example
+  - size: 2x2
+    jigId: jig-composite
 
-
-
-    
-  
-  
-# stories: 
-#   - story-image
+stories:
+  - story-group-image-sd
+  - story-group-video-sd
+  - story-group-image-dd
+  - story-group-video-dd

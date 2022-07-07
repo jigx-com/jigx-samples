@@ -3,6 +3,7 @@ options:
   data:
     - title: Work productivity
       description: 10 Simple Ways To Be More Productive at Work
-      img: https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
-      image: https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336
+      image: https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+      thumbnail: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80
+      url: https://www.indeed.com/career-advice/career-development/ways-to-be-more-productive
       videoUrl: https://www.youtube.com/watch?v=4aYVLpY5FYU

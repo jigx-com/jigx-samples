@@ -3,8 +3,6 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/serviceRequest
+    - entity: default/service-request
 
-  query: SELECT id, '$.requester', '$.requested.services' FROM [default/tableName] WHERE '$.Column2' = @myParam
-  queryParameters:
-    myParam: value
+  query: SELECT id, '$.requester', '$.requested.services' FROM [default/service-request] 

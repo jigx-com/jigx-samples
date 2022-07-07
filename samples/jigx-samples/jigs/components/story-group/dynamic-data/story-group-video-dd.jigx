@@ -1,4 +1,4 @@
-title: Story
+title: Story with a Video (Dynamic Data)
 type: jig.default
 
 children:
@@ -16,9 +16,13 @@ stories:
     data: =@ctx.datasources.story
     groupName: Work productivity
     item: 
-      type: component.image
+      type: component.video-player
       options:
+        url: =@ctx.current.item.videoUrl
+        thumbnailUri: =@ctx.current.item.thumbnail
         title: =@ctx.current.item.title
-        subtitle: =@ctx.current.item.description
-        source:
-          uri: =@ctx.current.item.img
+        onPress: 
+          type: action.open-url
+          options:
+            title: See Tips Here
+            url: =@ctx.current.item.url
