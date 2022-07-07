@@ -1,0 +1,28 @@
+title: status
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Text
+            value: This is the representations of jw-value
+
+views:
+  2x2:
+    type: widget.value
+    options:
+      value: =@ctx.datasources.all-orders.count
+      align: right
+      format:
+        unit: Opportunities
+      bottom:
+        type: component.trend
+        options:
+          title: "New this week"
+          value: =@ctx.datasources.new-orders.date
+          style:
+            isValueBottom: true
+            isAlignRight: true

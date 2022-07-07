@@ -1,0 +1,34 @@
+title: Execute entity by action button
+type: jig.default
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: =@ctx.data.employees.picture
+
+actions:
+  - children:
+    - type: action.execute-entity
+      options:
+        title: Add
+        provider: DATA_PROVIDER_DYNAMIC
+        method: save
+        entity: default/form1
+        data: 
+          name: =@ctx.components.name.state.value
+          id: =@ctx.components.id.state.value  
+          
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: id
+          options:
+            label: id
+        - type: component.text-field
+          instanceId: name
+          options:
+            label: Name

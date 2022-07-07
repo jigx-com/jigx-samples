@@ -1,0 +1,26 @@
+type: datasource.static
+options:
+  data:
+    - title: Order
+      value: step1
+      icon: checkbox-checked
+      isActive: false
+      isCompleted: true
+      isWaiting: false
+    - description: The shipment is in transit.
+      title: Shipment in transit
+      value: step2
+      icon: time-clock-circle
+      isActive: true
+      isCompleted: false
+      isWaiting: false
+    - title: On the way to you
+      value: step3
+      isActive: false
+      isCompleted: false
+      isWaiting: true
+    - title: Delivered to the recipient
+      value: step4
+      isActive: false
+      isCompleted: false
+      isWaiting: true

@@ -1,0 +1,18 @@
+type: 'datasource.sqlite'
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/new-orders
+
+  query: |
+    WITH cte AS (
+    SELECT 
+    json_extract(data, '$.id') as id , 
+    json_extract(data, '$.name') as name, 
+    json_extract(data, '$.items') as items,
+    json_extract(data, '$.date') as date
+    FROM [default/new-orders])
+    SELECT
+    count(date) as date
+    FROM cte WHERE date >= "2022-07-01T10:00:00Z"

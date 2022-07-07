@@ -1,0 +1,30 @@
+title: actions
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Text
+            value: This is the representations of jw-action
+
+views:
+  2x2:
+    type: widget.actions
+    options:
+      footer: Show more
+      footerAlign: center
+      primary:
+        title: Avatar info
+        onPress:
+          type: action.go-to
+          options:
+            linkTo: avatar-field-example
+      secondary:
+        title: Color palette
+        onPress:
+          type: action.go-to
+          options:
+            linkTo: color-palete

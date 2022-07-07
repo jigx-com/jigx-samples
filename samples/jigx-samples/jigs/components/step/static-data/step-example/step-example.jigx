@@ -1,0 +1,29 @@
+title: Stepper
+type: jig.default
+icon: checklist
+
+children:
+  - type: component.stepper
+    options:
+      data: =@ctx.datasources.steps
+      isExpandable: true
+      title: Shipment in transit
+      item:
+        type: component.step
+        options:
+          title: =@ctx.current.item.title
+          description: =@ctx.current.item.description
+          value: =@ctx.current.item.value 
+          leftElement:
+            element: icon
+            name: =@ctx.current.item.icon
+          style:
+            isPositive: =@ctx.current.item.isCompleted
+            isActive: =@ctx.current.item.isActive
+            isStrikeThrough: =@ctx.current.item.isCompleted
+            isDisabled: =@ctx.current.item.isWaiting
+      completedPercentage: 0.5
+      style:  
+        isPositive: false
+        isWarning: false
+        isNegative: false

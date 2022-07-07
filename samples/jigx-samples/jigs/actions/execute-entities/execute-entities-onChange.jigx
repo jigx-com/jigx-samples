@@ -1,0 +1,21 @@
+title: onChange
+type: jig.list
+icon: contact 
+
+data: =@ctx.datasources.employees-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.firstname
+    subtitle: =@ctx.current.item.lastname
+    description: =@ctx.current.item.percentage & '%'
+    rightElement: 
+      element: switch
+      onChange: 
+        type: action.execute-entities
+        options:
+          provider: DATA_PROVIDER_LOCAL
+          goBack: off
+          entity: default/employees
+          method: update
+          data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"

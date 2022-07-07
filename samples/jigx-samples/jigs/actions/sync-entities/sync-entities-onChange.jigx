@@ -19,15 +19,11 @@ item:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
     rightElement:
-      element: checkbox
-      value: true
+      element: switch
       onChange: 
-        type: action.execute-entity
-        options:
-          provider: DATA_PROVIDER_DYNAMIC
-          method: update
-          goBack: off
-          entity: default/form
-          data: 
-            id: =@ctx.current.item.id
-            modify: =$now()
+          type: action.sync-entities
+          options:
+            provider: DATA_PROVIDER_DYNAMIC
+            entities:
+              - entity: default/employee-detail
+              - entity: default/employees

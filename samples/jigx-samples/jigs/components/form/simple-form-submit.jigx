@@ -1,0 +1,44 @@
+title: Form
+description: My first form by Jigx
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: simple-form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          method: save
+          title: Save person
+            
+children:
+  - type: component.form
+    instanceId: simple-form
+    options:
+      children:
+          - type: component.text-field
+            instanceId: firstname
+            options:  
+              label: First name
+              initialValue: =@ctx.datasources.form.firstname
+          - type: component.text-field
+            instanceId: lastname
+            options:
+              label: Last name
+              initialValue: =@ctx.datasources.form.lastname
+          - type: component.email-field
+            instanceId: email
+            options:
+              label: Email
+              keyboardType: email-address
+              initialValue: =@ctx.datasources.form.email
+          - type: component.number-field
+            instanceId: phone
+            options:
+              label: Phone number
+              keyboardType: numeric
+              initialValue: =@ctx.datasources.form.phone
+
+
+                      

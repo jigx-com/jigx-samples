@@ -2,6 +2,7 @@ tables:
   ? table
   ? avatar
   ? form
+  ? form1
   ? value
   ? trip
   ? new-orders
@@ -46,3 +47,4 @@ tables:
   ? floorplan-office-dynamic
   ? avatar-field
   ? media-field
+  ? steps
