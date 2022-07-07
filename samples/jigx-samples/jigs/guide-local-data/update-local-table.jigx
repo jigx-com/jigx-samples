@@ -1,0 +1,25 @@
+title: Update local table
+type: jig.default
+
+actions:
+  - children:
+      - type: "action.execute-entity"
+        options:
+          title: Update record
+          provider: DATA_PROVIDER_LOCAL
+          entity: peoples
+          method: update
+          data:
+            id: '1'
+            name: Jane
+            lastname: Doe
+            phone: 232456442
+            
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Creating - Local Table
+            value: This acction will create multiple records in your local database.

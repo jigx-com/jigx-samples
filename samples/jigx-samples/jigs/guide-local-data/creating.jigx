@@ -1,0 +1,24 @@
+title: Create local table
+type: jig.default
+
+actions:
+  - children:
+      - type: "action.execute-entity"
+        options:
+          title: Create record
+          provider: DATA_PROVIDER_LOCAL
+          entity: peoples
+          method: create
+          data:
+            name: Jane
+            lastname: Doe
+            phone: 232456442
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Creating - Local Table
+            value: This acction will create record in your local database.

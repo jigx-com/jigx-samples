@@ -1,0 +1,21 @@
+title: Create local table
+type: jig.default
+
+actions:
+  - children:
+      - type: "action.execute-entities"
+        options:
+          title: Create records
+          provider: DATA_PROVIDER_LOCAL
+          entity: peoples
+          method: create
+          data: "=[{'name':'Jane Doe', 'number':'123432444'}
+                ,{'name':'Andrew Markley', 'number':'443255655'}]"
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Creating - Local Table
+            value: This acction will create multiple records in your local database.

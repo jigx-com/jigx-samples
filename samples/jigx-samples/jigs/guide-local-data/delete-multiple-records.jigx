@@ -1,0 +1,22 @@
+title: Delte local table
+type: jig.default
+
+actions:
+  - children:
+      - type: "action.execute-entities"
+        options:
+          title: Delete records
+          provider: DATA_PROVIDER_LOCAL
+          entity: peoples
+          method: delete
+          data: "=[{'id':'1'}
+                ,{'id':'2'}]"
+            
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Creating - Local Table
+            value: This acction will delete multiple records in your local database.
