@@ -1,0 +1,10 @@
+title: Opportunities by Quarter
+type: jig.composite
+icon: pencil-write
+
+children:
+  - jigId: customer-select-quarter
+    instanceId: customer-select-quarter
+  - jigId: customer-display-opportunities
+    inputs:
+      selected-quarter: =@ctx.jigs.customer-select-quarter.outputs.selected-quarter

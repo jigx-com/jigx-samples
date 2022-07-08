@@ -1,0 +1,33 @@
+title: Select Quarter
+type: jig.default
+
+outputs:
+  selected-quarter: =@ctx.components.quarter-selection.state.selected.quarter
+  
+datasources:
+  quarters:
+    type: datasource.static
+    options:
+      data:
+        - quarter: Q1
+        - quarter: Q2
+        - quarter: Q3
+        - quarter: Q4
+
+children:
+  - type: component.form
+    instanceId: customer-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.dropdown
+          instanceId: quarter-selection
+          options:
+            data: =@ctx.datasources.quarters
+            initialValue: Q1
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.quarter
+                value: =@ctx.current.item.quarter
+            label: Select a quarter

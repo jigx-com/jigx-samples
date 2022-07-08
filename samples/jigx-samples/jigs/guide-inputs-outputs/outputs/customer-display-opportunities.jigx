@@ -1,0 +1,30 @@
+title: "='Opportunities in quarter ' & @ctx.jig.inputs.selected-quarter"
+type: jig.list
+
+datasources:
+  opportunities: 
+    type: datasource.static
+    options:
+      data:
+        - quarter: Q1
+          name: Opportunity 1
+        - quarter: Q1
+          name: Opportunity 2
+        - quarter: Q2
+          name: Opportunity 3
+        - quarter: Q2
+          name: Opportunity 4
+        - quarter: Q3
+          name: Opportunity 5
+        - quarter: Q3
+          name: Opportunity 6
+        - quarter: Q4
+          name: Opportunity 7
+        - quarter: Q4
+          name: Opportunity 8
+
+data: =@ctx.datasources.opportunities[quarter = @ctx.jig.inputs.selected-quarter]
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name

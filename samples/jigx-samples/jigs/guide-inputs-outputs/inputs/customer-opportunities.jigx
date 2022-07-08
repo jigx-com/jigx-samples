@@ -1,0 +1,27 @@
+title: ='Opportunities - ' & @ctx.jig.inputs.customerName
+type: jig.list
+
+datasources:
+  opportunities: 
+    type: datasource.static
+    options:
+      data:
+        - customerId: 1
+          name: Opportunity 1
+        - customerId: 1
+          name: Opportunity 2
+        - customerId: 2
+          name: Opportunity 3
+        - customerId: 2
+          name: Opportunity 4
+        - customerId: 3
+          name: Opportunity 5
+        - customerId: 3
+          name: Opportunity 6
+          
+data: =@ctx.datasources.opportunities[customerId = @ctx.jig.inputs.customerId]
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.jig.inputs.customerName

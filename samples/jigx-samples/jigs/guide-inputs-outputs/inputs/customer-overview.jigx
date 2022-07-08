@@ -1,0 +1,12 @@
+title: ='Customer -' & @ctx.jig.inputs.customerName
+type: jig.composite
+
+children:
+  - jigId: customer-contacts
+    inputs:
+      customerId: =@ctx.jig.inputs.customerId
+      customerName: =@ctx.jig.inputs.customerName
+  - jigId: customer-opportunities
+    inputs:
+      customerId: =@ctx.jig.inputs.customerId
+      customerName: =@ctx.jig.inputs.customerName

@@ -1,0 +1,29 @@
+title: Basic
+type: jig.list
+icon: list
+
+datasources:
+  customers:
+    type: datasource.static
+    options:
+      data:
+        - customerId: 1
+          name: ACME Corp.
+        - customerId: 2
+          name: GSD Inc.
+        - customerId: 3
+          name: SpaceSweep Ltd.
+
+data: =@ctx.datasources.customers
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: "='Customer ID: ' & @ctx.current.item.customerId"
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: customer-contacts
+        parameters:
+          customerId: =@ctx.current.item.customerId
+          customerName: =@ctx.current.item.name

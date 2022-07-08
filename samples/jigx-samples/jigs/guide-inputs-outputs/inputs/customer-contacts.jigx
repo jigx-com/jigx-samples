@@ -1,0 +1,27 @@
+title: ='Contacts - ' & @ctx.jig.inputs.customerName
+type: jig.list
+
+datasources:
+  contacts: 
+    type: datasource.static
+    options:
+      data:
+        - customerId: 1
+          name: Jane Stevens
+        - customerId: 1
+          name: Jenny Smith
+        - customerId: 2
+          name: Mark Miller
+        - customerId: 2
+          name: Luke Meyer
+        - customerId: 3
+          name: Terry Anderson
+        - customerId: 3
+          name: Laura Peterson
+          
+data: =@ctx.datasources.contacts[customerId = @ctx.jig.inputs.customerId]
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.jig.inputs.customerName
