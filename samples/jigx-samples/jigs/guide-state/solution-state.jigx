@@ -1,0 +1,25 @@
+title: Solution State3
+type: jig.default
+
+actions:
+  - children:
+      - type: action.set-state
+        options:
+          title: Set solution state
+          key: my-solution-state
+          value: '12345'
+      - type: action.reset-state
+        options:
+          title: Reset solution state
+          instanceId: my-solution-sate
+          key: my-solution-state
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Your solution state
+            value: =@ctx.solution.state.my-solution-state
+            
