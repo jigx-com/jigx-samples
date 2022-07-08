@@ -1,0 +1,10 @@
+name: jigx-hello-world
+title: Hello World
+category: miscellaneous
+
+widgets:
+  - size: 1x1
+    jigId: myfirstjig
+  - size: 2x2
+    jigId: myfirstjig
+

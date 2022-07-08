@@ -1,6 +1,6 @@
 # Publishing samples solution
 1. You need to clone jigx-samples repository on your computer.
-Click on green code on github.
+Click on green code button on github.
 You can either download the repository as zip file, or clone it on your device with command line: git clone git@github.com:jigx-com/jigx-samples.git
 2. Open folder samples/jigx-samples in VScode.
 3. Press command + R + R to publish the solution.

@@ -1,0 +1,26 @@
+title: Hello World
+type: jig.default
+icon: space-rocket-flying
+
+
+
+children:
+  - type: component.image
+    options:
+      source:
+        uri: https://picsum.photos/id/392/500/300
+      height: 300
+      title: Hello2
+      subtitle: =@ctx.user.displayName
+      
+views:
+  2x2: 
+    type: widget.location
+    options:
+      address: "Golden Gate Bridge, San Francisco, USA"
+      bottom:
+        type: component.titles
+        options:
+          icon: pin
+          title: SF Bay
+          subtitle: California
