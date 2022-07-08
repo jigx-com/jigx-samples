@@ -1,0 +1,3 @@
+example-static: 'Guten Nachmittag'
+example-dynamic: '{ time, select, pm {Guten Nachmittag} am {Guten Morgen} } {name}'
+jig-name: Beispiel
