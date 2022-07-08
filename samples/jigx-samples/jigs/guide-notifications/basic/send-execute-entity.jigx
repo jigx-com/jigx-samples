@@ -1,0 +1,35 @@
+title: Send Notification (execute-entity)
+icon: alert-circle
+type: jig.default
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Send now
+          provider: DATA_PROVIDER_REST
+          method: functionCall
+          entity: send-notification
+          function: send-notification
+          functionParameters:
+            organizationId: YOUR_ORG_ID #PLEASE ADD YOUR OWN ORG ID
+            emails: 'demo@jigx.com'
+            title: =@ctx.components.title.state.value
+            text:  =@ctx.components.text.state.value
+            accessToken: jigx
+          onSuccess: 
+            title: Message sent
+                
+children:
+  - type: component.form
+    instanceId: send-form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: title
+          options:
+            label: Title
+        - type: component.text-field
+          instanceId: text
+          options:
+            label: Text

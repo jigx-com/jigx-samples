@@ -1,0 +1,43 @@
+title: Promotion Details
+icon: zoom-in
+type: jig.default
+
+datasources:
+  promotions:
+    type: datasource.static
+    options:
+      data:
+        - promotionId: promo12345
+          name: Stylish Teapot Promo
+          price: 25
+          image: https://picsum.photos/id/225/500/300
+                
+children:
+  - type: component.image
+    options:
+      source:
+        uri: =@ctx.datasources.promotions[promotionId = @ctx.jig.inputs.promotionId].image
+      resizeMode: cover
+      height: 300
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Promotion
+                  value: =@ctx.datasources.promotions[promotionId = @ctx.jig.inputs.promotionId].name
+              - type: component.entity-field
+                options:
+                  label: Promotion #
+                  value: =@ctx.jig.inputs.promotionId
+        - type: component.entity-field
+          options:
+            label: Price
+            value: 
+              text: =@ctx.datasources.promotions[promotionId = @ctx.jig.inputs.promotionId].price
+              format:
+                numberStyle: currency
+                currency: USD

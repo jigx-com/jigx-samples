@@ -1,0 +1,74 @@
+method: POST
+provider: DATA_PROVIDER_REST
+inputTransform: >
+  $.{
+    "deviceId": deviceId,
+    "command": command,
+    "organizationId": organizationId,
+    "parameters": {
+      "scope": scope,
+      "emails": emails,
+      "content": {
+        "title": title,
+        "text": text, 
+        "sound": "default",
+        "screen": "jig",
+        "solutionId": solutionId,
+        "jigReferenceId": targetJig,
+        "inputs": {
+          "promotionId": promotionId
+        }  
+      }
+    }
+  }
+parameters:
+  deviceId:
+    location: body
+    type: string
+    required: true
+    value: jig
+  command:
+    location: body
+    type: string
+    required: false
+    value: createNotification
+  organizationId:
+    location: body
+    type: string
+    required: true
+  scope:
+    location: body
+    type: string
+    required: false
+    value: USR
+  emails:
+    location: body
+    type: array
+    required: true
+  title:
+    location: body
+    type: string
+    required: true
+  text:
+    location: body
+    type: string
+    required: true
+  promotionId:
+    location: body
+    type: string
+    required: true
+  solutionId:
+    location: body
+    type: string
+    required: true
+  targetJig:
+    location: body
+    type: string
+    required: true
+  accessToken:
+    location: header
+    type: jigx
+    value: jigx
+    required: true
+  
+url: 'https://rnh6evl4a1.execute-api.us-east-1.amazonaws.com/us-east-1-prod-v1/notificationManager'
