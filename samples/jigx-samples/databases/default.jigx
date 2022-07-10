@@ -48,3 +48,6 @@ tables:
   ? avatar-field
   ? media-field
   ? steps
+  ? product-sales
+  ? product-popularity
+  ? test

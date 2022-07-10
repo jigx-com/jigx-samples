@@ -1,0 +1,33 @@
+title: Default Jig with List
+type: jig.default
+description: Example of List on Default Jig
+header: 
+  type: component.image
+  options:
+    source:
+      uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cmVwYWlyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Current User
+            value: =@ctx.user.displayName
+  - type: component.list
+    options:
+      data: =@ctx.datasources.repair-services-static
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.service
+          subtitle: =@ctx.current.item.time & ' mins'
+          leftElement: 
+            element: image
+            text: ''
+            uri: =@ctx.current.item.image
+          rightElement: 
+            element: value
+            text: ='$ ' & @ctx.current.item.hourlyrate & ' p/hr'

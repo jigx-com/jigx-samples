@@ -1,8 +1,8 @@
-type: 'datasource.sqlite'
+type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
     - entity: default/pie-chart-list-dynamic
 
-  query: SELECT id, '$.title', '$.subtitle', json_extract(data, '$.datay') as y, '$.datax' FROM [default/pie-chart-list-dynamic]
+  query: SELECT id, '$.title', '$.subtitle', json_extract(data, '$.datay') as y FROM [default/pie-chart-list-dynamic]

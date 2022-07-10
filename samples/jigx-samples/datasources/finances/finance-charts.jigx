@@ -7,14 +7,14 @@ options:
 
   query: |
     SELECT
-      json_extract(A.Data, '$.title') as title,
-      json_extract(A.Data, '$.subtitle') as subtitle,
-      json_extract(A.Data, '$.year') as year,
-      json_extract(B.Data, '$.amount') as amount,
-      json_extract(B.Data, '$.date') as x,
-      json_extract(B.Data, '$.financeid') as financeid,
-      json_extract(B.Data, '$.quarterid') as quarterid,
-      json_extract(B.Data, '$.share') as y
-    FROM [default/finance-review-dynamic] A
-    LEFT JOIN [default/finances] B ON
+      json_extract(B.Data, '$.title') as title,
+      json_extract(B.Data, '$.subtitle') as subtitle,
+      json_extract(B.Data, '$.year') as year,
+      json_extract(A.Data, '$.amount') as y,
+      json_extract(A.Data, '$.date') as x,
+      json_extract(A.Data, '$.financeid') as financeid,
+      json_extract(A.Data, '$.quarterid') as quarterid,
+      json_extract(A.Data, '$.share') as share
+    FROM [default/finances] A
+    LEFT JOIN [default/finance-review-dynamic] B ON
     json_extract(A.Data, '$.year') = json_extract(B.Data, '$.year')

@@ -29,5 +29,4 @@ item:
       element: value
       text: ='$ ' & @ctx.current.item.hourlyRate & ' p/hr'
 
-      
     

@@ -1,0 +1,14 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/cleaning-services-dynamic
+    - entity: default/repair-services-dynamic
+    
+  query: 
+    SELECT id, '$.area' as area, '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor' as indoor, null as materials, '$.onceoffrate', '$.service', '$.time', "Cleaning Service" AS type
+    FROM [default/cleaning-services-dynamic]
+    UNION
+    SELECT id, null as area, '$.description', '$.hourlyrate', '$.illustration', '$.image', null as indoor, '$.materials' as materials, '$.onceoffrate', '$.service', '$.time', "Repair Service" AS type
+    FROM [default/repair-services-dynamic]

@@ -25,24 +25,6 @@ item:
     rightElement: 
       element: value
       text: ='$' & @ctx.current.item.hourlyRate
-    swipeable:
-      left:
-        - icon: archive-folder
-          label: View Details 
-          onPress: 
-            type: action.action-list
-            options:
-              actions:
-                - type: action.reset-state
-                  options:
-                    key: ABC123
-                - type: action.go-to
-                  instanceId: go_to_service_deets
-                  options:
-                    linkTo: service-details-comp
-                    parameters:
-                      id: =@ctx.current.item.id
-                      service: =@ctx.current.item.service
-                      type: Repair
+
       
     

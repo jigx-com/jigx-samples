@@ -1,7 +1,7 @@
-title: =(@ctx.current.item.y)*100
+title: ='Title' & @ctx.datasources.pie-chart-list-dynamic.
   # Horizontal List (Pie Chart)
 type: jig.list
-description: =@ctx.datasources.finance-charts.y
+
 
 
 # datasources:
@@ -15,32 +15,22 @@ description: =@ctx.datasources.finance-charts.y
 #       query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/pie-chart]
 
 
-data: =@ctx.datasources.finance-charts
+data: =@ctx.datasources.series-3
 # isHorizontal: true
 item:
   type: component.pie-chart
   options:
     chart:
       title:
-        text: =$substring(@ctx.current.item.date, 0, 3)
+        text: =@ctx.current.item.data
         verticalAlign: center
       subtitle:
-        text: =$string(@ctx.current.item.y * 100)
+        text: =@ctx.current.item.data
         verticalAlign: center
       width: 100
       height: 100
     legend:
       isHidden: true
     series:
-      - data: =$number(@ctx.current.item.y) * 100
-        # color: =@ctx.current.item.color
+      - data: =@ctx.datasources.series-3.data
         layout: pie
-      # - data: =[@ctx.datasources.finance-charts[quarterid='2'].x, @ctx.datasources.finance-charts[quarterid='2'].y]
-      #   # color: =@ctx.current.item.color
-      #   layout: pie
-      # - data: =[@ctx.datasources.finance-charts[quarterid='3'].x, @ctx.datasources.finance-charts[quarterid='3'].y]
-      #   # color: =@ctx.current.item.color
-      #   layout: pie
-      # - data: =[@ctx.datasources.finance-charts[quarterid='4'].x, @ctx.datasources.finance-charts[quarterid='4'].y]
-      #   # color: =@ctx.current.item.color
-      #   layout: pie

@@ -5,4 +5,4 @@ options:
   entities:
     - entity: default/floorplan-office-dynamic
 
-  query: SELECT id, '$.name', '$.xCoordinate', '$.yCoordinate', '$.isReserved' FROM [default/floorplan-office-dynamic]
+  query: SELECT id, '$.name', '$.xcoordinate', '$.ycoordinate', '$.isreserved' FROM [default/floorplan-office-dynamic]

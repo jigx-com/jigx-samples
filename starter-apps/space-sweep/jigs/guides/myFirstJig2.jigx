@@ -6,9 +6,9 @@ icon: contact
 
 # header: 
 
-data: =@ctx.datasources.cleaning_services_dynamic
+data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.parents.list-data.item.service
-    subtitle: ='Service delivery takes' & @ctx.parents.list-data.item.time & ' minutes'
+    title: =@ctx.current.item.service
+    subtitle: ='Service delivery takes' & @ctx.current.item.time & ' minutes'

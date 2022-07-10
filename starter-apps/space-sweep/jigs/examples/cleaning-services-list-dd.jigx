@@ -25,25 +25,7 @@ item:
     rightElement: 
       element: checkbox
       value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
-    swipeable:
-      left:
-        - icon: archive-folder
-          label: View Details 
-          onPress: 
-            type: action.action-list
-            options:
-              actions:
-                - type: action.reset-state
-                  options:
-                    key: ABC123
-                - type: action.go-to
-                  instanceId: go_to_cleaning_deets
-                  options:
-                    linkTo: service-details-comp
-                    parameters:
-                      id: =@ctx.current.item.id
-                      service: =@ctx.current.item.service
-                      type: Cleaning
+   
                   
       
     

@@ -2,20 +2,12 @@ title: Space Sweep
 name: space-sweep
 category: field-services
 widgets:
-  # - size: 2x2
-  #   jigId: cleaning-services-list-dd
-  # - size: 2x2
-  #   jigId: repair-services-list-sd
- 
-
-# TESTING:
-  # - size: 2x2
-  #   jigId: cleaning-serv-product-list-dd
-  # - size: 2x2
-  #   jigId: service-request
-  # - size: 2x2
-  #   jigId: cleaning-services-list-search
   - size: 2x2
+    jigId: services-list-dd
+  - size: 1x1
+    jigId: partners-dd
+  - size: 1x1
     jigId: service-request
+
 
 

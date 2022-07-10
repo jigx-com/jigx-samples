@@ -9,7 +9,7 @@ children:
           options:
             label: tbd
             value: tbd
-
+  
 stories:
   type: component.story-group
   options:

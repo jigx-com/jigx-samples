@@ -25,10 +25,10 @@ children:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
           icon: =@ctx.current.item. = 'TRUE' ? 'close' :null
-          # groupId: =@ctx.current.item.isReserved = 'TRUE' ? 'Reserved':'Available'
-          color: =@ctx.current.item.isReserved = 'TRUE' ? 'color3' :null
+          # groupId: =@ctx.current.item.isreserved = 'TRUE' ? 'Reserved':'Available'
+          color: =@ctx.current.item.isreserved = 'TRUE' ? 'color3' :null
           style:
-            isDisabled: =@ctx.current.item.isReserved = 'TRUE' ? true :false
+            isDisabled: =@ctx.current.item.isreserved = 'TRUE' ? true :false
           
           percentageCoordinates:
             x: =@ctx.current.item.x

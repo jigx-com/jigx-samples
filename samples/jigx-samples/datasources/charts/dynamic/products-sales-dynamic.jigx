@@ -1,0 +1,19 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/products
+    - entity: default/product-sales
+
+  query: |
+    SELECT
+      json_extract(A.Data, '$.title') as title,
+      json_extract(A.Data, '$.uri') as uri,
+      json_extract(A.Data, '$.tag') as tag,
+      json_extract(A.Data, '$.discount') as discount,
+      json_extract(A.Data, '$.price') as price,
+      json_extract(B.Data, '$.january') as january,
+      json_extract(B.Data, '$.february') as february
+    FROM [default/products] A
+    LEFT JOIN [default/product-sales] B ON
+    json_extract(A.Data, '$.title') = json_extract(B.Data, '$.product')

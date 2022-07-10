@@ -9,6 +9,13 @@ header:
 
 
 children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Current User
+            value: =@ctx.user.displayName
   - type: component.list
     options:
       data: =@ctx.datasources.products

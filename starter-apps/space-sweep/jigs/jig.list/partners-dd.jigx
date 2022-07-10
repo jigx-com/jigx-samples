@@ -1,0 +1,17 @@
+title: Partners
+description: List of partnered accommodation providers
+type: jig.list
+icon: smart-house-open-door
+
+data: =@ctx.datasources.partners-accommodation-dd
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.address
+    label:
+      title: =@ctx.current.item.type
+    leftElement: 
+      element: image
+      text: ''
+      uri: =@ctx.current.item.image

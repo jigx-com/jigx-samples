@@ -43,7 +43,7 @@ children:
               - type: component.dropdown
                 instanceId: accommodation_ddl
                 options:
-                  data: =$filter(@ctx.datasources.partners-accommodation-dd, function($v){ $boolean(@ctx.datasources.partners-accommodation-dd) ? $contains($v.name, @ctx.components.accommodation_ddl.state.searchText) :true})
+                  data: =$filter(@ctx.datasources.partners-accommodation-dd, function($v){ @ctx.datasources.partners-accommodation-dd ? $contains($string($v.name), $string(@ctx.components.accommodation_ddl.state.searchText != null ? @ctx.components.accommodation_ddl.state.searchText:'')) :true})[]
                   item:
                     type: component.dropdown-item
                     options:

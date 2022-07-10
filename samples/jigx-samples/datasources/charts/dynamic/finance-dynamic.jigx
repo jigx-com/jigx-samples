@@ -3,4 +3,4 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
     - entity: default/finance
-  query: SELECT id, json_extract(data, '$.date') as x, json_extract(data, '$.amount') as y FROM [default/finance] ORDER BY '$.financeId'
+  query: SELECT id, json_extract(data, '$.date') as x, json_extract(data, '$.amount') as y, '$.financeid' FROM [default/finance] ORDER BY '$.financeid' ASC

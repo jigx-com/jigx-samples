@@ -14,7 +14,7 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.time & 'minutes for task completion'
+    subtitle: =@ctx.current.item.time & ' minutes for task completion'
     leftElement: 
       element: avatar
       text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)

@@ -27,7 +27,7 @@ datasources:
       entities:
         - entity: default/cleaning-services-dynamic
   
-      query: SELECT id, '$.area', '$.description', '$.hourlyRate', '$.illustration', '$.image', '$.indoor', '$.onceOffRate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE ('$.indoor' LIKE @filter OR @filter IS NULL) AND ('$.service' LIKE '%'||@search||'%' OR @search IS NULL)
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE ('$.indoor' LIKE @filter OR @filter IS NULL) AND ('$.service' LIKE '%'||@search||'%' OR @search IS NULL)
       queryParameters:
         filter: =@ctx.jig.state.filter
         search: =@ctx.jig.state.searchText

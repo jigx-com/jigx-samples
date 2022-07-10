@@ -1,0 +1,84 @@
+title: =@ctx.jig.inputs.service
+description: A deeper look into this service...
+type: jig.default
+isCollapsible: true
+
+header:
+    type: component.image
+    options:
+      source:
+        uri: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? @ctx.datasources.cleaning-services-dynamic.image:@ctx.datasources.repair-services-static.image
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.section
+          options:
+            title: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? 'Cleaning Services':'Repair Services'
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Service
+                        value: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? @ctx.datasources.cleaning-services-dynamic.service:@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].service
+                    - type: component.entity-field
+                      options:
+                        label: Area
+                        value: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? @ctx.datasources.cleaning-services-dynamic.area:@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].area
+                        isHidden: =@ctx.jig.inputs.type
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Time
+                        value: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? @ctx.datasources.cleaning-services-dynamic.time & ' minutes':@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].time & ' minutes'
+                    - type: component.entity-field
+                      options:
+                        label: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? 'Indoor':'Materials'
+                        value: =(@ctx.jig.inputs.type) = 'Cleaning Services' ? @ctx.datasources.cleaning-services-dynamic.indoor:@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].materials
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Description
+                        value: =(@ctx.jig.inputs.type) = 'Cleaning' ? @ctx.datasources.cleaning-services-dynamic.description:@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].description
+        - type: component.section
+          options:
+            title: Rates
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Hourly Rate
+                        value: =(@ctx.datasources.cleaning-services-dynamic.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaning-services-dynamic.hourlyrate):'NA'
+                        isHidden: =(@ctx.jig.inputs.type) != 'Cleaning' ? true:false  
+                    - type: component.entity-field
+                      options:
+                        label: Once Off Rate
+                        value: =(@ctx.datasources.cleaning-services-dynamic.onceoffrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaning-services-dynamic.item.onceoffrate):'NA'
+                        isHidden: =(@ctx.jig.inputs.type) != 'Cleaning' ? true:false  
+                    - type: component.entity-field
+                      options:
+                        label: Hourly Rate
+                        value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].hourlyRate
+                        isHidden: =(@ctx.jig.inputs.type) = 'Cleaning' ? true:false
+                   
+datasources:
+  cleaning-services-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services-dynamic
+  
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id

@@ -1,0 +1,15 @@
+title: ='Title ' & @ctx.datasources.finance-dynamic[x='February'].y & 'LATEST'
+description: Description of your Jig
+type: jig.list
+
+icon: contact
+
+# header: 
+
+
+data: =@ctx.datasources.finance-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.x
+    subtitle: =@ctx.current.item.y

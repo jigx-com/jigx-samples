@@ -1,5 +1,5 @@
-title: =(@ctx.jig.inputs.type)= 'Cleaning' ? 'Other Cleaning Services':'Cleaning Services'
-description: List of other available Cleaning Services
+title: Cleaning Services
+description: List of all Cleaning Services
 
 type: jig.list
 icon: contact 

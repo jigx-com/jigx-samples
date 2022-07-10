@@ -1,0 +1,8 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/repair-services-dynamic
+
+  query: SELECT id, '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.materials', '$.onceoffrate', '$.service', '$.time' FROM [default/repair-services-dynamic]
