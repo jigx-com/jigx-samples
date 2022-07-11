@@ -1,0 +1,19 @@
+title: Employees name
+type: jig.default
+
+children:
+  - type: component.form
+    instanceId: form-name
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: first-name
+                options:
+                  label: First name
+              - type: component.text-field
+                instanceId: last-name
+                options:
+                  label: Last name

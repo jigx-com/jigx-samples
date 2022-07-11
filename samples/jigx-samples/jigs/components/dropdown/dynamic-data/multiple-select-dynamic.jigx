@@ -8,7 +8,7 @@ children:
         - type: component.dropdown
           instanceId: dropdown-in
           options:
-            data: =@ctx.datasources.employees-static
+            data: =@ctx.datasources.employees-dynamic
             label: Select employees
             isMultiple: true
             item:

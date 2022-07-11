@@ -1,0 +1,22 @@
+title: Composite
+type: jig.composite
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Save form
+          provider: DATA_PROVIDER_DYNAMIC
+          data: 
+            firstname: =@ctx.jigs.names.components.first-name.state.value
+            lastname: =@ctx.jigs.names.components.last-name.state.value
+            email: =@ctx.jigs.infos.components.email.state.value
+            phone: =@ctx.jigs.infos.components.phone.state.value
+          entity: default/form
+          method: save
+            
+children:
+  - jigId: name-form
+    instanceId: names
+  - jigId: personal-info-form
+    instanceId: infos

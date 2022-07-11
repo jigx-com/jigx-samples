@@ -1,0 +1,21 @@
+title: Personal info
+type: jig.default
+
+children:
+  - type: component.form
+    instanceId: form-pinfo
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: email
+                options:
+                  label: Email
+                  keyboardType: email-address
+              - type: component.text-field
+                instanceId: phone
+                options:
+                  label: Phone number
+                  keyboardType: name-phone-pad

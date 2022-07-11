@@ -16,6 +16,7 @@ children:
               options:
                 title: =@ctx.current.item.firstname
                 subtitle: =@ctx.current.item.lastname
+                value: =@ctx.current.item.firstname
                 leftElement: 
                   element: avatar
                   text: ''
