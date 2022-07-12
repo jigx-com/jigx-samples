@@ -21,8 +21,6 @@ tables:
   ? multiday-event
   ? meetingpeople
   ? cleaning-services-dynamic
-  ? floorplan-dynamic
-  ? interactiveimage-dynamic
   ? image-sources
   ? titles
   ? location
@@ -44,7 +42,6 @@ tables:
   ? finance-review-dynamic
   ? finances
   ? floorplan-restaurant-dynamic
-  ? floorplan-office-dynamic
   ? avatar-field
   ? media-field
   ? steps

@@ -1,8 +1,0 @@
-type: 'datasource.sqlite'
-options:
-  provider: DATA_PROVIDER_DYNAMIC
-
-  entities:
-    - entity: default/floorplan-dynamic
-
-  query: SELECT id, '$.name', '$.pax', '$.xcoordinate', '$.ycoordinate', '$.isreserved' FROM [default/floorplan-dynamic]
