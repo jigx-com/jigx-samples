@@ -4,21 +4,14 @@ tables:
   ? cleaning-services
   ? charts
   ? checkbox
-  ? form
+  ? documents
   ? employees
-  ? interactive-image
+  ? form
   ? finances
-  ? products
   ? flight-schedule
+  ? interactive-image
   ? location
+  ? links
+  ? products
   ? steps
-  ? web-view
   ? value
-  
-  ? documents-dynamic
-  ? field-values
-  ? titles
-  ? video-player
-  ? trend
-  ? global
-  ? media-field
