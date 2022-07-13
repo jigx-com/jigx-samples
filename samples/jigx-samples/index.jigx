@@ -11,6 +11,8 @@ widgets:
     jigId: web-view-example
   - size: 2x2
     jigId: jig-composite
+  - size: 1x1
+    jigId: composite-form
 
 stories:
   - story-group-image-sd

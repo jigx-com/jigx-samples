@@ -1,24 +1,19 @@
-title: Update Form
-description: My first form by Jigx
+title: Update from with submit action
 type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Update form
+          formId: form-update
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/from
-          method: update
-          data:
-            firstname: =@ctx.components.firstname.state.value
-            lastname: =@ctx.components.lastname.state.value
-            email: =@ctx.components.email.state.value
-            phone: =@ctx.components.phone.state.value
-            birthdate: =@ctx.components.birthdate.state.value
+          entity: default/form
+          recordId: =@ctx.datasources.form.id
+          title: Update form
             
 children:
  - type: component.form
+   instanceId: form-update
    options:
      children:
         - type: component.text-field

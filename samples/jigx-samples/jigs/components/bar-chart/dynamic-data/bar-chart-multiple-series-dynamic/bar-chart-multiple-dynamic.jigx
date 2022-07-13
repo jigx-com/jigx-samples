@@ -14,7 +14,6 @@ children:
       series:
         - data: =@ctx.datasources.series1-dynamic.data
         - data: =@ctx.datasources.series2-dynamic.data
-        - data: =@ctx.datasources.series3-dynamic.data
     
           
 views:
@@ -37,6 +36,5 @@ views:
                 series:
                   - data: =@ctx.datasources.series1-dynamic.data
                   - data: =@ctx.datasources.series2-dynamic.data
-                  - data: =@ctx.datasources.series3-dynamic.data
         
                 
