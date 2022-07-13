@@ -12,7 +12,7 @@ inputTransform: >-
         "title": title,
         "text": text, 
         "sound": "default",
-        "screen": "NOTIFICATIONS_DETAIL"
+        "screen": "NOTIFICATIONS_STACK"
       }
     }
   }
