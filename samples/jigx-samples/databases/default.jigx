@@ -1,33 +1,24 @@
 tables:
-  ? form
+  ? avatar
+  ? calendar
+  ? cleaning-services
   ? charts
+  ? checkbox
+  ? form
   ? employees
   ? interactive-image
   ? finances
-  ? calendar
   ? products
-  ? avatar
-  ? checkbox
-  ? cleaning-services-dynamic
-  
+  ? flight-schedule
+  ? location
+  ? steps
+  ? web-view
   ? value
-  ? trip
-  ? new-orders
+  
   ? documents-dynamic
   ? field-values
-  ? meeting-event
-  ? multiday-event
-  ? meetingpeople
-  ? image-sources
   ? titles
-  ? location
   ? video-player
-  ? image
-  ? web-view
   ? trend
-  ? vacation-event
   ? global
-  ? flight-schedule-dynamic
-  ? avatar-field
   ? media-field
-  ? steps
