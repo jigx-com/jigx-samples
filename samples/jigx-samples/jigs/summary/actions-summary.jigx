@@ -1,0 +1,17 @@
+title: Actions
+type: jig.list
+icon: headset
+    
+
+data: =@ctx.datasources.summary
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.action
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.actionLink

@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - component: avatar
+      componentLink: 
+    - component: avatar-field
+      componentLink: avatar-field-example
+    - component: bar-chart
+    - component: checkbox
+    - component: date-picker
+    - component: dropdown
+      
+      

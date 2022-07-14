@@ -1,0 +1,44 @@
+title: Components
+type: jig.list
+icon: world
+    
+
+data: =@ctx.datasources.summary
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.component
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.componentLink
+
+
+          
+          
+          
+          
+          
+          
+              
+    
+    
+# title: Employees list
+# type: jig.list
+
+# datasources:
+#   employees-dynamic:
+#     type: "datasource.sqlite"
+#     options:
+#       provider: DATA_PROVIDER_DYNAMIC
+#       entities:
+#         - entity: default/employees
+#       query: |
+#         SELECT
+#           id,
+#           '$.firstname',
+#           '$.email'
+#         FROM [default/employees]
