@@ -6,13 +6,13 @@ options:
     - component: Avatar-field
       componentLink: avatar-field-example
     - component: Bar-chart
-      componentLink: #composite
+      componentLink: composite-bar-chart
     - component: Checkbox
-      componentLink: #composite
+      componentLink: composite-checkbox
     - component: Date-picker
-      componentLink: #composite
+      componentLink: composite-date-picker
     - component: Dropdown
-      componentLink: #composite
+      componentLink: composite-dropdown
     - component: Email-field
       componentLink: email-field
     - component: Entity-field
@@ -38,13 +38,13 @@ options:
     - component: List-item
       componentLink: #list
     - component: Location
-      componentLink: #composite
+      componentLink: composite-location
     - component: Media-field
       componentLink: media-field-example
     - component: Number-field
       componentLink: number-field
     - component: Pie-chart
-      componentLink: #composite
+      componentLink: composite-pie-chart
     - component: Product-item
       componentLink: product-item-example-dynamic
     - component: Section
@@ -66,7 +66,7 @@ options:
     - component: Trend
       componentLink: #list
     - component: Stage
-      componentLink: #composite
+      componentLink: composite-stage
     - component: Video-player
       componentLink: #list
     - component: Web-view

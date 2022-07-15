@@ -1,0 +1,6 @@
+title: Date-picker examples
+type: jig.composite
+
+children:
+  - jigId: date-picker-date
+  - jigId: date-picker-time

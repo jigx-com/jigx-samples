@@ -1,0 +1,6 @@
+title: Avatar examples
+type: jig.composite
+
+children:
+  - jigId: avatar-initials
+  - jigId: avatar-picture

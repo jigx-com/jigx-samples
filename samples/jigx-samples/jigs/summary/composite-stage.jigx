@@ -1,0 +1,6 @@
+title: Stage examples
+type: jig.composite
+
+children:
+  - jigId: stage
+  - jigId: stage-list
