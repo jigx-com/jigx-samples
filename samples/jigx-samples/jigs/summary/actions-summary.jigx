@@ -15,3 +15,9 @@ item:
           - type: action.go-to
             options:
               linkTo: =@ctx.current.item.actionLink
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: document

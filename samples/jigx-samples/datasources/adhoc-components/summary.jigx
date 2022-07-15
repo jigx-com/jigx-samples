@@ -1,13 +1,106 @@
 type: datasource.static
 options:
   data:
-    - component: avatar
-      componentLink: 
-    - component: avatar-field
+    - component: Avatar
+      componentLink: composite-avatar
+    - component: Avatar-field
       componentLink: avatar-field-example
-    - component: bar-chart
-    - component: checkbox
-    - component: date-picker
-    - component: dropdown
-      
-      
+    - component: Bar-chart
+      componentLink: #composite
+    - component: Checkbox
+      componentLink: #composite
+    - component: Date-picker
+      componentLink: #composite
+    - component: Dropdown
+      componentLink: #composite
+    - component: Email-field
+      componentLink: email-field
+    - component: Entity-field
+      componentLink: #list
+    - component: Entity
+      componentLink: section-row-entity-example-sd
+    - component: Event
+      componentLink: #list
+    - component: Expander
+      componentLink: #list
+    - component: Field-row
+      componentLink: #list
+    - component: Form
+      componentLink: #list
+    - component: Image
+      componentLink: #list
+    - component: Interactive-image-item
+      componentLink: #list
+    - component: Line-chart
+      componentLink: #list
+    - component: List
+      componentLink: #list #notfinished
+    - component: List-item
+      componentLink: #list
+    - component: Location
+      componentLink: #composite
+    - component: Media-field
+      componentLink: media-field-example
+    - component: Number-field
+      componentLink: number-field
+    - component: Pie-chart
+      componentLink: #composite
+    - component: Product-item
+      componentLink: product-item-example-dynamic
+    - component: Section
+      componentLink: #list
+    - component: Signature-field
+      componentLink: signature-field 
+    - component: Step
+      componentLink: step-example
+    - component: Stepper
+      componentLink: stepper-example
+    - component: Story-group
+      componentLink: #list
+    - component: Summary
+      componentLink: #list
+    - component: Text-field
+      componentLink: text-field
+    - component: Titles
+      componentLink: expander
+    - component: Trend
+      componentLink: #list
+    - component: Stage
+      componentLink: #composite
+    - component: Video-player
+      componentLink: #list
+    - component: Web-view
+      componentLink: web-view-example
+    - type: Calendar
+      typeLink: #list
+    - type: Composite
+      typeLink: #list
+    - type: Default
+      typeLink: #list
+    - type: Document
+      typeLink: #list
+    - type: List
+      typeLink: #list
+    - action: Action-list
+      actionLink: #list
+    - action: Reset-state
+      actionLink: #? #description only
+    - action: Confirm
+      actionLink: confirm
+    - action: Execute-entities
+      actionLink: #list #noscrnshts
+    - action: Execute-entity
+      actionLink: #list
+    - action: Go-back
+      actionLink: #list
+    - action: Go-to
+      actionLink: #list
+    - action: Open-url
+      actionLink: #list
+    - action: Set-state
+      actionLink: #? #noscrnshts
+    - action: Submit-form
+      actionLink: #? #description only
+    - action: Sync-entities
+      actionLink: #? #noscrnshts
+

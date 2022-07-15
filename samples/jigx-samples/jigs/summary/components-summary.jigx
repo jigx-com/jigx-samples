@@ -15,30 +15,9 @@ item:
           - type: action.go-to
             options:
               linkTo: =@ctx.current.item.componentLink
-
-
-          
-          
-          
-          
-          
-          
-              
-    
-    
-# title: Employees list
-# type: jig.list
-
-# datasources:
-#   employees-dynamic:
-#     type: "datasource.sqlite"
-#     options:
-#       provider: DATA_PROVIDER_DYNAMIC
-#       entities:
-#         - entity: default/employees
-#       query: |
-#         SELECT
-#           id,
-#           '$.firstname',
-#           '$.email'
-#         FROM [default/employees]
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: document
