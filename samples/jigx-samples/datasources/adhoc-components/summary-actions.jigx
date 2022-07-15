@@ -1,0 +1,26 @@
+type: datasource.static
+options:
+  data:
+    - action: Action-list
+      actionLink: #list
+    - action: Reset-state
+      actionLink: #? #description only
+    - action: Confirm
+      actionLink: confirm
+    - action: Execute-entities
+      actionLink: #list #noscrnshts
+    - action: Execute-entity
+      actionLink: #list
+    - action: Go-back
+      actionLink: #list
+    - action: Go-to
+      actionLink: #list
+    - action: Open-url
+      actionLink: #list
+    - action: Set-state
+      actionLink: #? #noscrnshts
+    - action: Submit-form
+      actionLink: #? #description only
+    - action: Sync-entities
+      actionLink: #? #noscrnshts
+

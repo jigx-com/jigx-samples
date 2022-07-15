@@ -3,7 +3,7 @@ type: jig.list
 icon: headset
     
 
-data: =@ctx.datasources.summary
+data: =@ctx.datasources.summary-actions
 item: 
   type: "component.list-item"
   options:
