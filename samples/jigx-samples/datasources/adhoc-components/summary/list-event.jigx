@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Event of meeting
+      link: event-of-meeting
+    - title: Event of vacation
+      link: multi-day-event

@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Different types of entity fields
+      link: entity-field-examples-static
+    - title: Entity fields with a connected datasource
+      link: entity-field-sd

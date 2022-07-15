@@ -16,27 +16,27 @@ options:
     - component: Email-field
       componentLink: email-field
     - component: Entity-field
-      componentLink: #list
+      componentLink: list-entity-field
     - component: Entity
       componentLink: section-row-entity-example-sd
     - component: Event
-      componentLink: #list
+      componentLink: list-event
     - component: Expander
-      componentLink: #list
+      componentLink: list-expander
     - component: Field-row
-      componentLink: #list
+      componentLink: list-field-row
     - component: Form
-      componentLink: #list
+      componentLink: list-form
     - component: Image
-      componentLink: #list
+      componentLink: list-image
     - component: Interactive-image-item
-      componentLink: #list
+      componentLink: list-interactive-image-item
     - component: Line-chart
-      componentLink: #list
+      componentLink: list-line-chart
     - component: List
-      componentLink: #list #notfinished
+      componentLink: list-list #TODO #notfinished #finish once examples are ready
     - component: List-item
-      componentLink: #list
+      componentLink: list-list-item
     - component: Location
       componentLink: composite-location
     - component: Media-field
@@ -48,7 +48,7 @@ options:
     - component: Product-item
       componentLink: product-item-example-dynamic
     - component: Section
-      componentLink: #list
+      componentLink: list-section
     - component: Signature-field
       componentLink: signature-field 
     - component: Step
@@ -56,18 +56,18 @@ options:
     - component: Stepper
       componentLink: stepper-example
     - component: Story-group
-      componentLink: #list
+      componentLink: list-story-group
     - component: Summary
-      componentLink: #list
+      componentLink: list-summary
     - component: Text-field
       componentLink: text-field
     - component: Titles
       componentLink: expander
     - component: Trend
-      componentLink: #list
+      componentLink: list-trend #TODO #issue with trends only on widgets #change in datasource
     - component: Stage
       componentLink: composite-stage
     - component: Video-player
-      componentLink: #list
+      componentLink: list-video-player
     - component: Web-view
       componentLink: web-view-example

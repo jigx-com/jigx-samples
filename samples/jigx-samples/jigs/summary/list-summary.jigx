@@ -1,0 +1,21 @@
+title: Summary
+type: jig.list
+          
+data: =@ctx.datasources.list-summary
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.title
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.link
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: document
