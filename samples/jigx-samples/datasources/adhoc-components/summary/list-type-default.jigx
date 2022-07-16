@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - title: Jig.default as a Form
+      link: default-form
+    - title: Jig.default as a List
+      link: default-list
+    - title: Other example of jig.default
+      link: default-employee-detail
+    - title: Other example of jig.default
+      link: default-product-detail

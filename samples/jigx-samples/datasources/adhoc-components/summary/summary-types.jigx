@@ -2,12 +2,12 @@ type: datasource.static
 options:
   data:
     - type: Calendar
-      typeLink: #list
+      typeLink: calendar-example
     - type: Composite
-      typeLink: #list
+      typeLink: list-type-composite
     - type: Default
-      typeLink: #list
+      typeLink: list-type-default
     - type: Document
-      typeLink: #list
+      typeLink: list-type-document
     - type: List
-      typeLink: #list
+      typeLink: list-type-list

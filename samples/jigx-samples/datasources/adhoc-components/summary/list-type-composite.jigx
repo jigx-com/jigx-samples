@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Composite Jig without any form of input
+      link: jig-composite
+    - title: Composite Jig with input
+      link: service-details-comp
