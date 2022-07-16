@@ -2,7 +2,7 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/titles
+    - entity: default/location
   query: |
     SELECT
       '$.id',
@@ -10,5 +10,6 @@ options:
       '$.image',
       '$.address',
       '$.locationTitle',
-      '$.locationSubtitle'
-    FROM [default/titles]
+      '$.locationSubtitle',
+      '$.category'
+    FROM [default/location] WHERE '$.category' = "titles"

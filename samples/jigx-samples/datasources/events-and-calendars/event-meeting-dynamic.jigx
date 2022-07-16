@@ -2,7 +2,7 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/meeting-event
+    - entity: default/calendar
   query: |
     SELECT
       json_extract(data, '$.name') as name,
@@ -10,5 +10,6 @@ options:
       json_extract(data, '$.location') as location,
       json_extract(data, '$.description') as description,
       json_extract(data, '$.date-from') as date_from,
-      json_extract(data, '$.date-to') as dete_to
-    FROM [default/meeting-event]
+      json_extract(data, '$.date-to') as dete_to,
+      json_extract(data, '$.category') as category
+    FROM [default/calendar] WHERE catgory = "meeting"

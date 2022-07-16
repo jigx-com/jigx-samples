@@ -1,8 +1,6 @@
 type: 'datasource.sqlite'
 options:
   provider: DATA_PROVIDER_DYNAMIC
-
   entities:
-    - entity: default/trip
-
-  query: SELECT id, '$.name', '$.from', '$.to', '$.date', '$.seat', '$.board', '$.time', '$.flight', '$.gate' FROM [default/trip]
+    - entity: default/flight-schedule
+  query: SELECT id, '$.airline', '$.board', '$.disembark', '$.date', '$.flight', '$.from', '$.fromabrv', '$.gate', '$.name', '$.seat', '$.to', '$.toabrv' FROM [default/flight-schedule]

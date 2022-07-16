@@ -3,6 +3,6 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/documents-dynamic
+    - entity: default/documents
 
-  query: SELECT id, '$.name', '$.description', '$.type', '$.url' FROM [default/documents-dynamic] 
+  query: SELECT id, '$.name', '$.description', '$.type', '$.url' FROM [default/documents] 

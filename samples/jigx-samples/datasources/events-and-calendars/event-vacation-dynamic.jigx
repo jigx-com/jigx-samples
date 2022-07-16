@@ -8,5 +8,6 @@ options:
       '$.name',
       '$.location',
       '$.date-from',
-      '$.date-to'
-    FROM [default/vacation-event]
+      '$.date-to',
+      '$.category' 
+    FROM [default/vacation-event] WHERE '$.category' = 'meeting-event'

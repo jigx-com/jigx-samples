@@ -2,10 +2,11 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/trend
+    - entity: default/value
   query: |
     SELECT
       '$.financevalue',
-      '$.trendvalue',
-      '$.title'
-    FROM [default/trend]
+      '$.value',
+      '$.title',
+      '$.category'
+    FROM [default/value] WHERE '$.category' = "trend"

@@ -2,7 +2,7 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/image-sources
+    - entity: default/avatar
   query: |
     SELECT
       '$.id',
@@ -11,5 +11,6 @@ options:
       '$.image',
       '$.thumbnail',
       '$.url',
-      '$.videoUrl'
-    FROM [default/image-sources]
+      '$.videoUrl',
+      '$.category'
+    FROM [default/avatar] WHERE '$.category' = "image-source"

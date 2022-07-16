@@ -12,7 +12,8 @@ options:
       '$.date_from', 
       '$.date_to', 
       '$.email',
-      '$.phone' 
-    FROM [default/employees]  WHERE '$.firstname' LIKE '%'||@search||'%' OR @search IS NULL
+      '$.phone' ,
+      '$.category'
+    FROM [default/employees]  WHERE '$.firstname' LIKE '%'||@search||'%' AND '$.category' = "employees" OR @search IS NULL AND '$.category' = "employees"
   queryParameters:
     '@search': =@ctx.components.dropdown-in.state.searchText

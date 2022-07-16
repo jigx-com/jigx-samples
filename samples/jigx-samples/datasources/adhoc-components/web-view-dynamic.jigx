@@ -2,8 +2,9 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/web-view
+    - entity: default/links
   query: |
     SELECT
-      '$.url'
-    FROM [default/web-view]
+      '$.url',
+      '$.category'
+    FROM [default/links] WHERE '$.category' = "web-view"

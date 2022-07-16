@@ -7,5 +7,6 @@ options:
     SELECT
       '$.id',
       '$.address',
-      '$.addressAus'
-    FROM [default/location]
+      '$.address-us',
+      '$.category'
+    FROM [default/location] WHERE '$.category' = "location"

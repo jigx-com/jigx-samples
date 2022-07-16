@@ -3,6 +3,6 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/product-detail
+    - entity: default/products
 
-  query: SELECT id, '$.title', '$.price', '$.photo', '$.overview', '$.bluetooth-detail', '$.precise-detail', '$.recharge-detail', '$.design-detail', '$.compatible-detial', '$.weight-detail', '$.guarantee-detail', '$.shipping-detail' FROM [default/product-detail]
+  query: SELECT id, '$.title', '$.price', '$.photo', '$.overview', '$.bluetooth-detail', '$.precise-detail', '$.recharge-detail', '$.design-detail', '$.compatible-detial', '$.weight-detail', '$.guarantee-detail', '$.shipping-detail', '$.category' FROM [default/products] WHERE '$.category' = "detail"
