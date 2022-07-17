@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - title: Execute-entities in action
+      link: execute-entities-action
+    - title: Execute-entities in action list
+      link: execute-entities-actionlist
+    - title: Execute-entities in onPress event
+      link: execute-entities-onPress
+    - title: Execute-entities in onChange event
+      link: execute-entities-onChange
+    - title: Execute-entity in onLoad/onRefresh/onFocus
+      link: execute-entities-onRefresh

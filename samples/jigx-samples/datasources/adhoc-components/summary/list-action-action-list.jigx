@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - title: Action-list as primary action button
+      link: action-list-primary
+    - title: Action list as onPress
+      link: action-list-onPress
+    - title: Action list as onChange
+      link: action-list-onChange
+    - title: Action list as onRefresh/onLoad/onFocus
+      link: action-list-onRefresh

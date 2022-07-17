@@ -2,15 +2,15 @@ type: datasource.static
 options:
   data:
     - action: Action-list
-      actionLink: #list
+      actionLink: list-action-action-list
     - action: Reset-state
-      actionLink: #? #description only
+      actionLink: list-action-reset-state
     - action: Confirm
       actionLink: confirm
     - action: Execute-entities
-      actionLink: #list #noscrnshts
+      actionLink: list-action-execute-entities
     - action: Execute-entity
-      actionLink: #list
+      actionLink: list-action-execute-entity
     - action: Go-back
       actionLink: #list
     - action: Go-to
