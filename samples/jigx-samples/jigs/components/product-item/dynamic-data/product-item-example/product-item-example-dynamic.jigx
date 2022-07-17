@@ -15,3 +15,15 @@ item:
       format:
         numberStyle: currency
     discount: =@ctx.current.item.discount
+    amountControl:
+      value: =@ctx.current.item.quantity
+      onChange:
+        type: action.execute-entity
+        options:
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/products
+          method: update
+          data:
+            id: =@ctx.current.item.id
+            quantity: =@ctx.item.state.amount
+          goBack: stay
