@@ -55,8 +55,6 @@ options:
       componentLink: step-example
     - component: Stepper
       componentLink: stepper-example
-    - component: Story-group
-      componentLink: list-story-group
     - component: Summary
       componentLink: list-summary
     - component: Text-field

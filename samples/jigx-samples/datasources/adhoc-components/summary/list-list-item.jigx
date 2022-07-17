@@ -6,7 +6,7 @@ options:
     - title: Simple list with dividers
       link: simple-list-divider-sd
     - title: List with colored progress bars
-      link: list-with-progress-colors-sds
+      link: list-with-progress-colors-sd
     - title: List with avatars
       link: list-avatars-sd
     - title: List with left avatar
@@ -36,3 +36,4 @@ options:
     - title: List with right value
       link: list-with-right-value-dd
     - title: List with right actions
+      link: list-with-swipe-right-sd
