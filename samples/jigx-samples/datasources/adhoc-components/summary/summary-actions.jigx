@@ -12,15 +12,15 @@ options:
     - action: Execute-entity
       actionLink: list-action-execute-entity
     - action: Go-back
-      actionLink: #list
+      actionLink: list-action-go-back
     - action: Go-to
-      actionLink: #list
+      actionLink: list-action-go-to
     - action: Open-url
-      actionLink: #list
+      actionLink: list-action-open-url
     - action: Set-state
-      actionLink: #? #noscrnshts
+      actionLink: list-action-set-state
     - action: Submit-form
-      actionLink: #? #description only
+      actionLink: submit-form
     - action: Sync-entities
-      actionLink: #? #noscrnshts
+      actionLink: list-action-sync-entities
 

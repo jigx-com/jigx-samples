@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - title: Open-url in action/action-list
+      link: open-url-action
+    - title: Open-url swipeable left/right
+      link: open-url-swipeable
+    - title: Open-url rightElement
+      link: open-url-right-element
+    - title: Open-url onSuccess
+      link: open-url-on-success

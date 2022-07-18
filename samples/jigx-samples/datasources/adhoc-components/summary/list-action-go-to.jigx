@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - title: Go-to in action/action-list
+      link: go-to-in-action-list
+    - title: Go-to swipeable left
+      link: go-to-swipeable-left
+    - title: Go-to swipeable right
+      link: go-to-swipeable-right
+    - title: Go-to rightElement
+      link: go-to-right-element
+    - title: Go-to onSuccess
+      link: go-back-on-success
