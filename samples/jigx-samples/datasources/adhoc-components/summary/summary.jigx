@@ -61,8 +61,8 @@ options:
       componentLink: text-field
     - component: Titles
       componentLink: expander
-    - component: Trend
-      componentLink: list-trend #TODO #issue with trends only on widgets #change in datasource
+    # - component: Trend
+    #   componentLink: list-trend #TODO #issue with trends only on widgets
     - component: Stage
       componentLink: composite-stage
     - component: Video-player
