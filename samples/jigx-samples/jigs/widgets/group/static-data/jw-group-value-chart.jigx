@@ -20,7 +20,7 @@ children:
       series:
         - data: =@ctx.datasource.series1
           
-views:
+widgets:
   2x4: 
     type: widget.group
     options:

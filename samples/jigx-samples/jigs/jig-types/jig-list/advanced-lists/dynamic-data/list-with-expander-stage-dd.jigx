@@ -72,7 +72,7 @@ item:
         options:
           address: =@ctx.current.item.to
           
-views:
+widgets:
   2x2:
     type: widget.list
     options:

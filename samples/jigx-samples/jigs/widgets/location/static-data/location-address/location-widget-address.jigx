@@ -7,7 +7,7 @@ children:
       address: Národní 135/14, 110 00 Praha
 
       
-views:
+widgets:
   4x2:
     type: widget.location
     options:

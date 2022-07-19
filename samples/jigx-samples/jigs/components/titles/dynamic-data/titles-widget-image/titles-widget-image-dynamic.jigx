@@ -10,7 +10,7 @@ children:
             label: "Image widget"
             value: ""
 
-views:
+widgets:
   4x4:
     type: widget.image
     options:

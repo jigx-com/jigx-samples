@@ -19,7 +19,7 @@ children:
       series:
         - data: =@ctx.datasources.chart-data-series1
           
-views:
+widgets:
   2x4: 
     type: widget.group
     options:
