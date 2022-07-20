@@ -26,7 +26,7 @@ item:
         options:
           provider: DATA_PROVIDER_DYNAMIC
           method: update
-          goBack: off
+          goBack: stay
           entity: default/form
           data: 
             id: =@ctx.current.item.id
