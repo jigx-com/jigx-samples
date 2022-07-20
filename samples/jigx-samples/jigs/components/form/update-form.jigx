@@ -36,10 +36,10 @@ children:
           options:
             label: Email
             value: =@ctx.datasources.form.email
-            type: email
+            keyboardType: email-address
         - type: component.number-field
           instanceId: phone
           options:
             label: Phone number
             value: =@ctx.datasources.form.phone
-            type: number
+            keyboardType: number-pad

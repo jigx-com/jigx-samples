@@ -1,0 +1,29 @@
+type: datasource.static
+options:
+  data:
+    - title: Simple List
+      link: simple-list-sd-local
+    - title: List with styles
+      link: list-with-styles-sd
+    - title: List with Expanders
+      link: list-with-expander-stage-sd
+    - title: List with Stages
+      link: list-with-stage-sd
+    - title: List with Product-items
+      link: list-with-product-item-dd
+    - title: List with Pie Charts
+      link: list-with-pie-charts-sd
+    - title: Horizontal list
+      link: list-horizontal-sd
+    - title: List with Search functionality
+      link: list-search-label-dd
+    - title: List with Filter functionality
+      link: list-filter-label-dd
+    - title: List with Search and Filter functionality
+      link: list-filter-search-label-dd
+    - title: Selectable list
+      link: list-selectable-sd
+    - title: List with active items
+      link: list-with-active-item-sd
+    - title: List with Sections
+      link: list-with-sections-sd

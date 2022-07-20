@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - title: Entity with sections, rows and entity fields
+      link: section-row-entity-field-dd
+    - title: Form with sections, rows and children components 
+      link: form-section-row-children-dd
+    - title: Entity with sections and entity-fields
+      link: section-entity-field-dd
+    - title: Form with sections and entity-fields
+      link: form-section-children-dd

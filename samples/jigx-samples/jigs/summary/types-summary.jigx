@@ -1,0 +1,23 @@
+title: Types
+type: jig.list
+icon: contact
+    
+
+data: =@ctx.datasources.summary-types
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.type
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.typeLink
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: document

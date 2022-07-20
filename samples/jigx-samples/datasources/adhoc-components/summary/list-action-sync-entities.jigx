@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - title: Sync-entities in action
+      link: sync-entities-action
+    - title: Sync-entities in action list
+      link: sync-entities-actionlist
+    - title: Sync-entities in onPress event
+      link: sync-entities-onPress
+    - title: Sync-entities in onChange event
+      link: sync-entitites-onChange
+    - title: Sync-entities in onLoad/onRefresh/onFocus
+      link: sync-entities-onRefresh

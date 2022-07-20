@@ -1,0 +1,40 @@
+title: Update from with submit action
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: form-update
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          recordId: =@ctx.datasources.form.id
+          title: Update form
+            
+children:
+ - type: component.form
+   instanceId: form-update
+   options:
+     children:
+        - type: component.text-field
+          instanceId: firstname
+          options:
+           label: First name
+           value: =@ctx.datasources.form.firstname
+        - type: component.text-field
+          instanceId: lastname
+          options:
+            label: Last name
+            value: =@ctx.datasources.form.lastname
+        - type: component.email-field
+          instanceId: email
+          options:
+            label: Email
+            value: =@ctx.datasources.form.email
+            keyboardType: email-address
+        - type: component.number-field
+          instanceId: phone
+          options:
+            label: Phone number
+            value: =@ctx.datasources.form.phone
+            keyboardType: number-pad

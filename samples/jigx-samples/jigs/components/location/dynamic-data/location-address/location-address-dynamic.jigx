@@ -7,7 +7,7 @@ children:
       address: =@ctx.datasources.location.addressAus
 
       
-views:
+widgets:
   4x4:
     type: widget.location
     options:

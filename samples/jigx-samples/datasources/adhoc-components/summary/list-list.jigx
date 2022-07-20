@@ -1,0 +1,23 @@
+type: datasource.static
+options:
+  data:
+    - title: Default Jig with List Items
+      link: default-w-list-sd
+    - title: Default Jig with Expander List 
+      link: default-w-exp-stage-list-sd
+    - title: Default Jig with Stage List
+      link: default-w-stage-list-sd
+    - title: Default Jig with Product Item
+      link: default-w-product-list-sd
+    - title: Default Jig with Pie Charts
+      link: 
+    - title: Default Jig with Horizontal List
+      link: 
+    - title: Default Jig with a List with Filter functionality
+      link:
+    - title: Default Jig with a List with Search and Filter functionality
+      link:
+    - title: Default Jig with List with active item
+      link: 
+    - title: Default Jig List with Sections
+      link: 

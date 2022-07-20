@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Using image in your story group
+      link: story-group-image-sd
+    - title: Using video in your story group
+      link: story-group-video-sd

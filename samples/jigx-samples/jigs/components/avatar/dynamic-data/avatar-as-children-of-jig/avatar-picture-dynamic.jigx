@@ -9,7 +9,7 @@ children:
       size: large
       align: left
       
-views:    
+widgets:    
   2x2:
     type: widget.avatar
     options:

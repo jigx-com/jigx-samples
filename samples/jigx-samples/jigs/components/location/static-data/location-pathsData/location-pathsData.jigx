@@ -9,7 +9,7 @@ children:
           lng: 151.258028
 
       
-views:
+widgets:
   4x4:
     type: widget.location
     options:

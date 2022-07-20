@@ -25,7 +25,7 @@ children:
           name: "2021/2022"
           color: color2
 
-views:
+widgets:
   4x2:
     type: widget.group
     options:

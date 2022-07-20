@@ -1,0 +1,6 @@
+title: Checkbox examples
+type: jig.composite
+
+children:
+  - jigId: checkbox-yes-no-question
+  - jigId: checkbox-multiple-selection

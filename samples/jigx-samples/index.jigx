@@ -2,19 +2,38 @@ title: Jigx-samples
 name: jigx-samples
 category: personal
 
-widgets: 
-  - size: 1x1
-    jigId: list-search-label-dd
-  - size: 1x1
-    jigId: document-pdf-dd
-  - size: 1x1
-    jigId: web-view-example
-  - size: 2x2
-    jigId: jig-composite
-
 stories:
-  - story-group-image-sd
   - story-group-video-sd
-  - story-group-image-dd
-  - story-group-video-dd
-  - news
+  - story-group-image-sd
+
+widgets: 
+  - size: 2x2
+    jigId: avatar-on-widget
+  - size: 1x1
+    jigId: types-summary
+  - size: 1x1
+    jigId: components-summary
+  - size: 1x1
+    jigId: actions-summary
+  - size: 4x2
+    jigId: image-widget
+  - size: 2x2
+    jigId: actions
+  - size: 2x2
+    jigId: widget-list-stage-sd
+  - size: 4x2
+    jigId: jw-group-avatar-list
+  - size: 4x2
+    jigId: location-widget-address
+  - size: 2x2
+    jigId: jw-status-static
+  - size: 2x2
+    jigId: value-static
+  - size: 4x2
+    jigId: chart-widget-line-chart
+    
+
+
+  # - story-group-image-dd
+  # - story-group-video-dd
+  # - news

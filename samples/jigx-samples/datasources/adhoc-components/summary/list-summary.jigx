@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Summary - default
+      link: summary
+    - title: Summary - cart
+      link: summary-cart
+    - title: Summary - counter
+      link: summary-counter

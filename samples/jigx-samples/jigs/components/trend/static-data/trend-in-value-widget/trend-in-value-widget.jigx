@@ -10,7 +10,7 @@ children:
             label: 'Status: Full view'
             value: Not implemented yet
 
-views:
+widgets:
   2x2:
     type: widget.value
     options:

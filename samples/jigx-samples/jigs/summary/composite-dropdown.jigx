@@ -1,0 +1,7 @@
+title: Dropdown examples
+type: jig.composite
+
+children:
+  - jigId: dropdown
+  - jigId: dropdown-multiple-select
+  - jigId: dropdown-searchable

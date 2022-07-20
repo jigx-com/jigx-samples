@@ -1,0 +1,39 @@
+type: datasource.static
+options:
+  data:
+    - title: Simple list
+      link: simple-list-sd-local
+    - title: Simple list with dividers
+      link: simple-list-divider-sd
+    - title: List with colored progress bars
+      link: list-with-progress-colors-sd
+    - title: List with avatars
+      link: list-avatars-sd
+    - title: List with left avatar
+      link: list-with-left-avatar-sd
+    - title: List with left checkboxes
+      link: list-with-left-checkbox-sd
+    - title: List with left icons
+      link: list-with-left-icon-sd
+    - title: List with left image
+      link: list-with-left-image-sd
+    - title: List with left progress
+      link: list-with-left-progress-dd
+    - title: List with left actions
+      link: list-with-swipe-left-sd
+    - title: List with right amount control
+      link: list-with-right-amount-dd
+    - title: List with right badges
+      link: list-with-right-badge-sd
+    - title: List with right buttons
+      link: list-with-right-button-dd
+    - title: List with right checkboxes
+      link: list-with-right-checkbox-sd
+    - title: List with right icons
+      link: list-with-right-icon-sd
+    - title: List with right switch
+      link: list-with-right-switch-sd
+    - title: List with right value
+      link: list-with-right-value-dd
+    - title: List with right actions
+      link: list-with-swipe-right-sd

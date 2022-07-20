@@ -10,13 +10,13 @@ children:
             label: Text
             value: This is the representations of jw-value
 
-views:
+widgets:
   2x2:
     type: widget.value
     options:
       value: =@ctx.datasources.all-orders.count
       align: right
-      format:
+      format: 
         unit: Opportunities
       bottom:
         type: component.trend

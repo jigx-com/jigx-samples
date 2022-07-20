@@ -1,50 +1,17 @@
 tables:
-  ? table
   ? avatar
-  ? form
-  ? form1
-  ? value
-  ? trip
-  ? new-orders
-  ? product-detail
-  ? employee-detail
-  ? employees
-  ? assets
-  ? finance
-  ? series1
-  ? series2
-  ? series3
-  ? documents-dynamic
-  ? field-values
+  ? calendar
+  ? cleaning-services
+  ? charts
   ? checkbox
-  ? meeting-event
-  ? multiday-event
-  ? meetingpeople
-  ? cleaning-services-dynamic
-  ? image-sources
-  ? titles
-  ? location
-  ? pie-chart
-  ? pie-chart-arch
-  ? video-player
-  ? image
-  ? web-view
-  ? products
-  ? trend
-  ? vacation-event
-  ? global
-  ? calendar-people
-  ? calendar-tags
-  ? calendar-event
-  ? flight-schedule-dynamic
-  ? pie-chart-list-dynamic
-  ? finance-charts
-  ? finance-review-dynamic
+  ? documents
+  ? employees
+  ? form
   ? finances
-  ? floorplan-restaurant-dynamic
-  ? avatar-field
-  ? media-field
+  ? flight-schedule
+  ? interactive-image
+  ? location
+  ? links
+  ? products
   ? steps
-  ? product-sales
-  ? product-popularity
-  ? test
+  ? value

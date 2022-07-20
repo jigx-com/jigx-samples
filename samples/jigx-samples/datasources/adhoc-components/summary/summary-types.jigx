@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - type: Calendar
+      typeLink: calendar-example
+    - type: Composite
+      typeLink: list-type-composite
+    - type: Default
+      typeLink: list-type-default
+    - type: Document
+      typeLink: list-type-document
+    - type: List
+      typeLink: list-type-list

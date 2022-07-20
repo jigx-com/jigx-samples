@@ -2,9 +2,10 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/meetingpeople
+    - entity: default/calendar
   query: |
     SELECT
       json_extract(data, '$.name') as fullName,
-      json_extract(data, '$.url') as avatarUrl
-    FROM [default/meetingpeople]
+      json_extract(data, '$.url') as avatarUrl,
+      json_extract(data, '$.category') as category
+    FROM [default/calendar] WHERE category = "people"

@@ -2,5 +2,5 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/finance
-  query: SELECT id, json_extract(data, '$.date') as x, json_extract(data, '$.amount') as y, '$.financeid' FROM [default/finance] ORDER BY '$.financeid' ASC
+    - entity: default/finances
+  query: SELECT id, json_extract(data, '$.date') as x, json_extract(data, '$.amount') as y, '$.financeid', '$.category' FROM [default/finances] WHERE '$.category' = "finance-month" ORDER BY '$.financeid' ASC

@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Set-state as onFocus/onLoad/onRefresh
+      link: set-state-focus-load-refresh
+    - title: Set-state as action
+      link: set-state-action
+    - title: Set-state as onPress/onChange
+      link: set-state-onpress-onchange

@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Field-row components with entity-fields
+      link: row-entity-field-sd
+    - title: Field-row components on form with children components 
+      link: form-row-children-dd

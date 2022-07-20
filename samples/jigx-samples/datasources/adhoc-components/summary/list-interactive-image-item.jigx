@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - title: Restaurant table booking example
+      link: interactive-image-rest-sd
+    - title: Hot seat and meeting room booking example
+      link: interactive-image-office-sd

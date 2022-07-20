@@ -10,7 +10,7 @@ children:
             label: Text
             value: This is the representations of jw-status
 
-views:
+widgets:
   2x2: 
     type: widget.status
     options:

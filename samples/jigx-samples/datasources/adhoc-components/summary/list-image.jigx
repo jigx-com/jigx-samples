@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Image in Header
+      link: header-image
+    - title: Image in Story
+      link: story-image
+    - title: Image in jig/default
+      link: default-image

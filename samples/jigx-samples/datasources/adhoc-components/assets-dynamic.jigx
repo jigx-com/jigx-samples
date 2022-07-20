@@ -2,5 +2,5 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/assets
-  query: SELECT id,'$.name','$.photo','$.price', '$.date', '$.status' FROM [default/assets]
+    - entity: default/products
+  query: SELECT id,'$.name','$.photo','$.price', '$.date', '$.status', '$.category' FROM [default/products] WHERE '$.category' = "assets"

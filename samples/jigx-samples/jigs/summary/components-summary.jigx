@@ -1,0 +1,23 @@
+title: Components
+type: jig.list
+icon: world
+    
+
+data: =@ctx.datasources.summary
+item: 
+  type: "component.list-item"
+  options:
+    title: =@ctx.current.item.component
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.componentLink
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: document

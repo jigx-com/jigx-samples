@@ -2,10 +2,11 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/video-player
+    - entity: default/links
   query: |
     SELECT
       '$.uri',
       '$.title',
-      '$.subtitle'
-    FROM [default/video-player]
+      '$.subtitle',
+      '$.category'
+    FROM [default/links] WHERE '$.category' = "video-player"

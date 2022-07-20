@@ -7,10 +7,12 @@ options:
       '@search': =@ctx.jig.state.searchText
   query: |
     SELECT
+      id,
       '$.title',
       '$.uri',
       '$.tag',
       '$.price',
+      '$.category',
       '$.discount'
     FROM [default/products]
-    WHERE '$.title' LIKE '%'||@search||'%' OR @search IS NULL ORDER BY '$.title'
+    WHERE '$.title' LIKE '%'||@search||'%' AND '$.category' = "product" OR @search IS NULL AND '$.category' = "product" ORDER BY '$.title'

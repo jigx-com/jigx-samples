@@ -1,0 +1,71 @@
+type: datasource.static
+options:
+  data:
+    - component: Avatar
+      componentLink: composite-avatar
+    - component: Avatar-field
+      componentLink: avatar-field-example
+    - component: Bar-chart
+      componentLink: composite-bar-chart
+    - component: Checkbox
+      componentLink: composite-checkbox
+    - component: Date-picker
+      componentLink: composite-date-picker
+    - component: Dropdown
+      componentLink: composite-dropdown
+    - component: Email-field
+      componentLink: email-field
+    - component: Entity-field
+      componentLink: list-entity-field
+    - component: Entity
+      componentLink: section-row-entity-example-sd
+    - component: Event
+      componentLink: list-event
+    - component: Expander
+      componentLink: list-expander
+    - component: Field-row
+      componentLink: list-field-row
+    - component: Form
+      componentLink: list-form
+    - component: Image
+      componentLink: list-image
+    - component: Interactive-image-item
+      componentLink: list-interactive-image-item
+    - component: Line-chart
+      componentLink: list-line-chart
+    - component: List
+      componentLink: list-list #TODO #notfinished #finish once examples are ready
+    - component: List-item
+      componentLink: list-list-item
+    - component: Location
+      componentLink: composite-location
+    - component: Media-field
+      componentLink: media-field-example
+    - component: Number-field
+      componentLink: number-field
+    - component: Pie-chart
+      componentLink: composite-pie-chart
+    - component: Product-item
+      componentLink: product-item-example-dynamic
+    - component: Section
+      componentLink: list-section
+    - component: Signature-field
+      componentLink: signature-field 
+    - component: Step
+      componentLink: step-example
+    - component: Stepper
+      componentLink: stepper-example
+    - component: Summary
+      componentLink: list-summary
+    - component: Text-field
+      componentLink: text-field
+    - component: Titles
+      componentLink: expander
+    - component: Trend
+      componentLink: list-trend #TODO #issue with trends only on widgets #change in datasource
+    - component: Stage
+      componentLink: composite-stage
+    - component: Video-player
+      componentLink: list-video-player
+    - component: Web-view
+      componentLink: web-view-example

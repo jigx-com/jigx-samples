@@ -3,6 +3,6 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/finance-review-dynamic
+    - entity: default/finances
 
-  query: SELECT id, '$.title', '$.subtitle', '$.year' FROM [default/finance-review-dynamic]
+  query: SELECT id, '$.title', '$.subtitle', '$.year' , '$.category' FROM [default/finances] WHERE '$.category' = 'finance-review'

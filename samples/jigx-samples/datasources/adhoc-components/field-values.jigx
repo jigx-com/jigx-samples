@@ -2,11 +2,12 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/field-values
+    - entity: default/values
   query: |
     SELECT
       '$.id',
       '$.number',
       '$.text',
-      '$.email'
-    FROM [default/field-values]
+      '$.email',
+      '$.category'
+    FROM [default/values] WHERE '$.category' = "field-category"

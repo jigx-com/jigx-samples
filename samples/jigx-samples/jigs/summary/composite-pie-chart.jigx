@@ -1,0 +1,6 @@
+title: Pie-chart examples
+type: jig.composite
+
+children:
+  - jigId: pie-chart
+  - jigId: pie-chart-arch

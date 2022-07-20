@@ -2,5 +2,5 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/series1
-  query: SELECT id, json_extract(data, '$.seriesx') as x, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/series1] ORDER by x 
+    - entity: default/charts
+  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$,seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "chart1" ORDER BY x

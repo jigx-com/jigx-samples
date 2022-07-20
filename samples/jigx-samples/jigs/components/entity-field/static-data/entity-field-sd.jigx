@@ -2,6 +2,7 @@ title: Entity Fields
 description: Jig to display entity fields
 type: jig.default
 
+# the inputs comming from list-with-actions-sd
 header:
     type: component.image
     options:

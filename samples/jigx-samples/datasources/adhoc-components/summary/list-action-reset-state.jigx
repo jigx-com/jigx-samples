@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - title: Reset-state onFocus/onLoad/onRefresh
+      link: reset-state-focus-load-refresh
+    - title: Reset-state as action
+      link: reset-state-action-form
+    - title: Reset-state onPress/onChange
+      link: reset-state-onpress-onchange
+    - title: Reset-state of the form
+      link: reset-state-action-form
