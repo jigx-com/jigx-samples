@@ -10,7 +10,7 @@ actions:
           entity: default/form
           method: save
           title: Update employee
-          goBack: off
+          goBack: stay
           onSuccess:
             actions:
               - type: action.confirm

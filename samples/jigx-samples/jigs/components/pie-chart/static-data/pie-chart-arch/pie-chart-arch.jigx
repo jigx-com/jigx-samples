@@ -18,7 +18,7 @@ children:
               - isEnabled: true
             type: arch
           
-views:
+widgets:
   2x2:
     type: widget.group
     options:

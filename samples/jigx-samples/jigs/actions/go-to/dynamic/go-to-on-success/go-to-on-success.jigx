@@ -12,7 +12,7 @@ actions:
           formId: send-signature
           icon: add
           title: Sign and go to detail
-          goBack: off
+          goBack: stay
           onSuccess: 
             title: Succesfully signed
             actions:

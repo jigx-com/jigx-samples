@@ -16,7 +16,7 @@ children:
         - data: =@ctx.datasources.series2-dynamic.data
     
           
-views:
+widgets:
   4x2:
     type: widget.group
     options:

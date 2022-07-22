@@ -6,7 +6,7 @@ onRefresh:
   options:
     provider: DATA_PROVIDER_DYNAMIC
     method: save
-    goBack: off
+    goBack: stay
     entity: default/form
     data: 
       id: =@ctx.current.item.id

@@ -15,7 +15,7 @@ item:
         type: action.execute-entities
         options:
           provider: DATA_PROVIDER_LOCAL
-          goBack: off
+          goBack: stay
           entity: default/employees
           method: update
           data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"

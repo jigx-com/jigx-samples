@@ -25,7 +25,7 @@ children:
         - type: component.media-field
           instanceId: media-field
           options:
-            mediaType: any
+            mediaType: image
             label: Upload file
             color:
               - when: true
