@@ -75,9 +75,15 @@ children:
             minimum: =@ctx.current.item.min
             maximum: =@ctx.current.item.max
             onChange:
-              type: action.go-to
+              type: action.execute-entity
               options:
-                linkTo: list-with-amount-control-sd
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/products
+                method: update
+                data:
+                  id: =@ctx.current.item.id
+                  quantity: =@ctx.item.state.amount
+                goBack: stay
             onDelete: 
               type: action.execute-entity
               options:

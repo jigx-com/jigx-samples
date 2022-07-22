@@ -10,14 +10,14 @@ options:
     - title: Default Jig with Product Item
       link: default-w-product-list-sd
     - title: Default Jig with Pie Charts
-      link: 
+      link: list-with-pie-charts-sd
     - title: Default Jig with Horizontal List
-      link: 
+      link: default-w-horizontal-list-dd
     - title: Default Jig with a List with Filter functionality
-      link:
+      link: list-filter-label-dd
     - title: Default Jig with a List with Search and Filter functionality
-      link:
+      link: list-filter-search-label-dd 
     - title: Default Jig with List with active item
-      link: 
+      link: list-with-active-item-dd
     - title: Default Jig List with Sections
-      link: 
+      link: form-with-section
