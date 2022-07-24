@@ -18,6 +18,6 @@ options:
     - title: Default Jig with a List with Search and Filter functionality
       link: list-filter-search-label-dd 
     - title: Default Jig with List with active item
-      link: list-with-active-item-dd
+      link: default-w-active-item-list-sd
     - title: Default Jig List with Sections
-      link: form-with-section
+      link: default-w-section-list-dd
