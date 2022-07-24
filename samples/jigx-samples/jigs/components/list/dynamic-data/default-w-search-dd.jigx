@@ -1,8 +1,7 @@
 title: Search List (Dynamic)
-description: A dynamic list displaying progress in colors
-type: jig.list
+description: A dynamic list displaying search functionality
+type: jig.default
 icon: notes-paper-approve
-isSearchable: true
 
 header:
     type: component.image
@@ -21,12 +20,19 @@ datasources:
   
       query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE '%'||@search||'%' OR @search IS NULL
       queryParameters:
-        search: =@ctx.jig.state.searchText
-  
-data: =@ctx.datasources.cleaning-services-dynamic
-item:
-  type: component.list-item
-  options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.area
+        search: =@ctx.components.cleaning_serv_items.state.searchText
+        
+
+children:
+  - type: component.list
+    instanceId: cleaning_serv_items
+    options:
+      data: =@ctx.datasources.cleaning-services-dynamic
+      isSearchable: true
+      maximumItemsToRender: 50
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.service
+          subtitle: =@ctx.current.item.area
     
