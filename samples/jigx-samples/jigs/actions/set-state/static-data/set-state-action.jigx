@@ -1,5 +1,6 @@
 title: Name
 type: jig.default
+description: Set-state action is typically used to set the state of the key inside the jig file, and you can further use that state to work with the UI components. And also the set-state action can be used to set the state of the UI components. In this example the set-state action is used as primary action on jig, to set-state global-key to 1.
 
 actions:
   - children:

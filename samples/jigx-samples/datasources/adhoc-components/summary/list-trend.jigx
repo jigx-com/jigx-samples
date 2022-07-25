@@ -1,5 +1,0 @@
-type: datasource.static
-options:
-  data:
-    - title:
-      link: 

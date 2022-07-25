@@ -1,5 +1,7 @@
 title: Execute entity by action button
 type: jig.default
+description: With execute-entity you can save, update or delete your data from your database. This is an example how to use it as an action.
+
 
 header: 
     type: component.image

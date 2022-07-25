@@ -1,5 +1,7 @@
 title: List
 type: jig.list
+description: Set-state action is typically used to set the state of the key inside the jig file, and you can further use that state to work with the UI components. And also the set-state action can be used to set the state of the UI components. In this example the set-state action is used on the list as onPress and onChange action, to set-state of global-key to 1.
+
 
 datasources:
   employees-dynamic:

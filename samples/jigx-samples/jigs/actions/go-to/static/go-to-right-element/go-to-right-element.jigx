@@ -1,5 +1,6 @@
 title: Go To action
 type: jig.list
+description: In this example, we use the go-to action as the rightElement in the list-item component. There is a button for each item.
 
 data: =@ctx.datasources.employees-static
 item:

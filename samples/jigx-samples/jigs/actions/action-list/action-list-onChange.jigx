@@ -1,5 +1,7 @@
 title: Employees list
 type: jig.list
+description: In this example we have action list on onPress function in list-item. First action will sync our entity with database and the second action will redirect us to detail of the employe which we clicked it.
+
 
 data: =@ctx.datasources.employees-dynamic
 item: 

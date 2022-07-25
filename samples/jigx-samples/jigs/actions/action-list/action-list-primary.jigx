@@ -1,5 +1,6 @@
 title: Action-list example
 type: jig.default
+description: The first action will submit the form and how the form will be submitted the second action go-to will redirect us right into the list with employees.
 
 actions:
   - children:

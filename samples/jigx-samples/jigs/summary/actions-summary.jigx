@@ -21,10 +21,3 @@ item:
     leftElement: 
       element: icon
       name: document
-      
-# widgets:
-#   2x2: 
-#     type: widget.image
-#     options:
-#       source:
-        

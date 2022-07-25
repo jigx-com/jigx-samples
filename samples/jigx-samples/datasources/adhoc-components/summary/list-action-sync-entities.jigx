@@ -8,6 +8,6 @@ options:
     - title: Sync-entities in onPress event
       link: sync-entities-onPress
     - title: Sync-entities in onChange event
-      link: sync-entitites-onChange
+      link: sync-entities-onChange
     - title: Sync-entities in onLoad/onRefresh/onFocus
       link: sync-entities-onRefresh

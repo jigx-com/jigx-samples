@@ -1,7 +1,8 @@
 title: ''
-description: Some description
 type: jig.list
 icon: contact 
+description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in onPress event.
+
 
 onRefresh: 
   type: action.execute-entity

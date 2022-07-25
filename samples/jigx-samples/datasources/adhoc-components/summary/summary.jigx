@@ -34,7 +34,7 @@ options:
     - component: Line-chart
       componentLink: list-line-chart
     - component: List
-      componentLink: list-list #TODO #notfinished #finish once examples are ready
+      componentLink: list-list 
     - component: List-item
       componentLink: list-list-item
     - component: Location
@@ -61,8 +61,6 @@ options:
       componentLink: text-field
     - component: Titles
       componentLink: expander
-    # - component: Trend
-    #   componentLink: list-trend #TODO #issue with trends only on widgets
     - component: Stage
       componentLink: composite-stage
     - component: Video-player
