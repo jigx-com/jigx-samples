@@ -11,6 +11,8 @@ options:
       link: default-w-product-list-sd
     - title: Default Jig with Pie Charts
       link: list-with-pie-charts-sd
+    - title: Default Jig with Bar Charts
+      link: list-with-bar-charts-sd
     - title: Default Jig with Horizontal List
       link: default-w-horizontal-list-dd
     - title: Default Jig with a List with Filter functionality

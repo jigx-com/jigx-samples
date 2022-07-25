@@ -1,5 +1,5 @@
 title: List with Pie Charts
-type: jig.list
+type: jig.default
 
 datasources:
   components:
@@ -25,21 +25,24 @@ datasources:
             - y: 67
               color: transparent
 
-data: =@ctx.datasources.components
-item:
-  type: component.pie-chart
-  options:
-    chart:
-      title:
-        text: =@ctx.current.item.title
-        verticalAlign: center
-      subtitle:
-        text: =@ctx.current.item.subtitle
-        verticalAlign: center
-      width: 100
-      height: 100
-    legend:
-      isHidden: true
-    series:
-      - data: =@ctx.current.item.data
-        layout: pie
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.components
+      item:
+        type: component.pie-chart
+        options:
+          chart:
+            title:
+              text: =@ctx.current.item.title
+              verticalAlign: center
+            subtitle:
+              text: =@ctx.current.item.subtitle
+              verticalAlign: center
+            width: 100
+            height: 100
+          legend:
+            isHidden: true
+          series:
+            - data: =@ctx.current.item.data
+              layout: pie
