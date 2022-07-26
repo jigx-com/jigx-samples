@@ -5,6 +5,9 @@ data: =@ctx.datasources.list-action-go-to
 item: 
   type: "component.list-item"
   options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
     title: =@ctx.current.item.title
     onPress: 
       type: action.action-list
@@ -18,4 +21,5 @@ item:
       name: arrow-right-1
     leftElement: 
       element: icon
-      name: document
+      name: layout-dashboard-1
+      isDuotone: true

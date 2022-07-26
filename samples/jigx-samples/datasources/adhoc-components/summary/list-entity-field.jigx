@@ -3,5 +3,7 @@ options:
   data:
     - title: Different types of entity fields
       link: entity-field-examples-static
+      color: color1
     - title: Entity fields with a connected datasource
       link: entity-field-sd
+      color: color2

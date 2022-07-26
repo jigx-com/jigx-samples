@@ -3,9 +3,13 @@ options:
   data:
     - title: Action-list as primary action button
       link: action-list-primary
+      color: color1
     - title: Action list as onPress
       link: action-list-onPress
+      color: color2
     - title: Action list as onChange
       link: action-list-onChange
+      color: color2
     - title: Action list as onRefresh/onLoad/onFocus
       link: action-list-onRefresh
+      color: color3

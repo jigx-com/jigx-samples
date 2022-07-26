@@ -3,9 +3,13 @@ options:
   data:
     - title: Simple form
       link: simple-form-execute-entity
+      color: color1
     - title: Form with section and field-row
       link: form-with-section
+      color: color2
     - title: Form for creating a record
       link: simple-form-submit
+      color: color3
     - title: Form for updating records
       link: update-form-submit
+      color: color4

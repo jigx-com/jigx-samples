@@ -3,5 +3,7 @@ options:
   data:
     - title: PDF Document Example
       link: document-pdf-sd
+      color: color1
     - title: HTML Document Example
       link: document-html-sd
+      color: color2

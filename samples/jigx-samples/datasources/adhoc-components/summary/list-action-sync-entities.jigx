@@ -3,11 +3,16 @@ options:
   data:
     - title: Sync-entities in action
       link: sync-entities-action
+      color: color1
     - title: Sync-entities in action list
       link: sync-entities-actionlist
+      color: color1
     - title: Sync-entities in onPress event
       link: sync-entities-onPress
+      color: color2
     - title: Sync-entities in onChange event
       link: sync-entities-onChange
+      color: color2
     - title: Sync-entities in onLoad/onRefresh/onFocus
       link: sync-entities-onRefresh
+      color: color3

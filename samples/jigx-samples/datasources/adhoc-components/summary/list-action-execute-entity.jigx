@@ -3,15 +3,22 @@ options:
   data:
     - title: Execute-entity in action
       link: ja-execute-entity-action
+      color: color1
     - title: Execute-entity in action list
       link: ja-execute-entity-actionlist
+      color: color1
     - title: Execute-entity in onPress event
       link: ja-execute-entity-onPress
+      color: color2
     - title: Execute-entity in onChange event
       link: ja-execute-entity-onChange
+      color: color2
     - title: Execute-entity in onLoad
       link: ja-execute-entity-onLoad
+      color: color2
     - title: Execute-entity in onRefresh
       link: ja-execute-entity-onRefresh
+      color: color3
     - title: Execute-entity in onFocus
       link: ja-execute-entity-onFocus
+      color: color3
