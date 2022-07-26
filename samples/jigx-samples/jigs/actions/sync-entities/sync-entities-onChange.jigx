@@ -1,4 +1,4 @@
-title: ''
+title: Sync-entities onChange action
 type: jig.list
 icon: contact 
 description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in onChange event.
