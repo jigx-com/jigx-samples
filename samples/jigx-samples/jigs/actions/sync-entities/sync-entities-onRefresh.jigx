@@ -8,8 +8,13 @@ onRefresh:
   options:
     provider: DATA_PROVIDER_DYNAMIC
     entities:
-      - entity: default/employee-detail
       - entity: default/employees
+
+header: 
+  type: component.image
+  options:
+    source:
+      uri: =@ctx.datasources.employee-detail-dynamic.photo
 
 
 children:
@@ -23,12 +28,12 @@ children:
                 instanceId: firstname
                 options:
                   label: First Name
-                  value: =@ctx.data.employees.firstname
+                  value: =@ctx.datasources.employee-detail-dynamic.firstname
               - type: component.entity-field
                 instanceId: lastname
                 options:
                   label: Last Name
-                  value: =@ctx.data.employees.lastname
+                  value: =@ctx.datasources.employee-detail-dynamic.lastname
         - type: component.field-row
           options:
             children:
@@ -36,9 +41,9 @@ children:
                 instanceId: email
                 options:
                   label: Email
-                  value: =@ctx.data.employees.email
+                  value: =@ctx.datasources.employee-detail-dynamic.email
               - type: component.entity-field
                 instanceId: phone
                 options:
                   label: Phone
-                  value: =@ctx.data.employees.phone
+                  value: =@ctx.datasources.employee-detail-dynamic.phone

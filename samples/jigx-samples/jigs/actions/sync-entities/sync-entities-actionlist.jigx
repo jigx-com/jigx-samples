@@ -18,7 +18,6 @@ actions:
             options:
               provider: DATA_PROVIDER_DYNAMIC
               entities:
-                - entity: default/employee-detail
                 - entity: default/employees
           - type: action.go-to
             options:

@@ -9,7 +9,6 @@ actions:
         title: Sync entities
         provider: DATA_PROVIDER_DYNAMIC
         entities:
-          - entity: default/employee-detail
           - entity: default/employees
           
 children:
