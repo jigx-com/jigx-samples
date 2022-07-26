@@ -1,7 +1,6 @@
 title: Types
 type: jig.list
-icon: contact
-    
+icon: navigation-menu-4
 
 data: =@ctx.datasources.summary-types
 item: 
@@ -20,4 +19,5 @@ item:
       name: arrow-right-1
     leftElement: 
       element: icon
-      name: document
+      name:  =@ctx.current.item.icon
+      isDuotone: true

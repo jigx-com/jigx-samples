@@ -3,67 +3,133 @@ options:
   data:
     - component: Avatar
       componentLink: composite-avatar
+      icon: multiple-neutral-2
+      color: color1
     - component: Avatar-field
       componentLink: avatar-field-example
+      icon: career
+      color: color2
     - component: Bar-chart
       componentLink: composite-bar-chart
+      icon: graph-stats-square
+      color: color3
     - component: Checkbox
       componentLink: composite-checkbox
+      icon: checkbox-checked
+      color: color4
     - component: Date-picker
       componentLink: composite-date-picker
+      icon: calendar-3
+      color: color5
     - component: Dropdown
       componentLink: composite-dropdown
+      icon: checklist
+      color: color6
     - component: Email-field
       componentLink: email-field
+      icon: email
+      color: color7
     - component: Entity-field
       componentLink: list-entity-field
+      icon: navigation-menu-4
+      color: color8
     - component: Entity
       componentLink: section-row-entity-example-sd
+      icon: navigation-menu-4
+      color: color9
     - component: Event
       componentLink: list-event
+      icon: calendar
+      color: color10
     - component: Expander
       componentLink: list-expander
+      icon: navigation-menu
+      color: color11
     - component: Field-row
       componentLink: list-field-row
+      icon: minus
+      color: color12
     - component: Form
       componentLink: list-form
+      icon: form
+      color: color13
     - component: Image
       componentLink: list-image
+      icon: camera
+      color: color14
     - component: Interactive-image-item
       componentLink: list-interactive-image-item
+      icon: gallery
+      color: color1
     - component: Line-chart
       componentLink: list-line-chart
+      icon: graph-stats-square
+      color: color2
     - component: List
-      componentLink: list-list 
+      componentLink: list-list
+      icon: list
+      color: color3
     - component: List-item
       componentLink: list-list-item
+      icon: list-add
+      color: color4
     - component: Location
       componentLink: composite-location
+      icon: location
+      color: color5
     - component: Media-field
       componentLink: media-field-example
+      icon: attachment
+      color: color6
     - component: Number-field
       componentLink: number-field
+      icon: pencil-2
+      color: color7
     - component: Pie-chart
       componentLink: composite-pie-chart
+      icon: pie-line-graph
+      color: color8
     - component: Product-item
       componentLink: product-item-example-dynamic
+      icon: task-list
+      color: color9
     - component: Section
       componentLink: list-section
+      icon: left-panel
+      color: color10
     - component: Signature-field
       componentLink: signature-field 
+      icon: signature
+      color: color11
     - component: Step
       componentLink: step-example
+      icon: task-list
+      color: color12
     - component: Stepper
       componentLink: stepper-example
+      icon: navigation-menu-horizontal
+      color: color13
     - component: Summary
       componentLink: list-summary
+      icon: navigation-menu-4
+      color: color14
     - component: Text-field
       componentLink: text-field
+      icon: minus
+      color: color1
     - component: Titles
       componentLink: expander
+      icon: document
+      color: color2
     - component: Stage
       componentLink: composite-stage
+      icon: settings-slider
+      color: color3
     - component: Video-player
       componentLink: list-video-player
+      icon: button-play
+      color: color4
     - component: Web-view
       componentLink: web-view-example
+      icon: earth-3
+      color: color5

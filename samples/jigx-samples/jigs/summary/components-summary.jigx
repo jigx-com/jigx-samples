@@ -1,12 +1,14 @@
 title: Components
 type: jig.list
-icon: world
-    
+icon: layout-dashboard-1
 
 data: =@ctx.datasources.summary
 item: 
   type: "component.list-item"
   options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
     title: =@ctx.current.item.component
     onPress: 
       type: action.action-list
@@ -20,11 +22,5 @@ item:
       name: arrow-right-1
     leftElement: 
       element: icon
-      name: document
-
-# widgets:
-#   2x2: 
-#     type: widget.image
-#     options:
-#       source:
-        
+      name: =@ctx.current.item.icon
+      isDuotone: true
