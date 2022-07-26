@@ -1,6 +1,6 @@
 title: Submit form example
 type: jig.default
-description: Your jig type has to be jig.default. Action must be submit-form with title of button, and you need to specify - id of the form that you wanna save, provider, entity, method and if you are using SQL, REST, SALESFORCE, SOAP you need to specify the function that you are calling. On the default jig you need to create component.form, the instanceId , which will be the id of the form. In the form component you can use form allowed component, and the instanceId of each component will be the name of the column of the data row that's gonna be saved.
+description: Your jig type has to be jig.default. Action must be submit-form with the title of the button, and you need to specify- the id of the form that you wanna save, provider, entity, method, and if you are using SQL, REST, SALESFORCE, SOAP you need to specify the function that you are calling. On the default jig you need to create component.form, the instanceId, which will be the id of the form. In the form component you can use the form allowed component, and the instanceId of each component will be the name of the column of the data row that's gonna be saved. Example of submit-form to save a new employee into the dynamic-data table. You need to enter your first name, last name and phone number and the new employee will be saved in the table.
 
 actions:
   - children:
