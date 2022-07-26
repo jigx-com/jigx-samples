@@ -8,8 +8,12 @@ children:
       children:
         - type: component.entity-field
           options:
-            label: tbd
-            value: tbd
+            label: ''
+            value: Please see the story-group example on your Home screen
+            isMultiline: true
+            style: 
+              isPositive: true
+              
 
 stories:
   type: component.story-group
