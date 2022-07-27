@@ -5,4 +5,4 @@ options:
   entities:
     - entity: default/interactive-image
 
-  query: SELECT id, '$.name', '$.pax', json_extract(data, '$.xcoordinate') as x, json_extract(data, '$.ycoordinate') as y, '$.isreserved', '$.category' FROM [default/interactive-image] WHERE '$.category' = 'floorpaln-restaurant'
+  query: SELECT id, '$.name', '$.pax', json_extract(data, '$.xcoordinate') as x, json_extract(data, '$.ycoordinate') as y, '$.isreserved', '$.category' FROM [default/interactive-image] WHERE '$.category' = 'floorplan-restaurant'
