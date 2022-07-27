@@ -2,12 +2,12 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/vacation-event
+    - entity: default/calendar
   query: |
     SELECT
-      '$.name',
+      'json_extract(data, '$.title') as name,
       '$.location',
       '$.date-from',
       '$.date-to',
       '$.category' 
-    FROM [default/vacation-event] WHERE '$.category' = 'meeting-event'
+    FROM [default/calendar] WHERE '$.category' = 'meeting-event'
