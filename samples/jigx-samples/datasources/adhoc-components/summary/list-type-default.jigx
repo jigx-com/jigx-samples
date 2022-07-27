@@ -3,9 +3,13 @@ options:
   data:
     - title: Jig.default as a Form
       link: default-form
+      color: color1
     - title: Jig.default as a List
       link: default-list
+      color: color2
     - title: Other example of jig.default
       link: default-employee-detail
+      color: color3
     - title: Other example of jig.default
       link: default-product-detail
+      color: color3

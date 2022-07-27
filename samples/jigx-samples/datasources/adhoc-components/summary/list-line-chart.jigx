@@ -3,5 +3,7 @@ options:
   data:
     - title: Line-chart financial
       link: line-chart-financial
+      color: color1
     - title: Line-chart multiple series
       link: line-chart-multiple-series
+      color: color2

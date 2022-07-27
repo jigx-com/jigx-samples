@@ -3,27 +3,40 @@ options:
   data:
     - title: Simple List
       link: simple-list-sd-local
+      color: color1
     - title: List with styles
       link: list-with-styles-sd
+      color: color2
     - title: List with Expanders
       link: list-with-expander-stage-sd
+      color: color3
     - title: List with Stages
       link: list-with-stage-sd
+      color: color3
     - title: List with Product-items
       link: list-with-product-item-dd
+      color: color3
     - title: List with Pie Charts
       link: list-with-pie-charts-sd
+      color: color4
     - title: Horizontal list
       link: list-horizontal-sd
+      color: color5
     - title: List with Search functionality
       link: list-search-label-dd
+      color: color6
     - title: List with Filter functionality
       link: list-filter-label-dd
+      color: color6
     - title: List with Search and Filter functionality
       link: list-filter-search-label-dd
+      color: color6
     - title: Selectable list
       link: list-selectable-sd
+      color: color7
     - title: List with active items
       link: list-with-active-item-sd
+      color: color7
     - title: List with Sections
       link: list-with-sections-sd
+      color: color8

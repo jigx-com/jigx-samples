@@ -3,7 +3,10 @@ options:
   data:
     - title: Set-state as onFocus/onLoad/onRefresh
       link: set-state-focus-load-refresh
+      color: color1
     - title: Set-state as action
       link: set-state-action
+      color: color2
     - title: Set-state as onPress/onChange
       link: set-state-onpress-onchange
+      color: color3

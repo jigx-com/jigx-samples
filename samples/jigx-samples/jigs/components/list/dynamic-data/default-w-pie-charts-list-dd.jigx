@@ -1,6 +1,6 @@
 title: ='Title' & @ctx.datasources.pie-chart-list-dynamic.
   # Horizontal List (Pie Chart)
-type: jig.list
+type: jig.default
 
 
 
@@ -15,9 +15,11 @@ type: jig.list
 #       query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/pie-chart]
 
 
-
-data: =@ctx.datasources.series-3
-item:
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.series-3
+      item:
         type: component.pie-chart
         options:
           chart:

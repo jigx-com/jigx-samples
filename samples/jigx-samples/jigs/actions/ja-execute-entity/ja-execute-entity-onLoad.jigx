@@ -1,5 +1,6 @@
 title: Name
 type: jig.default
+description: With execute-entity you can save, update or delete your data from your database. This is an example how to use it in onLoad event.
 
 onRefresh: 
   type: action.execute-entity

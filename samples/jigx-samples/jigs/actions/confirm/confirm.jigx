@@ -1,5 +1,6 @@
 title: Confirm example
 type: jig.default
+description: In this example you can find confirm action inside submit-form action. So when we submit the form and submit will be successful the confirm action will show to us.
 
 actions:
   - children:

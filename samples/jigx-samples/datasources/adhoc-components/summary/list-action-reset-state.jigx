@@ -3,9 +3,13 @@ options:
   data:
     - title: Reset-state onFocus/onLoad/onRefresh
       link: reset-state-focus-load-refresh
+      color: color1
     - title: Reset-state as action
       link: reset-state-action-form
+      color: color2
     - title: Reset-state onPress/onChange
       link: reset-state-onpress-onchange
+      color: color3
     - title: Reset-state of the form
       link: reset-state-action-form
+      color: color4

@@ -3,11 +3,21 @@ options:
   data:
     - type: Calendar
       typeLink: calendar-example
+      icon: calendar-3
+      color: color1
     - type: Composite
       typeLink: list-type-composite
+      icon: cog-double
+      color: color2
     - type: Default
       typeLink: list-type-default
+      icon: navigation-menu-4
+      color: color3
     - type: Document
       typeLink: list-type-document
+      icon: document
+      color: color4
     - type: List
       typeLink: list-type-list
+      icon: list
+      color: color5

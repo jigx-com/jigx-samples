@@ -3,7 +3,10 @@ options:
   data:
     - title: Summary - default
       link: summary
+      color: color1
     - title: Summary - cart
       link: summary-cart
+      color: color2
     - title: Summary - counter
       link: summary-counter
+      color: color3

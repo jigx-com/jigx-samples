@@ -1,5 +1,6 @@
 title: Execute entity by action button
 type: jig.default
+description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in an action-list.
 
 header: 
     type: component.image

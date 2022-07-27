@@ -1,5 +1,6 @@
 title: Reset state action
 type: jig.default
+description: Reset-state action used as primary action on jig, to reset-state of the component in jig and it's value. You can specify instanceId, this will be the name of the UI component. And you need to specify key, which will be the value of the UI component that you want to reset.
 
 actions:
   - children:

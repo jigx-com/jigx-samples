@@ -3,11 +3,16 @@ options:
   data:
     - title: Go-to in action/action-list
       link: go-to-in-action-list
+      color: color1
     - title: Go-to swipeable left
       link: go-to-swipeable-left
+      color: color2
     - title: Go-to swipeable right
       link: go-to-swipeable-right
+      color: color2
     - title: Go-to rightElement
       link: go-to-right-element
+      color: color3
     - title: Go-to onSuccess
       link: go-back-on-success
+      color: color4

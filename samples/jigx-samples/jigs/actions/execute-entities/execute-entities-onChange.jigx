@@ -1,6 +1,7 @@
 title: onChange
 type: jig.list
 icon: contact 
+description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onChange event.
 
 data: =@ctx.datasources.employees-dynamic
 item:

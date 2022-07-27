@@ -3,9 +3,13 @@ options:
   data:
     - title: Open-url in action/action-list
       link: open-url-action
+      color: color1
     - title: Open-url swipeable left/right
       link: open-url-swipeable
+      color: color2
     - title: Open-url rightElement
       link: open-url-right-element
+      color: color3
     - title: Open-url onSuccess
       link: open-url-on-success
+      color: color4

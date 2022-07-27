@@ -3,21 +3,34 @@ options:
   data:
     - title: Default Jig with List Items
       link: default-w-list-sd
+      color: color1
     - title: Default Jig with Expander List 
       link: default-w-exp-stage-list-sd
+      color: color2
     - title: Default Jig with Stage List
       link: default-w-stage-list-sd
+      color: color2
     - title: Default Jig with Product Item
       link: default-w-product-list-sd
+      color: color3
     - title: Default Jig with Pie Charts
       link: list-with-pie-charts-sd
+      color: color4
+    - title: Default Jig with Bar Charts
+      link: list-with-bar-charts-sd
+      color: color4
     - title: Default Jig with Horizontal List
       link: default-w-horizontal-list-dd
+      color: color5
     - title: Default Jig with a List with Filter functionality
       link: list-filter-label-dd
+      color: color6
     - title: Default Jig with a List with Search and Filter functionality
       link: list-filter-search-label-dd 
+      color: color6
     - title: Default Jig with List with active item
       link: default-w-active-item-list-sd
+      color: color7
     - title: Default Jig List with Sections
       link: default-w-section-list-dd
+      color: color8

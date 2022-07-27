@@ -3,24 +3,46 @@ options:
   data:
     - action: Action-list
       actionLink: list-action-action-list
+      icon: play
+      color: color1
     - action: Reset-state
       actionLink: list-action-reset-state
+      icon: loading-circle
+      color: color2
     - action: Confirm
       actionLink: confirm
+      icon: check-circle-1
+      color: color3
     - action: Execute-entities
       actionLink: list-action-execute-entities
+      icon: signature
+      color: color4
     - action: Execute-entity
       actionLink: list-action-execute-entity
+      icon: signature
+      color: color5
     - action: Go-back
       actionLink: list-action-go-back
+      icon: close #logout-2
+      color: color6
     - action: Go-to
       actionLink: list-action-go-to
+      icon: flight
+      color: color7
     - action: Open-url
       actionLink: list-action-open-url
+      icon: hyperlink-3
+      color: color8
     - action: Set-state
       actionLink: list-action-set-state
+      icon: check-circle-1
+      color: color9
     - action: Submit-form
       actionLink: submit-form
+      icon: check-circle-1
+      color: color10
     - action: Sync-entities
       actionLink: list-action-sync-entities
+      icon: synchronize-arrows-1
+      color: color11
 

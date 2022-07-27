@@ -3,5 +3,7 @@ options:
   data:
     - title: Event of meeting
       link: event-of-meeting
+      color: color1
     - title: Event of vacation
       link: multi-day-event
+      color: color2

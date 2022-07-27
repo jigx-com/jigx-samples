@@ -3,5 +3,7 @@ options:
   data:
     - title: Video player as children of the jig
       link: video-player-in-jig
-    - title: ideo player in header
+      color: color1
+    - title: Video player in header
       link: video-player-in-header
+      color: color2

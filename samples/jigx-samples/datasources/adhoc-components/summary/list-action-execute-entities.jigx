@@ -3,11 +3,16 @@ options:
   data:
     - title: Execute-entities in action
       link: execute-entities-action
+      color: color1
     - title: Execute-entities in action list
       link: execute-entities-actionlist
+      color: color1
     - title: Execute-entities in onPress event
       link: execute-entities-onPress
+      color: color2
     - title: Execute-entities in onChange event
       link: execute-entities-onChange
+      color: color2
     - title: Execute-entities in onLoad/onRefresh/onFocus
       link: execute-entities-onRefresh
+      color: color3

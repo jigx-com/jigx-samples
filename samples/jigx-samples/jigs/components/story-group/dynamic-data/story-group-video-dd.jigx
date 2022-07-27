@@ -18,6 +18,7 @@ stories:
     item: 
       type: component.video-player
       options:
+        subtitle: =@ctx.current.item.description
         url: =@ctx.current.item.videoUrl
         thumbnailUri: =@ctx.current.item.thumbnail
         title: =@ctx.current.item.title

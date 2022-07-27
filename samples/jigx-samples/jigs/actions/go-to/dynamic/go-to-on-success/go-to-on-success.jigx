@@ -1,5 +1,6 @@
 title: Signature
 type: jig.default
+description: In this example, the go-back action is associated with the submit-form action. After we enter the signature and press the "Sign" button, the submit-form action is performed and then the go-to action redirects us to the next page.
 
 actions:
   - children:

@@ -2,8 +2,20 @@ type: datasource.static
 options:
   data:
     - title: Work productivity
-      description: 10 Simple Ways To Be More Productive at Work
+      description: How To Be More Productive at Work
       image: https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
-      thumbnail: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80
+      thumbnail: https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
       url: https://www.indeed.com/career-advice/career-development/ways-to-be-more-productive
       videoUrl: https://www.youtube.com/watch?v=4aYVLpY5FYU
+    - title: Work productivity
+      description: Reasons Why You are Not as Productive as You Can Be
+      image: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+      thumbnail: https://images.unsplash.com/photo-1609659893022-8a02377d8b08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+      url: https://www.lifehack.org/articles/productivity/8-reasons-productive-can-fix.html
+      videoUrl: https://www.youtube.com/watch?v=z-7LPjiYBHU
+    - title: Work productivity
+      description: How to Stay Productive When Working From Home
+      image: https://images.unsplash.com/photo-1620862657788-a403bdf6dd63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80
+      thumbnail: https://images.unsplash.com/photo-1589591830600-7ba977995a5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+      url: https://www.travelers.com/resources/home/working-remotely/10-tips-for-staying-productive-when-working-from-home
+      videoUrl: https://www.youtube.com/watch?v=PFoY7bK2eLA

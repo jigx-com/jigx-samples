@@ -3,5 +3,7 @@ options:
   data:
     - title: Composite Jig without any form of input
       link: jig-composite
+      color: color1
     - title: Composite Jig with input
       link: service-details-comp
+      color: color2

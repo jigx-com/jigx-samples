@@ -1,7 +1,8 @@
-title: ''
-description: Some description
+title: Sync-entities onChange action
 type: jig.list
 icon: contact 
+description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in onChange event.
+
 
 onRefresh: 
   type: action.execute-entity
@@ -12,12 +13,16 @@ onRefresh:
       time: =$now()
   
 
-data: =@ctx.data.mydata
+data: =@ctx.datasources.employees-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.firstname
-    subtitle: =@ctx.current.item.lastname
+    title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
+    subtitle: =@ctx.current.item.time
+    leftElement: 
+      element: avatar
+      text: '' 
+      uri: =@ctx.current.item.picture
     rightElement:
       element: switch
       onChange: 
@@ -25,5 +30,4 @@ item:
           options:
             provider: DATA_PROVIDER_DYNAMIC
             entities:
-              - entity: default/employee-detail
               - entity: default/employees

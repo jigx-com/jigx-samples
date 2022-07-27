@@ -1,0 +1,71 @@
+title: Name
+description: Description of your Jig
+type: jig.default
+
+datasources:
+  list-bar:
+    type: datasource.static
+    options:
+      data:
+      - title: Quartal overview 2019
+        color: color1
+        data: 
+          - x: Q1
+            y: 1851
+          - x: Q2
+            y: 1483
+          - x: Q3
+            y: 1250
+          - x: Q4
+            y: 1700
+      - title: Quartal overview 2020
+        color: color2
+        data:      
+          - x: Q1
+            y: 1343
+          - x: Q2
+            y: 1832
+          - x: Q3
+            y: 1932
+          - x: Q4
+            y: 2012
+      - title: Quartal overview 2021
+        color: color3
+        data:      
+          - x: Q1
+            y: 1932
+          - x: Q2
+            y: 1734
+          - x: Q3
+            y: 2129
+          - x: Q4
+            y: 2358
+      
+      
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.list-bar
+      item: 
+        type: component.bar-chart
+        options:
+          chart:
+            title:
+              text: =@ctx.current.item.title
+            height: 260
+            isAnimated: false
+          yAxis:
+            min: 0
+            labels:
+              format:
+                numberStyle: currency
+                currency: USD
+                compactDisplay: short
+                notation: compact
+            tickAmount: 5
+            isFirstTickHidden: false
+            isFirstLabelHidden: false
+          series:
+            - data: =@ctx.current.item.data
+              color: =@ctx.current.item.color

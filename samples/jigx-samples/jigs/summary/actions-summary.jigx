@@ -1,12 +1,14 @@
 title: Actions
 type: jig.list
-icon: headset
-    
+icon: form
 
 data: =@ctx.datasources.summary-actions
 item: 
   type: "component.list-item"
   options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
     title: =@ctx.current.item.action
     onPress: 
       type: action.action-list
@@ -20,11 +22,6 @@ item:
       name: arrow-right-1
     leftElement: 
       element: icon
-      name: document
+      name: =@ctx.current.item.icon
+      isDuotone: true
       
-# widgets:
-#   2x2: 
-#     type: widget.image
-#     options:
-#       source:
-        

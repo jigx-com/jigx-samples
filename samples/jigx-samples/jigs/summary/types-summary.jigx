@@ -1,12 +1,14 @@
 title: Types
 type: jig.list
-icon: contact
-    
+icon: navigation-menu-4
 
 data: =@ctx.datasources.summary-types
 item: 
   type: "component.list-item"
   options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
     title: =@ctx.current.item.type
     onPress: 
       type: action.action-list
@@ -20,11 +22,5 @@ item:
       name: arrow-right-1
     leftElement: 
       element: icon
-      name: document
-      
-# widgets:
-#   2x2: 
-#     type: widget.image
-#     options:
-#       source:
-        
+      name:  =@ctx.current.item.icon
+      isDuotone: true
