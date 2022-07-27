@@ -5,7 +5,7 @@ options:
     - entity: default/calendar
   query: |
     SELECT
-      'json_extract(data, '$.title') as name,
+      json_extract(data, '$.title') as name,
       '$.location',
       '$.date-from',
       '$.date-to',
