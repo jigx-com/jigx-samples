@@ -7,7 +7,7 @@ header:
     type: component.image
     options:
       source:
-        uri: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].image
+        uri: =@ctx.datasources.repair-services-static[id=1].image
 
 children:
   - type: component.entity
@@ -16,23 +16,23 @@ children:
         - type: component.entity-field
           options:
             label: Service
-            value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].service
+            value: =@ctx.datasources.repair-services-static[id=1].service
         - type: component.entity-field
           options:
             label: Description
-            value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].description
+            value: =@ctx.datasources.repair-services-static[id=1].description
         - type: component.entity-field
           options:
             label: Hourly Rate
-            value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].hourlyRate
+            value: =@ctx.datasources.repair-services-static[id=1].hourlyRate
         - type: component.entity-field
           options:
             label: Time
-            value: =@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].time & ' minutes'
+            value: =@ctx.datasources.repair-services-static[id=1].time & ' minutes'
         - type: component.entity-field
           options:
             label: Materials
-            value: =(@ctx.datasources.repair-services-static[id=@ctx.jig.inputs.id].materials = 'True' ? true :false) 
+            value: =(@ctx.datasources.repair-services-static[id=1].materials = 'True' ? true :false) 
             contentType: checkbox   
 
 
