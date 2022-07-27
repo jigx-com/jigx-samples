@@ -1,0 +1,26 @@
+title: Service Details
+type: jig.composite
+
+header: 
+  type: component.image
+  options:
+    source:
+      uri: =@ctx.datasources.cleaning-services-dynamic.image
+
+datasources:
+  cleaning-services-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+
+      entities:
+        - entity: default/cleaning-services-dynamic
+
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+
+children:
+  - jigId: cleaning-serv-details
+    inputs:
+      id: =@ctx.jig.inputs.id

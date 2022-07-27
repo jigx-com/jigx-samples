@@ -4,6 +4,14 @@ type: jig.list
 icon: contact
 isSearchable: true
 
+filter: 
+  - title: ALL
+    value: ''
+  - title: Indoor
+    value: TRUE
+  - title: Outdoor
+    value: FALSE
+
 header: 
     type: component.image
     options:
@@ -19,9 +27,10 @@ datasources:
       entities:
         - entity: default/cleaning-services-dynamic
 
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE '%'||@search||'%' OR @search IS NULL
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE ('$.service' LIKE '%'||@search||'%' OR @search IS NULL) AND ('$.indoor' LIKE @filter OR @filter IS NULL)
       queryParameters:
         search: =@ctx.jig.state.searchText
+        filter: =@ctx.jig.state.filter 
         
 
   

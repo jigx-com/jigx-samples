@@ -47,6 +47,7 @@ children:
                       options:
                         label: Description
                         value: =@ctx.datasources.services-union-dynamic.description
+                        isMultiline: true
         - type: component.section
           options:
             title: Rates

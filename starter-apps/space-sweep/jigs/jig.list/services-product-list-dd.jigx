@@ -1,7 +1,18 @@
-title: All Services
+title: Service Lists
 description: List of all Services Available
 type: jig.list
-icon: contact 
+icon: contact
+isCollapsible: true
+isInitiallyCollapsed: false
+isHorizontal: true
+
+filter: 
+  - title: All
+    value: ''
+  - title: Cleaning Services
+    value: Cleaning Service
+  - title: Repair Services
+    value: Repair Service
 
 header: 
     type: component.image
@@ -9,29 +20,50 @@ header:
       source:
         uri: https://images.unsplash.com/photo-1485116480018-f1aa5e621bbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 
+datasources:
+  services-union-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
 
-data: =@ctx.datasources.cleaning-services-dynamic
+      entities:
+        - entity: default/cleaning-services-dynamic
+        - entity: default/repair-services-dynamic
+        
+      query: 
+        SELECT  * FROM (
+        SELECT id, '$.area' as area, '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor' as indoor, null as materials, '$.onceoffrate', '$.service' as service, '$.time', "Cleaning Service" AS type
+        FROM [default/cleaning-services-dynamic]
+        UNION
+        SELECT id, null as area, '$.description', '$.hourlyrate', '$.illustration', '$.image', null as indoor, '$.materials' as materials, '$.onceoffrate', '$.service' as service, '$.time', "Repair Service" AS type
+        FROM [default/repair-services-dynamic])
+        WHERE type = @filter OR @filter IS NULL
+        ORDER BY service ASC
+      queryParameters:
+        filter: =@ctx.jig.state.filter
+        
+data: =@ctx.datasources.services-union-dynamic
 item:
   type: component.product-item
   options:
     title: =@ctx.current.item.service
-    price:
-      value: =(@ctx.current.item.hourlyrate) != 'NA' ? @ctx.current.item.hourlyrate:@ctx.current.item.onceoffrate
-      format:
-        numberStyle: currency
-    # amountControl:
-    #   value: 1
-    #   step: 1
-    #   onChange: 
-    #     type: action.execute-entity
-    #     options:
-    #       provider: DATA_PROVIDER_SQL
-    #       entity: default/cleaning-services-dynamic
-    #       method: update
-    #       # dennis/team to create to some local DB? 
+    # price:
+    #   value: =(@ctx.current.item.hourlyrate) != 'NA' ? @ctx.current.item.hourlyrate:@ctx.current.item.onceoffrate
+    #   format:
+    #     numberStyle: currency
     image:
       uri: =@ctx.current.item.image
-    tag: =@ctx.current.item.time & ' mins'
+    tag: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & @ctx.current.item.hourlyrate & ' p/hr':'$ ' & @ctx.current.item.onceoffrate & ' once-off'
+    amountControl:
+      value: 1
+      step: 1
+      onChange: 
+        type: action.execute-entity
+        options:
+          provider: DATA_PROVIDER_SQL
+          entity: default/cleaning-services-dynamic
+          method: update
+          # dennis/team to create to some local DB? 
       
       
       

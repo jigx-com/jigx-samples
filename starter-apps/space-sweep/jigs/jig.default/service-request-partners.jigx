@@ -1,0 +1,94 @@
+title: Partner and Service Request
+description: Request of services to partners
+type: jig.default
+isCollapsible: true
+isInitiallyCollapsed: false
+
+children:
+  - type: component.form
+    instanceId: owners_form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: owner_tf
+          options:
+            label: Owner
+            value: =@ctx.user.displayName
+            style:
+              isDisabled: true
+        - type: component.dropdown
+          instanceId: accommodation_ddl
+          options:
+            data: =$filter(@ctx.datasources.partners-accommodation-dd, function($v){ @ctx.datasources.partners-accommodation-dd ? $contains($string($v.name), $string(@ctx.components.accommodation_ddl.state.searchText != null ? @ctx.components.accommodation_ddl.state.searchText:'')) :true})[]
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name & ' (' & @ctx.current.item.type & ')'
+                subtitle: =@ctx.current.item.address
+                value: =@ctx.current.item.id                     
+                leftElement: 
+                  element: image
+                  text: ''
+                  uri: =@ctx.current.item.image 
+            label: Accommodation
+            isMultiple: false
+            isSearchable: true
+            helperText: Select partner accommodation to service
+            nextProperty: service_date
+        - type: component.field-row
+          options:
+            children:
+              - type: component.date-picker
+                instanceId: service_date
+                options:
+                  label: Service Date
+                  format: ll
+                  mode: date
+                  minimum: ="$now()"
+                  nextProperty: service_time
+              - type: component.date-picker
+                instanceId: service_time
+                options:
+                  label: Service Time
+                  format: LT
+                  mode: time
+                  minimum: "07:30"
+                  maximum: "17:00"
+
+  # - type: component.list
+  #   options:
+  #     data: =@ctx.datasources.service-request-local
+  #     item: 
+  #       type: component.list-item
+  #       options:
+  #         title: =@ctx.current.item.id
+  #         subtitle: =@ctx.current.item.accommodation
+        
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Submit Date
+          actions:
+            - type: action.execute-entity
+              instanceId: submit_date
+              options:
+                provider: DATA_PROVIDER_LOCAL
+                entity: service-request-local
+                method: create
+                data: 
+                  ordernr: abcde12345+1
+                  requester: =@ctx.user.displayName
+                  requesteddate: =$frommillis($now())
+                  accommodation: =@ctx.jig.components.accommodation_ddl.state.selected.name
+                  servicedate: =@ctx.jig.components.service_date.state.value
+                  servicetime: =@ctx.jig.components.service_time.state.value
+                goBack: stay
+                onSuccess: 
+                  title: =@ctx.jig.components.owners_form.state.response
+                  
+                  # type: action.set-state
+                  # options:
+                  #   state: =@ctx.solution.state.orderid
+                  #   value: =@ctx.components.submit_date.state.response

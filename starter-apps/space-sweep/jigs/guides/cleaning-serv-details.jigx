@@ -1,0 +1,68 @@
+title: =@ctx.datasources.cleaning-services-dynamic.service & ' Details'
+description: More details about this service...
+type: jig.default
+
+datasources:
+  cleaning-services-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+
+      entities:
+        - entity: default/cleaning-services-dynamic
+
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Service Details
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Service
+                        value: =@ctx.datasources.cleaning-services-dynamic.service
+                    - type: component.entity-field
+                      options:
+                        label: Area
+                        value: =@ctx.datasources.cleaning-services-dynamic.area
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Time
+                        value: =@ctx.datasources.cleaning-services-dynamic.time
+                    - type: component.entity-field
+                      options:
+                        label: Indoor
+                        value: =@ctx.datasources.cleaning-services-dynamic.indoor
+                        contentType: checkbox
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Description
+                        value: =@ctx.datasources.cleaning-services-dynamic.description
+                        isMultiline: true
+        - type: component.section
+          options:
+            title: Rates
+            children:
+              - type: component.entity-field
+                options:
+                  label: Hourly Rate
+                  value: =(@ctx.datasources.cleaning-services-dynamic.hourlyrate) != 'NA' ? '$ ' & $string(@ctx.datasources.cleaning-services-dynamic.hourlyrate):'NA'
+              - type: component.entity-field
+                options:
+                  label: Once-off Rate
+                  value: =(@ctx.datasources.cleaning-services-dynamic.onceoffrate) != 'NA' ? '$ ' & $string(@ctx.datasources.cleaning-services-dynamic.onceoffrate):'NA'

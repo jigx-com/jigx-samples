@@ -1,5 +1,5 @@
 type: jig.composite
-title: =@ctx.jig.inputs.type & ' Details' 
+title: Cleaning Details
 
 header: 
     type: component.image
@@ -16,9 +16,3 @@ children:
       type: =@ctx.jig.inputs.type
   - jigId: cleaning-serv-horizon-list-dd
     instanceId: cleaning-serv-from-deets
-    inputs:
-      type: =@ctx.jig.inputs.type 
-  - jigId: repair-serv-horizon-list-sd
-    instanceId: repair-serv-from-deets
-    inputs:
-      type: =@ctx.jig.inputs.type

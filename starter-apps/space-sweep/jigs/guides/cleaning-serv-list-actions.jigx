@@ -3,7 +3,7 @@ description: List of Cleaning Services available
 type: jig.list
 icon: contact 
 
-header: 
+header:
     type: component.image
     options:
       source:
@@ -15,31 +15,27 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
+    subtitle: ='Service duration of' & @ctx.current.item.time & ' minutes'
     leftElement: 
       element: image
       text: ''
       uri: =@ctx.current.item.image
     label:
-      title: =@ctx.current.item.time & ' mins'
+      title: =@ctx.current.item.time & ' minutes'
     rightElement: 
       element: checkbox
       value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
     swipeable:
       left:
-        - icon: archive-folder
-          label: View Details 
-          onPress: 
-            type: action.action-list
+        - onPress: 
+            type: action.go-to
             options:
-              actions:
-                - type: action.go-to
-                  instanceId: go_to_cleaning_deets
-                  options:
-                    linkTo: service-details-comp
-                    parameters:
-                      id: =@ctx.current.item.id
-                      service: =@ctx.current.item.service
-                  
+              linkTo: cleaning-serv-composite
+              parameters:
+                id: =@ctx.current.item.id      
+          color: primary
+          icon: view-1
+          label: View Service
+          
       
     

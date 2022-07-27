@@ -1,0 +1,108 @@
+title: Partner Sign-up
+description: Submit your request to sign-up an accommodation partner
+type: jig.default
+icon: pencil-write
+
+header: 
+  type: component.image
+  options:
+    title: Let add some extra sparkle to your property! 
+    source:
+      uri: https://images.unsplash.com/photo-1511871893393-82e9c16b81e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9va2luZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+   
+
+datasources:
+  accommodation_types:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          type: Self-catering
+        - id: 2
+          type: Guest House       
+        - id: 3
+          type: Bed & Breakfast
+        - id: 4
+          type: Lodge
+        - id: 5
+          type: Hotel
+     
+children:
+  - type: component.form
+    instanceId: partner_request
+    options:
+      children:
+        - type: component.text-field
+          instanceId: name
+          options:
+            label: Name of Accommodation
+        - type: component.dropdown
+          instanceId: type
+          options:
+            label: Accommodation Type
+            data: =@ctx.datasources.accommodation_types
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.type
+                value: =@ctx.current.item.type
+        - type: component.text-field
+          instanceId: address
+          options:
+            label: Address
+            textArea: dynamic
+            textContentType: fullStreetAddress
+            isMultiline: true
+        - type: component.number-field
+          instanceId: latitude
+          options:
+            label: Latitude
+            format:
+              numberStyle: decimal
+            keyboardType: numeric
+        - type: component.number-field
+          instanceId: longitude
+          options:
+            label: Longitude
+            format:
+              numberStyle: decimal
+            keyboardType: numeric
+        - type: component.text-field
+          instanceId: telephone
+          options:
+            label: Telephone Number
+            textContentType: telephoneNumber
+            keyboardType: phone-pad
+        - type: component.text-field
+          instanceId: mobile
+          options:
+            label: Mobile Number
+            textContentType: telephoneNumber
+            keyboardType: phone-pad
+        - type: component.text-field
+          instanceId: image
+          options:
+            label: Image URL
+            textContentType: URL
+            keyboardType: url
+        - type: component.email-field
+          instanceId: owneremail
+          options:
+            label: Owner Email
+            value: =@ctx.user.email
+            isHidden: true
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: partner_request
+          provider: DATA_PROVIDER_DYNAMIC
+          title: Create Record
+          entity: default/partners-accommodation-dd
+          method: create
+          goBack: previous
+          onSuccess:
+           title: Your request has been submitted!
+           
+   

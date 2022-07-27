@@ -11,7 +11,25 @@ item:
     subtitle: =@ctx.current.item.address
     label:
       title: =@ctx.current.item.type
+      color:
+        - when: true
+          color: primary
+        - when: =@ctx.current.item.type = 'Self-catering'
+          color: color1
+        - when: =@ctx.current.item.type = 'Guest House'
+          color: color5
+        - when: =@ctx.current.item.type = 'Bed & Breakfast'
+          color: color7
+        - when: =@ctx.current.item.type = 'Lodge'
+          color: color14
     leftElement: 
       element: image
       text: ''
       uri: =@ctx.current.item.image
+      
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Sign Up!
+          linkTo: partner-sign-up

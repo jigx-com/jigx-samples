@@ -1,0 +1,10 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - entity: default/table-name
+
+  query: SELECT id, '$.column1', '$.column2' FROM [default/table-name] WHERE '$.column2' = @myParam
+  queryParameters:
+    myParam: value

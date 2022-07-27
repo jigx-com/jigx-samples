@@ -13,6 +13,7 @@ actions:
             name: Jane
             lastname: Doe
             phone: 232456442
+          
 
 children:
   - type: component.entity

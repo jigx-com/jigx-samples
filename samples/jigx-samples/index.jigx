@@ -31,6 +31,8 @@ widgets:
     jigId: value-static
   - size: 4x2
     jigId: chart-widget-line-chart
+  - size: 2x2
+    jigId: cleaning-services-list-dd
     
 
 

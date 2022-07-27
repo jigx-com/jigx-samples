@@ -51,8 +51,6 @@ item:
       element: image
       text: ''
       uri: =@ctx.current.item.image
-    label:
-      title: =(@ctx.current.item.type) = 'Cleaning Services' ? 'Cleaning':'Repairs'
     rightElement: 
       element: value
       text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'

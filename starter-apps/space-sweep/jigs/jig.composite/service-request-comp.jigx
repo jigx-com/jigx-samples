@@ -1,0 +1,45 @@
+title: Services Request
+description: Let us make your space sweepin' clean!
+type: jig.composite
+
+header: 
+  type: component.video-player
+  options:
+    url: https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BmI6UBJLWj5dnkc7q/videoblocks-portrait-of-attractive-smiling-skilled-multiracial-team-of-cleaners-in-uniforms-which-posing-on-camera-with-cleaning-equipments-in-beautiful-apartment_bab4c952p__9427bedeaab957429241953a6e414d41__P360.mp4
+    loop: false
+    autoplay: true
+
+onLoad: 
+  type: action.action-list
+  options:
+    actions:
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.ordernr
+          value: LAST ORDER NUMBER + 1
+      - type: action.reset-state
+        options:
+          state: =@ctx.solution.state.orderid
+          
+children:
+  - jigId: service-request-partners
+  - jigId: services-product-list-dd
+
+widgets:
+  "4x2": 
+    type: widget.image
+    options:
+      bottom: 
+        type: component.titles
+        options:
+          title: Book your services now!
+          align: center
+      resizeMode: cover
+      isContentOverlaid: true
+      source:
+        uri: https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-young-hispanic-woman-at-home-doing-chores-and-housekeeping-wiping-floor-with-water-in-living-room_BcJq99dD-_thumb.jpg
+        
+
+
+
+
