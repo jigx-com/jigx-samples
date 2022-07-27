@@ -20,7 +20,7 @@ stories:
       options:
         subtitle: =@ctx.current.item.description
         url: =@ctx.current.item.video
-        thumbnailUri: =@ctx.current.item.photo
+        thumbnailUri: =@ctx.current.item.header
         title: =@ctx.current.item.title
         onPress: 
           type: action.open-url
