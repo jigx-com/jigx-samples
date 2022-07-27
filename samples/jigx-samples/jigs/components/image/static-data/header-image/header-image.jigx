@@ -6,7 +6,7 @@ header:
     options:
       title: Header image
       source:
-        uri: =@ctx.datasources.story-static.image
+        uri: =@ctx.datasources.story-static[0].image
         
 children:
   - type: component.entity
