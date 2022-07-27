@@ -3,8 +3,8 @@ name: jigx-samples
 category: personal
 
 stories:
-  - story-group-video-sd
-  - story-group-image-sd
+  - story-group-video-dd
+  - story-group-image-dd
 
 widgets: 
   - size: 2x2

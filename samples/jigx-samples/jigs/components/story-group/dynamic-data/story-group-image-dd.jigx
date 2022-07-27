@@ -21,9 +21,9 @@ stories:
         title: =@ctx.current.item.title
         subtitle: =@ctx.current.item.description
         source:
-          uri: =@ctx.current.item.image
+          uri: =@ctx.current.item.photo
         onPress: 
           type: action.open-url
           options:
             title: Read More
-            url: =@ctx.current.item.url
+            url: =@ctx.current.item.web-link
