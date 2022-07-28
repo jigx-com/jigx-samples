@@ -10,7 +10,7 @@ widgets:
   - size: 1x1
     jigId: partner-sign-up
   - size: 4x2
-    jigId: service-request-comp
+    jigId: service-request
 
 
     

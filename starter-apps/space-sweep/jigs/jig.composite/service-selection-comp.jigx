@@ -1,0 +1,80 @@
+title: Services Request
+description: Let us make your space sweepin' clean!
+type: jig.composite
+
+datasources:
+  service-request-local:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: service-request-local
+  
+      query: SELECT id, '$.ordernr', '$.requester', '$.requesteddate', '$.facility', '$.servicedate', '$.servicetime', '$.services', '$.amountofservices', '$.duration', '$.subtotal' FROM [service-request-local] WHERE id = @id
+      queryParameters:
+        id: =@ctx.solution.state.orderid
+        
+  booked-repair-serv:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: booked-repair-serv
+  
+      query: SELECT id, '$.orderid', '$.service', '$.quantity', '$.rate', '$.time', '$.totalcost', '$.totaltime'  FROM [booked-repair-serv] WHERE '$.orderid' = @orderid
+      queryParameters:
+        orderid: =@ctx.solution.state.orderid
+        
+  booked-cleaning-serv:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: booked-cleaning-serv
+  
+      query: SELECT id, '$.orderid', '$.service', '$.quantity', '$.rate', '$.time', '$.totalcost', '$.totaltime'  FROM[booked-cleaning-serv] WHERE '$.orderid' = @orderid
+      queryParameters:
+        orderid: =@ctx.solution.state.orderid
+
+        
+children:
+  - jigId: cleaning-serv-prod-list-dd
+  - jigId: repair-serv-prod-list-dd
+
+
+actions:
+  - children:
+      - type: action.confirm
+        options:
+          title: Confirm Service Bookings
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            type: action.action-list
+            options:
+              actions:
+                - type: action.execute-entity
+                  options:
+                    provider: DATA_PROVIDER_LOCAL
+                    entity: service-request-local
+                    method: update
+                    goBack: stay
+                    data: 
+                      id: =@ctx.solution.state.orderid
+                      ordernr:
+                      services: =$string(@ctx.datasources.booked-cleaning-serv.service & @ctx.datasources.booked-repair-serv.service
+                      amountofservices: =$count(@ctx.datasources.booked-cleaning-serv & @ctx.datasources.booked-repair-serv)
+                      duration: =$sum(@ctx.datasources.booked-cleaning-serv.totaltime & @ctx.datasources.booked-repair-serv.totaltime)
+                      subtotal: =$sum(@ctx.datasources.booked-cleaning-serv.totalcost & @ctx.datasources.booked-repair-serv.totalcost)
+                - type: action.go-to
+                  options:
+                    linkTo: service-request-summary
+          modal:
+            title: Confirm Services? 
+            description:  Confirm services to proceed to booking finalisation
+
+
+
+

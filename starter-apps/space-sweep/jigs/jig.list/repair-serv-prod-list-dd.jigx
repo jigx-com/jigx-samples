@@ -1,0 +1,112 @@
+title: Repair Services List
+description: List of Repair Available
+type: jig.list
+icon: contact
+isCollapsible: true
+isInitiallyCollapsed: true
+isHorizontal: false
+
+header: 
+    type: component.image
+    options:
+      source:
+        uri: https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-portrait-of-happy-craftsman-with-different-tools-in-hands_HpWkfx7x4b_thumb.jpg
+
+datasources:
+  service-request-local:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: service-request-local
+  
+      query: SELECT id, '$.ordernr', '$.requester', '$.requesteddate', '$.facility', '$.servicedate', '$.servicetime', '$.services', '$.amountofservices', '$.duration', '$.subtotal' FROM [service-request-local] WHERE id = @id
+      queryParameters:
+        id: =@ctx.solution.state.orderid.data.id
+        
+  repair-services:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: default/repair-services-dynamic
+        - booked-repair-serv
+        
+      query: |
+        SELECT A.id as id
+        , json_extract(A.data , '$.description') as description
+        , json_extract(A.data , '$.hourlyrate') as hourlyrate
+        , json_extract(A.data , '$.illustration') as illustration
+        , json_extract(A.data , '$.image') as image
+        , json_extract(A.data , '$.materials') as indoor
+        , json_extract(A.data , '$.onceoffrate') as onceoffrate
+        , json_extract(A.data , '$.service') as service
+        , json_extract(A.data , '$.time') as time
+        , 'Repair Service' as type
+        , json_extract(B.data , '$.quantity') as quantity
+        FROM [default/repair-services-dynamic] A
+        LEFT JOIN [booked-repair-serv] B
+        on A.id = B.id
+
+  booked-repair-serv:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: booked-repair-serv
+  
+      query: SELECT id, '$.orderid', '$.service', '$.quantity', '$.rate', '$.time', '$.totalcost', '$.totaltime'  FROM [booked-repair-serv] WHERE '$.orderid' = @orderid
+      queryParameters:
+        orderid: =@ctx.solution.state.orderid.data.id
+        
+data: =@ctx.datasources.repair-services
+item:
+  type: component.product-item
+  instanceId: repair_prod
+  options:
+    title: =@ctx.current.item.service
+    price:
+      value: =(@ctx.current.item.hourlyrate) != 'NA' ? @ctx.current.item.hourlyrate:@ctx.current.item.onceoffrate
+      format:
+        numberStyle: currency
+        currency: USD
+    image:
+      uri: =@ctx.current.item.image
+    tag: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & @ctx.current.item.hourlyrate & ' p/hr':'$ ' & @ctx.current.item.onceoffrate & ' once-off'
+    amountControl:
+      value: =$type(@ctx.current.item.quantity) = 'number' ? @ctx.current.item.quantity:0
+      minimum: 0
+      maximum: =(@ctx.current.item.hourlyrate) != 'NA' ? '8':'1'
+      step: 1
+      onChange: 
+        type: action.execute-entity
+        options:
+          provider: DATA_PROVIDER_SQL
+          entity: default/booked-repair-serv
+          method: update
+          data: 
+            id: =@ctx.current.item.id
+            orderid: =@ctx.solution.state.orderid.data.id
+            service: =@ctx.current.item.service
+            quantity: =@ctx.current.item.quantity
+            rate: =(@ctx.current.item.hourlyrate) != 'NA' ? @ctx.current.item.hourlyrate:@ctx.current.item.onceoffrate
+            totalcost: =(@ctx.current.item.hourlyrate) != 'NA' ? (@ctx.current.item.hourlyrate*@ctx.jig.components.repair_prod.state.amount):@ctx.current.item.onceoffrate
+            time: =@ctx.current.item.time
+            totaltime: =@ctx.current.item.time*@ctx.jig.components.cleaning_prod.state.amount
+          goBack: stay
+      onDelete: 
+        type: action.execute-entity
+        options:
+          provider: DATA_PROVIDER_SQL
+          entity: default/booked-repair-serv
+          method: delete
+          goBack: stay
+          data: 
+            id: =@ctx.current.item.id
+            
+      
+      
+      
+    

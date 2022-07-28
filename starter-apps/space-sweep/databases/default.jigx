@@ -2,4 +2,4 @@ tables:
   ? 'cleaning-services-dynamic'
   ? 'partners-accommodation-dd'
   ? 'repair-services-dynamic'
-  ? 'service-request-local'
+  ? 'services-request'

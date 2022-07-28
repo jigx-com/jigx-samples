@@ -1,8 +1,14 @@
-title: Partner and Service Request
-description: Request of services to partners
+title: Facility Service Request
+description: Let us make your space sweepin' clean!
 type: jig.default
-isCollapsible: true
-isInitiallyCollapsed: false
+
+header: 
+  type: component.video-player
+  options:
+    url: https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BmI6UBJLWj5dnkc7q/videoblocks-portrait-of-attractive-smiling-skilled-multiracial-team-of-cleaners-in-uniforms-which-posing-on-camera-with-cleaning-equipments-in-beautiful-apartment_bab4c952p__9427bedeaab957429241953a6e414d41__P360.mp4
+    loop: false
+    autoplay: true
+    
 
 children:
   - type: component.form
@@ -17,6 +23,8 @@ children:
             value: =@ctx.user.displayName
             style:
               isDisabled: true
+            
+            
         - type: component.dropdown
           instanceId: accommodation_ddl
           options:
@@ -31,11 +39,13 @@ children:
                   element: image
                   text: ''
                   uri: =@ctx.current.item.image 
-            label: Accommodation
+            label: Facility
             isMultiple: false
             isSearchable: true
-            helperText: Select partner accommodation to service
+            helperText: Select partner facility to service
             nextProperty: service_date
+            isRequired: true
+            
         - type: component.field-row
           options:
             children:
@@ -45,7 +55,7 @@ children:
                   label: Service Date
                   format: ll
                   mode: date
-                  minimum: ="$now()"
+                  isRequired: true
                   nextProperty: service_time
               - type: component.date-picker
                 instanceId: service_time
@@ -53,42 +63,56 @@ children:
                   label: Service Time
                   format: LT
                   mode: time
-                  minimum: "07:30"
-                  maximum: "17:00"
+                  isRequired: true
 
-  # - type: component.list
-  #   options:
-  #     data: =@ctx.datasources.service-request-local
-  #     item: 
-  #       type: component.list-item
-  #       options:
-  #         title: =@ctx.current.item.id
-  #         subtitle: =@ctx.current.item.accommodation
-        
+
 actions:
   - children:
       - type: action.action-list
         options:
-          title: Submit Date
+          title: Check Availability
+          isSequential: true
           actions:
             - type: action.execute-entity
-              instanceId: submit_date
+              instanceId: submit_request
               options:
                 provider: DATA_PROVIDER_LOCAL
                 entity: service-request-local
                 method: create
                 data: 
-                  ordernr: abcde12345+1
                   requester: =@ctx.user.displayName
-                  requesteddate: =$frommillis($now())
-                  accommodation: =@ctx.jig.components.accommodation_ddl.state.selected.name
+                  requesteddate: =$now()
+                  facility: =@ctx.jig.components.accommodation_ddl.state.selected.name
                   servicedate: =@ctx.jig.components.service_date.state.value
                   servicetime: =@ctx.jig.components.service_time.state.value
                 goBack: stay
                 onSuccess: 
-                  title: =@ctx.jig.components.owners_form.state.response
-                  
-                  # type: action.set-state
-                  # options:
-                  #   state: =@ctx.solution.state.orderid
-                  #   value: =@ctx.components.submit_date.state.response
+                  title: Request Submitted
+                  description: Please select your desired services next...
+                  actions:
+                    - type: action.action-list
+                      options:
+                        title: Press here to continue
+                        actions:
+                          - type: action.set-state
+                            options:
+                              state: =@ctx.solution.state.orderid
+                              value: =@ctx.jig.components.submit_request.state.response
+                          - type: action.go-to
+                            options:
+                              linkTo: service-selection-comp
+
+widgets:
+  "4x2": 
+    type: widget.image
+    options:
+      bottom: 
+        type: component.titles
+        options:
+          title: Book your services now!
+          align: center
+      resizeMode: cover
+      isContentOverlaid: true
+      source:
+        uri: https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/graphicstock-young-handsome-cleaner-in-red-overalls-studio-shot-on-white-background_H0PYRy0Zb_thumb.jpg
+        
