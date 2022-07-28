@@ -7,7 +7,7 @@ header:
     title: =@ctx.datasources.product-detail-dynamic.title
     subtitle: =@ctx.datasources.product-detail-dynamic.price
     source:
-      uri: =@ctx.datasources.product-detail-dynamic.photo
+      uri: =@ctx.datasources.product-detail-dynamic.uri
 
 summary:
   children:
