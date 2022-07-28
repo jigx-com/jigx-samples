@@ -9,11 +9,11 @@ children:
           type: component.stage
           options:
             right:
-              title: =@ctx.datasources.trip-dynamic.from
-              subtitle: =@ctx.datasources.trip-dynamic.board
+              title: =@ctx.datasources.trip-dynamic[3].from
+              subtitle: =@ctx.datasources.trip-dynamic[3].board
             left:
-              title: =@ctx.datasources.trip-dynamic.to
-              subtitle: =@ctx.datasources.trip-dynamic.time
+              title: =@ctx.datasources.trip-dynamic[3].to
+              subtitle: =@ctx.datasources.trip-dynamic[3].disembark
       children:
         - type: component.entity
           options:

@@ -4,7 +4,7 @@ options:
     - id: 1
       from: Boston
       time-from: 11:30
-      to: New Yrok
+      to: New York
       time-to: 12:30
     - id: 1
       from: Las Vegas
