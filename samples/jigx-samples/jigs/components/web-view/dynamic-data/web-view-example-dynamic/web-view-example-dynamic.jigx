@@ -5,6 +5,6 @@ isScrollable: false
 children:
   - type: component.web-view
     options:
-      uri: =@ctx.datasources.web-view-dynamic.url
+      uri: =@ctx.datasources.web-view-dynamic.uri
       isTrackingTransparencyRequired: true
       height: 1000
