@@ -9,7 +9,7 @@ options:
       '$.title',
       '$.image',
       '$.address',
-      '$.locationTitle',
-      '$.locationSubtitle',
+      '$.locationtitle',
+      '$.locationsubtitle',
       '$.category'
     FROM [default/location] WHERE '$.category' = "titles"
