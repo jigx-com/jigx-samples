@@ -13,3 +13,4 @@ options:
       '$.iscompleted',
       '$.iswaiting'
     FROM [default/steps]
+    ORDER BY value
