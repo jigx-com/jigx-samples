@@ -10,7 +10,7 @@ item:
     leftElement: 
       element: avatar
       text: " "
-      uri: =@ctx.current.item.picture
+      uri: =@ctx.current.item.photo
     rightElement: 
       element: button
       title: Go to
