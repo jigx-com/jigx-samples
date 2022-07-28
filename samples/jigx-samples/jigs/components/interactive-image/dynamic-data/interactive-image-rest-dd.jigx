@@ -24,7 +24,7 @@ children:
         options:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
-          icon: =@ctx.current.item. = 'TRUE' ? 'close' :null
+          icon: =@ctx.current.item.isreserved = 'TRUE' ? 'close' :null
           # groupId: =@ctx.current.item.isreserved = 'TRUE' ? 'Reserved':'Available'
           color: =@ctx.current.item.isreserved = 'TRUE' ? 'color3' :null
           style:

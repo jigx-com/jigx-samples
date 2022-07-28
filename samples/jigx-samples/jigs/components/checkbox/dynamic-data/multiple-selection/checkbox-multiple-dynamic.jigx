@@ -36,26 +36,31 @@ children:
            instanceId: monday
            options:
              label: =@ctx.datasources.checkbox-options[1].day
+             initialValue: true
              isRequired: false
          - type: component.checkbox
            instanceId: tuesday
            options:
              label: =@ctx.datasources.checkbox-options[2].day
+             initialValue: true
              isRequired: false
          - type: component.checkbox
            instanceId: wednesday
            options:
              label: =@ctx.datasources.checkbox-options[3].day
+             initialValue: true
              isRequired: false
          - type: component.checkbox
            instanceId: thursday
            options:
              label: =@ctx.datasources.checkbox-options[4].day
+             initialValue: true
              isRequired: false
          - type: component.checkbox
            instanceId: friday
            options:
              label: =@ctx.datasources.checkbox-options[5].day
+             initialValue: true
              isRequired: false
          - type: component.checkbox
            instanceId: saturday

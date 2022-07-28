@@ -31,4 +31,4 @@ stories:
             title: Read more
             linkTo: =@ctx.current.item.url
         source:
-          uri: =@ctx.current.item.img
+          uri: =@ctx.current.item.image

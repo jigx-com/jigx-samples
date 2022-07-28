@@ -5,12 +5,12 @@ options:
     - entity: default/avatar
   query: |
     SELECT
-      '$.id',
-      '$.title',
+      id,
+      '$.category',
       '$.description',
-      '$.image',
-      '$.thumbnail',
-      '$.url',
-      '$.videoUrl',
-      '$.category'
+      '$.header',
+      '$.photo',
+      '$.title',
+      '$.video',
+      '$.web-link'
     FROM [default/avatar] WHERE '$.category' = "image-source"

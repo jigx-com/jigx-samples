@@ -22,7 +22,7 @@ children:
                     - type: component.entity-field
                       options:
                         label: Birth date
-                        value: =@ctx.datasources.employee-detail-dynamic.birth-date
+                        value: =@ctx.datasources.employee-detail-dynamic.birthdate
                     - type: component.entity-field
                       options:
                         label: Gender

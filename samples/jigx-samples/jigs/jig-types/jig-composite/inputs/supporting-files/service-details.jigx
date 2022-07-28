@@ -1,13 +1,37 @@
 title: =@ctx.jig.inputs.service
 description: A deeper look into this service...
 type: jig.default
-isCollapsible: true
+
+datasources:
+  cleaningServices:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services
+      queryParameters:
+        servId: =@ctx.solution.state.servicesId
+  
+      query: | 
+        SELECT 
+          id,
+          '$.area', 
+          '$.description',
+          '$.hourlyrate',
+          '$.illustratuion',
+          '$.image',
+          '$.indoor',
+          '$.onceoffrate',
+          '$.service',
+          '$.time' 
+        FROM [default/cleaning-services] WHERE id = @servId
 
 header:
     type: component.image
     options:
       source:
-        uri: =@ctx.datasources.cleaning-services-dynamic.image
+        uri: =@ctx.datasources.cleaningServices.image
 
 children:
   - type: component.entity
@@ -23,29 +47,31 @@ children:
                     - type: component.entity-field
                       options:
                         label: Service
-                        value: =@ctx.datasources.cleaning-services-dynamic.service)
+                        value: =@ctx.datasources.cleaningServices.service
                     - type: component.entity-field
                       options:
                         label: Area
-                        value: =@ctx.datasources.cleaning-services-dynamic.area
+                        value: =@ctx.datasources.cleaningServices.area
               - type: component.field-row
                 options:
                   children:
                     - type: component.entity-field
                       options:
                         label: Time
-                        value: =@ctx.datasources.cleaning-services-dynamic.time
+                        value: =@ctx.datasources.cleaningServices.time & ' minutes'
                     - type: component.entity-field
                       options:
-                        label: =Indoor
-                        value: =@ctx.datasources.cleaning-services-dynamic.indoor
+                        label: Indoor
+                        value: =@ctx.datasources.cleaningServices.indoor
+                        contentType: checkbox
               - type: component.field-row
                 options:
                   children:
                     - type: component.entity-field
                       options:
                         label: Description
-                        value: =@ctx.datasources.cleaning-services-dynamic.description
+                        value: =@ctx.datasources.cleaningServices.description
+                        isMultiline: true
         - type: component.section
           options:
             title: Rates
@@ -56,22 +82,8 @@ children:
                     - type: component.entity-field
                       options:
                         label: Hourly Rate
-                        value: =(@ctx.datasources.cleaning-services-dynamic.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaning-services-dynamic.hourlyrate):'NA'
+                        value: =(@ctx.datasources.cleaningServices.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaningServices.hourlyrate):'NA'
                     - type: component.entity-field
                       options:
                         label: Once Off Rate
-                        value: =(@ctx.datasources.cleaning-services-dynamic.onceoffrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaning-services-dynamic.item.onceoffrate):'NA'
-                  
-                   
-datasources:
-  cleaning-services-dynamic:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-  
-      entities:
-        - entity: default/cleaning-services-dynamic
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
-      queryParameters:
-        id: =@ctx.jig.inputs.id
+                        value: =(@ctx.datasources.cleaningServices.onceoffrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaningServices.item.onceoffrate):'NA'

@@ -11,8 +11,5 @@ children:
   - jigId: service-details
     instanceId: service_deets
     inputs:
-      id: =@ctx.jig.inputs.id
-      service: =@ctx.jig.inputs.service 
-      type: =@ctx.jig.inputs.type
+      id: =@ctx.solution.state.servicesId
   - jigId: cleaning-serv-horizon-list-dd
-    instanceId: cleaning-serv-from-deets

@@ -21,7 +21,8 @@ widgets:
       bottom:
         type: component.titles
         options:
-          title: =@ctx.datasources.titles.locationTitle
+          title: =@ctx.datasources.titles.locationtitle
+          subtitle: =@ctx.datasources.titles.locationsubtitle
 
 
 

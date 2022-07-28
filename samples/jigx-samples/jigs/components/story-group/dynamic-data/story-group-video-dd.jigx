@@ -19,11 +19,11 @@ stories:
       type: component.video-player
       options:
         subtitle: =@ctx.current.item.description
-        url: =@ctx.current.item.videoUrl
-        thumbnailUri: =@ctx.current.item.thumbnail
+        url: =@ctx.current.item.video
+        thumbnailUri: =@ctx.current.item.header
         title: =@ctx.current.item.title
         onPress: 
           type: action.open-url
           options:
             title: See Tips Here
-            url: =@ctx.current.item.url
+            url: =@ctx.current.item.web-link

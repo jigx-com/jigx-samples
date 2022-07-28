@@ -16,4 +16,4 @@ item:
     leftElement: 
       element: avatar
       text: " "
-      uri: =@ctx.current.item.picture
+      uri: =@ctx.current.item.photo

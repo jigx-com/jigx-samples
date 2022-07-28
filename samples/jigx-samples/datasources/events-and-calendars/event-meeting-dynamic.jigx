@@ -5,11 +5,11 @@ options:
     - entity: default/calendar
   query: |
     SELECT
-      json_extract(data, '$.name') as name,
+      json_extract(data, '$.title') as name,
       json_extract(data, '$.tags') as tags,
       json_extract(data, '$.location') as location,
       json_extract(data, '$.description') as description,
       json_extract(data, '$.date-from') as date_from,
-      json_extract(data, '$.date-to') as dete_to,
+      json_extract(data, '$.date-to') as date_to,
       json_extract(data, '$.category') as category
-    FROM [default/calendar] WHERE catgory = "meeting"
+    FROM [default/calendar] WHERE category = "meeting"

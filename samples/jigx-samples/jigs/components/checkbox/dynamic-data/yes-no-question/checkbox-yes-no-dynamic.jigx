@@ -30,3 +30,4 @@ children:
           options:
             label: =@ctx.datasources.checkbox-options[0].agreement
             isRequired: true
+            initialValue: true

@@ -3,4 +3,4 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
     - entity: default/charts
-  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$,seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "arch-chart"
+  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$.seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "arch-chart"

@@ -3,8 +3,8 @@ name: jigx-samples
 category: personal
 
 stories:
-  - story-group-video-sd
-  - story-group-image-sd
+  - story-group-video-dd
+  - story-group-image-dd
 
 widgets: 
   - size: 2x2
@@ -31,9 +31,6 @@ widgets:
     jigId: value-static
   - size: 4x2
     jigId: chart-widget-line-chart
-  - size: 2x2
-    jigId: cleaning-services-list-dd
-    
 
 
   # - story-group-image-dd

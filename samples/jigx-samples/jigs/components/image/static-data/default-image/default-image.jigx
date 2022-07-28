@@ -7,4 +7,4 @@ children:
       title: Image
       subtitle: in jig/default
       source:
-        uri: =@ctx.datasources.story-static.image
+        uri: =@ctx.datasources.story-static[0].image

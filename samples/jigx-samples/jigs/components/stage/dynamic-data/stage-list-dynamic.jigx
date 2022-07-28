@@ -1,4 +1,4 @@
-title: Name
+title: Trip in list
 type: jig.list
 
 
@@ -11,4 +11,4 @@ item:
       subtitle: =@ctx.current.item.board
     left:
       title: =@ctx.current.item.to
-      subtitle: =@ctx.current.item.time
+      subtitle: =@ctx.current.item.disembark

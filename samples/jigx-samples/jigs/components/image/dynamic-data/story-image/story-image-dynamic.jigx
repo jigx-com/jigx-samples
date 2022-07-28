@@ -7,8 +7,11 @@ children:
       children:
         - type: component.entity-field
           options:
-            label: tbd
-            value: tbd
+            label: ''
+            value: Please see the story-group example on your Home screen
+            isMultiline: true
+            style: 
+              isPositive: true
 
 stories:
   type: component.story-group
@@ -18,12 +21,12 @@ stories:
     item: 
       type: component.image
       options:
-        title: =@ctx.datasources.story.title
-        subtitle: =@ctx.datasources.story.description
-        onPress: 
-          type: action.go-to
-          options:
-            title: Read more
-            linkTo: =@ctx.datasources.story.url
+        title: =@ctx.current.item.title
+        subtitle: =@ctx.current.item.description
         source:
-          uri: =@ctx.datasources.story.img
+          uri: =@ctx.current.item.photo
+        onPress: 
+          type: action.open-url
+          options:
+            title: Read More
+            url: =@ctx.current.item.web-link
