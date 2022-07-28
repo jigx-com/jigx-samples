@@ -101,29 +101,29 @@ options:
       componentLink: signature-field 
       icon: signature
       color: color11
-    - component: Step
-      componentLink: step-example
-      icon: task-list
-      color: color12
-    - component: Stepper
-      componentLink: stepper-example
-      icon: navigation-menu-horizontal
-      color: color13
-    - component: Summary
-      componentLink: list-summary
-      icon: navigation-menu-4
-      color: color14
-    - component: Text-field
-      componentLink: text-field
-      icon: minus
-      color: color1
-    - component: Titles
-      componentLink: expander
-      icon: document
-      color: color2
     - component: Stage
       componentLink: composite-stage
       icon: settings-slider
+      color: colo12
+    - component: Step
+      componentLink: step-example
+      icon: task-list
+      color: color13
+    - component: Stepper
+      componentLink: stepper-example
+      icon: navigation-menu-horizontal
+      color: color14
+    - component: Summary
+      componentLink: list-summary
+      icon: navigation-menu-4
+      color: color1
+    - component: Text-field
+      componentLink: text-field
+      icon: minus
+      color: color2
+    - component: Titles
+      componentLink: expander
+      icon: document
       color: color3
     - component: Video-player
       componentLink: list-video-player
