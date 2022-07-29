@@ -5,4 +5,4 @@ options:
   entities:
     - entity: default/services-request
 
-      query: SELECT id, '$.ordernr', '$.requester', '$.requesteddate', '$.facility', '$.servicedate', '$.servicetime', '$.services', '$.amountofservices', '$.duration', '$.subtotal', '$.total', '$.vouchercode', '$.voucheramount'  FROM [service-request]
+  query: SELECT id, '$.ordernr', '$.requester', '$.requesteddate', '$.facility', '$.servicedate', '$.servicetime', '$.services', '$.amountofservices', '$.duration', '$.subtotal', '$.total', '$.vouchercode', '$.voucheramount'  FROM [service-request]

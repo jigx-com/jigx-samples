@@ -3,7 +3,7 @@ description: List of Repair Available
 type: jig.list
 icon: contact
 isCollapsible: true
-isInitiallyCollapsed: true
+isInitiallyCollapsed: false
 isHorizontal: false
 
 header: 
@@ -64,7 +64,7 @@ datasources:
 data: =@ctx.datasources.repair-services
 item:
   type: component.product-item
-  instanceId: repair_prod
+  instanceId: =@ctx.current.item.id
   options:
     title: =@ctx.current.item.service
     price:
@@ -94,7 +94,7 @@ item:
             rate: =(@ctx.current.item.hourlyrate) != 'NA' ? @ctx.current.item.hourlyrate:@ctx.current.item.onceoffrate
             totalcost: =(@ctx.current.item.hourlyrate) != 'NA' ? (@ctx.current.item.hourlyrate*@ctx.jig.components.repair_prod.state.amount):@ctx.current.item.onceoffrate
             time: =@ctx.current.item.time
-            totaltime: =@ctx.current.item.time*@ctx.jig.components.cleaning_prod.state.amount
+            totaltime: =@ctx.current.item.time*@ctx.jig.components.=@ctx.current.item.id.state.amount
           goBack: stay
       onDelete: 
         type: action.execute-entity
