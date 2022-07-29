@@ -1,6 +1,6 @@
-title: List Customers
+title: Customer List
 type: jig.list
-icon: contact
+icon: list
 
 datasources:
   customerList: 
@@ -11,7 +11,7 @@ datasources:
       entities:
         - entity: default/customers
   
-      query: "SELECT id, '$.firstName', '$.lastName', '$.email' from [default/customers]"
+      query: SELECT id, '$.firstName', '$.lastName', '$.email' FROM [default/customers]
 
 data: =@ctx.datasources.customerList
 item:
@@ -32,18 +32,9 @@ item:
           color: warning
           icon: delete
           label: Delete
-
-
-
-
-
-            # type: action.execute-entity
-            # options:
-            #   provider: DATA_PROVIDER_DYNAMIC
-            #   entity: default/customers
-            #   method: delete
-            #   data:
-            #     id: =@ctx.current.item.id      
-              
-            
-      
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-customer
+        parameters:
+          custId: =@ctx.current.item.id

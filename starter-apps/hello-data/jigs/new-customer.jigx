@@ -1,5 +1,4 @@
 title: New Customer
-description: Description of your Jig
 type: jig.default
 icon: person
 
@@ -12,24 +11,25 @@ children:
           options:
             children:
               - type: component.text-field
-                instanceId: firstName 
+                instanceId: firstName
                 options:
                   label: "First Name"
               - type: component.text-field
                 instanceId: lastName
                 options:
-                  label: "Last Name"
+                  label: "Last Name"  
         - type: component.email-field
           instanceId: email
           options:
             label: "Email"
+
 actions:
   - children:
       - type: action.submit-form
         options:
-          formId: "customerInfo"
+          formId: customerInfo
           provider: DATA_PROVIDER_DYNAMIC
+          title: Save Customer
           entity: default/customers
+          method: create
           goBack: previous
-          title: "Save Customer"
-        

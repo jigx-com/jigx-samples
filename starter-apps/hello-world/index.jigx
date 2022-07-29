@@ -1,6 +1,7 @@
-name: jigx-hello-world
+name: hello-world
 title: Hello World
 category: miscellaneous
+description: A basic hello world solution that will get you started with Jigx.
 
 widgets:
   - size: 1x1

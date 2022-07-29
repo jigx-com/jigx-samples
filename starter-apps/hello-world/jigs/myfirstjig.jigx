@@ -10,10 +10,10 @@ children:
       source:
         uri: https://picsum.photos/id/392/500/300
       height: 300
-      title: Hello2
+      title: Hello
       subtitle: =@ctx.user.displayName
       
-views:
+widgets:
   2x2: 
     type: widget.location
     options:
