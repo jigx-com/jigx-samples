@@ -1,0 +1,46 @@
+title: View Customer
+type: jig.default
+
+datasources:
+  customerInfo: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/customers
+  
+      query: SELECT id, '$.firstName', '$.lastName', '$.email' FROM [default/customers] WHERE id = @custId
+      queryParameters:
+        custId: =@ctx.jig.inputs.custId
+      isDocument: true
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: First Name
+                  value: =@ctx.datasources.customerInfo.firstName
+              - type: component.entity-field
+                options:
+                  label: Last Name
+                  value: =@ctx.datasources.customerInfo.lastName
+        - type: component.entity-field
+          options:
+            label: Email
+            value: =@ctx.datasources.customerInfo.email
+            contentType: email
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Edit Customer
+          linkTo: edit-customer
+          parameters:
+            custId: =@ctx.jig.inputs.custId

@@ -1,9 +1,8 @@
 name: hello-data
-title: Hello Data
-category: sales
-description: This solution demonstrates how to work with Dynamic Data. Capture a new customer record, show a list of customers, as well as display and edit the details of an existing customer.
+title: Customer Data
+category: miscellaneous
 widgets:
-  - size: 1x1 # choose size of the widget on the home hub
+  - size: "1x1" # choose size of the widget on the home hub
     jigId: new-customer
-  - size: 2x2
-    jigId: list-customers
+  - size: "2x2"
+    jigId: list-customer  

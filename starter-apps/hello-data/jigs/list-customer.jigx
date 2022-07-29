@@ -1,0 +1,40 @@
+title: Customer List
+type: jig.list
+icon: list
+
+datasources:
+  customerList: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/customers
+  
+      query: SELECT id, '$.firstName', '$.lastName', '$.email' FROM [default/customers]
+
+data: =@ctx.datasources.customerList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.firstName & " " & @ctx.current.item.lastName
+    subtitle: =@ctx.current.item.email
+    swipeable:
+      left:
+        - onPress: 
+            type: action.execute-entity
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/customers
+              method: delete
+              data: 
+                id: =@ctx.current.item.id
+          color: warning
+          icon: delete
+          label: Delete
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-customer
+        parameters:
+          custId: =@ctx.current.item.id
