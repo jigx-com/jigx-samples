@@ -61,14 +61,12 @@ children:
           instanceId: latitude
           options:
             label: Latitude
-            keyboardType: decimal-pad
             textContentType: location
             isRequired: true
         - type: component.text-field
           instanceId: longitude
           options:
             label: Longitude
-            keyboardType: decimal-pad
             textContentType: location
             isRequired: true
         - type: component.text-field
