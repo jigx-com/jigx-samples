@@ -9,6 +9,7 @@ options:
     SELECT
       json_extract(A.Data, '$.title') as title,
       json_extract(A.Data, '$.location') as location,
+      json_extract(A.Data, '$.description') as description,
       json_extract(A.Data, '$.eventid') as eventid,
       json_extract(B.Data, '$.fullname') as fullName,
       json_extract(B.Data, '$.avatarurl') as avatarUrl,

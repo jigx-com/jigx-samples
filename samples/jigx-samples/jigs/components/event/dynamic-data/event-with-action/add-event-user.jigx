@@ -1,0 +1,49 @@
+title: = "Book term " & $fromMillis($toMillis($now()) + ($number(@ctx.current.item.id)- 1) * 3600000)
+description: Description of your Jig
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: bookForm
+          provider: DATA_PROVIDER_DYNAMIC
+          title: Create Record
+          entity: default/calendar
+          method: create
+          goBack: previous
+
+children:
+  - type: component.form
+    instanceId: bookForm
+    options:
+      children:
+        - type: component.text-field
+          instanceId: id
+          options:
+            label: id
+            value: =@ctx.jig.inputs.id
+            isHidden: true
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: userName
+                options:
+                  label: Name
+                  value: =@ctx.user.displayName
+              - type: component.email-field
+                instanceId: userEmail
+                options:
+                  label: Email
+                  value: =@ctx.user.email
+        - type: component.number-field
+          instanceId: userPhone
+          options:
+            label: Phone
+            value: =@ctx.user.phone
+        - type: component.avatar-field
+          instanceId: userPhoto
+          options:
+            label: Photo
+            value: =@ctx.user.avatarUrl

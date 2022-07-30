@@ -1,0 +1,61 @@
+title: Create event
+description: Description of your Jig
+type: jig.default
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: newEvent
+          provider: DATA_PROVIDER_DYNAMIC
+          title: Create Event
+          entity: default/calendar
+          method: create
+          goBack: previous
+
+children:
+  - type: component.form
+    instanceId: newEvent
+    options:
+      children:
+        - type: component.text-field
+          instanceId: id
+          options:
+            label: id
+            isHidden: true
+        - type: component.text-field
+          instanceId: category
+          options:
+            label: category
+            value: event
+            isHidden: true
+        - type: component.text-field
+          instanceId: title
+          options: 
+            label: Event name
+        - type: component.text-field
+          instanceId: description
+          options:
+            label: Event desctiption
+        - type: component.field-row
+          options:
+            children:
+              - type: component.date-picker
+                instanceId: from
+                options:
+                  label: Event start
+              - type: component.date-picker
+                instanceId: to
+                options:
+                  label: Event end
+        - type: component.text-field
+          instanceId: tags
+          options:
+            label: Tag
+        - type: component.text-field
+          instanceId: color
+          options:
+            label: color
+            value: color6
+            isHidden: true
+          

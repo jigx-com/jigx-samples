@@ -1,0 +1,34 @@
+title: Calendar with action
+type: jig.calendar
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Create new Event
+          linkTo: create-event
+
+data: =@ctx.datasources.calendar-dynamic
+item:
+  type: component.event
+  options:
+    title: =@ctx.current.item.title
+    from:
+      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.eventid)- 1) * 3600000)
+      format:
+        dateFormat: "l"
+    location: =@ctx.current.item.location
+    people: "=[{'fullName':@ctx.current.item.fullName, 'avatarUrl': @ctx.current.item.avatarUrl}]"
+    tags: "=[{'title': @ctx.current.item.tagTitle, 'color': @ctx.current.item.color}]"
+    to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventid) *
+      3600000)
+    onButtonPress: 
+      type: action.action-list
+      options:
+        title: Book Term
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: add-event-user
+              parameters:
+                id: =@ctx.current.item.eventid

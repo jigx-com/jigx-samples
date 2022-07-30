@@ -7,3 +7,6 @@ options:
     - title: Event of vacation
       link: multi-day-event
       color: color2
+    - title: Event with action
+      link: event-with-action
+      color: color3
