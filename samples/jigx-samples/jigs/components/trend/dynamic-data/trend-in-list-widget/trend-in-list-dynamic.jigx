@@ -31,5 +31,5 @@ widgets:
           title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
           leftElement: 
             element: avatar
-            text: NA
+            text: =$substring(@ctx.current.item.firstname, 0, 1) & $substring(@ctx.current.item.lastname, 0, 1)
             uri: =@ctx.current.item.picture
