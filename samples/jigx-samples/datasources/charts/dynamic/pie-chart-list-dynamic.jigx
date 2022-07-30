@@ -3,6 +3,6 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/pie-chart-list-dynamic
+    - entity: default/charts
 
-  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$,seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "pie-chart"
+  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$.seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "pie-chart-list"

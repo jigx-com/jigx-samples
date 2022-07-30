@@ -1,4 +1,4 @@
-title: ='Title' & @ctx.datasources.pie-chart-list-dynamic.
+title: Pie chart
   # Horizontal List (Pie Chart)
 type: jig.list
 
@@ -16,21 +16,22 @@ type: jig.list
 
 
 
-data: =@ctx.datasources.series-3
+data: =@ctx.datasources.pie-chart-list-dynamic
 item:
         type: component.pie-chart
         options:
           chart:
             title:
-              text: =@ctx.current.item.data
+              text: =@ctx.current.item.title
               verticalAlign: center
             subtitle:
-              text: =@ctx.current.item.data
+              text: =@ctx.current.item.subtitle
               verticalAlign: center
             width: 100
             height: 100
           legend:
             isHidden: true
           series:
-            - data: =@ctx.datasources.series-3.data
+            - data: =@ctx.current.item.data
               layout: pie
+              color: =@ctx.current.item.color
