@@ -17,7 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     progress: =@ctx.current.item.hourlyRate/120
     
-    colors:
+    color:
       - when: =@ctx.current.item.materials
         color: primary
       - when: =@ctx.current.item.materials = 'true'
