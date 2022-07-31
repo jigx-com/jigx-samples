@@ -1,5 +1,5 @@
 type: jig.default
-title: Next meeting
+title: Avatar widget
 
 children:
   - type: component.entity

@@ -1,5 +1,5 @@
 type: jig.default
-title: Company revenue
+title: Chart widget
 
 children:
   - type: component.entity

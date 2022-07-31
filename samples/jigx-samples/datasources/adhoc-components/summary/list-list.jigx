@@ -14,7 +14,7 @@ options:
       link: default-w-product-list-sd
       color: color3
     - title: Default Jig with Pie Charts
-      link: list-with-pie-charts-sd
+      link: default-w-pie-charts-list-sd
       color: color4
     - title: Default Jig with Bar Charts
       link: list-with-bar-charts-sd
@@ -31,6 +31,6 @@ options:
     - title: Default Jig with List with active item
       link: default-w-active-item-list-sd
       color: color7
-    - title: Default Jig List with Sections
-      link: default-w-section-list-dd
-      color: color8
+    # - title: Default Jig List with Sections
+    #   link: default-w-section-list-dd
+    #   color: color8

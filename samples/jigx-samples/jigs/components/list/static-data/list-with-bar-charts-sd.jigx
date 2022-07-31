@@ -1,5 +1,4 @@
-title: Name
-description: Description of your Jig
+title: Default Jig with Bar Charts
 type: jig.default
 
 datasources:
