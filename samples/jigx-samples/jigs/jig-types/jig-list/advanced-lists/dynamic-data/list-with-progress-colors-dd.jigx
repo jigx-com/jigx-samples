@@ -14,13 +14,13 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.area
-    progress: =@ctx.current.item.time/120
+    subtitle: =@ctx.current.item.description
+    progress: =($number(@ctx.current.item.hourlyrate) / 100)
     
-    colors:
+    color:
       - when: =@ctx.current.item.indoor
         color: primary
-      - when: =@ctx.current.item.indoor = 'TRUE'
+      - when: =@ctx.current.item.indoor = 'true'
         color: color14
       - when:  =@ctx.current.item.indoor = 'false'
         color: color7
