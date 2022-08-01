@@ -4,6 +4,6 @@ options:
     - title: Restaurant table booking example
       link: interactive-image-rest-sd
       color: color1
-    - title: Hot seat and meeting room booking example
+    - title: Meeting room booking example
       link: interactive-image-office-sd
       color: color2

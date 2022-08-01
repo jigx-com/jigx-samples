@@ -1,9 +1,9 @@
 type: datasource.static
 options:
   data:
-    - title: Field-row components with entity-fields
+    - title: Field-row with entity-fields
       link: row-entity-field-sd
       color: color1
-    - title: Field-row components on form with children components 
+    - title: Field-row on form
       link: form-row-children-dd
       color: color2

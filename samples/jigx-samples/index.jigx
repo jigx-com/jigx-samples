@@ -32,3 +32,4 @@ widgets:
     jigId: value-static
   - size: 4x2
     jigId: chart-widget-line-chart
+

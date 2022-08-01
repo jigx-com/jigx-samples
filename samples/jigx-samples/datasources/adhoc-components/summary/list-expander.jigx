@@ -1,9 +1,9 @@
 type: datasource.static
 options:
   data:
-    - title: Expander with titles in a header, entity-fields and bar-chart
+    - title: Expander with titles
       link: expander
       color: color1
-    - title: Expander with stage in header and entity-fields
+    - title: Expander with stage
       link: expander-trip
       color: color2
