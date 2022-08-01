@@ -23,7 +23,7 @@ options:
       link: list-horizontal-sd
       color: color5
     - title: List with Search functionality
-      link: list-search-label-dd
+      link: list-with-search-dd
       color: color6
     - title: List with Filter functionality
       link: list-filter-label-dd
