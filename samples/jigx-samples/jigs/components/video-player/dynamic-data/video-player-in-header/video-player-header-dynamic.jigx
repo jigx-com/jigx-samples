@@ -7,8 +7,6 @@ header:
     options:
       url: =@ctx.datasources.video-player-dynamic.uri
       autoplay: true
-      title: =@ctx.datasources.video-player-dynamic.title
-      subtitle: =@ctx.datasources.video-player-dynamic.subtitle
       loop: true
       ratio: 16:9
 

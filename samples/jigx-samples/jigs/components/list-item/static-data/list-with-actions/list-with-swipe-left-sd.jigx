@@ -20,7 +20,7 @@ item:
       name: =(@ctx.current.item.materials = true ? 'home' :'car-garage')
     rightElement: 
       element: value
-      text: ='$ ' & $number(@ctx.current.item.hourlyrate)
+      text: ='$ ' & $number(@ctx.current.item.hourlyRate)
     swipeable:
       left:
         - onPress: 

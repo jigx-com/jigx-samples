@@ -18,6 +18,4 @@ item:
     rightElement: 
       element: switch
       initialValue: =(@ctx.current.item.materials = true ? true:false)
-      onChange: 
-        type: action.go-back
       
