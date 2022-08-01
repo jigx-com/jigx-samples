@@ -1,4 +1,4 @@
-title: ''
+title: Execute entity action on Press
 type: jig.list
 icon: contact 
 description: With execute-entity you can save, update or delete your data from your database. This is an example how to use it in onChange event.
@@ -12,12 +12,17 @@ onRefresh:
       time: =$now()
   
 
-data: =@ctx.data.mydata
+data: =@ctx.datasources.employees-dynamic
 item:
   type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
+    description: =@ctx.current.item.modify
+    leftElement: 
+      element: avatar
+      text: ''
+      uri: =@ctx.current.item.photo
     rightElement:
       element: checkbox
       value: true
@@ -27,7 +32,7 @@ item:
           provider: DATA_PROVIDER_DYNAMIC
           method: update
           goBack: stay
-          entity: default/form
+          entity: default/employees
           data: 
             id: =@ctx.current.item.id
             modify: =$now()
