@@ -4,7 +4,7 @@ description: List of other available Cleaning Services
 type: jig.list
 icon: contact 
 isHorizontal: true
-isCollapsible: true
+isCollapsible: false
 isInitiallyCollapsed: true
 
 header: 

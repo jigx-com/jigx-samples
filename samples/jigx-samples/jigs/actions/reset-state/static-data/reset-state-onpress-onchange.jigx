@@ -11,10 +11,10 @@ item:
     onPress: 
       type: action.reset-state
       options:
-        key: global-key
+        state: =@ctx.solution.state.global-key
     rightElement: 
       element: switch
       onChange: 
         type: action.reset-state
         options:
-          key: global-key
+          state: =@ctx.solution.state.global-key

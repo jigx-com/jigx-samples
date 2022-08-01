@@ -5,17 +5,17 @@ description: Reset-state action is used when the onFocus/onLoad/onRefresh event 
 onFocus: 
   type: action.reset-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
     
 onLoad: 
   type: action.reset-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
     
 onRefresh: 
   type: action.reset-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
 
 
 actions:
@@ -23,7 +23,7 @@ actions:
       - type: action.set-state
         options:
           title: Set state
-          key: global-key
+          state: =@ctx.solution.state.global-key
           value: 1
 children:
   - type: component.entity

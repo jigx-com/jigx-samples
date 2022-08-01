@@ -31,4 +31,4 @@ children:
             uri: =@ctx.current.item.image
           rightElement: 
             element: value
-            text: ='$ ' & @ctx.current.item.hourlyrate & ' p/hr'
+            text: ='$ ' & @ctx.current.item.hourlyRate & ' p/hr'

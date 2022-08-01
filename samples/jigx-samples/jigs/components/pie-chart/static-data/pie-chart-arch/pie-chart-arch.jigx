@@ -16,7 +16,7 @@ children:
           - data: =@ctx.datasources.arch-pie-chart
             dataLabels:
               - isEnabled: true
-            type: arch
+            layout: arch
           
 widgets:
   2x2:
@@ -40,4 +40,4 @@ widgets:
                   - data: =@ctx.datasources.arch-pie-chart
                     dataLabels:
                     - isEnabled: true
-                    type: arch
+                    layout: arch
