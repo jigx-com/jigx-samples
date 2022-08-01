@@ -1,0 +1,21 @@
+type: datasource.static
+options:
+  data:
+    - firstname: July
+      lastname: Nelson
+      position: Manager
+      phone: 3249432812
+      email: july@first.com
+      address: 141 Harbor Dr Claymont, Delaware(DE), 19703
+    - firstname: Karl
+      lastname: Fisher
+      position: Business analyst
+      phone: 7732360626
+      email: karl@first.com
+      address: 268 Norman Ave, Brooklyn, NY 11222
+    - firstname: John
+      lastname: Doe
+      position: Software Engineer
+      phone: 5022716340
+      email: john@first.com
+      address: 1035 Cambridge St, Cambridge, MA 02141

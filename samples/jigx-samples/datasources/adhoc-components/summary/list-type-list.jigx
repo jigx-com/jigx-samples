@@ -8,7 +8,7 @@ options:
       link: list-with-styles-sd
       color: color2
     - title: List with Expanders
-      link: list-with-expander-stage-sd
+      link: list-with-expander-title-sd
       color: color3
     - title: List with Stages
       link: list-with-stage-sd

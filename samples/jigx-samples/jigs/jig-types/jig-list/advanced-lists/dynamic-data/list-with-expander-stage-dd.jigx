@@ -1,28 +1,25 @@
-title: Flight Schedule
-description: List with Expander and Stage as Header Element (Centre)
+title: Work Team
+description: List with Expander and Title as Header Element (Centre)
 type: jig.list
-icon: plane-2
 
 header: 
   type: component.image
   options:
     source:
-      uri: https://images.unsplash.com/photo-1490430657723-4d607c1503fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZmxpZ2h0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
+      uri: https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80
 
-data: =@ctx.datasources.flight-schedule-dynamic
+data: =@ctx.datasources.expander-on-list-dynamic
 item:
   type: component.expander
   options:
     header:
       centerElement: 
-        type: component.stage
+        type: component.titles
         options:
-          right:
-            title: =@ctx.current.item.toabrv
-            subtitle: =@ctx.current.item.disembark
-          left:
-            title: =@ctx.current.item.fromabrv
-            subtitle: =@ctx.current.item.board
+          title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
+          subtitle: =@ctx.current.item.position
+          icon: person
+          align: left
     children:
       - type: component.entity
         options:
@@ -32,61 +29,13 @@ item:
                 children:
                   - type: component.entity-field
                     options:
-                      label: Boarding
-                      value: =@ctx.current.item.from
+                      label: Phone
+                      value: =@ctx.current.item.phone
                   - type: component.entity-field
                     options:
-                      label: Destination
-                      value: =@ctx.current.item.to
-            - type: component.field-row
-              options:
-                children:
-                  - type: component.entity-field
-                    options:
-                      label: Board Time
-                      value: =@ctx.current.item.board
-                  - type: component.entity-field
-                    options:
-                      label: Disembark Time
-                      value: =@ctx.current.item.disembark
+                      label: Email
+                      value: =@ctx.current.item.email
             - type: component.entity-field
               options:
-                label: Passenger
-                value: =@ctx.current.item.name
-            - type: component.field-row
-              options:
-                children:
-                  - type: component.entity-field
-                    options:
-                      label: Flight
-                      value: =@ctx.current.item.flight
-                  - type: component.entity-field
-                    options:
-                      label: Gate
-                      value: =@ctx.current.item.gate
-                  - type: component.entity-field
-                    options:
-                      label: Seat
-                      value: =@ctx.current.item.seat
-      - type: component.location
-        options:
-          address: =@ctx.current.item.to
-          
-widgets:
-  2x2:
-    type: widget.list
-    options:
-      data: =@ctx.datasources.flight-schedule-dynamic
-      item: 
-        type: component.stage
-        options:
-          icon: plane-2
-          right:
-            title: =@ctx.current.item.toabrv
-            subtitle: =@ctx.current.item.to
-          left:
-            title: =@ctx.current.item.fromabrv
-            subtitle: =@ctx.current.item.from
-
-          
-          
+                label: Address
+                value: =@ctx.current.item.address
