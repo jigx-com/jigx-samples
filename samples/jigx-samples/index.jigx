@@ -1,6 +1,7 @@
-title: Jigx-samples
+title: jigx-samples
 name: jigx-samples
 category: personal
+description: All examples found on docs.jigx.com can be experienced in this comprehensive sample solution
 
 stories:
   - story-group-video-dd
@@ -31,8 +32,3 @@ widgets:
     jigId: value-static
   - size: 4x2
     jigId: chart-widget-line-chart
-
-
-  # - story-group-image-dd
-  # - story-group-video-dd
-  # - news
