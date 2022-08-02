@@ -23,9 +23,13 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     horizontalItemSize: large
-    progress: 0
-      # =@ctx.solution.state.pressed != null ? 1 :0
+    # style:
+    #   isHighlighted: =@ctx.current.item.id = @ctx.solution.state.servicesId ? true :false
 
+    progress: =@ctx.current.item.id = @ctx.solution.state.servicesId ? 1 :0
+    color:
+      - when: =@ctx.current.item.id = @ctx.solution.state.servicesId ? true :false
+        color: color2
     leftElement: 
       element: image
       text: ''
@@ -43,17 +47,3 @@ item:
             options:
               state: =@ctx.solution.state.servicesId
               value: =@ctx.current.item.id
-          - type: action.execute-entity
-            options:
-              provider: DATA_PROVIDER_LOCAL
-              entity: default/cleaning-services
-              goBack: stay
-              method: update
-              data:
-                id: =@ctx.current.item.id
-                progress: 1
-          
-          # - type: action.set-state
-          #   options:
-          #     state: =@ctx.solution.state.pressed
-          #     value: 1

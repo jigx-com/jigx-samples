@@ -5,4 +5,4 @@ options:
   entities:
     - entity: default/cleaning-services
 
-  query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL 
+  query: SELECT id, '$.id' as sqlid, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.pressed', '$.time' FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL ORDER BY '$.area' DESC

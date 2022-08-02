@@ -16,5 +16,17 @@ item:
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
+    progress: =@ctx.current.item.id = @ctx.solution.state.actvieItemId ? 1 :0
+    color:
+      - when: =@ctx.current.item.id = @ctx.solution.state.actvieItemId ? true :false
+        color: color2
     label:
       title: =@ctx.current.item.time & ' mins'
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.set-state
+            options:
+              state: =@ctx.solution.state.actvieItemId
+              value: =@ctx.current.item.id
