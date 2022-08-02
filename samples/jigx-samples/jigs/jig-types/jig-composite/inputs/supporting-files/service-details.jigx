@@ -74,7 +74,7 @@ children:
                         isMultiline: true
         - type: component.section
           options:
-            title: Rates
+            title: Rate
             children:
               - type: component.field-row
                 options:
@@ -86,4 +86,5 @@ children:
                     - type: component.entity-field
                       options:
                         label: Once Off Rate
-                        value: =(@ctx.datasources.cleaningServices.onceoffrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaningServices.item.onceoffrate):'NA'
+                        value: ='$ ' & $number(@ctx.datasources.cleaningServices.onceoffrate)
+                        isHidden: =(@ctx.datasources.cleaningServices.onceoffrate) = null ? true:false
