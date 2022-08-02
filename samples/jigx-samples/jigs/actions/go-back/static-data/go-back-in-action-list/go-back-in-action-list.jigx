@@ -1,6 +1,6 @@
 title: Go Back action
 type: jig.list
-description: The simplest example of a go-back action is to use it in a list of actions. When configured, a button will appear at the bottom which will return us to the previous page when pressed. In this case, the use of the function is unnecessary because as we can see in the screenshot there is an arrow to the left in the upper left corner. This means that this jig already has a go-back action automatically in it and the arrow has the same function as the "Go back" button below.
+description: This example displays a button which will return us to the previous page when pressed. 
 
 actions:
   - children:

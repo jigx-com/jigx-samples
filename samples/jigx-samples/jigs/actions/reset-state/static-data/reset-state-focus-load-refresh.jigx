@@ -1,6 +1,6 @@
 title: Name
 type: jig.default
-description: Reset-state action is used when the onFocus/onLoad/onRefresh event is triggered to reset the state of the component or global-key. You can specify instanceId, this will be the name of the UI component. And you need to specify the key, which will be the value of the UI component or the name of the key that you want to reset.
+description: This action will reset the state of the component in the jig and it's value when the onFocus/onLoad/onRefresh event is triggered.
 
 onFocus: 
   type: action.reset-state

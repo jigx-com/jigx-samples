@@ -1,6 +1,6 @@
 title: Go To action
 type: jig.list
-description: The simplest example of using a go-to action is to use it in a list of actions. When configured, a button will appear at the bottom which will redirect us to the details page when pressed. 
+description: This example displays a button which will redirect us to the page with the details when pressed. 
 
 actions:
   - children:

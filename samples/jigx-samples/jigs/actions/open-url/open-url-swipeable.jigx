@@ -1,6 +1,6 @@
 title: Open url action
 type: jig.list
-description: This example uses the open-url action as a swipeable property. We can choose the swipe direction left or right. After pressing the button, it will open the specific url what we setup.
+description: In this example, after swiping left/right the go-back button appers.This button will open the specific url that we setup.
 
 data: =@ctx.datasources.employees-static
 item:

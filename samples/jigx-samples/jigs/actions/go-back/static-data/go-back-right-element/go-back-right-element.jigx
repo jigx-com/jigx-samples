@@ -1,6 +1,6 @@
 title: Go Back action
 type: jig.list
-description: In this example, we use the go-back action as the rightElement in the list-item component. There is a button for each item.
+description: In this example, every list-item component has a button which will return us to the previous page when pressed.
 
 data: =@ctx.datasources.employees-static
 item:

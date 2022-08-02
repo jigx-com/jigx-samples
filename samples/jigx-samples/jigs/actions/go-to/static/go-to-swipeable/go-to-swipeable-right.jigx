@@ -1,6 +1,6 @@
 title: Go To action
 type: jig.list
-description: This example uses the go-to action as a swipeable property. We can choose the swipe direction left or right. After pressing the button, it will redirect to details of the person.
+description: In this example, after swiping right the go-back button appers. This button will redirect us to the details of the person.
 
 data: =@ctx.datasources.employees-static
 item:

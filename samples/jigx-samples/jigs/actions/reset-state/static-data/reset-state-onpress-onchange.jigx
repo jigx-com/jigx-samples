@@ -1,6 +1,6 @@
 title: List
 type: jig.list
-description: Reset-state action used on the list as onPress or onChange action, to reset-state of the component. You can specify instanceId, this will be the name of the UI component. And you need to specify key, which will be the value of the UI component that you want to reset.
+description: This action will reset the state of the component in the jig and it's value when the onPress/onChange event is triggered.
 
 data: =@ctx.datasources.employees-dynamic
 item: 

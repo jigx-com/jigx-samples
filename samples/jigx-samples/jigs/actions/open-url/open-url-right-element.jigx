@@ -1,6 +1,6 @@
 title: Open url
 type: jig.list
-description: In this example, we use the open-url action as the rightElement in the list-item component. There is a button for each item.
+description: In this example, every list-item component has a button which will open the specific url that we set up. 
 
 data: =@ctx.datasources.employees-static
 item:

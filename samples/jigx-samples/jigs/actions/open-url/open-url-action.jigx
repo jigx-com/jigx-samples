@@ -1,6 +1,6 @@
 title: Open url
 type: jig.default
-description: The simplest example of using an open-url action is to use it in a list of actions. Thanks to this, a button will appear at the bottom, which, when pressed, will open the specific url that we set up. 
+description: This example displays a button which will open the specific url that we set up. 
 
 actions:
   - children:
