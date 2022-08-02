@@ -4,9 +4,15 @@ options:
     - title: Summary - default
       link: summary
       color: color1
-    - title: Summary - cart
+    - title: Summary - cart (Product-item)
       link: summary-cart
       color: color2
-    - title: Summary - counter
+    - title: Summary - cart (Expander)
+      link: summary-cart-expander
+      color: color2
+    - title: Summary - counter (Product-item)
       link: summary-counter
+      color: color3
+    - title: Summary - counter (Expander)
+      link: summary-cart-expander
       color: color3
