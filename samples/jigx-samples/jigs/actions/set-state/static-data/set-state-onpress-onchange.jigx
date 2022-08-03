@@ -26,12 +26,12 @@ item:
     onPress: 
       type: action.set-state
       options:
-        key: global-key
+        state: =@ctx.solution.state.global-key
         value: 1    
     rightElement: 
       element: switch
       onChange: 
         type: action.set-state
         options:
-          key: global-key
+          state: =@ctx.solution.state.global-key
           value: 1

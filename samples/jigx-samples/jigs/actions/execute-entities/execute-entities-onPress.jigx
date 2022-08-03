@@ -1,4 +1,4 @@
-title: onPress
+title: Execute entity action on Press
 type: jig.list
 icon: contact
 description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onPress event.
@@ -18,4 +18,4 @@ item:
         goBack: stay
         entity: default/employees
         method: update
-        data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"
+        # data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"

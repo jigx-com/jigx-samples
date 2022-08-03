@@ -7,7 +7,7 @@ actions:
       - type: action.set-state
         options:
           title: Set global key to 1
-          key: global-key
+          state: =@ctx.solution.state.global-key
           value: 1
   
 

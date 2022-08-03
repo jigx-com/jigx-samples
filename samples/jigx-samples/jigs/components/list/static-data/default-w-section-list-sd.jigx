@@ -18,19 +18,15 @@ children:
   - type: component.list
     options:
       sections:
-        - title: Services incl Materials
-          data: =@ctx.datasources.repair-services-static[materials=true]
-        - title: Services excl Materials
-          data: =@ctx.datasources.repair-services-static[materials=false]
-      item: 
+      - title: Services incl Materials
+        data: =@ctx.datasources.repair-services-static[materials=true]
+      - title: Services excl Materials
+        data: =@ctx.datasources.repair-services-static[materials=false]
+        
+      item:
         type: component.list-item
         options:
           title: =@ctx.current.item.service
-          subtitle: =@ctx.current.item.time & ' mins'
-          leftElement: 
-            element: image
-            text: ''
-            uri: =@ctx.current.item.image
-          rightElement: 
-            element: value
-            text: ='$ ' & @ctx.current.item.hourlyrate & ' p/hr'
+          subtitle: =@ctx.current.item.description
+          label:
+            title: =@ctx.current.item.time & ' mins'

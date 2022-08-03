@@ -5,19 +5,19 @@ description: Set-state action is used to set the state of the key inside the jig
 onFocus: 
   type: action.set-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
     value: 1
     
 onLoad: 
   type: action.set-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
     value: 1
     
 onRefresh: 
   type: action.set-state
   options:
-    key: global-key
+    state: =@ctx.solution.state.global-key
     value: 1
 
 children:
