@@ -16,5 +16,9 @@ item:
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
+    progress: =@ctx.component.state.checked = true ? 1 :0
+    color:
+      - when: =@ctx.component.state.checked = true ? true :false
+        color: color2
     label:
       title: =@ctx.current.item.time & ' mins'
