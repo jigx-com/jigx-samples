@@ -16,15 +16,11 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     avatars:
-      - uri: https://randomuser.me/api/portraits/men/1.jpg
-        text: "AT"
-      - uri: https://randomuser.me/api/portraits/men/15.jpg
-        text: "TA"
-      - uri: https://randomuser.me/api/portraits/men/14.jpg
-        text: "AT"
-      - uri: https://randomuser.me/api/portraits/men/10.jpg
-        text: "AT"
-      - uri: https://randomuser.me/api/portraits/men/12.jpg
-        text: "AT"
-      - uri: https://randomuser.me/api/portraits/men/19.jpg
-        text: "AT"
+      - uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+        text: ""
+      - uri: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        text: ""
+      - uri: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        text: ""
+      - uri: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        text: ""
