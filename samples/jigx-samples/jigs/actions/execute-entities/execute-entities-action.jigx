@@ -6,7 +6,8 @@ header:
     type: component.image
     options:
       source:
-        uri: =@ctx.data.employees.picture
+        uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
+
 
 actions:
   - children:
@@ -15,7 +16,7 @@ actions:
         title: Add
         provider: DATA_PROVIDER_DYNAMIC
         method: save
-        entity: default/form1
+        entity: default/form
         data: 
           name: =@ctx.components.name.state.value
           id: =@ctx.components.id.state.value  
@@ -29,6 +30,7 @@ children:
           instanceId: id
           options:
             label: id
+            isHidden: true
         - type: component.text-field
           instanceId: name
           options:

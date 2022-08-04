@@ -9,7 +9,7 @@ onRefresh:
     provider: DATA_PROVIDER_LOCAL
     entity: default/employees
     data:
-      time: =$now()
+      modify: =$number(@ctx.current.item.modify) + 1
   
 
 data: =@ctx.datasources.employees-dynamic
@@ -18,6 +18,7 @@ item:
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
+    description: =(@ctx.current.item.modify = 0 ? 0 :@ctx.current.item.modify) & ' time/s changed.'
     leftElement: 
       element: avatar
       text: ''
@@ -25,10 +26,10 @@ item:
     onPress: 
       type: action.execute-entity
       options:
-          provider: DATA_PROVIDER_DYNAMIC
+          provider: DATA_PROVIDER_LOCAL
           method: update
           goBack: stay
-          entity: default/form
+          entity: default/employees
           data: 
             id: =@ctx.current.item.id
-            modify: =$now()
+            modify: =($number(@ctx.current.item.modify) + 1)

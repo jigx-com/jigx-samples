@@ -10,12 +10,18 @@ item:
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname
-    description: =@ctx.current.item.percentage & '%'
+    description: =(@ctx.current.item.modify = 0 ? 0 :@ctx.current.item.modify) & ' time/s changed.'
+    leftElement: 
+      element: avatar
+      text: ''
+      uri: =@ctx.current.item.photo
     onPress: 
-      type: action.execute-entities
+      type: action.execute-entity
       options:
-        provider: DATA_PROVIDER_LOCAL
-        goBack: stay
-        entity: default/employees
-        method: update
-        # data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"
+          provider: DATA_PROVIDER_LOCAL
+          method: update
+          goBack: stay
+          entity: default/employees
+          data: 
+            id: =@ctx.current.item.id
+            modify: =($number(@ctx.current.item.modify) + 1)

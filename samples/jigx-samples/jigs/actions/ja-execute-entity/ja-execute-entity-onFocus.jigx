@@ -11,7 +11,7 @@ onRefresh:
     entity: default/form
     data: 
       id: =@ctx.current.item.id
-      modify: =$now()
+      modify: =($number(@ctx.current.item.modify) + 1)
 
 
 children:
