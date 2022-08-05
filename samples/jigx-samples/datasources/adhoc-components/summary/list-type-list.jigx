@@ -22,6 +22,9 @@ options:
     - title: Horizontal list
       link: list-horizontal-sd
       color: color5
+    - title: Other examples of Horizontal list
+      link: list-w-horizontal
+      color: color5
     - title: List with Search functionality
       link: list-with-search-dd
       color: color6
