@@ -1,20 +1,5 @@
 title: Pie chart
-  # Horizontal List (Pie Chart)
 type: jig.list
-
-
-
-# datasources:
-#   pie-chart:
-#     type: 'datasource.sqlite'
-#     options:
-#       provider: DATA_PROVIDER_DYNAMIC
-  
-#       entities:
-#         - entity: default/pie-chart
-#       query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color' FROM [default/pie-chart]
-
-
 
 data: =@ctx.datasources.pie-chart-list-dynamic
 item:

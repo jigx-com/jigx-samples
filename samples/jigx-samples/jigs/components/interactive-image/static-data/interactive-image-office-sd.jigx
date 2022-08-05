@@ -25,7 +25,6 @@ children:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
           icon: =@ctx.current.item.isReserved = true ? 'close' :null
-          # groupId: =@ctx.current.item.isReserved = true ? 'Reserved':'Available'
           color: =@ctx.current.item.isReserved = true ? 'color3' :null
           style:
             isDisabled: =@ctx.current.item.isReserved = true ? true :false
