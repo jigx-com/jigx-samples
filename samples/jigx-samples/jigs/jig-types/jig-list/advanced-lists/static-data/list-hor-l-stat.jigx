@@ -1,0 +1,95 @@
+title: Team members
+type: jig.list
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+isCollapsible: true
+actions:
+  - children:
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: Nancy Drew
+          label: true
+          label-title: New
+          label-hidden: false
+          subtitle: HR Business partner
+          description: ""
+          highlight: false
+          uri: https://randomuser.me/api/portraits/women/27.jpg
+
+        - name: Georgia Budd
+          label: false
+          label-title: ""
+          label-hidden: true
+          subtitle: HR Analyst
+          description:
+          highlight: false
+          uri: https://randomuser.me/api/portraits/women/79.jpg
+
+        - name: Liam Hannant
+          label: false
+          label-title: ""
+          label-hidden: true
+          subtitle: Senior Recruiter
+          description:
+          highlight: false
+          uri: https://randomuser.me/api/portraits/men/66.jpg
+
+        - name: Dudley Dudeson
+          label: false
+          label-title: ""
+          label-hidden: true
+          subtitle: QAS Paramedic
+          description:
+          highlight: false
+          uri: https://randomuser.me/api/portraits/men/74.jpg
+
+        - name: Peter Picklet
+          label: false
+          label-title: ""
+          label-hidden: true
+          subtitle: Neonatal Doctor
+          description: 76 Kg
+          highlight: false
+          uri: https://randomuser.me/api/portraits/men/78.jpg
+
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  instanceId: sample-list
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    description: =@ctx.current.item.description
+    label:
+      title: =@ctx.current.item.label-title
+      color:
+        - when: =@ctx.current.item.label
+          color: color2
+
+    divider: solid
+    horizontalItemSize: regular
+
+    style:
+      isPositive: false
+      isHighlighted: =@ctx.current.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false
+
+    # STATIC LEFT
+    leftElement:
+      element: avatar
+      uri: =@ctx.current.item.uri
+      text: asd
+

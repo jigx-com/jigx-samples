@@ -1,4 +1,4 @@
-title: ='LB ' & @ctx.datasources.finance-charts
+title: Bar charts list
   # Horizontal List (Pie Chart)
 type: jig.list
 
@@ -12,9 +12,9 @@ item:
       max: 2000
       min: 200
     xAxis:
-      categories: =@ctx.datasources.finance-charts
+      categories: =@ctx.datasources.finance-charts.x
     series:
-      - data: =$number(@ctx.datasources.finance-charts.y
-        color: color1
+      - data: =@ctx.datasources.finance-charts.y
+        color: =@ctx.datasources.finance-charts.color
 
       

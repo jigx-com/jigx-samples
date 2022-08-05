@@ -1,0 +1,164 @@
+title: List styles
+type: jig.list
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+isCollapsible: true
+actions:
+  - children:
+      # - type: action.confirm
+      #   options:
+      #     title: Primary action
+      #     isConfirmedAutomatically: false
+      #     onConfirmed:
+      #       type: "@jigx/ja-delete"
+      #       options:
+      #         title: Delete
+      #     modal:
+      #       title: Modal window
+      #       description: Content of the modal window
+
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: Connection
+          subtitle: Good
+          label-title: IsPositive
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: true
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+
+        - name: Connection
+          subtitle: Disconnected
+          label-title: IsError
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: true
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+
+        - name: Connection
+          subtitle: Poor
+          label-title: IsWarning
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: true
+          isDisabled: false
+          icon: house-signal
+
+        - name: Connection
+          subtitle: Not available
+          label-title: isDisabled
+          isHighlighted: false
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: true
+          icon: house-signal
+
+        - name: Kitchen lamp
+          subtitle: Good
+          label-title: isHighlighted
+          isHighlighted: true
+          isStrikeThrough: false
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: house-signal
+
+        - name: Daily task
+          subtitle: Build the fence
+          label-title: isStrikeThrough
+          isHighlighted: false
+          isStrikeThrough: true
+          isPositive: false
+          isError: false
+          isWarning: false
+          isDisabled: false
+          icon: pencil-write
+
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  instanceId: sample-list
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    description: =@ctx.current.item.description
+    label:
+      title: =@ctx.current.item.label-title
+      color:
+        - when: true
+          color: color14
+
+    divider: solid
+
+    horizontalItemSize: regular
+
+    style:
+      isPositive: =@ctx.current.item.isPositive
+      isHighlighted: =@ctx.current.item.isHighlighted
+      isStrikeThrough: =@ctx.current.item.isStrikeThrough
+      isError: =@ctx.current.item.isError
+      isWarning: =@ctx.current.item.isWarning
+      isDisabled: =@ctx.current.item.isDisabled
+
+    # STATIC LEFT
+    # leftElement:
+    #   type: avatar
+    #   uri:  =@ctx.current.item.uri
+    #   text: asd
+
+    # leftElement:
+    #   type: progress
+    #   value: 0.3
+
+    # leftElement:
+    #   type: image
+    #   uri: https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg
+    #   text: asd
+
+    leftElement:
+      element: icon
+      name: =@ctx.current.item.icon
+      isContained: true
+      isDuotone: true
+    # leftElement:
+    #   type: checkbox
+    #   value: true
+# STATIC RIGHT
+# rightElement:
+#   type: badge
+
+# rightElement:
+#   type: checkbox
+#   value: false
+
+# rightElement:
+#   type: icon
+#   icon: alarm-bell
+#   isContained: true
+#   isDuotone: true
+
+# rightElement:
+#   type: switch
+#   value: true
+

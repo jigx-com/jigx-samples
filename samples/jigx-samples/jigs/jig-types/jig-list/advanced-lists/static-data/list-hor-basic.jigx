@@ -1,0 +1,82 @@
+title: Basic list item
+type: jig.list
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+isCollapsible: true
+actions:
+  - children:
+      # - type: action.confirm
+      #   options:
+      #     title: Primary action
+      #     isConfirmedAutomatically: false
+      #     onConfirmed:
+      #       type: "@jigx/ja-delete"
+      #       options:
+      #         title: Delete
+      #     modal:
+      #       title: Modal window
+      #       description: Content of the modal window
+
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: Title
+          subtitle: Subtitle
+          description: Description
+          highlight: true
+          label-title: Regular
+          label-color: color7
+
+        - name: Title Title
+          subtitle: Subtitle subtitle
+          description: Description description
+          highlight: true
+          label-title: ""
+          label-color: color7
+
+        - name: Title Title Title
+          subtitle: Subtitle subtitle subtitle
+          description: Description description description
+          highlight: false
+          label-title: ""
+          label-color: color7
+
+        - name: Title Title Title Title
+          subtitle: Subtitle subtitle subtitle subtitle
+          description: Description description description description
+          highlight: false
+          label-title: ""
+          label-color: color7
+
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  instanceId: sample-list
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    description: =@ctx.current.item.description
+    label:
+      title: =@ctx.current.item.label-title
+      color:
+        - when: true
+          color: =@ctx.current.item.label-color
+
+    # divider: solid
+
+    style:
+      isPositive: false
+      isHighlighted: =@ctx.current.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false

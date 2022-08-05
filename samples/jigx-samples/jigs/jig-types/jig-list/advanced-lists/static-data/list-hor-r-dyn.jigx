@@ -1,0 +1,96 @@
+title: R-dynamic element
+type: jig.list
+isHorizontal: true
+isHorizontalScrollIndicatorHidden: true
+isCollapsible: true
+actions:
+  - children:
+      # - type: action.confirm
+      #   options:
+      #     title: Primary action
+      #     isConfirmedAutomatically: false
+      #     onConfirmed:
+      #       type: "@jigx/ja-delete"
+      #       options:
+      #         title: Delete
+      #     modal:
+      #       title: Modal window
+      #       description: Content of the modal window
+
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: Harry Potter 1
+          subtitle: The Philosopher's Stone
+          highlight: false
+          isPositive: true
+          button-title:
+          progress-value: 1
+          label-title: 100%
+          label-color: color2
+
+        - name: Harry Potter 2
+          subtitle: The Chamber of Secrets
+          highlight: false
+          isPositive: false
+          button-title: Continue
+          progress-value: 0.56
+          label-title: 56%
+          label-color: color3
+
+        - name: Harry Potter 3
+          subtitle: The Prisoner of Azkaban
+          highlight: false
+          isPositive: false
+          button-title: Start reading
+          progress-value: 0
+          label-title: ""
+          label-color: color14
+
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  instanceId: sample-list
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+
+    divider: solid
+
+    horizontalItemSize: large
+
+    label:
+      title: =@ctx.current.item.label-title
+      color:
+        - when: true
+          color: =@ctx.current.item.label-color
+
+    progress: =@ctx.current.item.progress-value
+
+    style:
+      isPositive: =@ctx.current.item.isPositive
+      isHighlighted: =@ctx.current.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false
+
+    # DYNAMIC RIGHT
+    # rightElement:
+    #   type: value
+    #   text: Value 123
+
+    rightElement:
+      element: button
+      title: =@ctx.current.item.button-title
+      # onPress:
+      #   type: action.go-back

@@ -1,0 +1,11 @@
+title: Default Jig with Horizontal List
+description: samples of horizontal lists
+type: jig.composite
+
+children:
+  - jigId: list-hor-basic
+  - jigId: list-hor-l-stat
+  - jigId: list-hor-l-stat-r-dyn
+  - jigId: list-hor-l-stat-r-stat
+  - jigId: list-hor-r-dyn
+  - jigId: list-hor-styles
