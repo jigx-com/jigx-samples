@@ -1,6 +1,6 @@
 title: Sync Entities
 type: jig.default
-description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in action.
+# description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in action.
 
 actions:
   - children:
@@ -19,4 +19,4 @@ children:
           options:
             label: Sync entities
             isMultiline: true
-            value: This acction butt will sync our default/employee-detail and default/employees entity
+            value: This action butt will sync our default/employee-detail and default/employees entity

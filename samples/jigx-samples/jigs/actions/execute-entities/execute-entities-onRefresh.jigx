@@ -20,7 +20,7 @@ children:
           instanceId: firstname
           options:
             label: First Name
-            value: =@ctx.datasources.employee-detail-dynamic.name
+            value: =@ctx.datasources.employee-detail-dynamic.firstname
 
         - type: component.field-row
           options:

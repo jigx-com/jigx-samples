@@ -1,4 +1,4 @@
-title: Name
+title: =@ctx.datasources.employee-detail-dynamic.firstname
 type: jig.default
 description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in onRefresh action.
 

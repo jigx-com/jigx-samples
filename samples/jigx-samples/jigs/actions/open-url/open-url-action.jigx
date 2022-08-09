@@ -1,6 +1,6 @@
 title: Open url
 type: jig.default
-description: This example displays a button which will open the specific url that we set up. 
+# description: This example displays a button which will open the specific url that we set up. 
 
 actions:
   - children:
@@ -17,4 +17,4 @@ children:
           options:
             isMultiline: true
             label: Documentation
-            value: This acction button will redirect you to the Jigx documentation about open-url.
+            value: This action button will redirect you to the Jigx documentation about open-url.
