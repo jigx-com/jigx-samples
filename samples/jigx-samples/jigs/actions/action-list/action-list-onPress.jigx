@@ -1,6 +1,6 @@
 title: Employees list
 type: jig.list
-description: In this example we have action list on onPress function in list-item. First action will sync our entity with database and the second action will redirect us to detail of the employe which we clicked it.
+description: In this example we have action list on onPress function in list-item. First action will color the last chosen item and the second action will sync our entity with database and we can use them for futher actions.
 
 datasources:
   employees-dynamic:
@@ -13,8 +13,10 @@ datasources:
         SELECT
           id,
           '$.firstname',
-          '$.email'
+          '$.email',
+          '$.category'
         FROM [default/employees]
+        WHERE '$.category' = 'employees'
 
 data: =@ctx.datasources.employees-dynamic
 item: 
@@ -22,17 +24,20 @@ item:
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.email
+    progress: =@ctx.current.item.id = @ctx.solution.state.activeItemId ? 1 :0
+    color:
+      - when: =@ctx.current.item.id = @ctx.solution.state.activeItemId ? true :false
+        color: color2
     onPress: 
       type: action.action-list
       options:
         actions:
+          - type: action.set-state
+            options:
+              state: =@ctx.solution.state.activeItemId
+              value: =@ctx.current.item.id
           - type: action.sync-entities
             options:
               provider: DATA_PROVIDER_DYNAMIC
               entities:
                 - entity: default/employee-detail
-          - type: action.go-to
-            options:
-              linkTo: employee-detail-dynamic
-              parameters:
-                id: =@ctx.current.item.id
