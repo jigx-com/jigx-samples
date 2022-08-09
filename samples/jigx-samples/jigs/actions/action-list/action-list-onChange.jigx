@@ -1,6 +1,6 @@
 title: Employees list
 type: jig.list
-description: In this example we have action list on onPress function in list-item. First action will color the last chosen item and the second action will sync our entity with database and we can use them for futher actions.
+description: In this example we have an action list on onPress function in list-item. The first action will color the last chosen item and the second action will sync our entity with database and we can use them for futher actions.
 
 
 data: =@ctx.datasources.employees-dynamic
