@@ -16,7 +16,7 @@ children:
           - data: =@ctx.datasources.pie-chart-data
             dataLabels:
               - isEnabled: true
-            type: pie
+            layout: pie
           
 widgets:
   2x2:
@@ -40,4 +40,4 @@ widgets:
                   - data: =@ctx.datasources.pie-chart-data
                     dataLabels:
                       - isEnabled: true
-                    type: pie
+                    layout: pie
