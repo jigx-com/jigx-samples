@@ -6,10 +6,10 @@ onRefresh:
   type: action.execute-entities
   options:
     provider: DATA_PROVIDER_LOCAL
-    goBack: stay
-    entity: default/employee-detail
     method: update
-    data: "=@ctx.datasources.employees-dynamic.{'id':id, 'percentage':100}[]"
+    goBack: stay
+    entity: default/employees
+    data: =@ctx.datasources.employee-detail-dynamic.{'id':id, 'modify':$number(modify)+1}
 
 
 children:
@@ -37,5 +37,5 @@ children:
                   value: =@ctx.datasources.employee-detail-dynamic.phone
         - type: component.entity-field
           options:
-            label: Percentage
-            value: =@ctx.datasources.employee-detail-dynamic.percentage
+            label: Modify
+            value: =@ctx.datasources.employee-detail-dynamic.modify
