@@ -1,0 +1,5 @@
+﻿content.description,content.icon,content.isactive,content.iscompleted,content.iswaiting,content.title,content.value,id
+,checkbox-checked,false,true,false,Order,1,1f482b7f-b0d9-41bf-a5c9-4564ffccfce2
+,,false,false,true,On the way to you,3,57be3e7d-0116-428f-aac7-2aee50390f6d
+,,false,false,true,Delivered to the recipient,4,6133ade6-69c2-409a-89c2-4bf83da3cea3
+The shipment is in transit.,time-clock-circle,true,false,false,Shipment in transit,2,77758a9d-ef6b-43f6-a5ba-239562f7be32

@@ -1,0 +1,26 @@
+﻿content.category,content.isreserved,content.name,content.pax,content.xcoordinate,content.ycoordinate,id
+floorplan-restaurant,TRUE,Table 15,4,23,87,025d98ab-22f1-4c6e-9575-3cd227649a16
+floorplan-dynamic,TRUE,Table 1,4,7,12,1fb0b97a-42e7-4dda-af45-95ef2bdb0a78
+floorplan-restaurant,FALSE,Table 5,2,56,12,2697270e-1ba6-4d94-8add-e06d334f264e
+floorplan-restaurant,TRUE,Table 12,8,11,60,37a34dbb-abd8-48db-ad63-d9ae75144a7e
+floorplan-office,TRUE,Hot Desk 1,,22,12,3895a078-4a68-4762-915e-562f22f48609
+floorplan-dynamic,TRUE,Table 2,2,15,12,3e65163e-a2ff-4dfc-978a-a4d126b01c6e
+floorplan-restaurant,TRUE,Table 11,8,11,35,421f6542-4dc5-4c45-a752-4c326f148b0c
+floorplan-restaurant,FALSE,Table 8,8,64,60,4fe021c4-b77e-4a63-bc98-ff730cec5a40
+floorplan-restaurant,TRUE,Table 4,4,48,12,4fed92db-7c47-4668-9fc4-345c06c0f9d7
+floorplan-restaurant,TRUE,Table 2,2,15,12,5ce4a580-b1eb-4d20-b4ad-acf22616069d
+floorplan-restaurant,FALSE,Table 3,4,23,12,6b83ae84-1efa-4b43-8b4d-6121cf274871
+floorplan-restaurant,FALSE,Table 9,4,48,40,6fdc3106-f3ca-4336-82ac-05359d55f537
+floorplan-restaurant,FALSE,Table 19,2,74,87,7b313422-65a3-47d8-833d-95d281ae1480
+floorplan-restaurant,TRUE,Table 16,4,49,87,afd3191a-b214-40c9-83d8-c7315e011171
+floorplan-restaurant,TRUE,Table 1,4,7,12,b331de7d-0d44-425a-81b2-5026a8271c0d
+floorplan-dynamic,FALSE,Table 3,4,23,12,c0867dfb-7f85-4d23-9660-d8ce4667fba9
+floorplan-office,FALSE,Meeting Room,,65,43,c5077ea6-1a59-4cd0-8c7d-a4ef3c1fe2fe
+floorplan-restaurant,FALSE,Table 6,4,64,12,cba01d3c-26cd-4dea-884c-099d2a31436f
+floorplan-restaurant,FALSE,Table 17,2,58,87,cfd77a9b-9c92-4c56-8aa9-f31f34af6b64
+floorplan-office,FALSE,Hot Desk 2,,22,23,d6014bce-2894-4c3e-9f58-3b9b19b7b39b
+floorplan-restaurant,TRUE,Table 7,8,64,35,d613abb1-9ebe-4684-bafc-229ee5d27e7a
+floorplan-restaurant,FALSE,Table 13,4,6,87,e0410cf8-814b-486e-92df-cca12f3bebac
+floorplan-restaurant,TRUE,Table 18,4,66,87,e6029b34-1fa5-4178-8b2f-1edb83475671
+floorplan-restaurant,FALSE,Table 14,2,15,87,ef2aabc4-e945-49d8-98cf-a25d9f1865c9
+floorplan-restaurant,FALSE,Table 10,4,25,60,faa44689-1648-451e-86ed-0f4367b78a2d
