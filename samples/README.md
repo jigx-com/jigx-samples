@@ -1,2 +1,2 @@
 # Samples solutions
-Collection of all sample solutions for documentation
+Check out https://docs.jigx.com/examples to learn more about how to get started.
