@@ -1,2 +1,2 @@
 # Solutions
-Collection of all solution apps for documentation
+Check out https://docs.jigx.com/examples to learn more about how to get started.
