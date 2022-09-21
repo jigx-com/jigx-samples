@@ -4,6 +4,9 @@ options:
     - title: PDF Document Example
       link: document-pdf-sd
       color: color1
-    - title: HTML Document Example
-      link: document-html-sd
+    - title: HTML Document (URL) Example
+      link: document-html-url-sd
+      color: color2
+    - title: HTML Document (Content) Example
+      link: document-html-content
       color: color2
