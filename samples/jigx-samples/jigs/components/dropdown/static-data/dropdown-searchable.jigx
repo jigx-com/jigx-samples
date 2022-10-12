@@ -21,4 +21,4 @@ children:
                 leftElement: 
                   element: avatar
                   text: ''
-                  uri: =@ctx.current.item.img
+                  uri: =@ctx.current.item.photo
