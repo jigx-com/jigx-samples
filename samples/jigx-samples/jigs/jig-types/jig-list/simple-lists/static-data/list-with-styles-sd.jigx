@@ -103,7 +103,6 @@ datasources:
 data: =@ctx.datasources.styles
 item:
   type: component.list-item
-  instanceId: list-w-styles
   options:
     title: =@ctx.current.item.name
     subtitle: =@ctx.current.item.subtitle

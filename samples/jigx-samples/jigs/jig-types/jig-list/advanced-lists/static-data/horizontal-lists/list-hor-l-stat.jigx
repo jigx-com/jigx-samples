@@ -65,7 +65,6 @@ datasources:
 data: =@ctx.datasources.components
 item:
   type: component.list-item
-  instanceId: sample-list
   options:
     title: =@ctx.current.item.name
     subtitle: =@ctx.current.item.subtitle
