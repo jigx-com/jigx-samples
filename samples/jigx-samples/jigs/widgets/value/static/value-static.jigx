@@ -22,7 +22,9 @@ widgets:
         type: component.trend
         options:
           title: "New this week"
-          value: 0.1232
+          value: 0.12
+          format:
+            numberStyle: percent
           style:
             isValueBottom: true
             isAlignRight: true
