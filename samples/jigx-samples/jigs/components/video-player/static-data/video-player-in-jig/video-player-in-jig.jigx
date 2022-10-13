@@ -4,9 +4,9 @@ title: Video player
 children:
   - type: component.video-player
     options:
-      url: =@ctx.datasources.video-player.uri
-      title: =@ctx.datasources.video-player.title
-      subtitle: =@ctx.datasources.video-player.subtitle
+      url: https://player.vimeo.com/external/510534971.sd.mp4?s=feaf03f65dc961bf98dcecbbbdcf21db84204536&profile_id=164&oauth2_token_id=57447761
+      title: Team work
+      subtitle: Video-player usage examples
       autoplay: false
       loop: true
       ratio: 16:9
