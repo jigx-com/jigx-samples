@@ -32,4 +32,4 @@ children:
           options:
             label: Sync entities
             isMultiline: true
-            value: This action butt will sync our default/employee-detail and default/employees entity and redirect us to the employee detail.
+            value: This action button will sync our default/employee-detail and default/employees entity and redirect us to the employee detail.

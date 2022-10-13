@@ -1,7 +1,7 @@
 type: datasource.static
 options:
   data:
-    - title: Video player as children of the jig
+    - title: Video player as children of the Jig
       link: video-player-in-jig
       color: color1
     - title: Video player in header
