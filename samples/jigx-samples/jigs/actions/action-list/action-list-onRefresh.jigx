@@ -1,6 +1,6 @@
 title: Employees list
 type: jig.list
-description: In this example when we refresh the jig we call syn-entities action.
+description: In this example when we refresh the Jig we call sync-entities action.
 
 onRefresh: 
   type: action.action-list

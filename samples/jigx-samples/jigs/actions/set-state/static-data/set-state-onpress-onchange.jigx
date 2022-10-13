@@ -1,6 +1,6 @@
 title: List
 type: jig.list
-description: Set-state action is used to set the state of the key inside the jig file for the further work with the UI components. In this example the set-state action is used when the onPress/onChange event is triggered. 
+description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components. In this example the set-state action is used when the onPress/onChange event is triggered. 
 
 
 datasources:

@@ -1,6 +1,6 @@
 title: Reset state action
 type: jig.default
-description: This action will reset the state of the component in the jig and it's value.
+description: This action will reset the state of the component in the Jig and its value.
 
 actions:
   - children:

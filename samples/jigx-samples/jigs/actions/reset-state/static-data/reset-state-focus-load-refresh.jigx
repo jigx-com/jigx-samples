@@ -1,6 +1,6 @@
 title: Name
 type: jig.default
-description: This action will reset the state of the component in the jig and it's value when the onFocus/onLoad/onRefresh event is triggered.
+description: This action will reset the state of the component in the Jig and its value when the onFocus/onLoad/onRefresh event is triggered.
 
 onFocus: 
   type: action.reset-state

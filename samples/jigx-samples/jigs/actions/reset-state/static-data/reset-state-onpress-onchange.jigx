@@ -1,6 +1,6 @@
 title: List
 type: jig.list
-description: This action will reset the state of the component in the jig and it's value when the onPress/onChange event is triggered.
+description: This action will reset the state of the component in the Jig and its value when the onPress/onChange event is triggered.
 
 data: =@ctx.datasources.employees-dynamic
 item: 
