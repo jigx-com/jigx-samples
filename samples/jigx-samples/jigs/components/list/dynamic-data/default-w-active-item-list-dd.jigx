@@ -31,3 +31,8 @@ children:
           rightElement: 
             element: value
             text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $string(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $string(@ctx.current.item.onceoffrate) & ' once-off'
+          onPress: 
+            type: action.set-state
+            options:
+              state: =@ctx.solution.state.hasActiveItem
+              value: true
