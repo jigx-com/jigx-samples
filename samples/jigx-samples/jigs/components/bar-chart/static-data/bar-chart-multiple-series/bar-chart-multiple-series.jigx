@@ -25,11 +25,11 @@ children:
           - Q4
       series:
         - data: =@ctx.datasources.series1
-          name: year 2019
+          name: Year 2019
           dataLabels:
             - isEnabled: false
         - data: =@ctx.datasources.series2
-          name: year 2020
+          name: Year 2020
           dataLabels:
             - isEnabled: true
       legend:

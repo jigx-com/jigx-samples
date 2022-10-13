@@ -38,7 +38,7 @@ widgets:
               - Q4
           series:
             - data: =@ctx.datasources.series1-dynamic
-              name: year 2019
+              name: Year 2019
               dataLabels:
                 - isEnabled: false
           legend:

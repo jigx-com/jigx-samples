@@ -9,6 +9,8 @@ children:
           text: "12 months overview"
         height: 260
         isAnimated: false
+      legend:
+        isHidden: true
       yAxis:
         min: 0
         labels:
@@ -35,6 +37,8 @@ widgets:
             chart:
               type: component.bar-chart
               options:
+                legend:
+                  isHidden: true
                 chart:
                   title:
                     text: "12 months overview"

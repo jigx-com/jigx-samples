@@ -4,6 +4,8 @@ type: jig.default
 children:
   - type: component.line-chart
     options:
+      legend:
+        isHidden: true
       chart:
         title:
           text: "12 months overview"

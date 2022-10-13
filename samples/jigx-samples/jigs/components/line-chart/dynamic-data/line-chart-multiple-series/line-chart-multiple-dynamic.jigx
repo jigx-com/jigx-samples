@@ -25,14 +25,14 @@ children:
           - Q4
       series:
         - data: =@ctx.datasources.series1-dynamic
-          name: year 2019
+          name: Year 2019
           animation:
               direction: left-to-right
           layout: area-gradient
           dataLabels:
             - isEnabled: true
         - data: =@ctx.datasources.series2-dynamic
-          name: year 2020
+          name: Xear 2020
           animation:
               direction: left-to-right
           layout: area-gradient
