@@ -20,7 +20,6 @@ children:
 
       item:
         type: component.interactive-image-item
-        instanceId: interactive_img_item_sd
         options:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
