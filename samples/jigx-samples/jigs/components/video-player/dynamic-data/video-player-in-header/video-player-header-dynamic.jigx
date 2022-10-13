@@ -8,7 +8,7 @@ header:
       url: =@ctx.datasources.video-player-dynamic.uri
       autoplay: true
       loop: true
-      ratio: 16:9
+      ratio: "16:9"
 
 
 children:
