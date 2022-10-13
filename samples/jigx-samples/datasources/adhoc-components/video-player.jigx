@@ -1,6 +1,0 @@
-type: datasource.static
-options:
-  data:
-    - uri: https://cdn.videvo.net/videvo_files/video/free/2015-09/large_watermarked/City_Street_preview.mp4
-      title: Street life
-      subtitle: video-player usage examples
