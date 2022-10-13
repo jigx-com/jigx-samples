@@ -6,7 +6,7 @@ datasources:
     type: datasource.static
     options:
       data:
-      - title: Quartal overview 2019
+      - title: Quarterly Overview 2019
         color: color1
         data: 
           - x: Q1
@@ -17,7 +17,7 @@ datasources:
             y: 1250
           - x: Q4
             y: 1700
-      - title: Quartal overview 2020
+      - title: Quarterly Overview 2020
         color: color2
         data:      
           - x: Q1
@@ -28,7 +28,7 @@ datasources:
             y: 1932
           - x: Q4
             y: 2012
-      - title: Quartal overview 2021
+      - title: Quarterly Overview 2021
         color: color3
         data:      
           - x: Q1
@@ -49,6 +49,8 @@ children:
       item: 
         type: component.bar-chart
         options:
+          legend:
+            isHidden: true
           chart:
             title:
               text: =@ctx.current.item.title
