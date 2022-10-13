@@ -23,6 +23,8 @@ widgets:
         options:
           title: "New this week"
           value: =@ctx.datasources.new-orders.date
+          format:
+            numberStyle: percent
           style:
             isValueBottom: true
             isAlignRight: true
