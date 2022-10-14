@@ -43,3 +43,6 @@ options:
     - title: List with Sections
       link: list-with-sections-sd
       color: color8
+    - title: List with all icons
+      link: icon
+      color: color9
