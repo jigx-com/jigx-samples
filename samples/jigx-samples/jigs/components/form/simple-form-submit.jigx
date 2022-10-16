@@ -12,32 +12,25 @@ actions:
           title: Save person
             
 children:
-  - type: component.form
-    instanceId: simple-form
-    options:
-      children:
-          - type: component.text-field
-            instanceId: firstname
-            options:  
-              label: First name
-              initialValue: =@ctx.datasources.form.firstname
-          - type: component.text-field
-            instanceId: lastname
-            options:
-              label: Last name
-              initialValue: =@ctx.datasources.form.lastname
-          - type: component.email-field
-            instanceId: email
-            options:
-              label: Email
-              keyboardType: email-address
-              initialValue: =@ctx.datasources.form.email
-          - type: component.number-field
-            instanceId: phone
-            options:
-              label: Phone number
-              keyboardType: numeric
-              initialValue: =@ctx.datasources.form.phone
+ - type: component.form
+   options:
+     children:
+        - type: component.text-field
+          instanceId: firstname
+          options:
+           label: First name
+        - type: component.text-field
+          instanceId: lastname
+          options:
+            label: Last name
+        - type: component.email-field
+          instanceId: email
+          options:
+            label: Email
+        - type: component.number-field
+          instanceId: phone
+          options:
+            label: Phone number
 
 
                       
