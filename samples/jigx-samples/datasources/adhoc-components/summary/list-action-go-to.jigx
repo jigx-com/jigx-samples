@@ -2,7 +2,7 @@ type: datasource.static
 options:
   data:
     - title: Go-to in action/action-list
-      link: go-to-in-action-list
+      link: go-to-action
       color: color1
     - title: Go-to swipeable left
       link: go-to-swipeable-left
