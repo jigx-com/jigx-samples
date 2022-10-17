@@ -41,7 +41,7 @@ options:
       link: list-with-right-button-dd
       color: color9
     - title: List with right checkboxes
-      link: list-with-right-checkbox-sd
+      link: list-with-right-checkbox-dd
       color: color9
     - title: List with right icons
       link: list-with-right-icon-sd
