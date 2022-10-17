@@ -28,7 +28,7 @@ options:
     - title: List with left progress
       link: list-with-left-progress-dd
       color: color6
-    - title: List with left actions
+    - title: Swipeable list (left)
       link: list-with-swipe-left-sd
       color: color6
     - title: List with right amount control
@@ -52,6 +52,6 @@ options:
     - title: List with right value
       link: list-with-right-value-dd
       color: color12
-    - title: List with right actions
+    - title: Swipeable list (right)
       link: list-with-swipe-right-sd
       color: color13
