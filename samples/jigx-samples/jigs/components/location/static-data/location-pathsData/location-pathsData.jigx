@@ -7,6 +7,9 @@ children:
       pathsData:
         - lat: -33.835523 
           lng: 151.258028
+      markersData:
+        - lat: -33.835523 
+          lng: 151.258028
 
       
 widgets:

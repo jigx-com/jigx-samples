@@ -12,3 +12,4 @@ widgets:
     type: widget.location
     options:
       address: =@ctx.datasources.location-static.address
+      

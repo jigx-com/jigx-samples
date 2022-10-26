@@ -14,3 +14,6 @@ widgets:
       pathsData:
         - lat: 50.081847
           lng: 14.417569
+      markersData:
+        - lat: 50.081847
+          lng: 14.417569
