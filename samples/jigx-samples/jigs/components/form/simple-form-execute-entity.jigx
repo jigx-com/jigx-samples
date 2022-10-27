@@ -1,26 +1,21 @@
 title: Form
 description: My first form with Jigx
 type: jig.default
-
+            
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Submit form
+          formId: new-employee-form
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
-          goBack: stay
           method: save
-          data: 
-            firstname: =@ctx.components.firstname.state.value
-            lastname: =@ctx.components.lastname.state.value
-            email: =@ctx.components.email.state.value
-            phone: =@ctx.components.phone.state.value
-            birthdate: =@ctx.components.birthdate.state.value
+          title: Submit form
 
             
 children:
   - type: component.form
+    instanceId: new-employee-form
     options:
       children:
           - type: component.text-field
