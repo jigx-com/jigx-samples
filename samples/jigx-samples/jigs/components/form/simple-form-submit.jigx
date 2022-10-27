@@ -13,6 +13,7 @@ actions:
             
 children:
  - type: component.form
+   instanceId: simple-form
    options:
      children:
         - type: component.text-field

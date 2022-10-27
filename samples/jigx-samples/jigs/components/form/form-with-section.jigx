@@ -1,25 +1,19 @@
 title: Section and Rows Form
 type: jig.default
-
+            
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Submit form
+          formId: personal-informations-form
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/from
+          entity: default/form
           method: save
-          data:
-            firstname: =@ctx.components.firstname.state.value
-            lastname: =@ctx.components.lastname.state.value
-            email: =@ctx.components.email.state.value
-            phone: =@ctx.components.phone.state.value
-            address: =@ctx.components.address.state.value
-            city: =@ctx.components.city.state.value
-            zip: =@ctx.components.zipcode.state.value
+          title: Submit form
 
 children:
  - type: component.form
+   instanceId: personal-informations-form
    options:
      children:
         - type: component.section
@@ -64,6 +58,6 @@ children:
                       options:
                         label: City
                     - type: component.number-field
-                      instanceId: zipcode
+                      instanceId: zip
                       options:
                         label: Zip code

@@ -4,21 +4,17 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Update form
+          formId: new-person-form
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/from
-          method: update
-          data:
-            firstname: =@ctx.components.firstname.state.value
-            lastname: =@ctx.components.lastname.state.value
-            email: =@ctx.components.email.state.value
-            phone: =@ctx.components.phone.state.value
-            birthdate: =@ctx.components.birthdate.state.value
+          entity: default/form
+          method: save
+          title: Save person
             
 children:
  - type: component.form
+   instanceId: new-person-form
    options:
      children:
         - type: component.text-field
