@@ -5,4 +5,11 @@ options:
   entities:
     - entity: default/finances
 
-  query: SELECT id, '$.title', '$.subtitle', '$.year' , '$.category' FROM [default/finances] WHERE '$.category' = 'finance-review'
+  query: | 
+    SELECT 
+      id, 
+      '$.title', 
+      '$.subtitle', 
+      '$.year', 
+      '$.category' 
+    FROM [default/finances] WHERE '$.category' = 'finance-review'

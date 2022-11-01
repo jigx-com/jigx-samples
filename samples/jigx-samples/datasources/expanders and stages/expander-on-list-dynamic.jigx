@@ -3,4 +3,14 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
     - entity: default/employees
-  query: SELECT id,'$.firstname','$.lastname', '$.email','$.phone', '$.position', '$.address', '$.category' FROM [default/employees] WHERE '$.category' = 'employees-expander'
+  query: | 
+    SELECT 
+      id,
+      '$.firstname',
+      '$.lastname', 
+      '$.email',
+      '$.phone', 
+      '$.position', 
+      '$.address', 
+      '$.category' 
+    FROM [default/employees] WHERE '$.category' = 'employees-expander'

@@ -7,12 +7,12 @@ options:
 
   query: |
     WITH cte AS (
-        SELECT
+      SELECT
         json_extract(data, '$.id') as id,
         json_extract(data, '$.name') as name,
         json_extract(data, '$.items') as items,
         json_extract(data, '$.date') as date
-        FROM[default/new-orders])
-        SELECT
-        COUNT(name) as count
-        FROM cte 
+      FROM[default/new-orders])
+    SELECT
+      COUNT(name) as count
+    FROM cte 

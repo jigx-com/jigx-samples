@@ -5,4 +5,13 @@ options:
   entities:
     - entity: default/charts
 
-  query: SELECT id, json_extract(data, '$.seriesy') as y, '$.color', '$.category', json_extract(data, '$.seriesx') as x, '$.subtitle', '$.title' FROM [default/charts] WHERE '$.category' = "pie-chart-list"
+  query: |
+    SELECT 
+      id, 
+      json_extract(data, '$.seriesy') as y, 
+      '$.color', 
+      '$.category', 
+      json_extract(data, '$.seriesx') as x, 
+      '$.subtitle', 
+      '$.title' 
+    FROM [default/charts] WHERE '$.category' = "pie-chart-list"

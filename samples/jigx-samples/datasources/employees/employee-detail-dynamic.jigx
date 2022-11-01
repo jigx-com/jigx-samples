@@ -5,4 +5,20 @@ options:
   entities:
     - entity: default/employees
 
-  query: SELECT id, '$.firstname', '$.lastname', '$.photo', '$.birthdate', '$.gender', '$.email', '$.phone', '$.street', '$.city', '$.state', '$.country', '$.category', '$.modify' FROM [default/employees] WHERE '$.category' = "employee-detail"
+  query: | 
+    SELECT 
+      id, 
+      '$.firstname', 
+      '$.lastname', 
+      '$.photo', 
+      '$.birthdate', 
+      '$.gender', 
+      '$.email', 
+      '$.phone', 
+      '$.street', 
+      '$.city', 
+      '$.state', 
+      '$.country', 
+      '$.category', 
+      '$.modify' 
+    FROM [default/employees] WHERE '$.category' = "employee-detail"

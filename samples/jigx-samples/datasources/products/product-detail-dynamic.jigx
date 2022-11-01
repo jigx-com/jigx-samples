@@ -5,4 +5,21 @@ options:
   entities:
     - entity: default/products
 
-  query: SELECT id, '$.title', '$.price', '$.uri', '$.overview', '$.bluetooth-detail', '$.precise-detail', '$.recharge-detail', '$.design-detail', '$.compatible-detail', '$.weight-detail', '$.guarantee-detail', '$.shipping-detail', '$.category', '$.productid' FROM [default/products] WHERE '$.category' = "detail" AND '$.productid' = '2'
+  query: |
+    SELECT 
+      id, 
+      '$.title', 
+      '$.price', 
+      '$.uri', 
+      '$.overview', 
+      '$.bluetooth-detail', 
+      '$.precise-detail', 
+      '$.recharge-detail', 
+      '$.design-detail', 
+      '$.compatible-detail', 
+      '$.weight-detail', 
+      '$.guarantee-detail', 
+      '$.shipping-detail', 
+      '$.category', 
+      '$.productid' 
+    FROM [default/products] WHERE '$.category' = "detail" AND '$.productid' = '2'

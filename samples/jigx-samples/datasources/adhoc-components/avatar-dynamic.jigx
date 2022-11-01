@@ -5,4 +5,10 @@ options:
   entities:
     - entity: default/avatar
 
-  query: SELECT id, '$.photo', '$.firstname', '$.lastname' FROM [default/avatar]
+  query: | 
+    SELECT 
+      id, 
+      '$.photo', 
+      '$.firstname', 
+      '$.lastname' 
+    FROM [default/avatar]

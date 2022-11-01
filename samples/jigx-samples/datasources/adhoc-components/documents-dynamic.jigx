@@ -5,4 +5,11 @@ options:
   entities:
     - entity: default/documents
 
-  query: SELECT id, '$.name', '$.description', '$.type', '$.url' FROM [default/documents] 
+  query: |
+    SELECT 
+      id, 
+      '$.name', 
+      '$.description', 
+      '$.type', 
+      '$.url' 
+    FROM [default/documents] 
