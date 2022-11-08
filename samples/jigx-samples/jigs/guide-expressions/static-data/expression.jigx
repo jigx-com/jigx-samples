@@ -47,15 +47,47 @@ children:
         - type: component.entity-field
           options:
             label: String concat expression
-            value: =@ctx.data.mydata.name & ' ' & @ctx.data.mydata.title
+            value: =@ctx.datasources.mydata.name & ' ' & @ctx.datasources.mydata.title
         - type: component.entity-field
           options:
-            label: Agregation expression select MAX value from array
-            value: =$max(@ctx.data.mydata.array)
+            label: String length
+            value: =$length(@ctx.datasources.mydata.name)
+        - type: component.entity-field
+          options:
+            label: Substring
+            value: =$substring(@ctx.datasources.mydata.name, 3, 5)
+        - type: component.entity-field
+          options:
+            label: Substring before
+            value: =$substringBefore(@ctx.datasources.mydata.name, " ")
+        - type: component.entity-field
+          options:
+            label: Substring after
+            value: =$substringAfter(@ctx.datasources.mydata.name, " ")
+        - type: component.entity-field
+          options:
+            label: Upper case
+            value: =$uppercase(@ctx.datasources.mydata.name)
+        - type: component.entity-field
+          options:
+            label: Lower case
+            value: =$lowercase(@ctx.datasources.mydata.name)
+        - type: component.entity-field
+          options:
+            label: Max
+            value: =$max(@ctx.datasources.mydata.array)
+        - type: component.entity-field
+          options:
+            label: Min
+            value: =$min(@ctx.datasources.mydata.array)
+        - type: component.entity-field
+          options:
+            label: Sum
+            value: =$sum(@ctx.datasources.mydata.array)
         - type: component.entity-field
           options:
             label: Functional expression
-            value: =@ctx.data.mydata.number2 > 10 ? 'Number is bigger':'Number is lower'
+            value: =@ctx.datasources.mydata.number2 > 10 ? 'Number is bigger':'Number is lower'
         - type: component.entity-field
           options:
             label: Current timestamp as ISO 8601
@@ -66,12 +98,48 @@ children:
             value: =$toMillis($now())
         - type: component.entity-field
           options:
+            label: Current date [M]/[D]/[Y]
+            value: =$fromMillis($toMillis($now()), '[M]/[D]/[Y]')
+        - type: component.entity-field
+          options:
+            label: Current date [M01]/[D01]/[Y0001]
+            value: =$fromMillis($toMillis($now()), '[M01]/[D01]/[Y0001]')
+        - type: component.entity-field
+          options:
+            label: Current datetime '[M01]/[D01]/[Y0001] [H01]:[m01]:[s01]'
+            value: =$fromMillis($toMillis($now()), '[M01]/[D01]/[Y0001] [H01]:[m01]:[s01]')
+        - type: component.entity-field
+          options:
+            label: Current date [MI]/[DI]/[YI]
+            value: =$fromMillis($toMillis($now()), '[MI]/[DI]/[YI]')
+        - type: component.entity-field
+          options:
+            label: Current date [D1o] [MNn] [Y]
+            value: =$fromMillis($toMillis($now()), '[D1o] [MNn] [Y]')
+        - type: component.entity-field
+          options:
+            label: Current day
+            value: =$fromMillis($toMillis($now()), '[FNn]')
+        - type: component.entity-field
+          options:
+            label: Current time
+            value: =$fromMillis($toMillis($now()), '[H01]:[m01]:[s01]')
+        - type: component.entity-field
+          options:
+            label: Current time am/pm
+            value: =$fromMillis($toMillis($now()), '[h#1]:[m01][P]')
+        - type: component.entity-field
+          options:
+            label: Current time '[H01]:[m01]:[s01] [z]', '-0500'
+            value: =$fromMillis($toMillis($now()), '[H01]:[m01]:[s01] [z]', '-0500')
+        - type: component.entity-field
+          options:
             label: Compare expression
-            value: =@ctx.data.mydata.color = 'blue' and @ctx.data.mydata.number2 != 0 ? 'Statement is true':'Statement is false'
+            value: =@ctx.datasources.mydata.color = 'blue' and @ctx.datasources.mydata.number2 != 0 ? 'Statement is true':'Statement is false'
         - type: component.entity-field
           options:
             label: Predicate expression
-            value: =@ctx.data.mydata[title='Doctor' and color='blue'].name
+            value: =@ctx.datasources.mydata[title='Doctor' and color='blue'].name
         - type: component.entity-field
           options:
             label: Languague
