@@ -13,10 +13,11 @@ actions:
           title: Update employee
           goBack: stay
           onSuccess:
+            title: Employee was updated
             actions:
               - type: action.confirm
                 options:
-                  title: Employee was updated
+                  title: Go to list of Employees
                   isConfirmedAutomatically: true
                   onConfirmed: 
                     type: action.go-back

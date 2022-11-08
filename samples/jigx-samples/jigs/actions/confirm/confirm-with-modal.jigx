@@ -9,22 +9,25 @@ actions:
           title: Update employee
           isConfirmedAutomatically: false
           modal:
-            title: Are you sure you want to update the employee details?
-            confirm: 'Yes, update'
+            title: Update employee
+            description: Are you sure you want to update the employee details?
+            confirm: 'Update'
             cancel: 'Cancel'
           onConfirmed: 
             type: action.submit-form
             options:
               formId: simple-form
               provider: DATA_PROVIDER_DYNAMIC
-              entity: default/form
+              entity: default/formm
               method: save
               goBack: stay
               onSuccess: 
+                title: Employee was updated
+                description: You can also continue with next actions
                 actions:
                   - type: action.confirm
                     options:
-                      title: Employee was updated
+                      title: Go to list of Employees
                       isConfirmedAutomatically: true
                       onConfirmed: 
                         type: action.go-back
