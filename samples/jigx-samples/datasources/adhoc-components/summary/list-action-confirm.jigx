@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Confirm action
+      link: confirm
+      color: color1
+    - title: Confirm action with modal
+      link: confirm-with-modal
+      color: color2

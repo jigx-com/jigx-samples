@@ -6,7 +6,7 @@ options:
       icon: play
       color: color1
     - action: Confirm
-      actionLink: confirm
+      actionLink: list-action-confirm
       icon: check-circle-1
       color: color2
     - action: Execute-entities

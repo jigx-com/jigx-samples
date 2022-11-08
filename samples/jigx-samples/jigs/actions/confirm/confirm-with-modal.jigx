@@ -1,0 +1,51 @@
+title: Confirm example
+type: jig.default
+description: When you submit the form, the modal confirming if you wish to proceed will pop up and if the submission will be successful the confirm action will pop up.
+
+actions:
+  - children:
+      - type: action.confirm
+        options:
+          title: Update employee
+          isConfirmedAutomatically: false
+          modal:
+            title: Are you sure you want to update the employee details?
+            confirm: 'Yes, update'
+            cancel: 'Cancel'
+          onConfirmed: 
+            type: action.submit-form
+            options:
+              formId: simple-form
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/form
+              method: save
+              goBack: stay
+              onSuccess: 
+                actions:
+                  - type: action.confirm
+                    options:
+                      title: Employee was updated
+                      isConfirmedAutomatically: true
+                      onConfirmed: 
+                        type: action.go-back
+                      modal:
+                        title: ""
+
+children:
+  - type: component.form
+    instanceId: simple-form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: firstname
+          options:
+            label: First name
+        - type: component.text-field
+          instanceId: lastname
+          options:
+            label: Last name
+        - type: component.text-field
+          instanceId: phone
+          options:
+            label: Phone number
+            keyboardType: decimal-pad
