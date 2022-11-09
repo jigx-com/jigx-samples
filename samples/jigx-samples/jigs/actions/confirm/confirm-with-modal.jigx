@@ -21,18 +21,6 @@ actions:
               entity: default/formm
               method: save
               goBack: stay
-              onSuccess: 
-                title: Employee was updated
-                description: You can also continue with next actions
-                actions:
-                  - type: action.confirm
-                    options:
-                      title: Go to list of Employees
-                      isConfirmedAutomatically: true
-                      onConfirmed: 
-                        type: action.go-back
-                      modal:
-                        title: ""
 
 children:
   - type: component.form
