@@ -2,7 +2,7 @@ type: datasource.static
 options:
   data:
     - title: Simple list
-      link: simple-list-sd-local
+      link: simple-list-comp-sd-local
       color: color1
     - title: Simple list with dividers
       link: simple-list-divider-sd

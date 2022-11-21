@@ -11,18 +11,18 @@ header:
 
 actions:
   - children:
-      - type: action.execute-entity
-        options:
-          title: Send Form
-          provider: DATA_PROVIDER_DYNAMIC
-          method: save
-          goBack: stay
-          entity: default/form
-          data:
-            firstname: =@ctx.jig.state.firstname.value
-            lastname: =@ctx.jig.state.lastname.value
-            email: =@ctx.jig.state.email.value
-            phone: =@ctx.jigx.state.phone.value
+    - type: action.execute-entity
+      options:
+        title: Send Form
+        provider: DATA_PROVIDER_DYNAMIC
+        method: save
+        goBack: stay
+        entity: default/form
+        data:
+          firstname: =@ctx.components.firstname.state.value
+          lastname: =@ctx.components.lastname.state.value
+          email: =@ctx.components.email.state.value
+          phone: =@ctx.components.phone.state.value
 
 
 children:
@@ -36,12 +36,12 @@ children:
                 instanceId: firstname
                 options:
                   label: First Name
-                  value: =@ctx.datasource.employee-detail-dynamic.firstname
+                  value: =@ctx.datasources.employee-detail-dynamic.firstname
               - type: component.entity-field
                 instanceId: lastname
                 options:
                   label: Last Name
-                  value: =@ctx.datasource.employee-detail-dynamic.lastname
+                  value: =@ctx.datasources.employee-detail-dynamic.lastname
         - type: component.field-row
           options:
             children:
@@ -49,9 +49,9 @@ children:
                 instanceId: email
                 options:
                   label: Email
-                  value: =@ctx.datasource.employee-detail-dynamic.email
+                  value: =@ctx.datasources.employee-detail-dynamic.email
               - type: component.entity-field
                 instanceId: phone
                 options:
                   label: Phone
-                  value: =@ctx.datasource.employee-detail-dynamic.phone
+                  value: =@ctx.datasources.employee-detail-dynamic.phone

@@ -3,17 +3,13 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Submit
+          formId: work-engagement-form
           provider: DATA_PROVIDER_DYNAMIC
+          title: Submit form
           entity: default/form
           method: save
-          data:
-            id: =@ctx.datasources.id.state.value
-            order: =@ctx.datasources.order.state.value
-            day: =@ctx.datasources.day.state.value
-            
 
 header: 
   type: component.image
