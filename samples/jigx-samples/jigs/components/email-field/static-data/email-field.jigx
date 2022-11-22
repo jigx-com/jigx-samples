@@ -11,6 +11,9 @@ actions:
           entity: default/form
           method: save
           goBack: previous
+          onSuccess: 
+            title: Email form
+            description: Your email form was submitted
 
 header:
     type: component.image

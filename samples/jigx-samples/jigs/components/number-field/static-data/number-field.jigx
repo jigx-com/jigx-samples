@@ -11,6 +11,9 @@ actions:
           entity: default/form
           method: save
           goBack: previous
+          onSuccess: 
+            title: Number form
+            description: Your form was submitted
 
 header:
     type: component.image

@@ -3,23 +3,21 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
-        options:
-          title: Upload picture
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/avatar-field
-          method: save
-          data: 
-            picture: =@ctx.components.avatar-field.state.value
-          onSuccess: 
-            title: Your picture was uploaded
-            actions:
-              - type: action.go-back
-                options:
-                  title: ''
+    - type: action.submit-form
+      options:
+        formId: avatar-form
+        provider: DATA_PROVIDER_DYNAMIC
+        title: Submit form
+        entity: default/form
+        method: save
+        goBack: previous
+        onSuccess: 
+          title: Avatar form
+          description: Your form was submitted
       
 children:
   - type: component.form
+    instanceId: avatar-form
     options:
       children:
         - type: component.avatar-field
@@ -36,4 +34,3 @@ children:
               height: 120
             isHidden: false
             isIgnored: false
-            isRequired: false

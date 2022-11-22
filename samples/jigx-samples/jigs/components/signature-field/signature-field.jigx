@@ -3,17 +3,27 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
-        instanceId: send-signature
+      - type: action.submit-form
         options:
-          title: Sign
+          formId: new-customer-form
           provider: DATA_PROVIDER_DYNAMIC
+          title: Sign
           entity: default/form
           method: save
-          icon: add
-          goBack: home
           onSuccess: 
-            title: Succesfully signed
+            title: Signature form
+            description: Your form was successfully signed
+
+      # - type: action.execute-entity
+      #   options:
+      #     title: Sign
+      #     provider: DATA_PROVIDER_DYNAMIC
+      #     entity: default/form
+      #     method: save
+      #     icon: add
+      #     goBack: previous
+      #     onSuccess: 
+      #       title: Succesfully signed
 
 header:
     type: component.image

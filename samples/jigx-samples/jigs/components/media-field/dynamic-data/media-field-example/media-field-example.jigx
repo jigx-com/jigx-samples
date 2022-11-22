@@ -3,23 +3,20 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Upload file
+          formId: media-form
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/media-field
+          title: Upload file
+          entity: default/form
           method: save
-          data: 
-            picture: =@ctx.components.media-field.state.value
           onSuccess: 
-            title: Your file was uploaded
-            actions:
-              - type: action.go-back
-                options:
-                  title: ''
+            title: Media form
+            description: Your file was uploaded
       
 children:
   - type: component.form
+    instanceId: media-form
     options:
       children:
         - type: component.media-field
@@ -36,6 +33,5 @@ children:
             isHidden: false
             isIgnored: false
             isMultiple: false
-            isRequired: false
             style:
               flex: 0
