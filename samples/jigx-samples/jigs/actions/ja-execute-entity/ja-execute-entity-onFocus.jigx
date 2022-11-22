@@ -25,12 +25,12 @@ children:
                 instanceId: firstname
                 options:
                   label: First Name
-                  value: =@ctx.data.employees.firstname
+                  value: =@ctx.datasources.employees-dynamic.firstname
               - type: component.entity-field
                 instanceId: lastname
                 options:
                   label: Last Name
-                  value: =@ctx.data.employees.lastname
+                  value: =@ctx.datasources.employees-dynamic.lastname
         - type: component.field-row
           options:
             children:
@@ -38,9 +38,9 @@ children:
                 instanceId: email
                 options:
                   label: Email
-                  value: =@ctx.data.employees.email
+                  value: =@ctx.datasources.employees-dynamic.email
               - type: component.entity-field
                 instanceId: phone
                 options:
                   label: Phone
-                  value: =@ctx.data.employees.phone
+                  value: =@ctx.datasources.employees-dynamic.phone

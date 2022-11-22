@@ -3,12 +3,14 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Submit
+          formId: number-form
           provider: DATA_PROVIDER_DYNAMIC
+          title: Submit form
           entity: default/form
           method: save
+          goBack: previous
 
 header:
     type: component.image

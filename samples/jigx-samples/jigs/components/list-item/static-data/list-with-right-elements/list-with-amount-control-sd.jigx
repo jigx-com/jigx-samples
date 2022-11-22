@@ -65,6 +65,7 @@ children:
       data: =@ctx.datasources.amount-control1
       item:
         type: component.list-item
+        instanceId: item
         options:
           title: =@ctx.current.item.name
           subtitle: =@ctx.current.item.description
@@ -82,7 +83,7 @@ children:
                 method: update
                 data:
                   id: =@ctx.current.item.id
-                  quantity: =@ctx.item.state.amount
+                  quantity: =@ctx.components.item.state.amount
                 goBack: stay
             onDelete: 
               type: action.execute-entity

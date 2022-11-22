@@ -22,10 +22,10 @@ actions:
                 goBack: stay
                 entity: default/form
                 data:
-                  firstname: =@ctx.jig.state.firstname.value
-                  lastname: =@ctx.jig.state.lastname.value
-                  email: =@ctx.jig.state.email.value
-                  phone: =@ctx.jigx.state.phone.value
+                  firstname: =@ctx.components.firstname.state.value
+                  lastname: =@ctx.components.lastname.state.value
+                  email: =@ctx.components.email.state.value
+                  phone: =@ctx.components.phone.state.value
             - type: action.go-to
               options:
                 linkTo: ja-execute-entity-onPress
@@ -41,12 +41,12 @@ children:
                 instanceId: firstname
                 options:
                   label: First Name
-                  value: =@ctx.datasource.employees.firstname
+                  value: =@ctx.datasources.employees-dynamic.firstname
               - type: component.entity-field
                 instanceId: lastname
                 options:
                   label: Last Name
-                  value: =@ctx.datasource.employees.lastname
+                  value: =@ctx.datasources.employees-dynamic.lastname
         - type: component.field-row
           options:
             children:
@@ -54,9 +54,9 @@ children:
                 instanceId: email
                 options:
                   label: Email
-                  value: =@ctx.datasource.employees.email
+                  value: =@ctx.datasources.employees-dynamic.email
               - type: component.entity-field
                 instanceId: phone
                 options:
                   label: Phone
-                  value: =@ctx.datasource.employees.phone
+                  value: =@ctx.datasources.employees-dynamic.phone

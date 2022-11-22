@@ -18,13 +18,13 @@ actions:
           method: update
           data: 
             id: =@ctx.jig.inputs.id
-            service: =@ctx.jig.state.cleaning_serv_tf.value
-            area: =@ctx.jig.state.cleaning_serv_area_tf.value
-            time: =@ctx.jig.state.cleaning_serv_time_num.value
-            indoor: =@ctx.jig.state.cleaning_serv_indoor_checkbox.value
-            description: =@ctx.jig.state.cleaning_serv_desc_tf.value
-            hourlyRate: =@ctx.jig.state.cleaning_serv_hourly_tf.value
-            onceOffRate: =@ctx.jig.state.cleaning_serv_once_tf.value
+            service: =@ctx.components.cleaning_serv_tf.state.value
+            area: =@ctx.components.cleaning_serv_area_tf.state.value
+            time: =@ctx.components.cleaning_serv_time_num.state.value
+            indoor: =@ctx.components.cleaning_serv_indoor_checkbox.state.value
+            description: =@ctx.components.cleaning_serv_desc_tf.state.value
+            hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
+            onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
 
 
 children:
@@ -40,7 +40,7 @@ children:
                   label: Service
                   value: =@ctx.datasources.cleaning-services-dd.service
               - type: component.text-field
-                instanceId: cleaning_area_tf
+                instanceId: cleaning_serv_area_tf
                 options:
                   label: Area
                   value: =@ctx.datasources.cleaning-services-dd.area

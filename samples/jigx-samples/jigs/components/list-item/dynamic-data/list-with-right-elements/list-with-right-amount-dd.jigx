@@ -12,6 +12,7 @@ header:
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
+  instanceId: ammount-control
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
@@ -29,6 +30,6 @@ item:
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.item.state.amount
+            quantity: =@ctx.components.ammount-control.state.amount
           goBack: stay
       
