@@ -3,12 +3,17 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
-        options:
-          title: Submit
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/form
-          method: save
+    - type: action.submit-form
+      options:
+        formId: text-form
+        provider: DATA_PROVIDER_DYNAMIC
+        title: Submit form
+        entity: default/form
+        method: save
+        goBack: previous
+        onSuccess: 
+          title: Text form
+          description: Your form was submitted
 
 header:
     type: component.image

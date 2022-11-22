@@ -17,14 +17,13 @@ actions:
           entity: default/cleaning-services-dynamic
           method: update
           data: 
-            id: =@ctx.jig.inputs.id
-            service: =@ctx.jig.state.cleaning_serv_tf.value
-            area: =@ctx.jig.state.cleaning_serv_area_tf.value
-            time: =@ctx.jig.state.cleaning_serv_time_num.value
-            indoor: =@ctx.jig.state.cleaning_serv_indoor_checkbox.value
-            description: =@ctx.jig.state.cleaning_serv_desc_tf.value
-            hourlyRate: =@ctx.jig.state.cleaning_serv_hourly_tf.value
-            onceOffRate: =@ctx.jig.state.cleaning_serv_once_tf.value
+            service: =@ctx.components.cleaning_serv_tf.state.value
+            area: =@ctx.components.cleaning_serv_area_tf.state.value
+            time: =@ctx.components.cleaning_serv_time_num.state.value
+            indoor: =@ctx.components.cleaning_serv_indoor_checkbox.state.value
+            description: =@ctx.components.cleaning_serv_desc_tf.state.value
+            hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
+            onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
 
 
 children:
@@ -42,27 +41,27 @@ children:
                       instanceId: cleaning_serv_tf
                       options:
                         label: Service
-                        value: =@ctx.datasources.cleaning-services-dynamic.service
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].service
                     - type: component.text-field
-                      instanceId: cleaning_area_tf
+                      instanceId: cleaning_serv_area_tf
                       options:
                         label: Area
-                        value: =@ctx.datasources.cleaning-services-dynamic.area
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].area
               - type: component.field-row
                 options:
                   children:
                     - type: component.number-field
                       instanceId: cleaning_serv_time_num
                       options:
-                        label: Time
-                        value: =@ctx.datasources.cleaning-services-dynamic.time & ' minutes'
+                        label: Time in mins
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].time
                         keyboardType: number-pad
                     - type: component.checkbox
                       instanceId: cleaning_serv_indoor_checkbox
                       options:
                         label: Indoor
-                        value: =@ctx.datasources.cleaning-services-dynamic.indoor
-                        type: checkbox
+                        value: =@ctx.datasources.cleaning-services-dynamic[0]].indoor
+                     
               - type: component.field-row
                 options:
                   children:
@@ -70,7 +69,7 @@ children:
                       instanceId: cleaning_serv_desc_tf
                       options:
                         label: Description
-                        value: =@ctx.datasources.cleaning-services-dynamic.description
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].description
                         isMultiline: true
         - type: component.section
           options:
@@ -83,12 +82,12 @@ children:
                       instanceId: cleaning_serv_hourly_tf
                       options:
                         label: Hourly Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic.hourlyrate
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate
                     - type: component.text-field
                       instanceId: cleaning_serv_once_tf
                       options:
                         label: Once Off Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic.onceoffrate                         
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate                         
 
 datasources:
   cleaning-services-dynamic:
@@ -99,7 +98,5 @@ datasources:
       entities:
         - entity: default/cleaning-services-dynamic
   
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE id = @id
-      queryParameters:
-        id: =@ctx.jig.inputs.id
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic]
 
