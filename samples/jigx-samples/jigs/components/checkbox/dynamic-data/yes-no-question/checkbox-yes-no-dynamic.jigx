@@ -10,6 +10,9 @@ actions:
           title: Submit form
           entity: default/form
           method: save
+          onSuccess: 
+            title: Checkbox form
+            description: Your form was submitted
 
 header:
   type: component.image

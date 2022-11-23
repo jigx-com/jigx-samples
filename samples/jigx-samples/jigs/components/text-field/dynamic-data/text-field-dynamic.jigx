@@ -28,7 +28,7 @@ children:
     options:
       children: 
         - type: component.text-field
-          instanceId: name
+          instanceId: firstname
           options:
             label: Name
             helperText: =@ctx.datasources.field-values.text
