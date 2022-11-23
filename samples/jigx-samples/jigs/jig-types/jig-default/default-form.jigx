@@ -3,24 +3,19 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.execute-entity
+      - type: action.submit-form
         options:
-          title: Submit form
+          formId: default-form
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/form
-          goBack: stay
+          title: Submit form
           method: save
-          data: 
-            firstname: =@ctx.components.firstname.state.value
-            lastname: =@ctx.components.lastname.state.value
-            email: =@ctx.components.email.state.value
-            phone: =@ctx.components.phone.state.value
-            birthdate: =@ctx.components.birthdate.state.value
-            gender: =@ctx.components.gender.state.value
+          entity: default/form
+          
 
             
 children:
   - type: component.form
+    instanceId: default-form
     options:
       children:
         - type: component.field-row
@@ -52,7 +47,7 @@ children:
                 options:
                   label: Birth date
               - type: component.dropdown
-                instanceId: dropdown-in
+                instanceId: gender
                 options:
                   data: =@ctx.datasources.gender-static
                   label: Select gender
