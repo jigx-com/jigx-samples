@@ -17,7 +17,7 @@ onFocus:
         function: get-user-profile
         functionParameters:
           accessToken: microsoft.OAuth
-          user-id: =@ctx.user.email
+          userId: =@ctx.user.email
 
 datasources:
   userProfile: 

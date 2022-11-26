@@ -1,0 +1,40 @@
+title: View Profile Picture
+description: Display a user's Microsoft Grpah profile photo
+type: jig.default
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: profile-picture
+        function: get-profile-picture
+        functionParameters:
+          accessToken: microsoft.OAuth
+          userId: =@ctx.user.email
+
+datasources:
+  profilePhoto:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: profile-picture
+      query: SELECT id, '$.userId', '$.data' FROM [profile-picture] WHERE '$.userId' = @userId
+      queryParameters:
+        userId: =@ctx.user.email
+      isDocument: true
+
+children:
+  - type: component.image
+    options:
+      source:
+        uri: ="data:image/png;base64," & @ctx.datasources.profilePhoto.data #append base64 to data returned from Microsoft Graph to correctly identify the encoding type
+      height: 400
+      resizeMode: contain
