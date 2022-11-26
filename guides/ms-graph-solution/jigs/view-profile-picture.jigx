@@ -1,5 +1,5 @@
 title: View Profile Picture
-description: Display a user's Microsoft Grpah profile photo
+description: Display a user's Microsoft Graph profile photo
 type: jig.default
 
 header:
