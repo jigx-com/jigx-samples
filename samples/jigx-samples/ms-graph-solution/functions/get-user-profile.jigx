@@ -1,0 +1,14 @@
+provider: DATA_PROVIDER_REST
+method: GET
+url: https://graph.microsoft.com/v1.0/users/{user-id}
+outputTransform: $
+parameters:
+  accessToken:
+    location: header
+    required: true
+    type: string
+    value: microsoft.OAuth #Use manage.jigx.com to define credentials for your solution
+  user-id:
+    type: string
+    location: path
+    required: true

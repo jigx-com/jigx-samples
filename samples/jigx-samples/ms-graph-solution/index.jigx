@@ -1,0 +1,6 @@
+name: microsoft-graph-examples
+title: Microsoft Graph Examples
+category: operations
+widgets:
+  - size: 1x1 # choose size of the widget on the home hub
+    jigId: view-user-profile
