@@ -1,0 +1,54 @@
+title: View Calendar List
+description: View all calendars in Microsoft Graph for a user
+type: jig.list
+icon: calendar
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: calendars
+        function: get-calendar-list
+        functionParameters:
+          accessToken: microsoft.OAuth
+          userId: =@ctx.user.email
+
+datasources:
+  calendarList:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: calendars
+      query: |
+        SELECT id
+        '$.id',
+        '$.name',
+        '$.color',
+        '$.hexColor',
+        '$.isDefaultCalendar',
+        '$.canShare',
+        '$.canViewPrivateItems',
+        '$.canEdit',
+        '$.allowedOnlineMeetingProviders',
+        '$.defaultOnlineMeetingProvider',
+        '$.isRemovable',
+        '$.owner'
+        FROM [calendars]
+
+data: =@ctx.datasources.calendarList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      name: calendar-3
