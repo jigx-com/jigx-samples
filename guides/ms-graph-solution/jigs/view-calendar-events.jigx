@@ -1,0 +1,80 @@
+title: Calendar
+type: jig.calendar
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+onRefresh: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: calendarEvents
+        function: get-calendar-event-list
+        functionParameters:
+          accessToken: microsoft.OAuth
+          userId: =@ctx.user.email
+          calendarId: =@ctx.jig.inputs.calId
+
+datasources:
+  calendarEvents: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: calendarEvents
+      query: |
+        SELECT id,
+        '$.id' as eventId,
+        '$.createdDateTime',
+        '$.lastModifiedDateTime',
+        '$.originalStartTimeZone',
+        '$.originalEndTimeZone',
+        '$.reminderMinutesBeforeStart',
+        '$.isReminderOn',
+        '$.hasAttachments',
+        '$.subject',
+        '$.bodyPreview',
+        '$.importance',
+        '$.sensitivity',
+        '$.isAllDay',
+        '$.isCancelled',
+        '$.isOrganizer',
+        '$.showAs',
+        '$.webLink',
+        json_extract(Data, '$.onlineMeetingUrl.joinUrl') as onlineMeetingUrl,
+        '$.isOnlineMeeting',
+        '$.onlineMeetingProvider',
+        '$.onlineMeeting',
+        json_extract(Data, '$.body.contentType') as bodyContentType,
+        json_extract(Data, '$.body.content') as bodyContent,
+        json_extract(Data, '$.start.dateTime') as startTime,
+        json_extract(Data, '$.end.dateTime') as endTime,
+        '$.location',
+        '$.attendees',
+        '$.organizer'
+        FROM [calendarEvents]
+
+data: =@ctx.datasources.calendarEvents
+item:
+  type: component.event
+  options:
+    from: =@ctx.current.item.startTime
+    to: =@ctx.current.item.endTime
+    title: =@ctx.current.item.subject
+    location: "='Importance: ' & @ctx.current.item.importance"
+    description: =@ctx.current.item.bodyPreview
+    isAllDay: =@ctx.current.item.isAllDay
+    people: "=$eval(@ctx.current.item.attendees).{'fullName': emailAddress.address, 'email': emailAddress.address}"
+    buttonTitle: View Event Details
+    onButtonPress: 
+      type: action.go-to
+      options:
+        title: Event Details
+        linkTo: view-calendar-event-details
+        parameters:
+          calId: =@ctx.jig.inputs.calId
+          eventId: =@ctx.current.item.eventId

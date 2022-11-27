@@ -28,8 +28,8 @@ datasources:
       entities:
         - entity: calendars
       query: |
-        SELECT id
-        '$.id',
+        SELECT id,
+        '$.id' as calId,
         '$.name',
         '$.color',
         '$.hexColor',
@@ -52,3 +52,9 @@ item:
     leftElement: 
       element: icon
       name: calendar-3
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-calendar-events
+        parameters:
+          calId: =@ctx.current.item.calId
