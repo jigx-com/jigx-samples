@@ -1,0 +1,112 @@
+title: Create new calendar event
+description: Create a new calendar event in the selected calendar.
+type: jig.default
+icon: calendar
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+onRefresh: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: calendars
+        function: get-calendar-list
+        functionParameters:
+          accessToken: microsoft.OAuth
+          userId: =@ctx.user.email
+
+datasources:
+  availableCalendars: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: calendars
+      query: |
+        SELECT id,
+        '$.id' as calId,
+        '$.name',
+        '$.color',
+        '$.hexColor',
+        '$.isDefaultCalendar',
+        '$.canShare',
+        '$.canViewPrivateItems',
+        '$.canEdit',
+        '$.allowedOnlineMeetingProviders',
+        '$.defaultOnlineMeetingProvider',
+        '$.isRemovable',
+        '$.owner'
+        FROM [calendars]
+        WHERE '$.canEdit' = true
+
+children:
+  - type: component.form
+    instanceId: newEeventForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.dropdown
+          instanceId: calendarId
+          options:
+            label: Calendar
+            data: =@ctx.datasources.availableCalendars
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name
+                value: =@ctx.current.item.calId
+            isRequired: true
+        - type: component.text-field
+          instanceId: subject
+          options:
+            label: Subject
+        - type: component.text-field
+          instanceId: description
+          options:
+            label: Description
+            isMultiline: true
+            textArea: medium
+        - type: component.text-field
+          instanceId: location
+          options:
+            label: Location
+        - type: component.date-picker
+          instanceId: startDateTime
+          options:
+            label: Start
+            mode: datetime
+            format: LLL
+        - type: component.date-picker
+          instanceId: endDateTime
+          options:
+            label: End
+            mode: datetime
+            format: LLL
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Create Event
+          provider: DATA_PROVIDER_REST
+          function: create-calendar-event
+          entity: calendarEvents
+          method: functionCall
+          functionParameters:
+            accessToken: microsoft.OAuth
+            userId: =@ctx.user.email
+            calendarId: =@ctx.components.calendarId.state.selected.calId
+            subject: =@ctx.components.subject.state.value
+            description: =@ctx.components.description.state.value
+            startDateTime: =@ctx.components.startDateTime.state.value
+            startDateTimeTimeZone: =@ctx.system.timezone.name
+            endDateTime: =@ctx.components.endDateTime.state.value
+            endDateTimeTimeZone: =@ctx.system.timezone.name
+            location: =@ctx.components.location.state.value
+          onSuccess: 
+            description: "Event Created"
+            title: "Event Created"
