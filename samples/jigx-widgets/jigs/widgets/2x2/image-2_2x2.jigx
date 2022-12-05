@@ -1,0 +1,27 @@
+title: Image widget 2 (2x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+
+
+                
+widgets:
+  "2x2": 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2159&q=80      
+      isContentOverlaid: false
+      bottom: 
+        type: component.titles
+        options:
+          title: Seljalandsfoss
+          subtitle: Iceland
+          icon: pin

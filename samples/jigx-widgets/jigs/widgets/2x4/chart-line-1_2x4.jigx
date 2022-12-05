@@ -1,0 +1,68 @@
+title: Line chart 1 (2x4)
+type: jig.default
+
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - x: Q1/20
+          y: 35000
+        - x: Q2/20
+          y: 32000
+        - x: Q3/20
+          y: 28000
+        - x: Q4/20
+          y: 45000
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+
+widgets:
+  "2x4": 
+    type: widget.chart
+    options:
+      top: 
+        type: component.titles
+        options:
+          title: Company Perf.
+          subtitle: "2022"
+        
+      chart: 
+        type: component.line-chart
+        options:
+          plotOptions:
+            series:
+              marker:
+                isHidden: true
+          series:
+            - animation:
+                direction: left-to-right
+              data: =@ctx.datasources.static-data
+              name: Quarterly Revenue 2020
+              color: color6
+              layout: area-gradient
+          xAxis:
+            categories:
+              - Q1
+              - Q2
+              - Q3
+              - Q4
+          yAxis:
+            isFirstLabelHidden: true
+            isFirstTickHidden: true
+            labels:
+              format:
+                compactDisplay: short
+                notation: compact
+                numberStyle: currency
+            min: 0
+            max: 75000
+            tickAmount: 6
+ 

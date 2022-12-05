@@ -1,0 +1,26 @@
+title: Location widget 2 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:      
+  "4x2": 
+    type: widget.location
+    options:
+      address: Brno  
+      bottom:
+        type: component.titles
+        options:
+          title: Brno
+          subtitle: Pod Strediskem 768
+          align: left
+          icon: pin
+          
+          

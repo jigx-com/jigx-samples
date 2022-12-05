@@ -1,0 +1,34 @@
+title: List widget 1 (4x4)
+type: jig.list
+
+data: =@ctx.datasources.components
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    
+widgets:            
+  "4x4": 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.components
+      item: 
+        type: component.list-item        
+        options:
+          title: =@ctx.current.item.name
+          subtitle: =@ctx.current.item.reason
+          color:
+            - when: =(@ctx.current.item.result= 'Success' ? true :false) 
+              color: primary
+          progress: =@ctx.current.item.progress
+          leftElement: 
+            element: checkbox
+            value: =(@ctx.current.item.status= 'Finished' ? true :false)
+          style:
+            isError: =(@ctx.current.item.result= 'Unsuccess' ? true :false)
+            isStrikeThrough: =(@ctx.current.item.status= 'Finished' ? true :false)
+          rightElement: 
+            element: value      
+            text: =@ctx.current.item.value
+            

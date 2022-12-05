@@ -1,0 +1,39 @@
+type: datasource.static
+options:
+  data:
+    - name: Boris Miranda
+      position: UX Designer
+      uri: https://randomuser.me/api/portraits/men/32.jpg
+      uri-text: BM
+      status: Accepted
+      
+    - name: Santiago Hampton
+      position: Senior Frontend Developer
+      uri: https://randomuser.me/api/portraits/men/46.jpg
+      uri-text: SH
+      status: Accepted
+      
+    - name: Tom Sellers
+      position: QA Engineer
+      uri: https://randomuser.me/api/portraits/men/97.jpg
+      uri-text: TS
+      status: Declined
+      
+    - name: Anne Dopp
+      position: HR Administrator
+      uri: https://randomuser.me/api/portraits/women/79.jpg
+      uri-text: AD
+      status: Accepted
+      
+    - name: Zuzana Moudra
+      position: HR Business Partner
+      uri: https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=046c29138c1335ef8edee7daf521ba50
+      uri-text: ZM
+      status: Accepted
+      
+    - name: Jane Stevens 
+      position: HR Generalist
+      uri: https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ
+      uri-text: JS
+      status: Declined
+            

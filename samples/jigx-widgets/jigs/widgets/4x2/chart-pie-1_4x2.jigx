@@ -1,0 +1,50 @@
+title: Pie-chart widget 1 (4x2)
+type: jig.default
+
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - y: 2
+        - y: 5
+          color: transparent
+        
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+    
+widgets:
+  4x2: 
+    type: widget.chart
+    options:        
+      chart: 
+        type: component.pie-chart
+        options:
+          chart:
+            title: 
+              text: "2"
+              verticalAlign: center
+            subtitle: 
+              text: Done
+              verticalAlign: center
+      
+          series:
+            - data: =@ctx.datasources.static-data
+              layout: pie
+              color: color7
+      bottom:
+        type: component.titles
+        options:
+          title: Q1 KPIs
+          align: center
+          
+        
+  
+                
+     

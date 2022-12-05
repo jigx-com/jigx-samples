@@ -1,0 +1,43 @@
+title: Image & Image 1 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+  
+widgets:
+  4x2: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.image
+          options:
+            isContentOverlaid: false
+            source:
+              uri: https://cdn.freebiesupply.com/logos/thumbs/2x/oakland-invaders-logo.png
+            resizeMode: contain              
+            bottom: 
+              type: component.titles
+              options:
+                title: "3"
+                subtitle: "Oakland Invaders"    
+                align: center
+        - type: widget.image
+          options:
+            isContentOverlaid: false
+            source:
+              uri: https://seeklogo.com/images/K/kane-county-cougars-logo-47AAB515C1-seeklogo.com.png
+            resizeMode: contain
+            bottom: 
+              type: component.titles
+              options:
+                title: "2"
+                subtitle: "Kane County Cougars"
+                align: center
+
+                  

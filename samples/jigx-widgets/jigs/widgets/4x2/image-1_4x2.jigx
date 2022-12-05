@@ -1,0 +1,26 @@
+title: Image widget 1 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+            
+widgets:
+  "4x2": 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1581390720252-314bac5f2b18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80 
+      isContentOverlaid: true
+      bottom: 
+        type: component.titles
+        options:
+          title: South Dakota vs. Pioneers
+          subtitle: 05.02.23
+          icon: calendar
+          iconColor: color4

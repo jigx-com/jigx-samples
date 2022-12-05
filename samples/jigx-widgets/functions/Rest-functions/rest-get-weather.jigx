@@ -1,0 +1,15 @@
+method: GET
+provider: DATA_PROVIDER_REST
+parameters:
+  q:
+    location: query
+    type: string
+    required: true
+  appid:
+    location: query
+    type: string
+    value: 556f0c864ab4fc3ba4c2c284c95d1fa2
+    required: true
+url: 'http://api.openweathermap.org/data/2.5/weather?'
+outputTransform: >-
+  $.{"temp": main.temp,"pressure":main.pressure,"humidity":main.humidity,"weather":weather.description}

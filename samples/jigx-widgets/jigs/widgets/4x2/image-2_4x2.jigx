@@ -1,0 +1,27 @@
+title: Image widget 2 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+            
+widgets:      
+  "4x2": 
+    type: widget.image
+    options:
+      source:
+        uri: http://freemondo.com/style/desktop/images/picpage/test3.png  
+      isContentOverlaid: false
+      bottom: 
+        type: component.titles
+        options:
+          title: Orlicke Hory
+          subtitle: Czech Republic
+          icon: pin
+          align: right
+          iconColor: color4

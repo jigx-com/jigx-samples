@@ -1,0 +1,112 @@
+title: Chart & List 1 (4x2)
+type: jig.default
+icon: person
+
+
+datasources:
+  chart:
+    type: datasource.static
+    options:
+      data:
+        - y: 3
+        - y: 2
+          color: transparent
+  list:
+    type: datasource.static
+    options:
+      data:
+        - icon: person
+          task-number: Task 4
+          name: Meet With Colleagues
+          status: waiting
+        
+        - icon: checklist
+          task-number: Task 5
+          name: Use Jigx App
+          status: waiting
+
+        - icon: synchronize-arrows-1
+          task-number: Task 3
+          name: Meet Your Manager
+          status: done
+        
+        - icon: synchronize-arrows-1
+          task-number: Task 2
+          name: Set Email & Calendar
+          status: done
+        
+        - icon: play
+          task-number: Task 1
+          name: Watch Jigx Intro Video
+          status: done
+
+                  
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+  
+  
+  
+widgets:
+  4x2: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.chart
+          options:        
+            chart: 
+              type: component.pie-chart
+              options:
+                chart:
+                  title: 
+                    text: "3 of 5"
+                    verticalAlign: center
+                  subtitle: 
+                    text: Done
+                    verticalAlign: center
+            
+                series:
+                  - data: =@ctx.datasources.chart
+                    layout: pie
+                    color: color3
+            top:
+              type: component.titles
+              options:
+                title: Onboarding
+                subtitle: Jigx, Inc.
+                align: center   
+
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.list
+            item: 
+              type: component.list-item
+              options:
+                color:
+                  - when: =(@ctx.current.item.status = 'done' ? true :false)
+                    color: color14
+                  - when: =(@ctx.current.item.status = 'waiting' ? true :false)
+                    color: color1
+                title: =@ctx.current.item.task-number
+                subtitle: =@ctx.current.item.name
+                
+                # leftElement: 
+                #   element: icon
+                #   name: =@ctx.current.item.icon
+                #   isContained: true
+                #   isDuotone: false
+                leftElement: 
+                  element: checkbox
+                  value: =(@ctx.current.item.status = 'done' ? true :false)
+                style:
+                  isStrikeThrough: =(@ctx.current.item.status = 'done' ? true :false)
+                  isDisabled: =(@ctx.current.item.status = 'done' ? true :false)
+   
+
+                  

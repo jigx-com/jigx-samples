@@ -1,0 +1,31 @@
+title: List widget 5 (2x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+            
+widgets:
+  2x2: 
+    type: widget.list
+    instanceId: orders
+    options:
+      data: =@ctx.datasources.orders          
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          subtitle: =@ctx.current.item.subtitle
+          style:
+            isPositive: =@ctx.current.item.done
+          leftElement: 
+            element: progress
+            value: =@ctx.current.item.progress
+          rightElement: 
+            element: value
+            text: =@ctx.current.item.value        

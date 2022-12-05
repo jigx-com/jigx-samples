@@ -1,0 +1,17 @@
+title: Location widget 1 (2x4)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:
+  "2x4": 
+    type: widget.location
+    options:
+      address: Prague    
