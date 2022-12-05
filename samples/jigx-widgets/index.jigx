@@ -1,6 +1,7 @@
 title: jigx-widgets
 name: jigx-widgets
 category: business
+description: This solution showcases dozens of different widget types you can use in your own scenarios.
 
 widgets: 
   - size: "2x2"
