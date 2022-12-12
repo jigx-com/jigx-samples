@@ -5,18 +5,6 @@ isHorizontalScrollIndicatorHidden: true
 isCollapsible: true
 actions:
   - children:
-      # - type: action.confirm
-      #   options:
-      #     title: Primary action
-      #     isConfirmedAutomatically: false
-      #     onConfirmed:
-      #       type: "@jigx/ja-delete"
-      #       options:
-      #         title: Delete
-      #     modal:
-      #       title: Modal window
-      #       description: Content of the modal window
-
       - type: action.go-back
         options:
           title: Secondary action 1
@@ -69,8 +57,6 @@ item:
       color:
         - when: true
           color: =@ctx.current.item.label-color
-
-    # divider: solid
 
     style:
       isPositive: false
