@@ -68,6 +68,7 @@ children:
                     - type: component.text-field
                       instanceId: cleaning_serv_desc_tf
                       options:
+                        textArea: dynamic
                         label: Description
                         value: =@ctx.datasources.cleaning-services-dynamic[0].description
                         isMultiline: true
@@ -87,16 +88,6 @@ children:
                       instanceId: cleaning_serv_once_tf
                       options:
                         label: Once Off Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate                         
+                        value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ? @ctx.datasources.cleaning-services-dynamic[0].onceoffrate :'N/A'                   
 
-datasources:
-  cleaning-services-dynamic:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-  
-      entities:
-        - entity: default/cleaning-services-dynamic
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic]
 
