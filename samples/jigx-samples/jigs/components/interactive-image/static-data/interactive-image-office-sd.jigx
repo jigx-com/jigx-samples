@@ -1,7 +1,6 @@
 title: Interactive Image
 description: Interactive image for Hot Seat & Meeting Room Bookings
 type: jig.default
-isScrollable: false
 
 children:
   - type: component.interactive-image

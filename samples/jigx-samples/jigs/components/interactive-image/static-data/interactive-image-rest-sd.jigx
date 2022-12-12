@@ -1,7 +1,6 @@
 title: Interactive Image
 description: Interactive image for Restaurant Table Bookings
 type: jig.default
-isScrollable: false
 
 children:
   - type: component.interactive-image
