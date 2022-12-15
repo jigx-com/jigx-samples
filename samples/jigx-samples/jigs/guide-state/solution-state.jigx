@@ -6,13 +6,12 @@ actions:
       - type: action.set-state
         options:
           title: Set solution state
-          key: my-solution-state
+          state: =@ctx.solution.state.global-key
           value: '12345'
       - type: action.reset-state
         options:
           title: Reset solution state
-          instanceId: my-solution-sate
-          key: my-solution-state
+          state: =@ctx.solution.state.global-key
 
 children:
   - type: component.entity
@@ -21,5 +20,5 @@ children:
         - type: component.entity-field
           options:
             label: Your solution state
-            value: =@ctx.solution.state.my-solution-state
+            value: =@ctx.solution.state.global-key
             
