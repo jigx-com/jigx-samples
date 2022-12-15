@@ -55,3 +55,9 @@ options:
     - title: Swipeable list (right)
       link: list-with-swipe-right-sd
       color: color13
+    - title: List with active item
+      link: default-w-active-item-list-sd
+      color: color14
+    - title: List with sections
+      link: default-w-section-list-sd
+      color: color1
