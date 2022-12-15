@@ -1,0 +1,23 @@
+title: Placeholder
+type: jig.default
+
+placeholders:
+  - when: =$count(@ctx.datasources.employees-dynamic) > 0 ? false :true 
+    title: There is no data
+    icon: missing-data
+
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.employees-dynamic
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.firstname & ' ' @ctx.current.item.lastname
+          subtitle: =@ctx.current.item.phone
+          leftElement: 
+            element: avatar
+            text: =$substring(@ctx.current.item.firstname, 0, 1) & $substring(@ctx.current.item.lastname, 0, 1)
+            uri: =@ctx.current.item.photo
