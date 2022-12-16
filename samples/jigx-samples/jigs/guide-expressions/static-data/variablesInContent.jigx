@@ -1,0 +1,24 @@
+title: Varibales in content
+type: jig.document
+
+datasources:
+  html:
+    type: datasource.static
+    options:
+      data:
+        - name: John
+          email: John.Smith@gmail.com
+          itemId: 2544
+
+
+source:
+  documentType: HTML
+  content: |
+    ="<div style='font-size: 40px'>Welcome on board 
+    <b>" & @ctx.datasources.html.name & "</b>
+     - " & @ctx.datasources.html.email &
+    "</div>
+    <br />
+    <img src='https://chart.googleapis.com/chart?cht=qr&chl=id"&@ctx.datasources.html.itemId&"&chs=380x380&choe=UTF-8&chld=L|2' alt='qr code'>
+    <a href='https://www.qr-code-generator.com' border='0' style='cursor:default'  rel='nofollow'></a>
+    <br />"  & @ctx.datasources.html.itemId
