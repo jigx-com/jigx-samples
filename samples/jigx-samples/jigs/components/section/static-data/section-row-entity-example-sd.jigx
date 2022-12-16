@@ -30,11 +30,11 @@ children:
                         value: Jackson
                         contentType: default
                         rightIcon: person
-                    - type: component.entity-field
-                      options:
-                        label: Member
-                        value: true
-                        contentType: checkbox
+              - type: component.entity-field
+                options:
+                  label: Member
+                  value: true
+                  contentType: checkbox      
               - type: component.field-row
                 options:
                   children:
