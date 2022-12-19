@@ -1,0 +1,16 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/calendar
+  query: | 
+    SELECT
+      '$.title',
+      '$.location',
+      '$.time',
+      '$.fullname',
+      '$.avatar',
+      '$.color',
+      '$.tags',
+      '$.category'
+    FROM [default/calendar] WHERE '$.category' = "people"
