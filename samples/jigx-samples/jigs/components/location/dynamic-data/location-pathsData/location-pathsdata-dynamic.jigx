@@ -1,0 +1,17 @@
+title: Location
+type: jig.default
+
+
+     
+children:
+  - type: component.location
+    options:
+      pathsData: =@ctx.datasources.location
+      # markersData: =@ctx.datasources.location
+
+      
+widgets:
+  4x4:
+    type: widget.location
+    options:
+      address: Mosman, NSW 2088, Australia
