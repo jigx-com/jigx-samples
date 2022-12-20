@@ -1,4 +1,4 @@
-title: Service details
+title: =@ctx.datasources.cleaningServices.service != null ? "Service details":" "
 type: jig.default
 placeholders:
   - title: Please choose a service
