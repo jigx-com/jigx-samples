@@ -1,6 +1,5 @@
 type: jig.composite
-title: Cleaning Details
-description: Please choose the service
+title: Cleaning Services
 
 header: 
     type: component.image

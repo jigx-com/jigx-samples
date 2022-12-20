@@ -1,5 +1,4 @@
-title: Cleaning Services
-description: List of other available Cleaning Services
+title: List of available services
 
 type: jig.list
 icon: contact 
@@ -23,8 +22,6 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     horizontalItemSize: large
-    # style:
-    #   isHighlighted: =@ctx.current.item.id = @ctx.solution.state.servicesId ? true :false
 
     progress: =@ctx.current.item.id = @ctx.solution.state.servicesId ? 1 :0
     color:
