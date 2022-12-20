@@ -1,0 +1,63 @@
+title: Boolean
+type: jig.default
+
+datasources:
+  employees:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: July Nellson
+          position: manager
+          img: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        - id: 2
+          name: Karl Fisher
+          position: Salesman
+          img: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+        - id: 3
+          name: Mary Gomez
+          position: DEV
+          img: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        - id: 4
+          name: John Doe
+          position: Marketing
+          img: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+  employee:
+    type: datasource.static
+    options:
+      data:
+        - id: 3
+          name: Mary Gomez
+          position: DEV
+          age: 26
+          phoneNumber: 648936921
+          email: MaryGomez@gmail.com
+          img: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+
+        
+          
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Does the array of data contain both a name and an image? (And)
+            value: =$boolean(@ctx.datasources.employees.name and @ctx.datasources.employees.img)
+        - type: component.entity-field
+          options:
+            label: Does the array of data contain a phone number or email? (Or)
+            value: =$boolean(@ctx.datasources.employees.phoneNumber or @ctx.datasources.employees.email)
+        - type: component.entity-field
+          options:
+            label: If name of employee is "Mary Gomez", set true. (If value =)
+            value: =@ctx.datasources.employee.name = "Mary Gomez" ? true :false
+        - type: component.entity-field
+          options:
+            label: If age of employee is smaller than 20 set true. (If value <)
+            value: =@ctx.datasources.employee.age < 20 ? true :false
+        - type: component.entity-field
+          options:
+            label: Does the array of data contain more than two objects? (If array >)
+            value: =$count(@ctx.datasources.employees) > 2 ? true :false 
