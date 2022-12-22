@@ -19,5 +19,6 @@ options:
       '$.onceoffrate', 
       '$.service', 
       '$.pressed', 
-      '$.time' 
+      '$.time',
+      '$.quantity'
     FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL ORDER BY '$.area' DESC

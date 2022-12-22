@@ -17,7 +17,7 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement:
       element: amount-control
-      value: 1
+      value: =$number(@ctx.current.item.quantity)
       step: 1
       minimum: 1
       maximum: 5
@@ -25,10 +25,10 @@ item:
         type: action.execute-entity
         options:
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/products
+          entity: default/cleaning-services
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.item.state.amount
+            quantity: =@ctx.component.state.amount
           goBack: stay
       
