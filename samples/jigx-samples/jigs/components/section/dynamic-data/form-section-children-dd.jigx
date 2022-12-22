@@ -38,7 +38,7 @@ children:
                 instanceId: cleaning_serv_tf
                 options:
                   label: Service
-                  value: =@ctx.datasources.cleaning-services-dynamic.service
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].service
               - type: component.text-field
                 instanceId: cleaning_serv_area_tf
                 options:
