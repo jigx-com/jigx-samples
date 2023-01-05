@@ -1,4 +1,4 @@
-title: onRefresh
+title: Execute entities action on Refresh
 type: jig.default
 description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onLoad/onRefresh/onFocus event.
 
@@ -16,11 +16,19 @@ children:
   - type: component.entity
     options:
       children:
-        - type: component.entity-field
-          instanceId: firstname
+        - type: component.field-row
           options:
-            label: First Name
-            value: =@ctx.datasources.employee-detail-dynamic.firstname
+            children:
+            - type: component.entity-field
+              instanceId: firstname
+              options:
+                label: First name
+                value: =@ctx.datasources.employee-detail-dynamic.firstname
+            - type: component.entity-field
+              instanceId: lastname
+              options:
+                label: Last name
+                value: =@ctx.datasources.employee-detail-dynamic.lastname
 
         - type: component.field-row
           options:
@@ -37,5 +45,5 @@ children:
                   value: =@ctx.datasources.employee-detail-dynamic.phone
         - type: component.entity-field
           options:
-            label: Modify
+            label: Number of execute-entity calls
             value: =@ctx.datasources.employee-detail-dynamic.modify

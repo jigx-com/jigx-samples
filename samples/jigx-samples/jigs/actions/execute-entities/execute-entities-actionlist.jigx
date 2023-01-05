@@ -1,4 +1,4 @@
-title: Execute entity by action button
+title: Execute entities as a part of the action-list
 type: jig.default
 description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in an action-list.
 
@@ -14,30 +14,34 @@ actions:
       - type: action.action-list
         options:
           isSequential: true
-          title: Add
+          title: Add user
           actions:
             - type: action.execute-entity
               options:
                 provider: DATA_PROVIDER_DYNAMIC
-                method: save
+                method: create
                 entity: default/form
-                data: 
-                  name: =@ctx.components.name.state.value
-                  id: =@ctx.components.id.state.value  
+                data:
+                  firstname: =@ctx.datasources.employee-detail-dynamic.firstname
+                  lastname: =@ctx.datasources.employee-detail-dynamic.lastname
             - type: action.go-to
               options:
                 linkTo: ja-execute-entity-onPress
                 
 children:
-  - type: component.form
+  - type: component.entity
     options:
       children:
-        - type: component.text-field
-          instanceId: id
+        - type: component.field-row
           options:
-            label: id
-            isHidden: true
-        - type: component.text-field
-          instanceId: name
-          options:
-            label: Name
+            children:
+              - type: component.entity-field
+                instanceId: firstname
+                options:
+                  label: First Name
+                  value: =@ctx.datasources.employee-detail-dynamic.firstname
+              - type: component.entity-field
+                instanceId: lastname
+                options:
+                  label: Last Name
+                  value: =@ctx.datasources.employee-detail-dynamic.lastname
