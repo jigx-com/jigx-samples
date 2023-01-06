@@ -3,28 +3,33 @@ type: jig.list
 icon: contact 
 description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in onPress event.
 
-onRefresh: 
-  type: action.execute-entity
-  options:
-    provider: DATA_PROVIDER_LOCAL
-    entity: default/employees
-    data:
-      time: =$now()
-  
-
 data: =@ctx.datasources.employees-dynamic
 item:
   type: component.list-item
   options:
     title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
-    subtitle: =@ctx.current.item.time
+    subtitle: =@ctx.current.item.time = null ? '' :'The last onPress action:' & ' ' & @ctx.current.item.time
     leftElement: 
       element: avatar
       text: '' 
-      uri: =@ctx.current.item.picture
+      uri: =@ctx.current.item.photo
     onPress: 
-      type: action.sync-entities
+      type: action.action-list
       options:
-        provider: DATA_PROVIDER_DYNAMIC
-        entities:
-          - entity: default/employees
+        isSequential: true
+        actions:
+          - type: action.execute-entity
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              method: update
+              goBack: stay
+              entity: default/employees
+              data:
+                id: =@ctx.current.item.id
+                time: =$fromMillis($toMillis($now()), '[h#1]:[m01][P]')
+          - type: action.sync-entities
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entities:
+                - entity: default/employees
+            
