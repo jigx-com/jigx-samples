@@ -1,0 +1,7 @@
+title: Line-chart examples
+type: jig.composite
+
+children:
+  - jigId: line-chart-financial
+  - jigId: line-chart-multiple-series
+    

@@ -13,31 +13,7 @@ children:
       legend:
           isHidden: true
       series:
-          - data: =@ctx.datasources.pie-chart-data
+          - data: =[{"y":1, "color":"color4"}, {"y":2, "color":"color2"}, {"y":3, "color":"color3"}]
             dataLabels:
               - isEnabled: true
             layout: pie
-          
-widgets:
-  2x2:
-    type: widget.group
-    options:
-      children:
-        - type: widget.chart
-          options:
-            chart:
-              type: component.pie-chart
-              options:
-                chart:
-                  title:
-                    text: Issues
-                    verticalAlign: center
-                  width: 120
-                  height: 120
-                legend:
-                  isHidden: true
-                series:
-                  - data: =@ctx.datasources.pie-chart-data
-                    dataLabels:
-                      - isEnabled: true
-                    layout: pie

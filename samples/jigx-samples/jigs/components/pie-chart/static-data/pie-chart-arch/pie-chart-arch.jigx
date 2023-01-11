@@ -13,31 +13,7 @@ children:
       legend:
           isHidden: true
       series:
-          - data: =@ctx.datasources.arch-pie-chart
+          - data: =[{"y":1, "color":"color4"}, {"y":2, "color":"color2"}]
             dataLabels:
               - isEnabled: true
             layout: arch
-          
-widgets:
-  2x2:
-    type: widget.group
-    options:
-      children:
-        - type: widget.chart
-          options:
-            chart:
-              type: component.pie-chart
-              options:
-                chart:
-                  title:
-                    text: Stock
-                    verticalAlign: center
-                  width: 120
-                  height: 120
-                legend:
-                  isHidden: true
-                series:
-                  - data: =@ctx.datasources.arch-pie-chart
-                    dataLabels:
-                    - isEnabled: true
-                    layout: arch

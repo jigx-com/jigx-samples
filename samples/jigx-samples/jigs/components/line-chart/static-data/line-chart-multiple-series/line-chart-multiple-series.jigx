@@ -24,14 +24,14 @@ children:
           - Q3
           - Q4
       series:
-        - data: =@ctx.datasources.series1
+        - data: =[{"x":"Q1/20", "y":25000, "color":"color2"}, {"x":"Q2/20", "y":32000, "color":"color2"}, {"x":"Q3/20", "y":45000, "color":"color2"}, {"x":"Q4/20", "y":86000, "color":"color2"}]
           name: Year 2019
           animation:
               direction: left-to-right
           layout: area-gradient
           dataLabels:
             - isEnabled: true
-        - data: =@ctx.datasources.series2
+        - data: =[{"x":"Q1/20", "y":12000, "color":"color3"}, {"x":"Q2/20", "y":48000, "color":"color3"}, {"x":"Q3/20", "y":36000, "color":"color3"}, {"x":"Q4/20", "y":120000, "color":"color3"}]
           name: Year 2020
           animation:
               direction: left-to-right
