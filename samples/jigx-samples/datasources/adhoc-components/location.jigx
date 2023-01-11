@@ -7,7 +7,7 @@ options:
     SELECT
       '$.id',
       '$.address',
-      json_extract(data, '$.adress-us') as addressAus,
+      '$.address-us',
       '$.category',  
       '$.lat',
       '$.lng'

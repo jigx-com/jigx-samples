@@ -1,0 +1,23 @@
+title: Location displaying path
+type: jig.default
+
+isCollapsible: true
+
+datasources:
+  coordinates:
+    type: datasource.static
+    options:
+      data:
+ 
+        - lat: 40.769702
+          lng: -74.038241
+        - lat: 40.759412
+          lng: -73.912306
+        - lat: 40.803495
+          lng: -73.950694
+
+children:
+  - type: component.location
+    options:
+      pathsData: =@ctx.datasources.coordinates
+      isAnimationDisabled: true
