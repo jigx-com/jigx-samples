@@ -1,0 +1,30 @@
+title: Name
+description: Description of your Jig
+type: jig.default
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://builder.jigx.com/assets/images/header.jpg
+
+datasources:
+  user:
+    type: datasource.static
+    options:
+      data:
+        - firstName: Jon
+          lastName: Doe
+  user1:
+    type: datasource.static
+    options:
+      data:
+        - name: Alan Barkley
+
+children:
+  - type: component.avatar
+    options:
+      text: =$substring(@ctx.datasources.user.firstName, 0, 1) & $substring(@ctx.datasources.user.lastName, 0, 1)
+  - type: component.avatar
+    options:
+      text: =$substring(@ctx.datasources.user1.name, 0, 1) & $substring($substringAfter(@ctx.datasources.user1.name, " "), 0, 1)

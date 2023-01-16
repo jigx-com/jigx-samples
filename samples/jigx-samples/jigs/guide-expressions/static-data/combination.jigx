@@ -1,0 +1,34 @@
+title: Merging values with expression
+description: Description of your Jig
+type: jig.default
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://builder.jigx.com/assets/images/header.jpg
+
+datasources:
+  user:
+    type: datasource.static
+    options:
+      data:
+        - firstName: Jon
+          lastName: Doe
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: First Name
+            value: =@ctx.datasources.user.firstName
+        - type: component.entity-field
+          options:
+            label: Last Name
+            value: =@ctx.datasources.user.lastName
+        - type: component.entity-field
+          options:
+            label: Merging First and Last name
+            value: =@ctx.datasources.user.firstName & ' ' & @ctx.datasources.user.lastName
