@@ -2,11 +2,15 @@ title: All icons
 type: jig.list
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    title: Icons
-    source:
-      uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
+    height: medium
+    children:
+      type: component.image
+      options:
+        title: Icons
+        source:
+          uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
 
 datasources:
   components:

@@ -2,10 +2,14 @@ title: Merging values with expression
 type: jig.default
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    source:
-      uri: https://builder.jigx.com/assets/images/header.jpg
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
 
 datasources:
   user:

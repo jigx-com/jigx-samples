@@ -3,10 +3,14 @@ description: Jig to display sections & entity fields
 type: jig.default
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.repair-services-static[id=1].image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.repair-services-static[id=1].image
 
 children:
   - type: component.entity

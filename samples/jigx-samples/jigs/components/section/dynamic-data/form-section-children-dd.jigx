@@ -3,10 +3,14 @@ description: Jig to display a form with sections & children components
 type: jig.default
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.cleaning-services-dynamic.image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.cleaning-services-dynamic.image
 
 actions:
   - children:

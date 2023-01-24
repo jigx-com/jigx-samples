@@ -1,13 +1,17 @@
 title: Name
 type: jig.default
 
-header: 
-  type: component.image
+header:
+  type: component.jig-header
   options:
-    title: =@ctx.datasources.product-detail-dynamic.title
-    subtitle: =@ctx.datasources.product-detail-dynamic.price
-    source:
-      uri: =@ctx.datasources.product-detail-dynamic.uri
+    height: medium
+    children:
+      type: component.image
+      options:
+        title: =@ctx.datasources.product-detail-dynamic.title
+        subtitle: =@ctx.datasources.product-detail-dynamic.price
+        source:
+          uri: =@ctx.datasources.product-detail-dynamic.uri
 
 summary:
   children:

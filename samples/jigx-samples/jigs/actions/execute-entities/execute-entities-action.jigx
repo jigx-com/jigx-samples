@@ -2,13 +2,16 @@ title: Execute entities as a single action
 type: jig.default
 description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it as an action.
 
-header: 
-    type: component.image
-    options:
-      source:
-        uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
-
-
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
+    
 actions:
   - children:
     - type: action.execute-entity

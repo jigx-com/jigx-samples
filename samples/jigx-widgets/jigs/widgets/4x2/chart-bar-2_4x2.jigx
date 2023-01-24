@@ -22,11 +22,15 @@ datasources:
           y: 20
           color: negative
 
-header: 
-  type: component.image
+header:
+  type: component.jig-header
   options:
-    source:
-      uri: https://1951880946.rsc.cdn77.org/resize?height=300&type=auto&url=https://reservio-static-production.s3.eu-central-1.amazonaws.com/businesses/9e5118d6-a9d6-4693-ab10-82f69342e38b.png
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://1951880946.rsc.cdn77.org/resize?height=300&type=auto&url=https://reservio-static-production.s3.eu-central-1.amazonaws.com/businesses/9e5118d6-a9d6-4693-ab10-82f69342e38b.png
 
 children:
   - type: component.entity

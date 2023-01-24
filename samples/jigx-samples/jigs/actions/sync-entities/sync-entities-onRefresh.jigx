@@ -23,11 +23,15 @@ onRefresh:
           entities:
             - entity: default/employees
 
-header: 
-  type: component.image
+header:
+  type: component.jig-header
   options:
-    source:
-      uri: =@ctx.datasources.employee-detail-dynamic.photo
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.employee-detail-dynamic.photo
 
 
 children:

@@ -4,10 +4,14 @@ type: jig.default
 
 # the inputs comming from list-with-actions-sd
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.repair-services-static[id=1].image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.repair-services-static[id=1].image
 
 children:
   - type: component.entity

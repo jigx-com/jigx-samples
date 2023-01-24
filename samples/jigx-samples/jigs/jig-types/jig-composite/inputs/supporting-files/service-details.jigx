@@ -32,10 +32,14 @@ datasources:
         FROM [default/cleaning-services] WHERE id = @servId
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.cleaningServices.image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.cleaningServices.image
 
 children:
   - type: component.entity
