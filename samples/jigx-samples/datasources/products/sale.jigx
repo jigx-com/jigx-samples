@@ -11,6 +11,7 @@ options:
       '$.tag',
       '$.price',
       '$.category',
-      '$.discount'
+      '$.discount',
+      '$.sale'
     FROM [default/products]
-    WHERE '$.category' = "product"
+    WHERE '$.sale' = 'true'
