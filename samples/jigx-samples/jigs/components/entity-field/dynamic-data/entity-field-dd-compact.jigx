@@ -15,6 +15,7 @@ header:
 children:
   - type: component.entity
     options:
+      isCompact: true
       children:
         - type: component.entity-field
           options:
