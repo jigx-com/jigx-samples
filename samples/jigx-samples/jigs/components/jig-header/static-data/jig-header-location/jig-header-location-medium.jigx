@@ -1,0 +1,27 @@
+title: Header with location
+description: "height: medium"
+type: jig.default
+
+header: 
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.location
+      options:
+        address: 20 W 34th St., New York, NY 10001, USA
+        zoomLevel: 8
+        isAnimationDisabled: false
+        markersData:
+          - lat: 40.7484445
+            lng: -73.9878531
+
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: entity-field
+            value: text

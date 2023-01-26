@@ -1,0 +1,24 @@
+title: Header with video-player
+description: "height: medium"
+type: jig.default
+
+header: 
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.video-player
+      options:
+        url: https://player.vimeo.com/external/510534971.sd.mp4?s=feaf03f65dc961bf98dcecbbbdcf21db84204536&profile_id=164&oauth2_token_id=57447761
+        title: video-player
+        autoplay: true
+    
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: entity-field
+            value: text
