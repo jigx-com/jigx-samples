@@ -2,13 +2,6 @@ type: jig.default
 title: Product List (Static)
 description: Widget List with Product Items
 
-actions:
-  - children:
-      - type: action.go-to
-        options:
-          title: List with Product Item
-          linkTo: list-with-product-item-dd
-
 children:
   - type: component.entity
     options:
