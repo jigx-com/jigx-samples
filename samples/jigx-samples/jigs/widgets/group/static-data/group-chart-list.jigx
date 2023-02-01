@@ -1,0 +1,135 @@
+title: Widget group 
+description: "size: 4x4, layout: horizontal"
+type: jig.default
+
+header:
+  type: component.image
+  options:
+    source:
+      uri: https://builder.jigx.com/assets/images/header.jpg
+
+datasources:
+  transactions:
+    type: datasource.static
+    options:
+      data:
+        - amount: 607
+          company: DLT
+          date: 2022-03-17
+          description: Logistic application
+          positive: true
+        - amount: -384
+          company: McPen
+          date: 2022-04-15
+          description: Office supplies
+          positive: false
+        - amount: -531
+          company: Rock Cafe
+          date: 2022-06-10
+          description: Company party
+          positive: false
+        - amount: -427
+          company: Allianz
+          date: 2022-10-04
+          description: Car insurance for company cars
+          positive: false
+        - amount: 947
+          company: ATV Impex
+          date: 2022-10-18
+          description: DMS application
+          positive: true
+        - amount: -531
+          company: Rock Cafe
+          date: 2022-06-10
+          description: Company party
+          positive: false
+        - amount: -427
+          company: Allianz
+          date: 2022-10-04
+          description: Car insurance for company cars
+          positive: false
+        - amount: 947
+          company: ATV Impex
+          date: 2022-10-18
+          description: DMS application
+          positive: true
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: entity-field
+            value: Text
+
+widgets:
+  "4x4": 
+    type: widget.group
+    options:
+      split: horizontal
+      children:
+        - type: widget.chart
+          options:
+            chart: 
+              type: component.line-chart
+              options:
+                chart:
+                  isAnimated: true
+                yAxis:
+                  min: 0
+                  labels:
+                    format:
+                      numberStyle: currency
+                      compactDisplay: short
+                      notation: compact
+                  tickAmount: 8
+                  isFirstTickHidden: true
+                  isFirstLabelHidden: true
+                xAxis:
+                  categories:
+                    - Q1
+                    - Q2
+                    - Q3
+                    - Q4
+                series:
+                  - data: =[{"x":"Q1/20", "y":25000, "color":"color2"}, {"x":"Q2/20", "y":32000, "color":"color2"}, {"x":"Q3/20", "y":45000, "color":"color2"}, {"x":"Q4/20", "y":86000, "color":"color2"}]
+                    name: Year 2019
+                    animation:
+                        direction: left-to-right
+                    layout: area-gradient
+                    dataLabels:
+                      - isEnabled: true
+                  - data: =[{"x":"Q1/20", "y":12000, "color":"color3"}, {"x":"Q2/20", "y":48000, "color":"color3"}, {"x":"Q3/20", "y":36000, "color":"color3"}, {"x":"Q4/20", "y":120000, "color":"color3"}]
+                    name: Year 2020
+                    animation:
+                        direction: left-to-right
+                    layout: area-gradient
+                    dataLabels:
+                      - isEnabled: true      
+                legend:
+                  isHidden: false
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.transactions
+            item: 
+              type: component.list-item
+              options:
+                divider: solid
+                title: =@ctx.current.item.company
+                subtitle: =@ctx.current.item.description
+                description: =$fromMillis($toMillis(@ctx.current.item.date), '[M01]/[D01]/[Y01]')
+                label:
+                  title: =@ctx.current.item.amount & '$'
+                  isHidden: false
+                  color:
+                    - when: =(@ctx.current.item.positive = true)
+                      color: color2
+                    - when: =(@ctx.current.item.positive = false)
+                      color: color4
+                leftElement: 
+                  element: icon
+                  name: =@ctx.current.item.positive = true ? 'up' :'down'
+                style:
+                  isPositive: =@ctx.current.item.positive
+                  isError: =@ctx.current.item.positive = false ? "true" :"false"

@@ -1,24 +1,23 @@
 title: Value + Chart
 type: jig.default
 
-
 datasources:
-  series1:
-    type: datasource.static
+  value-dynamic:
+    type: datasource.sqlite
     options:
-      data:
-        - y: 2000
-        - y: 4000
-        - y: 1500
+      provider: DATA_PROVIDER_DYNAMIC
+      isDocument: true
+      entities:
+        - entity: default/value
+  
+      query: SELECT id, '$.value', '$.title' FROM [default/value] 
 
 
 children:
-  - type: component.line-chart
+  - type: component.bar-chart
     options:
-      chart:
-        height: 120
       series:
-        - data: =@ctx.datasource.series1
+        - data: =@ctx.datasources.series1-dynamic
           
 widgets:
   2x4: 
@@ -27,7 +26,7 @@ widgets:
       children:
         - type: widget.value
           options:
-            value: 7500
+            value: =@ctx.datasources.value-dynamic.value
             top: 
               type: component.titles
               options:
@@ -38,5 +37,5 @@ widgets:
               type: component.bar-chart
               options:
                 series:
-                  - data: =@ctx.datasources.series1
+                  - data: =@ctx.datasources.series1-dynamic
           

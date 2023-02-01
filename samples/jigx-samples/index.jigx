@@ -23,7 +23,7 @@ widgets:
   - size: 2x2
     jigId: widget-list-stage-sd
   - size: 4x2
-    jigId: jw-group-avatar-list
+    jigId: group-avatar-list
   - size: 4x2
     jigId: location-widget-address
   - size: 2x2
