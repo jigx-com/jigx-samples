@@ -1,0 +1,111 @@
+title: Widget group 
+description: "size: 4x4, layout: vertical"
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
+
+datasources:
+  list: 
+    type: datasource.static
+    options:
+      data:
+        - title: JKS
+          subtitle: JinkoSolar Holding Co., Ltd.
+          change: -0.34
+        - title: SPWR
+          subtitle: SunPower Corporation
+          change: 0.88
+        - title: MAXN
+          subtitle: Maxeon Solar Technologies, Ltd.
+          change: 0.36
+        - title: CSIQ
+          subtitle: Canadian Solar Inc.
+          change: -0.15
+        - title: SUNW
+          subtitle: Sunworks, Inc.
+          change: 0.0800
+  chart:
+    type: datasource.static
+    options:
+      data:
+        - x: 2023-01-31
+          y: 5.06
+        - x: 2023-01-30
+          y: 4.95
+        - x: 2023-01-27
+          y: 5.16
+        - x: 2023-01-26
+          y: 5.15
+          
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Test
+            value: testtest
+            
+widgets:
+  "4x4": 
+    type: widget.group
+    options:
+      split: horizontal
+      children:
+        - type: widget.chart
+          options:
+            chart: 
+              type: component.line-chart
+              options:
+                xAxis:
+                  isHidden: true
+                yAxis:
+                  max: 6
+                  min: 3
+                series:
+                  - data: =@ctx.datasources.chart
+                    color: color1
+                    layout: area-gradient
+            top: 
+              type: component.titles
+              options:
+                title: Solana
+                subtitle: USDT
+                align: left
+                icon: currency-dollar
+                iconColor: color2
+            bottom: 
+              type: component.trend
+              options:
+                title: 92,40 USDT / SOL          
+                style:
+                  isAlignRight: false
+                  isValueBottom: true
+                value: +21.2
+                format:
+                  numberStyle: unit
+                  unit: percent
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.list
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.title
+                subtitle: =@ctx.current.item.subtitle
+                label:
+                  title: =@ctx.current.item.change > 0 ? '+' & @ctx.current.item.change :@ctx.current.item.change
+                  color:
+                    - when: =@ctx.current.item.change > 0
+                      color: color2
+                    - when: =@ctx.current.item.change < 0
+                      color: color4

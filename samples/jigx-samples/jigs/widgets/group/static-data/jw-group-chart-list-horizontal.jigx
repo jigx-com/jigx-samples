@@ -3,10 +3,14 @@ description: "size: 4x4, layout: horizontal"
 type: jig.default
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    source:
-      uri: https://builder.jigx.com/assets/images/header.jpg
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
 
 datasources:
   transactions:
