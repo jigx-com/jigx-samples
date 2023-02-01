@@ -2,13 +2,12 @@ type: jig.default
 title: Next meeting
 
 children:
-  - type: component.entity
+  - type: component.avatar
     options:
-      children:
-        - type: component.entity-field
-          options:
-            label: "Status Full View"
-            value: Not implemented yet
+      text:  ""
+      uri: =@ctx.datasources.static-global.picture
+      size: large
+      align: left
 
 widgets:    
   2x2:

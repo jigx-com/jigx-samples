@@ -2,13 +2,19 @@ type: jig.default
 title: Today's patient plan
 
 children:
-  - type: component.entity
+  - type: component.list
     options:
-      children:
-        - type: component.entity-field
-          options:
-            label: "Status Full View"
-            value: Not implemented yet
+      data: =@ctx.datasources.employees-dynamic
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.firstname
+          subtitle: =@ctx.current.item.lastname
+          leftElement: 
+            element: avatar
+            text: '' 
+            uri: =@ctx.current.item.photo
 
 widgets:
   4x2:
@@ -30,4 +36,4 @@ widgets:
                 leftElement:
                   element: avatar
                   text: =$substring(@ctx.current.item.firstname, 0, 1) & =$substring(@ctx.current.item.lastname, 0, 1)
-                  uri: =@ctx.current.item.picture
+                  uri: =@ctx.current.item.photo
