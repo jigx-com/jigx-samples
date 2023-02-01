@@ -27,4 +27,4 @@ widgets:
     type: widget.image
     options:
       source:
-        uri: =@ctx.datasources.image.image
+        uri: =@ctx.datasources.image.photo
