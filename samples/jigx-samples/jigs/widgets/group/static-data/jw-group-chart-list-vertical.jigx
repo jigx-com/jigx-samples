@@ -59,7 +59,7 @@ widgets:
   "4x4": 
     type: widget.group
     options:
-      split: horizontal
+      split: vertical
       children:
         - type: widget.chart
           options:
