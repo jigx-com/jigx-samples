@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  4x2:
+  4x4:
     type: widget.chart
     options:
       top:
@@ -28,7 +28,6 @@ widgets:
         type: component.line-chart
         options:
           chart:
-            height: 100
             isAnimated: true
           yAxis:
             min: 0

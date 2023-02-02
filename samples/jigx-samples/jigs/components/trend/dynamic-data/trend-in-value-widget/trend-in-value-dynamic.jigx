@@ -23,7 +23,7 @@ widgets:
         type: component.trend
         options:
           title: =@ctx.datasources.trend-dynamic.title
-          value: =@ctx.datasources.trend-dynamic.trendvalue
+          value: =@ctx.datasources.trend-dynamic.value
           format:
             numberStyle: currency
             currency: USD
