@@ -27,7 +27,7 @@ widgets:
   - size: 4x2
     jigId: location-widget-address
   - size: 2x2
-    jigId: jw-status-static
+    jigId: status-static
   - size: 2x2
     jigId: value-static
   - size: 4x2
