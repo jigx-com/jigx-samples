@@ -32,6 +32,15 @@ datasources:
         - title: SUNW
           subtitle: Sunworks, Inc.
           change: 0.0800
+        - title: JKS
+          subtitle: JinkoSolar Holding Co., Ltd.
+          change: -0.34
+        - title: SPWR
+          subtitle: SunPower Corporation
+          change: 0.88
+        - title: MAXN
+          subtitle: Maxeon Solar Technologies, Ltd.
+          change: 0.36
   chart:
     type: datasource.static
     options:
