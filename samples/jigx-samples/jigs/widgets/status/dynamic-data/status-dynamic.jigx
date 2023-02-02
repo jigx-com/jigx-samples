@@ -15,14 +15,25 @@ widgets:
     type: widget.status
     options:
       statuses:
-        - when: =@ctx.datasources.trip-dynamic.flight = 'A 0123' ? true :false
+        - when: =@ctx.system.isOffline != true
           icon: check-circle-1
           color: color2
           bottom:
             type: component.titles
             options:
-              title: Flight was found
+              title: Online
               align: center
               style:
                 isPositive: true
+          
+        - when: =@ctx.system.isOffline
+          icon: alert-circle
+          color: color4
+          bottom:
+            type: component.titles
+            options:
+              title: Offline
+              align: center
+              style:
+                isNegative: true
           
