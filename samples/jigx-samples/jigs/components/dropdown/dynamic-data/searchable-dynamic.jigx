@@ -1,6 +1,33 @@
 title: Dropdown
 type: jig.default
 
+datasources:
+  employees-dropdown:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/employees
+      query: |
+        SELECT 
+          id,
+          '$.firstname',
+          '$.lastname',
+          '$.picture', 
+          '$.modify', 
+          '$.date_from', 
+          '$.date_to', 
+          '$.email',
+          '$.phone', 
+          '$.percentage', 
+          '$.category', 
+          '$.photo',
+          '$.time'
+         FROM [default/employees] WHERE '$.firstname' LIKE '%'||@search||'%' OR @search IS NULL
+      queryParameters:
+        '@search': =@ctx.components.dropdown-in.state.searchText
+
+
 children:
   - type: component.form
     options:
@@ -8,7 +35,7 @@ children:
         - type: component.dropdown
           instanceId: dropdown-in
           options:
-            data: =$filter(@ctx.datasources.employees-dynamic, function($v){@ctx.datasources.employees-dynamic ? $contains($string($v.firstname),$string(@ctx.components.dropdown-in.state.searchText != null ? @ctx.components.dropdown-in.state.searchText:'')) :true})[]
+            data: =@ctx.datasources.employees-dropdown
             label: Select employees
             isSearchable: true
             item:
@@ -21,4 +48,4 @@ children:
                 leftElement: 
                   element: avatar
                   text: ''
-                  uri: =@ctx.current.item.img
+                  uri: =@ctx.current.item.picture
