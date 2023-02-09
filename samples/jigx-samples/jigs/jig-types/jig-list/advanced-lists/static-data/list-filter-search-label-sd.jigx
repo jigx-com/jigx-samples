@@ -1,5 +1,5 @@
-title: Filter List (Static)
-description: A static list displaying filter options
+title: Search and Filter List (Static)
+description: A static list displaying filter and search options
 type: jig.list
 icon: notes-paper-approve
 isSearchable: true

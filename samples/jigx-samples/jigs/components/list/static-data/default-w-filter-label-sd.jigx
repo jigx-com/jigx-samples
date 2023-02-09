@@ -1,16 +1,7 @@
-title: Search and Filter List (Static)
-description: A static list displaying filter and search options
-type: jig.list
+title: Filter List (Static)
+description: A static list displaying filter options
+type: jig.default
 icon: notes-paper-approve
-isSearchable: true
-
-filter: 
-  - title: All
-    value: 'all'
-  - title: Indoor
-    value: indoor
-  - title: Outdoor
-    value: outdoor
   
 header:
   type: component.jig-header
@@ -107,16 +98,26 @@ datasources:
           onceoffrate: 40
           service: Pool Cleaning
           time: 45
-
-data: =$filter($filter(@ctx.datasources.cleaning-services-static, function($v){$contains($string($v.service),$string(@ctx.jig.state.searchText != null ? @ctx.jig.state.searchText:'')) }), function($v, $a, $i) { @ctx.jig.state.filter = 'all' or $v.status = @ctx.jig.state.filter })[]
-item:
-  type: component.list-item
-  options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.area
-    label:
-      title: =(@ctx.current.item.status = "indoor" ? 'Indoor' :'Outdoor')
-    leftElement: 
-      element: avatar
-      text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
-      uri: =@ctx.current.item.image
+children:
+  - type: component.list
+    instanceId: filter-list
+    options:
+      filter: 
+        - title: All
+          value: 'all'
+        - title: Indoor
+          value: indoor
+        - title: Outdoor
+          value: outdoor
+      data: =$filter(@ctx.datasources.cleaning-services-static, function($v, $a, $i) { @ctx.components.filter-list.state.filter = 'all' or $v.status = @ctx.components.filter-list.state.filter })[]        
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.service
+          subtitle: =@ctx.current.item.area
+          label:
+            title: =(@ctx.current.item.status = "indoor" ? 'Indoor' :'Outdoor')
+          leftElement: 
+            element: avatar
+            text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
+            uri: =@ctx.current.item.image
