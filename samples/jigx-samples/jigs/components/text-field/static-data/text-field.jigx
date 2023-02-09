@@ -34,3 +34,5 @@ children:
           instanceId: firstname
           options:
             label: Name
+            minLength: 2
+            maxLength: 15
