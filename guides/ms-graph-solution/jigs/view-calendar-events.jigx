@@ -1,13 +1,17 @@
 title: Calendar
 type: jig.calendar
 
-header:
-  type: component.image
+header: 
+  type: component.jig-header
   options:
-    source:
-      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
 
-onRefresh: 
+onFocus: 
   type: action.sync-entities
   options:
     provider: DATA_PROVIDER_REST
@@ -70,6 +74,18 @@ item:
     isAllDay: =@ctx.current.item.isAllDay
     people: "=$eval(@ctx.current.item.attendees).{'fullName': emailAddress.address, 'email': emailAddress.address}"
     buttonTitle: View Event Details
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-calendar-event-details
+        parameters:
+          calId: =@ctx.jig.inputs.calId
+          eventId: =@ctx.current.item.eventId
+          evtFrom: =@ctx.current.item.startTime
+          evtTo: =@ctx.current.item.endTime
+          bodyContent: =@ctx.current.item.bodyContent
+          summary: =@ctx.current.item.bodyPreview
+          subject: =@ctx.current.item.subject
     onButtonPress: 
       type: action.go-to
       options:
@@ -78,3 +94,8 @@ item:
         parameters:
           calId: =@ctx.jig.inputs.calId
           eventId: =@ctx.current.item.eventId
+          evtFrom: =@ctx.current.item.startTime
+          evtTo: =@ctx.current.item.endTime
+          bodyContent: =@ctx.current.item.bodyContent
+          summary: =@ctx.current.item.bodyPreview
+          subject: =@ctx.current.item.subject

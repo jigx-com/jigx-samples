@@ -3,10 +3,14 @@ description: Update a user's Microsoft Graph profile photo
 type: jig.default
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    source:
-      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
 
 children:
   - type: component.form

@@ -3,10 +3,14 @@ description: View calendar event item details
 type: jig.default
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    source:
-      uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
       
 onFocus: 
   type: action.sync-entities
@@ -111,7 +115,7 @@ children:
       children:
         - type: component.web-view
           options:
-            isTrackingTransparencyRequired: true
+            isTrackingTransparencyRequired: false
             height: 400
             content: |
               =("
@@ -143,3 +147,57 @@ children:
           leftElement: 
             element: avatar
             text: =$uppercase(@ctx.current.item.emailAddress.name)
+            
+preview:
+  header: 
+    type: component.jig-header
+    options:
+      height: small
+      children: 
+        type: component.image
+        options:
+          source:
+            uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+  isCompact: false
+  children:
+    - type: component.entity
+      options:
+        children: 
+        - type: component.entity-field
+          options:
+            label: Subject
+            value: =@ctx.datasources.calendatEventItem.subject
+            contentType: default
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Day
+                  value: =$fromMillis($toMillis(@ctx.datasources.calendatEventItem.startTime), '[MNn] [D], [Y]', @ctx.system.timezone.offset)
+              - type: component.entity-field
+                options:
+                  label: Time
+                  value: |
+                    = $fromMillis($toMillis(@ctx.datasources.calendatEventItem.startTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+                    & " to " & 
+                    $fromMillis($toMillis(@ctx.datasources.calendatEventItem.endTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+        - type: component.entity-field
+          options:
+            label: Summary
+            value: =@ctx.datasources.calendatEventItem.bodyPreview
+            isMultiline: true
+    - type: component.web-view
+      options:
+        isTrackingTransparencyRequired: false
+        height: 400
+        content: |
+          =("
+          <html>
+            <head>
+              <meta name=" & "'" & "viewport" & "'" & " content=" & "'" & "width=device-width, " & "initial-scale=1" & "'" & "/>
+            </head>
+            <body>" 
+              & @ctx.datasources.calendatEventItem.bodyContent
+          & "</body>
+          </html>")
