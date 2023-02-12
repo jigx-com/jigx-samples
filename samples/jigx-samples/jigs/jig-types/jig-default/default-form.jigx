@@ -11,53 +11,78 @@ actions:
           method: save
           entity: default/form
           
+datasources:
+  employees:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/employees
+      query: |
+        SELECT 
+          id
+        FROM [default/employees] 
 
-            
 children:
   - type: component.form
     instanceId: default-form
     options:
       children:
-        - type: component.field-row
+        - type: component.number-field
+          instanceId: employee-id
           options:
+            label: employeeId
+            isHidden: true
+            initialValue: =($count(@ctx.datasources.employees.id) = 0 ? 1 :$count(@ctx.datasources.employees.id) + 1)
+        - type: component.avatar-field
+          instanceId: employee-photo
+          options:
+            label: Photo
+        - type: component.section
+          options:
+            title: Personal informations
             children:
               - type: component.text-field
-                instanceId: firstname
-                options:  
+                instanceId: employee-first-name
+                options:
                   label: First name
               - type: component.text-field
-                instanceId: lastname
+                instanceId: employee-surname
                 options:
-                  label: Last name
-        - type: component.email-field
-          instanceId: email
-          options:
-            label: Email
-            keyboardType: email-address
-        - type: component.number-field
-          instanceId: phone
-          options:
-            label: Phone number
-            keyboardType: numeric
-        - type: component.field-row
-          options:
-            children:
+                  label: Surname
               - type: component.date-picker
-                instanceId: birthdate
+                instanceId: employee-date-of-birth
                 options:
-                  label: Birth date
-              - type: component.dropdown
-                instanceId: gender
+                  label: Date of birth
+              - type: component.email-field
+                instanceId: employee-email
                 options:
-                  data: =@ctx.datasources.gender-static
-                  label: Select gender
-                  isMultiple: false
-                  item:
-                    type: component.dropdown-item
-                    instanceId: =@ctx.current.item.value
-                    options:
-                      title: =@ctx.current.item.title
-                      value: =@ctx.current.item.value
+                  label: Email
+                  icon: email
+              - type: component.number-field
+                instanceId: employee-phone-number
+                options:
+                  label: Phone number
+                  icon: phone
+        - type: component.section
+          options:
+            title: Business informations
+            children:
+              - type: component.text-field
+                instanceId: employee-position
+                options:
+                  label: Position
+              - type: component.date-picker
+                instanceId: employee-startWork
+                options:
+                  label: Date of starting work
+              - type: component.media-field
+                instanceId: employee-contract
+                options:
+                  label: Contract
+                  mediaType: image
+        
+        
           
 
                       

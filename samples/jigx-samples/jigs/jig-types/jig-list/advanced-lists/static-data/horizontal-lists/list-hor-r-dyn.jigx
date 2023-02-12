@@ -3,20 +3,9 @@ type: jig.list
 isHorizontal: true
 isHorizontalScrollIndicatorHidden: true
 isCollapsible: true
+
 actions:
   - children:
-      # - type: action.confirm
-      #   options:
-      #     title: Primary action
-      #     isConfirmedAutomatically: false
-      #     onConfirmed:
-      #       type: "@jigx/ja-delete"
-      #       options:
-      #         title: Delete
-      #     modal:
-      #       title: Modal window
-      #       description: Content of the modal window
-
       - type: action.go-back
         options:
           title: Secondary action 1
@@ -82,14 +71,8 @@ item:
       isError: false
       isWarning: false
       isDisabled: false
-
-    # DYNAMIC RIGHT
-    # rightElement:
-    #   type: value
-    #   text: Value 123
-
-    rightElement:
+    rightElement: 
       element: button
       title: =@ctx.current.item.button-title
-      # onPress:
-      #   type: action.go-back
+      onPress: 
+        type: action.go-back

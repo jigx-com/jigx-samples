@@ -23,17 +23,12 @@ widgets:
   - size: 2x2
     jigId: widget-list-stage-sd
   - size: 4x2
-    jigId: jw-group-avatar-list
+    jigId: group-avatar-list
   - size: 4x2
     jigId: location-widget-address
   - size: 2x2
-    jigId: jw-status-static
+    jigId: status-static
   - size: 2x2
     jigId: value-static
   - size: 4x2
     jigId: chart-widget-line-chart
-  - size: "1x1"
-    jigId: list-with-amount-control-sd
-  - size: "1x1"
-    jigId: sync-entities-onChange
-

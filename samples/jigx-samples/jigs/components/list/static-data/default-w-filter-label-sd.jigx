@@ -1,0 +1,123 @@
+title: Filter List (Static)
+description: A static list displaying filter options
+type: jig.default
+icon: notes-paper-approve
+  
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
+          
+datasources:
+  cleaning-services-static:
+    type: datasource.static
+    options:
+      data:
+        - area: Bathroom
+          category: withRate
+          description: Steam cleaning and disinfecting of the bathroom in its totality. Provision of fresh towels.
+          hourlyrate: 30
+          illustration: http://clipart-library.com/newimages/bathroom-clip-art-15.jpg
+          image: https://images.unsplash.com/photo-1646592472335-fa6be8e9bc7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80
+          status: indoor
+          onceoffrate:
+          service: Bathroom Deep Clean
+          time: 90
+        - area: Garden
+          category:
+          description: Taking care of general gardening to provide an immaculate first impression
+          hourlyrate:
+          illustration: http://clipart-library.com/images/6Tr8BrjTK.jpg
+          image: https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          status: outdoor
+          onceoffrate: 100
+          service: Gardening
+          time: 120
+        - area: General
+          category:
+          description: Cleaning and streak removal of external windows
+          hourlyrate: 35
+          illustration: http://clipart-library.com/img1/872145.png
+          image: https://images.unsplash.com/photo-1650538250295-6ef68d7ae1f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          status: outdoor
+          onceoffrate: 
+          service: Window Cleaning - External
+          time: 60
+        - area: Driveway
+          category:
+          description: Car wash including vacuum
+          hourlyrate:
+          illustration: http://clipart-library.com/new_gallery/9-95271_car-wash-comments-car-dry-wash-icon.png
+          image: https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80
+          status: outdoor
+          onceoffrate: 50
+          service: Car Washing
+          time: 60
+        - area: Laundry
+          category:
+          description: Provision of laundry services by removal of laundry and return of laundry. Includes a surcharge for delivery.
+          hourlyrate:
+          illustration: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoH-sLiGa5Q2WgJLodqiqnxhGCHmNz2iTF9BOuLESQ-SGdI0&s
+          image: https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1439&q=80
+          status: indoor
+          onceoffrate: 110
+          service: Offsite laundry services
+          time: 120
+        - area: Laundry
+          category:
+          description: Provision of laundry services making use of client's machines. Note that where this has been booked, but machines are not available, this will automatically be adjusted to offsite laundry services.
+          hourlyrate:
+          illustration: http://clipart-library.com/newhp/white-laundry-basket-clip-art-laundry-basket-clipart-black-and-white-clipground_a28f63e33793a653.jpg
+          image: https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1439&q=80
+          status: indoor
+          onceoffrate: 110
+          service: Onsite laundry services
+          time: 120
+        - area: Lounge
+          category:
+          description: Maintain your upholstery (chair, couch and seat) in pristine condition. We use only the most delicate clearning methods.
+          hourlyrate: 40
+          illustration: http://clipart-library.com/images_k/carpet-cleaning-silhouette/carpet-cleaning-silhouette-12.png
+          image: https://images.unsplash.com/photo-1612696733290-a2a26ce8131c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          status: indoor
+          onceoffrate:
+          service: Upholstery Cleaning
+          time: 60
+        - area: Pool
+          category:
+          description: Cleaning of pool, including chemical treatments, sweeping and proper flush.
+          hourlyrate:
+          illustration: http://clipart-library.com/data_images/476778.jpg
+          image: https://images.unsplash.com/photo-1562844275-857f6e7c429e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1603&q=80
+          status: outdoor
+          onceoffrate: 40
+          service: Pool Cleaning
+          time: 45
+children:
+  - type: component.list
+    instanceId: filter-list
+    options:
+      filter: 
+        - title: All
+          value: 'all'
+        - title: Indoor
+          value: indoor
+        - title: Outdoor
+          value: outdoor
+      data: =$filter(@ctx.datasources.cleaning-services-static, function($v, $a, $i) { @ctx.components.filter-list.state.filter = 'all' or $v.status = @ctx.components.filter-list.state.filter })[]        
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.service
+          subtitle: =@ctx.current.item.area
+          label:
+            title: =(@ctx.current.item.status = "indoor" ? 'Indoor' :'Outdoor')
+          leftElement: 
+            element: avatar
+            text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
+            uri: =@ctx.current.item.image

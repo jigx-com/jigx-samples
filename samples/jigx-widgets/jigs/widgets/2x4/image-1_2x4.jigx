@@ -1,0 +1,26 @@
+title: Image widget 1 (2x4)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+            
+widgets:
+  "2x4": 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+      isContentOverlaid: true
+      top: 
+        type: component.titles
+        options:
+          title: John Doe
+          subtitle: john.doe@gmail.com
+          icon: phone
+          align: center

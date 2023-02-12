@@ -1,0 +1,27 @@
+
+title: Avatar widget 2 (2x2)
+type: jig.default
+        
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value 
+
+widgets:
+  2x2:
+    type: widget.avatar
+    options:
+      text: MR
+      uri: https://randomuser.me/api/portraits/men/20.jpg
+      bottom:
+        type: component.titles
+        options:
+          title: Marty Randolph
+          subtitle: Product Design Lead
+          align: center
+          icon: calendar                 
+     

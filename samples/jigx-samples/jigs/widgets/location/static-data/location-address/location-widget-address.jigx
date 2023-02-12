@@ -11,5 +11,5 @@ widgets:
   4x2:
     type: widget.location
     options:
-      address: =@ctx.datasources.location-static.address
+      address: Národní 135/14, 110 00 Praha
       

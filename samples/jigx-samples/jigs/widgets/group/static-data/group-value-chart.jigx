@@ -1,0 +1,50 @@
+title: Value + Chart
+type: jig.default
+
+datasources:
+  series1: 
+    type: datasource.static
+    options:
+      data:
+        - x: Q1
+          y: 25000
+          color: color2
+        - x: Q2
+          y: 32000
+          color: color2
+        - x: Q3
+          y: 45000
+          color: color2
+        - x: Q4
+          y: 86000
+          color: color2 
+
+
+children:
+  - type: component.bar-chart
+    options:
+      chart:
+        height: 120
+      series:
+        - data: =@ctx.datasources.series1
+          
+widgets:
+  2x4: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.value
+          options:
+            value: 7500
+            top: 
+              type: component.titles
+              options:
+                title: Daily revenue
+        - type: widget.chart
+          options:
+            chart: 
+              type: component.bar-chart
+              options:
+                series:
+                  - data: =@ctx.datasources.series1
+          

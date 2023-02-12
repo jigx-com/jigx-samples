@@ -4,21 +4,24 @@ type: jig.list
 icon: task-list
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: https://images.unsplash.com/photo-1583907659441-addbe699e921?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1583907659441-addbe699e921?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80
 
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
-  instanceId: ammount-control
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     rightElement:
       element: amount-control
-      value: 1
+      value: =$number(@ctx.current.item.quantity)
       step: 1
       minimum: 1
       maximum: 5
@@ -26,10 +29,10 @@ item:
         type: action.execute-entity
         options:
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/products
+          entity: default/cleaning-services
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.components.ammount-control.state.amount
+            quantity: =@ctx.component.state.amount
           goBack: stay
       

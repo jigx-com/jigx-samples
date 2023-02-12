@@ -1,18 +1,19 @@
-type: jig.calendar
 title: Calendar
-                
-data: =@ctx.datasources.calendar-dynamic
+type: jig.calendar
+
+data: =@ctx.datasources.calendar-data-dynamic
 item:
   type: component.event
   options:
-    title: =@ctx.current.item.title
-    from:
-      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.eventid)- 1) * 3600000)
+    from: 
+      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.time)- 1) * 3600000)
       format:
-        dateFormat: "l"
-    location: =@ctx.current.item.location
-    people: "=[{'fullName':@ctx.current.item.fullName, 'avatarUrl': @ctx.current.item.avatarUrl}]"
-    tags: "=[{'title': @ctx.current.item.tagTitle, 'color': @ctx.current.item.color}]"
-    to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventid) *
-      3600000)
-
+        dateFormat: lll
+    to: 
+      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.time) * 3600000)
+      format:
+        dateFormat: lll
+    title: =@ctx.current.item.title
+    location:  =@ctx.current.item.location
+    tags: "=[{'title': @ctx.current.item.tags, 'color': @ctx.current.item.color}]"
+    people: "=[{'fullName':@ctx.current.item.fullname, 'avatarUrl': @ctx.current.item.avatar}]"

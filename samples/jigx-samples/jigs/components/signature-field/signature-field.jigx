@@ -26,11 +26,15 @@ actions:
       #       title: Succesfully signed
 
 header:
-    type: component.image
-    options:
-      title: Signature
-      source:
-        uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        title: Signature
+        source:
+          uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
         
 children:
   - type: component.form

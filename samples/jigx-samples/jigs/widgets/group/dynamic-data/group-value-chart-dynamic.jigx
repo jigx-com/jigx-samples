@@ -1,0 +1,41 @@
+title: Value + Chart
+type: jig.default
+
+datasources:
+  value-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      isDocument: true
+      entities:
+        - entity: default/value
+  
+      query: SELECT id, '$.value', '$.title' FROM [default/value] 
+
+
+children:
+  - type: component.bar-chart
+    options:
+      series:
+        - data: =@ctx.datasources.series1-dynamic
+          
+widgets:
+  2x4: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.value
+          options:
+            value: =@ctx.datasources.value-dynamic.value
+            top: 
+              type: component.titles
+              options:
+                title: Daily revenue
+        - type: widget.chart
+          options:
+            chart: 
+              type: component.bar-chart
+              options:
+                series:
+                  - data: =@ctx.datasources.series1-dynamic
+          

@@ -1,0 +1,16 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - entity: default/products
+  query: |
+    SELECT
+      id,
+      '$.title',
+      '$.uri',
+      '$.tag',
+      '$.price',
+      '$.category',
+      '$.sale'
+    FROM [default/products]
+    WHERE '$.category' = 'product' AND '$.sale' IS NULL

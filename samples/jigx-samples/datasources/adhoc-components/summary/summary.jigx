@@ -62,7 +62,7 @@ options:
       icon: gallery
       color: color1
     - component: Line-chart
-      componentLink: list-line-chart
+      componentLink: composite-line-chart
       icon: graph-stats-square
       color: color2
     - component: List

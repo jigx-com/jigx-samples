@@ -1,7 +1,6 @@
 title: Interactive Image
 description: Interactive image for Restaurant Table Bookings
 type: jig.default
-isScrollable: false
 
 children:
   - type: component.interactive-image
@@ -24,7 +23,6 @@ children:
           id: =@ctx.current.item.id
           title: =@ctx.current.item.name
           icon: =@ctx.current.item.isreserved = 'TRUE' ? 'close' :null
-          # groupId: =@ctx.current.item.isreserved = 'TRUE' ? 'Reserved':'Available'
           color: =@ctx.current.item.isreserved = 'TRUE' ? 'color3' :null
           style:
             isDisabled: =@ctx.current.item.isreserved = 'TRUE' ? true :false

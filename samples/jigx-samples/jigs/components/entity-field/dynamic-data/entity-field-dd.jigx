@@ -3,10 +3,14 @@ description: Jig to display entity fields
 type: jig.default
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.cleaning-services-dd.image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.cleaning-services-dd.image
 
 children:
   - type: component.entity
@@ -36,10 +40,6 @@ children:
         - type: component.entity-field
           options:
             label: Hourly Rate
-            value: =@ctx.datasources.cleaning-services-dd.hourlyrate
-        - type: component.entity-field
-          options:
-            label: Once Off Rate
-            value: =@ctx.datasources.cleaning-services-dd.onceoffrate      
+            value: =@ctx.datasources.cleaning-services-dd.hourlyrate   
 
 

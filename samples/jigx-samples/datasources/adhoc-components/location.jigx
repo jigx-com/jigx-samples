@@ -7,6 +7,8 @@ options:
     SELECT
       '$.id',
       '$.address',
-      json_extract(data, '$.adress-us') as addressAus,
-      '$.category'
+      '$.address-us',
+      '$.category',  
+      '$.lat',
+      '$.lng'
     FROM [default/location] WHERE '$.category' = "location"

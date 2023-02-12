@@ -2,19 +2,40 @@ title: List
 type: jig.default
 
 children:
-  - type: component.list
+  - type: component.section
     options:
-      data: =@ctx.datasources.products-dynamic
-      item: 
-        type: component.product-item
-        options:
-          title: =@ctx.current.item.title
-          image:
-            uri: =@ctx.current.item.uri
-          tag: =@ctx.current.item.tag
-          price: 
-            value: =@ctx.current.item.price
-            format:
-              numberStyle: currency
-          discount: =@ctx.current.item.discount
-            
+      title: Products
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.prods
+            item: 
+              type: component.product-item
+              options:
+                title: =@ctx.current.item.title
+                image:
+                  uri: =@ctx.current.item.uri
+                tag: =@ctx.current.item.tag
+                price: 
+                  value: =@ctx.current.item.price
+                  format:
+                    numberStyle: currency
+  - type: component.section
+    options:
+      title: Sale
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.sale
+            item: 
+              type: component.product-item
+              options:
+                title: =@ctx.current.item.title
+                image:
+                  uri: =@ctx.current.item.uri
+                tag: =@ctx.current.item.tag
+                price: 
+                  value: =@ctx.current.item.price
+                  format:
+                    numberStyle: currency
+                discount: =@ctx.current.item.discount

@@ -23,6 +23,6 @@ children:
         isFirstTickHidden: false
         isFirstLabelHidden: false
       series:
-        - data: =@ctx.datasources.chart-data.{'x':x,'y':y}
+        - data: =[{"x":"Jun", "y":1851}, {"x":"Jul", "y":1483}, {"x":"Aug", "y":1250}, {"x":"Sep", "y":2067}, {"x":"Oct", "y":1650}, {"x":"Nov", "y":1280}, {"x":"Dec", "y":1430}, {"x":"Jan", "y":1398}, {"x":"Feb", "y":1763}, {"x":"Mar", "y":2151}, {"x":"Apr", "y":1543}, {"x":"May", "y":1475}]
           name: "2021/2022"
           color: color2

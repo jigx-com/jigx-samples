@@ -2,33 +2,15 @@ type: jig.default
 title: Flight Schedule
 description: Widget List with Stages
 
-actions:
-  - children:
-      - type: action.go-to
-        options:
-          title: List with Expander and Stage
-          linkTo: list-with-expander-stage-dd
-      - type: action.go-to
-        options:
-          title: List with Stage
-          linkTo: list-with-stage-dd
-
 children:
   - type: component.entity
     options:
       children:
         - type: component.entity-field
           options:
-            label: "For Widget Demo Only"
-            value: Check actions to view related items
-            
-  - type: component.image
-    options:
-      height: 500
-      source:
-        uri: https://images.unsplash.com/photo-1558420034-e98aa2ce8cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=796&q=80
+            label: Placeholder
+            value: Value
         
-
 widgets:
   2x2:
     type: widget.list

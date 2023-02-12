@@ -1,12 +1,15 @@
 title: Execute entity by action button
 type: jig.default
-# description: This action can be used for sync your local database with your live database on the server. This is an example of sync-entities in action-list.
 
-header: 
-    type: component.image
-    options:
-      source:
-        uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
 
 
 actions:
@@ -30,6 +33,7 @@ children:
       children:
         - type: component.entity-field
           options:
-            label: Sync entities
+            label: ""
             isMultiline: true
-            value: This action button will sync our default/employee-detail and default/employees entity and redirect us to the employee detail.
+            value: The action button below will sync our data with default/employees entity and redirect you to the employee detail.
+            rightIcon: synchronize-arrows-1

@@ -1,0 +1,60 @@
+title: List widget 2 (2x2)
+type: jig.list
+
+data: =@ctx.datasources.employees
+datasources:
+  employees:
+    type: datasource.static
+    options:
+      data:
+        - name: Boris Miranda
+          position: UX Designer
+          label-color: color5
+          avatar-text: MM
+          avatar-uri: https://robohash.org/Mega
+          progress: 0.78
+
+        - name: Santiago Hampton
+          position: Senior Frontend Developer
+          label-color: color3
+          avatar-text: E
+          avatar-uri: https://robohash.org/jigx
+          progress: 0.3  
+                    
+        - name: Tom Sellers
+          position: QA Engineer
+          label-color: color4
+          avatar-text: B
+          avatar-uri: https://robohash.org/aloha
+          progress: 0.54
+
+  
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.position
+
+widgets:        
+  "2x2": 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.employees
+      item: 
+        type: component.list-item        
+        options:
+          color:
+            - when: true
+              color: =@ctx.current.item.label-color
+          title: =@ctx.current.item.name
+          subtitle: =@ctx.current.item.position
+          progress:  =@ctx.current.item.progress         
+          leftElement: 
+            element: avatar
+            text:  =@ctx.current.item.avatar-text
+            uri:  =@ctx.current.item.avatar-uri
+
+
+
+
+    

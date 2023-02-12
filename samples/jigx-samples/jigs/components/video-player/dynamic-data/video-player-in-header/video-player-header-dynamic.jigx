@@ -3,12 +3,16 @@ title: Video header
 
 
 header:
-    type: component.video-player
-    options:
-      url: =@ctx.datasources.video-player-dynamic.uri
-      autoplay: true
-      loop: true
-      ratio: "16:9"
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.video-player
+      options:
+        url: =@ctx.datasources.video-player-dynamic.uri
+        autoplay: true
+        loop: true
+        ratio: "16:9"
 
 
 children:

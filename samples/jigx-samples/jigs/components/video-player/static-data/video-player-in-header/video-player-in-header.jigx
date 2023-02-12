@@ -3,12 +3,16 @@ title: Video header
 
 
 header:
-  type: component.video-player
+  type: component.jig-header
   options:
-    url: https://player.vimeo.com/external/510534971.sd.mp4?s=feaf03f65dc961bf98dcecbbbdcf21db84204536&profile_id=164&oauth2_token_id=57447761
-    autoplay: true
-    loop: true
-    ratio: "16:9"
+    height: medium
+    children:
+      type: component.video-player
+      options:
+        url: https://player.vimeo.com/external/510534971.sd.mp4?s=feaf03f65dc961bf98dcecbbbdcf21db84204536&profile_id=164&oauth2_token_id=57447761
+        autoplay: true
+        loop: true
+        ratio: "16:9"
 
 
 children:

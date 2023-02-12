@@ -1,0 +1,123 @@
+title: List widget 4 (2x2)
+type: jig.list
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: IMG_665.jpg 
+          subtitle: 2,5 MB 
+          description: Description description description 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          avatar-text: Test
+          avatar-uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgYs2O3ePnGD7dXwqrmnHIr-wovVAqk0QXBQ&usqp=CAU
+          
+        - name: 2022-04-01 10.32.21.xlsx
+          subtitle: 876 KB
+          description: created 02.05.2022 12:11 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          avatar-text: Test
+          avatar-uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb9sPSzxojkPCXqx8hZ61ErugBhO4F7zymIQ&usqp=CAU
+
+        - name: IMG_665.jpg 
+          subtitle: 2,5 MB 
+          description: Description description description 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          avatar-text: Test
+          avatar-uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeEJz_OjIywXTPYpJOpdpESui95IRaaIUqdQ&usqp=CAU
+           
+        - name: IMG_665.jpg 
+          subtitle: 3,5 MB 
+          description: modified 02.05.2022 12:11 
+          highlight: false
+          # label-title: ""
+          # label-title: Regular
+          # label-color: color7   
+          # avatar-text: PDF
+          # avatar-uri: https://images.zenhubusercontent.com/5f4f9b67a6de21680bff6f1a/7aca50fb-ad30-4da6-beb4-eb846537d5f3
+
+        - name: 2022-05-02 12.09.45.pdf
+          subtitle: 870 KB 
+          description: modified 02.05.2022 12:11 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          # avatar-text: Test
+          # avatar-uri: https://images.zenhubusercontent.com/5f4f9b67a6de21680bff6f1a/2908b522-5454-464e-8503-0f14a4886e08
+
+        - name: IMG_665.jpg 
+          subtitle: 2,5 MB 
+          description: Description description description 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          avatar-text: Test
+          avatar-uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlxMBCxL3zg6Wya4wtfDC2CgG3zhS_-IcBfw&usqp=CAU
+
+        - name: 2022-05-02 12.09.45.pdf
+          subtitle: 870 KB 
+          description: modified 02.05.2022 12:11 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          # avatar-text: Test
+          # avatar-uri: https://images.zenhubusercontent.com/5f4f9b67a6de21680bff6f1a/2908b522-5454-464e-8503-0f14a4886e08
+              
+        - name: 2022-04-01 10.32.21.xlsx
+          subtitle: 876 KB
+          description: created 02.05.2022 12:11 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          # avatar-text: Test
+          # avatar-uri: https://images.zenhubusercontent.com/5f4f9b67a6de21680bff6f1a/1c3321c0-e103-4a5c-8b93-d1fe1b9d5baf
+          
+
+        - name: 2022-04-01 10.32.21.xlsx
+          subtitle: 876 KB
+          description: created 02.05.2022 12:11 
+          highlight: false
+          label-title: ""
+          label-color: color7
+          avatar-text: Test
+          avatar-uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb9sPSzxojkPCXqx8hZ61ErugBhO4F7zymIQ&usqp=CAU
+
+                                  
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  options:
+    color:
+      - when: true
+        color: color5
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.subtitle
+    description: =@ctx.current.item.description
+    label: 
+      title: =@ctx.current.item.label-title
+      color:
+        - when: true
+          color: =@ctx.current.item.label-color
+
+    leftElement: 
+      element: image
+      text: =@ctx.current.item.avatar-text
+      uri: =@ctx.current.item.avatar-uri
+      resizeMode: cover        
+  
+    divider: solid
+    
+    style:
+      isPositive: false 
+      isHighlighted: =@ctx.current.item.highlight
+      isStrikeThrough: false
+      isError: false
+      isWarning: false
+      isDisabled: false

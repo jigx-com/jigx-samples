@@ -4,10 +4,14 @@ type: jig.default
 
 # the inputs comming from list-with-actions-sd
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.repair-services-static[id=1].image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.repair-services-static[id=1].image
 
 children:
   - type: component.entity
@@ -16,11 +20,7 @@ children:
         - type: component.entity-field
           options:
             label: Service
-            value: =@ctx.datasources.repair-services-static[id=1].service
-        - type: component.entity-field
-          options:
-            label: Description
-            value: =@ctx.datasources.repair-services-static[id=1].description
+            value: =@ctx.datasources.repair-services-static[id=1].service 
         - type: component.entity-field
           options:
             label: Hourly Rate
@@ -34,5 +34,10 @@ children:
             label: Materials
             value: =(@ctx.datasources.repair-services-static[id=1].materials = 'True' ? true :false) 
             contentType: checkbox   
+        - type: component.entity-field
+          options:
+            label: Description
+            value: =@ctx.datasources.repair-services-static[id=1].description
+           
 
 

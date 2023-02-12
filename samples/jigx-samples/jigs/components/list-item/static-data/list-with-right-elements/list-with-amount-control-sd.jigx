@@ -1,6 +1,16 @@
 title: List with Amount controls
 type: jig.default
 
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1583907659441-addbe699e921?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80
+
 datasources:
   amount-control:
     type: datasource.static
@@ -20,27 +30,9 @@ datasources:
           step: 10
           min: -50
           max: 50
-  amount-control1:
-    type: datasource.static
-    options:
-      data:
-        - name: Default with delete
-          description: No special settings
-        - name: Step=10
-          description: Min is default 0
-          step: 10
-        - name: Min=1 Max=10
-          description: Step is default 1
-          min: 1
-          max: 10
-        - name: Step=10 Min=-50 Max=50
-          description:
-          step: 10
-          min: -50
-          max: 50
+
 children:
   - type: component.list
-    instanceId: with-no-delete
     options:
       data: =@ctx.datasources.amount-control
       item:
@@ -58,34 +50,3 @@ children:
               type: action.go-to
               options:
                 linkTo: list-with-amount-control-sd
-        
-  - type: component.list
-    instanceId: with-delete
-    options:
-      data: =@ctx.datasources.amount-control1
-      item:
-        type: component.list-item
-        instanceId: item
-        options:
-          title: =@ctx.current.item.name
-          subtitle: =@ctx.current.item.description
-          rightElement:
-            element: amount-control
-            value: 2
-            step: =@ctx.current.item.step
-            minimum: =@ctx.current.item.min
-            maximum: =@ctx.current.item.max
-            onChange:
-              type: action.execute-entity
-              options:
-                provider: DATA_PROVIDER_DYNAMIC
-                entity: default/products
-                method: update
-                data:
-                  id: =@ctx.current.item.id
-                  quantity: =@ctx.components.item.state.amount
-                goBack: stay
-            onDelete: 
-              type: action.execute-entity
-              options:
-                provider: DATA_PROVIDER_DYNAMIC

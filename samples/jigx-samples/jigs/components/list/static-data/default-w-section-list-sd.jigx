@@ -1,20 +1,18 @@
 title: Default Jig with List
 type: jig.default
 description: Example of List with Sections on Default Jig
-header: 
-  type: component.image
+
+header:
+  type: component.jig-header
   options:
-    source:
-      uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
 
 children:
-  - type: component.entity
-    options:
-      children:
-        - type: component.entity-field
-          options:
-            label: Current User
-            value: =@ctx.user.displayName
   - type: component.list
     options:
       sections:

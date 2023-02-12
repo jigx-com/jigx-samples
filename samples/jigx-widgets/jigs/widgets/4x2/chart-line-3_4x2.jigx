@@ -1,0 +1,86 @@
+title: List widget 4 (4x2)
+type: jig.default
+
+datasources:
+  static-data-1:
+    type: datasource.static
+    options:
+      data:
+        - 1218000
+        - 1835000
+        - 2001000
+        - 2871000
+        - 1456000
+        - 3267000
+        - 4634000
+        - 4967000
+  static-data-2:
+    type: datasource.static
+    options:
+      data:
+        - 1200000
+        - 1400000
+        - 1800000
+        - 2500000
+        - 2800000
+        - 3000000
+        - 3200000
+        - 3500000
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:
+  4x2: 
+    type: widget.chart
+    options:
+      top:
+        type: component.titles
+        options:
+          title: Trend 2021-2022
+      chart:
+        type: component.line-chart
+        options:
+          plotOptions:
+            series:
+              pointWidth: 5
+          chart:
+            isAnimated: true
+          yAxis:
+            min: 0
+            max: 5000000
+            labels:
+              format:
+                numberStyle: currency
+                compactDisplay: short
+                notation: compact
+            tickAmount: 3
+            
+          xAxis:
+            categories:
+              - Q1/21
+              - Q2/21
+              - Q3/22
+              - Q4/21
+              - Q1/22
+              - Q2/22
+              - Q3/22
+              - Q4/22
+            isHidden: false
+          series:
+            - data: =@ctx.datasources.static-data-2
+              animation:
+                direction: left-to-right
+              color: color5
+            - data: =@ctx.datasources.static-data-1
+              animation:
+                direction: left-to-right
+              color: positive
+          legend:
+            isHidden: false                      

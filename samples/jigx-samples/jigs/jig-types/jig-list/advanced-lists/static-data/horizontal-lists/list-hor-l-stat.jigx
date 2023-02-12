@@ -86,7 +86,6 @@ item:
       isWarning: false
       isDisabled: false
 
-    # STATIC LEFT
     leftElement:
       element: avatar
       uri: =@ctx.current.item.uri

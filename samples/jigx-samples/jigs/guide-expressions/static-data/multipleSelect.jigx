@@ -1,0 +1,35 @@
+title: Multiple select
+type: jig.default
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Save selected
+          provider: DATA_PROVIDER_DYNAMIC
+          functionParameters:
+            people: =@ctx.components.selected-people-dropdown.state.selected.id
+          entity: default/form
+          method: save
+          
+
+children:
+  - type: component.form
+    instanceId: selected-people-form
+    options:
+      children:
+        - type: component.dropdown
+          instanceId: selected-people-dropdown
+          options:
+            label: Select people
+            data: =@ctx.datasources.employees-static
+            isMultiple: true
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
+                value: =@ctx.current.item.id
+                leftElement: 
+                  element: avatar
+                  text: =$substring(@ctx.current.item.firstname, 0, 1) & $substring(@ctx.current.item.lastname, 0, 1)
+                  uri: =@ctx.current.item.img

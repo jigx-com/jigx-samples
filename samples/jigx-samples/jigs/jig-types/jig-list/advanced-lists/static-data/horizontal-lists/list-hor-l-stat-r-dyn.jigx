@@ -19,7 +19,7 @@ datasources:
       data:
         - name: Kenwood KVC85.124SI
           subtitle: 13 422 CZK
-          description: Kuchyňský robot planetární způsob míchání, příkon 1200 W, materiál vnitřních převodů kov, objem mísy 5 l, materiál mísy nerez, materiál pláště nerez, plynulá regulace otáček, šlehání, mísení a hnětání, hmotnost 9,5 kg, hnětací hák, k metla, balónová metla a šlehací metla, barva stříbrná
+          description: Kenwood KVC85.124SI have it all. Bake, whip and knead your way to perfect cakes, creams, breads and much more. 
           highlight: false
           label: true
           label-title: New
@@ -28,7 +28,7 @@ datasources:
 
         - name: Huawei Watch GT Runner
           subtitle: 6 990 CZK
-          description: "Chytré hodinky - pánské s ovládáním v češtině, GPS, telefonování z hodinek přes spárovaný telefon (v dosahu Bluetooth), měření tepu, monitoring spánku, krokoměr,"
+          description: HUAWEI WATCH GT Runner comes with ground-breaking floating-antenna positioning design and supports dual-band five-system GNSS. Powered by HUAWEI TruSeenTM 5.0+ and HUAWEI TruSportTM, this smart running watch offers scientific running program, personal running plans, and accurate real-time heart-rate monitoring, which is ideal for your running, workout and outdoor activities.
           highlight: true
           label: true
           label-title: -10 %
@@ -37,7 +37,7 @@ datasources:
 
         - name: ASUS ROG Fusion II 500
           subtitle: 3 889 CZK
-          description: Herní sluchátka drátová, s mikrofonem, přes hlavu, okolo uší, uzavřená konstrukce, 3,5 mm Jack, USB-A, USB-C, pro PC, PlayStation 4, PlayStation 5, Xbox ONE, Xbox Series a Nintendo Switch, Hi-Res audio, s ovládáním hlasitosti, frekvenční rozsah 20 Hz-40000 Hz,
+          description: ASUS ROG Fusion II 500 Gaming Headset - AI Beamforming Mic, Noise-canceling AI Mic, 7.1 Surround Sound, Hi-Res ESS 9280 Quad DAC, Game Chat, 3.5mm, USB-C
           highlight: false
           label: true
           label-title: -13 %
@@ -46,7 +46,7 @@ datasources:
 
         - name: Eternico Wireless set KS4001 - CZ/SK
           subtitle: 499 CZK
-          description: Set klávesnice a myši bezdrátový, do kanceláře i domácnosti, dosah až 10m, nízkoprofilové klávesy, technologie power saving mode, 6 multimediálních kláves, nůžkový mechanizmus kláves, Plug & Play, 2*AAA baterie (v balení), česká a slovenská lokalizace kláves, USB nano reciever 2.4Ghz + myš, bezdrátová, optická, 800 - 1200 DPI, technologie power saving
+          description: "Keyboard and Mouse Set - keyboard: wireless, for home and office use, range up to 10m, low profile keys, power-saving mode, six multimedia keys, scissor-switch keys, Plug & Play support, 2*AAA batteries (included), Czech and Slovak keyboard layout, 2.4Ghz USB nano receiver 2.4Ghz; mouse: wireless, optical, 800-1200 DPI, power-saving mode, without backlight, three buttons, lifetime up to 3,000,000 clicks, silent click, symmetrical (for right and left-handed), 2*AAA batteries (included), Plug & Play"
           highlight: false
           label: true
           label-title: -28 %
@@ -68,7 +68,6 @@ item:
 
     divider: solid
     horizontalItemSize: large
-    # Small: 80 | Regular: 130 | Large: 180
 
     style:
       isPositive: false
@@ -78,65 +77,12 @@ item:
       isWarning: false
       isDisabled: false
 
-    # STATIC LEFT
-    # leftElement:
-    #   type: avatar
-    #   uri:  =@ctx.current.item.uri
-    #   text: asd
-
-    # leftElement:
-    #   type: progress
-    #   value: 0.3
-
     leftElement:
       element: image
       resizeMode: contain
       uri: =@ctx.current.item.uri
-      text: =@ctx.current.item.title
-
-    # leftElement:
-    #   type: icon
-    #   icon: add-circle
-    #   isContained: true
-    #   isDuotone: true
-
-    # leftElement:
-    #   type: checkbox
-    #   value: true
-
-    # STATIC RIGHT
-    # rightElement:
-    #   type: badge
-
-    # rightElement:
-    #   type: checkbox
-    #   value: false
-
-    # rightElement:
-    #   type: icon
-    #   icon: alarm-bell
-    #   isContained: true
-    #   isDuotone: true
-
-    # rightElement:
-    #   type: switch
-    #   value: true
-
-    # DYNAMIC RIGHT
-    # rightElement:
-    #   type: value
-    #   text: Value 123
-
-    # rightElement:
-    #   type: button
-    #   title: Details
-    #   onPress:
-    #     type: action.go-back
-    #     options:
-    #       title: atest
+      text: =@ctx.current.item.name
 
     rightElement:
       element: amount-control
       value: 2
-      onChange:
-        type: action.go-back

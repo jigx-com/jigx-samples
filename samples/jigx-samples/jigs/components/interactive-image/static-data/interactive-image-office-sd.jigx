@@ -1,7 +1,55 @@
 title: Interactive Image
 description: Interactive image for Hot Seat & Meeting Room Bookings
 type: jig.default
-isScrollable: false
+
+datasources:
+  interactive-image-office: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Meeting Room
+          xCoordinate: 65
+          yCoordinate: 43
+          isReserved: true
+          group: Meeting room
+        - id: 2
+          name: Hot Desk 1
+          xCoordinate: 22
+          yCoordinate: 12
+          isReserved: true
+          group: Hot desk - reserved
+        - id: 3
+          name: Hot Desk 2
+          xCoordinate: 22
+          yCoordinate: 22.5
+          isReserved: false
+          group:
+        - id: 4
+          name: Hot Desk 3
+          xCoordinate: 22
+          yCoordinate: 33
+          isReserved: true
+          group: Hot desk - reserved
+        - id: 5
+          name: Hot Desk 4
+          xCoordinate: 22
+          yCoordinate: 44
+          isReserved: false
+          group:
+        - id: 6
+          name: Hot Desk 5
+          xCoordinate: 22
+          yCoordinate: 55.5
+          isReserved: false
+          group:
+        - id: 7
+          name: Hot Desk 6
+          xCoordinate: 22
+          yCoordinate: 66.5
+          isReserved: true
+          group: Hot desk - reserved
+  
 
 children:
   - type: component.interactive-image
@@ -11,12 +59,20 @@ children:
         uri:  https://i.pinimg.com/564x/b0/eb/52/b0eb52122452257e955f210e7fdb8f55.jpg
 
           
-      data: =@ctx.datasources.floorplan-office-static
+      data: =@ctx.datasources.interactive-image-office
       pointColor: color10
       groups:
-        - title: Reserved Seats
-          id: Reserved
+        - title: Selected desks
+          id: Selected desks
+          color: color2
+        - title: Hot desk - reserved
+          id: Hot desk - reserved
           color: color14
+          maximumPoints: 3
+        - title: Meeting room - reserved
+          id: Meeting room
+          color: color14
+          maximumPoints: 1
 
       item:
         type: component.interactive-image-item
@@ -25,6 +81,7 @@ children:
           title: =@ctx.current.item.name
           icon: =@ctx.current.item.isReserved = true ? 'close' :null
           color: =@ctx.current.item.isReserved = true ? 'color3' :null
+          groupId: =@ctx.current.item.group
           style:
             isDisabled: =@ctx.current.item.isReserved = true ? true :false
           

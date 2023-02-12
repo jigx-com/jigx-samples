@@ -1,0 +1,31 @@
+title: Value widget 2 (4x2) 
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+                       
+widgets:
+  "4x2": 
+    type: widget.value
+    options:
+      value: "2329999"
+      align: center
+      format:
+        numberStyle: currency
+      bottom: 
+        type: component.titles
+        options:
+          align: center
+          title: Company Billing
+          subtitle: Q3 / 2022
+            
+
+
+        
+              

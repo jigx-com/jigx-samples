@@ -9,4 +9,4 @@ options:
       '$.header',
       '$.photo',
       '$.category'
-    FROM [default/image] WHERE '$.category' = "image"
+    FROM [default/avatar] WHERE '$.category' = "image"

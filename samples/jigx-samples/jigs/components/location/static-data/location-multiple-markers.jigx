@@ -1,0 +1,27 @@
+title: Location with multiple markers
+type: jig.default
+
+isCollapsible: true
+
+datasources:
+  address: 
+    type: datasource.static
+    options:
+      data:
+        - street: 768 5th Ave
+          city: New York
+          country: US
+  points:
+    type: datasource.static
+    options:
+      data:
+        - lat: 40.759412
+          lng: -73.912306
+        - lat: 40.745368
+          lng: -74.057189
+children:
+  - type: component.location
+    options:
+      address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city & ',' & @ctx.datasources.address.country
+      markersData: =@ctx.datasources.points
+      isAnimationDisabled: true

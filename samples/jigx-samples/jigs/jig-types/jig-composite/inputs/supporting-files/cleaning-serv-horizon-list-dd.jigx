@@ -1,5 +1,4 @@
-title: Cleaning Services
-description: List of other available Cleaning Services
+title: List of available services
 
 type: jig.list
 icon: contact 
@@ -7,11 +6,15 @@ isHorizontal: true
 isCollapsible: false
 isInitiallyCollapsed: true
 
-header: 
-    type: component.image
-    options:
-      source:
-        uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 
 outputs:
   output-key: =@ctx.solution.state.servicesId
@@ -23,8 +26,6 @@ item:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     horizontalItemSize: large
-    # style:
-    #   isHighlighted: =@ctx.current.item.id = @ctx.solution.state.servicesId ? true :false
 
     progress: =@ctx.current.item.id = @ctx.solution.state.servicesId ? 1 :0
     color:

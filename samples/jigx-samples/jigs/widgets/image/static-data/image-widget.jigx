@@ -3,12 +3,16 @@ type: jig.default
 
 
 header:
-    type: component.image
-    options:
-      title: Header image
-      source:
-        uri: =@ctx.datasources.image-static.header
-        
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        title: Header image
+        source:
+          uri: =@ctx.datasources.image-static.header
+          
 children:
   - type: component.entity
     options:

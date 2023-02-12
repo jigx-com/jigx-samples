@@ -1,0 +1,64 @@
+title: Filter, progress and label
+type: jig.default
+  
+datasources:
+  filter-list:
+    type: datasource.static
+    options:
+      data:
+        - title: Title 1
+          subtitle: Subtitle - active
+          status: 'active'
+          progress: 0.2
+        - title: Title 2
+          subtitle: Subtitle - active
+          status: 'active'
+          progress: 0.56
+        - title: Title 3
+          subtitle: Subtitle - inactive
+          status: 'inactive'
+          progress: 0.8
+        - title: Title 4
+          subtitle: Subtitle - inactive
+          status: 'active'
+          progress: 0.3
+        - title: Title 5
+          subtitle: Subtitle - active
+          status: 'active'
+          progress: 0.1
+        - title: Title 6
+          subtitle: Subtitle - inactive
+          status: 'active'
+          progress: 0.9
+          
+
+children:
+  - type: component.list
+    instanceId: listFilter
+    options:
+      filter:
+        - title: All
+          value: all
+        - title: Active
+          value: active
+        - title: Inactive
+          value: inactive
+      maximumItemsToRender: 8
+      data: =$filter(@ctx.datasources.filter-list, function($v, $a, $i) { @ctx.components.listFilter.state.filter = 'all' or $v.status = @ctx.components.listFilter.state.filter })[]
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          subtitle: =@ctx.current.item.subtitle
+          progress: =@ctx.current.item.progress
+          color:
+            - when: =@ctx.current.item.status = 'active'
+              color: color2
+            - when:  =@ctx.current.item.status  = 'inactive'
+              color: color4
+          label:
+            title: Label active
+            isHidden: =@ctx.current.item.status  = 'inactive'
+            color:
+              - when: =@ctx.current.item.status = 'active'
+                color: color2

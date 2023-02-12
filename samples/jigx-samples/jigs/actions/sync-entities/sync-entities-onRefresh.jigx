@@ -4,17 +4,34 @@ description: This action can be used for sync your local database with your live
 
 
 onRefresh: 
-  type: action.sync-entities
+  type: action.action-list
   options:
-    provider: DATA_PROVIDER_DYNAMIC
-    entities:
-      - entity: default/employees
+    actions:
+      - type: action.execute-entity
+        options:
+          provider: DATA_PROVIDER_DYNAMIC
+          method: update
+          goBack: stay
+          entity: default/employees
+          data: 
+            id: =@ctx.datasources.employee-detail-dynamic.id
+            modify: =@ctx.datasources.employee-detail-dynamic.modify >= 10 ? 1 :($number(@ctx.datasources.employee-detail-dynamic.modify) + 1)
+  
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_DYNAMIC
+          entities:
+            - entity: default/employees
 
-header: 
-  type: component.image
+header:
+  type: component.jig-header
   options:
-    source:
-      uri: =@ctx.datasources.employee-detail-dynamic.photo
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.employee-detail-dynamic.photo
 
 
 children:
@@ -47,3 +64,7 @@ children:
                 options:
                   label: Phone
                   value: =@ctx.datasources.employee-detail-dynamic.phone
+        - type: component.entity-field
+          options:
+            label: Number of sync-entities calls (max. 10)
+            value: =@ctx.datasources.employee-detail-dynamic.modify 

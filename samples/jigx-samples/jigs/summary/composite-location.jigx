@@ -2,5 +2,6 @@ title: Location examples
 type: jig.composite
 
 children:
-  - jigId: location-address
-  - jigId: location-pathsData
+  - jigId: location-with-address
+  - jigId: location-multiple-markers
+  - jigId: location-path

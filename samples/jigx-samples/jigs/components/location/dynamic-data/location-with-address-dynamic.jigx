@@ -1,0 +1,9 @@
+title: Location with address
+type: jig.default
+     
+children:
+  - type: component.location
+    options:
+      address: =@ctx.datasources.location.address-us
+
+      

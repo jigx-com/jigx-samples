@@ -1,20 +1,79 @@
 title: List
 type: jig.default
 
-children:
-  - type: component.list
+datasources:
+  prods:
+    type: datasource.static
     options:
-      data: =@ctx.datasources.products
-      item: 
-        type: component.product-item
-        options:
-          title: =@ctx.current.item.title
-          image:
-            uri: =@ctx.current.item.uri
-          tag: =@ctx.current.item.tag
-          price: 
-            value: =@ctx.current.item.price
-            format:
-              numberStyle: currency
-          discount: =@ctx.current.item.discount
-            
+      data:
+        - id: 1
+          title: M1 Bluetooth Wireless Mouse
+          uri: https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+          tag: in stock
+          price: 59.96
+        - id: 2
+          title: Multifunction charging station
+          uri: https://images.unsplash.com/photo-1587749091230-fb8a034d695c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80
+          tag: in stock
+          price: 71.08
+  sale: 
+      type: datasource.static
+      options:
+        data:
+          - id: 3
+            title: Headphones WH-1000XM4
+            uri: https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80
+            tag: free transport 
+            price: 211.96
+            discount: 0.10
+          - id: 4
+            title: Bluetooth speaker Charge 5
+            uri: https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80
+            tag: in stock
+            price: 191.6
+            discount: 0.15
+          - id: 5
+            title: Wireless headphones T3S
+            uri: https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+            tag: in stock
+            price: 84.3
+            discount: 0.10
+
+children:
+  - type: component.section
+    options:
+      title: Products
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.prods
+            item: 
+              type: component.product-item
+              options:
+                title: =@ctx.current.item.title
+                image:
+                  uri: =@ctx.current.item.uri
+                tag: =@ctx.current.item.tag
+                price: 
+                  value: =@ctx.current.item.price
+                  format:
+                    numberStyle: currency
+  - type: component.section
+    options:
+      title: Sale
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.sale
+            item: 
+              type: component.product-item
+              options:
+                title: =@ctx.current.item.title
+                image:
+                  uri: =@ctx.current.item.uri
+                tag: =@ctx.current.item.tag
+                price: 
+                  value: =@ctx.current.item.price
+                  format:
+                    numberStyle: currency
+                discount: =@ctx.current.item.discount

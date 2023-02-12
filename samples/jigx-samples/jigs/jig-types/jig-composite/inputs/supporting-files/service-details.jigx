@@ -1,6 +1,10 @@
-title: =@ctx.jig.inputs.service
-description: A deeper look into this service...
+title: =@ctx.datasources.cleaningServices.service != null ? "Service details":" "
 type: jig.default
+placeholders:
+  - title: Please choose a service
+    when: =@ctx.datasources.cleaningServices.service != null ? false:true
+    icon: loading-data
+      
 
 datasources:
   cleaningServices:
@@ -28,63 +32,56 @@ datasources:
         FROM [default/cleaning-services] WHERE id = @servId
 
 header:
-    type: component.image
-    options:
-      source:
-        uri: =@ctx.datasources.cleaningServices.image
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.cleaningServices.image
 
 children:
   - type: component.entity
     options:
       children:
-        - type: component.section
+        - type: component.field-row
           options:
-            title: Cleaning Services
             children:
-              - type: component.field-row
+              - type: component.entity-field
                 options:
-                  children:
-                    - type: component.entity-field
-                      options:
-                        label: Service
-                        value: =@ctx.datasources.cleaningServices.service
-                    - type: component.entity-field
-                      options:
-                        label: Area
-                        value: =@ctx.datasources.cleaningServices.area
-              - type: component.field-row
+                  label: Service
+                  value: =@ctx.datasources.cleaningServices.service
+              - type: component.entity-field
                 options:
-                  children:
-                    - type: component.entity-field
-                      options:
-                        label: Time
-                        value: =@ctx.datasources.cleaningServices.time & ' minutes'
-                    - type: component.entity-field
-                      options:
-                        label: Indoor
-                        value: =@ctx.datasources.cleaningServices.indoor
-                        contentType: checkbox
-              - type: component.field-row
-                options:
-                  children:
-                    - type: component.entity-field
-                      options:
-                        label: Description
-                        value: =@ctx.datasources.cleaningServices.description
-                        isMultiline: true
-        - type: component.section
+                  label: Area
+                  value: =@ctx.datasources.cleaningServices.area
+        - type: component.field-row
           options:
-            title: Rate
             children:
-              - type: component.field-row
+              - type: component.entity-field
                 options:
-                  children:
-                    - type: component.entity-field
-                      options:
-                        label: Hourly Rate
-                        value: =(@ctx.datasources.cleaningServices.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaningServices.hourlyrate):'NA'
-                    - type: component.entity-field
-                      options:
-                        label: Once Off Rate
-                        value: ='$ ' & $number(@ctx.datasources.cleaningServices.onceoffrate)
-                        isHidden: =(@ctx.datasources.cleaningServices.onceoffrate) = null ? true:false
+                  label: Time
+                  value: =@ctx.datasources.cleaningServices.time & ' minutes'
+              - type: component.entity-field
+                options:
+                  label: Indoor
+                  value: =@ctx.datasources.cleaningServices.indoor
+                  contentType: checkbox
+        - type: component.entity-field
+          options:
+            label: Description
+            value: =@ctx.datasources.cleaningServices.description
+            isMultiline: true
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Hourly Rate
+                  value: =(@ctx.datasources.cleaningServices.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.datasources.cleaningServices.hourlyrate):'NA'
+              - type: component.entity-field
+                options:
+                  label: Once Off Rate
+                  value: ='$ ' & $number(@ctx.datasources.cleaningServices.onceoffrate)
+                  isHidden: =(@ctx.datasources.cleaningServices.onceoffrate) = null ? true:false

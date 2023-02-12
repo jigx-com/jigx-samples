@@ -1,8 +1,0 @@
-type: datasource.sqlite
-options:
-  provider: DATA_PROVIDER_DYNAMIC
-
-  entities:
-    - entity: default/partners-accommodation-dd
-
-  query: SELECT id, '$.name', '$.type', '$.address', '$.telephone', '$.mobile', '$.latitude', '$.longitude', '$.image', '$.owneremail' FROM [default/partners-accommodation-dd]

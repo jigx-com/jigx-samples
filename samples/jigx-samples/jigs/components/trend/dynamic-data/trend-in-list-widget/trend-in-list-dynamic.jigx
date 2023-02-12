@@ -32,4 +32,4 @@ widgets:
           leftElement: 
             element: avatar
             text: =$substring(@ctx.current.item.firstname, 0, 1) & $substring(@ctx.current.item.lastname, 0, 1)
-            uri: =@ctx.current.item.picture
+            uri: =@ctx.current.item.photo

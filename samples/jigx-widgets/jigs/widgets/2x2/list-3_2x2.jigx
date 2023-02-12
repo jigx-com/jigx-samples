@@ -1,0 +1,49 @@
+title: List widget 3 (2x2)
+type: jig.list
+
+datasources:
+  devices:
+    type: datasource.static
+    options:
+      data:
+        - device: Bell
+          room: House
+          icon: alarm-bell-1
+          color: color3
+        - device: Security
+          room: Home  
+          icon: login-keys
+          color: color2
+        - device: Security
+          room: Garage
+          icon: login-keys
+          color: color2
+            
+data: =@ctx.datasources.devices
+item: 
+  type: component.list-item
+  options: 
+    title: =@ctx.current.item.device
+    subtitle: =@ctx.current.item.room
+              
+
+widgets:            
+  "2x2": 
+    type: widget.list
+    options: 
+      data: =@ctx.datasources.devices
+      item: 
+        type: component.list-item
+        options:
+          color:
+            - when: true
+              color: =@ctx.current.item.color
+          title: =@ctx.current.item.device
+          subtitle: =@ctx.current.item.room
+          leftElement: 
+            element: icon
+            name: =@ctx.current.item.icon
+            isDuotone: true
+            isContained: true        
+          rightElement: 
+            element: switch

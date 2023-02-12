@@ -16,5 +16,6 @@ options:
       '$.phone', 
       '$.percentage', 
       '$.category', 
-      '$.photo'
+      '$.photo',
+      '$.time'
     FROM [default/employees] WHERE '$.category' = "employees" ORDER BY '$.firstname' ASC

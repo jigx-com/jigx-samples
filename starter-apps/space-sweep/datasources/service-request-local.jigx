@@ -1,8 +1,0 @@
-type: datasource.sqlite
-options:
-  provider: DATA_PROVIDER_LOCAL
-
-  entities:
-    - entity: service-request-local
-
-  query: SELECT id, '$.ordernr', '$.requester', '$.requesteddate', '$.facility', '$.servicedate', '$.servicetime', '$.services', '$.amountofservices', '$.duration', '$.subtotal' FROM [service-request-local]

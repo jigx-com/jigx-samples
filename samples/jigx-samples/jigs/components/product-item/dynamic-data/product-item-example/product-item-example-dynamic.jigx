@@ -1,22 +1,43 @@
 title: Product item
 type: jig.list
 
-data: =@ctx.datasources.products
+datasources:
+  product:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id, 
+          '$.title', 
+          '$.uri',
+          '$.tag', 
+          '$.price',
+          '$.discount', 
+          '$.quantity',
+          '$.category',
+          '$.productId'
+          FROM [default/products] WHERE '$.title' LIKE '%'||@search||'%' AND '$.category' = "product" OR @search IS NULL AND '$.category' = "product" ORDER BY '$.title'
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+          
+data: =@ctx.datasources.product
 isSearchable: true
 item: 
   type: component.product-item
   options:
-    title: "=@ctx.current.item.title"
+    title: =@ctx.current.item.title
     image:
       uri: =@ctx.current.item.uri
-    tag: =@ctx.current.item.tag
-    price: 
+    discount: =@ctx.current.item.discount
+    price:
       value: =@ctx.current.item.price
       format:
         numberStyle: currency
-    discount: =@ctx.current.item.discount
     amountControl:
-      value: =@ctx.current.item.quantity
+      value: =$number(@ctx.current.item.quantity)
       onChange:
         type: action.execute-entity
         options:
@@ -25,5 +46,5 @@ item:
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.item.state.amount
+            quantity: =@ctx.component.state.amount
           goBack: stay
