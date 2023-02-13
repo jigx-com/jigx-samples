@@ -7,4 +7,3 @@ children:
     options:
       uri: =@ctx.datasources.web-view.url
       isTrackingTransparencyRequired: true
-      height: 1000
