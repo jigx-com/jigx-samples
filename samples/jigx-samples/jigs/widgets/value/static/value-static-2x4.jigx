@@ -1,0 +1,41 @@
+title: Value widget (2x4) 
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value    
+            
+widgets:    
+  "2x4":
+    type: widget.value
+    options:
+      align: center
+      value: 2022-10-27T14:00:14+0100
+      format:
+        dateFormat: HH:mm
+        unit: Meeting time
+      bottom:
+        type: component.titles
+        options:
+          icon: "phone"
+          iconColor: color4
+          align: center
+          title: Jane Stevens
+          subtitle: "+420 665 778 998"
+      top:
+        type: component.titles
+        options:
+          icon: "calendar"
+          iconColor: color9
+          align: center
+          title: 
+            text: 2022-10-27T14:41:13+0100
+            format: 
+              dateFormat: l
+          subtitle: 
+            text: 60 Minutes

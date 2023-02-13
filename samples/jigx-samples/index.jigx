@@ -29,6 +29,6 @@ widgets:
   - size: 2x2
     jigId: status-static
   - size: 2x2
-    jigId: value-static
+    jigId: value-static-2x2
   - size: 4x2
     jigId: chart-widget-line-chart

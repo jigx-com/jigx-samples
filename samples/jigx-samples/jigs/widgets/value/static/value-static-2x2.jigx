@@ -1,0 +1,39 @@
+title: Value widget (2x2) 
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+            
+widgets:
+  "2x2": 
+    type: widget.value
+    options:
+      top: 
+        type: component.titles
+        options:
+          title: Solana
+          subtitle: USDT
+          align: left
+          icon: currency-dollar
+          iconColor: color2
+      value: 212
+      format:
+        unit: "SOL"  
+      align: right
+      bottom: 
+        type: component.trend
+        options:
+          title: 92,40 USDT / SOL          
+          style:
+            isAlignRight: false
+            isValueBottom: true
+          value: +21.2
+          format:
+            numberStyle: unit
+            unit: percent
