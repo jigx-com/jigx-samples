@@ -1,0 +1,35 @@
+title: Value widget (4x2) 
+type: jig.default
+
+datasources:
+  value3:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/value
+      query: SELECT id, '$.title', '$.subtitle', '$.billingValue' FROM [default/value]
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+                       
+widgets:
+  "4x2": 
+    type: widget.value
+    options:
+      value: =@ctx.datasources.value3.billingValue
+      align: center
+      format:
+        numberStyle: currency
+      bottom: 
+        type: component.titles
+        options:
+          align: center
+          title: =@ctx.datasources.value3.title
+          subtitle: =@ctx.datasources.value3.subtitle

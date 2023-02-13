@@ -1,0 +1,52 @@
+title: Value widget (2x4) 
+type: jig.default
+
+datasources:
+  value2:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/value
+      query: SELECT id, '$.description', '$.meetingTime', '$.nextMeetingTime', '$.name', '$.phoneNumber', '$.timeLeft' FROM [default/value]
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value    
+            
+widgets:    
+  "2x4":
+    type: widget.value
+    options:
+      align: center
+      value: =@ctx.datasources.value2.meetingTime
+      format:
+        dateFormat: HH:mm
+        unit: =@ctx.datasources.value2.description
+        
+      bottom:
+        type: component.titles
+        options:
+          icon: "phone"
+          iconColor: color4
+          align: center
+          title: =@ctx.datasources.value2.name
+          subtitle: =@ctx.datasources.value2.phoneNumber
+      top:
+        type: component.titles
+        options:
+          icon: "calendar"
+          iconColor: color9
+          align: center
+          title: 
+            text: =@ctx.datasources.value2.nextMeetingTime
+            format: 
+              dateFormat: l
+          
+          subtitle: 
+            text: =@ctx.datasources.value2.timeLeft & " Minutes" 

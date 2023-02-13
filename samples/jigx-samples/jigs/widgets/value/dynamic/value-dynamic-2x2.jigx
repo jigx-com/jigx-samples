@@ -1,0 +1,50 @@
+title: Value widget (2x2) 
+type: jig.default
+
+datasources:
+  value1:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/value
+      query: SELECT id, '$.cryptoName', '$.currency', '$.cryptoSymbol', '$.movement', '$.rate', '$.cryptoValue' FROM [default/value]
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+            
+widgets:
+  "2x2": 
+    type: widget.value
+    options:
+      top: 
+        type: component.titles
+        options:
+          title: =@ctx.datasources.value1.cryptoName
+          subtitle: =@ctx.datasources.value1.currency
+          align: left
+          icon: currency-dollar
+          iconColor: color2
+          
+      value: =@ctx.datasources.value1.cryptoValue
+      format:
+        unit: =@ctx.datasources.value1.cryptoSymbol
+      align: right
+
+      bottom: 
+        type: component.trend
+        options:
+          title: =@ctx.datasources.value1.rate & " " & @ctx.datasources.value1.currency & " / " & @ctx.datasources.value1.cryptoSymbol          
+          style:
+            isAlignRight: false
+            isValueBottom: true
+          value: =@ctx.datasources.value1.movement
+          format:
+            numberStyle: unit
+            unit: percent
