@@ -1,0 +1,53 @@
+title: Entity preview - onPress
+type: jig.list
+icon: world
+
+header: 
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        title: Activities
+        source:
+          uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+
+datasources:
+  activities: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Swimming
+          location: Pool
+          previewDetail: 7pm
+          image: love-it
+        - id: 2
+          name: Tennis
+          location: Court
+          previewDetail: 6am
+          image: rating-star
+        - id: 3
+          name: Exercising
+          location: Gym
+          previewDetail: 5pm
+          image: multiple-neutral-2
+data: =@ctx.datasources.activities
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.location  
+    rightElement: 
+      element: icon
+      name: =@ctx.current.item.image
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: entity-detail
+        parameters:
+          id: =@ctx.current.item.id
+          name: =@ctx.current.item.name
+          location: =@ctx.current.item.location
+          previewDetail: =@ctx.current.item.previewDetail

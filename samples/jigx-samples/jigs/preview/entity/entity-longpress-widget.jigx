@@ -1,0 +1,159 @@
+title: Entity preview
+type: jig.default
+icon: world
+
+header: 
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        title: Activities
+        source:
+          uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+          
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.section
+          options:
+            title: General info
+            children:
+              - type: component.field-row
+                options:
+                  children: 
+                    - type: component.entity-field
+                      options:
+                        label: First Name
+                        value: Karl 
+                        contentType: default
+                    - type: component.entity-field
+                      options:
+                        label: Middle Name
+                        value: Joseph
+                        contentType: default
+                    - type: component.entity-field
+                      options:
+                        label: Last Name
+                        value: Fisher
+                        contentType: default
+              - type: component.entity-field
+                options:
+                  label: Date of birth
+                  value: 1988-01-19
+                  rightIcon: calendar
+              - type: component.entity-field
+                options:
+                  label: Phone
+                  value: +987 654 321
+                  contentType: phone
+              - type: component.entity-field
+                options:
+                  label: Email
+                  value: karl@example.com
+                  contentType: email
+
+        - type: component.section
+          options:
+            title: Address
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Street
+                        value: Example street
+ 
+                    - type: component.entity-field
+                      options:
+                        label: Street number
+                        value: '12'
+                        rightIcon: alert-triangle
+                        style:
+                          isNegative: true
+              - type: component.entity-field
+                options:
+                  label: City
+                  value: Barcelona
+                  rightIcon: house
+                  style:
+                    isPositive: true
+              - type: component.entity-field
+                options:
+                  label: ZIP code
+                  value: 987 65
+                  rightIcon: alert-circle
+                  style:
+                    isWarning: true
+        - type: component.section
+          options:
+            title: Signature
+            children:
+              - type: component.entity-field
+                options:
+                  label: ""
+                  value: https://t14345253.p.clickup-attachments.com/t14345253/c4fc68bc-8231-47b4-8fb7-60eb671fca0e/signature.png?view=open
+                  contentType: signature
+
+preview:
+  isCompact: false
+  children:
+    - type: component.entity
+      options:
+        isCompact: true
+        children:
+          - type: component.section
+            options:
+              title: General info
+              children:
+                - type: component.field-row
+                  options:
+                    children: 
+                      - type: component.entity-field
+                        options:
+                          label: First Name
+                          value: Karl 
+                          contentType: default
+                      - type: component.entity-field
+                        options:
+                          label: Middle Name
+                          value: Joseph
+                          contentType: default
+                      - type: component.entity-field
+                        options:
+                          label: Last Name
+                          value: Fisher
+                          contentType: default
+                - type: component.entity-field
+                  options:
+                    label: Date of birth
+                    value: 1988-01-19
+                    rightIcon: calendar
+                - type: component.entity-field
+                  options:
+                    label: Phone
+                    value: +987 654 321
+                    contentType: phone
+                - type: component.entity-field
+                  options:
+                    label: Email
+                    value: karl@example.com
+                    contentType: email
+                - type: component.entity-field
+                  options:
+                    label: ""
+                    value: Tap to see more details!
+  header: 
+    type: component.jig-header
+    options:
+      height: small
+      children: 
+        type: component.image
+        options:
+          title: Activities
+          source:
+            uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
