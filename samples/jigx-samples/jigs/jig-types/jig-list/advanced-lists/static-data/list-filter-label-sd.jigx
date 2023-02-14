@@ -107,8 +107,7 @@ datasources:
           service: Pool Cleaning
           time: 45
         
-  
-data: =$filter(@ctx.datasources.cleaning-services-static, function($v, $a, $i) { @ctx.jig.state.filter = 'all' or $v.status = @ctx.jig.state.filter })[]
+data:  =$filter(@ctx.datasources.cleaning-services-static, function($v, $i, $a) {@ctx.jig.state.filter = 'all' or $v.status = @ctx.jig.state.filter})[]
 item:
   type: component.list-item
   options:

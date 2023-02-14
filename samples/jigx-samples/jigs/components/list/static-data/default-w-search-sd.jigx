@@ -18,7 +18,7 @@ children:
   - type: component.list
     instanceId: cleaning_serv_items
     options:
-      data: =$filter(@ctx.datasources.repair-services-static, function($v){@ctx.datasources.repair-services-static ? $contains($string($v.service),$string(@ctx.components.cleaning_serv_items.state.searchText != null ? @ctx.components.cleaning_serv_items.state.searchText:'')) :true})[]
+      data: =$filter(@ctx.datasources.repair-services-static, function($v){$contains($string($v.service),$string(@ctx.components.cleaning_serv_items.state.searchText != null ? @ctx.components.cleaning_serv_items.state.searchText:''))})[]
       isSearchable: true
       maximumItemsToRender: 50
       item: 

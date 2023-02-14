@@ -101,7 +101,7 @@ datasources:
           time: 45
         
   
-data: =$filter(@ctx.datasources.cleaning-services-static, function($v){@ctx.datasources.cleaning-services-static ? $contains($string($v.service),$string(@ctx.jig.state.searchText != null ? @ctx.jig.state.searchText:'')) :true})[]
+data: =$filter(@ctx.datasources.cleaning-services-static, function($v){$contains($string($v.service),$string(@ctx.jig.state.searchText != null ? @ctx.jig.state.searchText:''))})[]
 item:
   type: component.list-item
   options:

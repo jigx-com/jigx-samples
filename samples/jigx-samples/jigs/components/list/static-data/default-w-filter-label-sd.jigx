@@ -104,12 +104,13 @@ children:
     options:
       filter: 
         - title: All
-          value: 'all'
+          value: ''
         - title: Indoor
           value: indoor
         - title: Outdoor
           value: outdoor
-      data: =$filter(@ctx.datasources.cleaning-services-static, function($v, $a, $i) { @ctx.components.filter-list.state.filter = 'all' or $v.status = @ctx.components.filter-list.state.filter })[]        
+      # data: =$filter(@ctx.datasources.cleaning-services-static, function($v, $a, $i) { @ctx.components.filter-list.state.filter = 'all' or $v.status = @ctx.components.filter-list.state.filter })[]        
+      data: =$filter(@ctx.datasources.cleaning-services-static, function($v){$contains($string($v.status), $string(@ctx.components.filter-list.state.filter != null ? @ctx.components.filter-list.state.filter:'')) })[]
       item:
         type: component.list-item
         options:
