@@ -1,0 +1,81 @@
+title: Activity detail
+type: jig.default
+
+header: 
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        title: =@ctx.jig.inputs.name
+        source:
+          uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+
+children:
+    - type: component.entity
+      options:
+        isCompact: true
+        children:
+          - type: component.entity-field
+            options:
+              label: Activity
+              value: =@ctx.jig.inputs.name
+              
+          - type: component.entity-field
+            options:
+              label: Location
+              value: =@ctx.jig.inputs.location
+          - type: component.entity-field
+            options:
+              label: Time
+              value: =@ctx.jig.inputs.previewDetail
+              
+preview:
+  isCompact: true
+  actions:
+   - children:
+        - type: action.go-to
+          options:
+            title: Go To Action
+            linkTo: placeholder
+        - type: action.go-to
+          options:
+            title: Go to Danger
+            linkTo: placeholder
+            style:
+              isDanger: true
+        - type: action.go-to
+          options:
+            title: Go to Disabled
+            linkTo: placeholder
+            style:
+              isDisabled: true
+
+
+  children:
+    - type: component.web-view
+      options:
+        isTrackingTransparencyRequired: true
+        content: |
+          <html>
+              <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              </head>
+              <body style="margin: 0; text-align: center;">
+                <h1 style="text-align: center;"> Activity detail</h1>
+                <p style="text-align: center;">Tap to see more!</p>
+              </body>
+            </html>
+          
+  header: 
+    type: component.jig-header
+    options:
+      height: medium
+      children: 
+        type: component.image
+        options:
+          title: =@ctx.jig.inputs.name
+          subtitle: =@ctx.jig.inputs.location
+          source:
+            uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
