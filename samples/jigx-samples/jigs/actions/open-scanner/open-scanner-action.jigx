@@ -1,0 +1,23 @@
+title: QRAction
+description: Description of your Jig
+type: jig.default
+
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.text-field
+          instanceId: qr-value
+          options:
+            label: "QR Response"
+            initialValue: =@ctx.components.scanner.state.value
+
+
+actions:
+  - children:
+      - type: action.open-scanner
+        instanceId: scanner
+        options:
+          title: "Scan QR code"
+          contentType: qrcode
