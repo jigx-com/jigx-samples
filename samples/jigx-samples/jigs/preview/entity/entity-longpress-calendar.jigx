@@ -1,0 +1,92 @@
+title: Entity preview - Calendar
+type: jig.calendar
+icon: career
+
+header: 
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        title: Upcoming meetings
+        source:
+          uri: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+datasources:
+  calendar_data: 
+    type: datasource.static
+    options:
+      data:
+        - description: New features to be added
+          id: 1
+          title: Documentation Discussion
+          type: meeting
+          color: color2
+          people: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        - description: Project manager position
+          id: 2
+          title: Second interview - Maria Booyens
+          type: interview
+          color: color3
+          people: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+        
+    
+data: =@ctx.datasources.calendar_data  
+item:
+  type: component.event
+  options:
+    from:
+      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.id)- 1) * 3600000)
+      format:
+        dateFormat: "l"
+    to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.id) *
+      3600000)
+    title: =@ctx.current.item.title
+    description: =@ctx.current.item.description
+    tags: "=[{'title': @ctx.current.item.type, 'color': @ctx.current.item.color}]"
+    people: "=[{'avatarUrl': @ctx.current.item.people}]"
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: entity-calendar-detail
+        parameters:
+          title: =@ctx.current.item.title
+          description: =@ctx.current.item.description
+          type: =@ctx.current.item.type
+    onButtonPress: 
+      type: action.go-to
+      options:
+        title: Go to detail
+        linkTo: entity-calendar-detail
+        parameters:
+          title: =@ctx.current.item.title
+          description: =@ctx.current.item.description
+          type: =@ctx.current.item.type
+    buttonTitle: Go to detail
+
+preview:
+  isCompact: true
+  children:
+    - type: component.entity
+      options:
+        isCompact: true
+        children:
+          - type: component.entity-field
+            options:
+              label: Meeting
+              value: Documentation Discussion
+          - type: component.entity-field
+            options:
+              label: Interview
+              value: Second interview - Maria Booyens
+
+  header: 
+    type: component.jig-header
+    options:
+      height: medium
+      children: 
+        type: component.image
+        options:
+          title: Upcoming meetings
+          source:
+            uri: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60

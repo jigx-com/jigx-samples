@@ -1,0 +1,93 @@
+title: Meeting detail
+type: jig.default
+
+header: 
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        title: Meeting detail
+        source:
+          uri: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+
+children:
+    - type: component.entity
+      options:
+        isCompact: true
+        children:
+          - type: component.section
+            options:
+              title: Meeting - Compact entity
+              children:
+                - type: component.entity-field
+                  options:
+                    label: Title
+                    value: =@ctx.jig.inputs.title   
+                - type: component.entity-field
+                  options:
+                    label: Type
+                    value: =@ctx.jig.inputs.type
+                    rightIcon: conversation-chat-2
+                - type: component.entity-field
+                  options:
+                    label: Description
+                    value: =@ctx.jig.inputs.description   
+
+              
+preview:
+  isCompact: true
+  actions:
+   - children:
+        - type: action.go-to
+          options:
+            title: Join the meeting
+            linkTo: placeholder
+        - type: action.go-to
+          options:
+            title: Cancel the meeting
+            linkTo: placeholder
+            style:
+              isDanger: true
+        - type: action.go-to
+          options:
+            title: Change the location
+            linkTo: placeholder
+            style:
+              isDisabled: true
+
+
+  children:
+    - type: component.entity
+      options:
+        isCompact: true
+        children:
+          - type: component.section
+            options:
+              title: Meeting - Compact entity
+              children:
+                - type: component.entity-field
+                  options:
+                    label: Title
+                    value: =@ctx.jig.inputs.title  
+                - type: component.entity-field
+                  options:
+                    label: Description
+                    value: =@ctx.jig.inputs.description 
+                - type: component.entity-field
+                  options:
+                    label: Type
+                    value: =@ctx.jig.inputs.type
+                    
+          
+  header: 
+    type: component.jig-header
+    options:
+      height: medium
+      children: 
+        type: component.image
+        options:
+          title: Meeting detail
+          source:
+            uri: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVldGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
