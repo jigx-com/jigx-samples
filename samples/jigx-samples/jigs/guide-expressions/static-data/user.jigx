@@ -1,0 +1,20 @@
+title: User
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      isCompact: false
+      children:
+        - type: component.entity-field
+          options:
+            label: User Display Name
+            value: =@ctx.user.displayName
+        - type: component.entity-field
+          options:
+            label: User Email
+            value: =@ctx.user.email
+        - type: component.entity-field
+          options:
+            label: User Id
+            value: =@ctx.user.id
