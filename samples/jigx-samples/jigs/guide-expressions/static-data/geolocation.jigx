@@ -1,0 +1,44 @@
+title: Geolocation
+type: jig.default
+
+children: 
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: System Location - Accuracy
+            value: =@ctx.system.geolocation.coords.accuracy
+        - type: component.entity-field
+          options:
+            label: System Location - Altitude
+            value: =@ctx.system.geolocation.coords.altitude
+        - type: component.entity-field
+          options:
+            label: System Location - Altitude Accuracy
+            value: =@ctx.system.geolocation.coords.altitudeAccuracy
+        - type: component.entity-field
+          options:
+            label: System Location - Heading
+            value: =@ctx.system.geolocation.coords.heading
+        - type: component.entity-field
+          options:
+            label: System Location - Latitude
+            value: =@ctx.system.geolocation.coords.latitude
+        - type: component.entity-field
+          options:
+            label: System Location - Longitude
+            value: =@ctx.system.geolocation.coords.longitude
+        - type: component.entity-field
+          options:
+            label: System Location - Speed
+            value: =@ctx.system.geolocation.coords.speed
+        - type: component.entity-field
+          options:
+            label: System Location - Timestamp
+            value: =@ctx.system.geolocation.timestamp
+            contentType: time
+        - type: component.entity-field
+          options:
+            label: System Location - Entire array (All details)
+            value: =$string(@ctx.system.geolocation)
