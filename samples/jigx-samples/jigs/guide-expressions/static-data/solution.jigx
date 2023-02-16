@@ -1,0 +1,15 @@
+title: Solution
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Solution ID
+            value: =@ctx.solution.id
+        - type: component.entity-field
+          options:
+            label: Solution Name
+            value: =@ctx.solution.name

@@ -1,0 +1,11 @@
+title: Organization
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Organization ID
+            value: =@ctx.organization.id
