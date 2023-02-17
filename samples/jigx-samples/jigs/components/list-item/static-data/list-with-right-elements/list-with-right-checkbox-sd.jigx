@@ -23,5 +23,7 @@ item:
     rightElement: 
       element: checkbox
       value: =(@ctx.current.item.materials) = true ? true :false
+    style:
+      isHighlighted:  =@ctx.current.state.checked 
       
     

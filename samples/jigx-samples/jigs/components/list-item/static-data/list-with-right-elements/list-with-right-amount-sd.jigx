@@ -19,6 +19,8 @@ item:
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
+    style:
+      isDisabled: =@ctx.current.state.amount = 5
     rightElement:
       element: amount-control
       value: 1

@@ -28,6 +28,7 @@ isSearchable: true
 item: 
   type: component.product-item
   options:
+    tag: =@ctx.current.state.amount =10 ? 'max amount':''
     title: =@ctx.current.item.title
     image:
       uri: =@ctx.current.item.uri
@@ -38,6 +39,7 @@ item:
         numberStyle: currency
     amountControl:
       value: =$number(@ctx.current.item.quantity)
+      maximum: 10
       onChange:
         type: action.execute-entity
         options:
@@ -46,5 +48,5 @@ item:
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.component.state.amount
+            quantity: =@ctx.current.state.amount
           goBack: stay

@@ -19,9 +19,10 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: ='Service duration of' & @ctx.current.item.time & ' minutes'
+    subtitle: ='Service duration of ' & @ctx.current.item.time & ' minutes'
     rightElement: 
       element: checkbox
       value: =(@ctx.current.item.indoor) = 'TRUE' ? true :false
-      
+    style:
+      isHighlighted:  =@ctx.current.state.checked 
     

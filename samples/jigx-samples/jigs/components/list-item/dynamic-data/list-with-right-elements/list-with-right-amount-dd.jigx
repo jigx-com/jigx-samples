@@ -19,6 +19,8 @@ item:
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
+    style:
+      isDisabled: =@ctx.current.state.amount = 5
     rightElement:
       element: amount-control
       value: =$number(@ctx.current.item.quantity)
@@ -33,6 +35,6 @@ item:
           method: update
           data:
             id: =@ctx.current.item.id
-            quantity: =@ctx.component.state.amount
+            quantity: =@ctx.current.state.amount
           goBack: stay
       
