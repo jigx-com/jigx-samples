@@ -1,7 +1,5 @@
-title: QRAction
-description: Description of your Jig
+title: Open-scanner action
 type: jig.default
-
 
 children:
   - type: component.form
