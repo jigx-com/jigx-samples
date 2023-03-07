@@ -1,0 +1,30 @@
+title: Open scanner swipeable
+type: jig.list
+
+data: =@ctx.datasources.employees-static
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.lastname
+    subtitle: =@ctx.current.item.firstname
+    leftElement: 
+      element: avatar
+      text: " "
+      uri: =@ctx.current.item.img
+    swipeable:
+      left:
+        - label: Scan QR code 
+          onPress:
+            type: action.open-scanner
+            instanceId: scanner
+            options:
+              title: "Scan QR code"
+              contentType: qrcode
+      right:
+        - label: Scan QR code 
+          onPress:
+            type: action.open-scanner
+            instanceId: scanner
+            options:
+              title: "Scan QR code"
+              contentType: qrcode
