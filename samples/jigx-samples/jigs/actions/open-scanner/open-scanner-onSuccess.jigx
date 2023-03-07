@@ -11,10 +11,11 @@ actions:
           entity: default/confirms
           formId: send-signature
           icon: add
-          title: Sign and open scanner
+          title: Sign
           goBack: stay
           onSuccess: 
             title: Succesfully signed
+            description: Please scan the product code to proceed with the payment
             actions:
               - type: action.open-scanner
                 instanceId: scanner
