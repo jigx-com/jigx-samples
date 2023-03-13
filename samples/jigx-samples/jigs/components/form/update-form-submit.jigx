@@ -1,4 +1,5 @@
 title: Update form with submit action
+description: Please change/update any details and press Update form button
 type: jig.default
 
 actions:
@@ -7,10 +8,29 @@ actions:
         options:
           formId: form-update
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/form
-          recordId: =@ctx.datasources.form.id
           title: Update form
-            
+          entity: default/form
+          method: update
+          recordId: =@ctx.datasources.form-update.id
+          goBack: previous
+          
+datasources:
+  form-update:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/form
+      query: |
+        SELECT
+          id,
+          '$.firstname',
+          '$.lastname',
+          '$.phone',
+          '$.email',
+          '$.category'
+        FROM [default/form] WHERE '$.category' = "update-form"
+                
 children:
  - type: component.form
    instanceId: form-update
@@ -20,21 +40,21 @@ children:
           instanceId: firstname
           options:
            label: First name
-           value: =@ctx.datasources.form.firstname
+           initialValue: =@ctx.datasources.form-update.firstname
         - type: component.text-field
           instanceId: lastname
           options:
             label: Last name
-            value: =@ctx.datasources.form.lastname
+            initialValue: =@ctx.datasources.form-update.lastname
         - type: component.email-field
           instanceId: email
           options:
             label: Email
-            value: =@ctx.datasources.form.email
             keyboardType: email-address
+            initialValue: =@ctx.datasources.form-update.email
         - type: component.number-field
           instanceId: phone
           options:
             label: Phone number
-            value: =@ctx.datasources.form.phone
             keyboardType: number-pad
+            initialValue: =@ctx.datasources.form-update.phone
