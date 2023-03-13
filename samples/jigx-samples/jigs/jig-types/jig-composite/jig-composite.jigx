@@ -3,5 +3,5 @@ description: Composite Jig without input
 type: jig.composite
 
 children:
-  - jigId: location-address
+  - jigId: location-with-address
   - jigId: country-list-sd
