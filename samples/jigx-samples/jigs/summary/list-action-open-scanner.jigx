@@ -1,0 +1,25 @@
+title: Open-scanner
+type: jig.list
+          
+data: =@ctx.datasources.list-action-open-scanner
+item: 
+  type: "component.list-item"
+  options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    title: =@ctx.current.item.title
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.link
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: layout-dashboard-1
+      isDuotone: true

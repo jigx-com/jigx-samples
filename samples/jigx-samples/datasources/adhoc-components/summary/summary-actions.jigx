@@ -19,30 +19,34 @@ options:
       color: color4
     - action: Go-back
       actionLink: list-action-go-back
-      icon: close #logout-2
+      icon: close 
       color: color5
     - action: Go-to
       actionLink: list-action-go-to
       icon: flight
       color: color6
+    - action: Open-scanner
+      actionLink: list-action-open-scanner
+      icon: camera
+      color: color7
     - action: Open-url
       actionLink: list-action-open-url
       icon: hyperlink-3
-      color: color7
+      color: color8
     - action: Reset-state
       actionLink: list-action-reset-state
       icon: loading-circle
-      color: color8
+      color: color9
     - action: Set-state
       actionLink: list-action-set-state
       icon: check-circle-1
-      color: color9
+      color: color10
     - action: Submit-form
       actionLink: submit-form
       icon: check-circle-1
-      color: color10
+      color: color11
     - action: Sync-entities
       actionLink: list-action-sync-entities
       icon: synchronize-arrows-1
-      color: color11
+      color: color12
 

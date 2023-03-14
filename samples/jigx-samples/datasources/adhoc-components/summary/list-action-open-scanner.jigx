@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - title: Open-scanner in action
+      link: open-scanner-action
+      color: color1
+    - title: Open-scanner left/right
+      link: open-scanner-swipeable
+      color: color2
+    - title: Open-scanner rightElement
+      link: open-scanner-rightElement
+      color: color3
+    - title: Open-scanner onSuccess
+      link: open-scanner-onSuccess
+      color: color4
