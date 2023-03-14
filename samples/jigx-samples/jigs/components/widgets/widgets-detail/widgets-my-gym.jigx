@@ -1,0 +1,39 @@
+title: My gym
+type: jig.default
+icon: workout
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z3ltfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Name
+            value: Form Factory
+        - type: component.entity-field
+          options:
+            label: Address
+            value: Revoluční 1200/16
+        - type: component.entity-field
+          options:
+            label: Phone
+            value: 265 947 027
+  - type: component.location
+    options:
+      markersData:
+        - lat: 50.090937 
+          lng: 14.428027
+      zoomLevel: 12
+  

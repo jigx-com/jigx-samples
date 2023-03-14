@@ -1,0 +1,62 @@
+title: My places
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1471623320832-752e8bbf8413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhY2UlMjBtYXB8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+          
+datasources:
+  my-places:
+    type: datasource.static
+    options:
+      data:
+        - lat: 50.091918
+          lng: 14.427220
+        - lat: 50.099090
+          lng: 14.395192
+        - lat: 50.091402
+          lng: 14.417972
+        - lat: 50.090937 
+          lng: 14.428027
+            
+children:
+  - type: component.location
+    options:
+      markersData: =@ctx.datasources.my-places
+      zoomLevel: 11
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Home
+            value: Kafkova 682/28    
+        - type: component.entity-field
+          options:
+            label: School
+            value: Pařížská 97
+        - type: component.entity-field
+          options:
+            label: Work
+            value: Hradební 1044
+        - type: component.entity-field
+          options:
+            label: Gym
+            value: Revoluční 1200/16
+
+
+
+widgets:
+  "4x4": 
+    type: widget.location
+    options:
+      markersData: =@ctx.datasources.my-places
+      zoomLevel: 11
+        

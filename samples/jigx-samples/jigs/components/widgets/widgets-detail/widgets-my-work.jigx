@@ -1,0 +1,39 @@
+title: My work
+type: jig.default
+icon: jigx-solid
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29yayUyMElUfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Company
+            value: Jigx
+        - type: component.entity-field
+          options:
+            label: Address
+            value: Hradební 1044
+        - type: component.entity-field
+          options:
+            label: Contact person
+            value: Karl Fischer
+  - type: component.location
+    options:
+      markersData:
+        - lat: 50.091918
+          lng: 14.427220
+      zoomLevel: 12
+            
+  

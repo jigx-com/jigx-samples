@@ -1,0 +1,36 @@
+title: My school
+type: jig.default
+icon: pencil-2
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1607013407627-6ee814329547?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVuaXZlcnNpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Name
+            value: Charles University - Faculty of Law
+        - type: component.entity-field
+          options:
+            label: Address
+            value: Pařížská 97
+        - type: component.entity-field
+          options:
+            label: Phone
+            value: 356 298 355
+  - type: component.location
+    options:
+      markersData:
+        - lat: 50.091402
+          lng: 14.417972
+      zoomLevel: 12

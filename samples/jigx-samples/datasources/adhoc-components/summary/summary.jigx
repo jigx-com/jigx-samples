@@ -133,3 +133,7 @@ options:
       componentLink: web-view-example
       icon: earth-3
       color: color5
+    - component: Widgets
+      componentLink: widgets-component
+      icon: layout-dashboard
+      color: color6

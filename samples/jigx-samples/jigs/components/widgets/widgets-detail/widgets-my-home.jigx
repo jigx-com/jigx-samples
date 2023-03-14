@@ -1,0 +1,35 @@
+title: My home
+type: jig.default
+icon: home
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Address
+            value: Kafkova 682/28
+            contentType: copy
+        - type: component.entity-field
+          options:
+            label: Home phone
+            value: 263 789 902
+  - type: component.location
+    options:
+      markersData:
+        - lat: 50.099090
+          lng: 14.395192
+      zoomLevel: 12
+  

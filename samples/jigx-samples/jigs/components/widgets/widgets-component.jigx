@@ -1,0 +1,21 @@
+title: Widgets as components
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "4x4"
+          jigId: widgets-location
+        - size: "1x1"
+          jigId: widgets-my-home
+        - size: "1x1"
+          jigId: widgets-my-school
+        - size: "1x1"
+          jigId: widgets-my-work
+        - size: "1x1"
+          jigId: widgets-my-gym
+
+
+          
+
