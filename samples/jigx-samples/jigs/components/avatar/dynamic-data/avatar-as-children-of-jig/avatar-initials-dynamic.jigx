@@ -6,7 +6,17 @@ children:
     options:
       text:  =$substring($substringBefore(@ctx.datasources.dynamic-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.dynamic-global.name, " "), 0, 1)
       size: large
-      align: left
+      align: center
+  - type: component.avatar
+    options:
+      text:  =$substring($substringBefore(@ctx.datasources.dynamic-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.dynamic-global.name, " "), 0, 1)
+      size: regular
+      align: center
+  - type: component.avatar
+    options:
+      text:  =$substring($substringBefore(@ctx.datasources.dynamic-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.dynamic-global.name, " "), 0, 1)
+      size: small
+      align: center
       
 widgets:    
   2x2:

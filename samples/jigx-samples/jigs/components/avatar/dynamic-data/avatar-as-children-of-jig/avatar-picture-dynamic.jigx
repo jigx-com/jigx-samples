@@ -7,7 +7,19 @@ children:
       text:  ""
       uri: =@ctx.datasources.dynamic-global.picture
       size: large
-      align: left
+      align: center
+  - type: component.avatar
+    options:
+      text:  ""
+      uri: =@ctx.datasources.dynamic-global.picture
+      size: regular
+      align: center
+  - type: component.avatar
+    options:
+      text:  ""
+      uri: =@ctx.datasources.dynamic-global.picture
+      size: small
+      align: center
       
 widgets:    
   2x2:
