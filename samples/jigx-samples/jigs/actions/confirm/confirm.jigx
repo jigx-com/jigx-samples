@@ -9,20 +9,22 @@ actions:
           formId: simple-form
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
-          method: save
-          title: Update employee
-          goBack: stay
+          method: create
+          title: Add an employee
+          goBack: previous
           onSuccess:
-            title: Employee was updated
+            title: Employee was added sucessfuly
             actions:
               - type: action.confirm
                 options:
                   title: Go to list of Employees
                   isConfirmedAutomatically: true
                   onConfirmed: 
-                    type: action.go-back
+                    type: action.go-to
+                    options:
+                      linkTo: default-employee-detail
                   modal:
-                    title: ""
+                    title: ''
 
 
 children:

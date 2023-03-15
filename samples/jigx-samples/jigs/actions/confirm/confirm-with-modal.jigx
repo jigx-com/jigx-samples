@@ -6,21 +6,22 @@ actions:
   - children:
       - type: action.confirm
         options:
-          title: Update employee
+          title: Add an employee
           isConfirmedAutomatically: false
           modal:
-            title: Update employee
-            description: Are you sure you want to update the employee details?
-            confirm: 'Update'
+            title: Add an employee
+            description: Are you sure you want to add a new employee?
+            confirm: 'Add'
             cancel: 'Cancel'
           onConfirmed: 
             type: action.submit-form
             options:
               formId: simple-form
               provider: DATA_PROVIDER_DYNAMIC
-              entity: default/formm
-              method: save
-              goBack: stay
+              entity: default/form
+              method: create
+              goBack: previous
+              
 
 children:
   - type: component.form
