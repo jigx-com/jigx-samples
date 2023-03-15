@@ -13,9 +13,6 @@ options:
     - title: Execute-entity in onChange event
       link: ja-execute-entity-onChange
       color: color2
-    - title: Execute-entity in onLoad
-      link: ja-execute-entity-onLoad
-      color: color2
     - title: Execute-entity in onRefresh
       link: ja-execute-entity-onRefresh
       color: color3

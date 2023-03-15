@@ -13,6 +13,9 @@ options:
     - title: Execute-entities in onChange event
       link: execute-entities-onChange
       color: color2
-    - title: Execute-entities in onLoad/onRefresh/onFocus
+    - title: Execute-entities in onRefresh
       link: execute-entities-onRefresh
+      color: color3
+    - title: Execute-entity in onFocus
+      link: execute-entities-onFocus
       color: color3
