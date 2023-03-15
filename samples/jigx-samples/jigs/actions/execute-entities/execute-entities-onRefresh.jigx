@@ -1,6 +1,6 @@
 title: Execute entities action on Refresh
 type: jig.default
-description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onLoad/onRefresh/onFocus event.
+description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onRefresh event.
 
 onRefresh: 
   type: action.execute-entities

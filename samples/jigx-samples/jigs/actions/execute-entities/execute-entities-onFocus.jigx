@@ -1,17 +1,15 @@
-title: Execute entity action on Load
+title: Execute entities action on Focus
 type: jig.default
-description: With execute-entity you can save, update or delete your data from your database. This is an example how to use it in onLoad event.
+description: This action allows you to modify, change, and delete multiple rows in a specific table in your database. This is an example how to use it in onFocus event.
 
-onLoad: 
-  type: action.execute-entity
+onFocus: 
+  type: action.execute-entities
   options:
-    provider: DATA_PROVIDER_DYNAMIC
+    provider: DATA_PROVIDER_LOCAL
     method: update
     goBack: stay
     entity: default/employees
-    data: 
-      id: =@ctx.datasources.employee-detail-dynamic.id
-      modify: =@ctx.datasources.employee-detail-dynamic.modify >= 10 ? 1 :($number(@ctx.datasources.employee-detail-dynamic.modify) + 1)
+    data: =@ctx.datasources.employee-detail-dynamic.{'id':id, 'modify':$number(modify)+1}
 
 header:
   type: component.jig-header
@@ -30,16 +28,17 @@ children:
         - type: component.field-row
           options:
             children:
-              - type: component.entity-field
-                instanceId: firstname
-                options:
-                  label: First Name
-                  value: =@ctx.datasources.employee-detail-dynamic.firstname
-              - type: component.entity-field
-                instanceId: lastname
-                options:
-                  label: Last Name
-                  value: =@ctx.datasources.employee-detail-dynamic.lastname
+            - type: component.entity-field
+              instanceId: firstname
+              options:
+                label: First name
+                value: =@ctx.datasources.employee-detail-dynamic.firstname
+            - type: component.entity-field
+              instanceId: lastname
+              options:
+                label: Last name
+                value: =@ctx.datasources.employee-detail-dynamic.lastname
+
         - type: component.field-row
           options:
             children:
@@ -55,5 +54,5 @@ children:
                   value: =@ctx.datasources.employee-detail-dynamic.phone
         - type: component.entity-field
           options:
-            label: Number of execute-entity calls (max. 10)
-            value: =@ctx.datasources.employee-detail-dynamic.modify 
+            label: Number of execute-entity calls
+            value: =@ctx.datasources.employee-detail-dynamic.modify
