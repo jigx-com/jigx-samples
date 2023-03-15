@@ -14,5 +14,5 @@ options:
       link: go-to-right-element
       color: color3
     - title: Go-to onSuccess
-      link: go-back-on-success
+      link: go-to-on-success
       color: color4

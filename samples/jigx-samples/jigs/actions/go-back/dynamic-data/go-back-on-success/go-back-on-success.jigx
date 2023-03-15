@@ -5,27 +5,28 @@ description: In this example, the go-back action is associated with the submit-f
 actions:
   - children:
       - type: action.submit-form
-        instanceId: send-signature
         options:
+          formId: send-signature-go-back
           provider: DATA_PROVIDER_DYNAMIC
-          method: save
-          entity: default/confirms
-          formId: send-signature
-          icon: add
-          title: Sign
-          goBack: home
+          title: Sign and get go back option
+          entity: default/form
+          goBack: stay
+          method: create
           onSuccess: 
             title: Succesfully signed
             actions:
               - type: action.go-back
                 options:
-                  title: ''
+                  title: Go back
+                  
         
 children:
   - type: component.form
+    instanceId: send-signature-go-back
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.signature-field
-          instanceId: signature-field
+          instanceId: signature
           options:
             label: Signature required

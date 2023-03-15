@@ -5,28 +5,28 @@ description: In this example, the open-url action is associated with the submit-
 actions:
   - children:
       - type: action.submit-form
-        instanceId: send-signature
         options:
+          formId: send-signature-open-url
           provider: DATA_PROVIDER_DYNAMIC
-          method: save
-          entity: default/confirms
-          formId: send-signature
-          icon: add
-          title: Sign and and open url
-          goBack: stay
+          title: Sign and go to documentation
+          entity: default/form
+          goBack: previous
+          method: create
           onSuccess: 
             title: Succesfully signed
             actions:
               - type: action.open-url
                 options:
-                  title: Open documentation
-                  url: https://docs.jigx.com/examples/open-url
+                  title: Open the documentation
+                  url: https://docs.jigx.com/examples
         
 children:
   - type: component.form
+    instanceId: send-signature-open-url
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.signature-field
-          instanceId: signature-field
+          instanceId: signature
           options:
             label: Signature required
