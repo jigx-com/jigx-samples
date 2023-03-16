@@ -32,29 +32,29 @@ datasources:
         FROM [default/form] WHERE '$.category' = "update-form"
                 
 children:
- - type: component.form
-   instanceId: form-update
-   options:
-     children:
-        - type: component.text-field
-          instanceId: firstname
-          options:
-           label: First name
-           initialValue: =@ctx.datasources.form-update.firstname
-        - type: component.text-field
-          instanceId: lastname
-          options:
-            label: Last name
-            initialValue: =@ctx.datasources.form-update.lastname
-        - type: component.email-field
-          instanceId: email
-          options:
-            label: Email
-            keyboardType: email-address
-            initialValue: =@ctx.datasources.form-update.email
-        - type: component.number-field
-          instanceId: phone
-          options:
-            label: Phone number
-            keyboardType: number-pad
-            initialValue: =@ctx.datasources.form-update.phone
+  - type: component.form
+    instanceId: form-update
+    options:
+      children:
+          - type: component.text-field
+            instanceId: firstname
+            options:
+              label: First name
+              initialValue: =@ctx.datasources.form-update.firstname
+          - type: component.text-field
+            instanceId: lastname
+            options:
+              label: Last name
+              initialValue: =@ctx.datasources.form-update.lastname
+          - type: component.email-field
+            instanceId: email
+            options:
+              label: Email
+              keyboardType: email-address
+              initialValue: =@ctx.datasources.form-update.email
+          - type: component.number-field
+            instanceId: phone
+            options:
+              label: Phone number
+              keyboardType: number-pad
+              initialValue: =@ctx.datasources.form-update.phone

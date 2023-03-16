@@ -2,7 +2,7 @@ type: datasource.static
 options:
   data:
     - title: Simple form
-      link: simple-form-execute-entity
+      link: simple-form
       color: color1
     - title: Form with section and field-row
       link: form-with-section

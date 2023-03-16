@@ -8,30 +8,30 @@ actions:
           formId: simple-form
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
-          method: save
+          method: create
           title: Save person
             
 children:
- - type: component.form
-   instanceId: simple-form
-   options:
-     children:
-        - type: component.text-field
-          instanceId: firstname
-          options:
-           label: First name
-        - type: component.text-field
-          instanceId: lastname
-          options:
-            label: Last name
-        - type: component.email-field
-          instanceId: email
-          options:
-            label: Email
-        - type: component.number-field
-          instanceId: phone
-          options:
-            label: Phone number
+  - type: component.form
+    instanceId: simple-form
+    options:
+      children:
+          - type: component.text-field
+            instanceId: firstname
+            options:
+              label: First name
+          - type: component.text-field
+            instanceId: lastname
+            options:
+              label: Last name
+          - type: component.email-field
+            instanceId: email
+            options:
+              label: Email
+          - type: component.number-field
+            instanceId: phone
+            options:
+              label: Phone number
 
 
                       
