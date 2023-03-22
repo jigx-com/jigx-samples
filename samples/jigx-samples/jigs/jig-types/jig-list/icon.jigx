@@ -10,7 +10,7 @@ header:
       options:
         title: Icons
         source:
-          uri: https://i.picsum.photos/id/341/400/300.jpg?hmac=_aJqbW1iqsTuGzc7KlYvoBQ75xuAvan-iAAsgir1Ewc
+          uri: https://images.unsplash.com/photo-1506729623306-b5a934d88b53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
 
 datasources:
   components:
