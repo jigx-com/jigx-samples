@@ -1,0 +1,13 @@
+# Jigx SQL function executing a stored procedure to select only a single customer. 
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: execute
+procedure: sp_GetCustomerById
+parameters:
+  # The stored procedure has a required parameter called CustomerId. Therefore the value of the Jigx function's CustomerId parameter will be passed as a parameter to the stored procedure.
+  CustomerId:
+    type: string
+    location: input
+    required: true
+# One of the columns returned by the stored procedure is called id. Only records in the SQLite table with a matching id will be updated. When forRowsWithMatchingIds is false or omitted, all records in the SQLite table will be deleted, and only the records returned by the store procedure will be inserted.
+forRowsWithMatchingIds: true

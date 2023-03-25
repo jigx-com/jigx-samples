@@ -1,0 +1,51 @@
+# Jigx SQL function executing a stored procedure to updating a customer record. 
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: execute
+procedure: sp_InsertOrUpdateCustomer
+# The stored procedure parameters are automatically populated by Jigx with the matching function parameters.
+parameters:
+  CustomerId:
+    type: string
+    location: input
+    required: true
+  FirstName:
+    type: string
+    location: input
+    required: true
+  LastName:
+    type: string
+    location: input
+    required: true
+  Email:
+    type: string
+    location: input
+    required: true
+  PhoneNumber:
+    type: string
+    location: input
+    required: true
+  AddressLine1:
+    type: string
+    location: input
+    required: true
+  AddressLine2:
+    type: string
+    location: input
+    required: true
+  City:
+    type: string
+    location: input
+    required: true
+  ZipCode:
+    type: string
+    location: input
+    required: true
+  State:
+    type: string
+    location: input
+    required: true
+  Country:
+    type: string
+    location: input
+    required: true

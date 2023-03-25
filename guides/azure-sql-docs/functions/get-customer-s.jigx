@@ -1,0 +1,29 @@
+# Jigx SQL function executing a stored procedure to select only a single customer. 
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: query
+query: |
+  SELECT
+    id,
+    first_name,
+    last_name,
+    email,
+    phone_number,
+    address_line1,
+    address_line2,
+    city,
+    state,
+    zip_code,
+    country
+  FROM
+    customers
+  WHERE
+    id = @CustomerId
+parameters:
+  # The SQL query has a where clause that contains CustomerId. Therefore the value of the Jigx function's CustomerId parameter will be used as the value of the @CustomerId token in the where clause.
+  CustomerId:
+    type: string
+    location: input
+    required: true
+# One of the columns returned by the query statement is called id. Only records in the SQLite table with a matching id will be updated. When forRowsWithMatchingIds is false or omitted, all records in the SQLite table will be deleted, and only the records returned by the query statement will be inserted.
+forRowsWithMatchingIds: true

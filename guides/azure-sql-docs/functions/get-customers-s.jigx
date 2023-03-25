@@ -1,0 +1,19 @@
+# Jigx SQL function executing a query to select all customers from a table
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: query
+query: |
+  SELECT
+    id,
+    first_name,
+    last_name,
+    email,
+    phone_number,
+    address_line1,
+    address_line2,
+    city,
+    state,
+    zip_code,
+    country
+  FROM
+    customers

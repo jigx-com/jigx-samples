@@ -1,0 +1,140 @@
+title: New Customer
+description: Add a new customer and save it to SQL Azure.
+type: jig.default
+
+# Header section displaying an image at the top of the screen.
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80
+
+# A form control with input controls are used to capture the new customer information.
+children:
+  - type: component.form
+    instanceId: frmNewCustomer
+    options:
+      # When a form submit action is used to save the values of the controls on a form, the form will warn the user when navigating away without saving the form's content. 
+      # When any other action type is used to save the values of the controls on a form, the form is unaware of the saved state, and isDiscardChangesAlertEnabled needs to be set to false to avoid seeing the dialog even when data has been saved. 
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: FirstName
+                options:
+                  label: First Name
+              - type: component.text-field
+                instanceId: LastName
+                options:
+                  label: Last Name
+        - type: component.email-field
+          instanceId: Email
+          options:
+            label: Email
+            # The type of keyboard that will be displayed on iOS or Android.
+            keyboardType: email-address
+        - type: component.text-field
+          instanceId: PhoneNumber
+          options:
+            label: Phone Number
+            keyboardType: phone-pad
+            # Set the type of text for this field. This will enforce a regex for this field of the type it is set to.
+            textContentType: telephoneNumber
+        - type: component.text-field
+          instanceId: AddressLine1
+          options:
+            label: Address Line 1
+            textContentType: streetAddressLine1
+        - type: component.text-field
+          instanceId: AddressLine2
+          options:
+            label: Address Line 2           
+            textContentType: streetAddressLine2
+            isRequired: false
+        - type: component.text-field
+          instanceId: City
+          options:
+            label: City
+            textContentType: addressCity
+        # A dropdown control is used to list the USA states. 
+        - type: component.dropdown
+          instanceId: State
+          options:
+            label: State
+            # The data source for the dropdown options is a static datasource defined in usa-states.jigx.
+            data: =@ctx.datasources.usa-states
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name
+                value: =@ctx.current.item.code            
+        - type: component.text-field
+          instanceId: ZipCode
+          options:
+            label: Zip Code
+            textContentType: postalCode
+        - type: component.text-field
+          instanceId: Country
+          options:
+            label: Country
+            textContentType: countryName
+            # The dropdown only contains USA states. Set the default value of the country control to USA.
+            value: USA
+            style:
+              # Set the control to read only so the value cannot be changed to an unsupported country.
+              isDisabled: true
+actions:
+  - children:
+      # Use an execute entity action to submit the values of the controls to the Jigx function to update Azure SQL and to save the new customer to the local SQLite database.
+      - type: action.execute-entity
+        options:
+          # The title of the save button.
+          title: Save Customer
+          # The data provider to use for the remote data. This solution uses Azure SQL.
+          provider: DATA_PROVIDER_SQL
+          # The name of the local SQLite database that the new record will be created in.
+          entity: customers
+          # The name of the Jigx function used to save the data to Azure SQL.
+          function: create-customer
+          # Set the function parameters to values of the controls on the form.
+          functionParameters:
+            CustomerId: =@ctx.jig.inputs.custId
+            FirstName: =@ctx.components.FirstName.state.value
+            LastName: =@ctx.components.LastName.state.value
+            Email: =@ctx.components.Email.state.value
+            PhoneNumber: =@ctx.components.PhoneNumber.state.value
+            AddressLine1: =@ctx.components.AddressLine1.state.value
+            AddressLine2: =@ctx.components.AddressLine2.state.value
+            City: =@ctx.components.City.state.value
+            ZipCode: =@ctx.components.ZipCode.state.value
+            State: =@ctx.components.State.state.selected.code
+            Country: =@ctx.components.Country.state.value
+          # The command type to be executed on the local SQLite database.
+          method: create
+          # Navigate to the previous screen after the action has been performed.
+          goBack: previous
+          # Set the column values of the new record that will be created in the local SQLite Customers table.
+          data:
+            id: =@ctx.jig.inputs.custId
+            FirstName: =@ctx.components.FirstName.state.value
+            LastName: =@ctx.components.LastName.state.value
+            Email: =@ctx.components.Email.state.value
+            PhoneNumber: =@ctx.components.PhoneNumber.state.value
+            AddressLine1: =@ctx.components.AddressLine1.state.value
+            AddressLine2: =@ctx.components.AddressLine2.state.value
+            City: =@ctx.components.City.state.value
+            ZipCode: =@ctx.components.ZipCode.state.value
+            State: =@ctx.components.State.state.selected.code
+            Country: =@ctx.components.Country.state.value   
+          # Display a dialog box with a message if the new record is created successfully.    
+          onSuccess: 
+            description: New Customer Created Successfully
+            title: Customer Created
+        
+        

@@ -1,0 +1,125 @@
+# A sample jig that uses a SQL function to return and display a customer's details from Azure SQL.
+# The title property uses a JSONata expression to concatenate the customer's first and last names as the title of the jig.
+title: =@ctx.datasources.mydata.first_name & ' ' & @ctx.datasources.mydata.last_name  
+description: View customer details from Azure SQL
+type: jig.default
+
+# Header section displaying an image at the top of the screen.
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80
+
+# onFocus is triggered whenever the jig is displayed. The sync-entities action calls the Jigx SQL function and populates the local SQLite tables on the device with the data returned from Azure SQL.          
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_SQL
+    entities:
+      - entity: customers
+        function: get-customer
+        functionParameters:
+          CustomerId: =@ctx.jig.inputs.customerId
+
+datasources:
+# The mydata data source selects the data from the local SQLite database.
+# The where clause in the query contains a token for a parameter called customerId that is defined in queryParameters and is passed to the viewCustomer jig as an input from the listCustomer jig.
+# The isDocument property for the mydata datasource is set to true. As a result, the data source will return as a single record to be displayed on a form instead of an array of records.
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: customers
+  
+      query: |
+        SELECT
+          id,
+          '$.first_name',
+          '$.last_name',
+          '$.email',
+          '$.phone_number',
+          '$.address_line1',
+          '$.address_line2',
+          '$.city',
+          '$.state',
+          '$.zip_code',
+          '$.country'
+        FROM
+          [customers]
+        WHERE
+          id = @CustomerId          
+      queryParameters:
+        CustomerId: =@ctx.jig.inputs.customerId
+      isDocument: true
+
+children:
+# The data on the jig is displayed using an entity control and entity fields. If the data source returns an array, an entity control will automatically show the first record.
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Customer ID
+            # The value of each field points to the field in the mydata data source. 
+            value: =@ctx.datasources.mydata.id
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: First Name
+                  value: =@ctx.datasources.mydata.first_name
+              - type: component.entity-field
+                options:
+                  label: Last Name
+                  value: =@ctx.datasources.mydata.last_name
+        - type: component.entity-field
+          options:
+            label: Email
+            value: =@ctx.datasources.mydata.email
+            contentType: email
+        - type: component.entity-field
+          options:
+            label: Phone Number
+            value: =@ctx.datasources.mydata.phone_number
+            contentType: phone
+        - type: component.entity-field
+          options:
+            label: Address Line 1
+            value: =@ctx.datasources.mydata.address_line1
+        - type: component.entity-field
+          options:
+            label: Address Line 2
+            value: =@ctx.datasources.mydata.address_line2
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: City
+                  value: =@ctx.datasources.mydata.city
+              - type: component.entity-field
+                options:
+                  label: State
+                  value: =@ctx.datasources.mydata.state                        
+        - type: component.entity-field
+          options:
+            label: Zip
+            value: =@ctx.datasources.mydata.zip_code         
+            
+# Edit customer button to navigate to the newCustomer jig
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Edit Customer
+          linkTo: updateCustomer
+          parameters:
+            custId: =@ctx.datasources.mydata.id

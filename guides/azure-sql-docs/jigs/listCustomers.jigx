@@ -1,0 +1,94 @@
+# A sample list jig that uses a SQL function to return and display a list of customers from Azure SQL.
+title: List Customers
+description: Show a list of all customers in a SQL database.
+type: jig.list
+icon: contact
+
+# Header section displaying an image at the top of the screen.
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80
+
+# onFocus is triggered whenever the jig is displayed. The sync-entities action calls the Jigx SQL function and populates the local SQLite tables on the device with the data returned from Azure SQL.
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_SQL
+    entities:
+      - entity: customers
+        function: get-customers
+
+# The mydata data source selects the data from the local SQLite database.
+datasources:
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      
+      entities:
+        - entity: customers
+  
+      query: |
+        SELECT
+          id,
+          '$.first_name',
+          '$.last_name',
+          '$.email',
+          '$.phone_number',
+          '$.address_line1',
+          '$.address_line2',
+          '$.city',
+          '$.state',
+          '$.zip_code',
+          '$.country'
+        FROM
+          [customers]
+        ORDER BY '$.first_name' 
+
+# The list and its list items are configured below. This is a list jig; therefore, its properties, such as data and item, are top-level properties.
+# The data property binds the list to a specific data source.
+data: =@ctx.datasources.mydata
+# The item property specifies the list item type and its attributes.
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.first_name & ' ' & @ctx.current.item.last_name
+    subtitle: =@ctx.current.item.email
+    description: |
+      =@ctx.current.item.address_line1 & ' ' & 
+        @ctx.current.item.city & ' ' & 
+        @ctx.current.item.state  & ' ' & 
+        @ctx.current.item.zip_code
+    label:
+      title: =@ctx.current.item.country
+    leftElement: 
+      element: avatar
+      # The text property of the left element is specified using a JSONata expression that builds a two-letter string by concatenating the first letters of the customer's first and last names.
+      text: =$substring(@ctx.current.item.first_name,0,1) & $substring(@ctx.current.item.last_name,0,1)
+    divider: solid
+    # A go-to action is triggered when pressing on a list item.
+    onPress: 
+      type: action.go-to
+      options:
+        # The name of the jig to navigate to when the item is pressed.
+        linkTo: viewCustomer
+        parameters:
+          # The id column of the current item being pressed on is passed as a parameter called customerId to the viewCustomer jig.
+          customerId: =@ctx.current.item.id
+
+# Add customer button to navigate to the newCustomer jig
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Add Customer
+          linkTo: newCustomer
+          parameters:
+            custId: =$uuid_v4()
+      

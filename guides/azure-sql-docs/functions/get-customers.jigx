@@ -1,0 +1,5 @@
+# Jigx SQL function executing a stored procedure to select all customers from a table
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: execute
+procedure: sp_GetAllCustomers

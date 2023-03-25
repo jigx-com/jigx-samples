@@ -1,0 +1,65 @@
+# Jigx SQL function executing a sql query to update a customer record in Azure SQL. 
+provider: DATA_PROVIDER_SQL
+connection: customer.azure
+method: query
+query: |
+  UPDATE customers
+    SET
+      first_name = @FirstName,
+      last_name = @LastName,
+      email = @Email,
+      phone_number = @PhoneNumber,
+      address_line1 = @AddressLine1,
+      address_line2 = @AddressLine2,
+      city = @City,
+      state = @State,
+      zip_code = @ZipCode,
+      country = @Country
+    WHERE
+      id = @CustomerId
+# Jigx automatically replaces the tokens in the SQL query with the matching function parameters. 
+parameters:
+  CustomerId:
+    type: string
+    location: input
+    required: true
+  FirstName:
+    type: string
+    location: input
+    required: true
+  LastName:
+    type: string
+    location: input
+    required: true
+  Email:
+    type: string
+    location: input
+    required: true
+  PhoneNumber:
+    type: string
+    location: input
+    required: true
+  AddressLine1:
+    type: string
+    location: input
+    required: true
+  AddressLine2:
+    type: string
+    location: input
+    required: true
+  City:
+    type: string
+    location: input
+    required: true
+  ZipCode:
+    type: string
+    location: input
+    required: true
+  State:
+    type: string
+    location: input
+    required: true
+  Country:
+    type: string
+    location: input
+    required: true

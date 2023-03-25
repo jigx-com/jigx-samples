@@ -1,0 +1,7 @@
+name: azure-sql-docs
+title: Azure SQL Docs
+category: analytics
+widgets:
+  # widget for displaying and navigating to the list jig
+  - size: 4x4 
+    jigId: listCustomers

@@ -1,0 +1,166 @@
+title: Stock Inventory
+type: jig.list
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80
+        title: Product inventory
+        subtitle: Updated 3 mins ago
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: default
+      title: =$count(@ctx.datasources.inventory) & " Products"
+      subtitle: In total
+      leftIcon:
+        element: icon
+        name: shopping-cart-empty-1
+        isContained: true
+        isDuotone: true
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Buy products with low inventory
+          linkTo: create the file for this action
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - 30
+        - 45
+        - 55
+        - 62
+  static-data2:
+    type: datasource.static
+    options:
+      data:
+        - 57
+        - 50
+        - 40
+        - 89
+  inventory:
+    type: datasource.static
+    options:
+      data:
+        - name: Product 1
+          description: Description
+          subtitle: Low inventory
+          avatar-text: A
+          progress: 0.78
+          value: $154.000
+          total: 100
+          current: 23
+        - name: Product 2
+          description: Description
+          avatar-text: B
+          progress: 0.3
+          value: $120.000
+          total: 800
+          current: 213
+        - name: Product 3
+          description: Description
+          avatar-text: C
+          value: $115.000
+          total: 800
+          current: 335
+        - name: Product 4
+          description: Description
+          avatar-text: D
+          avatar-uri: null
+          value: $107.000
+          total: 100
+          current: 78
+        - name: Product 5
+          description: Description
+          avatar-text: E
+          avatar-uri: null
+          value: $102.500
+          total: 1000
+          current: 985
+        - name: Product 6
+          description: Description
+          avatar-text: F
+          avatar-uri: null
+          value: $98.000
+          total: 400
+          current: 280
+        - name: Product 7
+          description: Description
+          avatar-text: G
+          avatar-uri: null
+          value: $56.000
+          total: 800
+          current: 335
+        - name: Product 8
+          description: Description
+          avatar-text: H
+          avatar-uri: null
+          value: $42.000
+          total: 1000
+          current: 366
+        - name: Product 9
+          description: Description
+          avatar-text: I
+          avatar-uri: null
+          value: $38.500
+          total: 200
+          current: 15
+        - name: Product 10
+          description: Description
+          avatar-text: J
+          avatar-uri: null
+          value: $37.000
+          total: 2000
+          current: 1876
+data: =@ctx.datasources.inventory
+item:
+  type: component.list-item
+  options:
+    label:
+      title: =@ctx.current.item.current & ' / ' & @ctx.current.item.total
+      color:
+        - when: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25)
+          color: color4
+        - when: =((@ctx.current.item.current / @ctx.current.item.total) > 0.25)
+          color: color2
+    color:
+      - when: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25)
+        color: color4
+      - when: =((@ctx.current.item.current / @ctx.current.item.total) < 0.50)
+        color: color3
+    title: =@ctx.current.item.name
+    description: =@ctx.current.item.description
+    subtitle: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? "Low
+      inventory" :""
+    style:
+      isError: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? true
+        :false
+    progress: =(@ctx.current.item.current / @ctx.current.item.total)
+    leftElement:
+      element: avatar
+      text: =@ctx.current.item.avatar-text
+    swipeable:
+      left:
+        - label: label
+          icon: pencil-2
+          color: warning
+          onPress:
+            type: action.go-to
+            options:
+              linkTo: create the file for this action
+      right:
+        - label: label
+          icon: pencil-2
+          color: primary
+          onPress:
+            type: action.go-to
+            options:
+              linkTo: create the file for this action

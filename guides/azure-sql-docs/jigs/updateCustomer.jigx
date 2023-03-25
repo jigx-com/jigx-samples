@@ -1,0 +1,196 @@
+title: ='Update ' & @ctx.datasources.mydata.first_name & ' ' & @ctx.datasources.mydata.last_name  
+description: Update a customer's information and save it to SQL Azure.
+type: jig.default
+
+# Header section displaying an image at the top of the screen.
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80
+
+# Ensure we have the latest information for the customer by syncing the customer's data from Azure SQL
+# onFocus is triggered whenever the jig is displayed. The sync-entities action calls the Jigx SQL function and populates the local SQLite tables on the device with the data returned from Azure SQL.          
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_SQL
+    entities:
+      - entity: customers
+        function: get-customer
+        functionParameters:
+          CustomerId: =@ctx.jig.inputs.custId
+
+datasources:
+# The mydata data source selects the data from the local SQLite database.
+# The where clause in the query contains a token for a parameter called customerId that is defined in queryParameters and is passed to the viewCustomer jig as an input from the listCustomer jig.
+# The isDocument property for the mydata datasource is set to true. As a result, the data source will return as a single record to be displayed on a form instead of an array of records.
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: customers
+  
+      query: |
+        SELECT
+          id,
+          '$.first_name',
+          '$.last_name',
+          '$.email',
+          '$.phone_number',
+          '$.address_line1',
+          '$.address_line2',
+          '$.city',
+          '$.state',
+          '$.zip_code',
+          '$.country'
+        FROM
+          [customers]
+        WHERE
+          id = @CustomerId          
+      queryParameters:
+        CustomerId: =@ctx.jig.inputs.custId
+      isDocument: true
+
+# A form control with input controls are used to capture the changes to the customer's information.
+#The values from mydata is set to the value property of each control when the form loads.
+children:
+  - type: component.form
+    instanceId: frmNewCustomer
+    options:
+      # When a form submit action is used to save the values of the controls on a form, the form will warn the user when navigating away without saving the form's content. 
+      # When any other action type is used to save the values of the controls on a form, the form is unaware of the saved state, and isDiscardChangesAlertEnabled needs to be set to false to avoid seeing the dialog even when data has been saved. 
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: FirstName
+                options:
+                  label: First Name
+                  #set the value property of the control to the value returned from the mydata datasource.
+                  value: =@ctx.datasources.mydata.first_name
+              - type: component.text-field
+                instanceId: LastName
+                options:
+                  label: Last Name
+                  value: =@ctx.datasources.mydata.last_name
+        - type: component.email-field
+          instanceId: Email
+          options:
+            label: Email
+            value: =@ctx.datasources.mydata.email
+            # The type of keyboard that will be displayed on iOS or Android.
+            keyboardType: email-address
+        - type: component.text-field
+          instanceId: PhoneNumber
+          options:
+            label: Phone Number
+            value: =@ctx.datasources.mydata.phone_number
+            keyboardType: phone-pad
+            # Set the type of text for this field. This will enforce a regex for this field of the type it is set to.
+            textContentType: telephoneNumber
+        - type: component.text-field
+          instanceId: AddressLine1
+          options:
+            label: Address Line 1
+            value: =@ctx.datasources.mydata.address_line1
+            textContentType: streetAddressLine1
+        - type: component.text-field
+          instanceId: AddressLine2
+          options:
+            label: Address Line 2           
+            textContentType: streetAddressLine2
+            value: =@ctx.datasources.mydata.address_line2
+            isRequired: false
+        - type: component.text-field
+          instanceId: City
+          options:
+            label: City
+            value: =@ctx.datasources.mydata.city
+            textContentType: addressCity
+        # A dropdown control is used to list the USA states. 
+        - type: component.dropdown
+          instanceId: State
+          options:
+            label: State
+            # The data source for the dropdown options is a static datasource defined in usa-states.jigx.
+            data: =@ctx.datasources.usa-states
+            value: =@ctx.datasources.mydata.state
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name
+                value: =@ctx.current.item.code            
+        - type: component.text-field
+          instanceId: ZipCode
+          options:
+            label: Zip Code
+            value: =@ctx.datasources.mydata.zip_code
+            textContentType: postalCode
+        - type: component.text-field
+          instanceId: Country
+          options:
+            label: Country
+            textContentType: countryName
+            value: =@ctx.datasources.mydata.country
+            style:
+              # The dropdown only contains USA states.
+              # Set the control to read only so the value cannot be changed to an unsupported country.
+              isDisabled: true
+actions:
+  - children:
+      # Use an execute entity action to submit the values of the controls to the Jigx function to update Azure SQL and to save the new customer to the local SQLite database.
+      - type: action.execute-entity
+        options:
+          # The title of the save button.
+          title: Update Customer
+          # The data provider to use for the remote data. This solution uses Azure SQL.
+          provider: DATA_PROVIDER_SQL
+          # The name of the local SQLite database that the new record will be created in.
+          entity: customers
+          # The name of the Jigx function used to save the data to Azure SQL.
+          function: create-customer
+          # Set the function parameters to values of the controls on the form.
+          functionParameters:
+            CustomerId: =@ctx.jig.inputs.custId
+            FirstName: =@ctx.components.FirstName.state.value
+            LastName: =@ctx.components.LastName.state.value
+            Email: =@ctx.components.Email.state.value
+            PhoneNumber: =@ctx.components.PhoneNumber.state.value
+            AddressLine1: =@ctx.components.AddressLine1.state.value
+            AddressLine2: =@ctx.components.AddressLine2.state.value
+            City: =@ctx.components.City.state.value
+            ZipCode: =@ctx.components.ZipCode.state.value
+            State: =@ctx.components.State.state.selected.code
+            Country: =@ctx.components.Country.state.value
+          # The command type to be executed on the local SQLite database.
+          method: update
+          # Navigate to the previous screen after the action has been performed.
+          goBack: previous
+          # Set the column values of the new record that will be created in the local SQLite Customers table.
+          data:
+            id: =@ctx.jig.inputs.custId
+            FirstName: =@ctx.components.FirstName.state.value
+            LastName: =@ctx.components.LastName.state.value
+            Email: =@ctx.components.Email.state.value
+            PhoneNumber: =@ctx.components.PhoneNumber.state.value
+            AddressLine1: =@ctx.components.AddressLine1.state.value
+            AddressLine2: =@ctx.components.AddressLine2.state.value
+            City: =@ctx.components.City.state.value
+            ZipCode: =@ctx.components.ZipCode.state.value
+            State: =@ctx.components.State.state.selected.code
+            Country: =@ctx.components.Country.state.value   
+          # Display a dialog box with a message if the new record is created successfully.    
+          onSuccess: 
+            description: Customer Updated Successfully
+            title: Updated Created
+        
+        
