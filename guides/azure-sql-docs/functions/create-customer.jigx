@@ -32,7 +32,7 @@ parameters:
   AddressLine2:
     type: string
     location: input
-    required: true
+    required: false
   City:
     type: string
     location: input

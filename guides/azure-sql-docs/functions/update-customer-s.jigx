@@ -42,7 +42,7 @@ parameters:
   AddressLine1:
     type: string
     location: input
-    required: true
+    required: false
   AddressLine2:
     type: string
     location: input
