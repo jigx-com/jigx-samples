@@ -5,9 +5,9 @@ options:
     - entity: default/calendar
   query: |
     SELECT
-      json_extract(data, '$.title') as name,
+      '$.title',
       '$.location',
-      '$.date-from',
-      '$.date-to',
+      '$.eventStart',
+      '$.eventEnd',
       '$.category' 
     FROM [default/calendar] WHERE '$.category' = 'meeting-event'

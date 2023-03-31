@@ -7,9 +7,11 @@ item:
   options:
     title: =@ctx.current.item.name
     from: 
-      text: =@ctx.current.item.date_from
-      format: 
-        dateFormat: "l"
-    to: =@ctx.current.item.date_to
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventStart * 3600000)
+      format:
+        dateFormat: lll
+    to: 
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventEnd * 3600000)
+      format:
+        dateFormat: lll
     location: =@ctx.current.item.location
-    isAllDay: true

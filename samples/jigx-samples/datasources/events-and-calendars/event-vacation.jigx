@@ -1,15 +1,7 @@
 type: datasource.static
 options:
   data:
-    - name: "Summer vacation"
-      date_from: "2022-07-15"
-      date_to: "2022-08-15"
-      location: "Crete, Greece"
-    - name: "Summer vacation"
-      date_from: "2022-09-15"
-      date_to: "2022-10-15"
-      location: "Crete, Greece"
-    - name: "Summer vacation"
-      date_from: "2022-11-15"
-      date_to: "2022-12-15"
+    - name: "John's vacation"
+      eventStart: 0
+      eventEnd: 168
       location: "Crete, Greece"

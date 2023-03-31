@@ -5,11 +5,13 @@ data: =@ctx.datasources.event-vacation-dynamic
 item: 
   type: component.event
   options:
-    title: =@ctx.current.item.name
+    title: =@ctx.current.item.title
     from: 
-      text: =@ctx.current.item.date-from
-      format: 
-        dateFormat: "l"
-    to: =@ctx.current.item.date-to
+      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000)
+      format:
+        dateFormat: lll
+    to: 
+      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000)
+      format:
+        dateFormat: lll
     location: =@ctx.current.item.location
-    isAllDay: true
