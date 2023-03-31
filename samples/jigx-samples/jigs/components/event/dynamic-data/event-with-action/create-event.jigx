@@ -1,5 +1,4 @@
 title: Create event
-description: Description of your Jig
 type: jig.default
 
 actions:

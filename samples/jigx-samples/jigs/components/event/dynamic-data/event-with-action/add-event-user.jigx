@@ -1,5 +1,5 @@
-title: = "Book term " & $fromMillis($toMillis($now()) + ($number(@ctx.current.item.id)- 1) * 3600000)
-description: Description of your Jig
+title: Registration
+description: =@ctx.jig.inputs.title
 type: jig.default
 
 actions:
@@ -41,9 +41,7 @@ children:
           instanceId: userPhone
           options:
             label: Phone
-            value: =@ctx.user.phone
         - type: component.avatar-field
-          instanceId: userPhoto
+          instanceId: avatar
           options:
             label: Photo
-            value: =@ctx.user.avatarUrl

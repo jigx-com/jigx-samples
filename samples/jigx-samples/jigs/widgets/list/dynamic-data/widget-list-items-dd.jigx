@@ -16,18 +16,18 @@ widgets:
   2x2:
     type: widget.list
     options:
-      data: =@ctx.datasources.calendar-dynamic
+      data: =@ctx.datasources.calendar-data-dynamic
       item: 
         type: component.list-item
         options:
           title: =@ctx.current.item.title
           subtitle: =@ctx.current.item.location
           label:
-            title: =@ctx.current.item.tagTitle
+            title: =@ctx.current.item.title
           divider: solid
           leftElement: 
             element: avatar
             text: ''
-            uri: =@ctx.current.item.avatarUrl
+            uri: =@ctx.current.item.avatar
 
           

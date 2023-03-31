@@ -5,6 +5,7 @@ options:
     - entity: default/calendar
   query: | 
     SELECT
+      id,
       '$.title',
       '$.location',
       '$.time',
