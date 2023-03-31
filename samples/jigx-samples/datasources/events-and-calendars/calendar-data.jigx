@@ -3,6 +3,8 @@ options:
   data:            
     - id: "1"
       location: Redmond, WA
+      eventStart: 1
+      eventEnd: 2
       people:
         - avatarUrl: https://randomuser.me/api/portraits/men/1.jpg
           fullName: Tim Cook
@@ -12,6 +14,8 @@ options:
       title: Negotiation with Microsoft
     - id: "2"
       location: Palo Alto, CA
+      eventStart: 2
+      eventEnd: 4
       people:
         - avatarUrl: https://jollycontrarian.com/images/6/6c/Rickroll.jpg
           fullName: Michael Tong
@@ -21,6 +25,8 @@ options:
       title: Demo for Facebook
     - id: "3"
       location: Menlo Park, CA
+      eventStart: 24
+      eventEnd: 25
       people:
         - avatarUrl: https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg
           fullName: Michael Tong

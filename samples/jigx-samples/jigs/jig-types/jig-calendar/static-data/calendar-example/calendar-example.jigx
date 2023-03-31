@@ -6,13 +6,14 @@ item:
   type: component.event
   options:
     title: =@ctx.current.item.title
-    description: =@ctx.current.item.description
-    from:
-      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.id)- 1) * 3600000)
+    from: 
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventStart * 3600000)
       format:
-        dateFormat: "l"
+        dateFormat: lll
+    to: 
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventEnd * 3600000)
+      format:
+        dateFormat: lll
     location: =@ctx.current.item.location
     people: =@ctx.current.item.people
     tags: =@ctx.current.item.tags
-    to: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.id) *
-      3600000)

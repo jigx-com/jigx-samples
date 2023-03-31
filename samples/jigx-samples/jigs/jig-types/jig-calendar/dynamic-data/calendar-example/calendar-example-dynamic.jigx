@@ -6,11 +6,11 @@ item:
   type: component.event
   options:
     from: 
-      text: =$fromMillis($toMillis($now()) + ($number(@ctx.current.item.time)- 1) * 3600000)
+      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000)
       format:
         dateFormat: lll
     to: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.time) * 3600000)
+      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000)
       format:
         dateFormat: lll
     title: =@ctx.current.item.title

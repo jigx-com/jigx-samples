@@ -8,6 +8,8 @@ options:
       '$.title',
       '$.location',
       '$.time',
+      '$.eventStart',
+      '$.eventEnd',
       '$.fullname',
       '$.avatar',
       '$.color',
