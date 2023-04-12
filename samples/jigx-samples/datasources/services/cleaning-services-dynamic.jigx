@@ -21,4 +21,4 @@ options:
       '$.pressed', 
       '$.time',
       '$.quantity'
-    FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL ORDER BY '$.area' DESC
+    FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL ORDER BY id DESC
