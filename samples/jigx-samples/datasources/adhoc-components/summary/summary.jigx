@@ -74,7 +74,7 @@ options:
       icon: list-add
       color: color4
     - component: Location
-      componentLink: composite-location
+      componentLink: list-location
       icon: location
       color: color5
     - component: Media-field

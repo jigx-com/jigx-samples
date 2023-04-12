@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - title: Location with address
+      link: location-with-address
+      color: color1
+    - title: Location with multiple markers
+      link: location-multiple-markers
+      color: color2
+    - title: Location displaying path
+      link: location-path
+      color: color3
+    # - title: Location - fullscreen
+    #   link: location-fullscreen
+    #   color: color4

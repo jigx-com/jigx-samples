@@ -1,7 +1,0 @@
-title: Location examples
-type: jig.composite
-
-children:
-  - jigId: location-with-address
-  - jigId: location-multiple-markers
-  - jigId: location-path
