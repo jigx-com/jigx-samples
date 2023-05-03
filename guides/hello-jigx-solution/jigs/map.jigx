@@ -1,0 +1,28 @@
+# The system name that uniquely identifies the jig
+title: Location with address
+# The jig type used to display data
+type: jig.default
+# icon that displays on the widget on the home hub
+widgets: 
+  "2x2": 
+    type: widget.location
+    options: 
+      address: =@ctx.datasources.address.city
+
+isCollapsible: true
+# The type of datasource used to return data in the jig
+datasources:
+  address: 
+    # The static dataset is created directly inside the jig file
+    type: datasource.static
+    options:
+      data:
+        - street: 768 5th Ave
+          city: New York
+          country: US
+# The control used by the jig          
+children:
+  - type: component.location
+    options:
+      address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city & ',' & @ctx.datasources.address.country
+      zoomLevel: 9

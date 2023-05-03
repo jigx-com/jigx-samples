@@ -1,0 +1,51 @@
+# The system name that uniquely identifies the jig
+title: List customers
+# Description of the jig. This is not a required field and can be omitted.
+description: List of our customers
+# The jig type used to list data values and elements
+type: jig.list
+# icon that displays on the widget on the home hub
+icon: list
+
+# The type of datasource used to store the created data in the jig
+datasources:
+  customerList: 
+    type: datasource.sqlite
+    options:
+    # The data provider being used. In this case, the Jigx Dynamic Data provider
+      provider: DATA_PROVIDER_DYNAMIC
+      # The name of the table that the information is being returned from. All Dynamic Data-based tables are saved in the "default" database.
+      entities:
+        - entity: default/customers
+      # The SQLite query used to specifiy the data to return  
+      query: SELECT id, '$.firstName', '$.lastName', '$.email' FROM [default/customers] 
+
+data: =@ctx.datasources.customerList
+item:
+  # All list output controls are placed on the list-item component
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.firstName & " " & @ctx.current.item.lastName 
+    subtitle: =@ctx.current.item.email
+    # The list-item action that defines what to do when swiping left or right on the item
+    swipeable:
+      left:
+        - label: Delete
+          icon: delete
+          color: warning
+          onPress: 
+            type: action.execute-entity
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/customers
+              method: delete
+              goBack: previous
+              data: 
+                id: =@ctx.current.item.id
+    # The navigation action that is performed when an individual item is clicked in the list, in this instance to view the customer details
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-customer       
+        parameters:
+          custId: =@ctx.current.item.id

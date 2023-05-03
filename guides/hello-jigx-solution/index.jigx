@@ -1,0 +1,18 @@
+# The system name that uniquely identifies the solution
+name: hello-jigx-solution
+# The friendly name of the solution
+title: Hello-Jigx Solution
+# The built-in category selected for this solution
+category: business
+#The widgets that act as top-level navigation elements for jigs
+widgets:
+  - size: "4x2" # The selected size of the widget on the home hub
+    # The name of the jig that contains the widget definition that is displayed
+    jigId: composite
+  - size: "2x2" 
+    jigId: map
+  - size: "2x2"
+    jigId: calendar
+# Stories are dedicated areas on the home hub for news, announcements, and images 
+stories:
+  - solution-story

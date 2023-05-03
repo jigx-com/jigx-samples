@@ -1,0 +1,27 @@
+# The system name that uniquely identifies the jig
+title: Calendar
+# The jig type used to display a calendar with the current date
+type: jig.calendar
+# icon that displays on the widget on the home hub
+icon: calendar
+# Add a badge to the calendar widget and use an expression to count the entries in the calendar by id
+badge: =$count(@ctx.datasources.calendar-data.id)
+# The expression that structures the data from the datasource before binding it to the jig. Expressions are JSONata based
+data: =@ctx.datasources.calendar-data
+item:
+  options:
+    title: =@ctx.current.item.title
+    from:
+      format:
+        #Use a jsonata expression to get the date in milliseconds and then convert it to UCT for the start time 
+        dateFormat: lll
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventStart * 3600000)
+    location: =@ctx.current.item.location
+    people: =@ctx.current.item.people
+    tags: =@ctx.current.item.tags
+    to:
+      format:
+        #Use a jsonata expression to get the date in milliseconds and then convert it to UCT for the end time 
+        dateFormat: lll
+      text: =$fromMillis($toMillis($now()) + @ctx.current.item.eventEnd * 3600000)
+  type: component.event

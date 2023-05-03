@@ -1,0 +1,30 @@
+# The system name that uniquely identifies the jig
+title: My customer story
+# The jig type used to display data
+type: jig.default
+
+# The controls that will be displayed on the jig are defined under the children node on a default jig 
+children:
+  - type: component.entity
+    options:
+      children:
+      #Entity fields display data from a datasource
+        - type: component.entity-field
+          options:
+            label: Story
+            value: Customer
+# Stories are a dedicated area on the home hub screen used to display content such as images, videos, news and announcements 
+stories:
+# Stories can be grouped together to create a carousel effect that users can swipe through  
+  options:
+    data: =@ctx.datasources.story-static
+    groupName: My work day
+    item:
+     # This component is used to display an image    
+      type: component.image
+      options:
+        title: =@ctx.current.item.title
+        subtitle: =@ctx.current.item.description
+        source:
+          uri: =@ctx.current.item.image
+  type: component.story-group

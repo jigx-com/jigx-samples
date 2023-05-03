@@ -1,0 +1,64 @@
+# The system name that uniquely identifies the jig
+title: Edit Customer
+# The jig type used to display data
+type: jig.default
+
+# The type of datasource used to store the edited data in the jig
+datasources:
+  customerInfo:
+    type: datasource.sqlite
+    options:
+     # The data provider being used. In this case, the Jigx Dynamic Data provider, which is a built-in database using methods to work with the data. 
+      provider: DATA_PROVIDER_DYNAMIC
+      # The name of the table that the information is being returned from. All Dynamic Data-based tables are saved in the "default" database.
+      entities:
+        - default/customers
+      # The SQLite query used to specifiy the data to return  
+      query: SELECT id, '$.firstName', '$.lastName', '$.email'  FROM [default/customers] WHERE id = @custId
+      queryParameters:
+        custId: =@ctx.jig.inputs.custId
+      isDocument: true
+# The controls that will be displayed on the jig are defined under the children node on a default jig      
+children:
+  # All input controls are placed on a form component
+  - type: component.form
+    # A control is uniquely identified by its instance id
+    instanceId: editCustomer
+    options:
+      children:
+        # To display two controls next to each other, they are added as children of a field-row component
+        - type: component.field-row
+          options:
+            children:
+              # A text-field component is used to capture or update text information on a form. In this case the value is returned from the database
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: First Name
+                  initialValue: =@ctx.datasources.customerInfo.firstName
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last Name
+                  initialValue: =@ctx.datasources.customerInfo.lastName
+              - type: component.text-field    
+                instanceId: email
+                options:
+                  label: Email
+                  initialValue: =@ctx.datasources.customerInfo.email    
+
+# The top level action on a default jig places a button at the bottom of the screen                  
+actions:
+  - children:
+     # A submit-form action is used to save the data from the text boxes to the SQLite database. The submit form action will automatically match the instanceIds of the controls on the jig and update the record in the local SQLite table with each instanceIds as a property for the JSON object in the Data column
+      - type: action.submit-form
+        options:
+          # The name of the form being submitted
+          formId: editCustomer
+          provider: DATA_PROVIDER_DYNAMIC
+          title: Save Customers
+          entity: default/customers
+          # The Jigx Dynamic Data provider method to update the data                  
+          method: update
+          recordId: =@ctx.jig.inputs.custId
+          goBack: previous  

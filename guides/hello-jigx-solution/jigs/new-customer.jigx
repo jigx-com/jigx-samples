@@ -1,0 +1,53 @@
+# The system name that uniquely identifies the jig
+title: New Customer
+# Description of the jig. This is not a required field and can be omitted
+description: Add a new customer record
+# The jig type used to display data
+type: jig.default
+# icon that displays on the widget on the home hub
+icon: person
+
+# The controls that will be displayed on the jig are defined under the children node on a default jig   
+children:
+  # All input controls are placed on a form component
+  - type: component.form
+    # A control is uniquely identified by its instance id
+    instanceId: customerInfo
+    options:
+      children:
+       # To display two controls next to each other, they are added as children of a field-row component
+        - type: component.field-row
+          options:
+            children:
+              # A text-field component is used to capture text information on a form
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: First Name
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last Name
+        - type: component.email-field
+          instanceId: email
+          options:
+            label: Email
+
+# The top level action on a default jig places a button at the bottom of the screen
+actions:
+  - children:
+     # A submit-form action is used to save the data from the text boxes to the SQLite database. The submit form action will automatically match the instanceIds of the controls on the jig and create a record in the local SQLite table with each instanceIds as a property for the JSON object in the Data column
+      - type: action.submit-form
+        options:
+          # The name of the form being submitted
+          formId: customerInfo
+          # The data provider being used. In this case, the Jigx Dynamic Data provider, which is a built-in database using methods to work with the data. 
+          provider: DATA_PROVIDER_DYNAMIC
+          # The title of the button
+          title: Save Customer
+          # The name of the table that the information is being save to. All Dynamic Data-based tables are saved in the "default" database 
+          entity: default/customers
+          # The Jigx Dynamic Data provider method to create the data
+          method: create
+          # The navigation action that is performed after the form-submit action completes
+          goBack: previous

@@ -1,0 +1,11 @@
+# A global static datasource that allows easy access and reusability to the data across various jigs and components
+type: datasource.static
+options:
+  data:
+    # Description of the datasource. This is not a required field and can be omitted
+    - description: My customers
+    # The type of data followed by the datasource, in this case an image URL
+      image: https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+      thumbnail: https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+      # Name for thumbnail that is displayed on the image
+      title: Work productivity

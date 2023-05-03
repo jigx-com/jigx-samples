@@ -1,0 +1,30 @@
+# The system name that uniquely identifies the jig
+title: Customers
+description: Shows list and new customers together
+# The jig type used to join multiple jigs together
+type: jig.composite
+# icon that displays on the widget on the home hub
+
+widgets:
+  "4x2":
+    type: widget.image
+    options:
+      source: 
+        uri: https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336
+        
+# A container for specifying jig headers such as images, videos or location
+header:
+  type: component.jig-header
+  options:
+    children:
+      type: component.image
+      options:
+        title: Customers
+        source:
+          uri: https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336
+    height: small    
+  
+# Specifiy the jigs to combine by listing the jigIds for each jig
+children:
+  - jigId: new-customer
+  - jigId: list-customer
