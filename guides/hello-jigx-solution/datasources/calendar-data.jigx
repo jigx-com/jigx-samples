@@ -18,8 +18,8 @@ options:
       id: "2"
       location: Palo Alto, CA
       people:
-        - avatarUrl: https://jollycontrarian.com/images/6/6c/Rickroll.jpg
-          fullName: Michael Tong
+        - avatarUrl: https://randomuser.me/api/portraits/men/49.jpg
+          fullName: Michael Tate
       tags:
         - color: color5
           title: Qualification
@@ -29,7 +29,7 @@ options:
       id: "3"
       location: Menlo Park, CA
       people:
-        - avatarUrl: https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg
+        - avatarUrl: https://randomuser.me/api/portraits/men/90.jpg
           fullName: Michael Tong
       tags:
         - color: color6
