@@ -1,9 +1,0 @@
-name: hello-data
-title: Customer Data
-category: sales
-description: This solution introduces the main concepts around Dynamic Data like creating, updating and deleting records.
-widgets:
-  - size: "1x1" # choose size of the widget on the home hub
-    jigId: new-customer
-  - size: "2x2"
-    jigId: list-customer  
