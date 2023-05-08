@@ -17,69 +17,69 @@ widgets:
   - size: "4x2"
     jigId: items-trending
 
-onLoad: 
-  type: action.action-list
-  options:
-    isSequential: true
-    actions:
-      - type: action.sync-entities
-        options:
-          provider: DATA_PROVIDER_REST
-          entities:
-            - entity: user-profile
-              function: get-user-profile
-              functionParameters:
-                accessToken: microsoft.OAuth
-            - entity: profile-picture
-              function: get-profile-picture
-              functionParameters:
-                accessToken: microsoft.OAuth 
-            - entity: user-emails
-              function: get-user-emails-addresses
-              functionParameters:
-                accessToken: microsoft.OAuth
-            - entity: items-trending
-              function: get-items-trending
-              functionParameters:
-                accessToken: microsoft.OAuth
-            - entity: next-week-calendar-events
-              function: get-calendar-events-next-week
-              functionParameters:
-                accessToken: microsoft.OAuth
-                startdatetime: =$fromMillis($millis())
-                enddatetime: =$fromMillis($millis()+604800000)
-            - entity: calendars
-              function: get-calendar-list
-              functionParameters:
-                accessToken: microsoft.OAuth
-            - entity: todo-task-lists
-              function: get-task-lists
-              functionParameters:
-                accessToken: microsoft.OAuth
-            - entity: email-messages
-              function: get-email-messages
-              functionParameters:
-                accessToken: microsoft.OAuth
-                $filter: ="receivedDateTime ge " & $fromMillis($millis()-432000000)
-      - type: action.sync-entities
-        options:
-          provider: DATA_PROVIDER_REST
-          entities:
-            - entity: todo-tasks
-              function: get-all-todo-tasks
-              functionParameters:
-                accessToken: microsoft.OAuth
-                taskListIds: |
-                  ={
-                    "requests": $map(@ctx.datasources.task-lists.id, function($v, $i, $a) {
-                      {
-                        "id": $string($i + 1),
-                        "method": "GET",
-                        "url": "me/todo/lists/" & $v & "/tasks?$top100",
-                        "dependsOn": $i>0? [$string($i)]
-                      }
-                    })
-                  }
+# onLoad: 
+#   type: action.action-list
+#   options:
+#     isSequential: true
+#     actions:
+#       - type: action.sync-entities
+#         options:
+#           provider: DATA_PROVIDER_REST
+#           entities:
+#             - entity: user-profile
+#               function: get-user-profile
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#             - entity: profile-picture
+#               function: get-profile-picture
+#               functionParameters:
+#                 accessToken: microsoft.OAuth 
+#             - entity: user-emails
+#               function: get-user-emails-addresses
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#             - entity: items-trending
+#               function: get-items-trending
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#             - entity: next-week-calendar-events
+#               function: get-calendar-events-next-week
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#                 startdatetime: =$fromMillis($millis())
+#                 enddatetime: =$fromMillis($millis()+604800000)
+#             - entity: calendars
+#               function: get-calendar-list
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#             - entity: todo-task-lists
+#               function: get-task-lists
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#             - entity: email-messages
+#               function: get-email-messages
+#               functionParameters:
+#                 accessToken: microsoft.OAuth
+#                 $filter: ="receivedDateTime ge " & $fromMillis($millis()-432000000)
+#       - type: action.sync-entities
+#         options:
+          # provider: DATA_PROVIDER_REST
+          # entities:
+          #   - entity: todo-tasks
+          #     function: get-all-todo-tasks
+          #     functionParameters:
+          #       accessToken: microsoft.OAuth
+          #       taskListIds: |
+          #         ={
+          #           "requests": $map(@ctx.datasources.task-lists.id, function($v, $i, $a) {
+          #             {
+          #               "id": $string($i + 1),
+          #               "method": "GET",
+          #               "url": "me/todo/lists/" & $v & "/tasks?$top100",
+          #               "dependsOn": $i>0? [$string($i)]
+          #             }
+          #           })
+          #         }
 
 onFocus: 
   type: action.action-list

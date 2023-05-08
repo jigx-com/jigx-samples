@@ -32,6 +32,7 @@ datasources:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: todo-task-lists
+        - entity: todo-tasks
       query: SELECT json_extract(tlists.Data, '$.id') as tlId, json_extract(tlists.Data, '$.displayName') as tlDisplayName,
         json_extract(tlists.Data, '$.isOwner') as isOwner, count(json_extract(tasks.Data, '$.id')) AS task_count
         FROM [todo-task-lists] tlists
