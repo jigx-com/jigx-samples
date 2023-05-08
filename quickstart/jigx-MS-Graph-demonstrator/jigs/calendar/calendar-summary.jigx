@@ -1,0 +1,229 @@
+title: This next week
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+onRefresh:
+  type: action.action-list
+  options:
+    actions:
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_REST
+          entities:
+            - entity: next-week-calendar-events
+              function: get-calendar-events-next-week
+              functionParameters:
+                accessToken: microsoft.OAuth
+                startdatetime: =$fromMillis($millis())
+                enddatetime: =$fromMillis($millis()+604800000)
+            - entity: calendars
+              function: get-calendar-list
+              functionParameters:
+                accessToken: microsoft.OAuth
+
+datasources:
+  calendarEvents: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: next-week-calendar-events
+      jsonProperties: 
+        - attendees
+      query: |
+        SELECT id,
+        '$.id' as eventId,
+        '$.createdDateTime',
+        '$.lastModifiedDateTime',
+        '$.originalStartTimeZone',
+        '$.originalEndTimeZone',
+        '$.reminderMinutesBeforeStart',
+        '$.isReminderOn',
+        '$.hasAttachments',
+        '$.subject',
+        '$.bodyPreview',
+        '$.importance',
+        '$.sensitivity',
+        '$.isAllDay',
+        '$.isCancelled',
+        '$.isOrganizer',
+        '$.showAs',
+        '$.webLink',
+        '$.isOnlineMeeting',
+        json_extract(Data, '$.onlineMeeting.joinUrl') as onlineMeetingUrl,
+        '$.isOnlineMeeting',
+        '$.onlineMeetingProvider',
+        '$.onlineMeeting',
+        json_extract(Data, '$.body.contentType') as bodyContentType,
+        json_extract(Data, '$.body.content') as bodyContent,
+        json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
+        json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
+        '$.location',
+        '$.attendees',
+        '$.organizer'
+        FROM [next-week-calendar-events]
+        where startTime > datetime('now','localtime')
+        order by startTime asc
+
+  onlineEventsCount: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: next-week-calendar-events
+      jsonProperties: 
+        - attendees
+      query: |
+        SELECT count(id) as count
+        FROM [next-week-calendar-events]
+        where '$.isOnlineMeeting' = 1
+      isDocument: true
+        
+  calendarList:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: calendars
+      query: |
+        SELECT id,
+        '$.id' as calId,
+        '$.name',
+        '$.color',
+        '$.hexColor',
+        '$.isDefaultCalendar',
+        '$.canShare',
+        '$.canViewPrivateItems',
+        '$.canEdit',
+        '$.allowedOnlineMeetingProviders',
+        '$.defaultOnlineMeetingProvider',
+        '$.isRemovable',
+        '$.owner'
+        FROM [calendars]
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "2x2"
+          jigId: calendar-summary
+        - size: "2x2"
+          jigId: view-calendar-events-next-week
+  - type: component.section
+    options:
+      title: Your calendars
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.calendarList
+            maximumItemsToRender: 8
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.name
+                subtitle: =@ctx.current.item.color
+                leftElement: 
+                  element: icon
+                  name: calendar-3
+                onPress: 
+                  type: action.go-to
+                  options:
+                    linkTo: view-calendar-events
+                    parameters:
+                      calId: =@ctx.current.item.calId
+  
+
+widgets:
+  "2x2": 
+    type: widget.value
+    options:
+      value: =$count(@ctx.datasources.calendarEvents)
+      format:
+        unit: Events this week
+      top: 
+        type: component.titles
+        options:
+          align: left
+          icon: person
+          iconColor: color10
+          title: =@ctx.datasources.onlineEventsCount.count & " online meetings"
+          subtitle: ="with " & $count($distinct(@ctx.datasources.calendarEvents.attendees.emailAddress.address)) & " different people"
+      bottom: 
+        type: component.titles
+        options:
+          icon: calendar
+          iconColor: color11
+          title: =$fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[MNn] [D] [h]:[m01] [PN]', @ctx.system.timezone.offset)
+          subtitle: =@ctx.datasources.calendarEvents[0].subject
+          
+preview:
+  header: 
+    type: component.jig-header
+    options:
+      height: small
+      children: 
+        type: component.image
+        options:
+          source:
+            uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+  isCompact: false
+  children:
+    - type: component.entity
+      options:
+        children: 
+        - type: component.entity-field
+          options:
+            label: Subject
+            value: =@ctx.datasources.calendarEvents[0].subject
+            contentType: default
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Day
+                  value: =$fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[MNn] [D], [Y]', @ctx.system.timezone.offset)
+              - type: component.entity-field
+                options:
+                  label: Time
+                  value: |
+                    = $fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+                    & " to " & 
+                    $fromMillis($toMillis(@ctx.datasources.calendarEvents[0].endTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+        - type: component.entity-field
+          options:
+            label: Summary
+            value: =@ctx.datasources.calendarEvents[0].bodyPreview
+            isMultiline: true
+    - type: component.web-view
+      options:
+        isTrackingTransparencyRequired: false
+        height: 400
+        content: |
+          =("
+          <html>
+            <head>
+              <meta name=" & "'" & "viewport" & "'" & " content=" & "'" & "width=device-width, " & "initial-scale=1" & "'" & "/>
+            </head>
+            <body>" 
+              & @ctx.datasources.calendarEvents[0].bodyContent
+          & "</body>
+          </html>")
+  actions:
+    # - when: =@ctx.jig.inputs.isOnlineMeeting = 1
+    - children:
+      - type: action.open-url
+        options:
+          title: Join Meeting
+          url: =@ctx.datasources.calendarEvents[0].onlineMeetingUrl
+          isHidden: |
+            =@ctx.datasources.calendarEvents[0].isOnlineMeeting? false: true

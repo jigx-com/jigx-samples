@@ -1,0 +1,53 @@
+title: =@ctx.jig.inputs.subject
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://blog.smu.edu/itconnect/files/2020/12/Featured-Image-Email-354CA1-1.png
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: From
+                  value: =@ctx.jig.inputs.sender.emailAddress.name
+              - type: component.entity-field
+                options:
+                  label: Recieved
+                  value: =$fromMillis($toMillis(@ctx.jig.inputs.receivedDateTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+        - type: component.entity-field
+          options:
+            label: To
+            value: =@ctx.jig.inputs.toRecipients.emailAddress.address
+  - type: component.web-view
+    options:
+      height: 800
+      isTrackingTransparencyRequired: false
+      content: |
+        =("
+        <html>
+          <head>
+            <meta name=" & "'" & "viewport" & "'" & " content=" & "'" & "width=device-width, " & "initial-scale=1" & "'" & "/>
+          </head>
+          <body>" 
+            & @ctx.jig.inputs.body.content
+        & "</body>
+        </html>")
+      
+                  
+                  
+                    
+            
+              
+            

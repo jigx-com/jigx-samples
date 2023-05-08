@@ -1,0 +1,23 @@
+provider: DATA_PROVIDER_REST
+method: POST
+url: https://graph.microsoft.com/v1.0/$batch
+inputTransform: taskListIds
+outputTransform: |
+  $.responses.$map($, function($v, $i, $a) {
+      $v[$i].body.value.$merge([$,{ "toDoListId": $decodeUrlComponent($v.body."@odata.context".$substringAfter("lists('").$substringBefore("')/tasks")) }])
+  })
+parameters:
+  accessToken:
+    location: header
+    required: true
+    type: string
+    value: microsoft.OAuth  #Use manage.jigx.com to define credentials for your solution
+  Content-Type: 
+    type: string
+    location: header
+    required: false
+    value: "application/json"
+  taskListIds:
+    type: string
+    location: body
+    required: true

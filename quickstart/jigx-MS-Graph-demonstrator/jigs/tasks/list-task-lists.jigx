@@ -1,0 +1,74 @@
+title: Task Lists
+type: jig.list
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://www.windowslatest.com/wp-content/uploads/2018/12/Office-apps-new-icons.jpg
+
+onRefresh:
+  type: action.action-list
+  options:
+    actions:
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_REST
+          entities:
+            - entity: todo-task-lists
+              function: get-task-lists
+              functionParameters:
+                accessToken: microsoft.OAuth
+
+datasources:
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: todo-task-lists
+      query: SELECT json_extract(tlists.Data, '$.id') as tlId, json_extract(tlists.Data, '$.displayName') as tlDisplayName,
+        json_extract(tlists.Data, '$.isOwner') as isOwner, count(json_extract(tasks.Data, '$.id')) AS task_count
+        FROM [todo-task-lists] tlists
+        LEFT JOIN [todo-tasks] tasks ON json_extract(tlists.Data, '$.id') = json_extract(tasks.Data, '$.toDoListId')
+        Group by json_extract(tlists.Data, '$.id'),json_extract(tlists.Data, '$.displayName')
+        order by task_count desc
+
+data: =@ctx.datasources.mydata
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.tlDisplayName
+    leftElement: 
+      element: icon
+      name: task-list
+    divider: solid
+    rightElement: 
+      element: icon
+      name: arrow-right
+    subtitle: |
+      =@ctx.current.item.isOwner? "Owner of the list: Yes":"Owner of the list: No"
+    label:
+      title: |
+        =@ctx.current.item.task_count
+    
+widgets:
+  "2x2": 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.mydata
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.tlDisplayName
+          leftElement: 
+            element: icon
+            name: task-list
+          divider: solid
+          subtitle: |
+            ="Number of Tasks: " & @ctx.current.item.task_count

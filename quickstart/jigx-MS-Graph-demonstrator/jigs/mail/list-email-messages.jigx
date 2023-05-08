@@ -1,0 +1,110 @@
+title: ="Inbox - " & $count(@ctx.datasources.mydata) & " items"
+type: jig.list
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://blog.smu.edu/itconnect/files/2020/12/Featured-Image-Email-354CA1-1.png
+
+onRefresh:
+  type: action.action-list
+  options:
+    actions:
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_REST
+          entities:
+            - entity: email-messages
+              function: get-email-messages
+              functionParameters:
+                accessToken: microsoft.OAuth
+                $filter: ="receivedDateTime ge " & $fromMillis($millis()-432000000)
+                $top: "200"
+
+datasources:
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: email-messages
+      jsonProperties: 
+        - body
+        - sender
+        - from
+        - toRecipients
+        - replyTo
+      query: SELECT id, 
+        '$.receivedDateTime', 
+        '$.sentDateTime',
+        '$.hasAttachments',
+        '$.subject',
+        '$.bodyPreview',
+        '$.importance',
+        '$.conversationId',
+        '$.isRead',
+        '$.inferenceClassification',
+        '$.body',
+        '$.sender',
+        '$.from',
+        '$.toRecipients',
+        '$.ccRecipients',
+        '$.bccRecipients',
+        '$.replyTo'
+        FROM [email-messages]
+        Where '$.inferenceClassification' LIKE @filter
+        and json_extract(Data, '$.sender.emailAddress.address') != @me
+        order by '$.receivedDateTime' desc
+      queryParameters:
+        filter: =@ctx.jig.state.filter
+        me: =@ctx.user.email
+
+data: =@ctx.datasources.mydata
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.sender.emailAddress.name
+    divider: solid
+    subtitle: =@ctx.current.item.subject
+    description: =@ctx.current.item.bodyPreview
+    rightElement: 
+      element: icon
+      name: =(@ctx.current.item.hasAttachments = 1 ? 'document' :'')
+    leftElement: 
+      element: avatar
+      text: =$substring(@ctx.current.item.from.emailAddress.name, 0, 1)
+      uri: ''
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: view-email
+        parameters:
+          receivedDateTime: =@ctx.current.item.receivedDateTime
+          sentDateTime: =@ctx.current.item.sentDateTime
+          hasAttachments: =@ctx.current.item.hasAttachments
+          subject: =@ctx.current.item.subject
+          bodyPreview: =@ctx.current.item.bodyPreview
+          importance: =@ctx.current.item.importance
+          conversationId: =@ctx.current.item.conversationId
+          isRead: =@ctx.current.item.isRead
+          inferenceClassification: =@ctx.current.item.inferenceClassification
+          body: =@ctx.current.item.body
+          sender: =@ctx.current.item.sender
+          from: =@ctx.current.item.from
+          toRecipients: =@ctx.current.item.toRecipients
+          ccRecipients: =@ctx.current.item.ccRecipients
+          bccRecipients: =@ctx.current.item.bccRecipients
+          replyTo: =@ctx.current.item.replyTo
+          
+filter: 
+  - title: Focused
+    value: focused
+  - title: Other
+    value: other
+      

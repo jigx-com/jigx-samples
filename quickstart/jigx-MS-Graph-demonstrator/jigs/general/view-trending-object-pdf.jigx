@@ -1,0 +1,7 @@
+title: Document
+type: jig.document
+
+source:
+  documentType: PDF
+  uri: =@ctx.jig.inputs.uri
+  

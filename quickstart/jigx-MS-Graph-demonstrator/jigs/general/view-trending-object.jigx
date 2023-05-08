@@ -1,0 +1,8 @@
+title: Document
+type: jig.document
+
+source:
+  documentType: HTML
+  uri: =@ctx.jig.inputs.uri
+  isTrackingTransparencyRequired: false
+  

@@ -1,0 +1,46 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_LOCAL
+  entities:
+  - entity: next-week-calendar-events
+  jsonProperties: 
+  - attendees
+  query: |
+    SELECT id,
+    '$.id' as eventId,
+    '$.createdDateTime',
+    '$.lastModifiedDateTime',
+    '$.originalStartTimeZone',
+    '$.originalEndTimeZone',
+    '$.reminderMinutesBeforeStart',
+    '$.isReminderOn',
+    '$.hasAttachments',
+    '$.subject',
+    '$.bodyPreview',
+    '$.importance',
+    '$.sensitivity',
+    '$.isAllDay',
+    '$.isCancelled',
+    '$.isOrganizer',
+    '$.showAs',
+    '$.webLink',
+    '$.isOnlineMeeting',
+    json_extract(Data, '$.onlineMeeting.joinUrl') as onlineMeetingUrl,
+    '$.isOnlineMeeting',
+    '$.onlineMeetingProvider',
+    '$.onlineMeeting',
+    json_extract(Data, '$.body.contentType') as bodyContentType,
+    json_extract(Data, '$.body.content') as bodyContent,
+    json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
+    json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
+    '$.location',
+    '$.attendees',
+    '$.organizer',
+    json_extract(Data, '$.location.address.street') || "," || json_extract(Data, '$.location.address.city') ||"," || json_extract(Data, '$.location.address.state') ||"," || json_extract(Data, '$.location.address.postalCode') ||"," || json_extract(Data, '$.location.address.countryOrRegion') as locationAddress,
+    json_extract(Data, '$.location.displayName') as locationDisplayName
+    FROM [next-week-calendar-events]
+    where startTime > datetime('now','localtime')
+    and locationAddress IS NOT NULL
+    order by startTime asc
+    limit 1
+  isDocument: true

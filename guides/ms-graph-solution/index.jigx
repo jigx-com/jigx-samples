@@ -12,5 +12,3 @@ widgets:
     jigId: view-user-profile
   - size: 1x1
     jigId: view-profile-picture
-  - size: "1x1"
-    jigId: custom

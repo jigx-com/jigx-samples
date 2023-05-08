@@ -1,0 +1,42 @@
+title: Update Profile Picture
+description: Update a user's Microsoft Graph profile photo
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
+
+children:
+  - type: component.form
+    instanceId: pictureForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.media-field
+          instanceId: profilePicture
+          options:
+            label: New Profile Picture
+            mediaType: image
+            isMultiple: false
+            imageQuality: 80 # optimized photo size with minimal quality loss
+            
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Submit Photo
+          provider: DATA_PROVIDER_REST
+          entity: profile-picture
+          function: update-profile-picture
+          functionParameters:
+            accessToken: microsoft.OAuth
+            Content-Type: image/jpeg
+            file: =@ctx.components.profilePicture.state.blob # submit blob to rest service
+          goBack: previous
+          method: functionCall

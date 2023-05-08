@@ -1,0 +1,12 @@
+provider: DATA_PROVIDER_REST
+method: GET
+format: pdf #pdf indicates a generic binary type
+url: https://graph.microsoft.com/v1.0/me/photo/$value
+outputTransform: $.{"data":$.data,"userId":$.inputs.userId.value} #add the email input to the output to identify image later in select
+# useLocalCall: true
+parameters:
+  accessToken:
+    location: header
+    required: true
+    type: string
+    value: microsoft.OAuth #Use manage.jigx.com to define credentials for your solution

@@ -1,0 +1,9 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_LOCAL
+
+  entities:
+    - entity: todo-task-lists
+  jsonProperties: 
+    - id
+  query: SELECT id from [todo-task-lists]

@@ -1,0 +1,100 @@
+title: Items Trending
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://www.windowslatest.com/wp-content/uploads/2018/12/Office-apps-new-icons.jpg
+
+onRefresh:
+  type: action.action-list
+  options:
+    actions:
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_REST
+          entities:
+            - entity: items-trending
+              function: get-items-trending
+              functionParameters:
+                accessToken: microsoft.OAuth
+
+datasources:
+  mydata: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+  
+      entities:
+        - entity: items-trending
+  
+      query: SELECT id, '$.weight', 
+        json_extract(Data, '$.resourceReference.webUrl') as webUrl,
+        json_extract(Data, '$.resourceVisualization.containerDisplayName') as containerDisplayName,
+        json_extract(Data, '$.resourceVisualization.previewText') as previewText,
+        json_extract(Data, '$.resourceVisualization.title') as title,
+        json_extract(Data, '$.resourceVisualization.type') as type
+        FROM [items-trending]
+        order by '$.weight' desc
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.mydata
+      maximumItemsToRender: =$count(@ctx.datasources.mydata)
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          subtitle: |
+            ="Relevance: " & $round((@ctx.current.item.weight * 100),2) & "%"
+          description: =@ctx.current.item.previewText
+          divider: solid
+          leftElement: 
+            element: icon
+            name: gauge-dashboard
+          label:
+            title: =@ctx.current.item.type
+          onPress: 
+            type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.type='pdf'? 'view-trending-object-pdf':'view-trending-object'
+              parameters:
+                uri: =@ctx.current.item.webUrl
+            
+widgets:
+  "4x2": 
+    type: widget.group
+    options:
+      children:
+        - type: widget.image
+          options:
+            isContentOverlaid: true
+            bottom: 
+              type: component.titles
+              options:
+                align: center
+                subtitle: =$count(@ctx.datasources.mydata) & " items trending around you."
+            source:
+              uri: https://www.windowslatest.com/wp-content/uploads/2018/12/Office-apps-new-icons.jpg
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.mydata
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.title
+                subtitle: =@ctx.current.item.type & " document"
+                description: =@ctx.current.item.previewText
+                divider: solid
+                onPress: 
+                  type: action.go-to
+                  options:
+                    linkTo: =@ctx.current.item.type='pdf'? 'view-trending-object-pdf':'view-trending-object'
+                    parameters:
+                      uri: =@ctx.current.item.webUrl
