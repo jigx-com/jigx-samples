@@ -1,7 +1,7 @@
 provider: DATA_PROVIDER_REST
 method: GET
 url: https://graph.microsoft.com/v1.0/me/calendars/{calendarId}/events
-outputTransform: $.value
+outputTransform: $
 useLocalCall: true
 parameters:
   accessToken:
@@ -22,9 +22,10 @@ parameters:
     type: string
     location: query
     required: false
+records: =$.value
 continuation:
-  when: =$.nextLink
-  url: =$.nextLink
+  when: =$."@odata.nextLink"
+  url: =$."@odata.nextLink"
   parameters:
     accessToken:
       location: header

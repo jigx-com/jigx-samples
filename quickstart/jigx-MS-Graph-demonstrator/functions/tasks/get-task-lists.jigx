@@ -1,7 +1,7 @@
 provider: DATA_PROVIDER_REST
 method: GET
 url: https://graph.microsoft.com/v1.0/me/todo/lists
-outputTransform: $.value
+outputTransform: $
 parameters:
   accessToken:
     location: header
@@ -13,9 +13,10 @@ parameters:
     location: query
     required: false
     value: 100
+records: =$.value
 continuation:
-  when: =$.nextLink
-  url: =$.nextLink
+  when: =$."@odata.nextLink"
+  url: =$."@odata.nextLink"
   parameters:
     accessToken:
       location: header

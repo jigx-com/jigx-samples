@@ -1,7 +1,7 @@
 provider: DATA_PROVIDER_REST
 method: GET
 url: https://graph.microsoft.com/v1.0/me/calendars
-outputTransform: $.value
+outputTransform: $
 useLocalCall: true
 parameters:
   accessToken:
@@ -9,9 +9,10 @@ parameters:
     required: true
     type: string
     value: microsoft.OAuth #Use manage.jigx.com to define credentials for your solution
+records: =$.value
 continuation:
-  when: =$.nextLink
-  url: =$.nextLink
+  when: =$."@odata.nextLink"
+  url: =$."@odata.nextLink"
   parameters:
     accessToken:
       location: header

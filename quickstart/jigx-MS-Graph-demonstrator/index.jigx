@@ -34,6 +34,7 @@ onFocus:
               function: get-profile-picture
               functionParameters:
                 accessToken: microsoft.OAuth 
+                userId: =@ctx.user.email
             - entity: user-emails
               function: get-user-emails-addresses
               functionParameters:
@@ -98,6 +99,7 @@ onRefresh:
               function: get-profile-picture
               functionParameters:
                 accessToken: microsoft.OAuth 
+                userId: =@ctx.user.email
             - entity: user-emails
               function: get-user-emails-addresses
               functionParameters:

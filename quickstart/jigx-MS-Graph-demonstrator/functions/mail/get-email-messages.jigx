@@ -1,7 +1,7 @@
 provider: DATA_PROVIDER_REST
 method: GET
 url: https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages
-outputTransform: $.value
+outputTransform: $
 useLocalCall: true
 parameters:
   accessToken:
@@ -18,12 +18,13 @@ parameters:
     location: query
     required: false
     value: 200
-# continuation:
-#   when: =$.nextLink
-#   url: =$.nextLink
-#   parameters:
-#     accessToken:
-#       location: header
-#       required: true
-#       type: string
-#       value: microsoft.OAuth 
+records: =$.value
+continuation:
+  when: =$."@odata.nextLink"
+  url: =$."@odata.nextLink"
+  parameters:
+    accessToken:
+      location: header
+      required: true
+      type: string
+      value: microsoft.OAuth 
