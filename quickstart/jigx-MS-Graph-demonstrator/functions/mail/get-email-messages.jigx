@@ -1,6 +1,6 @@
 provider: DATA_PROVIDER_REST
 method: GET
-url: https://graph.microsoft.com/v1.0/me/messages
+url: https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages
 outputTransform: $.value
 useLocalCall: true
 parameters:
