@@ -11,6 +11,18 @@ header:
         source:
           uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
 
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: calendarEvents
+        function: get-calendar-event-list
+        functionParameters:
+          accessToken: microsoft.OAuth
+          calendarId: =@ctx.jig.inputs.calId
+          $filter: ="start/dateTime ge '" & $fromMillis($millis()-86400000) & "' and end/dateTime le '" & $fromMillis($millis()+5184000000) & "'"
+
 onRefresh: 
   type: action.sync-entities
   options:
