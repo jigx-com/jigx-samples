@@ -1,5 +1,6 @@
-name: jigx-office-365-demonstrator
+name: ms-graph-demonstrator
 title: MS Graph Demonstrator
+description: Incorporate the Microsoft Graph API with Microsoft Graph Demonstrator in your Jigx apps. Build your apps with user and organizational data using OAuth for user profiles, calendars, emails, tasks, and more.
 category: business
 widgets:
   - size: 2x2 # choose size of the widget on the home hub
