@@ -102,6 +102,13 @@ item:
           attendees: =@ctx.current.item.attendees
           onlineMeetingProvider: =@ctx.current.item.onlineMeetingProvider
           locationDisplayName: =@ctx.current.item.locationDisplayName
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Create New Event
+          linkTo: create-calendar-event
+          
 widgets:
   "2x2": 
     type: widget.list

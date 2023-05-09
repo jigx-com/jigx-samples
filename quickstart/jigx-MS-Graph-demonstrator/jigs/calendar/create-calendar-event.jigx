@@ -98,7 +98,7 @@ actions:
           provider: DATA_PROVIDER_REST
           function: create-calendar-event
           entity: calendarEvents
-          method: functionCall
+          method: create
           functionParameters:
             accessToken: microsoft.OAuth
             calendarId: =@ctx.components.calendarId.state.selected.calId
@@ -109,6 +109,16 @@ actions:
             endDateTime: =@ctx.components.endDateTime.state.value
             endDateTimeTimeZone: =@ctx.system.timezone.name
             location: =@ctx.components.location.state.value
+          data: 
+            accessToken: microsoft.OAuth
+            calendarId: =@ctx.components.calendarId.state.selected.calId
+            subject: =@ctx.components.subject.state.value
+            description: =@ctx.components.description.state.value
+            start: |
+              ={"dateTime": $fromMillis($toMillis(@ctx.components.startDateTime.state.value), "[Y0001]-[M01]-[D01]T[H]:[m]:[s].[f001]", @ctx.system.timezone.offset), "timeZone":"UTC"}
+            end: |
+              ={"dateTime": $fromMillis($toMillis(@ctx.components.endDateTime.state.value), "[Y0001]-[M01]-[D01]T[H]:[m]:[s].[f001]", @ctx.system.timezone.offset), "timeZone":"UTC"}
+            location: =@ctx.components.location.state.value            
           onSuccess: 
             description: "Event Created"
             title: "Event Created"

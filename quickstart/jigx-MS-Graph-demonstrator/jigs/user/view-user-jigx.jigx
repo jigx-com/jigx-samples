@@ -142,6 +142,13 @@ children:
                   ="Type: " & @ctx.current.item.type
                 description: |
                   ="Allowed Audiences: " & @ctx.current.item.allowedAudiences               
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Update Profile Picture
+          linkTo: update-profile-picture
             
 widgets:
   "2x4": 
