@@ -1,19 +1,33 @@
 title: Calendar
 type: jig.calendar
+icon: calendar
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://cdnsm5-ss13.sharpschool.com/UserFiles/Servers/Server_181580/Image/calendar.jpg
 
 data: =@ctx.datasources.calendar-data-dynamic
 item:
   type: component.event
   options:
-    from: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000)
-      format:
-        dateFormat: lll
-    to: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000)
-      format:
-        dateFormat: lll
-    title: =@ctx.current.item.title
+    from: =@ctx.current.item.startDT
+    to: =@ctx.current.item.endDT
+    title: =@ctx.current.item.subject
     location:  =@ctx.current.item.location
-    tags: "=[{'title': @ctx.current.item.tags, 'color': @ctx.current.item.color}]"
-    people: "=[{'fullName':@ctx.current.item.fullname, 'avatarUrl': @ctx.current.item.avatar}]"
+    people: =@ctx.current.item.attendees.emailAddress
+    description: =@ctx.current.item.bodyPreview
+    tags: =@ctx.current.item.tags
+    onButtonPress: 
+      when: =@ctx.current.item.isOnline="true"
+      type: action.open-url
+      options:
+        title: Join Meeting
+        url: =@ctx.current.item.onlineUrl
+        isTrackingTransparencyRequired: false
+        isHidden: =@ctx.current.item.isOnline="true"?false:true

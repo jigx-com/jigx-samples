@@ -15,3 +15,5 @@ tables:
   ? products
   ? steps
   ? value
+  ? product-sales
+  ? finance-review-dynamic

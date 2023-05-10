@@ -1,19 +1,31 @@
 type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
+
   entities:
-    - entity: default/calendar
+    - default/calendar
+
+  jsonProperties: 
+  # column names of the result set specified under jsonProperties will retain their json object format
+    - attendees
+    - tags
+    - start
+
+# PLEASE NOTE: the query below contains 2 complex statements to calculate the start and end date of the meeting. This is only for demo purposes
+# to ensure that entries in the calendar always starts tomorrow when you view the sample code
+# Under normal circumstances the start and end dates are ISO-8601 format (YYYY-MM-DDTHH:MM)
   query: | 
     SELECT
       id,
-      '$.title',
+      '$.subject',
       '$.location',
-      '$.time',
-      '$.eventStart',
-      '$.eventEnd',
-      '$.fullname',
-      '$.avatar',
-      '$.color',
+      '$.body',
+      '$.bodyPreview',    
+      date('now', json_extract(json_extract(data, '$.start'), '$.dayOffset'),'localtime') || 'T' || json_extract(json_extract(data, '$.start'), '$.time') as startDT,
+      strftime('%Y-%m-%dT%H:%M:%S', datetime(date('now', json_extract(json_extract(data, '$.start'), '$.dayOffset'),'localtime') || 'T' || json_extract(json_extract(data, '$.start'), '$.time'), '+1 hours')) as endDT,
+      '$.isAllDay',
+      '$.attendees',
       '$.tags',
-      '$.category'
-    FROM [default/calendar] WHERE '$.category' = "people"
+      '$.isOnline',
+      '$.onlineUrl'
+    FROM [default/calendar]
