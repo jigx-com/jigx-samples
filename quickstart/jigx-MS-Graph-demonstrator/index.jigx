@@ -1,5 +1,6 @@
 name: ms-graph-demonstrator
 title: MS Graph Demonstrator
+description: A sample solution that uses the Microsoft Graph API. You can deploy an duse this solution without any additional configuration.
 category: business
 widgets:
   - size: 2x2 # choose size of the widget on the home hub
