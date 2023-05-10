@@ -3,6 +3,8 @@ name: hello-jigx-solution
 # The friendly name of the solution
 title: Hello-Jigx Solution
 # The built-in category selected for this solution
+description: The hello-jigx-solution from the step-by-step guide.
+# The description of the solution
 category: business
 #The widgets that act as top-level navigation elements for jigs
 widgets:
