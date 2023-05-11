@@ -23,3 +23,7 @@ continuation:
       required: true
       type: string
       value: microsoft.OAuth 
+errorTransform: |
+  {
+    "error": "No lists"
+  }

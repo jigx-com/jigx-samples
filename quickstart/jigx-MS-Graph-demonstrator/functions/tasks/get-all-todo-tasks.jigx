@@ -21,3 +21,7 @@ parameters:
     type: string
     location: body
     required: true
+errorTransform: |
+  {
+    "error": "No lists"
+  }
