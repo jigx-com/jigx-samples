@@ -4,19 +4,19 @@ type: jig.default
 children:
   - type: component.avatar
     options:
-      text:  ""
+      title:  ""
       uri: =@ctx.datasources.dynamic-global.picture
       size: large
       align: center
   - type: component.avatar
     options:
-      text:  ""
+      title:  ""
       uri: =@ctx.datasources.dynamic-global.picture
       size: regular
       align: center
   - type: component.avatar
     options:
-      text:  ""
+      title:  ""
       uri: =@ctx.datasources.dynamic-global.picture
       size: small
       align: center

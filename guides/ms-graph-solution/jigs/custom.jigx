@@ -842,7 +842,7 @@ children:
                       children:
                         - type: component.avatar
                           options:
-                            text: LS
+                            title: LS
                             size: medium
                             uri: https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80
                         - type: component.text
@@ -867,7 +867,7 @@ children:
                       children:
                         - type: component.avatar
                           options:
-                            text: AP
+                            title: AP
                             size: medium   
                             uri: https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80               
                         - type: component.text
@@ -890,7 +890,7 @@ children:
                       children:
                         - type: component.avatar
                           options:
-                            text: AP
+                            title: AP
                             size: medium   
                             uri: https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
                         - type: component.text
@@ -924,7 +924,7 @@ children:
                       children:
                         - type: component.avatar
                           options:
-                            text: LS
+                            title: LS
                             size: large
                             uri: https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80
                         - type: component.text
@@ -947,7 +947,7 @@ children:
                       children:
                         - type: component.avatar
                           options:
-                            text: AP
+                            title: AP
                             size: large   
                             uri: https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80               
                         - type: component.text
@@ -1098,7 +1098,7 @@ children:
                   children:              
                     - type: component.avatar
                       options:
-                        text: test
+                        title: test
                         uri:
                         size: small
                         color:
@@ -1106,7 +1106,7 @@ children:
                             color: color2
                     - type: component.avatar
                       options:
-                        text: test
+                        title: test
                         uri:
                         size: small
                         color:
@@ -1114,7 +1114,7 @@ children:
                             color: color3                        
                     - type: component.avatar
                       options:
-                        text: test
+                        title: test
                         uri:
                         size: small 
                         color:

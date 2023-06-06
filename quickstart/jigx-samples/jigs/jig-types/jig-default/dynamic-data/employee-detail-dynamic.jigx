@@ -4,7 +4,7 @@ type: jig.default
 children:
   - type: component.avatar
     options:
-      text: ''
+      title: ''
       uri: =@ctx.datasources.employee-detail-dynamic.photo
       size: large
       align: center

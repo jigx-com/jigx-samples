@@ -4,7 +4,7 @@ title: Next meeting
 children:
   - type: component.avatar
     options:
-      text:  ""
+      title:  ""
       uri: =@ctx.datasources.static-global.picture
       size: large
       align: left
