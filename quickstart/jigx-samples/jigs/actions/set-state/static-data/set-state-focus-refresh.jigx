@@ -1,0 +1,28 @@
+title: Set-state action as onFocus/onRefresh
+type: jig.default
+description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components. In this example the set-state action is used when the onFocus/onRefresh event is triggered.
+
+onFocus: 
+  type: action.set-state
+  options:
+    state: =@ctx.solution.state.on-focus-key
+    value: =@ctx.solution.state.on-focus-key +1   
+    
+onRefresh: 
+  type: action.set-state
+  options:
+    state: =@ctx.solution.state.on-refresh-key
+    value: =@ctx.solution.state.on-refresh-key +1
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: OnFocus key
+            value: ="Focused " & @ctx.solution.state.on-focus-key & "x"
+        - type: component.entity-field
+          options:
+            label: OnRefresh key
+            value: ="Refreshed " & @ctx.solution.state.on-refresh-key & "x"

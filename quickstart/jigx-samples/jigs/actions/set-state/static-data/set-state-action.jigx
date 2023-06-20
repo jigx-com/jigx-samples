@@ -1,14 +1,23 @@
-title: Name
+title: Set-state as action
 type: jig.default
-description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components.
+description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components. You can get default value by refreshing the jig.
+
+onRefresh: 
+  type: action.action-list
+  options:
+    actions:
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.action-key
+          value: 0
 
 actions:
   - children:
       - type: action.set-state
         options:
-          title: Set global key to 1
-          state: =@ctx.solution.state.global-key
-          value: 1
+          title: Add 1 to your action-key
+          state: =@ctx.solution.state.action-key
+          value: =@ctx.solution.state.action-key +1
   
 
 
@@ -18,5 +27,5 @@ children:
       children:
         - type: component.entity-field
           options:
-            label: Global key value
-            value: =@ctx.solution.state.global-key
+            label: Action key value
+            value: =@ctx.solution.state.action-key

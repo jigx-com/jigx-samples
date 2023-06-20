@@ -1,7 +1,19 @@
 title: List
 type: jig.list
-description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components. In this example the set-state action is used when the onPress/onChange event is triggered. 
+description: Set-state action is used to set the state of the key inside the Jig file for the further work with the UI components. In this example the set-state action is used when the onPress/onChange event is triggered. You can get default value by refreshing the jig.
 
+onRefresh: 
+  type: action.action-list
+  options:
+    actions:
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.on-press-key
+          value: 0
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.on-change-key
+          value: 0
 
 datasources:
   employees-dynamic:
@@ -15,23 +27,24 @@ datasources:
           id,
           '$.firstname',
           '$.email'
-        FROM [default/employees]
+        FROM [default/employees] WHERE '$.category' = "employees"
 
 data: =@ctx.datasources.employees-dynamic
 item: 
   type: "component.list-item"
   options:
     title: =@ctx.current.item.firstname
-    subtitle: =@ctx.current.item.email
+    subtitle: ="Pressed " & @ctx.solution.state.on-press-key & "x"
+    description: ="Switched " & @ctx.solution.state.on-change-key & "x"
     onPress: 
       type: action.set-state
       options:
-        state: =@ctx.solution.state.global-key
-        value: 1    
+        state: =@ctx.solution.state.on-press-key
+        value: =@ctx.solution.state.on-press-key +1
     rightElement: 
       element: switch
       onChange: 
         type: action.set-state
         options:
-          state: =@ctx.solution.state.global-key
-          value: 1
+          state: =@ctx.solution.state.on-change-key
+          value: =@ctx.solution.state.on-change-key +1

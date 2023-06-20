@@ -1,8 +1,8 @@
 type: datasource.static
 options:
   data:
-    - title: Set-state as onFocus/onLoad/onRefresh
-      link: set-state-focus-load-refresh
+    - title: Set-state as onFocus/onRefresh
+      link: set-state-focus-refresh
       color: color1
     - title: Set-state as action
       link: set-state-action
