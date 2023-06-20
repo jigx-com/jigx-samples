@@ -13,6 +13,6 @@ options:
     - title: Sync-entities in onChange event
       link: sync-entities-onChange
       color: color2
-    - title: Sync-entities in onLoad/onRefresh/onFocus
+    - title: Sync-entities in onRefresh/onFocus
       link: sync-entities-onRefresh
       color: color3

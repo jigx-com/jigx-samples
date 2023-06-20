@@ -1,4 +1,4 @@
-title: List
+title: Reset-state action as onPress/onChange
 type: jig.list
 description: This action will reset the state of the component in the Jig and its value when the onPress/onChange event is triggered.
 

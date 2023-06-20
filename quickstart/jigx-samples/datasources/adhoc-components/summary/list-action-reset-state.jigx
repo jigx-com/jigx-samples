@@ -1,7 +1,7 @@
 type: datasource.static
 options:
   data:
-    - title: Reset-state onFocus/onLoad/onRefresh
+    - title: Reset-state onFocus/onRefresh
       link: reset-state-focus-load-refresh
       color: color1
     - title: Reset-state as action

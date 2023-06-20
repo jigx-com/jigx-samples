@@ -1,16 +1,12 @@
-title: Name
+title: Reset-state action as onFocus/onRefresh
 type: jig.default
-description: This action will reset the state of the component in the Jig and its value when the onFocus/onLoad/onRefresh event is triggered.
+description: This action will reset the state of the component in the Jig and its value when the onFocus/onRefresh event is triggered.
 
 onFocus: 
   type: action.reset-state
   options:
     state: =@ctx.solution.state.global-key
     
-onLoad: 
-  type: action.reset-state
-  options:
-    state: =@ctx.solution.state.global-key
     
 onRefresh: 
   type: action.reset-state
