@@ -10,6 +10,3 @@ options:
     - title: Reset-state onPress/onChange
       link: reset-state-onpress-onchange
       color: color3
-    - title: Reset-state of the form
-      link: reset-state-action-form
-      color: color4

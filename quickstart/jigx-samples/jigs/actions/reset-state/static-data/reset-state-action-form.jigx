@@ -8,10 +8,6 @@ actions:
         options:
           title: Reset state of the form
           state: =@ctx.components.form.state.data
-      - type: action.reset-state
-        options:
-          title: Reset state of the component
-          state: =@ctx.components.myField.state.value
 
 children:
   - type: component.form
