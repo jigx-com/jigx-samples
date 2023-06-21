@@ -1,20 +1,36 @@
 title: Reset-state action as onPress/onChange
 type: jig.list
-description: This action will reset the state of the component in the Jig and its value when the onPress/onChange event is triggered.
+description: This action will reset the state of the component in the Jig and its value when the onPress/onChange event is triggered (by tapping on the item or using the switch)
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Set values to 1
+          actions:
+            - type: action.set-state
+              options:
+                state: =@ctx.solution.state.onPress-key
+                value: 1
+            - type: action.set-state
+              options:
+                state: =@ctx.solution.state.onChange-key
+                value: 1
 
 data: =@ctx.datasources.employees-dynamic
 item: 
   type: "component.list-item"
   options:
     title: =@ctx.current.item.firstname
-    subtitle: =@ctx.current.item.email
+    subtitle: =@ctx.solution.state.onPress-key != null ? 'OnPress:' & ' ' & @ctx.solution.state.onPress-key :'OnPress:' & ' The state was reset'
+    description:  =@ctx.solution.state.onChange-key != null ? 'OnChange:' & ' ' & @ctx.solution.state.onChange-key :'OnChange:' & ' The state was reset'
     onPress: 
       type: action.reset-state
       options:
-        state: =@ctx.solution.state.global-key
+        state: =@ctx.solution.state.onPress-key
     rightElement: 
       element: switch
       onChange: 
         type: action.reset-state
         options:
-          state: =@ctx.solution.state.global-key
+          state: =@ctx.solution.state.onChange-key

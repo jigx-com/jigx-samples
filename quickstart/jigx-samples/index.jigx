@@ -27,6 +27,18 @@ onLoad:
         options:
           state: =@ctx.solution.state.action-key
           value: 0
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.onRefresh-key
+          value: Initial value
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.onPress-key
+          value: Initial state value
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.onChange-key
+          value: Initial state value
 
 stories:
   - story-group-video-dd

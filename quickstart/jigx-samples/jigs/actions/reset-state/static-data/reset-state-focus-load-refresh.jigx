@@ -5,27 +5,39 @@ description: This action will reset the state of the component in the Jig and it
 onFocus: 
   type: action.reset-state
   options:
-    state: =@ctx.solution.state.global-key
+    state: =@ctx.solution.state.onFocus-key
     
     
 onRefresh: 
   type: action.reset-state
   options:
-    state: =@ctx.solution.state.global-key
+    state: =@ctx.solution.state.onRefresh-key
 
 
 actions:
   - children:
-      - type: action.set-state
+      - type: action.action-list
         options:
-          title: Set state
-          state: =@ctx.solution.state.global-key
-          value: 1
+          title: Set values to 1
+          actions:
+            - type: action.set-state
+              options:
+                state: =@ctx.solution.state.onFocus-key
+                value: 1
+            - type: action.set-state
+              options:
+                state: =@ctx.solution.state.onRefresh-key
+                value: 1
+          
 children:
   - type: component.entity
     options:
       children:
         - type: component.entity-field
           options:
-            label: State value
-            value: =@ctx.solution.state.global-key
+            label: OnFocus reset value
+            value: =@ctx.solution.state.onFocus-key != null ? @ctx.solution.state.onFocus-key :'The state was reset'
+        - type: component.entity-field
+          options:
+            label: OnRefresh reset value
+            value: =@ctx.solution.state.onRefresh-key != null ? @ctx.solution.state.onRefresh-key :'The state was reset'
