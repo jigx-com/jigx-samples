@@ -20,7 +20,7 @@ datasources:
           progress: 0.8
         - title: Title 4
           subtitle: Subtitle - inactive
-          status: 'active'
+          status: 'inactive'
           progress: 0.3
         - title: Title 5
           subtitle: Subtitle - active
@@ -28,7 +28,7 @@ datasources:
           progress: 0.1
         - title: Title 6
           subtitle: Subtitle - inactive
-          status: 'active'
+          status: 'inactive'
           progress: 0.9
           
 
