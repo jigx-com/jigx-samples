@@ -1,0 +1,29 @@
+title: New employee
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3VjY2Vzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        
+        - type: component.entity-field
+          options:
+            label: Confirmation status
+            value: Successful
+        - type: component.entity-field
+          options:
+            label: Confirmation message
+            value: The employee was successfuly added to our database
+            isMultiline: true
+        

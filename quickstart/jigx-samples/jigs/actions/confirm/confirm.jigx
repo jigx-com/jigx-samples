@@ -17,12 +17,12 @@ actions:
             actions:
               - type: action.confirm
                 options:
-                  title: Go to list of Employees
+                  title: See the confirmation
                   isConfirmedAutomatically: true
                   onConfirmed: 
                     type: action.go-to
                     options:
-                      linkTo: default-employee-detail
+                      linkTo: confirmation
                   modal:
                     title: ''
 
