@@ -10,7 +10,30 @@ header:
       type: component.image
       options:
         source:
-          uri: =@ctx.datasources.cleaning-services-dynamic[0].image
+          uri: =@ctx.datasources.cleaning-services[0].image
+          
+datasources:
+  cleaning-services:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services
+  
+      query: |
+        SELECT 
+          id, 
+          '$.area', 
+          '$.description', 
+          '$.hourlyrate', 
+          '$.illustration', 
+          '$.image', 
+          '$.indoor', 
+          '$.onceoffrate', 
+          '$.service', 
+          '$.time' 
+        FROM [default/cleaning-services] ORDER BY '$.service' ASC
 
 children:
   - type: component.entity
@@ -23,24 +46,24 @@ children:
               - type: component.entity-field
                 options:
                   label: Service
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].service
+                  value: =@ctx.datasources.cleaning-services[0].service
               - type: component.entity-field
                 options:
                   label: Area
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].area
+                  value: =@ctx.datasources.cleaning-services[0].area
               - type: component.entity-field
                 options:
                   label: Time
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].time & ' minutes'
+                  value: =@ctx.datasources.cleaning-services[0].time & ' minutes'
               - type: component.entity-field
                 options:
                   label: Indoor
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].indoor
+                  value: =@ctx.datasources.cleaning-services[0].indoor
                   contentType: checkbox
               - type: component.entity-field
                 options:
                   label: Description
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].description
+                  value: =@ctx.datasources.cleaning-services[0].description
                   isMultiline: true
         - type: component.section
           options:
@@ -49,22 +72,13 @@ children:
               - type: component.entity-field
                 options:
                   label: Hourly Rate
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate
+                  value: =@ctx.datasources.cleaning-services[0].hourlyrate != null ? @ctx.datasources.cleaning-services[0].hourlyrate :'N/A'
               - type: component.entity-field
                 options:
                   label: Once Off Rate
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate
+                  value: =@ctx.datasources.cleaning-services[0].onceoffrate != null ? @ctx.datasources.cleaning-services[0].onceoffrate :'N/A'
                    
-datasources:
-  cleaning-services-dynamic:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-  
-      entities:
-        - entity: default/cleaning-services-dynamic
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] 
+
 
 
 

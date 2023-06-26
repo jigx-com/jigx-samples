@@ -10,7 +10,7 @@ header:
       type: component.image
       options:
         source:
-          uri: =@ctx.datasources.cleaning-services-dynamic.image
+          uri: =@ctx.datasources.cleaning-services-dynamic[0].image
 
 actions:
   - children:
@@ -18,7 +18,7 @@ actions:
         options:
           title: Update Service
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/cleaning-services-dynamic
+          entity: default/cleaning-services
           method: update
           data: 
             service: =@ctx.components.cleaning_serv_tf.state.value

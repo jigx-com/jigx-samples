@@ -10,7 +10,7 @@ header:
       type: component.image
       options:
         source:
-          uri: =@ctx.datasources.cleaning-services-dynamic.image
+          uri: =@ctx.datasources.cleaning-services-dynamic[0].image
 
 actions:
   - children:
@@ -18,7 +18,7 @@ actions:
         options:
           title: Update Service
           provider: DATA_PROVIDER_DYNAMIC
-          entity: default/cleaning-services-dynamic
+          entity: default/cleaning-services
           method: update
           data: 
             service: =@ctx.components.cleaning_serv_tf.state.value
@@ -29,6 +29,29 @@ actions:
             hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
             onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
 
+datasources:
+  cleaning-services-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - entity: default/cleaning-services
+  
+      query: |
+        SELECT 
+          id, 
+          '$.area', 
+          '$.description', 
+          '$.hourlyrate', 
+          '$.illustration', 
+          '$.image', 
+          '$.indoor', 
+          '$.onceoffrate', 
+          '$.service', 
+          '$.time', 
+          '$.category' 
+        FROM [default/cleaning-services] 
           
 children:
   - type: component.form
@@ -79,16 +102,3 @@ children:
                 options:
                   label: Once Off Rate
                   value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate                         
-
-datasources:
-  cleaning-services-dynamic:
-    type: datasource.sqlite
-    options:
-      provider: DATA_PROVIDER_DYNAMIC
-  
-      entities:
-        - entity: default/cleaning-services-dynamic
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time', '$.category' FROM [default/cleaning-services-dynamic] 
-     
-

@@ -20,9 +20,9 @@ datasources:
       provider: DATA_PROVIDER_DYNAMIC
   
       entities:
-        - entity: default/cleaning-services-dynamic
+        - entity: default/cleaning-services
   
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services-dynamic] WHERE '$.service' LIKE '%'||@search||'%' OR @search IS NULL
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services] WHERE '$.service' LIKE '%'||@search||'%' OR @search IS NULL
       queryParameters:
         search: =@ctx.components.cleaning_serv_items.state.searchText
         
