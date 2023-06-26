@@ -77,10 +77,10 @@ children:
                 instanceId: cleaning_serv_hourly_tf
                 options:
                   label: Hourly Rate
-                  value: =@ctx.datasources.cleaning-services-dd.hourlyrate
+                  value: =@ctx.datasources.cleaning-services-dd.hourlyrate != null ? @ctx.datasources.cleaning-services-dd.hourlyrate:'N/A'
               - type: component.text-field
                 instanceId: cleaning_serv_once_tf
                 options:
                   label: Once Off Rate
-                  value: =@ctx.datasources.cleaning-services-dd.onceoffrate
+                  value: =@ctx.datasources.cleaning-services-dd.onceoffrate != null ? @ctx.datasources.cleaning-services-dd.onceoffrate:'N/A'
 
