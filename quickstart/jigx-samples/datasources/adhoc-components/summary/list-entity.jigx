@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: (Basic) Entity - Section, Row, Entity field
+      link: section-row-entity-example-sd
+      color: color1
+    - title: (Compact) Entity - Section, Entity field
+      link: section-entity-field-dd-compact
+      color: color2

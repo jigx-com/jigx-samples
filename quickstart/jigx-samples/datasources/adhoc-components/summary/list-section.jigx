@@ -7,8 +7,11 @@ options:
     - title: Form with sections, rows and children components 
       link: form-section-row-children-dd
       color: color2
-    - title: Entity with sections and entity-fields
+    - title: (Basic) Entity with sections and entity-fields
       link: section-entity-field-dd
+      color: color3
+    - title: (Compact) Entity with sections and entity-fields
+      link: section-entity-field-dd-compact
       color: color3
     - title: Form with sections and entity-fields
       link: form-section-children-dd

@@ -34,7 +34,7 @@ options:
       icon: navigation-menu-4
       color: color8
     - component: Entity
-      componentLink: section-row-entity-example-sd
+      componentLink: list-entity
       icon: navigation-menu-4
       color: color9
     - component: Event

@@ -51,7 +51,7 @@ children:
                     - type: component.entity-field
                       options:
                         label: Last Login Time
-                        value: =$now()
+                        value: =$fromMillis($toMillis($now()), '[Y0001]-[M01]-[D01]')
                         contentType: time
                         rightIcon: time-clock-circle
         - type: component.section

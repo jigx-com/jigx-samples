@@ -1,0 +1,50 @@
+title: Sections and Entity Fields
+description: Jig to display sections & entity fields
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.repair-services-static[id=1].image
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.section
+          options:
+            title: Repair Services
+            children:
+              - type: component.entity-field
+                options:
+                  label: Service
+                  value: =@ctx.datasources.repair-services-static[id=1].service
+              - type: component.entity-field
+                options:
+                  label: Description
+                  value: =@ctx.datasources.repair-services-static[id=1].description
+                  isMultiline: true
+        - type: component.section
+          options:
+            title: Rates
+            children:
+                    - type: component.entity-field
+                      options:
+                        label: Hourly Rate
+                        value: =@ctx.datasources.repair-services-static[id=1].hourlyRate
+                    - type: component.entity-field
+                      options:
+                        label: Time
+                        value: =@ctx.datasources.repair-services-static[id=1].time & ' minutes'
+                    - type: component.entity-field
+                      options:
+                        label: Materials
+                        value: =(@ctx.datasources.repair-services-static[id=1].materials = 'True' ? true :false) 
+                        contentType: checkbox   
+
