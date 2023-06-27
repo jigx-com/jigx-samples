@@ -1,10 +1,11 @@
 title: Employees list
 type: jig.list
-description: In this example when we refresh the Jig we call sync-entities action.
+description: In this example when the Jig is focused we call set-state and sync-entities actions.
 
 onFocus: 
   type: action.action-list
   options:
+    isSequential: true
     actions:
       - type: action.set-state
         options:
