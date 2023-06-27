@@ -2,14 +2,14 @@ title: Employees list
 type: jig.list
 description: In this example when we refresh the Jig we call sync-entities action.
 
-onRefresh: 
+onFocus: 
   type: action.action-list
   options:
     actions:
       - type: action.set-state
         options:
-          state: =@ctx.solution.state.refresh-key
-          value: refreshed
+          state: =@ctx.solution.state.focus-key
+          value: focused
       - type: action.sync-entities
         options:
           provider: DATA_PROVIDER_DYNAMIC
@@ -20,7 +20,7 @@ actions:
       - type: action.reset-state
         options:
           title: Reset refreshed state
-          state: =@ctx.solution.state.refresh-key
+          state: =@ctx.solution.state.focus-key
 
 data: =@ctx.datasources.employees-dynamic
 item: 
@@ -28,4 +28,4 @@ item:
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.email
-    description: =@ctx.solution.state.refresh-key != null ? @ctx.solution.state.refresh-key :"not refreshed"
+    description: =@ctx.solution.state.focus-key != null ? @ctx.solution.state.focus-key :"not focused"

@@ -10,6 +10,9 @@ options:
     - title: Action list as onChange
       link: action-list-onChange
       color: color2
-    - title: Action list as onRefresh/onFocus
+    - title: Action list as onRefresh
       link: action-list-onRefresh
       color: color3
+    - title: Action list as onFocus
+      link: action-list-onFocus
+      color: color4
