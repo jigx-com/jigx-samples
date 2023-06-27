@@ -17,11 +17,11 @@ actions:
       - type: action.execute-entity
         options:
           title: Update Service
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/cleaning-services
+          provider: DATA_PROVIDER_LOCAL
+          entity: default/cleaning-services-updates
           method: update
           data: 
-            id: =@ctx.jig.inputs.id
+            id: =@ctx.datasources.cleaning-services-dd.id
             service: =@ctx.components.cleaning_serv_tf.state.value
             area: =@ctx.components.cleaning_serv_area_tf.state.value
             time: =@ctx.components.cleaning_serv_time_num.state.value
@@ -29,11 +29,16 @@ actions:
             description: =@ctx.components.cleaning_serv_desc_tf.state.value
             hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
             onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
+          onSuccess: 
+            title: Service Updated
+            description: Your service was updated successfully.
+            
 
 
 children:
   - type: component.form
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.field-row
           options:
