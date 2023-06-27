@@ -1,0 +1,27 @@
+title: Preview
+type: jig.list
+icon: form
+
+data: =@ctx.datasources.summary-preview
+item: 
+  type: "component.list-item"
+  options:
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    title: =@ctx.current.item.action
+    onPress: 
+      type: action.action-list
+      options:
+        actions:
+          - type: action.go-to
+            options:
+              linkTo: =@ctx.current.item.actionLink
+    rightElement: 
+      element: icon
+      name: arrow-right-1
+    leftElement: 
+      element: icon
+      name: =@ctx.current.item.icon
+      isDuotone: true
+      

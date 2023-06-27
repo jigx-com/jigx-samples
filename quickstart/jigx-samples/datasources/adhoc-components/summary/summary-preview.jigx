@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - action: Entity
+      actionLink: list-preview-entity
+      icon: navigation-menu-4
+      color: color1
+    - action: Web-view
+      actionLink: list-preview-web-view
+      icon: earth-3
+      color: color2

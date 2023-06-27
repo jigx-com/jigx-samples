@@ -53,6 +53,8 @@ widgets:
     jigId: components-summary
   - size: 1x1
     jigId: actions-summary
+  - size: "1x1"
+    jigId: preview-summary
   - size: 4x2
     jigId: image-widget
   - size: 2x2

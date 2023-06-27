@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Long-press on a widget
+      link: web-widget
+      color: color1
+    - title: Long-press - onPress action
+      link: web-longpress-onPress
+      color: color2

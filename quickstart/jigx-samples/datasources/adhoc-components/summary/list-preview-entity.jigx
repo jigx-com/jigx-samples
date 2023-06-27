@@ -1,0 +1,12 @@
+type: datasource.static
+options:
+  data:
+    - title: Long-press on a widget
+      link: entity-widget
+      color: color1
+    - title: Long-press - onPress action
+      link: entity-longpress-onPress
+      color: color2
+    - title: Long-press on Calendar Jig
+      link: entity-longpress-calendar
+      color: color3
