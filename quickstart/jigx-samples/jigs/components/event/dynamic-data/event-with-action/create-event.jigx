@@ -26,31 +26,37 @@ children:
           instanceId: category
           options:
             label: category
-            value: event
+            value: update
             isHidden: true
         - type: component.text-field
           instanceId: title
           options: 
             label: Event name
         - type: component.text-field
-          instanceId: description
+          instanceId: location
           options:
-            label: Event desctiption
+            label: Event location
         - type: component.field-row
           options:
             children:
               - type: component.date-picker
-                instanceId: from
+                instanceId: date-from
                 options:
                   label: Event start
               - type: component.date-picker
-                instanceId: to
+                instanceId: date-to
                 options:
                   label: Event end
         - type: component.text-field
           instanceId: tags
           options:
             label: Tag
+        - type: component.text-field
+          instanceId: email
+          options:
+            label: Email
+            value: =@ctx.user.email
+            isHidden: true
         - type: component.text-field
           instanceId: color
           options:

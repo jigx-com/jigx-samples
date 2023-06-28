@@ -1,6 +1,51 @@
 title: Calendar with action
 type: jig.calendar
 
+datasources:
+  event-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/calendar
+      query: | 
+        SELECT
+          id,
+          '$.title',
+          '$.location',
+          '$.time',
+          '$.date-from',
+          '$.date-to',
+          '$.eventStart',
+          '$.eventEnd',
+          '$.fullname',
+          '$.avatar',
+          '$.color',
+          '$.tags',
+          '$.category',
+          '$.email'
+        FROM [default/calendar] WHERE '$.category' = "people"
+        UNION 
+        SELECT
+          id,
+          '$.title',
+          '$.location',
+          '$.time',
+          '$.date-from',
+          '$.date-to',
+          '$.eventStart',
+          '$.eventEnd',
+          '$.fullname',
+          '$.avatar',
+          '$.color',
+          '$.tags',
+          '$.category',
+          '$.email'
+        FROM [default/calendar] 
+        WHERE '$.email' = @email and '$.category' = "update"
+      queryParameters:
+        email: =@ctx.user.email
+
 actions:
   - children:
       - type: action.go-to
@@ -8,22 +53,22 @@ actions:
           title: Create new Event
           linkTo: create-event
 
-data: =@ctx.datasources.calendar-data-dynamic
+data: =@ctx.datasources.event-dynamic
 item:
   type: component.event
   options:
     from: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000)
+      text: =@ctx.current.item.eventStart != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-from))
       format:
         dateFormat: lll
     to: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000)
+      text: =@ctx.current.item.eventEnd != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-to))
       format:
         dateFormat: lll
     title: =@ctx.current.item.title
     location:  =@ctx.current.item.location
     tags: "=[{'title': @ctx.current.item.tags, 'color': @ctx.current.item.color}]"
-    people: "=[{'fullName':@ctx.current.item.fullname, 'avatarUrl': @ctx.current.item.avatar}]"
+    people: =@ctx.current.item.avatar != null ? [{'fullName':@ctx.current.item.fullname, 'avatarUrl':@ctx.current.item.avatar}]
     onButtonPress: 
       type: action.action-list
       options:
@@ -35,3 +80,9 @@ item:
               parameters:
                 id: =@ctx.current.item.id
                 title: =@ctx.current.item.title
+                
+        
+        
+        
+          
+          
