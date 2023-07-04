@@ -2,7 +2,7 @@ type: datasource.static
 options:
   data:
     - type: Calendar
-      typeLink: calendar-example-dynamic
+      typeLink: list-type-calendar
       icon: calendar-3
       color: color1
     - type: Composite

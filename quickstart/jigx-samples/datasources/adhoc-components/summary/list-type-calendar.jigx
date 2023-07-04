@@ -1,0 +1,9 @@
+type: datasource.static
+options:
+  data:
+    - title: Calendar
+      link: calendar-example-dynamic
+      color: color1
+    - title: Calendar with preview
+      link: calendar-jig
+      color: color2
