@@ -1,6 +1,7 @@
 tables:
   ? avatar
   ? calendar
+  ? calendar-sample
   ? cleaning-services
   ? charts
   ? checkbox

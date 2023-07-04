@@ -3,7 +3,7 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - default/calendar
+    - default/calendar-sample
 
   jsonProperties: 
   # column names of the result set specified under jsonProperties will retain their json object format
@@ -28,4 +28,4 @@ options:
       '$.tags',
       '$.isOnline',
       '$.onlineUrl'
-    FROM [default/calendar]
+    FROM [default/calendar-sample]
