@@ -1,8 +1,6 @@
 title: Location displaying path
 type: jig.default
 
-isCollapsible: true
-
 datasources:
   coordinates:
     type: datasource.static
@@ -20,4 +18,3 @@ children:
   - type: component.location
     options:
       pathsData: =@ctx.datasources.coordinates
-      isAnimationDisabled: true

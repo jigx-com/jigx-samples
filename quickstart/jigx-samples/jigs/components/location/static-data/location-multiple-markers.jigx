@@ -1,8 +1,6 @@
 title: Location with multiple markers
 type: jig.default
 
-isCollapsible: true
-
 datasources:
   address: 
     type: datasource.static
@@ -24,4 +22,3 @@ children:
     options:
       address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city & ',' & @ctx.datasources.address.country
       markersData: =@ctx.datasources.points
-      isAnimationDisabled: true
