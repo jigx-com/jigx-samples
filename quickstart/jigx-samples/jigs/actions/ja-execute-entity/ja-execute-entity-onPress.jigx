@@ -8,13 +8,15 @@ onRefresh:
   options:
     provider: DATA_PROVIDER_LOCAL
     entity: default/employees
+    method: update
     data:
-      modify: =$number(@ctx.current.item.modify) + 1
+      id: =@ctx.datasources.employee-detail-dynamic.id
+      modify: =$number(@ctx.datasources.employee-detail-dynamic.modify) + 1
   
 
 data: =@ctx.datasources.employees-dynamic
 item:
-  type: component.list-item
+  type: component.list-item 
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.lastname

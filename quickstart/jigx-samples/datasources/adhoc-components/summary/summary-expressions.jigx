@@ -1,0 +1,64 @@
+type: datasource.static
+options:
+  data:
+    - type: Boolean
+      typeLink: boolean
+      icon: calendar-3
+      color: color1
+    - type: Combination
+      typeLink: combination
+      icon: cog-double
+      color: color2
+    - type: Expression
+      typeLink: expression
+      icon: navigation-menu-4
+      color: color3
+    - type: Filter
+      typeLink: filter
+      icon: filter
+      color: color4
+    - type: Geolocation
+      typeLink: geolocation
+      icon: pin
+      color: color5
+    - type: MultiSelect
+      typeLink: multiSelect
+      icon: list
+      color: color6 
+    - type: Organization
+      typeLink: organization
+      icon: contact
+      color: color7  
+    - type: Placeholder
+      typeLink: placeholder
+      icon: controls-play
+      color: color8  
+    - type: Search
+      typeLink: search
+      icon: search
+      color: color9  
+    - type: Solution
+      typeLink: solution
+      icon: list
+      color: color10 
+    - type: Substring avatar
+      typeLink: substring-avatar
+      icon: list
+      color: color11
+    - type: User
+      typeLink: user
+      icon: single-neutral
+      color: color12
+    - type: variables In Content
+      typeLink: variablesInContent
+      icon: circle
+      color: color13
+    - type: advanced expression list
+      typeLink: advanced-expressions-list
+      icon: list-add
+      color: color14
+    - type: advanced expressions
+      typeLink: advanced-expressions
+      icon: cog-double
+      color: color15 
+                        

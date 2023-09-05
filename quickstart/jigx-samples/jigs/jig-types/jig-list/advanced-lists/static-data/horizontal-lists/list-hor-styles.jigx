@@ -101,7 +101,6 @@ item:
   options:
     title: =@ctx.current.item.name
     subtitle: =@ctx.current.item.subtitle
-    description: =@ctx.current.item.description
     label:
       title: =@ctx.current.item.label-title
       color:

@@ -53,8 +53,12 @@ widgets:
     jigId: components-summary
   - size: 1x1
     jigId: actions-summary
-  - size: "1x1"
+  - size: 1x1
     jigId: preview-summary
+  - size: 1x1
+    jigId: expressions-summary
+  - size: 1x1
+    jigId: icon
   - size: 4x2
     jigId: image-widget
   - size: 2x2
@@ -67,7 +71,7 @@ widgets:
     jigId: location-widget-address
   - size: 2x2
     jigId: status-static
-  - size: 2x2
-    jigId: value-static-2x2
   - size: 4x2
     jigId: chart-widget-line-chart
+  - size: 2x2
+    jigId: value-static-2x2 

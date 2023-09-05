@@ -16,4 +16,4 @@ children:
         - type: component.entity-field
           options:
             label: Expression to get result divided by 10
-            value: =($b := function($l, $w){ $l / $w }; $b(@ctx.data.number-data.number,10);)
+            value: =($b := function($l, $w){ $l / $w }; $b(@ctx.datasources.number-data.number,10);)

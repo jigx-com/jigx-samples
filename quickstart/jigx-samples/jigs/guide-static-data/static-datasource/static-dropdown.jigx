@@ -1,22 +1,28 @@
 title: Dropdown with values
 type: jig.default
 
+datasources:
+  employees-list: 
+    type: datasource.static
+    options:
+      data:
+        - title: 'Jane Stevens'
+          value: 'Jane'
+        - title: 'Mark Anders'
+          value: 'Mark'
+        - title: 'Haley Marshall'
+          value: 'Haley'
+        - title: 'Andre Marks'
+          value: 'Andre'
+  
 children:
-  - type: "component.form"
+  - type: component.form
     options:
       children:
-        - type: "component.dropdown"
+        - type: component.dropdown
           instanceId: dropdown
           options:
-            data: 
-              - title: 'Jane Stevens'
-                value: 'Jane'
-              - title: 'Mark Anders'
-                value: 'Mark'
-              - title: 'Haley Marshall'
-                value: 'Haley'
-              - title: 'Andre Marks'
-                value: 'Andre'
+            data: =@ctx.datasources.employees-list
             label: Dropdown with Employees
             item:
               type: component.dropdown-item

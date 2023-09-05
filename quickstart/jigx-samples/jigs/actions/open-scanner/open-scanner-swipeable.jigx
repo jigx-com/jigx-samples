@@ -16,15 +16,19 @@ item:
         - label: Scan QR code 
           onPress:
             type: action.open-scanner
-            instanceId: scanner
+            instanceId: scanner-swipeable-left
             options:
-              title: "Scan QR code"
-              contentType: qrcode
+              modal:
+                title: Scan complete
+              onSuccess: 
+                type: action.go-back
       right:
         - label: Scan QR code 
           onPress:
             type: action.open-scanner
-            instanceId: scanner
+            instanceId: scanner-swipeable-right
             options:
-              title: "Scan QR code"
-              contentType: qrcode
+              modal:
+                title: Scan complete
+              onSuccess: 
+                type: action.go-back

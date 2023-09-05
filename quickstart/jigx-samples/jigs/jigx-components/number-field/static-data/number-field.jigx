@@ -35,4 +35,7 @@ children:
           instanceId: number
           options:
             label: Number
+            stepper:
+              isEnabled: true
+              value: 1
           

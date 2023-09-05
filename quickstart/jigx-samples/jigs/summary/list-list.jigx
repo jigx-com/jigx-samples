@@ -3,7 +3,7 @@ type: jig.list
           
 data: =@ctx.datasources.list-list
 item: 
-  type: "component.list-item"
+  type: component.list-item
   options:
     color:
       - when: true

@@ -4,7 +4,7 @@ icon: form
 
 data: =@ctx.datasources.summary-preview
 item: 
-  type: "component.list-item"
+  type: component.list-item
   options:
     color:
       - when: true

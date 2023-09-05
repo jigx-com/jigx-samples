@@ -99,7 +99,7 @@ children:
                      options:
                        label: ""
                        isMultiline: true
-                       value: =@ctx.datasources.product-detail-dynamic.compatible-detial
+                       value: =@ctx.datasources.product-detail-dynamic.compatible-detail
         - type: component.entity
           options:
             children:

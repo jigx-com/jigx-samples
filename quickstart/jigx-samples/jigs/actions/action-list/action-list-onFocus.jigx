@@ -15,17 +15,17 @@ onFocus:
         options:
           provider: DATA_PROVIDER_DYNAMIC
           entities:
-            - entity: default/employee-detail
+            - default/employees
 actions:
   - children:
       - type: action.reset-state
         options:
-          title: Reset refreshed state
+          title: Set focus state
           state: =@ctx.solution.state.focus-key
 
 data: =@ctx.datasources.employees-dynamic
 item: 
-  type: "component.list-item"
+  type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.email

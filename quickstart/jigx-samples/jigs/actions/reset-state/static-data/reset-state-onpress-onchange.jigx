@@ -19,7 +19,7 @@ actions:
 
 data: =@ctx.datasources.employees-dynamic
 item: 
-  type: "component.list-item"
+  type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.solution.state.onPress-key != null ? 'OnPress:' & ' ' & @ctx.solution.state.onPress-key :'OnPress:' & ' The state was reset'

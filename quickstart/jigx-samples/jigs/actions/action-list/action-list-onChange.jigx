@@ -5,7 +5,7 @@ description: In this example we have an action list on onPress function in list-
 
 data: =@ctx.datasources.employees-dynamic
 item: 
-  type: "component.list-item"
+  type: component.list-item
   options:
     title: =@ctx.current.item.firstname
     subtitle: =@ctx.current.item.email
@@ -27,4 +27,4 @@ item:
               options:
                 provider: DATA_PROVIDER_DYNAMIC
                 entities:
-                  - entity: default/employee-detail
+                  - default/employees

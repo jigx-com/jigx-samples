@@ -12,6 +12,7 @@ actions:
           entity: send-notification-target-jig
           function: send-notification-target-jig
           functionParameters:
+            deviceId: jig
             organizationId: YOUR_ORG_ID #PLEASE ADD YOUR OWN ORG ID
             emails: 'demo@jigx.com,demo2@jigx.com,demo3@jigx.com'
             title: 🎉 New product promotion

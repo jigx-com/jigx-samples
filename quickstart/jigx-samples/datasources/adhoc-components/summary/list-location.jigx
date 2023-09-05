@@ -10,6 +10,9 @@ options:
     - title: Location displaying path
       link: location-path
       color: color3
-    # - title: Location - fullscreen
-    #   link: location-fullscreen
-    #   color: color4
+    - title: Location - fullscreen
+      link: location-fullscreen
+      color: color4
+    # - title: Location - sharing
+    #   link: location-sharing
+    #   color: color5

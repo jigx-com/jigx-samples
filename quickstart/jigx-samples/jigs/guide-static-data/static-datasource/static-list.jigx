@@ -22,7 +22,7 @@ datasources:
           email: jane@gmail.com
           mobile: 783432531
 
-data: =@ctx.data.people
+data: =@ctx.datasources.people
 item:
   type: component.list-item
   options:

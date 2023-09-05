@@ -9,13 +9,15 @@ children:
           instanceId: qr-value
           options:
             label: "QR Response"
-            initialValue: =@ctx.components.scanner.state.value
-
+            initialValue: =@ctx.components.scanner-action.state.value
 
 actions:
   - children:
       - type: action.open-scanner
-        instanceId: scanner
+        instanceId: scanner-action
         options:
           title: "Scan QR code"
-          contentType: qrcode
+          modal:
+            title: Scan complete
+          onSuccess: 
+            type: action.go-back

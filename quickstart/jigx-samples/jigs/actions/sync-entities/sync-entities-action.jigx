@@ -18,7 +18,7 @@ actions:
         title: Sync entities
         provider: DATA_PROVIDER_DYNAMIC
         entities:
-          - entity: default/employees
+          - default/employees
           
 children:
   - type: component.entity

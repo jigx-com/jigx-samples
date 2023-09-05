@@ -3,7 +3,7 @@ options:
   provider: DATA_PROVIDER_DYNAMIC
 
   entities:
-    - entity: default/new-orders
+    - entity: default/value
 
   query: |
     WITH cte AS (
@@ -12,7 +12,7 @@ options:
         json_extract(data, '$.name') as name,
         json_extract(data, '$.items') as items,
         json_extract(data, '$.date') as date
-      FROM[default/new-orders])
+      FROM[default/value])
     SELECT
       COUNT(name) as count
     FROM cte 

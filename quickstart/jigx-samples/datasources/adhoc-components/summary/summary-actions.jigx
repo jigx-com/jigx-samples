@@ -41,6 +41,10 @@ options:
       actionLink: list-action-set-state
       icon: check-circle-1
       color: color10
+    - action: Start-location-sharing
+      actionLink: location-sharing
+      icon: delivery-truck-5
+      color: color13
     - action: Submit-form
       actionLink: submit-form
       icon: check-circle-1

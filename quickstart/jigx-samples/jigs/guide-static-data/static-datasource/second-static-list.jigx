@@ -1,12 +1,12 @@
 title: List
-type: "jig.list"
+type: jig.list
 icon: contact 
 
 data: "=[{'name':'Jane Stevens','position':'Worker','initials':'JS'},
       {'name':'Peter Marks','position':'Designer','initials':'PM'},
       {'name':'Garry Marks','position':'Worker','initials':'GM'}]"
 item:
-  type: "component.list-item"
+  type: component.list-item
   options:
     title: =@ctx.current.item.name
     subtitle: =@ctx.current.item.position

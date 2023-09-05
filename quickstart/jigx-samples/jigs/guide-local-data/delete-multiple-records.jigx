@@ -3,7 +3,7 @@ type: jig.default
 
 actions:
   - children:
-      - type: "action.execute-entities"
+      - type: action.execute-entities
         options:
           title: Delete records
           provider: DATA_PROVIDER_LOCAL

@@ -16,10 +16,13 @@ actions:
             description: Please scan the product code to proceed with the payment
             actions:
               - type: action.open-scanner
-                instanceId: scanner
+                instanceId: scanner-onsuccess
                 options:
                   title: "Scan QR code"
-                  contentType: qrcode
+                  modal:
+                    title: Scan complete
+                  onSuccess: 
+                    type: action.go-back
         
 children:
   - type: component.form

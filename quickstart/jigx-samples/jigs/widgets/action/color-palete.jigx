@@ -34,10 +34,10 @@ datasources:
           color: color13
         - y: 2
           color: color14
-        - y: 2
-          color: color15
-        - y: 2
-          color: color16
+        # - y: 2
+        #   color: color15
+        # - y: 2
+        #   color: color16
         # - y: 2
         #   color: warning
         # - y: 2

@@ -12,6 +12,7 @@ actions:
           entity: send-notification
           function: send-notification
           functionParameters:
+            deviceId: jig
             organizationId: YOUR_ORG_ID #PLEASE ADD YOUR OWN ORG ID
             emails: 'demo@jigx.com'
             title: =@ctx.components.title.state.value

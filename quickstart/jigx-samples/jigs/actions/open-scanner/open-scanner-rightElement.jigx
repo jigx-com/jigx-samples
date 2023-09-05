@@ -16,7 +16,9 @@ item:
       title: Scan QR code
       onPress:
         type: action.open-scanner
-        instanceId: scanner
+        instanceId: scanner-rightElement
         options:
-          title: "Scan QR code"
-          contentType: qrcode
+          modal:
+            title: Scan complete
+          onSuccess: 
+            type: action.go-back

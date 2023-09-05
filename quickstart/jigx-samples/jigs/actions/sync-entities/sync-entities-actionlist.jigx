@@ -22,7 +22,7 @@ actions:
             options:
               provider: DATA_PROVIDER_DYNAMIC
               entities:
-                - entity: default/employees
+                - default/employees
           - type: action.go-to
             options:
               linkTo: default-employee-detail
