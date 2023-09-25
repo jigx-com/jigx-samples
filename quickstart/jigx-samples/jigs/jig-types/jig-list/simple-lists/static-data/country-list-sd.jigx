@@ -11,4 +11,4 @@ item:
     subtitle: =@ctx.current.item.value
     leftElement: 
       element: icon
-      name: =@ctx.current.item.icon
+      icon: =@ctx.current.item.icon

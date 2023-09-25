@@ -2,7 +2,7 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/image
+    - entity: default/avatar
   query: |
     SELECT
       '$.id',

@@ -9,7 +9,7 @@ summary:
       title: Your cart is empty
       leftIcon:
         element: icon
-        name: shopping-cart-empty-1
+        icon: shopping-cart-empty-1
 
 data: =@ctx.datasources.products
 item: 

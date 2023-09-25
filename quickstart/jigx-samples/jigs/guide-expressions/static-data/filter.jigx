@@ -38,7 +38,7 @@ children:
     options:
       filter:
         - title: All
-          value: all
+          value: ' '
         - title: Active
           value: active
         - title: Inactive

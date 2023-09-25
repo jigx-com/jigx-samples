@@ -21,7 +21,7 @@ item:
     subtitle: =@ctx.current.item.description
     leftElement: 
       element: icon
-      name: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
+      icon: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
     rightElement: 
       element: value
       text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'

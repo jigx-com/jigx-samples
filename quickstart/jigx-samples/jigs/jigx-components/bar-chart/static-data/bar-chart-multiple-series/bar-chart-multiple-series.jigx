@@ -1,37 +1,60 @@
 title: Multiple series
 type: jig.default
 
+datasources:
+  multi:
+    type: datasource.static
+    options:
+      data:
+        - Q1: 12000
+          Q2: 48000
+          Q3: 36000
+          Q4: 12000
+          Year: "2020"
+        - Q1: 34000
+          Q2: 22000
+          Q3: 40000
+          Q4: 51000
+          Year: "2021"
+        - Q1: 25000
+          Q2: 32000
+          Q3: 45000
+          Q4: 86000
+          Year: "2019"              
+
 children:
   - type: component.bar-chart
     options:
       chart:
-        height: 200
-        isAnimated: true
-      yAxis:
+        height: 250
+      legend:
+        isHidden: false
+        
+      yAxis: 
+        max: 90000
         min: 0
-        labels:
+        labels:  
           format:
+            currency: USD
             numberStyle: currency
             compactDisplay: short
             notation: compact
         tickAmount: 8
-        isFirstTickHidden: true
-        isFirstLabelHidden: true
-      xAxis:
-        categories:
-          - Q1
-          - Q2
-          - Q3
-          - Q4
-      series:
-        - data: =[{"x":"Q1/20", "y":25000, "color":"color2"}, {"x":"Q2/20", "y":32000, "color":"color2"}, {"x":"Q3/20", "y":45000, "color":"color2"}, {"x":"Q4/20", "y":86000, "color":"color2"}]
-          name: Year 2019
-          dataLabels:
-            - isEnabled: false
-        - data: =[{"x":"Q1/20", "y":12000, "color":"color3"}, {"x":"Q2/20", "y":48000, "color":"color3"}, {"x":"Q3/20", "y":36000, "color":"color3"}, {"x":"Q4/20", "y":120000, "color":"color3"}]
-          name: Year 2020
-          dataLabels:
-            - isEnabled: true
-      legend:
-        isHidden: false
+
+      xAxis:   
+        categories: =@ctx.datasources.multi.Year
+      
+      series: 
+        - data: =@ctx.datasources.multi.Q1
+          name: Q1
+          color: color2  
+        - data: =@ctx.datasources.multi.Q2
+          name: Q2
+          color: color3
+        - data: =@ctx.datasources.multi.Q3
+          name: Q3
+          color: color4 
+        - data: =@ctx.datasources.multi.Q4
+          name: Q4
+          color: color5
           

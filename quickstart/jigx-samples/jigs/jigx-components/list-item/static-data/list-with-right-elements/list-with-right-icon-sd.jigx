@@ -21,6 +21,6 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement: 
       element: icon
-      name: =(@ctx.current.item.materials = true ? 'attachment' :'alert-triangle')
+      icon: =(@ctx.current.item.materials = true ? 'attachment' :'alert-triangle')
 
       

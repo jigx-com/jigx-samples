@@ -61,7 +61,7 @@ widgets:
                 subtitle: =@ctx.current.item.room
                 leftElement: 
                   element: icon
-                  name: =@ctx.current.item.icon
+                  icon: =@ctx.current.item.icon
 
                   isDuotone: true
                   isContained: true

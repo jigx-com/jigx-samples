@@ -57,7 +57,7 @@ children:
           divider: solid
           leftElement: 
             element: icon
-            name: gauge-dashboard
+            icon: gauge-dashboard
           label:
             title: =@ctx.current.item.type
           onPress: 

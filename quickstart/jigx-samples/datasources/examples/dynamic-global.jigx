@@ -2,7 +2,7 @@ type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
   entities:
-    - entity: default/global
+    - entity: default/employees
   query: |
     SELECT
       '$.name',
@@ -11,4 +11,4 @@ options:
       '$.date-to',
       '$.email',
       '$.phone'
-    FROM [default/global]
+    FROM [default/employees]

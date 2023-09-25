@@ -3,10 +3,14 @@ description: "size: 4x4, layout: horizontal"
 type: jig.default
 
 header:
-  type: component.image
+  type: component.jig-header
   options:
-    source:
-      uri: https://builder.jigx.com/assets/images/header.jpg
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
 
 datasources:
   transactions:
@@ -129,7 +133,7 @@ widgets:
                       color: color4
                 leftElement: 
                   element: icon
-                  name: =@ctx.current.item.positive = true ? 'up' :'down'
+                  icon: =@ctx.current.item.positive = true ? 'up' :'down'
                 style:
                   isPositive: =@ctx.current.item.positive
                   isError: =@ctx.current.item.positive = false ? "true" :"false"

@@ -20,7 +20,7 @@ actions:
         title: Save details
         provider: DATA_PROVIDER_DYNAMIC
         method: create
-        goBack: stay
+        goBack: previous
         entity: default/form
         data:
           firstname: =@ctx.datasources.employee-detail-dynamic.firstname

@@ -1,18 +1,6 @@
 title: Multiple select
 type: jig.default
 
-actions:
-  - children:
-      - type: action.execute-entity
-        options:
-          title: Save selected
-          provider: DATA_PROVIDER_DYNAMIC
-          functionParameters:
-            people: =@ctx.components.selected-people-dropdown.state.selected.id
-          entity: default/form
-          method: save
-          
-
 children:
   - type: component.form
     instanceId: selected-people-form

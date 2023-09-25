@@ -20,7 +20,7 @@ summary:
       subtitle: In total
       leftIcon:
         element: icon
-        name: shopping-cart-empty-1
+        icon: shopping-cart-empty-1
         isContained: true
         isDuotone: true
 actions:

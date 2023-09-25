@@ -47,11 +47,11 @@ item:
     title: =@ctx.current.item.tlDisplayName
     leftElement: 
       element: icon
-      name: task-list
+      icon: task-list
     divider: solid
     rightElement: 
       element: icon
-      name: arrow-right
+      icon: arrow-right
     subtitle: |
       =@ctx.current.item.isOwner? "Owner of the list: Yes":"Owner of the list: No"
     label:
@@ -69,7 +69,7 @@ widgets:
           title: =@ctx.current.item.tlDisplayName
           leftElement: 
             element: icon
-            name: task-list
+            icon: task-list
           divider: solid
           subtitle: |
             ="Number of Tasks: " & @ctx.current.item.task_count

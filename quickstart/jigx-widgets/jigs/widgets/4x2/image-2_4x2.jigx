@@ -15,7 +15,7 @@ widgets:
     type: widget.image
     options:
       source:
-        uri: http://freemondo.com/style/desktop/images/picpage/test3.png  
+        uri: https://images.unsplash.com/photo-1585848705732-e938bf971da6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1546&q=80  
       isContentOverlaid: false
       bottom: 
         type: component.titles

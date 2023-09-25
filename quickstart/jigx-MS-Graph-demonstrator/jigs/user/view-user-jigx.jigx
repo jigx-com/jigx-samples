@@ -136,7 +136,7 @@ children:
                 divider: solid
                 leftElement: 
                   element: icon
-                  name: email
+                  icon: email
                 title: =@ctx.current.item.address
                 subtitle: |
                   ="Type: " & @ctx.current.item.type

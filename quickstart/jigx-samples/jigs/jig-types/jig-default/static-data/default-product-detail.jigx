@@ -21,7 +21,7 @@ summary:
       title: Add to cart
       leftIcon:
         element: icon
-        name: shopping-cart-empty-1
+        icon: shopping-cart-empty-1
 
 children:
   - type: component.entity

@@ -41,7 +41,7 @@ item:
     subtitle: =@ctx.current.item.location  
     rightElement: 
       element: icon
-      name: =@ctx.current.item.image
+      icon: =@ctx.current.item.image
     onPress: 
       type: action.go-to
       options:

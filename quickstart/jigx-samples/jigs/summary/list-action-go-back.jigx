@@ -18,8 +18,8 @@ item:
               linkTo: =@ctx.current.item.link
     rightElement: 
       element: icon
-      name: arrow-right-1
+      icon: arrow-right-1
     leftElement: 
       element: icon
-      name: layout-dashboard-1
+      icon: layout-dashboard-1
       isDuotone: true

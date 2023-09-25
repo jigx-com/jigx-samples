@@ -19,7 +19,7 @@ widgets:
           options:
             isContentOverlaid: false
             source:
-              uri: https://cdn.freebiesupply.com/logos/thumbs/2x/oakland-invaders-logo.png
+              uri: https://seeklogo.com/images/O/oakland-athletics-logo-2BAC84D00D-seeklogo.com.png
             resizeMode: contain              
             bottom: 
               type: component.titles

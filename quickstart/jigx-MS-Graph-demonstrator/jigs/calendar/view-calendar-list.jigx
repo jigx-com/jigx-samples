@@ -54,7 +54,7 @@ item:
     subtitle: =@ctx.current.item.color
     leftElement: 
       element: icon
-      name: calendar-3
+      icon: calendar-3
     onPress: 
       type: action.go-to
       options:

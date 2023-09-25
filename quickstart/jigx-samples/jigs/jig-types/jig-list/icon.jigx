@@ -504,7 +504,7 @@ item:
     title: =@ctx.current.item.name
     leftElement:
       element: icon
-      name: =@ctx.current.item.name
+      icon: =@ctx.current.item.name
     rightElement:
       element: icon
-      name: =@ctx.current.item.name
+      icon: =@ctx.current.item.name

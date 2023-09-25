@@ -75,7 +75,7 @@ item:
     description: =@ctx.current.item.bodyPreview
     rightElement: 
       element: icon
-      name: =(@ctx.current.item.hasAttachments = 1 ? 'document' :'')
+      icon: =(@ctx.current.item.hasAttachments = 1 ? 'document' :'')
     leftElement: 
       element: avatar
       text: =$substring(@ctx.current.item.from.emailAddress.name, 0, 1)

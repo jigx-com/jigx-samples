@@ -21,6 +21,6 @@ item:
     subtitle: =@ctx.current.item.time & 'minutes for task completion'
     leftElement: 
       element: icon
-      name: =(@ctx.current.item.materials) = true ? 'home' :'car-garage'
+      icon: =(@ctx.current.item.materials) = true ? 'home' :'car-garage'
 
       

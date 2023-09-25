@@ -133,7 +133,7 @@ widgets:
                       color: color4
                 leftElement: 
                   element: icon
-                  name: =@ctx.current.item.positive = true ? 'up' :'down'
+                  icon: =@ctx.current.item.positive = true ? 'up' :'down'
                 style:
                   isPositive: =@ctx.current.item.positive
                   isError: =@ctx.current.item.positive = false ? "true" :"false"

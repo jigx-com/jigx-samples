@@ -49,15 +49,15 @@ options:
       typeLink: user
       icon: single-neutral
       color: color12
-    - type: variables In Content
+    - type: Variables In Content
       typeLink: variablesInContent
       icon: circle
       color: color13
-    - type: advanced expression list
+    - type: Advanced expression list
       typeLink: advanced-expressions-list
       icon: list-add
       color: color14
-    - type: advanced expressions
+    - type: Advanced expressions
       typeLink: advanced-expressions
       icon: cog-double
       color: color15 

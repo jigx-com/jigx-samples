@@ -21,6 +21,7 @@ actions:
           entity: default/cleaning-services
           method: update
           data: 
+            id: sectionRowId
             service: =@ctx.components.cleaning_serv_tf.state.value
             area: =@ctx.components.cleaning_serv_area_tf.state.value
             time: =@ctx.components.cleaning_serv_time_num.state.value

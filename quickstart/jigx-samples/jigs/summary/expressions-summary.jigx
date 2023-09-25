@@ -19,8 +19,8 @@ item:
               linkTo: =@ctx.current.item.typeLink
     rightElement: 
       element: icon
-      name: arrow-right-1
+      icon: arrow-right-1
     leftElement: 
       element: icon
-      name: =@ctx.current.item.icon
+      icon: =@ctx.current.item.icon
       isDuotone: true

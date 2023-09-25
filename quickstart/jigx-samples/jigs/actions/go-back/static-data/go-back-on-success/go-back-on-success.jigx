@@ -1,0 +1,29 @@
+title: Signature
+type: jig.default
+description: In this example, the go-to action is associated with the
+  submit-form action. After we enter the signature and press the "Sign" button,
+  the submit-form action is performed and then the go-to action redirects us to
+  the next page.
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          title: Sign & go back to Actions
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/form
+          formId: send-signature-go-to
+          goBack: previous
+          method: create
+          onSuccess:  
+            type: action.go-back
+   
+children:
+  - instanceId: send-signature-go-to
+    type: component.form
+    options:
+      children:
+        - instanceId: signature
+          type: component.signature-field
+          options:
+            label: Signature required         
+      isDiscardChangesAlertEnabled: false
