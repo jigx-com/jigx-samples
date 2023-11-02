@@ -1,0 +1,59 @@
+title: Progress-bar in various sizes
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZ3Jlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+
+children:                
+
+  - type: component.progress-bar
+    options:
+      title:
+        value: Tiny
+      size: tiny
+      value:
+        current: 1
+        max: 5 
+
+  - type: component.progress-bar
+    options:
+      title:
+        value: Small
+      size: small
+      value:
+        current: 2
+        max: 5                 
+
+  - type: component.progress-bar
+    options:
+      title:
+        value: Medium
+      size: medium
+      value:
+        current: 3
+        max: 5         
+
+  - type: component.progress-bar
+    options:
+      title:
+        value: Large
+      size: large
+      value:
+        current: 4
+        max: 5       
+ 
+  - type: component.progress-bar
+    options:
+      title:
+        value: Extra-large
+      size: extra-large
+      value:
+        current: 5
+        max: 5       

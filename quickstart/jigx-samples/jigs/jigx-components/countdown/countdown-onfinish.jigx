@@ -1,0 +1,31 @@
+title: Your Holiday Starts Soon
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1679125073013-2cb0af59e9a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+        title: Your holiday starts soon
+  
+children:
+  - type: component.section
+    options:  
+      title: COUNTDOWN - onFinish
+      
+      children:
+        - type: component.countdown
+          options:
+            expiresAt: =$fromMillis($toMillis($now()) + 3600)
+            onFinish: 
+              type: action.confirm
+              options:
+                isConfirmedAutomatically: false
+                onConfirmed:
+                  type: action.go-back
+                modal:
+                  title: 🏖️ Holiday time!

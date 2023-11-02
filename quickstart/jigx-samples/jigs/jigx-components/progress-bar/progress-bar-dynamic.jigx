@@ -1,0 +1,79 @@
+
+title: Safari
+description: This jig shows how the progress-bar dynamically updates when the list-items are checked. The error- and helperText update dynamically according to the progress made.
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1534476478164-b15fec4f091c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhZmFyaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
+
+datasources:             
+  checkbox-list:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Binoculars
+          icon: binocular
+        - id: 2
+          title: Shoes for safari hike/walk
+          icon: footwear-boots
+        - id: 3
+          title: Mosquito repellent
+          icon: flying-insect-fly
+        - id: 4
+          title: Swimwear
+          icon: swimming-goggles
+        - id: 5
+          title: Hat
+          icon: hat
+        - id: 6
+          title: Sunscreen 
+          icon: sunbathe 
+     
+
+children:
+  - type: component.progress-bar
+    options:
+      value:
+        current: =$count(@ctx.components.packList.state.selected)
+        max: =$count(@ctx.datasources.checkbox-list)
+      steps: =$count(@ctx.datasources.checkbox-list)
+      size: large
+      errorText: =$count(@ctx.components.packList.state.selected) = 6 ? '':'Get Packing!'
+      helperText: =$count(@ctx.components.packList.state.selected) = 6 ? 'All packed and ready to go':''
+      color: color2
+      title:
+        value: Are you ready? 
+  - type: component.section
+    options:
+      title: Packing List
+      children:
+        - type: component.list
+          instanceId: packList
+          options:
+            maximumItemsToRender: =$count(@ctx.datasources.checkbox-list)
+            data: =@ctx.datasources.checkbox-list
+            item:
+              type: component.list-item
+              options:
+                divider: transparent
+                title: =@ctx.current.item.title
+                value: =@ctx.solution.state.activeItemId
+                rightElement:
+                  element: checkbox
+                  value: =@ctx.current.item.id = true ? true :false
+                leftElement:
+                  element: icon
+                  icon: =@ctx.current.item.icon
+                onPress: 
+                  type: action.set-state
+                  options:
+                    state: =@ctx.solution.state.activeItemId
+                    value: =@ctx.current.state.checked

@@ -1,39 +1,37 @@
 title: Send Notification (target jig)
-icon: alert-circle
 type: jig.default
-
+icon: alert-circle
 actions:
   - children:
-      - type: action.execute-entity
-        options:
+      - options:
           title: Send now
           provider: DATA_PROVIDER_REST
-          method: functionCall
           entity: send-notification-target-jig
           function: send-notification-target-jig
           functionParameters:
-            deviceId: jig
-            organizationId: YOUR_ORG_ID #PLEASE ADD YOUR OWN ORG ID
-            emails: 'demo@jigx.com,demo2@jigx.com,demo3@jigx.com'
-            title: 🎉 New product promotion
-            text:  Check it out now
-            solutionId: YOUR_SOLUTION_ID #PLEASE ADD YOUR OWN SOLUTION ID
-            promotionId: promo12345
-            targetJig: view-promotion-details
             accessToken: jigx
-          onSuccess: 
+            deviceId: jig
+            emails: =@ctx.user.email
+            organizationId: =@ctx.organization.id
+            promotionId: promo12345
+            solutionId: =@ctx.solution.id
+            jigId: view-promotion-details
+            text: Check it out now
+            title: 🎉 New product promotion
+          method: functionCall
+          onSuccess:
             title: Message sent
-                
+        type: action.execute-entity
 children:
   - type: component.form
     instanceId: send-form
     options:
       children:
-        - type: component.text-field
-          instanceId: title
+        - instanceId: title
           options:
             label: Title
-        - type: component.text-field
-          instanceId: text
+          type: component.text-field
+        - instanceId: text
           options:
             label: Text
+          type: component.text-field

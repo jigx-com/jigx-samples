@@ -1,0 +1,47 @@
+title: Progress-bar error & helper text
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZ3Jlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+
+children:
+  - type: component.section
+    options:
+      title: Helpertext
+      children:
+        - type: component.progress-bar
+          options:
+            title:
+              value: Your goal
+            subtitle:
+              value: 2 of 3 new customers
+              color: color5
+            helperText: Hint - Your monthly goal is 3 new customers  
+            value:
+              current: 2
+              max: 3  
+            color: positive
+  - type: component.section
+    options:
+      title: Errortext 
+      children:
+        - type: component.progress-bar
+          options:
+            title:
+              value: Your goal
+            subtitle:
+              value: 1 of 3 new customers
+            helperText: Your monthly goal is 3 new customers 
+            errorText: Progress too slow
+            value:
+              current: 1
+              max: 5         
+            color: color14
+ 

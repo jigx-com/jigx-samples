@@ -18,3 +18,10 @@ widgets:
 # Stories are dedicated areas on the home hub for news, announcements, and images 
 stories:
   - solution-story
+
+assets:
+  icons:
+    - calendar-3 # auto-generated
+    - delete # auto-generated
+    - list # auto-generated
+    - person # auto-generated

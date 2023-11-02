@@ -58,7 +58,7 @@ widgets:
   - size: 1x1
     jigId: expressions-summary
   - size: 1x1
-    jigId: icon
+    jigId: notifications-summary
   - size: 4x2
     jigId: image-widget
   - size: 2x2
@@ -75,3 +75,53 @@ widgets:
     jigId: chart-widget-line-chart
   - size: 2x2
     jigId: value-static-2x2 
+
+assets:
+  icons:
+    - alarm-bell # auto-generated
+    - alert-circle # auto-generated
+    - alert-triangle # auto-generated
+    - arrow-right-1 # auto-generated
+    - binocular # auto-generated
+    - calendar # auto-generated
+    - career # auto-generated
+    - chart # auto-generated
+    - check-circle-1 # auto-generated
+    - checklist # auto-generated
+    - cog # auto-generated
+    - contact # auto-generated
+    - conversation-chat-2 # auto-generated
+    - currency-dollar # auto-generated
+    - delivery-truck-5 # auto-generated
+    - document # auto-generated
+    - email # auto-generated
+    - flying-insect-fly # auto-generated
+    - footwear-boots # auto-generated
+    - form # auto-generated
+    - google # auto-generated
+    - hat # auto-generated
+    - home # auto-generated
+    - hourglass # auto-generated
+    - house # auto-generated
+    - house-signal # auto-generated
+    - jigx-solid # auto-generated
+    - layout-dashboard-1 # auto-generated
+    - list # auto-generated
+    - lock-unlock-4 # auto-generated
+    - navigation-menu-4 # auto-generated
+    - news # auto-generated
+    - notes-paper-approve # auto-generated
+    - notification # auto-generated
+    - pencil-2 # auto-generated
+    - pencil-write # auto-generated
+    - person # auto-generated
+    - phone # auto-generated
+    - shopping-cart-empty-1 # auto-generated
+    - sunbathe # auto-generated
+    - swimming-goggles # auto-generated
+    - synchronize-arrows-1 # auto-generated
+    - task-list # auto-generated
+    - time-clock-circle # auto-generated
+    - workout # auto-generated
+    - world # auto-generated
+    - zoom-in # auto-generated

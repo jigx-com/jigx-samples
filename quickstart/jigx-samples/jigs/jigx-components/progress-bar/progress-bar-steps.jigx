@@ -1,0 +1,56 @@
+title: Progress-bar with steps
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZ3Jlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+
+children:
+  - type: component.section
+    options:
+      title: " "
+      children:
+    # with no steps - continous
+      - type: component.progress-bar
+        options: 
+          title:
+            value: no steps - continous
+          value:
+            current: 1
+            max: 5
+ 
+  - type: component.section
+    options:
+      title: " "
+      children:
+# with steps 5
+      - type: component.progress-bar
+        options:
+          steps: 5
+          color: color11
+          title:
+            value: 5 Steps, title and color
+          value:
+            current: 4
+            max: 5  
+
+  - type: component.section
+    options:
+      title: " "
+      children:
+# with steps 20
+      - type: component.progress-bar
+        options:
+          steps: 20
+          color: color12
+          title:
+            value: 20 Steps 
+          value:
+            current: 10
+            max: 20      

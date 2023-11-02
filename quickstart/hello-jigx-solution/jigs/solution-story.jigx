@@ -16,6 +16,7 @@ children:
 # Stories are a dedicated area on the home hub screen used to display content such as images, videos, news and announcements 
 stories:
 # Stories can be grouped together to create a carousel effect that users can swipe through  
+  type: component.story-group
   options:
     data: =@ctx.datasources.story-static
     groupName: My work day
@@ -26,5 +27,10 @@ stories:
         title: =@ctx.current.item.title
         subtitle: =@ctx.current.item.description
         source:
-          uri: =@ctx.current.item.image
-  type: component.story-group
+          uri: =@ctx.datasources.story-static.image
+        onPress: 
+          type: action.open-url
+          options:
+            title: Read More
+            url: https://docs.jigx.com/19Lm-stories
+  

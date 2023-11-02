@@ -1,48 +1,52 @@
 title: Send Notification (submit-form)
-icon: alert-circle
 type: jig.default
-
+icon: alert-circle
 actions:
   - children:
-      - type: action.submit-form
-        options:
+      - options:
           title: Send notification
-          formId: send-form
           provider: DATA_PROVIDER_REST
-          method: functionCall
-          function: send-notification
           entity: send-notification
+          formId: send-form
+          function: send-notification
+          method: functionCall
           onSuccess:
             title: Message sent
-                
+        type: action.submit-form
 children:
   - type: component.form
     instanceId: send-form
     options:
       children:
-        - type: component.text-field
-          instanceId: title
+        - instanceId: title
           options:
             label: Title
-        - type: component.text-field
-          instanceId: text
+          type: component.text-field
+        - instanceId: text
           options:
             label: Text
-        - type: component.text-field
-          instanceId: organizationId
+          type: component.text-field
+        - instanceId: organizationId
           options:
+            initialValue: =@ctx.organization.id
+            isHidden: true
             label: organizationId
-            initialValue: YOUR_ORG_ID #PLEASE ADD YOUR OWN ORG ID
-            isHidden: true
+          type: component.text-field
         - type: component.text-field
-          instanceId: emails
+          instanceId: solutionId
           options:
+            label: solutionId
+            initialValue: =@ctx.solution.id
+            isHidden: true    
+        - instanceId: emails
+          options:
+            initialValue: =@ctx.user.email
+            isHidden: true
             label: emails
-            initialValue: 'demo@jigx.com'
-            isHidden: true
-        - type: component.text-field
-          instanceId: accessToken
+          type: component.text-field
+        - instanceId: accessToken
           options:
-            label: accessToken
             initialValue: jigx
             isHidden: true
+            label: accessToken
+          type: component.text-field

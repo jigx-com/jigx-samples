@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: notification
+      type: Send Notification (execute-entity)
+      typeLink: send-execute-entity
+    - color: color2
+      icon: cog-double
+      type: Send Notification (submit-form)
+      typeLink: send-submit-form
+    - color: color3
+      icon: navigation-menu-4
+      type: Send Notification (target jig)
+      typeLink: send-promotion-notification

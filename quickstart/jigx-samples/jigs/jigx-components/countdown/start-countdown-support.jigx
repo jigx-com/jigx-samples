@@ -1,0 +1,54 @@
+title: Island Holiday Packages
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1440778303588-435521a205bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9saWRheXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
+          
+datasources:
+  packages:
+    type: datasource.static
+    options:
+      data:
+        - name: Thialand
+          date: "2023-12-14"
+          description: "10 days in luxury accomodation"
+          Price: "$ 1500"
+        - name: Phuket
+          date: "2024-03-25"
+          description: "7 days experience cultural activities"
+          Price: "$ 1000"
+        - name: Mauritius
+          date: "2024-02-04"
+          description: "8 days includes watersports"   
+          Price: "$ 2350"
+        - name: Bali
+          date: "2023-01-20" 
+          description: "15 days all inclusive experience"
+          Price: "$ 3760"
+data: =@ctx.datasources.packages
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.description
+    rightElement: 
+      element: button
+      title: =@ctx.current.item.date
+      onPress: 
+        type: action.go-to
+        options:
+          linkTo: countdown-jig-input
+          parameters:
+            packageDate: =@ctx.current.item.date
+            packagePrice: =@ctx.current.item.Price
+            packageName: =@ctx.current.item.name
+      
+      
+

@@ -1,0 +1,9 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - default/events
+
+  query: SELECT id, '$.EventName', '$.StartDate', '$.Tickets', '$.Time', '$.Type', '$.Venue' FROM [default/events] 
+    

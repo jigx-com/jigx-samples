@@ -1,0 +1,41 @@
+title: =@ctx.jig.inputs.packageName
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1675989167596-915a77b361e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGhvbGlkYXl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+        
+
+children:                                
+  - type: component.countdown
+    options:
+      size: extra-large  
+      expiresAt: =@ctx.jig.inputs.packageDate
+      
+actions:
+  - children:
+      - type: action.confirm
+        options:
+          title: =@ctx.jig.inputs.packagePrice & " - BUY"
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            type: action.go-back
+          modal:
+            title: Let the countdown begin!
+            
+          
+              
+            
+    
+      
+
+
+           
+           
+       

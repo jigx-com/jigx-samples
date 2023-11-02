@@ -1,0 +1,54 @@
+title: Countdown - size
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1531303435785-3853ba035cda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHByb21vdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
+        title: Countdown - sizes
+
+children:
+  - type: component.section
+    options:
+      title: COUNTDOWN SIZE - EXTRA-LARGE
+      children:
+      - type: component.countdown
+        options:
+          expiresAt: =$fromMillis($toMillis($now()) + 36000000)
+          size: extra-large
+            
+
+  - type: component.section
+    options:
+      title: COUNTDOWN SIZE - LARGE (Default)
+      children:
+      - type: component.countdown
+        options:
+          expiresAt: =$fromMillis($toMillis($now()) + 36000000)
+          size: large
+          
+  - type: component.section
+    options:
+      title: COUNTDOWN SIZE - MEDIUM
+      children:
+      - type: component.countdown
+        options:
+          expiresAt: =$fromMillis($toMillis($now()) + 36000000)
+          size: medium
+
+  - type: component.section
+    options:
+      title: COUNTDOWN SIZE - SMALL
+      children:
+      - type: component.countdown
+        options:
+          expiresAt: =$fromMillis($toMillis($now()) + 36000000)
+          size: small
+
+           
+       

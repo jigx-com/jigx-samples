@@ -1,0 +1,51 @@
+title: Progress bar's colors
+description: This jig shows how color is used in bar
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZ3Jlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+
+
+children:
+  - type: component.section
+    options:
+      title: Color
+      children:
+        - type: component.progress-bar
+          options:
+            color: color2
+            value:
+              current: 3
+              max: 7  
+  
+  - type: component.section
+    options:
+      title: Color and steps
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: 5
+              max: 10
+            steps: 3
+            color: color1
+  
+  - type: component.section
+    options:
+      title: Color,steps and size
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: 5
+              max: 10
+            steps: 5
+            color: color3
+            size: small

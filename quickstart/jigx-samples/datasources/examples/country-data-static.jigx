@@ -3,81 +3,81 @@ options:
   data:
   - title: Afghanistan
     value: AF
-    icon: af
+    icon: flag-af
     iconType: flag
   - title: Albania
     value: AL
-    icon: al
+    icon: flag-al
     iconType: flag
   - title: Algeria
     value: DZ
-    icon: dz
+    icon: flag-dz
     iconType: flag
   - title: American Samoa
     value: AS
-    icon: as
+    icon: flag-as
     iconType: flag
   - title: Andorra
     value: AD
-    icon: ad
+    icon: flag-ad
     iconType: flag
   - title: Angola
     value: AO
-    icon: ao
+    icon: flag-ao
     iconType: flag
   - title: Anguilla
     value: AI
-    icon: ai
+    icon: flag-ai
     iconType: flag
   - title: Antigua And Barbuda
     value: AG
-    icon: ag
+    icon: flag-ag
     iconType: flag
   - title: Argentina
     value: AR
-    icon: ar
+    icon: flag-ar
     iconType: flag
   - title: Armenia
     value: AM
-    icon: am
+    icon: flag-am
     iconType: flag
   - title: Aruba
     value: AW
-    icon: aw
+    icon: flag-aw
     iconType: flag
   - title: Australia
     value: AU
-    icon: au
+    icon: flag-au
     iconType: flag
   - title: Austria
     value: AT
-    icon: at
+    icon: flag-at
     iconType: flag
   - title: Azerbaijan
     value: AZ
-    icon: az
+    icon: flag-az
     iconType: flag
   - title: Bahamas
     value: BS
-    icon: ar
+    icon: flag-ar
     iconType: flag
   - title: Bahrain
     value: BH
-    icon: bh
+    icon: flag-bh
     iconType: flag
   - title: Bangladesh
     value: BD
-    icon: bd
+    icon: flag-bd
     iconType: flag
   - title: Barbados
     value: BB
-    icon: bb
+    icon: flag-bb
     iconType: flag
   - title: Belarus
     value: BY
-    icon: by
+    icon: flag-by
     iconType: flag
   - title: Belgium
     value: BE
-    icon: be
+    icon: flag-be
     iconType: flag

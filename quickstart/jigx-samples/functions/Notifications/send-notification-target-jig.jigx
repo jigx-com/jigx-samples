@@ -2,24 +2,18 @@ method: POST
 provider: DATA_PROVIDER_REST
 inputTransform: >
   $.{
-    "deviceId": deviceId,
-    "command": command,
-    "organizationId": organizationId,
-    "parameters": {
-      "scope": scope,
-      "emails": emails,
       "content": {
         "title": title,
         "text": text, 
-        "sound": "default",
         "screen": "jig",
-        "solutionId": solutionId,
-        "jigReferenceId": targetJig,
-        "inputs": {
-          "promotionId": promotionId
+        "jigId": jigId,
+        "inputs":{
+          "promotionId":promotionId
         }  
-      }
-    }
+    },
+      "scope": scope,
+      "emails": emails,
+      "solutionId": solutionId
   }
 parameters:
   deviceId:
@@ -33,7 +27,7 @@ parameters:
     required: false
     value: createNotification
   organizationId:
-    location: body
+    location: path
     type: string
     required: true
   scope:
@@ -61,7 +55,7 @@ parameters:
     location: body
     type: string
     required: true
-  targetJig:
+  jigId:
     location: body
     type: string
     required: true
@@ -71,4 +65,4 @@ parameters:
     value: jigx
     required: true
   
-url: 'https://rnh6evl4a1.execute-api.us-east-1.amazonaws.com/us-east-1-prod-v1/notificationManager'
+url: https://kdiqmco762.execute-api.us-east-1.amazonaws.com/default/organizations/{organizationId}/notifications

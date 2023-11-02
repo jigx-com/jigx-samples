@@ -1,0 +1,43 @@
+title: Countdown-onPress
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1679125073013-2cb0af59e9a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80
+        title: Your holiday starts soon
+  
+children:
+  - type: component.section
+    options:
+      title: COUNTDOWN - G0-T0 JIG WHEN PRESSED
+      children:
+        - type: component.countdown
+          options:
+            expiresAt: =$fromMillis($toMillis($now()) + 360000)
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: countdown-sizes
+
+  - type: component.section
+    options:  
+      title: COUNTDOWN - OPEN URL WHEN PRESSED
+      
+      children:
+        - type: component.countdown
+          options:
+            expiresAt: =$fromMillis($toMillis($now()) + 360000)     
+            onPress: 
+              type: action.open-url
+              options:
+               url: https://www.tourismthailand.org/Destinations/Provinces/Phuket/350
+        - type: component.web-view
+          options: 
+            uri: https://www.tourismthailand.org/Destinations/Provinces/Phuket/350
+              

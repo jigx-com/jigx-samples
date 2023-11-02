@@ -1,0 +1,27 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: arrange-list-descending
+      type: countdown align
+      typeLink: countdown-align
+    - color: color2
+      icon: arrow-button-circle-down
+      type: countdown input
+      typeLink: countdown-input
+    - color: color3
+      icon: arrow-button-down
+      type: countdown onFinish
+      typeLink: countdown-onfinish
+    - color: color4
+      icon: arrow-button-down-2
+      type: countdown onPress
+      typeLink: countdown-onpress
+    - color: color5
+      icon: arrow-button-down-1
+      type: countdown sizes
+      typeLink: countdown-sizes     
+    - color: color6
+      icon: arrow-corner-left
+      type: countdown jig input
+      typeLink: start-countdown-support   

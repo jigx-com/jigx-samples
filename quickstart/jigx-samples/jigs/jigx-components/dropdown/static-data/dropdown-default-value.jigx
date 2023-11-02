@@ -1,0 +1,26 @@
+title: Dropdown with a default value
+type: jig.default
+
+children:
+  - type: component.form
+    options:
+      children:
+        - type: component.dropdown
+          instanceId: dropdown-in
+          options:
+            data:  =$filter(@ctx.datasources.employees-static, function($v){$contains($string($v.firstname),$string(@ctx.components.dropdown-in.state.searchText != null ? @ctx.components.dropdown-in.state.searchText:''))})[]
+            initialValue: =@ctx.datasources.employees-static[0].firstname 
+            label: Select an employee
+            isSearchable: true
+            item:
+              type: component.dropdown-item
+              instanceId: =@ctx.current.item.firstname
+              options:
+              
+                value: =@ctx.current.item.firstname
+                title: =@ctx.current.item.firstname
+                subtitle: =@ctx.current.item.lastname
+                leftElement: 
+                  element: avatar
+                  text: ''
+                  uri: =@ctx.current.item.img            

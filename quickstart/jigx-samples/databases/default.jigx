@@ -7,6 +7,7 @@ tables:
   checkbox: null
   documents: null
   employees: null
+  events: null
   form: null
   finances: null
   flight-schedule: null

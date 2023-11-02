@@ -1,0 +1,31 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: line-2
+      type: Progress-bar color
+      typeLink: progress-bar-color
+    - color: color2
+      icon: coding-apps-website-web-form-progress-3
+      type: Progress-bar dynamic
+      typeLink: progress-bar-dynamic
+    - color: color3
+      icon: coding-apps-website-web-form-progress-4
+      type: Progress-bar errorText & helperText
+      typeLink: progress-bar-error-helper
+    - color: color4
+      icon: coding-apps-website-web-form-progress-2
+      type: Progress-bar onPress
+      typeLink: progress-bar-onpress
+    - color: color5
+      icon: line-1
+      type: Progress-bar size
+      typeLink: progress-bar-size     
+    - color: color6
+      icon: coding-apps-website-web-form-progress-1
+      type: Progress-bar steps
+      typeLink: progress-bar-steps 
+    - color: color7
+      icon: line-break-chart
+      type: Progress-bar title & subtitle
+      typeLink:  progress-bar-title-subtitle

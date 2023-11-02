@@ -5,3 +5,9 @@ widgets:
   # widget for displaying and navigating to the list jig
   - size: 4x4 
     jigId: listCustomers
+
+assets:
+  icons:
+    - contact # auto-generated
+    - pencil-2 # auto-generated
+    - shopping-cart-empty-1 # auto-generated

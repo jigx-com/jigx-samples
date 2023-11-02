@@ -2,20 +2,20 @@
 type: datasource.static
 options:
   data:
-    - eventEnd: 2
-      eventStart: 1
-      id: "1"
-      location: Redmond, WA
+    - id: 1
+      eventEnd: 2 
+      eventStart: 1 
+      location: Redmond, WA 
       people:
-        - avatarUrl: https://randomuser.me/api/portraits/men/1.jpg
-          fullName: Tim Cook
+        - avatarUrl: https://randomuser.me/api/portraits/men/1.jpg   
+          fullName: Tim Cook 
       tags:
-        - color: color2
-          title: Negotiation
+        - color: color2 
+          title: Negotiation 
       title: Negotiation with Company A
-    - eventEnd: 4
-      eventStart: 2
-      id: "2"
+    - id: 2
+      eventEnd: 4
+      eventStart: 2  
       location: Palo Alto, CA
       people:
         - avatarUrl: https://randomuser.me/api/portraits/men/49.jpg
@@ -24,9 +24,9 @@ options:
         - color: color5
           title: Qualification
       title: Demo for Company B
-    - eventEnd: 25
+    - id: 3
+      eventEnd: 25
       eventStart: 24
-      id: "3"
       location: Menlo Park, CA
       people:
         - avatarUrl: https://randomuser.me/api/portraits/men/90.jpg
@@ -34,4 +34,4 @@ options:
       tags:
         - color: color6
           title: Verbal
-      title: Sign contract
+      title: Sign contract  

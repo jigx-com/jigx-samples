@@ -1,0 +1,42 @@
+title: Progress-bar onPress
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZ3Jlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+
+children:                
+        - type: component.progress-bar
+          options:
+            title:
+              value: Congrats!
+            subtitle:
+              value: Press to continue
+            size: extra-large
+            onPress: 
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.activeItemId
+                value: true
+            value:
+              current: 5
+              max: 5 
+            color: positive
+        - type: component.image
+          when: =@ctx.solution.state.activeItemId = true
+          options:
+              source:
+                uri: https://images.unsplash.com/photo-1576610981602-438b2860eb77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uZ3JhdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+              resizeMode: cover
+              
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.solution.state.activeItemId
+              
