@@ -16,7 +16,7 @@ item:
       text: ''
       uri: =@ctx.current.item.photo
     onPress: 
-      type: action.execute-entity
+      type: action.execute-entities
       options:
           provider: DATA_PROVIDER_LOCAL
           method: update

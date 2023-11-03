@@ -17,7 +17,7 @@ item:
     rightElement: 
       element: switch
       onChange: 
-        type: action.execute-entity
+        type: action.execute-entities
         options:
           provider: DATA_PROVIDER_LOCAL
           method: update

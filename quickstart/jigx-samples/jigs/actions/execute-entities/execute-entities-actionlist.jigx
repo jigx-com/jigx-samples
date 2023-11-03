@@ -11,26 +11,6 @@ header:
       options:
         source:
           uri: https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80
-
-
-actions:
-  - children:
-      - type: action.action-list
-        options:
-          isSequential: true
-          title: Add user
-          actions:
-            - type: action.execute-entity
-              options:
-                provider: DATA_PROVIDER_DYNAMIC
-                method: create
-                entity: default/form
-                data:
-                  firstname: =@ctx.datasources.employee-detail-dynamic.firstname
-                  lastname: =@ctx.datasources.employee-detail-dynamic.lastname
-            - type: action.go-to
-              options:
-                linkTo: ja-execute-entity-onPress
                 
 children:
   - type: component.entity
@@ -49,3 +29,22 @@ children:
                 options:
                   label: Last Name
                   value: =@ctx.datasources.employee-detail-dynamic.lastname
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          isSequential: true
+          title: Add user
+          actions:
+            - type: action.execute-entities
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                method: create
+                entity: default/form
+                data:
+                  firstname: =@ctx.datasources.employee-detail-dynamic.firstname
+                  lastname: =@ctx.datasources.employee-detail-dynamic.lastname
+            - type: action.go-to
+              options:
+                linkTo: ja-execute-entity-onPress

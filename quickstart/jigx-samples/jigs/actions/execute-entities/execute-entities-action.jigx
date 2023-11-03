@@ -14,7 +14,7 @@ header:
     
 actions:
   - children:
-    - type: action.execute-entity
+    - type: action.execute-entities
       options:
         title: Add user
         provider: DATA_PROVIDER_DYNAMIC
