@@ -1,0 +1,75 @@
+title: Plot bands
+type: jig.default
+
+datasources:
+  finance: 
+    type: datasource.static
+    options:
+      data:
+        - date: Jun
+          amount: 1851
+        - date: Jul
+          amount: 1483
+        - date: Aug
+          amount: 1250  
+        - date: Sep
+          amount: 2067
+        - date: Oct
+          amount: 1650
+        - date: Nov
+          amount: 1280
+        - date: Dec
+          amount: 1430
+        - date: Jan
+          amount: 1398
+        - date: Feb
+          amount: 1763
+        - date: Mar
+          amount: 2151
+        - date: Apr
+          amount: 1543
+        - date: May
+          amount: 1475    
+                  
+children:
+  - type: component.bar-chart
+    options:
+      chart:
+        title:
+          text: 12 months overview
+        height: 260
+# Define the format and labels for and their values to display on the y axis
+      yAxis:
+        min: 0
+        max: 2500
+        labels: 
+          format:
+            numberStyle: currency
+            currency: USD
+            compactDisplay: short
+            notation: compact
+        tickAmount: 5
+    # add four bands of different color to the bar chart     
+        plotBands:
+          - from: 0
+            to: 500
+            color: color4
+          - from: 500
+            to: 1000
+            color: color5
+          - from: 1000
+            to: 1500
+            color: color6
+          - from: 1500
+            to: 2000
+            color: color7
+      # Define the data categories to display on the x axis
+      xAxis:
+        categories: =@ctx.datasources.finance.date       
+      # Define the data to show in the bars on the chart known as the series. 
+      series:
+        - data: =@ctx.datasources.finance.amount
+          name: 2021/2022
+          color: color1 
+      legend:
+        isHidden: false

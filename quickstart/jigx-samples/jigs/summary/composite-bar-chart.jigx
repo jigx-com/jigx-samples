@@ -4,3 +4,4 @@ type: jig.composite
 children:
   - jigId: bar-chart-finance-statistic
   - jigId: bar-chart-multiple-series
+  - jigId: bar-charts-plotBands

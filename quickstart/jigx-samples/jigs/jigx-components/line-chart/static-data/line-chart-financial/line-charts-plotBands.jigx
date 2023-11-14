@@ -1,0 +1,42 @@
+title: Plot bands
+type: jig.default
+children:
+  - type: component.line-chart
+    options:
+      chart:
+        height: 260
+        isAnimated: false
+        title:
+          text: 12 months overview
+      legend:
+        isHidden: true
+      series:
+        - color: color2
+          data: =[{"x":"Jun", "y":1851}, {"x":"Jul", "y":1483}, {"x":"Aug", "y":1250},
+            {"x":"Sep", "y":2067}, {"x":"Oct", "y":1650}, {"x":"Nov", "y":1280},
+            {"x":"Dec", "y":1430}, {"x":"Jan", "y":1398}, {"x":"Feb", "y":1763},
+            {"x":"Mar", "y":2151}, {"x":"Apr", "y":1543}, {"x":"May", "y":1475}]
+          name: 2021/2022
+      yAxis:
+        isFirstLabelHidden: false
+        isFirstTickHidden: false
+        labels:
+          format:
+            compactDisplay: short
+            currency: USD
+            notation: compact
+            numberStyle: currency
+     # add three bands of different color to the line chart       
+        plotBands:
+          - from: 1400
+            to: 1600
+            color: color1
+          - from: 1600
+            to: 1800
+            color: color2  
+          - from: 1800
+            to: 2000
+            color: color3  
+        min: 0
+        tickAmount: 5
+    
