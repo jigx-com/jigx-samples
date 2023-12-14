@@ -1,0 +1,8 @@
+# Assets are cached on solution load and will be available offline.
+# This file is auto populated with icons we detect in the solution.
+# You can manually add additional icons.
+# An array list of icon names is expected.
+
+icons:
+  - pin # auto-generated
+  - space-rocket-flying # auto-generated

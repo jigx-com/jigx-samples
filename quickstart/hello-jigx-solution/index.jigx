@@ -19,9 +19,3 @@ widgets:
 stories:
   - solution-story
 
-assets:
-  icons:
-    - calendar-3 # auto-generated
-    - delete # auto-generated
-    - list # auto-generated
-    - person # auto-generated
