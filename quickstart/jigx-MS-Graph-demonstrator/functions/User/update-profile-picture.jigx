@@ -17,3 +17,7 @@ parameters:
     location: body
     required: true
     type: image
+conversions:
+  - property: file
+    from: local-uri
+    to: buffer

@@ -77,7 +77,8 @@ children:
   - type: component.image
     options:
       source:
-        uri: ="data:image/png;base64," & @ctx.datasources.profilePhoto.data #append base64 to data returned from Microsoft Graph to correctly identify the encoding type
+        uri: =@ctx.datasources.profilePhoto.data 
+          #  ="data:image/png," & @ctx.datasources.profilePhoto.data 
       height: 200
       resizeMode: contain
   - type: component.entity
@@ -158,7 +159,8 @@ widgets:
         - type: widget.avatar
           options:
             text: "Your Profile"
-            uri: ="data:image/png;base64," & @ctx.datasources.profilePhoto.data
+            uri: =@ctx.datasources.profilePhoto.data
+              # ="data:image/png," & @ctx.datasources.profilePhoto.data
             bottom:
               type: component.titles
               options:
@@ -171,7 +173,8 @@ widgets:
     options:
       isContentOverlaid: true
       source:
-        uri: ="data:image/png;base64," & @ctx.datasources.profilePhoto.data
+        uri: =@ctx.datasources.profilePhoto.data
+          # ="data:image/png," & @ctx.datasources.profilePhoto.data
       bottom: 
         type: component.titles
         options:

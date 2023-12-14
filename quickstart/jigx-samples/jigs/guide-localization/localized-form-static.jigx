@@ -1,0 +1,84 @@
+title: 
+  id: title
+  defaultMessage: New employee form 
+description: To view this jig in other languages, change your devices language settings to either German, French, Chez or Afrikaans 
+type: jig.default
+icon: form
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.form
+    instanceId: form-employee # used in the submit-form action to get context to the property instanceId
+    options:
+      children:
+        - type: component.text-field
+          instanceId: first_name # becomes the name of the column in table
+          options:
+            label: 
+              id: first_name
+              defaultMessage: First Name
+              
+             
+        - type: component.text-field
+          instanceId: last_name # becomes the name of the column in table
+          options:
+            label: 
+              id: last_name
+              defaultMessage: Last Name
+                
+        - type: component.number-field
+          instanceId: contact_number # becomes the name of the column in table
+          options:
+            label: 
+              id: contact_number
+              defaultMessage: Mobile number
+        
+        - type: component.date-picker
+          instanceId: date_of_birth # becomes the name of the column in table
+          options:
+            label: 
+              id: date_of_birth
+              defaultMessage: Date of birth
+        
+        - type: component.avatar-field 
+          instanceId: photo # becomes the name of the column in table
+          options:
+            label: 
+              id: photo
+              defaultMessage: My profile
+       
+        - type: component.signature-field
+          instanceId: signature # becomes the name of the column in table
+          options:
+            label: 
+              id: signature
+              defaultMessage: Sign 
+        
+        - type: component.email-field
+          instanceId: email # becomes the name of the column in table
+          options:
+            label: 
+              id: email
+              defaultMessage: Email address
+      
+actions:
+  - children: 
+      - type: action.submit-form
+        options:
+          formId: form-employee
+          provider: DATA_PROVIDER_DYNAMIC
+          title: 
+            id: create
+            defaultMessage: Create Record
+          entity: default/employees
+          method: create
+          goBack: previous

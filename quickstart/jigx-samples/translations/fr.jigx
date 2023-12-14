@@ -1,0 +1,10 @@
+title: Formulaire de nouvel employé
+description: Capturez les détails du nouvel employé
+first_name: Prénom
+last_name: Nom de famille
+contact_number: Numéro de portable
+date_of_birth: Date de naissance
+photo: Mon profil
+signature: Signe
+email: Adresse e-mail
+create: Créer un employé    

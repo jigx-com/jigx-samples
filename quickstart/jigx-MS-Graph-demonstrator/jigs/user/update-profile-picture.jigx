@@ -37,6 +37,7 @@ actions:
           functionParameters:
             accessToken: microsoft.OAuth
             Content-Type: image/jpeg
-            file: =@ctx.components.profilePicture.state.blob # submit blob to rest service
+            file: =@ctx.components.profilePicture.state.value 
           goBack: previous
           method: functionCall
+          

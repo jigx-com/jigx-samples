@@ -1,0 +1,13 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: notification
+      type: Localization with static values
+      typeLink: localized-form-static
+    - color: color2
+      icon: cog-double
+      type: Localization with dynamic values
+      typeLink: localized-activities-dynamic
+   
+    

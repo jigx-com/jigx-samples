@@ -1,0 +1,8 @@
+# Assets that are cached on solution load and will be available offline.
+# Array of image URLs you want to cache for offline use.
+# This field is auto populated with header images we detect in the solution.
+# You can add additional images here if any is missing.
+
+images:
+  - https://images.unsplash.com/photo-1542242476-5a3565835a38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80 # auto-generated
+  - https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg # auto-generated

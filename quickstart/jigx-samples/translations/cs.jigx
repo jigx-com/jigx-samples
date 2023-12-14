@@ -1,0 +1,10 @@
+title: Nový zaměstnanecký formulář
+description: Zachyťte podrobnosti o novém zaměstnanci
+first_name: Jméno
+last_name: Příjmení
+contact_number: Číslo mobilního telefonu
+date_of_birth: Datum narození
+photo: Můj profil
+signature: Podepsat
+email: Emailová adresa
+create: Vytvořit zaměstnance  

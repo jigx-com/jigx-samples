@@ -1,3 +1,14 @@
-example-static: 'Guten Nachmittag'
-example-dynamic: '{ time, select, pm {Guten Nachmittag} am {Guten Morgen} } {name}'
-jig-name: Beispiel
+title: Formular für neue Mitarbeiter
+description: Erfassen Sie die Details des neuen Mitarbeiters
+first_name: Vorname
+last_name: der Nachname
+contact_number: Handynummer
+date_of_birth: Geburtsdatum
+photo: mein Profil
+signature: Zeichen
+email: E-Mail-Adresse
+create: Mitarbeiter anlegen 
+greeting: '{time, select, am {Guten Morgen} pm {Guten Nachmittag} other {Hallo}} {name}'
+activities: Die heutigen Aktivitäten 
+sport: '{name, select, Swimming {Baden} Tennis {Tennis} other {Trainieren}}'
+venues: '{location, select, Pool {Schwimmbad} Court {Tennisplatz} other {Fitnessstudio}}'

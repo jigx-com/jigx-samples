@@ -13,19 +13,3 @@ widgets:
   - size: 1x1
     jigId: view-profile-picture
 
-assets:
-  icons:
-    - alarm-bell # auto-generated
-    - archive-folder # auto-generated
-    - battery-charge # auto-generated
-    - calendar # auto-generated
-    - calendar-3 # auto-generated
-    - camera # auto-generated
-    - controls-play # auto-generated
-    - conversation-chat-1 # auto-generated
-    - earth-3 # auto-generated
-    - house-signal # auto-generated
-    - lock-unlock-4 # auto-generated
-    - microphone-podcast-1 # auto-generated
-    - rating-star # auto-generated
-    - truck-cargo # auto-generated

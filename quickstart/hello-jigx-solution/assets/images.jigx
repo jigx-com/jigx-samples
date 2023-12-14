@@ -1,0 +1,7 @@
+# Assets are cached on solution load and will be available offline.
+# This file is auto populated with header images we detect in the solution.
+# You can manually add additional image URLs.
+# An array list of image URLs is expected.
+
+images:
+  - https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336 # auto-generated

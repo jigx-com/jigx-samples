@@ -13,3 +13,8 @@ parameters:
     type: string
     location: path
     required: true
+conversions:
+  - property: data
+    from: base64
+    to: local-uri
+    
