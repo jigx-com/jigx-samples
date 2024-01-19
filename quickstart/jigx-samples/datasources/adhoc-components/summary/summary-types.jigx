@@ -22,7 +22,7 @@ options:
       icon: list
       color: color5
     - type: Fullscreen
-      typeLink: fullscreen-location 
+      typeLink: fullscreen-location-dd 
       icon: local-image-content
       color: color6
       
