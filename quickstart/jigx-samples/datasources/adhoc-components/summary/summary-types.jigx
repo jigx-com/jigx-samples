@@ -21,7 +21,9 @@ options:
       typeLink: list-type-list
       icon: list
       color: color5
-    - color: color6
+    - type: Fullscreen
+      typeLink: fullscreen-location 
       icon: local-image-content
-      type: Fullscreen
-      typeLink: fullscreen-location   
+      color: color6
+      
+        
