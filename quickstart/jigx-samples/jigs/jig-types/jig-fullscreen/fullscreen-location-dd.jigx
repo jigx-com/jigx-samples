@@ -1,0 +1,9 @@
+title: Aquarium Location 
+type: jig.full-screen
+
+component: 
+  type: component.location
+  options:
+    address: =@ctx.datasources.location.street & ',' & @ctx.datasources.location.city
+        & ',' & @ctx.datasources.location.country
+    zoomLevel: 15

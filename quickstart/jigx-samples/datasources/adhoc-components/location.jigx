@@ -10,5 +10,8 @@ options:
       '$.address-us',
       '$.category',  
       '$.lat',
-      '$.lng'
+      '$.lng',
+      '$.city',
+      '$.country',
+      '$.street'
     FROM [default/location] WHERE '$.category' = "location"
