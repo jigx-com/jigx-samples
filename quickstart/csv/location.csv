@@ -1,3 +1,4 @@
-﻿content.address,content.adress-us,content.category,content.image,content.lat,content.lat-us,content.lng,content.lng-us,content.locationsubtitle,content.locationtitle,content.title,id
-"Národní 135/14, 110 00 Praha","Albert Park VIC 3206, Australia",location,,50.081848,-37.841873,14.417570,144.965644,,,,4fddd41b-7c5e-45a4-806f-1e5fbe246cf4
-"Národní 135/14, 110 00 Praha",,titles,https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80,,,,,Prague Czech Republic,Co-working space,Work productivity,80ba1a41-1c33-4d48-94ce-635bfb2344eb
+﻿content.address,content.adress-us,content.category,content.city,content.country,content.image,content.lat,content.lat-us,content.lng,content.lng-us,content.locationsubtitle,content.locationtitle,content.title,content.street,id,
+"Národní 135/14, 110 00 Praha","Albert Park VIC 3206, Australia",location,,,50.081848,-37.841873,14.417570,144.965644,,,,,4fddd41b-7c5e-45a4-806f-1e5fbe246cf4
+"Národní 135/14, 110 00 Praha",,titles,,,https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80,,,,,Prague Czech Republic,Co-working space,Work productivity,,80ba1a41-1c33-4d48-94ce-635bfb2344eb
+,,location,"Seattle","United States",,,,,,,,,"1483 Alaskan Way Pier 59",,79fcd26c-a0ae-485d-af13-b5f1c634173b
