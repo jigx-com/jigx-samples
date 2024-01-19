@@ -1,4 +1,4 @@
-title: countdown
+title: progress-bar
 type: jig.list
 icon: cog
 data: =@ctx.datasources.summary-progress-bar

@@ -12,40 +12,45 @@ options:
       color: color3
     - title: List with Stages
       link: list-with-stage-sd
-      color: color3
+      color: color4
     - title: List with Product-items
       link: list-with-product-item-dd
-      color: color3
+      color: color5
     - title: List with Avatars
       link: list-avatars-sd
-      color: color4
+      color: color6
     - title: List with Pie Charts
       link: list-with-pie-charts-sd
-      color: color5
+      color: color7
     - title: Horizontal list
       link: list-horizontal-sd
-      color: color6
+      color: color8
     - title: Other examples of Horizontal list
       link: list-w-horizontal
-      color: color6
+      color: color9
     - title: List with Search functionality
       link: list-with-search-dd
-      color: color7
+      color: color10
     - title: List with Filter functionality
       link: list-filter-label-dd
-      color: color7
+      color: color11
     - title: List with Search and Filter functionality
       link: list-filter-search-label-dd
-      color: color7
+      color: color12
     - title: Selectable list
       link: list-selectable-sd
-      color: color8
+      color: color13
     - title: List with active items
       link: list-with-active-item-sd
-      color: color8
+      color: color14
     - title: List with Sections
       link: list-with-sections-sd
-      color: color9
+      color: color1
     - title: List with all icons
       link: icon
-      color: color10
+      color: color2
+    - title: List items wrapped in a card
+      link: list-item-contained
+      color: color3
+      
+        

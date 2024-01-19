@@ -142,7 +142,7 @@ children:
             value: =@ctx.datasources.mydata[title='Doctor' and color='blue'].name
         - type: component.entity-field
           options:
-            label: Languague
+            label: Language
             value: =@ctx.system.locale
         - type: component.entity-field
           options:

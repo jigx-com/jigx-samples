@@ -15,7 +15,7 @@ children:
       item: 
         type: component.list-item
         options:
-          title: =@ctx.current.item.firstname & ' ' @ctx.current.item.lastname
+          title: =@ctx.current.item.firstname & ' ' & @ctx.current.item.lastname
           subtitle: =@ctx.current.item.phone
           leftElement: 
             element: avatar

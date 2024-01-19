@@ -38,13 +38,13 @@ children:
     options:
       filter:
         - title: All
-          value: ' '
+          value: ""
         - title: Active
           value: active
         - title: Inactive
           value: inactive
       maximumItemsToRender: 8
-      data: =$filter(@ctx.datasources.filter-list, function($v, $a, $i) { @ctx.components.listFilter.state.filter = 'all' or $v.status = @ctx.components.listFilter.state.filter })[]
+      data: =$filter(@ctx.datasources.filter-list, function($v, $i, $a) { @ctx.components.listFilter.state.filter = "" or $v.status = @ctx.components.listFilter.state.filter })[]
       item: 
         type: component.list-item
         options:

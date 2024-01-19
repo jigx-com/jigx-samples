@@ -1,8 +1,7 @@
 title: Location fullscreen dynamic
-type: jig.default
-isScrollable: false
-     
-children:
-  - type: component.location
-    options:
-      address: =@ctx.datasources.location.address-us
+type: jig.full-screen
+
+component: 
+  type: component.location
+  options:
+    address: =@ctx.datasources.location.address-us

@@ -15,21 +15,21 @@ datasources:
   packages:
     type: datasource.static
     options:
-      data:
-        - name: Thialand
-          date: "2023-12-14"
+      data: 
+        - name: Thailand
+          days: 30
           description: "10 days in luxury accomodation"
           Price: "$ 1500"
         - name: Phuket
-          date: "2024-03-25"
+          days: 60
           description: "7 days experience cultural activities"
           Price: "$ 1000"
         - name: Mauritius
-          date: "2024-02-04"
+          days: 120
           description: "8 days includes watersports"   
           Price: "$ 2350"
         - name: Bali
-          date: "2023-01-20" 
+          days: 95
           description: "15 days all inclusive experience"
           Price: "$ 3760"
 data: =@ctx.datasources.packages
@@ -40,15 +40,14 @@ item:
     subtitle: =@ctx.current.item.description
     rightElement: 
       element: button
-      title: =@ctx.current.item.date
+      title: =$fromMillis($toMillis($now()) + (@ctx.current.item.days * 24 * 60 * 60 * 1000), '[Y0001]-[M01]-[D01]')
+     
       onPress: 
         type: action.go-to
         options:
           linkTo: countdown-jig-input
           parameters:
-            packageDate: =@ctx.current.item.date
+            packageDate: =$fromMillis($toMillis($now()) + (@ctx.current.item.days * 24 * 60 * 60 * 1000))
             packagePrice: =@ctx.current.item.Price
             packageName: =@ctx.current.item.name
       
-      
-

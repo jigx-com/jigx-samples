@@ -12,7 +12,7 @@ options:
     - color: color3
       icon: coding-apps-website-web-form-progress-4
       type: Progress-bar errorText & helperText
-      typeLink: progress-bar-error-helper
+      typeLink: progress-error-helper
     - color: color4
       icon: coding-apps-website-web-form-progress-2
       type: Progress-bar onPress

@@ -9,55 +9,59 @@ options:
       color: color2
     - title: List with colored progress bars
       link: list-with-progress-colors-sd
-      color: color2
+      color: color3
     - title: List with avatars
       link: list-avatars-sd
-      color: color3
+      color: color4
     - title: List with left avatar
       link: list-with-left-avatar-sd
-      color: color3
+      color: color5
     - title: List with left checkboxes
       link: list-with-left-checkbox-sd
-      color: color4
+      color: color6
     - title: List with left icons
       link: list-with-left-icon-sd
-      color: color5
+      color: color7
     - title: List with left image
       link: list-with-left-image-sd
-      color: color5
+      color: color8
     - title: List with left progress
       link: list-with-left-progress-dd
-      color: color6
+      color: color9
     - title: Swipeable list (left)
       link: list-with-swipe-left-sd
-      color: color6
+      color: color10
     - title: List with right amount control
       link: list-with-right-amount-dd
-      color: color7
+      color: color11
     - title: List with right badges
       link: list-with-right-badge-sd
-      color: color8
+      color: color12
     - title: List with right buttons
       link: list-with-right-button-dd
-      color: color9
+      color: color13
     - title: List with right checkboxes
       link: list-with-right-checkbox-dd
-      color: color9
+      color: color14
     - title: List with right icons
       link: list-with-right-icon-sd
-      color: color10
+      color: color1
     - title: List with right switch
       link: list-with-right-switch-sd
-      color: color11
+      color: color2
     - title: List with right value
       link: list-with-right-value-dd
-      color: color12
+      color: color3
     - title: Swipeable list (right)
       link: list-with-swipe-right-sd
-      color: color13
+      color: color4
     - title: List with active item
       link: default-w-active-item-list-sd
-      color: color14
+      color: color5
     - title: List with sections
       link: default-w-section-list-sd
-      color: color1
+      color: color6
+    - title: List items wrapped in a card 
+      link: list-item-contained
+      color: color7
+        

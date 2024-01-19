@@ -23,15 +23,11 @@ actions:
             title: Message sent
         type: action.execute-entity
 children:
-  - type: component.form
-    instanceId: send-form
+  - type: component.entity
     options:
       children:
-        - instanceId: title
+        - type: component.entity-field
           options:
-            label: Title
-          type: component.text-field
-        - instanceId: text
-          options:
-            label: Text
-          type: component.text-field
+            label: Send a notification 
+            value: To get notified of the latest promotions tap on the send now button below. You will receive a notification, tap on the notification to see the promotion details in a new jig (screen).
+              
