@@ -1,17 +1,11 @@
-type: jig.calendar
 title: =$now('[D1o] [MNn] [Y]')
-
-data: =@ctx.datasources.event-vacation-dynamic
-item: 
+type: jig.calendar
+data: =@ctx.datasources.event-training-dynamic
+item:
   type: component.event
   options:
     title: =@ctx.current.item.title
-    from: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000)
-      format:
-        dateFormat: lll
-    to: 
-      text: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000)
-      format:
-        dateFormat: lll
+    from: =$fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) *
+        3600000)  
     location: =@ctx.current.item.location
+    to: =$fromMillis($toMillis($now()) + 5 * 60 * 60000 + @ctx.current.item.eventEnd * 3600000)

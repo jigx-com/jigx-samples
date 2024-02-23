@@ -57,14 +57,8 @@ data: =@ctx.datasources.event-dynamic
 item:
   type: component.event
   options:
-    from: 
-      text: =@ctx.current.item.eventStart != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-from))
-      format:
-        dateFormat: lll
-    to: 
-      text: =@ctx.current.item.eventEnd != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-to))
-      format:
-        dateFormat: lll
+    from: =@ctx.current.item.eventStart != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventStart) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-from))
+    to: =@ctx.current.item.eventEnd != null ? $fromMillis($toMillis($now()) + $number(@ctx.current.item.eventEnd) * 3600000) :$fromMillis($toMillis(@ctx.current.item.date-to))  
     title: =@ctx.current.item.title
     location:  =@ctx.current.item.location
     tags: "=[{'title': @ctx.current.item.tags, 'color': @ctx.current.item.color}]"

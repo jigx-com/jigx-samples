@@ -1,5 +1,5 @@
-title: Filter, progress and label
-type: jig.default
+title: Filter, progress and label 
+type: jig.list
   
 datasources:
   filter-list:
@@ -30,35 +30,32 @@ datasources:
           subtitle: Subtitle - inactive
           status: 'inactive'
           progress: 0.9
-          
 
-children:
-  - type: component.list
-    instanceId: listFilter
-    options:
-      filter:
-        - title: All
-          value: ""
-        - title: Active
-          value: active
-        - title: Inactive
-          value: inactive
-      maximumItemsToRender: 8
-      data: =$filter(@ctx.datasources.filter-list, function($v, $i, $a) { @ctx.components.listFilter.state.filter = "" or $v.status = @ctx.components.listFilter.state.filter })[]
-      item: 
-        type: component.list-item
-        options:
-          title: =@ctx.current.item.title
-          subtitle: =@ctx.current.item.subtitle
-          progress: =@ctx.current.item.progress
-          color:
-            - when: =@ctx.current.item.status = 'active'
-              color: color2
-            - when:  =@ctx.current.item.status  = 'inactive'
-              color: color4
-          label:
-            title: Label active
-            isHidden: =@ctx.current.item.status  = 'inactive'
-            color:
-              - when: =@ctx.current.item.status = 'active'
-                color: color2
+filter:
+  - title: All
+    value: ""
+  - title: Active
+    value: active
+  - title: Inactive
+    value: inactive
+      
+data:
+  =$filter(@ctx.datasources.filter-list, function($v, $a, $i) { @ctx.jig.state.filter = "" or $v.status = @ctx.jig.state.filter })[]
+    
+item: 
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    subtitle: =@ctx.current.item.subtitle
+    progress: =@ctx.current.item.progress
+    color:
+      - when: =@ctx.current.item.status = 'active'
+        color: color2
+      - when:  =@ctx.current.item.status  = 'inactive'
+        color: color4
+    label:
+      title: Label active
+      isHidden: =@ctx.current.item.status  = 'inactive'
+      color:
+        - when: =@ctx.current.item.status = 'active'
+          color: color2

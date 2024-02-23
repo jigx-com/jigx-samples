@@ -4,7 +4,7 @@ options:
     - title: Event of meeting
       link: event-of-meeting
       color: color1
-    - title: Event of vacation
+    - title: Event of training
       link: multi-day-event
       color: color2
     - title: Event with action

@@ -1,0 +1,7 @@
+type: datasource.static
+options:
+  data:
+    - eventEnd: 168 
+      eventStart: 0
+      location: Blue room
+      name: Onboarding/Induction Training

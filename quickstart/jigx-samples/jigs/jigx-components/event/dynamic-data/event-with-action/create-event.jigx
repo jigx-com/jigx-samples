@@ -43,10 +43,12 @@ children:
                 instanceId: date-from
                 options:
                   label: Event start
+                  mode: datetime
               - type: component.date-picker
                 instanceId: date-to
                 options:
                   label: Event end
+                  mode: datetime
         - type: component.text-field
           instanceId: tags
           options:

@@ -1,7 +1,0 @@
-type: datasource.static
-options:
-  data:
-    - name: "John's vacation"
-      eventStart: 0
-      eventEnd: 168
-      location: "Crete, Greece"
