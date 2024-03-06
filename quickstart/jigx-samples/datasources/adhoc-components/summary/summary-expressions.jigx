@@ -25,10 +25,10 @@ options:
       typeLink: multipleSelect
       icon: list
       color: color6 
-    - type: Organization
-      typeLink: organization
-      icon: contact
-      color: color7  
+    # - type: Organization
+    #   typeLink: organization
+    #   icon: contact
+    #   color: color7  
     - type: Placeholder
       typeLink: placeholder
       icon: controls-play
