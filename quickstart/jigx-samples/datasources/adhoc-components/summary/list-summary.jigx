@@ -1,18 +1,22 @@
 type: datasource.static
-options:
+options:  
   data:
-    - title: Summary - default
+    - color: color1
       link: summary
-      color: color1
-    - title: Summary - cart (Product-item)
+      title: Summary - default
+    - color: color2
       link: summary-cart
-      color: color2
-    - title: Summary - cart (Expander)
+      title: Summary - cart (Product-item)
+    - color: color3
       link: summary-cart-expander
-      color: color2
-    - title: Summary - counter (Product-item)
+      title: Summary - cart (Expander)
+    - color: color4
+      link: summary-cart-action
+      title: Summary - counter with action  
+    - color: color5
       link: summary-counter
-      color: color3
-    - title: Summary - counter (Expander)
+      title: Summary - counter (Product-item)
+    - color: color6
       link: summary-cart-expander
-      color: color3
+      title: Summary - counter (Expander)
+
