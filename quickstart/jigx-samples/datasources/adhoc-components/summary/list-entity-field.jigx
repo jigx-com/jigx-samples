@@ -1,15 +1,18 @@
 type: datasource.static
 options:
   data:
-    - title: (Basic) Different types of entity fields
+    - color: color1
       link: entity-field-examples-static
-      color: color1
-    - title: (Compact) Different types of entity fields
+      title: (Basic) Different types of entity fields
+    - color: color2
       link: entity-field-examples-static-compact
-      color: color1
-    - title: (Basic) Entity fields with a connected datasource
+      title: (Compact) Different types of entity fields
+    - color: color3
       link: entity-field-sd
-      color: color2
-    - title: (Compact) Entity fields with a connected datasource
+      title: (Basic) Entity fields with a connected datasource
+    - color: color4
       link: entity-field-sd-compact
-      color: color2
+      title: (Compact) Entity fields with a connected datasource
+    - color: color5
+      link: entity-field-icons-color
+      title: Entity fields with right icons in color  
