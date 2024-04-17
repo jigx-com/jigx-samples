@@ -1,0 +1,139 @@
+title: Edit Account
+type: jig.default
+icon: add
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/q3o_8MteFM0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk4OTU1&force=true&w=1080
+
+datasources:
+  account:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/accounts
+      query: |
+        SELECT 
+          id,
+          '$.name',
+          '$.description',
+          '$.contact-name',
+          '$.contact-title', 
+          '$.contact-email',
+          '$.contact-phone',
+          '$.image'
+        FROM 
+          [default/accounts]
+        WHERE id = @accountid
+        ORDER BY
+          '$.name' ASC
+      queryParameters:
+        accountid: =@ctx.jig.inputs.account-id
+      jsonProperties:
+        - '$.image'
+      
+      conversions:
+        - property: image
+          from: base64
+          to: local-uri
+
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: edit-account
+          title: Update Account
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/accounts
+          method: update
+          goBack: previous
+          data: 
+            id: =@ctx.jig.inputs.account-id
+            name: =@ctx.components.name.state.value
+            description: =@ctx.components.description.state.value
+            contact-name: =@ctx.components.contact-name.state.value
+            contact-title: =@ctx.components.contact-title.state.value
+            contact-email: =@ctx.components.contact-email.state.value
+            contact-phone: =@ctx.components.contact-phone.state.value
+            image: =@ctx.components.image.state.value
+          
+          conversions:
+            - property: image
+              from: local-uri
+              to: base64
+              
+          onSuccess:
+            description: Account has been added
+            title: Success
+          
+        
+children:
+  - type: component.form
+    instanceId: edit-account
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Account Details
+            children:
+              - type: component.text-field
+                instanceId: name
+                options:
+                  label: Company Name
+                  initialValue: =@ctx.datasources.account.name
+              - type: component.text-field
+                instanceId: description
+                options:
+                  isMultiline: true
+                  label: Company Description
+                  textArea: dynamic
+                  initialValue: =@ctx.datasources.account.description
+          
+        - type: component.section
+          options:
+            title: Main Contact
+            children:
+              - type: component.avatar-field
+                instanceId: image
+                options:
+                  imageQuality: 25
+                  label: Contact Photo
+                  initialValue: =@ctx.datasources.account.image
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.text-field
+                      instanceId: contact-name
+                      options:
+                        label: Name
+                        initialValue: =@ctx.datasources.account.contact-name
+                    - type: component.text-field
+                      instanceId: contact-title
+                      options:
+                        label: Title
+                        initialValue: =@ctx.datasources.account.contact-title
+                        
+        - type: component.text-field
+          instanceId: contact-email
+          options:
+            label: Contact Email
+            keyboardType: email-address
+            textContentType: emailAddress
+            initialValue: =@ctx.datasources.account.contact-email
+            
+        - type: component.text-field
+          instanceId: contact-phone
+          options:
+            
+            label: Contact Phone
+            keyboardType: phone-pad
+            textContentType: telephoneNumber
+            initialValue: =@ctx.datasources.account.contact-phone

@@ -1,0 +1,48 @@
+title: Field Sales
+name: field-sales
+category: sales
+description: This solution demonstrated a simple ordering solution leveraging Dynamic Data.
+
+widgets:
+  - jigId: view-all-orders
+    size: 4x2
+    when: |
+      =$count(@ctx.datasources.all-orders) > 0 and
+      $count(@ctx.datasources.all-accounts) > 0
+  - jigId: view-accounts
+    size: 4x2
+  - jigId: view-products
+    size: 2x2
+  - jigId: view-accounts
+    size: 1x1
+  - jigId: add-account
+    size: 1x1
+  - jigId: view-products
+    size: 1x1
+  - jigId: add-product
+    size: 1x1
+  - jigId: view-products
+    size: 4x2
+    when: |
+      =$count(@ctx.datasources.all-products) > 0 and
+      $count(@ctx.datasources.all-orders) > 0
+  - size: 2x4
+    jigId: view-products
+    inputs:
+      editrights: true
+  - size: 2x4
+    jigId: view-accounts
+    inputs:
+      editrights: true
+    
+      
+onFocus:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_DYNAMIC
+    entities:
+      - default/accounts
+      - default/products
+  
+
+

@@ -1,0 +1,14 @@
+# Assets are cached on solution load and will be available offline.
+# This file is auto populated with icons we detect in the solution.
+# You can manually add additional icons.
+# An array list of icon names is expected.
+
+icons:
+  - add # auto-generated
+  - bin-1 # auto-generated
+  - contact # auto-generated
+  - list # auto-generated
+  - list-add # auto-generated
+  - pencil-2 # auto-generated
+  - search # auto-generated
+  - shopping-cart-empty-1 # auto-generated

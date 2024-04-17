@@ -1,0 +1,139 @@
+title: Edit Product
+type: jig.default
+icon: list-add
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/JwMGy1h-JsY/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk5MTU5&force=true&w=1080
+
+datasources:
+  product: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id,
+          '$.name',
+          '$.description',
+          '$.brand',
+          '$.sku', 
+          '$.quantity',
+          '$.cost',
+          '$.image'
+        FROM 
+          [default/products]
+        WHERE id = @productid or @productid IS NULL
+        ORDER BY
+          '$.name' ASC
+      queryParameters:
+        productid: =@ctx.jig.inputs.productid
+      jsonProperties:
+        - '$.image'
+      conversions:
+        - property: image
+          from: base64
+          to: local-uri
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: edit-product
+          title: Update Product
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/products
+          method: update
+          goBack: previous
+          data: 
+            id: =@ctx.jig.inputs.productid
+            name: =@ctx.components.name.state.value
+            description: =@ctx.components.description.state.value
+            brand: =@ctx.components.brand.state.value
+            sku: =@ctx.components.sku.state.value
+            quantity: =@ctx.components.quantity.state.value
+            cost: =@ctx.components.cost.state.value
+            image: =@ctx.components.image.state.value
+          
+          conversions:
+            - property: image
+              from: local-uri
+              to: base64
+              
+          onSuccess:
+            description: Product has been updated
+            title: Success
+        
+children:
+  - type: component.form
+    instanceId: edit-product
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Master Data
+            children:
+              - type: component.text-field
+                instanceId: name
+                options:
+                  label: Product Name
+                  initialValue: =@ctx.datasources.product.name
+                
+              - type: component.text-field
+                instanceId: description
+                options:
+                  isMultiline: true
+                  label: Product Description
+                  textArea: dynamic
+                  initialValue: =@ctx.datasources.product.description
+                
+              - type: component.media-field
+                instanceId: image
+                options:
+                  imageQuality: 25
+                  label: Product Image
+                  mediaType: image
+                  initialValue: =@ctx.datasources.product.image
+                
+          
+        - type: component.section
+          options:
+            title: Details
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.text-field
+                      instanceId: brand
+                      options:
+                        label: Brand
+                        initialValue: =@ctx.datasources.product.brand
+                      
+                    - type: component.text-field
+                      instanceId: sku
+                      options:
+                        label: SKU
+                        initialValue: =@ctx.datasources.product.sku
+                
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.number-field
+                      instanceId: quantity
+                      options:
+                        label: Qty Per Unit
+                        initialValue: =@ctx.datasources.product.quantity
+                      
+                    - type: component.number-field
+                      instanceId: cost
+                      options:
+                        label: Cost
+                        initialValue: =@ctx.datasources.product.cost

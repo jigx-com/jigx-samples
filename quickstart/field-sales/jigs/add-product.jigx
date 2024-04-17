@@ -1,0 +1,96 @@
+title: Add Product
+type: jig.default
+icon: list-add
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/JwMGy1h-JsY/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk5MTU5&force=true&w=1080
+
+
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: add-product
+          title: Add Product
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/products
+          method: create
+          goBack: previous
+          conversions:
+            - property: image
+              from: local-uri
+              to: base64
+          onSuccess:
+            description: Product has been added
+            title: Success
+        
+children:
+  - type: component.form
+    instanceId: add-product
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Master Data
+            children:
+              - type: component.text-field
+                instanceId: name
+                options:
+                  label: Product Name
+                
+              - type: component.text-field
+                instanceId: description
+                options:
+                  isMultiline: true
+                  label: Product Description
+                  textArea: dynamic
+                
+              - type: component.media-field
+                instanceId: image
+                options:
+                  imageQuality: 25
+                  label: Product Image
+                  mediaType: image
+                
+          
+        - type: component.section
+          options:
+            title: Details
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.text-field
+                      instanceId: brand
+                      options:
+                        label: Brand
+                      
+                    - type: component.text-field
+                      instanceId: sku
+                      options:
+                        label: SKU
+                      
+                
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.number-field
+                      instanceId: quantity
+                      options:
+                        label: Qty Per Unit
+                      
+                    - type: component.number-field
+                      instanceId: cost
+                      options:
+                        label: Cost
+                        format:
+                          numberStyle: decimal
+                        
+                      

@@ -1,0 +1,108 @@
+title: |
+  =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].contact-name
+type: jig.composite
+description: |
+  =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].contact-title
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      options:
+        source:
+          uri: =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].image
+      type: component.image
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Create Order
+          linkTo: create-order
+          parameters:
+            account-id: =@ctx.jig.inputs.account-id
+            guid: =$uuid_v4()
+          
+        
+      - type: action.confirm
+        options:
+          title: Remove account
+          icon: bin-1
+          isConfirmedAutomatically: false
+          modal:
+            cancel: Cancel
+            confirm: REMOVE
+            description: | 
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].name
+            title: Do you really want to remove this account?
+          onConfirmed:
+            type: action.execute-entity
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/accounts
+              method: delete
+              goBack: previous
+              data:
+                id: =@ctx.jig.inputs.account-id
+          style:
+            isDanger: true
+        
+children:
+  - jigId: account-details
+    isTitleHidden: true
+    inputs:
+      account-id: =@ctx.jig.inputs.account-id
+    
+  - jigId: account-orders
+    isTitleHidden: false
+    inputs:
+      account-id: =@ctx.jig.inputs.account-id
+    
+preview:
+  isCompact: true 
+  actions:
+    - children:
+        - type: action.go-to
+          options:
+            title: =@ctx.jig.inputs.account-id
+            linkTo: account-overview
+            parameters:
+              account-id: =@ctx.jig.inputs.account-id
+
+  children:
+    - type: component.entity
+      options:
+        children:
+          - type: component.entity-field
+            options:
+              label: Company
+              value: =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].name
+            
+          - type: component.entity-field
+            options:
+              contentType: email
+              label: Email
+              value: | 
+                =@ctx.datasources.all-accounts[id =
+                @ctx.jig.inputs.account-id].contact-email
+            
+          - type: component.entity-field
+            options:
+              contentType: phone
+              label: Phone
+              value: |
+                =@ctx.datasources.all-accounts[id =
+                @ctx.jig.inputs.account-id].contact-phone
+            
+          - type: component.entity-field
+            options:
+              isMultiline: true
+              label: About
+              value: |
+                =@ctx.datasources.all-accounts[id =
+                @ctx.jig.inputs.account-id].description
+            
+      
+  

@@ -1,0 +1,9 @@
+# Assets are cached on solution load and will be available offline.
+# This file is auto populated with header images we detect in the solution.
+# You can manually add additional image URLs.
+# An array list of image URLs is expected.
+
+images:
+  - https://unsplash.com/photos/JwMGy1h-JsY/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk5MTU5&force=true&w=1080 # auto-generated
+  - https://unsplash.com/photos/LvySG1hvuzI/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk2Njg2&force=true&w=1080 # auto-generated
+  - https://unsplash.com/photos/q3o_8MteFM0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk4OTU1&force=true&w=1080 # auto-generated

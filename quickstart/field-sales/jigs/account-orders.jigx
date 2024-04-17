@@ -1,0 +1,74 @@
+title: |
+  ='Orders (' & $count(@ctx.datasources.orders) & ')'
+type: jig.list
+
+datasources:
+  orders:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/orders
+      query: |
+        SELECT 
+          id,
+          '$.order-account',
+          '$.order-date',
+          '$.order-items',
+          '$.order-total'
+        FROM
+          [default/orders] 
+        WHERE
+          '$.order-account' = @accountid or @accountid IS NULL
+        ORDER BY
+          '$.order-date' DESC
+      jsonProperties:
+        - order-items
+      queryParameters:
+        accountid: =@ctx.jig.inputs.account-id
+    
+data: =@ctx.datasources.orders
+item:
+  type: component.list-item
+  options:
+    title: |
+      =$sum(@ctx.current.item.order-items.amount) & ' items' 
+    subtitle: >
+      =$fromMillis($toMillis(@ctx.current.item.order-date),
+      '[Y0001]/[M01]/[D01]') & ' at ' &
+      $fromMillis($toMillis(@ctx.current.item.order-date), '[h#1]:[m01][P]')
+    leftElement:
+      element: icon
+      isContained: true
+      isDuotone: true
+      icon: shopping-cart-empty-1
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: order-details
+        parameters:
+          account-id: =@ctx.current.item.order-account
+          items: =@ctx.current.item.order-items
+        
+      
+    rightElement:
+      element: value
+      text:
+        format:
+          numberStyle: currency
+        text: =@ctx.current.item.order-total
+  
+
+placeholders:
+  - icon: missing-data
+    title: No orders
+    when: =$count(@ctx.datasources.orders) = 0
+    onPress:
+      type: action.go-to
+      options:
+        title: Create new order
+        linkTo: create-order
+        parameters:
+          account-id: =@ctx.jig.inputs.account-id
+        
+

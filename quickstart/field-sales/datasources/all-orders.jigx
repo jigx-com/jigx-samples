@@ -1,0 +1,16 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - default/orders
+  query: |
+    SELECT 
+      id,
+      '$.order-account',
+      '$.order-date',
+      '$.order-items',
+      '$.order-total'
+    FROM [default/orders]
+    ORDER BY '$.order-date' DESC
+  jsonProperties:
+    - '$.order-items'

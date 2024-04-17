@@ -1,0 +1,39 @@
+title: Account Details
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Company
+            value: >
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].name
+          
+        - type: component.entity-field 
+          options:
+            contentType: email
+            label: Email
+            value: >
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].contact-email
+          
+        - type: component.entity-field
+          options:
+            contentType: phone
+            label: Phone
+            value: >
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].contact-phone
+          
+        - type: component.entity-field
+          options:
+            isMultiline: true
+            label: About
+            value: >
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].description
+          
+    

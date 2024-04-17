@@ -1,0 +1,187 @@
+title: Products
+type: jig.list
+icon: list
+isSearchable: true
+description: =$product
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/JwMGy1h-JsY/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk5MTU5&force=true&w=1080
+
+placeholders:
+  - title: No products in catalog
+    when: =$count(@ctx.datasources.products) = 0 and @ctx.jig.state.searchText = null
+    icon: missing-data
+    onPress:
+      type: action.go-to
+      options:
+        title: Add Product
+        linkTo: add-product
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Add a product
+          linkTo: add-product
+
+expressions:
+  baseArray: | 
+    =$map(@ctx.datasources.all-orders, function($orders) {
+    $eval($orders."order-items")})
+  singlearray: |
+    =$reduce($baseArray, function($acc, $value){$append($acc, $value)})
+            
+datasources:
+  products:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id,
+          '$.name',
+          '$.description',
+          '$.brand',
+          '$.sku', 
+          '$.quantity',
+          '$.cost',
+          '$.image'
+        FROM 
+          [default/products]
+        WHERE
+          '$.name' LIKE '%'||@search||'%' 
+        OR @search IS NULL
+        ORDER BY
+          '$.name' ASC
+      jsonProperties:
+        - image
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+        
+      conversions:
+        - property: image
+          from: base64
+          to: local-uri
+  
+data: =@ctx.datasources.products
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.description
+    label:
+      title: In stock
+      color:
+        - color: color4
+          when: true
+    leftElement:
+      element: avatar
+      text: ""
+      uri: =@ctx.current.item.image
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: product-details
+        parameters:
+          product-id: =@ctx.current.item.id
+              
+    rightElement:
+      element: value
+      text:
+        format:
+          numberStyle: currency
+        text: =@ctx.current.item.cost
+        
+    swipeable:
+      right:
+        - label: Remove
+          icon: bin-1
+          color: negative
+          onPress:
+            type: action.confirm
+            options:
+              isConfirmedAutomatically: false
+              onConfirmed:
+                type: action.execute-entity
+                options:
+                  provider: DATA_PROVIDER_DYNAMIC
+                  entity: default/products
+                  data:
+                    id: =@ctx.current.item.id
+                  goBack: stay
+                  method: delete
+              modal:
+                cancel: Cancel
+                confirm: REMOVE
+                description: =@ctx.current.item.name
+                title: Do you really want to remove this product?
+
+      left:
+        - label: Edit
+          icon: pencil-2
+          color: primary
+          onPress: 
+            type: action.go-to
+            options:
+              linkTo: edit-product
+              parameters:
+                productid: =@ctx.current.item.id 
+
+widgets:
+  2x2:
+    type: widget.value
+    options:
+      value: =$count(@ctx.datasources.all-products)
+      align: center
+      top:
+        type: component.titles
+        options:
+          title: Products
+          subtitle: in catalog
+          align: left
+          icon: list
+          iconColor: positive
+
+  4x2:
+    type: widget.chart
+    options:
+      chart:
+        type: component.bar-chart
+        options:
+          plotOptions:
+            series:
+              pointWidth: 15
+          yAxis:
+            tickAmount: 3
+          series:
+            - data: >
+                =($items :=$singlearray;
+                  @ctx.datasources.all-products[]#$i.{
+                    "x": name,
+                    "y": $boolean($sum(($val := id; $items[id=$val]).amount)) ? $sum(($val := id; $items[id=$val]).amount) : 0,
+                    "color": "color" & $i
+                  }^(>y)[[0..4]]
+                )
+
+  # 2x4:
+  #   type: widget.list
+  #   options:
+  #     data: =@ctx.datasources.products
+  #     item:
+  #       type: component.list-item
+  #       options:
+  #         title: =@ctx.current.item.name
+  #         subtitle: =@ctx.current.item.description
+  #         leftElement:
+  #           element: avatar
+  #           text: ""
+  #           uri: =@ctx.current.item.image

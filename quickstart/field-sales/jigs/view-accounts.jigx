@@ -1,0 +1,194 @@
+title: Accounts
+type: jig.list
+icon: search
+isSearchable: true
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/q3o_8MteFM0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk4OTU1&force=true&w=1080
+
+placeholders:
+  - title: No accounts
+    icon: missing-data
+    when: =$count(@ctx.datasources.all-accounts) = 0
+    onPress:
+      type: action.go-to
+      options:
+        title: Add Account
+        linkTo: add-account
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Add Account
+          linkTo: add-account
+
+datasources:
+  accounts:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/accounts
+        - default/orders
+      query: |
+        SELECT 
+          a.id as accountId, 
+          json_extract(a.data, '$.name') as accountName,
+          json_extract(a.data, '$.contact-name') as contactName,
+          json_extract(a.data, '$.contact-title') as contactTitle,
+          json_extract(a.data, '$.image') as image,
+          SUM(json_extract(o.data, '$.order-date')) as orderTotal
+        FROM 
+          [default/accounts] a
+        LEFT JOIN 
+          [default/orders] o 
+        ON json_extract(o.data, '$.order-account') = accountId
+        WHERE
+          accountName LIKE '%'||@search||'%' OR @search IS NULL
+        GROUP BY accountId
+        ORDER BY orderTotal DESC
+      jsonProperties:
+        - image
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+      conversions:
+        - property: image
+          from: base64
+          to: local-uri
+
+  top-accounts:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/accounts
+        - default/orders
+      query: |
+        SELECT 
+          a.id as accountId, 
+          json_extract(a.data, '$.name') as accountName,
+          json_extract(a.data, '$.image') as accountImage,
+          SUM(json_extract(o.data, '$.order-total')) as orderTotal
+        FROM 
+          [default/accounts] a
+        LEFT JOIN 
+          [default/orders] o 
+        ON json_extract(o.data, '$.order-account') = accountId
+        GROUP BY accountId
+        ORDER BY orderTotal DESC
+        LIMIT 3
+      jsonProperties:
+        - accountImage
+      conversions:
+        - property: accountImage
+          from: base64
+          to: local-uri
+
+data: =@ctx.datasources.accounts
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.accountName
+    subtitle: =@ctx.current.item.contactName
+    description: =@ctx.current.item.contactTitle
+    label:
+      title: |
+        =$count(@ctx.datasources.all-orders[order-account = 
+        @ctx.current.item.accountId]) & ' Orders'
+      color:
+        - color: color4
+          when: =true
+    leftElement:
+      element: avatar
+      text: ""
+      uri: =@ctx.current.item.image
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: account-overview
+        parameters:
+          account-id: =@ctx.current.item.accountId
+    rightElement:
+      element: value
+      text:
+        format:
+          maximumFractionDigits: 0
+          numberStyle: currency
+        text: >
+          =$boolean(@ctx.current.item.orderTotal) ? @ctx.current.item.orderTotal
+          : 0
+
+    swipeable:
+      right:
+        - label: Remove
+          icon: bin-1
+          color: negative
+          onPress:
+            type: action.confirm
+            options:
+              isConfirmedAutomatically: false
+              onConfirmed:
+                options:
+                  provider: DATA_PROVIDER_DYNAMIC
+                  entity: default/accounts
+                  data:
+                    id: =@ctx.current.item.accountId
+                  goBack: stay
+                  method: delete
+                type: action.execute-entity
+              modal:
+                cancel: Cancel
+                confirm: REMOVE
+                description: =@ctx.current.item.accountName
+                title: Do you really want to remove this account?
+
+      left:
+        - label: Edit
+          icon: pencil-2
+          color: primary
+          onPress: 
+            type: action.go-to
+            options:
+              linkTo: edit-account
+              parameters:
+                account-id: =@ctx.current.item.accountId        
+
+widgets:
+  4x2:
+    type: widget.list
+    options:
+      data: =@ctx.datasources.top-accounts
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.accountName
+          subtitle: >
+            =$count(@ctx.datasources.all-orders[order-account =
+            @ctx.current.item.accountId]) & ' Order(s)'
+          leftElement:
+            element: avatar
+            text: ""
+            uri: =@ctx.current.item.accountImage
+          onPress:
+            type: action.go-to
+            options:
+              linkTo: account-overview
+              parameters:
+                account-id: =@ctx.current.item.accountId
+          rightElement:
+            title: New Order
+            element: button
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: create-order
+                parameters:
+                  account-id: =@ctx.current.item.accountId

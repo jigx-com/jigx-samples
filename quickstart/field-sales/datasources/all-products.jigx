@@ -1,0 +1,26 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - default/products
+  query: |
+    SELECT 
+      id,
+      '$.name',
+      '$.description',
+      '$.brand',
+      '$.sku', 
+      '$.quantity',
+      '$.cost',
+      '$.image'
+    FROM 
+      [default/products]
+    ORDER BY
+      '$.name' ASC
+  jsonProperties:
+    - '$.image'
+  conversions:
+    - property: image
+      from: base64
+      to: local-uri
+
