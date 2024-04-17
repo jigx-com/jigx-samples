@@ -1,0 +1,89 @@
+title: Flights
+type: jig.list
+data: =@ctx.datasources.flight-schedule-static
+item:
+  type: component.expander
+  options:
+    children:
+      - options:
+          children:
+            - options:
+                children:
+                  - options:
+                      label: Boarding
+                      value: =@ctx.current.item.from
+                    type: component.entity-field
+                  - options:
+                      label: Destination
+                      value: =@ctx.current.item.to
+                    type: component.entity-field
+              type: component.field-row
+            - options:
+                children:
+                  - options:
+                      label: Board Time
+                      value: =@ctx.current.item.board
+                    type: component.entity-field
+                  - options:
+                      label: Disembark Time
+                      value: =@ctx.current.item.disembark
+                    type: component.entity-field
+              type: component.field-row
+            - options:
+                label: Passenger
+                value: =@ctx.current.item.name
+              type: component.entity-field
+            - options:
+                children:
+                  - options:
+                      label: Flight
+                      value: =@ctx.current.item.flight
+                    type: component.entity-field
+                  - options:
+                      label: Gate
+                      value: =@ctx.current.item.gate
+                    type: component.entity-field
+                  - options:
+                      label: Seat
+                      value: =@ctx.current.item.seat
+                    type: component.entity-field
+              type: component.field-row
+        type: component.entity
+      - options:
+          address: =@ctx.current.item.to
+        type: component.location
+    header:
+      centerElement:
+        type: component.stage
+        options:
+          left:
+            subtitle: =@ctx.current.item.board
+            title: =@ctx.current.item.fromabrv
+          right:
+            subtitle: =@ctx.current.item.disembark
+            title: =@ctx.current.item.toabrv
+        
+header:
+  type: component.jig-header
+  options:
+    children:
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1490430657723-4d607c1503fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZmxpZ2h0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
+      type: component.image
+    height: medium
+  
+summary:
+  children:
+    type: component.summary
+    options:
+      title: "Flights found:"
+      layout: cart
+      value: 3
+    
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Book a flight
+          linkTo: expander-trip

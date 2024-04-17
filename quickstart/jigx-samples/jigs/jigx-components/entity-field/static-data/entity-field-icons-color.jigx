@@ -1,0 +1,42 @@
+title: Entity field with colored right icon
+type: jig.default
+children:
+  - type: component.entity
+    options:
+      children:
+      
+      - type: component.entity-field
+        options:
+          rightIcon: pin-location
+          style:
+            isPrimary: true
+          label: street
+          value: 15 Jason Ave
+      - type: component.entity-field
+        options:
+            label: City
+            rightIcon: house-2-alternate
+            style:
+              isPositive: true
+            value: London
+      - type: component.entity-field
+        options:
+            label: ZIP code
+            rightIcon: alert-circle
+            style:
+              isWarning: true
+            value: 987 65    
+      - type: component.entity-field
+        options:
+          label: country
+          rightIcon: maps-pin
+          style:
+            isPrimary: true
+          value: United Kingdom
+      - type: component.entity-field
+        options:
+          label: Contact number
+          rightIcon: alert-triangle
+          style:
+            isNegative: true
+          value: "12"

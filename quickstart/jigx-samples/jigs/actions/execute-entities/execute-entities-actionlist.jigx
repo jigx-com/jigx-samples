@@ -45,6 +45,12 @@ actions:
                 data:
                   firstname: =@ctx.datasources.employee-detail-dynamic.firstname
                   lastname: =@ctx.datasources.employee-detail-dynamic.lastname
-            - type: action.go-to
+            - type: action.confirm
               options:
-                linkTo: ja-execute-entity-onPress
+                isConfirmedAutomatically: false
+                onConfirmed: 
+                  type: action.go-to
+                  options:
+                    linkTo: execute-entities-onPress
+                modal:
+                  title: User successfully added  

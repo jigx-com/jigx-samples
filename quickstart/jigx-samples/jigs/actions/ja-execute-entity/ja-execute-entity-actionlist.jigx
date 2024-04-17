@@ -30,9 +30,15 @@ actions:
                   lastname: =@ctx.datasources.employee-detail-dynamic.lastname
                   email: =@ctx.datasources.employee-detail-dynamic.email
                   phone: =@ctx.datasources.employee-detail-dynamic.phone
-            - type: action.go-to
+            - type: action.confirm
               options:
-                linkTo: ja-execute-entity-onPress
+                isConfirmedAutomatically: false
+                onConfirmed: 
+                  type: action.go-to
+                  options:
+                    linkTo: ja-execute-entity-onPress
+                modal:
+                  title: Details successfully saved     
                 
 children:
   - type: component.entity
