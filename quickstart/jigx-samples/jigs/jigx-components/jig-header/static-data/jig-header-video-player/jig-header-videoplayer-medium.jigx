@@ -10,7 +10,7 @@ header:
       type: component.video-player
       options:
         url: https://cdn.pixabay.com/video/2023/10/01/183108-870151713_small.mp4
-        title: video-player
+        title: Header with video-player
         autoplay: true
     
 children:
