@@ -1,0 +1,110 @@
+title: >
+  ='New order for ' & @ctx.datasources.all-accounts[id =
+  @ctx.jig.inputs.account-id].name
+type: jig.list
+icon: list
+description: >
+  ='Main Contact: ' &  @ctx.datasources.all-accounts[id =
+  @ctx.jig.inputs.account-id].contact-name
+  
+isSearchable: true
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].image
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Continue
+          linkTo: checkout
+          parameters:
+            account-id: =@ctx.jig.inputs.account-id
+            items: =@ctx.jig.state.amounts[amount > 0]
+          style:
+            isDisabled: "=$sum(@ctx.jig.state.amounts.amount) > 0 ? false : true"
+        
+datasources:
+  products:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id,
+          '$.name',
+          '$.description',
+          '$.brand',
+          '$.sku', 
+          '$.quantity',
+          '$.cost',
+          '$.image'
+        FROM 
+          [default/products]
+        WHERE
+          '$.name' LIKE '%'||@search||'%' 
+        OR @search IS NULL
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+      jsonProperties: 
+        - image
+
+      conversions:
+        - property: image
+          from: base64
+          to: local-uri
+    
+data: =@ctx.datasources.products
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.description
+    description: ='$' & @ctx.current.item.cost
+    leftElement:
+      element: avatar
+      text: ""
+      uri: =@ctx.current.item.image
+    rightElement:
+      element: amount-control
+      initialValue: 0
+      maximum: 100
+      minimum: 0
+      step: 1
+
+placeholders:
+  - title: No products found
+    icon: missing-data
+    when: =$count(@ctx.datasources.products) = 0
+    onPress:
+      type: action.go-to
+      options:
+        title: Add Product
+        linkTo: add-product
+
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: default
+      title: |
+        =$count(@ctx.datasources.products) > 0 ? 'Cart' : 'No products found'
+      subtitle: >
+        =$count(@ctx.datasources.products) > 0 ?
+        $sum(@ctx.jig.state.amounts.amount) & ' items = $' & $sum(@ctx.jig.state.amounts.(amount * $number(($val := id; @ctx.datasources.all-products[id=$val]).cost)))
+        : 'Please add products to catalog first'
+      leftIcon:
+        element: icon
+        isContained: true
+        isDuotone: true
+        icon: shopping-cart-empty-1
+    

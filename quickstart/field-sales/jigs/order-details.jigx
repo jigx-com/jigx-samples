@@ -1,0 +1,28 @@
+title: Order Details
+type: jig.composite
+
+children:
+  - jigId: order-account
+    isTitleHidden: true
+    inputs:
+      account-id: =@ctx.jig.inputs.account-id
+  - jigId: order-items
+    inputs:
+      items: =@ctx.jig.inputs.items
+    
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: default
+      title: Cart
+      subtitle: >
+        =$sum(@ctx.jig.inputs.items.amount) & ' items = $' &
+        $sum(@ctx.jig.inputs.items.(amount * $number(($val := id;
+        @ctx.datasources.all-products[id=$val]).cost)))
+      leftIcon:
+        element: icon
+        isContained: true
+        isDuotone: true
+        icon: shopping-cart-empty-1
+    

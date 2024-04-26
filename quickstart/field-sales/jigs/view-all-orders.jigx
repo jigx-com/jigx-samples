@@ -1,0 +1,136 @@
+title: Recent Orders
+type: jig.list
+
+badge: >
+  =$count(@ctx.datasources.all-orders[order-date > 
+  $fromMillis($toMillis($now())
+  - 2592000000)])
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/LvySG1hvuzI/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk2Njg2&force=true&w=1080
+
+data: =@ctx.datasources.all-orders
+item:
+  type: component.list-item
+  options:
+    title: >
+      =@ctx.datasources.all-accounts[id = @ctx.current.item.order-account].name
+      & ' - ' & @ctx.datasources.all-accounts[id =
+      @ctx.current.item.order-account].contact-name
+    subtitle: >
+      =$fromMillis($toMillis(@ctx.current.item.order-date),
+      '[Y0001]/[M01]/[D01]') & ' at ' &
+      $fromMillis($toMillis(@ctx.current.item.order-date), '[h#1]:[m01][P]')
+    leftElement:
+      element: icon
+      isContained: true
+      isDuotone: true
+      icon: shopping-cart-empty-1
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: order-details
+        parameters:
+          account-id: =@ctx.current.item.order-account
+          items: =$eval(@ctx.current.item.order-items)
+    rightElement:
+      element: value
+      text:
+        text: =@ctx.current.item.order-total
+        format:
+          numberStyle: currency
+        
+
+widgets:
+  4x2:
+    type: widget.group
+    options:
+      children:
+        - type: widget.chart
+          options:
+            bottom:
+              type: component.trend
+              options:
+                title: Last 30 days
+                format:
+                  notation: compact
+                  numberStyle: currency
+                value: >
+                  =$count(@ctx.datasources.all-orders[order-date >=
+                  $fromMillis($toMillis($now()) - 2592000000) and order-date <
+                  $now()]) = 0 ? 0 : $sum(@ctx.datasources.all-orders[order-date
+                  >= $fromMillis($toMillis($now()) - 2592000000) and order-date
+                  < $now()].order-total)
+              
+            chart:
+              type: component.pie-chart
+              options:
+                chart:
+                  height: 300
+                  subtitle:
+                    text: ='$' & $sum(@ctx.datasources.all-orders.order-total)
+                    verticalAlign: center
+                  title:
+                    text: My Sales
+                    verticalAlign: center
+                  width: 300
+                legend:
+                  isHidden: false
+                plotOptions:
+                  series:
+                    pointWidth: 10
+                series:
+                  - data: >
+                      =@ctx.datasources.all-accounts[]#$i.{
+                        "y": $sum(($val := id; @ctx.datasources.all-orders[order-account = $val]).order-total),
+                        "color": "color" & $string($number($i) + 4)}
+                    layout: pie
+              
+        - type: widget.chart
+          options:
+            chart:
+              type: component.line-chart
+              options:
+                xAxis:
+                  categories:
+                    - 90d
+                    - 60d
+                    - 30d
+                yAxis:
+                  labels:
+                    format:
+                      maximumFractionDigits: 0
+                      notation: compact
+                      numberStyle: currency
+                  tickAmount: 3
+                series:
+                  - animation:
+                      direction: left-to-right
+                      duration: 2000
+                    data: >
+                      =[
+                        {
+                          "x": "90",
+                          "y": $count(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 3 * 2592000000) and order-date < $fromMillis($toMillis($now()) - 2 * 2592000000)]) = 0 ? 0 : $sum(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 3 * 2592000000) and order-date < $fromMillis($toMillis($now()) - 2 * 2592000000)].order-total)
+                        },
+                        {
+                          "x": "60",
+                          "y": $count(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 2 * 2592000000) and order-date < $fromMillis($toMillis($now()) - 2592000000)]) = 0 ? 0 : $sum(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 2 * 2592000000) and order-date < $fromMillis($toMillis($now()) - 2592000000)].order-total)
+                        },
+                        {
+                          "x": "30",
+                          "y": $count(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 2592000000)]) = 0 ? 0 : $sum(@ctx.datasources.all-orders[order-date >= $fromMillis($toMillis($now()) - 2592000000)].order-total)
+                        }
+                      ]
+                    dataLabels:
+                      - isEnabled: true
+                    layout: area-gradient              
+          
+    

@@ -1,0 +1,89 @@
+title: Add Account
+type: jig.default
+icon: add
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/q3o_8MteFM0/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4MTk4OTU1&force=true&w=1080
+  
+actions:
+  - children:
+      - type: action.submit-form
+        options:
+          formId: add-account
+          title: Add Account
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/accounts
+          method: create
+          goBack: previous
+          onSuccess:
+            description: Account has been added
+            title: Success
+          
+          conversions:
+            - property: image
+              from: local-uri
+              to: base64
+          
+        
+children:
+  - type: component.form
+    instanceId: add-account
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Account Details
+            children:
+              - type: component.text-field
+                instanceId: name
+                options:
+                  label: Company Name
+              - type: component.text-field
+                instanceId: description
+                options:
+                  isMultiline: true
+                  label: Company Description
+                  textArea: dynamic
+          
+        - type: component.section
+          options:
+            title: Main Contact
+            children:
+              - type: component.avatar-field
+                instanceId: image
+                options:
+                  imageQuality: 25
+                  label: Contact Photo
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.text-field
+                      instanceId: contact-name
+                      options:
+                        label: Name
+                    - type: component.text-field
+                      instanceId: contact-title
+                      options:
+                        label: Title
+
+        - type: component.text-field
+          instanceId: contact-email
+          options:
+            label: Contact Email
+            keyboardType: email-address
+            textContentType: emailAddress
+          
+        - type: component.text-field
+          instanceId: contact-phone
+          options:
+            
+            label: Contact Phone
+            keyboardType: phone-pad
+            textContentType: telephoneNumber

@@ -1,0 +1,27 @@
+title: Items in Cart
+type: jig.list
+icon: contact
+
+data: =[@ctx.jig.inputs.items]
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.datasources.all-products[id = @ctx.current.item.id].name
+    subtitle: =@ctx.current.item.amount & ' items x $' & @ctx.datasources.all-products[id = @ctx.current.item.id].cost
+    leftElement:
+      element: avatar
+      text: ""
+      uri: =@ctx.datasources.all-products[id = @ctx.current.item.id].image
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: product-details
+        parameters:
+          product-id: =@ctx.current.item.id 
+    rightElement:
+      element: value
+      text:
+        format:
+          numberStyle: currency
+        text: =@ctx.current.item.amount * $number(@ctx.datasources.all-products[id = @ctx.current.item.id].cost)
+  

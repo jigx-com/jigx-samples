@@ -1,0 +1,25 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - default/accounts
+  query: |
+    SELECT 
+      id,
+      '$.name',
+      '$.description',
+      '$.contact-name',
+      '$.contact-title', 
+      '$.contact-email',
+      '$.contact-phone',
+      '$.image'
+    FROM 
+      [default/accounts]
+    ORDER BY
+      '$.name' ASC
+  jsonProperties:
+    - '$.image'
+  conversions:
+    - property: image
+      from: base64
+      to: local-uri

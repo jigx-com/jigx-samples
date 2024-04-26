@@ -1,0 +1,47 @@
+title: |
+  =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].name
+type: jig.default
+description: |
+  =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].description
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].image
+
+children:
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Brand
+            value: =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].brand
+        - type: component.entity-field
+          options:
+            label: SKU
+            value: =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].sku
+        - type: component.entity-field
+          options:
+            label: Qty Per Unit
+            value: =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].quantity
+        - type: component.entity-field
+          options:
+            label: Cost
+            value:
+              format:
+                numberStyle: currency
+              text: =@ctx.datasources.all-products[id = @ctx.jig.inputs.product-id].cost
+          
+        - type: component.entity-field
+          options:
+            label: Product Specifications
+            value: View
+            contentType: link
+            href: https://www.google.com

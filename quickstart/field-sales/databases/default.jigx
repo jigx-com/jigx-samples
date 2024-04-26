@@ -1,0 +1,7 @@
+# databaseId: default
+tables:
+  accounts:
+  orders:
+  products:
+  productstest: 
+  invoices:

@@ -1,0 +1,26 @@
+title: Account Details
+type: jig.default
+
+children:
+  - type: component.avatar
+    options:
+      align: center
+      size: large
+      title: ""
+      uri: =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].image
+    
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.entity-field
+          options:
+            label: Company
+            value: =@ctx.datasources.all-accounts[id = @ctx.jig.inputs.account-id].name
+        - type: component.entity-field
+          options:
+            label: Main Contact
+            value: |
+              =@ctx.datasources.all-accounts[id =
+              @ctx.jig.inputs.account-id].contact-name
+    

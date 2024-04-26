@@ -1,0 +1,56 @@
+title: Place Order
+type: jig.composite
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Place Order
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/orders
+          method: create
+          goBack: home
+          data:
+            order-account: =@ctx.jig.inputs.account-id
+            order-date: =$now()
+            order-items: =$string(@ctx.jig.inputs.items)
+            order-total: >
+              =$sum(@ctx.jig.inputs.items.(amount * $number(($val := id; 
+              @ctx.datasources.all-products[id=$val]).cost)))
+          onSuccess:
+            title: Success
+            description: Order has been placed
+            actions:
+              - type: action.go-to
+                options:
+                  title: View Account
+                  linkTo: account-overview
+                  parameters:
+                    account-id: =@ctx.jig.inputs.account-id
+
+children:
+  - jigId: order-account
+    isTitleHidden: true
+    inputs:
+      account-id: =@ctx.jig.inputs.account-id
+  - jigId: order-items
+    inputs:
+      items: =@ctx.jig.inputs.items
+
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: default
+      title: Cart
+      subtitle: >
+        =$sum(@ctx.jig.inputs.items.amount) & ' items = $' &
+        $sum(@ctx.jig.inputs.items.(amount * $number(($val := id;
+        @ctx.datasources.all-products[id=$val]).cost)))
+      
+      leftIcon:
+        element: icon
+        isContained: true
+        isDuotone: true
+        icon: shopping-cart-empty-1
+    
