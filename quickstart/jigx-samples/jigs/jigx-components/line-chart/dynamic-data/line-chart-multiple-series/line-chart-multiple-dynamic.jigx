@@ -1,42 +1,55 @@
+title: Multiple series with expressions
 type: jig.default
-title: Multiple series
+
+datasources:
+  staticinputs: 
+    type: datasource.static
+    options:
+      data:  
+        - id: 1
+          isFirstLabelHidden: true
+          isFirstTickHidden: true
+          min: 1000
+          tickAmount: 8
 
 children:
   - type: component.line-chart
     options:
       chart:
-        height: 200
+        height: 280
         isAnimated: true
-      yAxis:
-        min: 0
-        labels:
-          format:
-            numberStyle: currency
-            compactDisplay: short
-            notation: compact
-        tickAmount: 8
-        isFirstTickHidden: true
-        isFirstLabelHidden: true
+      legend:
+        isHidden: false
+      series:
+        - animation:
+            direction: left-to-right
+          data: =@ctx.datasources.series1-dynamic
+          dataLabels:
+            - isEnabled: true
+          layout: area-gradient
+          name: Year 2019
+        - animation:
+            direction: left-to-right
+          data: =@ctx.datasources.series2-dynamic
+          dataLabels:
+            - isEnabled: true
+          layout: area-gradient
+          name: Year 2020
       xAxis:
         categories:
           - Q1
           - Q2
           - Q3
           - Q4
-      series:
-        - data: =@ctx.datasources.series1-dynamic
-          name: Year 2019
-          animation:
-              direction: left-to-right
-          layout: area-gradient
-          dataLabels:
-            - isEnabled: true
-        - data: =@ctx.datasources.series2-dynamic
-          name: Xear 2020
-          animation:
-              direction: left-to-right
-          layout: area-gradient
-          dataLabels:
-            - isEnabled: true      
-      legend:
-        isHidden: false
+      yAxis:
+        isFirstLabelHidden: =@ctx.datasources.staticinputs.isFirstLabelHidden
+        isFirstTickHidden: =@ctx.datasources.staticinputs.isFirstTickHidden
+        labels:
+          format:
+            compactDisplay: short
+            notation: compact
+            numberStyle: currency
+        min: =@ctx.datasources.staticinputs.min
+        tickAmount: =@ctx.datasources.staticinputs.tickAmount
+        
+    

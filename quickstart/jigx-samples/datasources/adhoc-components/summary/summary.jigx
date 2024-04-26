@@ -11,7 +11,7 @@ options:
      icon: career
    - color: color3
      component: Bar-chart
-     componentLink: composite-bar-chart
+     componentLink: bar-chart-summary
      icon: graph-stats-square
    - color: color4
      component: Checkbox
@@ -66,36 +66,40 @@ options:
      componentLink: list-interactive-image-item
      icon: gallery
    - color: color2
-     component: Line-chart
-     componentLink: composite-line-chart
-     icon: graph-stats-square
+     component: Jig-header
+     componentLink: jig-header-summary
+     icon: image-file-add   
    - color: color3
+     component: Line-chart
+     componentLink: line-chart-summary
+     icon: graph-stats-square
+   - color: color4
      component: List
      componentLink: list-list
      icon: list
-   - color: color4
+   - color: color5
      component: List-item
      componentLink: list-list-item
      icon: list-add
-   - color: color5
+   - color: color6
      component: Location
      componentLink: list-location
      icon: location
-   - color: color6
+   - color: color7
      component: Media-field
      componentLink: media-field-example
      icon: attachment
-   - color: color7
+   - color: color8
      component: Number-field
      componentLink: number-field
      icon: pencil-2
-   - color: color8
+   - color: color9
      component: Pie-chart
      componentLink: composite-pie-chart
      icon: pie-line-graph
-   - color: color9
+   - color: color10
      component: Product-item
-     componentLink: product-item-example-dynamic
+     componentLink: product-item-summary
      icon: task-list
    - color: color3
      component: Progress-bar

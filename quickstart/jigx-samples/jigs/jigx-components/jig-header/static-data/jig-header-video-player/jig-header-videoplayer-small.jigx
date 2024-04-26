@@ -9,11 +9,10 @@ header:
     children:
       type: component.video-player
       options:
-        url: https://player.vimeo.com/external/510534971.sd.mp4?s=feaf03f65dc961bf98dcecbbbdcf21db84204536&profile_id=164&oauth2_token_id=57447761
+        url: https://cdn.pixabay.com/video/2023/10/01/183108-870151713_small.mp4
         title: video-player
         autoplay: true
     
-
 children:
   - type: component.entity
     options:

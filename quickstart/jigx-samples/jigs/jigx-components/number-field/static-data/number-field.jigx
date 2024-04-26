@@ -1,41 +1,54 @@
-title: Number
+title: Number-field
 type: jig.default
-
-actions:
-  - children:
-      - type: action.submit-form
-        options:
-          formId: number-form
-          provider: DATA_PROVIDER_DYNAMIC
-          title: Submit form
-          entity: default/form
-          method: save
-          goBack: previous
-          onSuccess: 
-            title: Number form
-            description: Your form was submitted
 
 header:
   type: component.jig-header
   options:
-    height: medium
+    height: small
     children:
       type: component.image
       options:
-        title: Number
         source:
-          uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
-        
+          uri: https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
 children:
   - type: component.form
-    instanceId: number-form
+    instanceId: NumberForm
     options:
-      children: 
+      children:
         - type: component.number-field
-          instanceId: number
+          instanceId: numberStepper
           options:
-            label: Number
+            label: Number with stepper
             stepper:
               isEnabled: true
               value: 1
-          
+        - type: component.number-field
+          instanceId: numberColor
+          options:
+            color:
+              - when: true
+                color: color5
+            label: Number with color
+        - type: component.number-field
+          instanceId: numberIcon
+          options:
+            icon: currency-dollar
+            label: Number with icon
+        - type: component.number-field
+          instanceId: numberIntValue
+          options:
+            initialValue: =$number(5 * 2)
+            label: Number with inital value from expression
+        - type: component.number-field
+          instanceId: numberSensitive
+          options:
+            isSensitive: true
+            label: sensitive Number
+        - type: component.number-field
+          instanceId: numberLimits
+          options:
+            helperText: Minimum of 5 and maximum of 10 allowed
+            minimum: 5
+            maximum: 10
+            label: Number with min, max and help text                        

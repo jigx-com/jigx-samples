@@ -1,40 +1,27 @@
 title: Multiple series dynamic
 type: jig.default
-
 children:
   - type: component.bar-chart
     options:
       chart:
         height: 250
-      yAxis:
-        max: 25
-      xAxis:
-        categories:
-          - 'Sample Data'
       series:
-        - data: =@ctx.datasources.series1-dynamic.data
-        - data: =@ctx.datasources.series2-dynamic.data
+        - data: =@ctx.datasources.series1.y
+        - data: =@ctx.datasources.series2.y
+      xAxis:
+        categories: 
+          - =@ctx.datasources.series1[0].x
+          - =@ctx.datasources.series1[1].x
+          - =@ctx.datasources.series1[2].x
+          - =@ctx.datasources.series1[3].x
+      yAxis: 
+        labels:
+          format:
+            compactDisplay: short
+            currency: USD
+            notation: compact
+            numberStyle: currency
+        min: =@ctx.datasources.series2[0].min
+        tickAmount: =@ctx.datasources.series2[0].tickAmount
+        max: =@ctx.datasources.series2[0].max 
     
-          
-widgets:
-  4x2:
-    type: widget.group
-    options:
-      children:
-        - type: widget.chart
-          options:
-            chart:
-              type: component.bar-chart
-              options:
-                chart:
-                  height: 150
-                yAxis:
-                  max: 25
-                xAxis:
-                  categories:
-                    - 'Sample Data'
-                series:
-                  - data: =@ctx.datasources.series1-dynamic.data
-                  - data: =@ctx.datasources.series2-dynamic.data
-        
-                

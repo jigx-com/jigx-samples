@@ -4,19 +4,14 @@ description: The first action will submit the form and the second action will re
 
 actions:
   - children:
-      - type: action.action-list
+      - type: action.submit-form
         options:
-          isSequential: true
           title: Submit form
-          actions:
-            - type: action.submit-form
-              options:
-                formId: simple-form
-                provider: DATA_PROVIDER_DYNAMIC
-                entity: default/employees
-                method: save
-            - type: action.go-back
-
+          formId: simple-form
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/employees
+          method: save
+          goBack: previous
 
 children:
   - type: component.form

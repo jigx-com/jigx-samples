@@ -4,12 +4,24 @@ options:
     - x: Q1/20
       y: 12000
       color: color3
+      min: 0
+      max: 127000
+      tickAmount: 6
     - x: Q2/20
       y: 48000
       color: color3
+      min: 0
+      max: 127000
+      tickAmount: 6
     - x: Q3/20
       y: 36000
+      min: 0
+      max: 127000
+      tickAmount: 6
       color: color3
     - x: Q4/20
       y: 120000
       color: color3
+      min: 0
+      max: 127000
+      tickAmount: 6 

@@ -1,38 +1,54 @@
-title: Text
+title: text-field
 type: jig.default
 
-actions:
-  - children:
-    - type: action.submit-form
-      options:
-        formId: text-form
-        provider: DATA_PROVIDER_DYNAMIC
-        title: Submit form
-        entity: default/form
-        method: save
-        goBack: previous
-        onSuccess: 
-          title: Text form
-          description: Your form was submitted
 header:
   type: component.jig-header
   options:
-    height: medium
+    height: small
     children:
       type: component.image
       options:
-        title: Text
         source:
-          uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
-        
+          uri: https://images.unsplash.com/photo-1592431913823-7af6b323da9b?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
 children:
   - type: component.form
-    instanceId: text-form
+    instanceId: newApplicant
     options:
-      children: 
+      children:
         - type: component.text-field
-          instanceId: firstname
+          instanceId: name
           options:
-            label: Name
-            minLength: 2
-            maxLength: 15
+            minLength: 5
+            maxLength: 30
+            helperText: Provide your name and surname
+            label: Full Name
+        - type: component.text-field
+          instanceId: address
+          options:
+            isRequired: false
+            autoCapitalize: characters
+            label: Zip/Postal code   
+        - type: component.text-field
+          instanceId: claimDetails
+          options:
+            isMultiline: true
+            textArea: medium
+            label: Provide details of the claim
+        - type: component.text-field
+          instanceId: claimOTP
+          options:
+            errorText: That is not a valid OTP number
+            isSensitive: true
+            label: Provide the claim One-Time-Password
+        - type: component.text-field
+          instanceId: claimStatus
+          options:
+            color:
+              - when: true
+                color: color6
+            style:
+              isDisabled: true
+            icon: check-2-alternate
+            label: Submission
+            value: Ready for submission

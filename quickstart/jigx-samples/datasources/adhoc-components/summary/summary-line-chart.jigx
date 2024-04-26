@@ -1,0 +1,20 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: analytics-mountain
+      typeLink: line-chart-financial
+      type: Line-chart with currency format
+    - color: color2
+      icon: analytics-graph-line-spline
+      typeLink: line-chart-multiple-series
+      type: Line-chart multiple series (lines)
+    - color: color4
+      icon: analytics-board-graph-line
+      typeLink: line-charts-plotBands
+      type: Line-chart with line-charts-plotBands
+    - color: color5
+      icon: analytics-graph 
+      typeLink: line-chart-multiple-dynamic
+      type: Line-chart using expressions
+    

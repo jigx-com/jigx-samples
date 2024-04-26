@@ -37,6 +37,7 @@ children:
           - from: 1800
             to: 2000
             color: color3  
-        min: 0
+        min: 1100
+        max: 2200
         tickAmount: 5
     

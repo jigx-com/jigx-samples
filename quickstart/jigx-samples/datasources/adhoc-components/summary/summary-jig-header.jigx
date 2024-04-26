@@ -1,0 +1,28 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: picture-double-landscape
+      typeLink: jig-header-image-small
+      type: Small header in jig
+    - color: color2
+      icon: picture-flower
+      typeLink: jig-header-image-medium
+      type: Medium header in jig
+    - color: color3
+      icon: video-collage
+      typeLink: jig-header-videoplayer-small
+      type: Jig header with video (small)
+    - color: color4
+      icon: video-call
+      typeLink: jig-header-videoplayer-medium
+      type: Jig header with video (medium) 
+    - color: color5
+      icon: maps
+      typeLink: jig-header-location-small
+      type: Jig header with location (small)
+    - color: color6
+      icon: maps-mark
+      typeLink: jig-header-location-medium
+      type: Jig header with location (medium)  
+    

@@ -1,0 +1,17 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: products-shopping-bags-double
+      typeLink: product-item-tags-dynamic
+      type: Product-item with tags
+    - color: color2
+      icon: products-give-purse
+      typeLink: product-item-example-dynamic
+      type: Product-item with onChange, amountControl, search
+    - color: color3
+      icon: cashless-payment-camera-product-scanning-cart
+      typeLink: product-item-summary-static
+      type: Product-item with summary
+    
+    

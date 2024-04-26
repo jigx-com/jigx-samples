@@ -12,7 +12,8 @@ children:
         height: 260
         isAnimated: false
       yAxis:
-        min: 0
+        min: 1200
+        max: 2200
         labels:
           format:
             numberStyle: currency

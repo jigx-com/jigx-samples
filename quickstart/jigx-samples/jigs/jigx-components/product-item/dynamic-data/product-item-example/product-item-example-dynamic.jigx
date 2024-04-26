@@ -1,4 +1,4 @@
-title: Product item
+title: Product item 
 type: jig.list
 
 datasources:
@@ -34,11 +34,12 @@ item:
       uri: =@ctx.current.item.uri
     discount: =@ctx.current.item.discount
     price:
-      value: =@ctx.current.item.price
+      value: 
+        =@ctx.component.state.amount = 0 ? @ctx.current.item.price :(@ctx.component.state.amount * $number(@ctx.current.item.price))
       format:
         numberStyle: currency
     amountControl:
-      value: =$number(@ctx.current.item.quantity)
+      initialValue: =$number(@ctx.current.item.quantity)
       maximum: 10
       onChange:
         type: action.execute-entity

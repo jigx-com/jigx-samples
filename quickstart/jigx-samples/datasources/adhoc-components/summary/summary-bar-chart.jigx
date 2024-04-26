@@ -1,0 +1,20 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: graph-stats-ascend
+      typeLink: bar-chart-finance-statistic
+      type: bar-chart with currency format
+    - color: color2
+      icon: chart
+      typeLink: bar-chart-multiple-series
+      type: Bar-chart multiple series
+    - color: color4
+      icon: staticstic-cross
+      typeLink: bar-charts-plotBands
+      type: Bar-chart with plotBands
+    - color: color5
+      icon: analytics-graph-bar 
+      typeLink: bar-chart-multiple-dynamic
+      type: bar-chart using expressions  
+    

@@ -34,4 +34,6 @@ children:
         - type: component.email-field
           instanceId: email
           options:
+            icon: email-action-at
+            initialValue: name@example.com
             label: Email
