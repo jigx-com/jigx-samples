@@ -120,7 +120,7 @@ item:
       element: value
       text:
         format:
-          maximumFractionDigits: 0
+          currency: USD
           numberStyle: currency
         text: >
           =$boolean(@ctx.current.item.orderTotal) ? @ctx.current.item.orderTotal
