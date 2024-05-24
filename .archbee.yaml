@@ -1,4 +1,4 @@
 # This will include all code files from your repo
 shadowDocs: 
   - "*"
-  
+root: quickstart 
