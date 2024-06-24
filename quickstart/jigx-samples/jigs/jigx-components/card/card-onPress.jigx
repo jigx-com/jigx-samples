@@ -9,7 +9,7 @@ children:
       onPress: 
         type: action.go-to
         options:
-          linkTo: product-item-summary
+          linkTo: product-item-tags-dynamic
       children:
         - type: component.image
           options:
