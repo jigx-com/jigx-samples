@@ -24,7 +24,7 @@ options:
     - color: color6
       icon: gesture-swipe-horizontal-right-1
       typeLink: carousel-pagination-contained
-      type: carousel-pagination-contained
+      type: Carousel with pagination contained
     - color: color7
       icon: gesture-swipe-horizontal-1
       typeLink: carousel-pagination-inside-outside
