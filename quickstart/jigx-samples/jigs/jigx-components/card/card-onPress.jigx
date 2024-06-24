@@ -1,0 +1,26 @@
+title: card with onPress
+type: jig.default
+
+children:
+  - type: component.card
+    instanceId: card1
+    options:
+      color: color9
+      onPress: 
+        type: action.go-to
+        options:
+          linkTo: product-item-summary
+      children:
+        - type: component.image
+          options:
+            source:
+              uri: https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: ''
+                  value: Shop now
+                  rightIcon: arrow-button-right-1
+                

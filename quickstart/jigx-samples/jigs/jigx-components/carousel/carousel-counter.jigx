@@ -1,0 +1,27 @@
+title: Carousel with counter
+type: jig.default
+
+outputs:
+  output-key: =@ctx.solution.state.servicesId
+    
+children:
+  - type: component.carousel
+    options:  
+      data: =@ctx.datasources.cleaning-services-dynamic
+      item: 
+        type: component.image
+        options:
+          source:
+            uri: =@ctx.current.item.image
+          title: =@ctx.current.item.service
+          onPress: 
+            type: action.set-state
+            options:
+              state: =@ctx.solution.state.servicesId
+              value: =@ctx.current.item.id
+      isContained: true
+      pagination:
+        isHidden: false
+      counter:
+        isHidden: true
+        

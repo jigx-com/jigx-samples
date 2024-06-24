@@ -23,7 +23,6 @@ options:
       '$.bodyPreview',    
       date('now', json_extract(json_extract(data, '$.start'), '$.dayOffset'),'localtime') || 'T' || json_extract(json_extract(data, '$.start'), '$.time') as startDT,
       strftime('%Y-%m-%dT%H:%M:%S', datetime(date('now', json_extract(json_extract(data, '$.start'), '$.dayOffset'),'localtime') || 'T' || json_extract(json_extract(data, '$.start'), '$.time'), '+1 hours')) as endDT,
-      '$.isAllDay',
       '$.attendees',
       '$.tags',
       '$.isOnline',

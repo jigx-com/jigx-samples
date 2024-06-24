@@ -1,0 +1,13 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: coding-apps-website-apps-add-widget
+      typeLink: widgets-component
+      type: Widget components
+    - color: color2
+      icon: coding-apps-website-apps-add-widget-alternate
+      typeLink: widgets-onpress
+      type: Widget with onPress
+     
+    

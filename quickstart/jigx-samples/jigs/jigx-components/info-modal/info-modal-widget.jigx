@@ -1,0 +1,74 @@
+title: Wellness Week
+type: jig.default
+       
+children: 
+  - type: component.image
+    options:
+      height: 300
+      resizeMode: cover
+      source:
+        uri: https://images.unsplash.com/photo-1524901548305-08eeddc35080?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FsbXxlbnwwfHwwfHx8MA%3D%3D
+ 
+  - type: component.widgets
+    options:
+      children:
+        - size: "1x1"
+          jigId: info-modal-placeholder
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                element: 
+                  type: icon
+                  icon: yoga
+                  color: warning
+                title: Wellness Week
+                buttonText: Join
+                description: Center your wellbeing and come join is for a week of yoga 
+              onConfirmed: 
+                type: action.go-to
+                options:
+                  linkTo: info-modal-placeholder
+        - size: "1x1"
+          jigId: info-modal-placeholder
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                element: 
+                  type: avatar
+                  text: JS
+                title: Venue
+                buttonText: Directions
+                description: Wellness week will take place at Jodi's studio in Western Avenue, Seattle
+              onConfirmed: 
+                type: action.go-to
+                options:
+                  linkTo: fullscreen-location-dd
+        - size: "1x1"
+          jigId: info-modal-placeholder
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                element: 
+                  type: image
+                  resizeMode: contain
+                  uri: https://images.unsplash.com/31/RpgvvtYAQeqAIs1knERU_vegetables.jpg?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                title: Healthy Products
+                buttonText: Shop
+                description: Enhance your lifestyle with our premium selection of healthy products, now available at our store 
+              onConfirmed: 
+                type: action.open-url
+                options:
+                  url: https://thrivemarket.com/?utm_source=google&utm_medium=cpc&utm_campaign=Non-Brand_SEM_Diet_Healthy&utm_content=151719993106&utm_term=healthy%20food&device=c&ccode=acq60fogwp&ccode_force=1&gad_source=1&gclid=Cj0KCQjwpNuyBhCuARIsANJqL9ODbLM28MMxGvxJ9gK9ohdecVeLkrldAriwFwYg91JDLUEBMfwvK74aAsv6EALw_wcB
+        - size: "1x1"
+          jigId: info-modal-placeholder
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                title: About us
+                buttonText: Go Back
+                description: At our wellness center, we are dedicated to nurturing your mind, body, and spirit through holistic and personalized care
+                        

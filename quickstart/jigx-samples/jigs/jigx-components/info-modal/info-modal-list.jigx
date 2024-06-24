@@ -1,0 +1,189 @@
+title: Info Modal -list
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      
+onRefresh: 
+  type: action.info-modal
+  options:
+    modal:
+      title: Refreshing
+      buttonText: Close
+      description: Refreshing the customer list
+      element: 
+        type: icon
+        icon: hourglass
+        color: warning
+        
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:        
+      - name: Belantti
+        subtitle: APAC
+        label-color: color4
+        avatar-text: B
+        avatar-uri: https://robohash.org/aloha
+        progress: 0.54
+        value: 115000
+        status: Progress
+        result: 
+        reason:  
+        badge: off             
+      - name: Ten Tulip
+        subtitle: APAC
+        highlight: false
+        label-color: color7
+        avatar-text: TT
+        avatar-uri: 
+        progress: 0.6
+        value: 107000
+        status: Progress  
+        result:  
+        reason: 
+        badge: off  
+      - name: Ellesti
+        subtitle: LATAM
+        label-color: color3
+        avatar-text: E
+        avatar-uri: https://robohash.org/jigx
+        progress: 1
+        value: 120000
+        status: Finished
+        result: Success
+        reason:   
+        badge: on
+      - name: Giga Stride
+        subtitle: North America
+        label-color: color8
+        avatar-text: GS
+        avatar-uri: 
+        progress: 0.21
+        value: 102500  
+        status: Progress   
+        result: 
+        reason:   
+        badge: off
+      - name: Foot Locker
+        subtitle: North America
+        label-color: color11
+        avatar-text: FL
+        avatar-uri: 
+        progress: 0.47
+        value: 42000
+        status: Finished   
+        result: Unsuccess
+        reason: Stopped Because Of High Price 
+        badge: off 
+      - name: Ovuga
+        subtitle: EMEA
+        label-color: color9
+        avatar-text: O
+        avatar-uri: 
+        progress: 0.45
+        value: 98000   
+        status: Progress  
+        result: 
+        reason:   
+        badge: off
+      - name: Boostgo
+        subtitle: North America
+        label-color: color10
+        avatar-text: B
+        avatar-uri: 
+        progress: 0.8
+        value: 56000   
+        status: Progress   
+        result: 
+        reason:   
+        badge: off
+      - name: Sonic Automotive
+        subtitle: EMEA
+        label-color: color13
+        avatar-text: SA
+        avatar-uri: 
+        progress: 0.22
+        value: 37000   
+        status: Progress
+        result: 
+        reason: 
+        badge: off
+      - name: Mega Mile
+        subtitle: EMEA
+        label-color: color5
+        avatar-text: MM
+        avatar-uri: https://robohash.org/Mega
+        progress: 0.78
+        value: 154000
+        status: Finished
+        result: Unsuccess  
+        reason: Stopped Because Of High Price
+        badge: on   
+      - name: Jacobs Engineering Group
+        subtitle: EMEA
+        label-color: color12
+        avatar-text: JE
+        avatar-uri: 
+        progress: 1
+        value: 38500
+        status: Finished 
+        result: Success  
+        reason:   
+        badge: off
+
+data: =@ctx.datasources.components
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.reason
+    color:
+      - when: =(@ctx.current.item.result= 'Success' ? true :false)
+        color: color2
+    progress: =@ctx.current.item.progress
+    leftElement: 
+      element: checkbox
+      value: =(@ctx.current.item.status= 'Finished' ? true :false)
+    style:
+      isError: =(@ctx.current.item.result= 'Unsuccess' ? true :false)
+      isStrikeThrough: =(@ctx.current.item.status= 'Finished' ? true :false)
+    rightElement: 
+      element: value      
+      text: ="$ " & @ctx.current.item.value
+    
+    swipeable:
+      left:
+        - label: Details
+          icon: people-man-8
+          color: primary
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                title: Customer Details
+                buttonText: Close
+                description: =(@ctx.current.item.name & '\n' & @ctx.current.item.subtitle & '\n' & '\n$' & @ctx.current.item.value)
+                element:
+                  type: avatar
+                  text: =@ctx.current.item.avatar-text
+                  
+actions:
+  - children:
+      - type: action.info-modal
+        options:
+          title: Sales information
+          icon: chart
+          modal:
+            title: Sales information 
+            description: Customer and sales information is subject to change frequently  
+            buttonText: Go back
+              

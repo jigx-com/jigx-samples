@@ -1,0 +1,93 @@
+title: Cards with color
+description: Card with color and multiple components
+type: jig.default  
+
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.avatar
+          options:
+            title: Customer
+            uri: =@ctx.datasources.users[3].uri
+            size: large
+            align: center
+        - type: component.expander
+          options:
+            header:
+              centerElement: 
+                type: component.titles
+                options:
+                  title: =@ctx.datasources.users[3].name
+                  subtitle: =@ctx.datasources.users[3].position
+            isInitiallyCollapsed: true
+            onContentPress: 
+              type: action.go-back
+        
+            children:
+                  - type: component.location
+                    options:
+                      address: =@ctx.datasources.users[3].address
+                      zoomLevel: 10                        
+      color: color3
+  - type: component.card
+    options:
+      children: 
+      - type: component.line-chart
+        options:
+          chart:
+            height: 150
+            isAnimated: true
+          yAxis:
+            min: 0
+            labels:
+              format:
+                numberStyle: currency
+                compactDisplay: short
+                notation: compact
+            tickAmount: 8
+            isFirstTickHidden: true
+            isFirstLabelHidden: true
+          xAxis:
+            categories:
+              - Q1
+              - Q2
+              - Q3
+              - Q4
+          series:
+            - data: =[{"x":"Q1/19", "y":25000, "color":"color2"}, {"x":"Q2/19", "y":32000, "color":"color2"}, {"x":"Q3/19", "y":45000, "color":"color2"}, {"x":"Q4/19", "y":86000, "color":"color2"}]
+              name: Year 2019
+              animation:
+                  direction: left-to-right
+              layout: area-gradient
+              dataLabels:
+                - isEnabled: true
+            - data: =[{"x":"Q1/20", "y":12000, "color":"color3"}, {"x":"Q2/20", "y":48000, "color":"color3"}, {"x":"Q3/20", "y":36000, "color":"color3"}, {"x":"Q4/20", "y":120000, "color":"color3"}]
+              name: Year 2020
+              animation:
+                  direction: left-to-right
+              layout: area-gradient
+              dataLabels:
+                - isEnabled: true      
+          legend:
+            isHidden: false
+      color: color14
+      
+  - type: component.card
+    options:
+      children:
+        - type: component.image
+          options:
+            height: 180
+            source:
+              uri: https://images.unsplash.com/photo-1504389557830-b293439b92d0?q=80&w=2580&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Location
+                  value: Cliff Edge Whistleton
+      color: color6
+  
+  

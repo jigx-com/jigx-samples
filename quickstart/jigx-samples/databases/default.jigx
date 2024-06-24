@@ -18,4 +18,5 @@ tables:
   products: null
   steps: null
   value: null
+  hikers: null
   

@@ -19,7 +19,6 @@ options:
     '$.bodyPreview',
     '$.importance',
     '$.sensitivity',
-    '$.isAllDay',
     '$.isCancelled',
     '$.isOrganizer',
     '$.showAs',

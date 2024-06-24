@@ -1,0 +1,36 @@
+title: info-modal with avatar
+description: Tap the button to view the info-modal
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Name
+            value: Jane Smith
+              
+actions:
+  - children:
+      - type: action.info-modal
+        options:
+          title: avatar
+          modal:
+            title: Avatar
+            buttonText: Close
+            description: This info-modal contains an avatar with avatar image and text
+            element: 
+              type: avatar
+              text: AV
+              uri: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80

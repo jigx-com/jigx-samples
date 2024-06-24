@@ -1,0 +1,14 @@
+type: jig.composite
+title: Cleaning Services
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.solution.state.servicesId
+
+children:
+  - jigId: carousel-counter
+  - jigId: service-details
+    instanceId: service_deets
+    inputs:
+      id: =@ctx.solution.state.servicesId

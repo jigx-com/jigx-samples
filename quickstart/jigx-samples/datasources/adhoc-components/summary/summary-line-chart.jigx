@@ -12,7 +12,7 @@ options:
     - color: color4
       icon: analytics-board-graph-line
       typeLink: line-charts-plotBands
-      type: Line-chart with line-charts-plotBands
+      type: Line-chart with plotBands
     - color: color5
       icon: analytics-graph 
       typeLink: line-chart-multiple-dynamic

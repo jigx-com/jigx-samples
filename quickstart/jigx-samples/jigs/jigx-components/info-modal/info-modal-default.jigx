@@ -1,0 +1,91 @@
+title: Info modal on a default jig
+type: jig.default
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.jig.components.default-form.state.data
+
+actions:
+  - children: 
+      - type: action.info-modal
+        options:
+          title: Submit
+          modal:
+            title: Verification
+            buttonText: Submit
+            description: Once you submit this form, your details are verifed with a third-party. A progress mail is sent within a week of submision.
+            element: 
+              type: icon
+              icon: double-exclamation-mark-1-formatting
+              color: warning
+          onConfirmed: 
+            type: action.execute-entity
+            options:
+              provider: DATA_PROVIDER_DYNAMIC
+              entity: default/employees
+              method: create
+              data:
+                employee-photo: =@ctx.components.employee-photo.state.value
+                employee-first-name: =@ctx.components.employee-first-name.state.value
+                employee-surname: =@ctx.components.employee-surname.state.value
+                employee-date-of-birth: =@ctx.components.employee-date-of-birth.state.value
+                employee-email: =@ctx.components.employee-email.state.value
+                employee-phone-number: =@ctx.components.employee-phone-number.state.value
+                employee-position: =@ctx.components.employee-position.state.value
+                employee-startWork: =@ctx.components.employee-startWork.state.value
+                employee-contract: =@ctx.components.employee-contract.state.value
+          
+children:
+  - type: component.form
+    instanceId: default-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.avatar-field
+          instanceId: employee-photo
+          options:
+            label: Photo
+        - type: component.section
+          options:
+            title: Personal informations
+            children:
+              - type: component.text-field
+                instanceId: employee-first-name
+                options:
+                  label: First name
+              - type: component.text-field
+                instanceId: employee-surname
+                options:
+                  label: Surname
+              - type: component.date-picker
+                instanceId: employee-date-of-birth
+                options:
+                  label: Date of birth
+              - type: component.email-field
+                instanceId: employee-email
+                options:
+                  label: Email
+                  icon: email
+              - type: component.number-field
+                instanceId: employee-phone-number
+                options:
+                  label: Phone number
+                  icon: phone
+        - type: component.section
+          options:
+            title: Business informations
+            children:
+              - type: component.text-field
+                instanceId: employee-position
+                options:
+                  label: Position
+              - type: component.date-picker
+                instanceId: employee-startWork
+                options:
+                  label: Date of starting work
+              - type: component.media-field
+                instanceId: employee-contract
+                options:
+                  label: Contract
+                  mediaType: any

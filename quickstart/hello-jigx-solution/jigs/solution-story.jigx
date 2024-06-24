@@ -32,5 +32,5 @@ stories:
           type: action.open-url
           options:
             title: Read More
-            url: https://docs.jigx.com/19Lm-stories
+            url: https://docs.jigx.com/stories
   

@@ -1,0 +1,36 @@
+title: info-modal with image
+description: Tap the button to view the info-modal
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1508615121316-fe792af62a63?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Holiday destination
+            value: Thailand
+              
+actions:
+  - children:
+      - type: action.info-modal
+        options:
+          title: Image
+          modal:
+            title: Thialand
+            buttonText: Close
+            description: Welcome to your holiday destination!
+            element: 
+              type: image
+              resizeMode: contain
+              uri: https://images.unsplash.com/photo-1502085671122-2d218cd434e6?q=80&w=1226&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D

@@ -1,0 +1,32 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: popup-cross
+      typeLink: info-modal-avatar
+      type: Info-modal with avatar
+    - color: color2
+      icon: window-closed-building
+      typeLink: info-modal-icon
+      type: Info-modal with an icon
+    - color: color3
+      icon: window-open-building
+      typeLink: info-modal-image
+      type: Info-modal with an image
+    - color: color4
+      icon: formstack-logo
+      typeLink: info-modal-calendar
+      type: Info-modal in a calendar jig 
+    - color: color5
+      icon: text-format-1-formatting
+      typeLink: info-modal-list
+      type: Info-modal in a list jig
+    - color: color6
+      icon: mobile-phone
+      typeLink: info-modal-default
+      type: Info-modal in a default jig 
+    - color: color7
+      icon: arrange-list-ascending
+      typeLink: info-modal-widget
+      type: Info-modal on widgets
+    

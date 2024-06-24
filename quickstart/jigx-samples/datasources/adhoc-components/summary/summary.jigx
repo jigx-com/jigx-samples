@@ -1,151 +1,164 @@
 type: datasource.static
 options:
   data:
-   - color: color1
-     component: Avatar
-     componentLink: composite-avatar
-     icon: multiple-neutral-2
-   - color: color2
-     component: Avatar-field
-     componentLink: avatar-field-example
-     icon: career
-   - color: color3
-     component: Bar-chart
-     componentLink: bar-chart-summary
-     icon: graph-stats-square
-   - color: color4
-     component: Checkbox
-     componentLink: composite-checkbox
-     icon: checkbox-checked
-   - color: color9
-     component: Countdown
-     componentLink: countdown-summary
-     icon: checkbox-checked  
-   - color: color5
-     component: Date-picker
-     componentLink: composite-date-picker
-     icon: calendar-3
-   - color: color6
-     component: Dropdown
-     componentLink: composite-dropdown
-     icon: checklist
-   - color: color7
-     component: Email-field
-     componentLink: email-field
-     icon: email
-   - color: color8
-     component: Entity-field
-     componentLink: list-entity-field
-     icon: navigation-menu-4
-   - color: color9
-     component: Entity
-     componentLink: list-entity
-     icon: navigation-menu-4
-   - color: color10
-     component: Event
-     componentLink: list-event
-     icon: calendar
-   - color: color11
-     component: Expander
-     componentLink: list-expander
-     icon: navigation-menu
-   - color: color12
-     component: Field-row
-     componentLink: list-field-row
-     icon: minus
-   - color: color13
-     component: Form
-     componentLink: list-form
-     icon: form
-   - color: color14
-     component: Image
-     componentLink: list-image
-     icon: camera
-   - color: color1
-     component: Interactive-image-item
-     componentLink: list-interactive-image-item
-     icon: gallery
-   - color: color2
-     component: Jig-header
-     componentLink: jig-header-summary
-     icon: image-file-add   
-   - color: color3
-     component: Line-chart
-     componentLink: line-chart-summary
-     icon: graph-stats-square
-   - color: color4
-     component: List
-     componentLink: list-list
-     icon: list
-   - color: color5
-     component: List-item
-     componentLink: list-list-item
-     icon: list-add
-   - color: color6
-     component: Location
-     componentLink: list-location
-     icon: location
-   - color: color7
-     component: Media-field
-     componentLink: media-field-example
-     icon: attachment
-   - color: color8
-     component: Number-field
-     componentLink: number-field
-     icon: pencil-2
-   - color: color9
-     component: Pie-chart
-     componentLink: composite-pie-chart
-     icon: pie-line-graph
-   - color: color10
-     component: Product-item
-     componentLink: product-item-summary
-     icon: task-list
-   - color: color3
-     component: Progress-bar
-     componentLink: progress-bar-summary 
-     icon: coding-apps-website-web-form-progress-2
-   - color: color10
-     component: Section
-     componentLink: list-section
-     icon: left-panel
-   - color: color11
-     component: Signature-field
-     componentLink: signature-field
-     icon: signature
-   - color: colo12
-     component: Stage
-     componentLink: composite-stage
-     icon: settings-slider
-   - color: color13
-     component: Step
-     componentLink: step-example
-     icon: task-list
-   - color: color14
-     component: Stepper
-     componentLink: stepper-example
-     icon: navigation-menu-horizontal
-   - color: color1
-     component: Summary
-     componentLink: list-summary
-     icon: navigation-menu-4
-   - color: color2
-     component: Text-field
-     componentLink: text-field
-     icon: minus
-   - color: color3
-     component: Titles
-     componentLink: expander
-     icon: document
-   - color: color4
-     component: Video-player
-     componentLink: list-video-player
-     icon: button-play
-   - color: color5
-     component: Web-view
-     componentLink: web-view-example
-     icon: earth-3
-   - color: color6
-     component: Widgets
-     componentLink: widgets-component
-     icon: layout-dashboard
+    - color: color1
+      component: Avatar
+      componentLink: composite-avatar
+      icon: multiple-neutral-2
+    - color: color2
+      component: Avatar-field
+      componentLink: avatar-field-example
+      icon: career
+    - color: color3
+      component: Bar-chart
+      componentLink: bar-chart-summary
+      icon: graph-stats-square
+    - color: color9
+      component: Card
+      componentLink: card-summary
+      icon: card-add-1   
+    - color: color4
+      component: Carousel
+      componentLink: carousel-summary
+      icon: carousel-horizontal 
+    - color: color5
+      component: Checkbox
+      componentLink: composite-checkbox
+      icon: checkbox-checked
+    - color: color6
+      component: Countdown
+      componentLink: countdown-summary
+      icon: checkbox-checked  
+    - color: color7
+      component: Date-picker
+      componentLink: composite-date-picker
+      icon: calendar-3
+    - color: color8
+      component: Dropdown
+      componentLink: composite-dropdown
+      icon: checklist
+    - color: color9
+      component: Email-field
+      componentLink: email-field
+      icon: email
+    - color: color10
+      component: Entity-field
+      componentLink: list-entity-field
+      icon: navigation-menu-4
+    - color: color11
+      component: Entity
+      componentLink: list-entity
+      icon: navigation-menu-4
+    - color: color12
+      component: Event
+      componentLink: list-event
+      icon: calendar
+    - color: color13
+      component: Expander
+      componentLink: list-expander
+      icon: navigation-menu
+    - color: color14
+      component: Field-row
+      componentLink: list-field-row
+      icon: minus
+    - color: color1
+      component: Form
+      componentLink: list-form
+      icon: form
+    - color: color2
+      component: Image
+      componentLink: list-image
+      icon: camera
+    - color: color3
+      component: Info-modal
+      componentLink: info-modal-summary
+      icon: camera  
+    - color: color4
+      component: Interactive-image-item
+      componentLink: list-interactive-image-item
+      icon: gallery
+    - color: color5
+      component: Jig-header
+      componentLink: jig-header-summary
+      icon: image-file-add  
+    - color: color6
+      component: Line-chart
+      componentLink: line-chart-summary
+      icon: graph-stats-square
+    - color: color7
+      component: List
+      componentLink: list-list
+      icon: list
+    - color: color8
+      component: List-item
+      componentLink: list-list-item
+      icon: list-add
+    - color: color9
+      component: Location
+      componentLink: list-location
+      icon: location
+    - color: color10
+      component: Media-field
+      componentLink: media-field-summary
+      icon: attachment
+    - color: color11
+      component: Number-field
+      componentLink: number-field
+      icon: pencil-2
+    - color: color12
+      component: Pie-chart
+      componentLink: composite-pie-chart
+      icon: pie-line-graph
+    - color: color13
+      component: Product-item
+      componentLink: product-item-summary
+      icon: task-list
+    - color: color14
+      component: Progress-bar
+      componentLink: progress-bar-summary 
+      icon: coding-apps-website-web-form-progress-2
+    - color: color1
+      component: Section
+      componentLink: list-section
+      icon: left-panel
+    - color: color2
+      component: Signature-field
+      componentLink: signature-field
+      icon: signature
+    - color: color3
+      component: Stage
+      componentLink: composite-stage
+      icon: settings-slider
+    - color: color4
+      component: Step
+      componentLink: step-example
+      icon: task-list
+    - color: color5
+      component: Stepper
+      componentLink: stepper-example
+      icon: navigation-menu-horizontal
+    - color: color6
+      component: Summary
+      componentLink: list-summary
+      icon: navigation-menu-4
+    - color: color7
+      component: Text-field
+      componentLink: text-field
+      icon: minus
+    - color: color8
+      component: Titles
+      componentLink: expander
+      icon: document
+    - color: color9
+      component: Video-player
+      componentLink: list-video-player
+      icon: button-play
+    - color: color10
+      component: Web-view
+      componentLink: web-view-example
+      icon: earth-11
+    - color: color6
+      component: Widgets
+      componentLink: widget-summary
+      icon: layout-dashboard
+

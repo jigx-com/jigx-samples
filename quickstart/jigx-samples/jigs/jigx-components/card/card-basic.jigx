@@ -1,0 +1,61 @@
+
+title: Form in a card
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1682685797736-dabb341dc7de?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.form
+          instanceId: hikerInfo-dd
+          options:
+            isDiscardChangesAlertEnabled: false
+            children:
+              - type: component.text-field
+                instanceId: name
+                options:
+                  label: Hiker's name
+              - type: component.text-field
+                instanceId: contact
+                options:
+                  label: Mobile number
+              - type: component.media-field
+                instanceId: photo
+                options:
+                  imageQuality: 80
+                  imageCropping: 
+                    width: 64
+                    height: 64
+                  label: Profile photo
+                  mediaType: image
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Create Record
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/hikers
+          method: create
+          goBack: previous
+          data:
+            name: =@ctx.components.name.state.value
+            contact: =@ctx.components.contact.state.value
+            photo: =@ctx.components.photo.state.value
+            
+
+         
+                              
+                 
+                  
+

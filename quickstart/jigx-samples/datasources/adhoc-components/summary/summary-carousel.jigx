@@ -1,0 +1,32 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: carousel-horizontal
+      typeLink: carousel-image
+      type: Carousel with images
+    - color: color2
+      icon: app-window-code
+      typeLink: carousel-card
+      type: Carousel with a card
+    - color: color3
+      icon: bullet-list-sub-category-formatting
+      typeLink: carousel-card-avatar
+      type: Carousel with card, avatar & Entity-field
+    - color: color4
+      icon: gesture-swipe-horizontal
+      typeLink: carousel-contained
+      type: Carousel and pagination contained
+    - color: color5
+      icon: gesture-swipe-horizontal-1-1
+      typeLink: carousel-composite
+      type: Carousel with counter in a composite jig
+    - color: color6
+      icon: gesture-swipe-horizontal-right-1
+      typeLink: carousel-pagination-contained
+      type: carousel-pagination-contained
+    - color: color7
+      icon: gesture-swipe-horizontal-1
+      typeLink: carousel-pagination-inside-outside
+      type: Carousel with inside and outside pagination
+    

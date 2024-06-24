@@ -1,0 +1,51 @@
+title: Widget with onPress
+type: jig.default
+
+children:
+  - type: component.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1622737133809-d95047b9e673?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+  - type: component.widgets
+    options:
+      children:
+        - jigId: widgets-location
+          size: "1x1"
+          onPress: 
+            type: action.open-url
+            options:
+              url: https://www.google.com/maps
+        - size: 1x1
+          jigId: widgets-my-work
+          onPress: 
+            type: action.open-url
+            options:
+              url: https://jigx.com/
+        - size: "1x1"
+          jigId: info-modal-placeholder
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                element: 
+                  type: icon
+                  icon: yoga
+                  color: warning
+                title: Wellness Week
+                buttonText: Join
+                description: Center your wellbeing and come join is for a week of yoga 
+              onConfirmed: 
+                type: action.go-to
+                options:
+                  linkTo: info-modal-placeholder  
+        - size: "1x1"
+          jigId: open-scanner-onSuccess
+          onPress: 
+            type: action.open-scanner
+            instanceId: scanner
+            options:
+              modal:
+                title: Scan complete
+              onSuccess: 
+                type: action.go-back

@@ -4,7 +4,7 @@ options:
     - color: color1
       icon: graph-stats-ascend
       typeLink: bar-chart-finance-statistic
-      type: bar-chart with currency format
+      type: Bar-chart with currency format
     - color: color2
       icon: chart
       typeLink: bar-chart-multiple-series
@@ -16,5 +16,5 @@ options:
     - color: color5
       icon: analytics-graph-bar 
       typeLink: bar-chart-multiple-dynamic
-      type: bar-chart using expressions  
+      type: Bar-chart using expressions  
     

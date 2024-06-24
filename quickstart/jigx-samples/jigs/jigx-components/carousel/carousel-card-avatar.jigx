@@ -1,0 +1,40 @@
+title: Carousel with avatars
+type: jig.default
+
+children:
+  - type: component.carousel
+    options:
+      data: =@ctx.datasources.users
+      item: 
+        type: component.card
+        options:
+          children:
+            - type: component.avatar
+              options:
+                title: =@ctx.current.item.name
+                uri: =@ctx.current.item.uri
+                size: large
+                align: center
+            - type: component.entity
+              options:
+                children:
+                  - type: component.field-row
+                    options:
+                      children:
+                        - type: component.entity-field
+                          options:
+                            label: Name
+                            value: =@ctx.current.item.name
+                        - type: component.entity-field
+                          options:
+                            label: Position
+                            value: =@ctx.current.item.position
+                        - type: component.entity-field
+                          options:
+                            label: Status
+                            value: =@ctx.current.item.status                       
+          color: color3
+      isContained: true
+      pagination:
+        position: outside
+        isContained: true

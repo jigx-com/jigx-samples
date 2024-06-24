@@ -2,6 +2,7 @@ icons:
   - alarm-bell # auto-generated
   - alert-circle # auto-generated
   - alert-triangle # auto-generated
+  - arrow-button-right-1 # auto-generated
   - arrow-right-1 # auto-generated
   - binocular # auto-generated
   - calendar # auto-generated
@@ -16,6 +17,7 @@ icons:
   - currency-dollar # auto-generated
   - delivery-truck-5 # auto-generated
   - document # auto-generated
+  - double-exclamation-mark-1-formatting # auto-generated
   - email # auto-generated
   - email-action-at # auto-generated
   - fitness-weights # auto-generated
@@ -30,6 +32,7 @@ icons:
   - house # auto-generated
   - house-2-alternate # auto-generated
   - house-signal # auto-generated
+  - image-document-jpg # auto-generated
   - jigx-solid # auto-generated
   - layout-dashboard-1 # auto-generated
   - list # auto-generated
@@ -41,6 +44,7 @@ icons:
   - notification # auto-generated
   - pencil-2 # auto-generated
   - pencil-write # auto-generated
+  - people-man-8 # auto-generated
   - person # auto-generated
   - phone # auto-generated
   - pin-location # auto-generated
@@ -54,4 +58,5 @@ icons:
   - time-clock-circle # auto-generated
   - workout # auto-generated
   - world # auto-generated
+  - yoga # auto-generated
   - zoom-in # auto-generated

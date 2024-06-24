@@ -1,0 +1,80 @@
+title: Carousel with pagination (contained)
+type: jig.default
+
+datasources:
+  models:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Model A
+          price: $ 48000  
+          image: https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2566&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        - id: 2
+          name: Model B
+          price: $ 30000  
+          image: https://images.unsplash.com/photo-1555353540-64580b51c258?q=80&w=2556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        - id: 3
+          name: Model c
+          price: $ 27000   
+          image: https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        - id: 4
+          name: Model D
+          price: $ 15000  
+          image: https://images.unsplash.com/photo-1522932467653-e48f79727abf?q=80&w=2630&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D    
+
+children:
+  - type: component.section
+    options:
+      title: Carousel with pagination contained (inside)
+      children:
+        - type: component.carousel
+          options:
+            data: =@ctx.datasources.models
+            item: 
+              type: component.image
+              options:
+                title: New Models
+                subtitle: Power and luxury   
+                source:
+                  uri: =@ctx.current.item.image
+            isContained: false
+            pagination:
+              isContained: true
+              isHidden: false
+              position: inside
+                  
+  - type: component.section
+    options:
+      title: Carousel with pagination contained (outside)
+      children:
+       - type: component.carousel
+         options:
+           data: =@ctx.datasources.models
+           item: 
+             type: component.card
+             options:
+               children:
+                - type: component.image
+                  options:
+                    title: New Models
+                    subtitle: Power and luxury
+                    onPress: 
+                      type: action.info-modal
+                      options:
+                        modal:
+                          title: Today's luxury 
+                          buttonText: Book a test drive
+                          element: 
+                            type: image
+                            uri: =@ctx.current.item.image  
+                    source:
+                      uri: =@ctx.current.item.image     
+           pagination:
+                isContained: true
+                isHidden: false
+                position: outside
+              
+       
+              
+              

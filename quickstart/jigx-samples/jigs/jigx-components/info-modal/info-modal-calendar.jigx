@@ -1,0 +1,76 @@
+title: Info Modal in a Calendar
+type: jig.calendar
+
+onFocus: 
+  type: action.info-modal
+  options:
+    modal:
+      element: 
+        type: image
+        uri: https://i.ytimg.com/vi/aU5emeJgi88/maxresdefault.jpg
+      title: Global team calendar
+      buttonText: View 
+    
+onRefresh: 
+  type: action.info-modal
+  options:
+    modal:
+      title: Calendar is refreshing
+      buttonText: Close   
+      
+actions:
+  - children:
+      - type: action.info-modal
+        options:
+          title: Events Warning
+          modal:
+            title: Events listed here are subject to change
+            description: Events listed here rely on the input from others and may not have been updated reliably. We are notto be held liable for any changes or inconvenience caused.  
+            buttonText: OK
+            element: 
+              type: icon
+              icon: calendar
+              color: negative
+            
+datasources:
+  story:
+    type: datasource.static
+    options:
+      data:
+        - description: Updated the team on your progress for the week
+          from: =$fromMillis($toMillis($now()) + 3600000)
+          location: Main Boardroom
+          title: Team weekly sync
+          to: =$fromMillis($toMillis($now()) + 3600000 + 1800000)
+          active: false
+        - description: Updated the team on your progress for the week
+          from: $fromMillis($toMillis($now()) + 7200000)
+          location: break area
+          title: Social meal
+          to: $fromMillis($toMillis($now()) + 7200000 + 3600000)
+          active: false
+    
+data: =@ctx.datasources.story
+item:
+  type: component.event
+  options:
+    title: =@ctx.current.item.title
+    description: =@ctx.current.item.description
+    from: =@ctx.current.item.from
+    to: =@ctx.current.item.to
+    onPress: 
+      type: action.info-modal
+      options:
+          modal:
+            title: Events and times can change 
+            description: Events listed here rely on the input from others and may not have been updated reliably.   
+            buttonText: OK
+            element: 
+              type: avatar
+              text: CD
+              uri: https://cdn1.iconfinder.com/data/icons/managers-15/488/Untitled-5-512.png
+
+  
+
+
+  

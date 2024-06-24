@@ -1,0 +1,45 @@
+type: datasource.static
+options:
+  data:
+    - name: Boris Miranda
+      position: UX Designer
+      uri: https://randomuser.me/api/portraits/men/32.jpg
+      uri-text: BM
+      status: Accepted
+      address: 204 Governor Printz Blvd, Claymont, DE 19703, United States
+      
+    - name: Santiago Hampton
+      position: Senior Frontend Developer
+      uri: https://randomuser.me/api/portraits/men/46.jpg
+      uri-text: SH
+      status: Accepted
+      address: 1035 Cambridge St, Cambridge, MA 02141
+        
+    - name: Tom Sellers
+      position: QA Engineer
+      uri: https://randomuser.me/api/portraits/men/97.jpg
+      uri-text: TS
+      status: Declined
+      address: 141 Harbor Dr Claymont, Delaware(DE), 19703
+        
+    - name: Anne Dopp
+      position: HR Administrator
+      uri: https://randomuser.me/api/portraits/women/79.jpg
+      uri-text: AD
+      status: Accepted
+      address: 8400 Governor Printz Blvd, Claymont, DE 19703, United States
+        
+    - name: Zuzana Moudra
+      position: HR Business Partner
+      uri: https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=046c29138c1335ef8edee7daf521ba50
+      uri-text: ZM
+      status: Accepted
+      address: 800 Skipjack Ln, Claymont, DE 19703, United States
+      
+    - name: Jane Stevens 
+      position: HR Generalist
+      uri: https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ
+      uri-text: JS
+      status: Declined
+      address: 399-301 Chapel Ave, Claymont, DE 19703, USA
+            

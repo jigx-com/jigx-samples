@@ -1,0 +1,36 @@
+title: info-modal with icon
+description: Tap the button to view the info-modal
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1619468129361-605ebea04b44?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Address
+            value: 24 West Street, Houston, Texas
+              
+actions:
+  - children:
+      - type: action.info-modal
+        options:
+          title: icon
+          modal:
+            title: Location
+            buttonText: Close
+            description: This info-modal contains a location icon with color
+            element: 
+              type: icon
+              icon: maps-pin
+              color: primary

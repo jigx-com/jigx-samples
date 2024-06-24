@@ -1,0 +1,30 @@
+title: Carousel with card
+type: jig.default
+
+children:
+  - type: component.carousel
+    options:
+      data: =@ctx.datasources.products-dynamic
+      item: 
+        type: component.card
+        options:
+          children:
+            - type: component.image
+              options:
+                source:
+                  uri: =@ctx.current.item.uri 
+            - type: component.entity
+              options:
+                children:
+                  - type: component.entity-field
+                    options:
+                      label: Product
+                      value: =@ctx.current.item.title 
+          color: color1
+      isContained: true
+      pagination:
+        isContained: false
+        isHidden: false
+        position: outside
+      counter:
+        isHidden: true

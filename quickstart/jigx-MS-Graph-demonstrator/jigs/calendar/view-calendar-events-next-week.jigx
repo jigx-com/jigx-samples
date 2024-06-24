@@ -50,7 +50,6 @@ datasources:
         '$.bodyPreview',
         '$.importance',
         '$.sensitivity',
-        '$.isAllDay',
         '$.isCancelled',
         '$.isOrganizer',
         '$.showAs',
@@ -82,7 +81,6 @@ item:
     title: =@ctx.current.item.subject
     location: "='Importance: ' & @ctx.current.item.importance"
     description: =@ctx.current.item.bodyPreview
-    isAllDay: =@ctx.current.item.isAllDay
     people: "=@ctx.current.item.attendees.{'fullName': emailAddress.address, 'email': emailAddress.address}"
     buttonTitle: View Event Details
     onPress: 

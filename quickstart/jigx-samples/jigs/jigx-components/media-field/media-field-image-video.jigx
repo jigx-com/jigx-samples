@@ -1,0 +1,51 @@
+title: Media field image or video upload
+type: jig.default
+icon: image-document-jpg
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+children:
+  - type: component.form
+    instanceId: media-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: media
+          options:
+            label: Share your experience with us
+        - type: component.date-picker
+          instanceId: date-visted
+          options:
+            label: Date visited
+        - type: component.media-field
+          instanceId: media-mixed
+          options:
+            mediaType: imageAndVideo
+            label: Upload your videos and images
+            isMultiple: true
+
+actions:
+  - children:
+  # Media field requires an action to be uploaded. 
+  # For this example we upload to the local data provider, 
+      - type: action.execute-entity
+        options:
+          title: Upload
+          provider: DATA_PROVIDER_LOCAL # you can use other data stores, e.g. REST data provider
+          entity: products
+          method: create
+          goBack: previous
+          data:
+            image: =@ctx.components.media-mixed.state.value.state.value
+            createdby: =@ctx.user.displayName
+            createDate: =$now()
+        
