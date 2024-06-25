@@ -21,7 +21,7 @@ children:
               value: =@ctx.current.item.id
       isContained: true
       pagination:
-        isHidden: false
-      counter:
         isHidden: true
+      counter:
+        isHidden: false
         
