@@ -23,7 +23,7 @@ children:
             options:
               url: https://jigx.com/
         - size: "1x1"
-          jigId: info-modal-placeholder
+          jigId: info-modal-placeholder-join
           onPress: 
             type: action.info-modal
             options:

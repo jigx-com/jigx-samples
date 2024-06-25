@@ -1,6 +1,6 @@
-title: Avatar
+title: Shop
 type: jig.default
-icon: avatar-man-1-geometric
+icon: shop-1
 
 header:
   type: component.jig-header

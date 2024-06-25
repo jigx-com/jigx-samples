@@ -13,7 +13,7 @@ children:
     options:
       children:
         - size: "1x1"
-          jigId: info-modal-placeholder
+          jigId: info-modal-placeholder-join
           onPress: 
             type: action.info-modal
             options:
@@ -28,7 +28,7 @@ children:
               onConfirmed: 
                 type: action.go-to
                 options:
-                  linkTo: info-modal-placeholder
+                  linkTo: info-modal-placeholder-join
         - size: "1x1"
           jigId: info-modal-placeholder
           onPress: 
@@ -46,7 +46,7 @@ children:
                 options:
                   linkTo: fullscreen-location-dd
         - size: "1x1"
-          jigId: info-modal-placeholder
+          jigId: info-modal-placeholder-shop
           onPress: 
             type: action.info-modal
             options:
@@ -63,7 +63,7 @@ children:
                 options:
                   url: https://thrivemarket.com/?utm_source=google&utm_medium=cpc&utm_campaign=Non-Brand_SEM_Diet_Healthy&utm_content=151719993106&utm_term=healthy%20food&device=c&ccode=acq60fogwp&ccode_force=1&gad_source=1&gclid=Cj0KCQjwpNuyBhCuARIsANJqL9ODbLM28MMxGvxJ9gK9ohdecVeLkrldAriwFwYg91JDLUEBMfwvK74aAsv6EALw_wcB
         - size: "1x1"
-          jigId: info-modal-placeholder
+          jigId: info-modal-placeholder-contact
           onPress: 
             type: action.info-modal
             options:

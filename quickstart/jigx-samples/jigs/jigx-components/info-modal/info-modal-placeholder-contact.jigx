@@ -1,6 +1,6 @@
-title: Avatar
+title: Details
 type: jig.default
-icon: avatar-man-1-geometric
+icon: content-browser-edit
 
 header:
   type: component.jig-header
