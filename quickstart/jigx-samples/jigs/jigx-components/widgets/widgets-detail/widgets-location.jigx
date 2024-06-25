@@ -1,5 +1,6 @@
 title: My places
 type: jig.default
+icon: home-apps-logo
 
 header:
   type: component.jig-header

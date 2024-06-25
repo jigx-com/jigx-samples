@@ -1,5 +1,6 @@
-title: Open-scanner onSucces
+title: Open-scanner onSuccess
 type: jig.default
+icon: scanner
 
 actions:
   - children:
