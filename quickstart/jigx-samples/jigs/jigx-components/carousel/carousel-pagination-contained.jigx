@@ -33,9 +33,7 @@ children:
             data: =@ctx.datasources.models
             item: 
               type: component.image
-              options:
-                title: New Models
-                subtitle: Power and luxury   
+              options: 
                 source:
                   uri: =@ctx.current.item.image
             isContained: false
