@@ -156,7 +156,7 @@ options:
     - color: color10
       component: Web-view
       componentLink: web-view-example
-      icon: earth-11
+      icon: earth-3
     - color: color6
       component: Widgets
       componentLink: widget-summary
