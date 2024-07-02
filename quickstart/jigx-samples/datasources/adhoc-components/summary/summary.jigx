@@ -129,10 +129,6 @@ options:
       component: Stage
       componentLink: composite-stage
       icon: settings-slider
-    - color: color4
-      component: Step
-      componentLink: step-example
-      icon: task-list
     - color: color5
       component: Stepper
       componentLink: stepper-example
