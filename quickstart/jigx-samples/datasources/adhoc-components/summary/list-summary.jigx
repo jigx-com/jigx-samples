@@ -12,11 +12,11 @@ options:
       title: Summary - cart (Expander)
     - color: color4
       link: summary-cart-action
-      title: Summary - counter with action  
+      title: Summary - cart with action  
     - color: color5
       link: summary-counter
       title: Summary - counter (Product-item)
     - color: color6
-      link: summary-cart-expander
+      link: summary-counter-expander
       title: Summary - counter (Expander)
 
