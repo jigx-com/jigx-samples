@@ -69,10 +69,6 @@ options:
       component: Image
       componentLink: list-image
       icon: camera
-    - color: color3
-      component: Info-modal
-      componentLink: info-modal-summary
-      icon: camera  
     - color: color4
       component: Interactive-image-item
       componentLink: list-interactive-image-item
