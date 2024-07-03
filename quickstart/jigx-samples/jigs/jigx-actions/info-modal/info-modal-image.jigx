@@ -27,7 +27,7 @@ actions:
         options:
           title: Image
           modal:
-            title: Thialand
+            title: Thailand
             buttonText: Close
             description: Welcome to your holiday destination!
             element: 
