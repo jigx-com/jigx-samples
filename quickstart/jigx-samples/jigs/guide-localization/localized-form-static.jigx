@@ -1,7 +1,7 @@
 title: 
   id: title
   defaultMessage: New employee form 
-description: To view this jig in other languages, change your devices language settings to either German, French, Chez or Afrikaans 
+description: To view this jig in other languages, change your devices language settings to either German, French, or Czech  
 type: jig.default
 icon: form
 
