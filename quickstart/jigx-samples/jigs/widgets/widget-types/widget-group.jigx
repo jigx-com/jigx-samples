@@ -1,0 +1,32 @@
+title: Widgets groups
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children: 
+
+        - size: "4x2"
+          jigId: combined-chart-list-1_4x2  
+          
+        - size: "4x4"
+          jigId: combined-avatar-list-1_4x4   
+          
+        - size: "4x2"
+          jigId: combined-image-image-1_4x2  
+
+        - size: "4x2"
+          jigId: combined-chart-chart-1_4x2
+          
+        - size: "4x2"
+          jigId: combined-value-list-1_4x2
+          
+        - size: "4x2"
+          jigId: combined-avatar-list-1_4x2    
+
+        - size: "4x2"
+          jigId: combined-avatar-list-2_4x2 
+
+        - size: "2x4"
+          jigId: combined-status-list-1_2x4   
+        

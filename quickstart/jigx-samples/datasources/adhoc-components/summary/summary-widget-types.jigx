@@ -1,0 +1,39 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: power-button-1
+      type: Action widgets
+      typeLink: widget-action
+    - color: color2
+      icon: social-profile-avatar
+      type: Avatar widgets
+      typeLink: widget-avatar
+    - color: color3
+      icon: chart
+      type: Chart widgets
+      typeLink: widget-charts
+    - color: color4
+      icon: coding-apps-website-apps-add-widget
+      type: Widget group
+      typeLink: widget-group
+    - color: color5
+      icon: image-file-add
+      type: Image widgets
+      typeLink: widget-image
+    - color: color6
+      icon: list
+      type: List widgets
+      typeLink: widget-list    
+    - color: color7
+      icon: location
+      type: Location widgets
+      typeLink: widget-location  
+    - color: color8
+      icon: graph-stats-square
+      type: Status widgets
+      typeLink: widget-status 
+    - color: color9
+      icon: arrange-number-descending
+      type: Value widgets
+      typeLink: widget-value  

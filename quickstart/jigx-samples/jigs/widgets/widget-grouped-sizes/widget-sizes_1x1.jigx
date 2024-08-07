@@ -1,0 +1,18 @@
+title: Widget sizes 1x1
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "1x1"
+          jigId: onpress_4x2    
+          onPress: 
+            type: action.info-modal
+            options:
+              modal:
+                title: Welcome to Jigx
+                buttonText: Close
+                element: 
+                  type: image
+                  uri: https://archbee-image-uploads.s3.amazonaws.com/x7vdIDH6-ScTprfmi2XXX/nuSx_84sbGbtJlBxRWI5G_landingpage-s.gif?format=webp&width=1280

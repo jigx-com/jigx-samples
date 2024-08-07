@@ -1,0 +1,29 @@
+title: All Widgets
+type: jig.default
+icon: coding-apps-website-apps-add-widget
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "4x2"
+          jigId: jigx-widgets
+        - size: "2x4"
+          jigId: widget-sizes
+        - size: "2x4"
+          jigId: widget-type
+        
+widgets:
+  "2x2": 
+   type: widget.status
+   options:
+    statuses:
+      - when: true
+        icon: coding-apps-website-apps-add-widget
+        bottom:
+          type: component.titles
+          options:
+            subtitle: See widgets in action
+            align: center
+        
+        

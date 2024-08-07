@@ -1,33 +1,43 @@
 icons:
   - actions-authentication-squares # auto-generated
   - alarm-bell # auto-generated
+  - alarm-bell-1 # auto-generated
+  - alert # auto-generated
   - alert-circle # auto-generated
   - alert-triangle # auto-generated
+  - ambulance-helicopter # auto-generated
+  - apple # auto-generated
   - arrow-button-right-1 # auto-generated
   - arrow-right-1 # auto-generated
   - avatar-man-1-geometric # auto-generated
+  - battery-charge # auto-generated
   - binocular # auto-generated
   - calendar # auto-generated
   - career # auto-generated
   - chart # auto-generated
+  - check-1 # auto-generated
   - check-2-alternate # auto-generated
   - check-circle-1 # auto-generated
   - checklist # auto-generated
+  - coding-apps-website-apps-add-widget # auto-generated
   - cog # auto-generated
   - color-painting-palette # auto-generated
   - contact # auto-generated
   - content-browser-edit # auto-generated
   - conversation-chat-2 # auto-generated
   - currency-dollar # auto-generated
+  - database-2 # auto-generated
   - delivery-truck-5 # auto-generated
   - document # auto-generated
   - double-exclamation-mark-1-formatting # auto-generated
   - email # auto-generated
   - email-action-at # auto-generated
+  - finger-touch # auto-generated
   - fitness-weights # auto-generated
   - flying-insect-fly # auto-generated
   - footwear-boots # auto-generated
   - form # auto-generated
+  - gauge-dashboard # auto-generated
   - google # auto-generated
   - graph-stats-square-alternate # auto-generated
   - hat # auto-generated
@@ -39,14 +49,22 @@ icons:
   - house-signal # auto-generated
   - image-document-jpg # auto-generated
   - jigx-solid # auto-generated
+  - landmark-colosseum-1 # auto-generated
+  - landmark-eiffel-tower # auto-generated
+  - landmark-london-eye-1 # auto-generated
+  - landmark-mountain # auto-generated
   - language-class-abc # auto-generated
   - layout-corners-dashboard-1 # auto-generated
   - layout-dashboard-1 # auto-generated
   - list # auto-generated
   - lock-unlock-4 # auto-generated
+  - login-keys # auto-generated
   - maps-pin # auto-generated
+  - mobile-phone-1 # auto-generated
+  - multiple-neutral-2 # auto-generated
   - navigation-menu-4 # auto-generated
   - news # auto-generated
+  - no-cloud # auto-generated
   - notes-paper-approve # auto-generated
   - notification # auto-generated
   - pencil-2 # auto-generated
@@ -54,11 +72,17 @@ icons:
   - people-man-8 # auto-generated
   - person # auto-generated
   - phone # auto-generated
+  - pin # auto-generated
   - pin-location # auto-generated
   - plane-1 # auto-generated
+  - play # auto-generated
+  - question-circle # auto-generated
+  - remove-circle # auto-generated
+  - robot # auto-generated
   - scanner # auto-generated
   - shop-1 # auto-generated
   - shopping-cart-empty-1 # auto-generated
+  - space-rocket-flying # auto-generated
   - sunbathe # auto-generated
   - swimming-diving # auto-generated
   - swimming-goggles # auto-generated
@@ -67,6 +91,7 @@ icons:
   - technology-privacy-photo-access-view # auto-generated
   - tennis-backhand # auto-generated
   - time-clock-circle # auto-generated
+  - time-clock-circle-2 # auto-generated
   - workout # auto-generated
   - world # auto-generated
   - yoga # auto-generated

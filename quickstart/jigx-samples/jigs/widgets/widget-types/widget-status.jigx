@@ -1,0 +1,24 @@
+title: Status widgets
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+                  
+        - size: "4x2"
+          jigId: status-1_4x2
+        
+        - size: "2x4"
+          jigId: status-1_2x4
+          
+        - size: "2x4"
+          jigId: combined-status-list-1_2x4     
+
+        - size: "2x2"
+          jigId: status-1_2x2
+          
+        - size: "2x2"
+          jigId: status-2_2x2
+          
+  

@@ -56,28 +56,16 @@ widgets:
   - size: 1x1
     jigId: preview-summary
   - size: 1x1
-    jigId: expressions-summary
+    jigId: expressions-summary   
   - size: 1x1
     jigId: notifications-summary
+  - size: "2x2"
+    jigId: widget-overview
   - size: 1x1
     jigId: color-palete
-  - size: 1x1
+  - size: "1x1"
     jigId: localization-summary
-  - size: 4x2
-    jigId: image-widget
-  - size: 2x2
-    jigId: actions
-  - size: 2x2
-    jigId: widget-list-stage-sd
-  - size: 4x2
-    jigId: group-avatar-list
-  - size: 4x2
-    jigId: location-widget-address
-  - size: 2x2
-    jigId: status-static
-  - size: 4x2
-    jigId: chart-widget-line-chart
-  - size: 2x2
-    jigId: value-static-2x2 
+  - size: "4x2"
+    jigId: location-4x4
 
 

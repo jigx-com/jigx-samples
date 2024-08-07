@@ -1,0 +1,87 @@
+title: Status widget 1 (2x4)
+type: jig.default
+
+datasources:
+  device:
+    type: datasource.static
+    options:
+      data:
+        - device-name: iPhone 14 Pro
+          device-owner: Barry Hudson
+          batery: 30 # Try to change the number
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+            
+widgets:
+  "2x4": 
+    type: widget.status
+    options:
+      statuses:
+        # Battery less than 25 %
+        - when: =@ctx.datasources.device.batery <= 25 ? true:false
+          icon: battery-charge
+          top:
+            type: component.titles
+            options:
+              icon: mobile-phone-1
+              title: =@ctx.datasources.device.device-owner
+              subtitle: =@ctx.datasources.device.device-name
+              align: center
+              iconColor: color14
+          bottom:
+            type: component.titles
+            options:
+              title: =@ctx.datasources.device.batery & ' ' & '%'
+              subtitle: Battery
+              align: center   
+          color: negative
+
+        # Battery less than 50 %  
+        - when: =@ctx.datasources.device.batery <= 50 ? true:false
+          icon: battery-charge
+          top:
+            type: component.titles
+            options:
+              icon: mobile-phone-1
+              title: =@ctx.datasources.device.device-owner
+              subtitle: =@ctx.datasources.device.device-name
+              align: center
+              iconColor: color14
+          bottom:
+            type: component.titles
+            options:
+              title: =@ctx.datasources.device.batery & ' ' & '%'
+              subtitle: Battery
+              align: center              
+          color: warning
+
+        # Battery more than 50 %
+        - when: =@ctx.datasources.device.batery > 50 ? true:false
+          icon: battery-charge
+          top:
+            type: component.titles
+            options:
+              icon: mobile-phone-1
+              title: =@ctx.datasources.device.device-owner
+              subtitle: =@ctx.datasources.device.device-name
+              align: center
+              iconColor: color14
+          bottom:
+            type: component.titles
+            options:
+              title: =@ctx.datasources.device.batery & ' ' & '%'
+              subtitle: Battery
+              align: center              
+          color: positive
+ 
+       
+              
+
+  

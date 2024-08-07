@@ -1,0 +1,68 @@
+
+title: Line chart 1 (4x4)
+type: jig.default
+
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - x: Q1/20
+          y: 25767
+        - x: Q2/20
+          y: 45320
+        - x: Q3/20
+          y: 33100
+        - x: Q4/20
+          y: 91750
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+
+widgets:
+  "4x4": 
+    type: widget.chart
+    options:
+      top: 
+        type: component.titles
+        options:
+          title: $91.750
+          icon: chart
+      chart: 
+        type: component.line-chart
+        options:
+          legend:
+            isHidden: false
+          series:
+            - animation:
+                direction: left-to-right
+              data: =@ctx.datasources.static-data
+              color: color3
+              dataLabels:
+                - isEnabled: true
+              name: Quarterly Revenue 2022
+              layout: area-gradient
+          xAxis:
+            categories: =@ctx.datasources.static-data.x
+          yAxis:
+            isFirstLabelHidden: true
+            isFirstTickHidden: true
+            labels:
+              format:
+                compactDisplay: short
+                notation: compact
+                numberStyle: currency
+            min: 0
+            tickAmount: 5
+      bottom: 
+        type: component.titles
+        options:
+          title: Quarterly Company Progress
+          subtitle: "2022"
+          align: center            

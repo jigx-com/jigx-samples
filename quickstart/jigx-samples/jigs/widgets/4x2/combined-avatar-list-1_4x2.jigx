@@ -1,0 +1,45 @@
+title: Avatar & List 1 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+  
+widgets:
+  4x2: 
+    type: widget.group
+    options:
+      children:
+        - type: widget.avatar
+          options:
+            text: MR
+            uri: https://randomuser.me/api/portraits/men/20.jpg
+            bottom:
+              type: component.titles
+              options:
+                title: Marty Randolph
+                subtitle: Product Design Lead
+                align: center
+                icon: calendar      
+
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.users
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.name
+                subtitle: =@ctx.current.item.position
+
+                leftElement: 
+                  element: avatar
+                  text: =@ctx.current.item.uri-text
+                  uri: =@ctx.current.item.uri
+   
+
+                  

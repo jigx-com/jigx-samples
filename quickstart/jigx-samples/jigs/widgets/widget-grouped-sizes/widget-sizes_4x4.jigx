@@ -1,0 +1,23 @@
+title: Widget size 4x4
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+         
+        - size: "4x4"
+          jigId: combined-avatar-list-1_4x4   
+
+        - size: "4x4"
+          jigId: chart-line-1_4x4   
+        
+        - size: "4x4"
+          jigId: list-1_4x4 
+
+        - size: "4x4"
+          jigId: chart-line-2_4x4  
+ 
+        
+ 
+        

@@ -1,0 +1,35 @@
+title: Value widgets
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+      
+        - size: "4x2"
+          jigId: value-2_4x2 
+          
+        - size: "2x2"
+          jigId: value-2_2x2
+          
+        - size: "2x2"
+          jigId: value-3_2x2       
+
+        - size: "4x2"
+          jigId: combined-value-list-1_4x2
+  
+        - size: "4x2"
+          jigId: value-1_4x2
+           
+        - size: "2x4"
+          jigId: value-1_2x4
+
+        - size: "2x2"
+          jigId: value-1_2x2  
+           
+       
+
+         
+        
+
+  

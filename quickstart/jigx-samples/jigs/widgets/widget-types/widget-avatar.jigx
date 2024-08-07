@@ -1,0 +1,19 @@
+title: Avatar Widgets
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "4x2"
+          jigId: combined-avatar-list-1_4x2         
+        - size: "2x2"
+          jigId: avatar-1_2x2  
+        - size: "2x2"
+          jigId: avatar-2_2x2
+        - size: "4x2"
+          jigId: combined-avatar-list-2_4x2 
+        - size: "4x4"
+          jigId: combined-avatar-list-1_4x4   
+            
+           

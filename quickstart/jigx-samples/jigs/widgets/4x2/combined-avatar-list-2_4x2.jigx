@@ -1,0 +1,75 @@
+title: Avatar & List 2 (4x2)
+type: jig.default
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: Lelia Pillay
+          subtitle: 11:30 - 12:00
+          from: 01/10/2024 11:30
+          to: 12:00
+          avatar-text: LP
+          avatar-uri: https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D
+        
+        - name: Joe Watkins
+          subtitle: 21:00 - 23:00
+          from: 01/10/2024 20:00
+          to: 01/10/2024 23:00
+          avatar-text: JW
+          avatar-uri: 
+        
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+    
+widgets:
+  4x2: 
+    type: widget.group
+    options:
+      children:            
+        - type: widget.avatar
+          options:
+            text: ST
+            uri: https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+            bottom:
+              type: component.titles
+              options:
+                align: center
+                title: Sam Trent
+                subtitle: Global
+
+            top:
+              type: component.titles
+              options:
+                icon: time-clock-circle-2
+                iconColor: color14
+                align: left
+                title: 07:00 - 17:00
+                subtitle: Today
+                style:
+                  # isNegative: false
+                  isPositive: true
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.components
+            item: 
+              type: component.list-item
+              options:
+                color:
+                  - when: true
+                    color: color7
+                title:  =@ctx.current.item.name
+                subtitle: =@ctx.current.item.subtitle
+                leftElement: 
+                  element: avatar
+                  text: =@ctx.current.item.avatar-text
+                  uri: =@ctx.current.item.avatar-uri
+                
+     

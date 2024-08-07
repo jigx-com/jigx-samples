@@ -1,0 +1,62 @@
+title: List widgets
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+
+        - size: "4x2"
+          jigId: combined-chart-list-1_4x2
+                
+        - size: "4x4"
+          jigId: combined-avatar-list-1_4x4   
+          
+        - size: "4x2"
+          jigId: combined-value-list-1_4x2
+          
+        - size: "4x2"
+          jigId: combined-avatar-list-1_4x2    
+
+        - size: "4x2"
+          jigId: combined-avatar-list-2_4x2    
+
+        - size: "4x4"
+          jigId: list-1_4x4
+          
+        - size: "4x2"
+          jigId: list-3_4x2    
+
+        - size: "2x2"
+          jigId: list-1_2x2
+          
+        - size: "2x2"
+          jigId: list-2_2x2     
+
+        - size: "4x2"
+          jigId: list-1_4x2
+          
+        - size: "4x2"
+          jigId: list-2_4x2
+
+        - size: "2x4"
+          jigId: list-1_2x4
+        - size: "2x4"
+          jigId: list-2_2x4
+                  
+        - size: "4x2"
+          jigId: list-4_4x2
+        
+        - size: "2x2"
+          jigId: list-3_2x2      
+          
+        - size: "2x4"
+          jigId: combined-status-list-1_2x4   
+          
+        - size: "2x2"
+          jigId: list-4_2x2 
+              
+        - size: "2x2"
+          jigId: list-5_2x2    
+
+  

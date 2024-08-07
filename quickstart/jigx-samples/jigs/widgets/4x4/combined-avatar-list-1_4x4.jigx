@@ -1,0 +1,82 @@
+title: Avatar & List 1 (4x4)
+type: jig.default
+
+datasources:
+  components:
+    type: datasource.static
+    options:
+      data:
+        - name: John Smith
+          subtitle: 09:00 - 10:00
+          from: 01/10/2024 09:00
+          to: 01/10/2022 10:00
+          avatar-text: JS
+          avatar-uri:  https://images.unsplash.com/photo-1645378999496-33c8c2afe38d?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D   
+        
+        - name: Laurenz Amram
+          subtitle: 12:30 - 14:00
+          from: 01/10/2024 12:30
+          to: 14:00
+          avatar-text: LA
+          avatar-uri: https://i.pravatar.cc/400?img=45
+        
+        - name: Ladislao Børge
+          subtitle: 16:00 - 17:00
+          from: 01/10/2024 16:00
+          to: 01/10/2022 17:00
+          avatar-text: LB
+          avatar-uri: 
+         
+        
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+    
+widgets:
+  4x4: 
+    type: widget.group
+    options:
+      children:            
+        - type: widget.avatar
+          options:
+            text: LS
+            uri: https://i.pravatar.cc/400?img=59
+            bottom:
+              type: component.titles
+              options:
+                align: center
+                title: Leo Siphron
+                subtitle: Inter B
+
+            top:
+              type: component.titles
+              options:
+                icon: time-clock-circle
+                iconColor: negative
+                align: center
+                title: 08:30 - 19:00
+                subtitle: Today
+                style:
+                  isNegative: true
+                
+        - type: widget.list
+          options:
+            data: =@ctx.datasources.components
+            item: 
+              type: component.list-item
+              options:
+                title:  =@ctx.current.item.name
+                subtitle: =@ctx.current.item.subtitle
+                leftElement: 
+                  element: avatar
+                  text: =@ctx.current.item.avatar-text
+                  uri: =@ctx.current.item.avatar-uri
+                
+                  
+                
+     

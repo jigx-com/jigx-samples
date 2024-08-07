@@ -1,0 +1,31 @@
+title: Location widget 2 (2x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:
+  "2x2": 
+    type: widget.location
+    options:
+      address: 2 Officers Row Yellowstone National Park Headquarters Yellowstone National Park, WY 82190
+      bottom:
+        type: component.titles
+        options:
+          title: Yellowstone Park
+          subtitle: Montana
+          align: left
+          icon: landmark-mountain
+          iconColor: color4  
+          style:
+            isPositive: true
+      zoomLevel: 3
+  
+          
+          

@@ -1,0 +1,40 @@
+title: List widget 3 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:            
+  "4x2": 
+    type: widget.list
+    options:
+      data: =@ctx.datasources.users
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.name
+          subtitle: =@ctx.current.item.position
+          style:
+            isError: =(@ctx.current.item.status = 'Declined' ? true :false)
+            isStrikeThrough: =(@ctx.current.item.status = 'Declined' ? true :false)
+          color:
+            - when: true
+              color: color11
+          leftElement: 
+            element: image
+            text: 'N/A'
+            uri: =@ctx.current.item.uri
+          label:
+            title: =@ctx.current.item.status
+            color:
+              - when: =(@ctx.current.item.status = 'Declined' ? true :false)
+                color: color4
+              - when: true
+                color: color2
+            

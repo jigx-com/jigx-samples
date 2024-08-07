@@ -1,0 +1,36 @@
+title: Location widget 2 (2x4)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:      
+  "2x4": 
+    type: widget.location
+    options:
+      address: Piazza del Colosseo, 1, 00184 Roma RM, Italy
+      top:
+        type: component.titles
+        options:
+          title: Slowdown
+          subtitle: 7-min Delay
+          icon: alert
+          style:
+            isWarning: true
+          
+      bottom:
+        type: component.titles
+        options:
+          title: Colosseum
+          subtitle: Rome 
+          align: center
+          icon: landmark-colosseum-1
+      zoomLevel: 8          
+          
+          

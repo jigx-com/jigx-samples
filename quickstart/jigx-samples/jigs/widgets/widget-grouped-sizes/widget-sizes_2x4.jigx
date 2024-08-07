@@ -1,0 +1,42 @@
+title: Widgets 2x4
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+       
+        - size: "2x4"
+          jigId: location-1_2x4
+        
+        - size: "2x4"
+          jigId: chart-line-1_2x4 
+         
+        - size: "2x4"
+          jigId: chart-pie-1_2x4  
+          
+        - size: "2x4"
+          jigId: location-2_2x4 
+          
+        - size: "2x4"
+          jigId: image-1_2x4
+        
+        - size: "2x4"
+          jigId: value-1_2x4
+       
+        - size: "2x4"
+          jigId: list-1_2x4
+          
+        - size: "2x4"
+          jigId: image-2_2x4
+              
+        - size: "2x4"
+          jigId: list-2_2x4
+          
+        - size: "2x4"
+          jigId: status-1_2x4
+        
+        - size: "2x4"
+          jigId: combined-status-list-1_2x4   
+        
+          

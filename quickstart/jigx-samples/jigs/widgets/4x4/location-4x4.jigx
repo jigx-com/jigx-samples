@@ -1,0 +1,28 @@
+title: Jigx HQ
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:
+  "4x2": 
+    type: widget.location
+    options:
+      address: 37624 SE Fury St, Suite 203, Snoqualmie, WA 98065,USA
+      bottom:
+        type: component.titles
+        options:
+          title: Jigx, Inc
+          subtitle: Head office
+          align: left
+          icon: pin
+          iconColor: color4  
+          style:
+            isPositive: true
+      zoomLevel: 11

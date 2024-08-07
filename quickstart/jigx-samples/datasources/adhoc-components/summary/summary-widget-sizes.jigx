@@ -1,0 +1,24 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: number-one-circle
+      type: 1x1 widgets 
+      typeLink: widget-sizes_1x1
+    - color: color2
+      icon: number-two-circle
+      type: 2x2 widgets
+      typeLink: widget-sizes_2x2
+    - color: color3
+      icon: number-two
+      type: 2x4 widgets
+      typeLink: widget-sizes_2x4
+    - color: color4
+      icon: number-four-circle
+      type: 4x2 widgets
+      typeLink: widget-sizes_4x2
+    - color: color5
+      icon: number-four
+      type: 4x4 widgets
+      typeLink: widget-sizes_4x4
+   

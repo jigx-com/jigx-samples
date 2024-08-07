@@ -1,0 +1,27 @@
+title: Location widget 2 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:      
+  "4x2": 
+    type: widget.location
+    options:
+      address: Riverside Building, County Hall, London SE1 7PB, United Kingdom  
+      bottom:
+        type: component.titles
+        options:
+          title: The London Eye
+          subtitle: London SE1 7PB
+          align: left
+          icon: landmark-london-eye-1
+          iconColor: color7
+          
+          

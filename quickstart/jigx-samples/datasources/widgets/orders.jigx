@@ -1,0 +1,26 @@
+type: datasource.static
+options:
+  data:
+    - title: "0rder #63882" 
+      subtitle: Received
+      #Processing
+      #Delivered
+      value: $ 207
+      progress: 0.25
+      done: false
+      
+    - title: "0rder #62747" 
+      subtitle: Processing
+      #Processing
+      #Delivered
+      value: $ 493
+      progress: 0.5
+      done: false      
+
+    - title: "0rder #57383" 
+      subtitle: Delivered
+      #Processing
+      #Delivered
+      value: $ 799
+      progress: 1   
+      done: true    

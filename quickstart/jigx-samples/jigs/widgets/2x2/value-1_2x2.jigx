@@ -1,0 +1,30 @@
+title: Value widget 1 (2x2) 
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+               
+widgets:
+  "2x2":
+    type: widget.value
+    options:
+      value: "2"
+      format:
+        unit: "Opportunities"
+      align: right
+      top:
+        type: component.titles
+        options:
+          title: "This week"
+          icon: space-rocket-flying
+          iconColor: color10
+          align: left
+
+        
+              

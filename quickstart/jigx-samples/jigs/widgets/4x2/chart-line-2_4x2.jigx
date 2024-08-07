@@ -1,0 +1,89 @@
+title: Line chart 2 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Value
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - 40000
+        - 40000
+        - 50000
+        - 57000
+  static-data2:
+    type: datasource.static
+    options:
+      data:
+        - 43000
+        - 48000
+        - 37000
+        - 89000      
+  static-data3:
+    type: datasource.static
+    options:
+      data:
+        - 45000
+        - 64000
+        - 20000
+        - 50000   
+
+widgets:
+  4x2:
+    type: widget.chart
+    options:
+      top:
+        type: component.titles
+        options:
+          title: Sales Performance
+          subtitle: By Districts
+          icon: gauge-dashboard
+          iconColor: color2
+      chart:
+        type: component.line-chart
+        options:
+          plotOptions:
+            series:
+              marker:
+                isHidden: true
+          yAxis:
+            min: 0
+            labels:
+              format:
+                compactDisplay: short
+                notation: compact
+                numberStyle: currency  
+          xAxis:
+            categories:
+              - "07/22"
+              - "08/22"
+              - "09/22"
+              - "10/22"
+            labels:
+              format:
+                compactDisplay: short
+                notation: compact
+                numberStyle: currency
+          series:
+            - data: =@ctx.datasources.static-data
+              layout: area-gradient
+              animation:
+                direction: bottom-to-top
+              color: color7
+            - data: =@ctx.datasources.static-data2
+              layout: area-gradient
+              animation:
+                direction: bottom-to-top
+              color: color9
+            - data: =@ctx.datasources.static-data3
+              layout: area-gradient
+              animation:
+                direction: bottom-to-top
+              color: color2

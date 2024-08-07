@@ -1,0 +1,22 @@
+title: Location widget 1 (4x2)
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Label
+            value: Value
+
+widgets:
+  "4x2": 
+    type: widget.location
+    options:
+      address: Aviatická, 161 00 Praha 6, Czechia
+      bottom:
+        type: component.titles
+        options:
+          icon: pin
+          title: Prague airport

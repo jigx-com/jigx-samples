@@ -1,0 +1,53 @@
+title: Pie-chart widget 1 (2x2)
+type: jig.default
+
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - y: 57
+          x: kukuk
+        - y: 43
+          x: tralala
+          color: transparent
+        
+children:
+  - type: component.pie-chart
+    options:
+      chart:
+        title:
+          text: "67%"
+          verticalAlign: center         
+      series:
+        - data: =@ctx.datasources.static-data
+          layout: arch
+          color: color3
+  
+widgets:
+  2x2: 
+    type: widget.chart
+    options:        
+      chart: 
+        type: component.pie-chart
+        options:
+          chart:
+            title:
+              text: "67%"
+              verticalAlign: center         
+          series:
+            - data: =@ctx.datasources.static-data
+              layout: arch
+              color: color3
+      bottom:
+        type: component.titles
+        options:
+          subtitle: Remaining Team Budget
+          title: $1,423.21
+          align: center
+
+
+        
+  
+                
+     
