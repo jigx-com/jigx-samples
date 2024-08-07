@@ -1,4 +1,5 @@
 icons:
+  - actions-authentication-squares # auto-generated
   - alarm-bell # auto-generated
   - alert-circle # auto-generated
   - alert-triangle # auto-generated
@@ -13,6 +14,7 @@ icons:
   - check-circle-1 # auto-generated
   - checklist # auto-generated
   - cog # auto-generated
+  - color-painting-palette # auto-generated
   - contact # auto-generated
   - content-browser-edit # auto-generated
   - conversation-chat-2 # auto-generated
@@ -37,6 +39,8 @@ icons:
   - house-signal # auto-generated
   - image-document-jpg # auto-generated
   - jigx-solid # auto-generated
+  - language-class-abc # auto-generated
+  - layout-corners-dashboard-1 # auto-generated
   - layout-dashboard-1 # auto-generated
   - list # auto-generated
   - lock-unlock-4 # auto-generated
@@ -51,6 +55,7 @@ icons:
   - person # auto-generated
   - phone # auto-generated
   - pin-location # auto-generated
+  - plane-1 # auto-generated
   - scanner # auto-generated
   - shop-1 # auto-generated
   - shopping-cart-empty-1 # auto-generated
@@ -59,6 +64,7 @@ icons:
   - swimming-goggles # auto-generated
   - synchronize-arrows-1 # auto-generated
   - task-list # auto-generated
+  - technology-privacy-photo-access-view # auto-generated
   - tennis-backhand # auto-generated
   - time-clock-circle # auto-generated
   - workout # auto-generated

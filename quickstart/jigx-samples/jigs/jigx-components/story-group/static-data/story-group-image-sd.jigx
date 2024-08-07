@@ -14,7 +14,7 @@ stories:
   type: component.story-group
   options:
     data: =@ctx.datasources.story-static
-    groupName: Work productivity
+    groupName: All it takes is Jigx
     item: 
       type: component.image
       options:

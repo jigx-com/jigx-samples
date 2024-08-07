@@ -14,16 +14,17 @@ stories:
   type: component.story-group
   options:
     data: =@ctx.datasources.story
-    groupName: Work productivity
+    groupName: Jigx blogs
     item: 
       type: component.image
       options:
+        resizeMode: center
         title: =@ctx.current.item.title
         subtitle: =@ctx.current.item.description
-        source:
-          uri: =@ctx.current.item.photo
-        onPress: 
-          type: action.open-url
+        onPress:
           options:
             title: Read More
             url: =@ctx.current.item.web-link
+          type: action.open-url
+        source:
+          uri: =@ctx.current.item.photo

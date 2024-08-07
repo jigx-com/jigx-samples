@@ -19,7 +19,7 @@ widgets:
       item: 
         type: component.stage
         options:
-          icon: plane-2
+          icon: plane-1
           right:
             title: =@ctx.current.item.toabrv
             subtitle: =@ctx.current.item.to

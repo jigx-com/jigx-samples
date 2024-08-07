@@ -13,7 +13,13 @@ header:
 
 children:
   - jigId: cleaning-serv-horizon-list-dd
+    instanceId: cleaning
+# Instance Id is required for a composite jig exposing outputs
+# To be accessed by another jig 
+    
   - jigId: service-details
     instanceId: service_deets
+# Add inputs to receive the outputs-keys
+# Which renders the selected data    
     inputs:
-      id: =@ctx.solution.state.servicesId
+      id: =@ctx.jigs.cleaning.outputs.output-key

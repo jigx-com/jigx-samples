@@ -1,7 +1,7 @@
 title: Flight Schedule
 description: List with Expander and Stage as Header Element (Centre)
 type: jig.list
-icon: plane-2
+icon: plane-1
 
 header:
   type: component.jig-header
@@ -84,7 +84,7 @@ widgets:
       item: 
         type: component.stage
         options:
-          icon: plane-2
+          icon: plane-1
           right:
             title: =@ctx.current.item.toabrv
             subtitle: =@ctx.current.item.to

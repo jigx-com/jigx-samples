@@ -1,6 +1,6 @@
 title: Preview
 type: jig.list
-icon: form
+icon: technology-privacy-photo-access-view
 
 data: =@ctx.datasources.summary-preview
 item: 

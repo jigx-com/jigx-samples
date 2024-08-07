@@ -45,5 +45,5 @@ item:
   options:
     title: =@ctx.current.item.title
     subtitle: = 'Group id:'& ' ' & @ctx.current.item.groupId
-    avatars: =@ctx.current.item.people
+    avatars: =@ctx.current.item.people 
         

@@ -1,6 +1,6 @@
 title: Components
 type: jig.list
-icon: layout-dashboard-1
+icon: layout-corners-dashboard-1
 
 data: =@ctx.datasources.summary
 item: 

@@ -5,7 +5,6 @@ placeholders:
     when: =@ctx.datasources.cleaningServices.service != null ? false:true
     icon: loading-data
       
-
 datasources:
   cleaningServices:
     type: datasource.sqlite
@@ -15,7 +14,7 @@ datasources:
       entities:
         - entity: default/cleaning-services
       queryParameters:
-        servId: =@ctx.solution.state.servicesId
+        servId: =@ctx.jig.inputs.id
   
       query: | 
         SELECT 

@@ -1,6 +1,6 @@
 title: Actions
 type: jig.list
-icon: form
+icon: actions-authentication-squares
 
 data: =@ctx.datasources.summary-actions
 item: 

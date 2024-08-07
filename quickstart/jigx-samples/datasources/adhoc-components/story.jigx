@@ -13,4 +13,4 @@ options:
       '$.title',
       '$.video',
       '$.web-link'
-    FROM [default/avatar] WHERE '$.category' = "image-source"
+    FROM [default/avatar] WHERE '$.category' = "image-source" AND '$.title' = "Jigx"

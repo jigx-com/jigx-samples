@@ -1,6 +1,6 @@
 title: Localization (Translation)
 type: jig.list
-icon: notification
+icon: language-class-abc
 data: =@ctx.datasources.summary-localization
 item:
   type: component.list-item

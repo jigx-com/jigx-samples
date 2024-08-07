@@ -14,16 +14,16 @@ stories:
   type: component.story-group
   options:
     data: =@ctx.datasources.story
-    groupName: Work productivity
-    item: 
-      type: component.video-player
+    groupName: All it takes is Jigx
+    item:
       options:
-        subtitle: =@ctx.current.item.description
-        url: =@ctx.current.item.video
-        thumbnailUri: =@ctx.current.item.header
         title: =@ctx.current.item.title
-        onPress: 
-          type: action.open-url
+        subtitle: =@ctx.current.item.description
+        onPress:
           options:
-            title: See Tips Here
+            title: Get started with Jigx
             url: =@ctx.current.item.web-link
+          type: action.open-url
+        thumbnailUri: =@ctx.current.item.header
+        url: =@ctx.current.item.video
+      type: component.video-player
