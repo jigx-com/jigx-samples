@@ -1,8 +1,0 @@
-method: query
-provider: DATA_PROVIDER_SQL
-connection: jigx1.database.windows.net
-query: 'select patient_id, firstname, lastname, photo from patients'
-# method: query
-# provider: DATA_PROVIDER_SQL
-# connection: jigx1.database.windows.net
-# query: 'select patient_id, firstname, lastname, photo from patients'

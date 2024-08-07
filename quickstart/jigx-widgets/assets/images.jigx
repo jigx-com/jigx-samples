@@ -1,7 +1,0 @@
-# Assets that are cached on solution load and will be available offline.
-# Array of image URLs you want to cache for offline use.
-# This field is auto populated with header images we detect in the solution.
-# You can add additional images here if any is missing.
-
-images:
-  - https://1951880946.rsc.cdn77.org/resize?height=300&type=auto&url=https://reservio-static-production.s3.eu-central-1.amazonaws.com/businesses/9e5118d6-a9d6-4693-ab10-82f69342e38b.png # auto-generated
