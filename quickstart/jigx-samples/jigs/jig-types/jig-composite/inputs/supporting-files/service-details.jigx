@@ -14,7 +14,7 @@ datasources:
       entities:
         - entity: default/cleaning-services
       queryParameters:
-        servId: =@ctx.jig.inputs.id
+        servId: =@ctx.solution.state.servicesId
   
       query: | 
         SELECT 
