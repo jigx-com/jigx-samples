@@ -1,5 +1,6 @@
 icons:
   - actions-authentication-squares # auto-generated
+  - add-circle-bold-alternate # auto-generated
   - alarm-bell # auto-generated
   - alarm-bell-1 # auto-generated
   - alert # auto-generated
@@ -21,6 +22,7 @@ icons:
   - checklist # auto-generated
   - coding-apps-website-apps-add-widget # auto-generated
   - cog # auto-generated
+  - cog-approved # auto-generated
   - color-painting-palette # auto-generated
   - contact # auto-generated
   - content-browser-edit # auto-generated
