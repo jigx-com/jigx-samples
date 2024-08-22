@@ -20,14 +20,17 @@ children:
       
 actions:
   - children:
-      - type: action.confirm
+      - type: action.info-modal
         options:
           title: =@ctx.jig.inputs.packagePrice & " - BUY"
-          isConfirmedAutomatically: false
-          onConfirmed: 
-            type: action.go-back
           modal:
             title: Let the countdown begin!
+            buttonText: Close
+            element: 
+              type: image
+              resizeMode: contain
+              uri: https://plus.unsplash.com/premium_photo-1680466283263-91b51ab91832?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmVhY2glMjB1bWJyZWxsYXxlbnwwfHwwfHx8MA%3D%3D
+            
             
           
               

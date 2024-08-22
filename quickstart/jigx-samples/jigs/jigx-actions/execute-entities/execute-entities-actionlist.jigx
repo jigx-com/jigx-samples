@@ -45,12 +45,17 @@ actions:
                 data:
                   firstname: =@ctx.datasources.employee-detail-dynamic.firstname
                   lastname: =@ctx.datasources.employee-detail-dynamic.lastname
-            - type: action.confirm
+            - type: action.info-modal
               options:
-                isConfirmedAutomatically: false
+                modal:
+                  title: User successfully added  
+                  buttonText: See user list
+                  
+                  element: 
+                    type: icon
+                    icon: add-circle-bold-alternate
+                    color: element
                 onConfirmed: 
                   type: action.go-to
                   options:
-                    linkTo: execute-entities-onPress
-                modal:
-                  title: User successfully added  
+                    linkTo: execute-entities-onPress 

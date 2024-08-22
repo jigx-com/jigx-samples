@@ -22,10 +22,8 @@ children:
           options:
             expiresAt: =$fromMillis($toMillis($now()) + 3600)
             onFinish: 
-              type: action.confirm
+              type: action.info-modal
               options:
-                isConfirmedAutomatically: false
-                onConfirmed:
-                  type: action.go-back
                 modal:
                   title: 🏖️ Holiday time!
+                  buttonText: Enjoy!
