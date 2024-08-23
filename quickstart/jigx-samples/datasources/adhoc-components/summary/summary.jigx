@@ -139,7 +139,7 @@ options:
       icon: minus
     - color: color8
       component: Titles
-      componentLink: expander
+      componentLink: titles-summary
       icon: document
     - color: color9
       component: Video-player

@@ -1,0 +1,43 @@
+title: Widgets with titles
+type: jig.default
+
+children:
+  - type: component.widgets
+    options:
+      children:
+        - size: "4x4"
+          jigId: titles-widget-image-dynamic
+        - size: "2x2"
+          jigId: titles-widget-location-dynamic
+        - size: "2x2"
+          jigId: image-3_2x2
+        - size: "2x2"
+          jigId: image-1_2x2  
+        - size: "4x2"
+          jigId: image-1_4x2          
+        - size: "2x4"
+          jigId: image-1_2x4
+        - size: "4x2"
+          jigId: image-2_4x2
+        - size: "2x4"
+          jigId: image-2_2x4 
+        - size: "4x2"
+          jigId: location-2_4x2
+        - size: "2x4"
+          jigId: location-1_2x4
+        - size: "2x2"
+          jigId: location-2_2x2
+        - size: "2x2"
+          jigId: trend-in-value-widget
+        - size: "4x2"
+          jigId: value-static-4x2
+        - size: "2x2"
+          jigId: avatar-1_2x2
+        - size: "2x4"
+          jigId: chart-pie-1_2x4
+        - size: "2x4"
+          jigId: chart-line-1_2x4
+        - size: "2x2"
+          jigId: status-1_2x2  
+        - size: "2x2"
+          jigId: value-2_2x2

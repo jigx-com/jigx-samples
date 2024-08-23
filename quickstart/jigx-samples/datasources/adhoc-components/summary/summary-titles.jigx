@@ -1,0 +1,20 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: text-rotations-horizontal
+      type: Expander with title
+      typeLink: expander
+    - color: color2
+      icon: text-format-1-formatting
+      type: Carousel image with title
+      typeLink: carousel-image
+    - color: color3
+      icon: text-format-dottted-underline-formatting
+      type: Image with title
+      typeLink: default-image
+    - color: color4
+      icon: textbox-formatting
+      type: Titles on widgets
+      typeLink: title-widget-summary
+   
