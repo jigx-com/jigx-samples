@@ -27,7 +27,8 @@ options:
       icon: checkbox-checked
     - color: color12
       component: Choice-field
-      componentLink: choice-field-summary  
+      componentLink: choice-field-summary 
+      icon: cursor-choose
     - color: color6
       component: Countdown
       componentLink: countdown-summary
