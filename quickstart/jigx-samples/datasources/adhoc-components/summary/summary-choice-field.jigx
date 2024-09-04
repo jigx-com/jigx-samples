@@ -1,0 +1,23 @@
+type: datasource.static
+options:  
+  data:
+    - color: color1
+      icon: cursor-choose
+      type: Choice-field single selection
+      typeLink: choice-field-single
+    - color: color2
+      icon: cursor-click-computers
+      typeLink: choice-field-multiple
+      type: Choice-field multiple selection
+    - color: color3
+      icon: cursor-double-click
+      typeLink: choice-field-items-per-row
+      type: Choice-field 3 items per row
+    - color: color4
+      icon: cursor-double-click-3
+      typeLink: choice-field-initialvalue
+      type: Choice-field initial selection
+    - color: color5
+      icon: cursor-1
+      typeLink: choice-field-onchange
+      type: Choice-field onChange

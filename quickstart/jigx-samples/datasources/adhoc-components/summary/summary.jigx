@@ -25,6 +25,9 @@ options:
       component: Checkbox
       componentLink: composite-checkbox
       icon: checkbox-checked
+    - color: color12
+      component: Choice-field
+      componentLink: choice-field-summary  
     - color: color6
       component: Countdown
       componentLink: countdown-summary

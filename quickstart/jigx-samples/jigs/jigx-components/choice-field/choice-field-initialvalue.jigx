@@ -1,0 +1,51 @@
+title: choice-field with initial value selected
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fG9ubGluZSUyMGRlbGl2ZXJ5fGVufDB8fDB8fHwy
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.jig.components.shipping-method.state.value
+
+datasources:
+  shipping: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - default/shipping
+  
+      query: SELECT id, '$.method', '$.cost' FROM [default/shipping]
+
+children:
+  - type: component.form
+    instanceId: delivery
+    options:
+      children:
+        - type: component.choice-field
+          instanceId: shipping-method
+          options:
+            initialValue: =@ctx.datasources.shipping[0].method
+            label: Choose your shipping method 
+            data: =@ctx.datasources.shipping
+            item:
+              type: component.choice-field-item
+              options:
+                title: =(@ctx.current.item.method & ' ' &  @ctx.current.item.cost)
+                value: =@ctx.current.item.method
+actions:
+  - children:
+      - type: action.go-back
+        options:
+          title: Checkout
+                
