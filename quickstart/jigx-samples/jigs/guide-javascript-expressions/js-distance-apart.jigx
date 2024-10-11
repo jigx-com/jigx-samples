@@ -13,8 +13,7 @@ header:
       options:
         source:
           uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
-            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
-          
+           
 onFocus: 
   type: action.reset-state
   options:
