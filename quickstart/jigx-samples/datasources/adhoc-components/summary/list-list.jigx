@@ -7,6 +7,9 @@ options:
     - title: List with Filter functionality
       link: list-filter-label-dd
       color: color2
+    - title: Filter List with default tab
+      link: default-w-filter-initialvalue
+      color: color5    
     - title: List with Search and Filter functionality
       link: list-filter-search-label-dd 
       color: color3

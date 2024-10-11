@@ -1,0 +1,65 @@
+title: calculateTax & calculateTotal
+description: |
+  The calculateTax function is designed to compute the tax amount based on a given subtotal and a specified tax rate. It takes two parameters: subtotal, which represents the pre-tax amount, and taxRate, which is the tax percentage to be applied.
+  
+  Take a look at the configuration of Total Amount. You can use a function as a parameter for another function. 
+type: jig.default
+icon: dog-bark
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: subTotal
+          options:
+            label: Sub Total
+            initialValue: =$number(345.78)
+            format:
+              numberStyle: currency
+              currencyDisplay: symbol
+              currencySign: standard
+        - type: component.text-field
+          instanceId: taxRate
+          options:
+            label: Tax Rate
+            initialValue: =$number(8.6)
+            format:
+              numberStyle: percent
+        - type: component.text-field
+          instanceId: tax
+          options:
+            label: TAX
+            value: |
+              =$jsfunctions.formatCurrency(
+                  $jsfunctions.calculateTax(
+                    @ctx.components.subTotal.state.value, 
+                    @ctx.components.taxRate.state.value)
+                ,'$')
+            style:
+              isDisabled: true
+        - type: component.text-field
+          instanceId: totalAmount
+          options:
+            label: Total Amount
+            value: |
+              =$jsfunctions.formatCurrency(
+                  $jsfunctions.calculateTotal(
+                    $number(@ctx.components.subTotal.state.value),
+                    $number($jsfunctions.calculateTax(@ctx.components.subTotal.state.value, @ctx.components.taxRate.state.value)))
+                ,'$')
+            style:
+              isDisabled: true

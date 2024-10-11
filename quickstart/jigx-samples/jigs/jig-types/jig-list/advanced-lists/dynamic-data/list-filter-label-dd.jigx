@@ -3,13 +3,14 @@ description: A dynamic list displaying filter options
 type: jig.list
 icon: notes-paper-approve
 
-filter: 
+filter:
+  data: 
   - title: All
     value: ''
   - title: Indoor
-    value: TRUE
+    value: "TRUE"
   - title: Outdoor
-    value: FALSE
+    value: "FALSE"
   
 header:
   type: component.jig-header

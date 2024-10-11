@@ -1,0 +1,94 @@
+title: daysUntil
+description: |
+  The daysUntil function calculates the number of days remaining from today's date until a specified future date provided in the YYYY-MM-DD format. It returns the number of days remaining.
+type: jig.default
+icon: dog-play-bring-disc
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+datasources:
+  holidays: 
+    type: datasource.static
+    options:
+      data:
+      - "name": "New Year's Day"
+        "date": "2024-01-01"
+        "description": "Celebration of the first day of the new year."
+
+      - "name": "Valentine's Day"
+        "date": "2024-02-14"
+        "description": "A day to celebrate love and affection between intimate partners."
+
+      - "name": "St. Patrick's Day"
+        "date": "2024-03-17"
+        "description": "A cultural and religious celebration held on the anniversary of Saint Patrick's death."
+    
+      - "name": "Easter"
+        "date": "2024-03-31"
+        "description": "A Christian holiday celebrating the resurrection of Jesus Christ from the dead."
+      
+      - "name": "Memorial Day"
+        "date": "2024-05-27"
+        "description": "A federal holiday in the United States for honoring and mourning the military personnel who have died in the performance of their military duties."
+
+      - "name": "Independence Day"
+        "date": "2024-07-04"
+        "description": "A federal holiday in the United States commemorating the Declaration of Independence."
+      
+      - "name": "Labor Day"
+        "date": "2024-09-02"
+        "description": "A federal holiday in the United States to honor and recognize the American labor movement."
+
+      - "name": "Halloween"
+        "date": "2024-10-31"
+        "description": "A celebration observed in many countries on the eve of the Western Christian feast of All Hallows' Day."
+
+      - "name": "Thanksgiving"
+        "date": "2024-11-28"
+        "description": "A national holiday in the United States celebrating the harvest and other blessings of the past year."
+
+      - "name": "Christmas"
+        "date": "2024-12-25"
+        "description": "An annual festival commemorating the birth of Jesus Christ observed primarily on December 25."
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.dropdown
+          instanceId: holiday
+          options:
+            label: Select holiday
+            data: =@ctx.datasources.holidays
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name
+                value: =@ctx.current.item.date
+            onChange: 
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.daysUntil
+                value: =$jsfunctions.daysUntil(@ctx.components.holiday.state.value)
+        - type: component.text-field
+          instanceId: days
+          when: =@ctx.components.days.state.value = 'NaN' ? false:true
+          options:
+            label: Days to go
+            value: =@ctx.solution.state.daysUntil

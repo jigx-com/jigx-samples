@@ -22,4 +22,5 @@ tables:
   patient: null
   shipping: null
   customer: null
+  tasks: null
   

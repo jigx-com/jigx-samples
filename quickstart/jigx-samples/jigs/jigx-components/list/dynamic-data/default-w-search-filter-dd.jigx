@@ -35,12 +35,13 @@ children:
       isSearchable: true
       maximumItemsToRender: 50
       filter: 
+        data:
         - title: All
           value: ''
         - title: Indoor
-          value: TRUE
+          value: "TRUE"
         - title: Outdoor
-          value: FALSE
+          value: "FALSE"
       item:
         type: component.list-item
         options:

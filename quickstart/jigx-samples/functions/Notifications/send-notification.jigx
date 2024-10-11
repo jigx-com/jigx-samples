@@ -60,4 +60,4 @@ parameters:
     value: jigx
     required: true
   
-url: https://kdiqmco762.execute-api.us-east-1.amazonaws.com/default/organizations/09e431b3-e4e3-4cfa-9812-9160e69ecfa7/notifications
+url: https://us-east-1.api.jigx.com/v2.0/tool/organizations/09e431b3-e4e3-4cfa-9812-9160e69ecfa7/notifications

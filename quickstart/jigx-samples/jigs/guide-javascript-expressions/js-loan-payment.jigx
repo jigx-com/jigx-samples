@@ -1,0 +1,51 @@
+title: calculateLoanPayment
+description: |
+  The function calculates the monthly loan payment based on the principal amount, annual interest rate (as a percentage), and loan term in years.
+  
+  This function is useful for financial applications that calculate monthly mortgage or loan payments based on the principal amount, annual interest rate, and loan term in years. It helps users determine their monthly payment obligations accurately.
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+          
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: principal
+          options:
+            label: Loan Amount
+            initialValue: =$number(830000)
+        - type: component.text-field
+          instanceId: annualRatePercent
+          options:
+            label: Annual Rate (%)
+            initialValue: =$number(5.5)
+        - type: component.text-field
+          instanceId: loanDuration
+          options:
+            label: Loan Duration (years)
+            initialValue: =$number(30)
+        - type: component.text-field
+          instanceId: loanPayment
+          options:
+            label: Estimated monthly payment amount
+            value: =$jsfunctions.formatCurrency($jsfunctions.calculateLoanPayment(@ctx.components.principal.state.value, @ctx.components.annualRatePercent.state.value, @ctx.components.loanDuration.state.value),'$')
+            style:
+              isDisabled: true

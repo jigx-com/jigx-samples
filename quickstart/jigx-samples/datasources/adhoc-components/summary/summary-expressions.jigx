@@ -56,9 +56,14 @@ options:
     - type: Advanced expression list
       typeLink: advanced-expressions-list
       icon: list-add
-      color: color14
+      color: color2
     - type: Advanced expressions
       typeLink: advanced-expressions
       icon: cog-double
       color: color15 
+    - typeLink: javascript-summary
+      icon: java-script-logo
+      type: JavaScript expressions
+      color: color1
+        
                         

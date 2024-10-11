@@ -1,0 +1,200 @@
+title: distanceApart
+description: |
+  The distanceApart function takes the longitude and latitude coordinates of two cities and calculates the straight-line distance between them, as the crow flies.
+type: jig.default
+icon: dog-jump
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+          
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+datasources:
+  majorCities:
+    type: datasource.static
+    options:
+      data:
+
+        - "id": 1
+          "name": "Atlanta"
+          "state": "GA"
+          "long": -84.388
+          "lat": 33.749
+
+        - "id": 2
+          "name": "Austin"
+          "state": "TX"
+          "long": -97.7431
+          "lat": 30.2672
+
+        - "id": 3
+          "name": "Boston"
+          "state": "MA"
+          "long": -71.0589
+          "lat": 42.3601
+
+        - "id": 4
+          "name": "Chicago"
+          "state": "IL"
+          "long": -87.6298
+          "lat": 41.8781
+
+        - "id": 5
+          "name": "Dallas"
+          "state": "TX"
+          "long": -96.797
+          "lat": 32.7767
+
+        - "id": 6
+          "name": "Denver"
+          "state": "CO"
+          "long": -104.9903
+          "lat": 39.7392
+
+        - "id": 7
+          "name": "Detroit"
+          "state": "MI"
+          "long": -83.0458
+          "lat": 42.3314
+      
+        - "id": 8
+          "name": "Houston"
+          "state": "TX"
+          "long": -95.3698
+          "lat": 29.7604
+      
+        - "id": 9
+          "name": "Las Vegas"
+          "state": "NV"
+          "long": -115.1398
+          "lat": 36.1699
+
+        - "id": 10
+          "name": "Los Angeles"
+          "state": "CA"
+          "long": -118.2437
+          "lat": 34.0522
+
+        - "id": 11
+          "name": "Miami"
+          "state": "FL"
+          "long": -80.1918
+          "lat": 25.7617
+
+        - "id": 12
+          "name": "Minneapolis"
+          "state": "MN"
+          "long": -93.265
+          "lat": 44.9778
+
+        - "id": 13
+          "name": "New York"
+          "state": "NY"
+          "long": -74.006
+          "lat": 40.7128
+
+        - "id": 14
+          "name": "Orlando"
+          "state": "FL"
+          "long": -81.3792
+          "lat": 28.5383
+      
+        - "id": 15
+          "name": "Philadelphia"
+          "state": "PA"
+          "long": -75.1652
+          "lat": 39.9526
+
+        - "id": 16
+          "name": "Phoenix"
+          "state": "AZ"
+          "long": -112.074
+          "lat": 33.4484
+      
+        - "id": 17
+          "name": "San Antonio"
+          "state": "TX"
+          "long": -98.4936
+          "lat": 29.4241
+      
+        - "id": 18
+          "name": "San Diego"
+          "state": "CA"
+          "long": -117.1611
+          "lat": 32.7157
+
+        - "id": 19
+          "name": "San Francisco"
+          "state": "CA"
+          "long": -122.4194
+          "lat": 37.7749
+
+        - "id": 20
+          "name": "Seattle"
+          "state": "WA"
+          "long": -122.3321
+          "lat": 47.6062
+
+
+
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.field-row
+          options:
+            children:      
+              - type: component.dropdown
+                instanceId: fromCity
+                options:
+                  label: From
+                  data: =@ctx.datasources.majorCities
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.name & ' (' & @ctx.current.item.state & ')'
+                      value: =@ctx.current.item.id
+                  onChange: 
+                    type: action.set-state
+                    options:
+                      state: =@ctx.solution.state.distance
+                      value: =$round($jsfunctions.distanceApart(@ctx.components.fromCity.state.selected.long, @ctx.components.fromCity.state.selected.lat, @ctx.components.toCity.state.selected.long, @ctx.components.toCity.state.selected.lat), 0)
+    
+              - type: component.dropdown
+                instanceId: toCity
+                options:
+                  label: To
+                  data: =@ctx.datasources.majorCities
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.name & ' (' & @ctx.current.item.state & ')'
+                      value: =@ctx.current.item.id
+                  onChange: 
+                    type: action.set-state
+                    options:
+                      state: =@ctx.solution.state.distance
+                      value: =$round($jsfunctions.distanceApart(@ctx.components.fromCity.state.selected.long, @ctx.components.fromCity.state.selected.lat, @ctx.components.toCity.state.selected.long, @ctx.components.toCity.state.selected.lat), 0)
+    
+        - type: component.text-field
+          instanceId: distance
+          when: =@ctx.components.distance.state.value = 'NaN' ? false:true
+          options:
+            label: Distance (in Miles)
+            value: =@ctx.solution.state.distance
+            style:
+              isDisabled: true

@@ -5,6 +5,7 @@ icon: notes-paper-approve
 isSearchable: true
 
 filter: 
+  data:
   - title: All
     value: ''
   - title: Indoor

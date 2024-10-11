@@ -32,6 +32,7 @@ datasources:
           progress: 0.9
 
 filter:
+  data:
   - title: All
     value: ""
   - title: Active

@@ -1,0 +1,28 @@
+title: helloWorld
+description: |
+  The function returns static text Hello World
+type: jig.default
+icon: dog
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: textField
+          options:
+            label: Function Result
+            value: =$jsfunctions.helloWorld()

@@ -1,0 +1,65 @@
+title: Filter List with default tab
+description: A dynamic list displaying filter options opening with a default tab showing tasks Team B
+type: jig.list
+icon: filter-1
+  
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+datasources:
+  department:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/tasks
+      query: |
+        SELECT 
+          id, 
+          '$.taskAssignee',
+          '$.taskName',
+          '$.taskCost',
+          '$.taskId', 
+          '$.taskStatus',
+          '$.team', 
+          '$.Profile'
+         
+        FROM [default/tasks]
+        WHERE '$.team' LIKE @filter or @filter IS NULL
+      queryParameters:
+          filter: =@ctx.jig.state.filter
+
+filter:
+    initialValue: teamB
+    data: 
+      - title: Team A
+        value: teamA
+      - title: Team B
+        value: teamB
+      - title: Team C
+        value: teamC 
+          
+data: =@ctx.datasources.department
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.taskAssignee
+    subtitle: =@ctx.current.item.taskName
+    label:
+      color:
+        - when: true
+          color: color1
+      title: =@ctx.current.item.team
+    leftElement: 
+      element: avatar
+      text: =@ctx.current.item.taskAssignee
+      uri: =@ctx.current.item.Profile
+
+

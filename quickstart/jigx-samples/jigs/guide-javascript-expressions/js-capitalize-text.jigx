@@ -1,0 +1,39 @@
+title: capitalizeJobTitle
+description: |
+  The capitalizeJobTitle function capitalizes the first letter of each word in a string while fully capitalizing specific acronyms such as CEO, COO, CFO, CTO, CIO, CMO, CSO, CPO, CHRO, and CDO. This ensures that job titles are formatted accurately, respecting the conventions for common acronyms.
+type: jig.default
+icon: dog-race-compettion-2
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: jobTitle
+          options:
+            label: Job Title
+            initialValue: Product marketing manager
+        - type: component.text-field
+          instanceId: formattedText
+          when: =@ctx.components.jobTitle.state.value != ''
+          options:
+            label: Capitilized Job Title
+            value: =$jsfunctions.capitalizeJobTitle(@ctx.components.jobTitle.state.value)

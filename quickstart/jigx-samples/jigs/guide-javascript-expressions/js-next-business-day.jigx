@@ -1,0 +1,48 @@
+title: getNextBusinessDay
+description: |
+  The getNextBusinessDay function calculates the next business day from a given date. It returns the next valid business day in the format "Month Day, Year".
+  
+  In a business application, this function can be used to determine the next available working day for scheduling meetings, processing orders, or planning project deadlines.
+type: jig.default
+icon: dog-sit-1
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.date-picker
+          instanceId: date
+          options:
+            label: Date
+            initialValue: =$now()
+            onChange: 
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.nextBusinessDay
+                value: =$jsfunctions.getNextBusinessDay(@ctx.components.date.state.value)
+        - type: component.text-field
+          instanceId: result
+          when: =@ctx.components.result.state.value = 'NaN' ? false:true
+          options:
+            label: Next business day
+            value: =@ctx.solution.state.nextBusinessDay
+            style:
+              isDisabled: true

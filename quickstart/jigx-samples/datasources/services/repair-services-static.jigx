@@ -4,7 +4,7 @@ options:
     - id: 1
       description: Installation or repairs for doors. Doors to be provided by client
       hourlyRate: 70
-      illustration: http://clipart-library.com/data_images/436224.png
+      illustration: https://clipart-library.com/data_images/436224.png
       image: https://images.unsplash.com/photo-1500281781950-6cd80847ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80
       materials: false
       service: Door Installation/Repair
@@ -12,7 +12,7 @@ options:
     - id: 2
       description: Repairs to door handles 
       hourlyRate: 40
-      illustration: http://clipart-library.com/img1/1332215.jpg
+      illustration: https://clipart-library.com/img1/1332215.jpg
       image: https://images.unsplash.com/photo-1538766017398-415434a31a5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: true
       service: Door Handle/Lock Repairs
@@ -20,7 +20,7 @@ options:
     - id: 3
       description: Installation or repairs of tiled surfaces. Tiles have to be provided by client
       hourlyRate: 110
-      illustration: http://clipart-library.com/images/kcKnbzbXi.jpg
+      illustration: https://clipart-library.com/images/kcKnbzbXi.jpg
       image: https://images.unsplash.com/photo-1523413184730-e85dbbd04aba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
       materials: false
       service: Tile Installation/Repair
@@ -28,7 +28,7 @@ options:
     - id: 4
       description: Installation or repairs of dry-wall surfaces
       hourlyRate: 80
-      illustration: http://clipart-library.com/img1/505759.jpg
+      illustration: https://clipart-library.com/img1/505759.jpg
       image: https://images.unsplash.com/photo-1628901551715-7234d14fb7a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: true
       service: Drywall Installation/Repair
@@ -36,7 +36,7 @@ options:
     - id: 5
       description: Repairs to bathroom rails, toilets, etc
       hourlyRate: 90
-      illustration: http://clipart-library.com/new_gallery/53-530190_black-and-white-toilet-png.png
+      illustration: https://clipart-library.com/new_gallery/53-530190_black-and-white-toilet-png.png
       image: https://images.unsplash.com/photo-1585313647787-7a061b5a85a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1423&q=80
       materials: true
       service: Bathroom Repairs
@@ -44,7 +44,7 @@ options:
     - id: 6
       description: Painting as required. Paint and tools not provided 
       hourlyRate: 70
-      illustration: http://clipart-library.com/img/853166.jpg
+      illustration: https://clipart-library.com/img/853166.jpg
       image: https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1431&q=80
       materials: false
       service: Painting Services
@@ -52,7 +52,7 @@ options:
     - id: 7
       description: Repairs to fences. Tools and items not included
       hourlyRate: 90
-      illustration: http://clipart-library.com/img/18345.gif
+      illustration: https://clipart-library.com/img/18345.gif
       image: https://images.unsplash.com/photo-1583805978118-ba9a81ac1399?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: false
       service: Fence Installation/Repair
@@ -60,7 +60,7 @@ options:
     - id: 8
       description: Removal of graffiti and painting. Paint and brushes not included in cost
       hourlyRate: 110
-      illustration: http://clipart-library.com/images/6cy5aL5gi.jpg
+      illustration: https://clipart-library.com/images/6cy5aL5gi.jpg
       image: https://images.unsplash.com/photo-1581850518616-bcb8077a2336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: false
       service: Removal of Graffiti
@@ -68,7 +68,7 @@ options:
     - id: 9
       description: Repairs to cupboard doors
       hourlyRate: 60
-      illustration: http://clipart-library.com/img1/1605140.jpg
+      illustration: https://clipart-library.com/img1/1605140.jpg
       image: https://images.unsplash.com/photo-1522791465802-47616431a4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1451&q=80
       materials: true
       service: Cupboard Door Repairs
@@ -76,7 +76,7 @@ options:
     - id: 10
       description: Plumbing issues and repairs
       hourlyRate: 90
-      illustration: http://clipart-library.com/images_k/plumbing-silhouette/plumbing-silhouette-6.png
+      illustration: https://clipart-library.com/images_k/plumbing-silhouette/plumbing-silhouette-6.png
       image: https://images.unsplash.com/photo-1591804774220-c1db3673d05b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80
       materials: true
       service: Plumbing

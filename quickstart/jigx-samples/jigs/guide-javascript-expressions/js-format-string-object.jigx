@@ -1,0 +1,53 @@
+title: getEmployeeInfo
+description: |
+  The getEmployeeInfo function constructs a formatted string from an object that includes an employee's first name, last name, position, and email address.
+type: jig.default
+icon: dog-sit-1
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+datasources:
+  employee:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - default/employees
+  
+      query: |
+        SELECT
+          emp.id as empID,
+          json_extract(emp.data, '$.firstName') as firstname,
+          json_extract(emp.data, '$.lastName') as lastname,
+          json_extract(emp.data, '$.position') as position,
+          json_extract(emp.data, '$.department') as department,
+          json_extract(emp.data, '$.email') as email,
+          json_extract(emp.data, '$.phone') as phone
+        FROM
+            [default/employees] as emp
+        WHERE 
+          empID = @empId
+        
+      queryParameters:
+        empId: '0f5d59ac-4ecd-4fba-84f4-38c3ace59cf5'
+        
+      isDocument: true
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Function result
+            value: =$jsfunctions.getEmployeeInfo(@ctx.datasources.employee)

@@ -1,0 +1,50 @@
+title: rateDealSize
+description: |
+  The rateDealSize function evaluates the size of a deal based on the provided amount and categorizes it into one of three sizes: small, medium, or large.
+  
+  'SMALL' if the amount is less than 20,000.
+  'MEDIUM' if the amount is between 20,000 and 80,000.
+  'LARGE' if the amount is greater than 80,000.
+type: jig.default
+icon: dog-giving-hand-paw
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: amount
+          options:
+            label: Deal Amount
+            initialValue: =$number(45000)
+            format:
+              numberStyle: currency
+              currencyDisplay: symbol
+              currencySign: standard
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Rating
+            value: |
+              =('A deal with an amount of $' 
+                & $formatNumber($number(@ctx.components.amount.state.value), "###,###.00") 
+                & ' is classified as a ' 
+                & $uppercase(
+                  $jsfunctions.rateDealSize(@ctx.components.amount.state.value)) 
+                & ' deal')
+        

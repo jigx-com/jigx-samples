@@ -11,15 +11,15 @@ datasources:
         - title: Tech stocks on the rise
           subtitle: Big day in tech today
           preview-image: https://images.unsplash.com/photo-1642621668575-93550304b614?&auto=format&fit=crop&w=1000&q=80
-          url: http://www.theverge.com
+          url: https://www.theverge.com
         - title: Wall Street bullish again
           subtitle: Monthly U.S. jobs growth stronger-than-expected
           preview-image: https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?&fit=crop&w=1000&q=80
-          url: http://www.reuters.com
+          url: https://www.reuters.com
         - title: Fintech Top 100 Nwecomers
           subtitle: Here are the latest rising stars in fintech
           preview-image: https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?ifit=crop&w=1000&q=80
-          url: http://www.forbes.com
+          url: https://www.forbes.com
           
 
 data: =@ctx.datasources.news

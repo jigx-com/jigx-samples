@@ -1,0 +1,42 @@
+title: formatPhoneNumber
+description: |
+  The formatPhoneNumber function formats a 10-digit telephone number into the (XXX) XXX-XXXX format. It removes all non-digit characters, checks if the length is correct, and then formats the cleaned number accordingly.
+  
+  This function is useful in applications that require consistent formatting of user input for telephone numbers, such as contact forms, user profiles, or customer service systems. It ensures that telephone numbers are displayed in a standardized and readable format.
+type: jig.default
+icon: dog-sit-1
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: phoneNumber
+          options:
+            label: Phone Number
+            initialValue: '4253892293'
+        - type: component.text-field
+          instanceId: formattedPhone
+          options:
+            label: Formatted Phone Number
+            value: =$jsfunctions.formatPhoneNumber(@ctx.components.phoneNumber.state.value)
+            style:
+              isDisabled: true

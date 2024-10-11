@@ -1,0 +1,45 @@
+title: calculateAge
+description: |
+  The calculateAge function determines a person's age based on their date of birth provided in the YYYY-MM-DD format. 
+  
+  This function is particularly useful in scenarios requiring age verification, such as user registration forms, social media profile management, or determining eligibility for age-restricted services.
+type: jig.default
+icon: dog-playing-ball
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.date-picker
+          instanceId: dob
+          options:
+            label: Date of Birth
+            onChange: 
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.age
+                value: =$jsfunctions.calculateAge(@ctx.components.dob.state.value)
+        - type: component.text-field
+          instanceId: result
+          when: =@ctx.components.result.state.value = 'NaN' ? false:true
+          options:
+            label: Age
+            value: =@ctx.solution.state.age

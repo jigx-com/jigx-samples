@@ -1,0 +1,56 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: function-symbol
+      type: Returns string
+      typeLink: js-string
+    - color: color2
+      icon: function-x-math-formatting
+      type: Concatenate two words
+      typeLink: js-concatenate
+    - color: color3
+      icon: functions
+      type: Calculate tax
+      typeLink: js-calculation
+    - color: color4
+      icon: programming-code
+      type: Evaluate deal size
+      typeLink: js-evaluation
+    - color: color5
+      icon: programming-hold-code
+      type: Distance long & lat
+      typeLink: js-distance-apart
+    - color: color6
+      icon: programming-user-head
+      type: Calculation of days
+      typeLink: js-days-until
+    - color: color7
+      icon: programming-user-chat-woman
+      type: Calculate age
+      typeLink: js-calculate-age
+    - color: color8
+      icon: js
+      type: Capitalize job title
+      typeLink: js-capitalize-text
+    - color: color9
+      icon: file-js-1
+      type: Calculate work days
+      typeLink: js-work-days
+    - color: color10
+      icon: phone-action-code-1
+      type: Format phone number
+      typeLink: js-format-number
+    - color: color11
+      icon: file-js
+      type: Get next business day
+      typeLink: js-next-business-day
+    - color: color12
+      icon: function-symbol
+      type: Calculate loan payment
+      typeLink: js-loan-payment
+    - color: color13
+      icon: functions
+      type: Format a string from an object
+      typeLink: js-format-string-object    
+     

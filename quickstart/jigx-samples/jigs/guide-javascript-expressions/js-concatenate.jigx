@@ -1,0 +1,40 @@
+title: getFullName
+description: Creating a full name from a first and last name can be done using a simple JavaScript function, but using JSONata offers a faster and more efficient approach due to its inline nature.
+type: jig.default
+icon: dog-carrying-bring-play-ball
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: firstName
+          options:
+            label: First Name
+            initialValue: Bobby
+        - type: component.text-field
+          instanceId: lastName
+          options:
+            label: Last Name
+            initialValue: Smith
+        - type: component.text-field
+          instanceId: fullName
+          options:
+            label: Full Name
+            value: =$jsfunctions.getFullName(@ctx.components.firstName.state.value, @ctx.components.lastName.state.value)
+            style:
+              isDisabled: true
+              

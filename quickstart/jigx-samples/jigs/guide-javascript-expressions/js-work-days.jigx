@@ -1,0 +1,43 @@
+title: workdaysLeftInMonth
+description: |
+  The workdaysLeftInMonth function calculates the number of workdays (Monday to Friday) remaining in the month from a given date.
+  
+  This function is useful in business applications where the number of remaining workdays from a specific date is important for scheduling, project management, or payroll processing.
+type: jig.default
+icon: dog-sit
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source: 
+          uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
+            # https://coderpad.io/wp-content/uploads/2022/07/javascript-functions.png
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.myForm.state.data
+
+children:
+  - type: component.form
+    instanceId: myForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.date-picker
+          instanceId: date
+          options:
+            label: Date
+            initialValue: =$now()
+        - type: component.text-field
+          instanceId: daysRemaining
+          when: =@ctx.components.daysRemaining.state.value != 'NaN'
+          options:
+            label: Work days left for this month
+            value: =$jsfunctions.workdaysLeftInMonth(@ctx.components.date.state.value)
+            style:
+              isDisabled: true
