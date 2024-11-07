@@ -3,17 +3,22 @@ type: jig.default
 
 actions:
   - children:
-    - type: action.submit-form
+    - type: action.action-list
       options:
-        formId: avatar-form
-        provider: DATA_PROVIDER_DYNAMIC
-        title: Submit form
-        entity: default/form
-        method: save
-        goBack: previous
-        onSuccess: 
-          title: Avatar form
-          description: Your form was submitted
+        title: Create Record
+        isSequential: true
+        actions:  
+        - type: action.execute-entity
+          options:
+            provider: DATA_PROVIDER_DYNAMIC
+            entity: default/form
+            method: save
+            data:
+              avatar-field: =@ctx.components.avatar-field.state.value
+            onSuccess: 
+              description: Your form was submitted
+              title: Avatar form
+        - type: action.go-back
       
 children:
   - type: component.form

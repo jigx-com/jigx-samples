@@ -4,26 +4,31 @@ icon: scanner
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.action-list
         options:
-          formId: send-signature-scan
-          provider: DATA_PROVIDER_DYNAMIC
           title: Sign and proceed with the payment
-          entity: default/form
-          goBack: previous
-          method: create
-          onSuccess: 
-            title: Succesfully signed
-            description: Please scan the product code to proceed with the payment
-            actions:
-              - type: action.open-scanner
-                instanceId: scanner-onsuccess
-                options:
-                  title: "Scan QR code"
-                  modal:
-                    title: Scan complete
-                  onSuccess: 
-                    type: action.go-back
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: create
+                data:
+                  signature: =@ctx.components.signature.state.value
+                onSuccess:
+                  title: Succesfully signed
+                  description: Please scan the product code to proceed with the payment
+                  actions:
+                    - type: action.open-scanner
+                      instanceId: scanner-onsuccess
+                      options:
+                        title: Scan QR code
+                        modal:
+                          title: Scan complete
+                        onSuccess:
+                          type: action.go-back
+            - type: action.go-back
         
 children:
   - type: component.form

@@ -41,6 +41,10 @@ options:
       component: Dropdown
       componentLink: composite-dropdown
       icon: checklist
+    - color: color5
+      component: Duration-picker
+      componentLink: duration-picker-summary
+      icon: time-clock-file-1    
     - color: color9
       component: Email-field
       componentLink: email-field

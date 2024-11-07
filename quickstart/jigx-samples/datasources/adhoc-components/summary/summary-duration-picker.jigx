@@ -1,0 +1,28 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: time-clock-circle
+      type: Basic duration-picker
+      typeLink: duration-picker
+    - color: color2
+      icon: time-clock-hand
+      type: Duration-picker (hours only)
+      typeLink: duration-picker-hour-steps
+    - color: color3
+      icon: time-clock-file-upload
+      type: Duration-picker (minutes only)
+      typeLink: duration-picker-min-steps
+    - color: color4
+      icon: time-clock-nine-to-twelve
+      type: Duration-picker in color
+      typeLink: duration-picker-color
+    - color: color5
+      icon: time-clock-circle-2-alternate
+      type: Duration-picker with an initial value
+      typeLink: duration-picker-initialvalue     
+    - color: color6
+      icon: time-clock-hand-1-alternate
+      type: Duration-picker with onChange event
+      typeLink: duration-picker-onchange 
+    

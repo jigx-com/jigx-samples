@@ -19,6 +19,7 @@ children:
   - type: component.form
     instanceId: form-employee # used in the submit-form action to get context to the property instanceId
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
           instanceId: first_name # becomes the name of the column in table
@@ -26,8 +27,7 @@ children:
             label: 
               id: first_name
               defaultMessage: First Name
-              
-             
+     
         - type: component.text-field
           instanceId: last_name # becomes the name of the column in table
           options:
@@ -72,13 +72,21 @@ children:
       
 actions:
   - children: 
-      - type: action.submit-form
+      - type: action.execute-entity
         options:
-          formId: form-employee
-          provider: DATA_PROVIDER_DYNAMIC
           title: 
             id: create
             defaultMessage: Create Record
+          provider: DATA_PROVIDER_DYNAMIC
           entity: default/employees
           method: create
-          goBack: previous
+          data:
+            first_name: =@ctx.components.first_name.state.value
+            last_name: =@ctx.components.last_name.state.value
+            contact_number: =@ctx.components.contact_number.state.value
+            date_of_birth: =@ctx.components.date_of_birth.state.value
+            photo: =@ctx.components.photo.state.value
+            signature: =@ctx.components.signature.state.value
+            email: =@ctx.components.email.state.value
+          onSuccess: 
+            type: action.go-back

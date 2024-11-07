@@ -50,4 +50,3 @@ item:
           data:
             id: =@ctx.current.item.id
             quantity: =@ctx.current.state.amount
-          goBack: stay

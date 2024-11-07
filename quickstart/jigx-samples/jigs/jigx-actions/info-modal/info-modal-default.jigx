@@ -5,12 +5,12 @@ onFocus:
   type: action.reset-state
   options:
     state: =@ctx.jig.components.default-form.state.data
-
+    
 actions:
   - children: 
       - type: action.info-modal
         options:
-          title: Submit
+          title: Sumbit
           modal:
             title: Verification
             buttonText: Submit
@@ -34,7 +34,6 @@ actions:
                 employee-phone-number: =@ctx.components.employee-phone-number.state.value
                 employee-position: =@ctx.components.employee-position.state.value
                 employee-startWork: =@ctx.components.employee-startWork.state.value
-                employee-contract: =@ctx.components.employee-contract.state.value
           
 children:
   - type: component.form
@@ -45,6 +44,7 @@ children:
         - type: component.avatar-field
           instanceId: employee-photo
           options:
+            initialValue: =@ctx.datasources.employee-detail-dynamic[0].photo
             label: Photo
         - type: component.section
           options:
@@ -53,23 +53,28 @@ children:
               - type: component.text-field
                 instanceId: employee-first-name
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].firstname
                   label: First name
               - type: component.text-field
                 instanceId: employee-surname
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].lastname
                   label: Surname
               - type: component.date-picker
                 instanceId: employee-date-of-birth
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].birthdate
                   label: Date of birth
               - type: component.email-field
                 instanceId: employee-email
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].email
                   label: Email
                   icon: email
               - type: component.number-field
                 instanceId: employee-phone-number
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].phone
                   label: Phone number
                   icon: phone
         - type: component.section
@@ -79,13 +84,15 @@ children:
               - type: component.text-field
                 instanceId: employee-position
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].position
                   label: Position
               - type: component.date-picker
                 instanceId: employee-startWork
                 options:
+                  initialValue: =@ctx.datasources.employee-detail-dynamic[0].employee-startWork
                   label: Date of starting work
-              - type: component.media-field
-                instanceId: employee-contract
-                options:
-                  label: Contract
-                  mediaType: any
+              
+                                  
+      
+          
+            

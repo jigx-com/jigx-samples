@@ -1,0 +1,95 @@
+title: Customer engagement
+description: Duration picker
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1556740758-90de374c12ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3VzdG9tZXIlMjBzZXJ2aWNlfGVufDB8fDB8fHww
+          
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.my-form.state.data
+    
+datasources:
+  customer-satisfaction: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          option: 😀 Happy
+        - id: 2
+          option: 😕 Neutral  
+        - id: 3
+          option: 😡 Sad 
+
+children:
+  - type: component.form
+    instanceId: my-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: First Name
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last Name
+        - type: component.email-field  
+          instanceId: email
+          options:
+            icon: email
+            label: Email  
+        - type: component.text-field
+          instanceId: contact
+          options:
+            icon: phone
+            textContentType: telephoneNumber
+            label: Contact number
+        - type: component.date-picker
+          instanceId: call-date
+          options:
+            label: Select date of engagement
+        - type: component.duration-picker
+          instanceId: duration
+          options:
+            label: Engagement time
+        - type: component.choice-field
+          instanceId: satisfaction
+          options:
+            itemsPerRow: 3
+            label: How satisfied was the customer with our service?
+            data: =@ctx.datasources.customer-satisfaction
+            item:
+              type: component.choice-field-item
+              options:
+                title: =@ctx.current.item.option
+                value: =@ctx.current.item.option    
+            
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Submit Engagement 
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/customer
+          method: create
+          data:
+            firstName: =@ctx.components.firstName.state.value
+            lastName: =@ctx.components.lastName.state.value
+            email: =@ctx.components.email.state.value
+            contact:  =@ctx.components.contact.state.value    
+            call-date: =@ctx.components.call-date.state.value
+            duration: =@ctx.components.duration.state.value
+            satisfaction: =@ctx.components.satisfaction.state.value 

@@ -1,0 +1,45 @@
+title: Cleaning Services
+description: List showing available Cleaning Services
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.cleaning-services-dynamic
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:  
+          title: =@ctx.current.item.service
+          subtitle: ='Duration of ' & @ctx.current.item.time & ' mins'
+          horizontalItemSize: large
+          isContained: true
+          rating: 
+            ratingIcon:
+              icon: thumb-up-like
+              color: color7
+            value: 
+              current: =@ctx.current.item.rating
+              maximum: 5 
+          tags:
+            - text: =('$' & @ctx.current.item.hourlyrate)
+              color: color14
+            - text: =@ctx.current.item.area
+              color: color14
+          leftElement: 
+            element: image
+            text: ''
+            uri: =@ctx.current.item.image
+          rightElement: 
+            element: badge
+            value: =@ctx.current.item.quantity

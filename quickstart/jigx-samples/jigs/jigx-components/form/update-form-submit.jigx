@@ -4,15 +4,20 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.submit-form
-        options:
-          formId: form-update
+       - type: action.execute-entity
+         options:
+          title: Update Record
           provider: DATA_PROVIDER_DYNAMIC
-          title: Update form
           entity: default/form
           method: update
-          recordId: =@ctx.datasources.form-update.id
-          goBack: previous
+          data:
+            id: =@ctx.datasources.form-update.id 
+            firstname: =@ctx.components.firstname.state.value
+            lastname: =@ctx.components.lastname.state.value
+            email: =@ctx.components.email.state.value
+            phone: =@ctx.components.phone.state.value
+          onSuccess: 
+            type: action.go-back
           
 datasources:
   form-update:

@@ -1,5 +1,4 @@
 type: datasource.sqlite
-
 options:
   provider: DATA_PROVIDER_DYNAMIC
 
@@ -20,5 +19,6 @@ options:
       '$.service', 
       '$.pressed', 
       '$.time',
-      '$.quantity'
+      '$.quantity',
+      '$.rating'
     FROM [default/cleaning-services] WHERE '$.hourlyrate' IS NOT NULL ORDER BY id DESC

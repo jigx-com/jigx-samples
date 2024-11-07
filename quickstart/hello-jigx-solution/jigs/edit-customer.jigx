@@ -61,4 +61,5 @@ actions:
           # The Jigx Dynamic Data provider method to update the data                  
           method: update
           recordId: =@ctx.jig.inputs.custId
-          goBack: previous  
+          onSuccess: 
+            type: action.go-back 

@@ -1,0 +1,87 @@
+title: Team task priorities list
+description: A list displaying priorities, with a numbered badge for each. 
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHdvcmslMjB0YXNrc3xlbnwwfHwwfHx8MA%3D%3D
+
+datasources:
+  team-tasks:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/tasks
+      query: |
+        SELECT 
+          id, 
+          JSON_EXTRACT(task.data, '$.taskAssignee') AS taskAssignee,
+          JSON_EXTRACT(task.data, '$.taskName') AS taskName,
+          JSON_EXTRACT(task.data, '$.taskCost') AS taskCost,
+          JSON_EXTRACT(task.data, '$.taskId') AS taskId,
+          JSON_EXTRACT(task.data, '$.taskStatus') AS taskStatus,
+          JSON_EXTRACT(task.data, '$.team') AS team,
+          JSON_EXTRACT(task.data, '$.Profile') AS Profile,
+          JSON_EXTRACT(task.data, '$.priority') AS priority,
+          COUNT(JSON_EXTRACT(task.data, '$.taskId')) AS taskCount
+        FROM [default/tasks] AS task
+        GROUP BY priority
+        ORDER BY priority DESC
+
+  priority: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Closed
+          icon: check-2-alternate
+        - id: 2
+          name: Urgent
+          icon: double-exclamation-mark-2-formatting
+        - id: 3
+          name: High
+          icon: arrow-double-up
+        - id: 4
+          name: Low
+          icon: arrow-double-down
+        - id: 4
+          name: Medium
+          icon: equal-math-symbol-circle
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.team-tasks
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          color:
+            - when: =@ctx.current.item.priority = 'Urgent'
+              color: negative
+            - when: =@ctx.current.item.priority = 'Medium'
+              color: primary
+            - when: =@ctx.current.item.priority = 'Low'
+              color: color6
+            - when: =@ctx.current.item.priority = 'Closed'
+              color: positive
+            - when: =@ctx.current.item.priority = 'High'
+              color: warning
+          title: =@ctx.current.item.priority
+          divider: solid
+          leftElement:
+            element: icon
+            icon: =@ctx.datasources.priority[name = @ctx.current.item.priority].icon
+            isDuotone: true
+          rightElement: 
+            element: badge
+            value: =@ctx.current.item.taskCount
+          
+          

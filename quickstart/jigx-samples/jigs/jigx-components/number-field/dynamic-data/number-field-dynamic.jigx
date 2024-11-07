@@ -3,14 +3,16 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.execute-entity
         options:
-          formId: number-form
+          title: Save number
           provider: DATA_PROVIDER_DYNAMIC
-          title: Submit form
           entity: default/form
           method: save
-          goBack: previous
+          data:
+            number: =@ctx.components.number.state.value
+          onSuccess: 
+            type: action.go-back
 
 header:
   type: component.jig-header

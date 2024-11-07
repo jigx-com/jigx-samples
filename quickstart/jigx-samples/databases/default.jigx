@@ -23,4 +23,7 @@ tables:
   shipping: null
   customer: null
   tasks: null
+  security: null
+  inspection: null
+  work: null
   

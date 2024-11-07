@@ -3,19 +3,30 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.execute-entity
         options:
-          formId: newEvent
+          title: Create Record
           provider: DATA_PROVIDER_DYNAMIC
-          title: Create Event
           entity: default/calendar
           method: create
-          goBack: previous
+          data:
+            id: =@ctx.components.id.state.value
+            category: =@ctx.components.category.state.value
+            title: =@ctx.components.title.state.value
+            location: =@ctx.components.location.state.value
+            date-from: =@ctx.components.date-from.state.value
+            date-to: =@ctx.components.date-to.state.value
+            tags: =@ctx.components.tags.state.value
+            email: =@ctx.components.email.state.value
+            color: =@ctx.components.color.state.value     
+          onSuccess: 
+            type: action.go-back
 
 children:
   - type: component.form
     instanceId: newEvent
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
           instanceId: id

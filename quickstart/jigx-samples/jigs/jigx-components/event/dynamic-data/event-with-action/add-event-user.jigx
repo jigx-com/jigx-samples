@@ -1,47 +1,69 @@
 title: Registration
-description: =@ctx.jig.inputs.title
 type: jig.default
-
+description: =@ctx.jig.inputs.title
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.execute-entity
         options:
-          formId: bookForm
-          provider: DATA_PROVIDER_DYNAMIC
           title: Create Record
+          provider: DATA_PROVIDER_DYNAMIC
           entity: default/calendar
           method: create
-          goBack: previous
-
+          data:
+            id: =@ctx.components.id.state.value
+            userName: =@ctx.components.userName.state.value
+            userEmail: =@ctx.components.userEmail.state.value
+            PhoneNumber: =@ctx.components.PhoneNumber.state.value
+            avatar: =@ctx.components.avatar.state.value
+          onSuccess: 
+            type: action.go-back
+                 
 children:
   - type: component.form
     instanceId: bookForm
     options:
+      isDiscardChangesAlertEnabled: false
       children:
-        - type: component.text-field
-          instanceId: id
+      - instanceId: id
+        options:
+          isHidden: true
+          label: id
+          value: =@ctx.jig.inputs.id
+        type: component.text-field
+      - options:
+          children:
+            - instanceId: userName
+              options:
+                label: Name
+                value: =@ctx.user.displayName
+              type: component.text-field
+            - instanceId: userEmail
+              options:
+                label: Email
+                value: =@ctx.user.email
+              type: component.email-field
+        type: component.field-row
+      # - instanceId: userPhone
+      #   options:
+      #     label: Phone
+      #   type: component.number-field
+      - type: component.text-field
+        instanceId: PhoneNumber
+        options:
+          label: Phone Number
+          value: =@ctx.datasources.employee-detail-dynamic.phone
+          keyboardType: phone-pad
+          # Set the type of text for this field. This will enforce a regex for this field of the type it is set to.
+          textContentType: telephoneNumber 
+      - instanceId: avatar
+        options:
+          label: Photo
+        type: component.avatar-field
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
           options:
-            label: id
-            value: =@ctx.jig.inputs.id
-            isHidden: true
-        - type: component.field-row
-          options:
-            children:
-              - type: component.text-field
-                instanceId: userName
-                options:
-                  label: Name
-                  value: =@ctx.user.displayName
-              - type: component.email-field
-                instanceId: userEmail
-                options:
-                  label: Email
-                  value: =@ctx.user.email
-        - type: component.number-field
-          instanceId: userPhone
-          options:
+            contentType: phone
             label: Phone
-        - type: component.avatar-field
-          instanceId: avatar
-          options:
-            label: Photo
+            value: =@ctx.datasources.employee-detail-dynamic.phone

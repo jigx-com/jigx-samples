@@ -1,0 +1,98 @@
+title: Shift logging
+description: Duration picker with an initial value
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1668678437217-ad4bcac34f32?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.shift-form.state.data
+    
+children:
+  - type: component.form
+    instanceId: shift-form
+    options:
+      children:
+        - type: component.number-field
+          instanceId: employee-number
+          options:
+            label: Employee number
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: Name
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last Name   
+        - type: component.email-field  
+          instanceId: email
+          options:
+            label: Email  
+        - type: component.text-field
+          instanceId: contact
+          options:
+            textContentType: telephoneNumber
+            label: Contact number
+        - type: component.field-row
+          options:
+            children:
+              
+              - type: component.date-picker
+                instanceId: shift-date
+                options:
+                  label: Select shift date 
+              - type: component.duration-picker
+                instanceId: shift-duration
+                options:
+                  label: Log your shift duration
+                  initialValue: 14400
+                  helperText: Standard shift is 4 hours 
+                  errorText: =@ctx.component.state.value > 14400 ? 'Shift time needs approval':'' 
+                  hours:
+                    step: 4
+                  minutes:
+                    step: 2  
+                    
+actions:
+  - children:
+      - type: action.execute-entity
+        when: =@ctx.components.shift-duration.state.value = 14400 
+        options:
+          title: Allocate shift
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/work
+          method: create
+          data:
+            employee-number: =@ctx.components.employee-number.state.value
+            firstName: =@ctx.components.firstName.state.value
+            lastName: =@ctx.components.lastName.state.value
+            email: =@ctx.components.email.state.value
+            contact:  =@ctx.components.contact.state.value
+            shift-date: =@ctx.components.shift-date.state.value
+            shift-duration: =@ctx.components.shift-duration.state.value  
+      - type: action.confirm
+        when: =@ctx.components.shift-duration.state.value > 14400
+        options:
+          title: Send for approval
+          isConfirmedAutomatically: false
+          onConfirmed: 
+            type: action.set-state
+            options:
+              state: =@ctx.solution.state.shift-status
+              value: Waiting Approval
+          modal:
+            title: Shift hours sent for approval  
+       

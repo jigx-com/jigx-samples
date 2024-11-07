@@ -4,21 +4,26 @@ description: In this example, the go-to action is associated with the submit-for
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.action-list
         options:
-          formId: send-signature-go-to
-          provider: DATA_PROVIDER_DYNAMIC
           title: Sign and go to detail
-          entity: default/form
-          goBack: previous
-          method: create
-          onSuccess: 
-            title: Succesfully signed
-            actions:
-              - type: action.go-to
-                options:
-                  title: Go to employee detail 
-                  linkTo: default-employee-detail
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: create
+                data:
+                  signature: =@ctx.components.signature.state.value
+                onSuccess:
+                  title: Succesfully signed
+                  actions:
+                    - type: action.go-to
+                      options:
+                        title: Go to employee detail
+                        linkTo: default-employee-detail   
+            - type: action.go-back
         
 children:
   - type: component.form

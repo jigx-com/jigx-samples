@@ -3,17 +3,22 @@ type: jig.default
 
 actions:
   - children:
-    - type: action.submit-form
-      options:
-        formId: text-form
-        provider: DATA_PROVIDER_DYNAMIC
-        title: Submit form
-        entity: default/form
-        method: save
-        goBack: previous
-        onSuccess: 
-          title: Text form
-          description: Your form was submitted
+      - type: action.action-list
+        options:
+          title: Submit form
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options: 
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: create
+                data:
+                  firstname: =@ctx.components.firstname.state.value
+                onSuccess: 
+                  title: Text form
+                  description: Your form was submitted 
+            - type: action.go-back   
 
 header:
   type: component.jig-header
@@ -30,6 +35,7 @@ children:
   - type: component.form
     instanceId: text-form
     options:
+      isDiscardChangesAlertEnabled: false
       children: 
         - type: component.text-field
           instanceId: firstname

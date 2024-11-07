@@ -20,14 +20,14 @@ actions:
         title: Save details
         provider: DATA_PROVIDER_DYNAMIC
         method: create
-        goBack: previous
         entity: default/form
         data:
           firstname: =@ctx.datasources.employee-detail-dynamic.firstname
           lastname: =@ctx.datasources.employee-detail-dynamic.lastname
           email: =@ctx.datasources.employee-detail-dynamic.email
           phone: =@ctx.datasources.employee-detail-dynamic.phone
-
+        onSuccess: 
+            type: action.go-back
 
 children:
   - type: component.entity

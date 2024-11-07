@@ -3,17 +3,22 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.action-list
         options:
-          formId: email-form
-          provider: DATA_PROVIDER_DYNAMIC
           title: Submit form
-          entity: default/form
-          method: save
-          goBack: previous
-          onSuccess: 
-            title: Email form
-            description: Your email form was submitted
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: save
+                data:
+                  email: =@ctx.components.email.state.value
+                onSuccess:
+                  description: Your email form was submitted
+                  title: Email form 
+            - type: action.go-back
 
 header:
   type: component.jig-header
@@ -30,6 +35,7 @@ children:
   - type: component.form
     instanceId: email-form
     options:
+      isDiscardChangesAlertEnabled: false
       children: 
         - type: component.email-field
           instanceId: email

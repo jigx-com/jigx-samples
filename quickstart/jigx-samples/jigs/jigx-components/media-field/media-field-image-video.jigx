@@ -43,9 +43,9 @@ actions:
           provider: DATA_PROVIDER_LOCAL # you can use other data stores, e.g. REST data provider
           entity: products
           method: create
-          goBack: previous
           data:
             image: =@ctx.components.media-mixed.state.value.state.value
             createdby: =@ctx.user.displayName
             createDate: =$now()
-        
+          onSuccess: 
+            type: action.go-back

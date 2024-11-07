@@ -1,0 +1,139 @@
+title: List of cleaning services with ratings
+type: jig.list
+description: A list displaying ratings with values
+icon: notes-paper-approve
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
+  
+datasources:
+  cleaning-services-static:
+    type: datasource.static
+    options:
+      data:
+        - area: Bathroom
+          category: withRate
+          description: Steam cleaning and disinfecting of the bathroom in its totality.
+            Provision of fresh towels.
+          hourlyrate: 30
+          illustration: https://clipart-library.com/newimages/bathroom-clip-art-15.jpg
+          image: https://images.unsplash.com/photo-1646592472335-fa6be8e9bc7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80
+          onceoffrate: null
+          service: Bathroom Deep Clean
+          status: indoor
+          time: 90
+          ratingText: Good
+          rating: 7
+        - area: Garden
+          category: null
+          description: Taking care of general gardening to provide an immaculate first
+            impression
+          hourlyrate: null
+          illustration: https://clipart-library.com/images/6Tr8BrjTK.jpg
+          image: https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          onceoffrate: 100
+          service: Gardening
+          status: outdoor
+          time: 120
+          ratingText: poor
+          rating: 3
+        - area: General
+          category: null
+          description: Cleaning and streak removal of external windows
+          hourlyrate: 35
+          illustration: https://clipart-library.com/img1/872145.png
+          image: https://images.unsplash.com/photo-1650538250295-6ef68d7ae1f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          onceoffrate: null
+          service: Window Cleaning - External
+          status: outdoor
+          time: 60
+          ratingText: excellent
+          rating: 9
+        - area: Driveway
+          category: null
+          description: Car wash including vacuum
+          hourlyrate: null
+          image: https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80
+          onceoffrate: 50
+          service: Car Washing
+          status: outdoor
+          time: 60
+          ratingText: Recommended
+          rating: 8
+        - area: Laundry
+          category: null
+          description: Provision of laundry services by removal of laundry and return of
+            laundry. Includes a surcharge for delivery.
+          hourlyrate: null
+          image: https://images.unsplash.com/photo-1637795065412-eed4c565db78?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxhdW5kcnklMjBzZXJ2aWNlfGVufDB8fDB8fHww
+          onceoffrate: 110
+          service: Offsite laundry services
+          status: indoor
+          time: 120
+          ratingText: Excellent
+          rating: 8.5
+        - area: Laundry
+          category: null
+          description: Provision of laundry services making use of client's machines. Note
+            that where this has been booked, but machines are not available,
+            this will automatically be adjusted to offsite laundry services.
+          hourlyrate: null
+          image: https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGxhdW5kcnklMjByb29tfGVufDB8fDB8fHww
+          onceoffrate: 110
+          service: Onsite laundry services
+          status: indoor
+          time: 120
+          ratingText: Not satisfied
+        - area: Lounge
+          category: null
+          description: Maintain your upholstery (chair, couch and seat) in pristine
+            condition. We use only the most delicate clearning methods.
+          hourlyrate: 40
+          image: https://images.unsplash.com/photo-1612696733290-a2a26ce8131c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
+          onceoffrate: null
+          service: Upholstery Cleaning
+          status: indoor
+          time: 60
+          ratingText: Poor
+          rating: 5
+        - area: Pool
+          category: null
+          description: Cleaning of pool, including chemical treatments, sweeping and
+            proper flush.
+          hourlyrate: null
+          image: https://images.unsplash.com/photo-1562844275-857f6e7c429e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1603&q=80
+          onceoffrate: 40
+          service: Pool Cleaning
+          status: outdoor
+          time: 45
+          ratingText: Excellent service
+          rating: 9
+    
+data: =@ctx.datasources.cleaning-services-static
+item:
+  type: component.list-item
+  options:
+    isContained: true
+    title: =@ctx.current.item.service
+    subtitle: =@ctx.current.item.area
+    label:  
+      title: =(@ctx.current.item.status = "indoor" ? 'Indoor' :'Outdoor')
+    leftElement:
+      element: image
+      text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) &
+        $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
+      uri: =@ctx.current.item.image
+# Rating uses a value from the datasource with accompanying text.
+# By default, a single star icon in the primary color is shown.        
+    rating: 
+      value: =@ctx.current.item.rating
+      text: =@ctx.current.item.ratingText
+
+

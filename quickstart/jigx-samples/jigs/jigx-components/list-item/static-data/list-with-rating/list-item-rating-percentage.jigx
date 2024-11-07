@@ -1,0 +1,64 @@
+title: Manufacturing quality control
+description: List with a percentage rating
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1700727448575-6f1680cd7d75?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cXVhbGl0eSUyMGNvbnRyb2x8ZW58MHx8MHx8fDA%3D
+
+
+datasources:
+  control-stats: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          stat: Quality
+          description: The performance and consistency of products in meeting established standards.
+          percentage: 0.7
+          percentage-text: y
+          icon: air-quality-check-magnifying-glass
+        - id: 2  
+          stat: Inspection
+          description: Measures the outcomes of product evaluations within the quality control process.
+          percentage: 0.5
+          icon: amazon-inspector
+        - id: 3  
+          stat: Rework
+          description: Tracks the percentage of products that require additional processing or correction after initial inspection
+          percentage: 0.2
+          icon: hardware-hammer-nail-hit
+        - id: 4  
+          stat: Rejected
+          description: Measures the percentage of products that fail to meet quality standards and cannot be reworked or sold.
+          percentage: 0.1
+          icon: cross-over
+        - id: 5  
+          stat: Approved
+          description: The percentage of products that meet all quality standards and are cleared for distribution or sale.
+          percentage: 0.9 
+          icon: select   
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.control-stats
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          isContained: true
+          title: =@ctx.current.item.stat
+          subtitle: =@ctx.current.item.description
+          rating: 
+            percentage: =@ctx.current.item.percentage
+          leftElement: 
+            element: icon
+            icon: =@ctx.current.item.icon
+            isDuotone: true

@@ -4,33 +4,41 @@ description: When you submit the form and the submission will be successful the 
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.action-list
         options:
-          formId: simple-form
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/form
-          method: create
           title: Add an employee
-          goBack: previous
-          onSuccess:
-            title: Employee was added sucessfuly
-            actions:
-              - type: action.confirm
-                options:
-                  title: See the confirmation
-                  isConfirmedAutomatically: true
-                  onConfirmed: 
-                    type: action.go-to
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: create
+                data:
+                  firstname: =@ctx.components.firstname.state.value
+                  lastname: =@ctx.components.lastname.state.value
+                  phone: =@ctx.components.phone.state.value
+                onSuccess: 
+                  title: Employee was added sucessfuly
+                  actions:
+                  - type: action.confirm
                     options:
-                      linkTo: confirmation
-                  modal:
-                    title: ''
+                      title: See the confirmation
+                      isConfirmedAutomatically: true
+                      onConfirmed: 
+                        type: action.go-to
+                        options:
+                          linkTo: confirmation
+                      modal:
+                        title: ''
+            - type: action.go-back
 
 
 children:
   - type: component.form
     instanceId: simple-form
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
           instanceId: firstname

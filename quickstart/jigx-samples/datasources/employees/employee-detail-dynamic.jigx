@@ -1,11 +1,9 @@
-type: 'datasource.sqlite'
+type: datasource.sqlite
 options:
   provider: DATA_PROVIDER_DYNAMIC
-
   entities:
     - entity: default/employees
-
-  query: | 
+  query: |
     SELECT 
       id, 
       '$.firstname', 
@@ -20,5 +18,8 @@ options:
       '$.state', 
       '$.country', 
       '$.category', 
-      '$.modify' 
+      '$.modify',
+      '$.position',
+      '$.employee-startWork' 
     FROM [default/employees] WHERE '$.category' = "employee-detail"
+

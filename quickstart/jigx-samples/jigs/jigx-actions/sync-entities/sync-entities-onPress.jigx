@@ -22,7 +22,6 @@ item:
             options:
               provider: DATA_PROVIDER_DYNAMIC
               method: update
-              goBack: stay
               entity: default/employees
               data:
                 id: =@ctx.current.item.id

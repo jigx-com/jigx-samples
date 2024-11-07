@@ -7,7 +7,6 @@ onFocus:
   options:
     provider: DATA_PROVIDER_LOCAL
     method: update
-    goBack: stay
     entity: default/employees
     data: =@ctx.datasources.employee-detail-dynamic.{'id':id, 'modify':$number(modify)+1}
 

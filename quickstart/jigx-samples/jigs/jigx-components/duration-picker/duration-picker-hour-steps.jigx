@@ -1,0 +1,77 @@
+title: Appointment form
+description: Duration picker (hours only)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1703300450387-047da16a89c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXBwb2ludG1lbnQlMjBzY2hlZHVsZWluZ3xlbnwwfHwwfHx8MA%3D%3D
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.appointment-form.state.data
+    
+children:
+  - type: component.form
+    instanceId: appointment-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: First Name
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last Name
+        - type: component.email-field  
+          instanceId: email
+          options:
+            icon: email
+            label: Email  
+        - type: component.text-field
+          instanceId: contact
+          options:
+            icon: phone
+            textContentType: telephoneNumber
+            label: Contact number
+        - type: component.date-picker
+          instanceId: appointment-date
+          options:
+            label: Book an appointment date
+        - type: component.duration-picker
+          instanceId: appointment-time
+          options:
+            label: Select the appointment hours
+            hours:
+              step: 2
+            minutes:
+              isEnabled: false
+           
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Schedule appointment
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/customer
+          method: create
+          data: 
+            firstName: =@ctx.components.firstName.state.value
+            lastName: =@ctx.components.lastName.state.value
+            email: =@ctx.components.email.state.value
+            contact:  =@ctx.components.contact.state.value    
+            appointment-date: =@ctx.components.appointment-date.state.value
+            appointment-time: =@ctx.components.appointment-time.state.value
+            
+       

@@ -4,26 +4,39 @@ description: In this example, the go-to action is associated with the
   submit-form action. After we enter the signature and press the "Sign" button,
   the submit-form action is performed and then the go-to action redirects us to
   the next page.
+  
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.jig.components.send-signature-go-to.state.data
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.jig.components.send-signature-go-to.state.data
+    
 actions:
   - children:
-      - type: action.submit-form
-        options:
-          title: Sign & go back to Actions
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/form
-          formId: send-signature-go-to
-          goBack: previous
-          method: create
-          onSuccess:  
-            type: action.go-back
+       - type: action.execute-entity
+         options:
+           title: Sign & go back to Actions
+           provider: DATA_PROVIDER_DYNAMIC
+           entity: default/form
+           method: create
+           data:
+             signature: =@ctx.components.signature.state.value
+           onSuccess: 
+             type: action.go-back
    
 children:
   - instanceId: send-signature-go-to
     type: component.form
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - instanceId: signature
           type: component.signature-field
           options:
             label: Signature required         
-      isDiscardChangesAlertEnabled: false
+      
+    

@@ -141,7 +141,6 @@ item:
                   entity: default/accounts
                   data:
                     id: =@ctx.current.item.accountId
-                  goBack: stay
                   method: delete
                 type: action.execute-entity
               modal:

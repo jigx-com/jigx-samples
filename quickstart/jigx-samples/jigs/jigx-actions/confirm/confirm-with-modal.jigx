@@ -4,29 +4,36 @@ description: When you submit the form, the modal confirming if you wish to proce
 
 actions:
   - children:
-      - type: action.confirm
+      - type: action.action-list
         options:
           title: Add an employee
-          isConfirmedAutomatically: false
-          modal:
-            title: Add an employee
-            description: Are you sure you want to add a new employee?
-            confirm: 'Add'
-            cancel: 'Cancel'
-          onConfirmed: 
-            type: action.submit-form
-            options:
-              formId: simple-form
-              provider: DATA_PROVIDER_DYNAMIC
-              entity: default/form
-              method: create
-              goBack: previous
-              
+          isSequential: true
+          actions: 
+            - type: action.confirm
+              options:
+                isConfirmedAutomatically: false
+                onConfirmed: 
+                    type: action.execute-entity
+                    options:
+                      provider: DATA_PROVIDER_DYNAMIC
+                      entity: default/form
+                      method: create
+                      data:
+                        firstname: =@ctx.components.firstname.state.value
+                        lastname: =@ctx.components.lastname.state.value
+                        phone: =@ctx.components.phone.state.value 
+                modal:
+                  title: Add an employee
+                  description: Are you sure you want to add a new employee?
+                  confirm: 'Add'
+                  cancel: 'Cancel'
+            - type: action.go-back      
 
 children:
   - type: component.form
     instanceId: simple-form
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
           instanceId: firstname

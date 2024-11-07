@@ -1,0 +1,112 @@
+title:  Home repair Service 
+description: Duration picker with onChange
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1676311396794-f14881e9daaa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlcGFpciUyMHNlcnZpY2V8ZW58MHx8MHx8fDA%3D
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.repair-form.state.data
+    
+datasources:
+  repair-services-static:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          description: Installation or repairs for doors. Doors to be provided by client
+          hourlyRate: 70
+          materials: Door
+          service: Door Installation/Repair
+      
+        - id: 2
+          description: Repairs to door handles 
+          hourlyRate: 40
+          materials: double lock system
+          service: Door Handle/Lock Repairs
+                
+        - id: 3
+          description: Installation or repairs of tiled surfaces. Tiles have to be provided by client
+          hourlyRate: 110
+          materials: Tiles
+          service: Tile Installation/Repair
+         
+        - id: 4
+          description: Installation or repairs of dry-wall surfaces
+          hourlyRate: 80
+          materials: Drywall & screws
+          service: Drywall Installation/Repair
+          
+        - id: 5
+          description: Repairs to bathroom rails, toilets, etc
+          hourlyRate: 90
+          materials: Basin
+          service: Bathroom Repairs
+          
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Service Repair
+                  value: =@ctx.datasources.repair-services-static[id=2].service
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Description
+                  value: =@ctx.datasources.repair-services-static[id=2].description
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Hourly Rate
+                  value: =@ctx.datasources.repair-services-static[id=2].hourlyRate
+              - type: component.entity-field
+                options:
+                  label: Materials
+                  value: =(@ctx.datasources.repair-services-static[id=2].materials) 
+        
+  - type: component.form
+    instanceId: repair-form
+    options:
+      children:
+        - type: component.duration-picker
+          instanceId: repair-time
+          options:
+            label: Repair duration
+            hours:
+              isEnabled: true
+              step: 1
+            minutes:
+              isEnabled: false        
+            onChange: 
+              type: action.go-to
+              options:
+                linkTo: list-item-contained
+              
+             
+          
+    
+               
+
+      
+               
+           
+           
+           

@@ -38,6 +38,7 @@ actions:
             accessToken: microsoft.OAuth
             Content-Type: image/jpeg
             file: =@ctx.components.profilePicture.state.value 
-          goBack: previous
           method: functionCall
+          onSuccess: 
+            type: action.go-back
           

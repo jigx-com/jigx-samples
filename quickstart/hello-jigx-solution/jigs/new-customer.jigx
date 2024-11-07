@@ -50,4 +50,5 @@ actions:
           # The Jigx Dynamic Data provider method to create the data
           method: create
           # The navigation action that is performed after the form-submit action completes
-          goBack: previous
+          onSuccess: 
+            type: action.go-back

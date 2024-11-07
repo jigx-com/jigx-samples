@@ -1,0 +1,54 @@
+title: Team task list with multiple tags
+description: List items display multiple tags 
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    children:
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1590402494628-9b9acf0b90ae?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      type: component.image
+    height: medium
+  
+datasources:
+  team-tasks:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/tasks
+      query: |
+        SELECT 
+          id, 
+          '$.taskAssignee',
+          '$.taskName',
+          '$.taskCost',
+          '$.taskId', 
+          '$.taskStatus',
+          '$.team', 
+          '$.Profile',
+          '$.priority'
+         
+        FROM [default/tasks]
+
+data: =@ctx.datasources.team-tasks
+item:
+  type: component.list-item
+  options:
+    isContained: true
+    title: =@ctx.current.item.taskAssignee
+    subtitle: =@ctx.current.item.taskName
+    tags:
+      - text: =@ctx.current.item.team
+        color: primary
+      - text: =@ctx.current.item.priority
+        color: warning
+      - text: =@ctx.current.item.taskStatus
+        color: color2
+    leftElement: 
+      element: avatar
+      text: =@ctx.current.item.taskAssignee
+      uri: =@ctx.current.item.Profile
+    

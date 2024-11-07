@@ -4,21 +4,27 @@ description: In this example, the open-url action is associated with the submit-
 
 actions:
   - children:
-      - type: action.submit-form
+      - type: action.action-list
         options:
-          formId: send-signature-open-url
-          provider: DATA_PROVIDER_DYNAMIC
           title: Sign and go to documentation
-          entity: default/form
-          goBack: previous
-          method: create
-          onSuccess: 
-            title: Succesfully signed
-            actions:
-              - type: action.open-url
-                options:
-                  title: Open the documentation
-                  url: https://docs.jigx.com/examples
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: create
+                data:
+                  signature: =@ctx.components.signature.state.value
+                onSuccess: 
+                  title: Succesfully signed
+                  actions:
+                    - type: action.open-url
+                      options:
+                        title: Open the documentation
+                        url: https://docs.jigx.com/examples
+            - type: action.go-back
+               
         
 children:
   - type: component.form

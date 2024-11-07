@@ -1,0 +1,101 @@
+title: Site inspection 
+description: Duration picker with color
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1541888894402-f3b1af908be4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29uc3RydWN0aW9uJTIwd29ya2VyfGVufDB8fDB8fHww
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.construction-form.state.data
+
+datasources:
+  inspection: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          type: Plumbing
+        - id: 2
+          type: Electrical
+        - id: 3
+          type: Structural  
+          
+children:
+  - type: component.form
+    instanceId: construction-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: SiteName
+          options:
+            label: Site name
+        - type: component.text-field
+          instanceId: manager
+          options:
+            label: Site Manager   
+        - type: component.choice-field
+          instanceId: type
+          options:
+            itemsPerRow: 3
+            label: Inspection type
+            data: =@ctx.datasources.inspection
+            item:
+              type: component.choice-field-item
+              options: 
+                title: =@ctx.current.item.type
+                value: =@ctx.current.item.type
+        - type: component.date-picker
+          instanceId: inspection-date
+          options:
+            label: Inspection date 
+        - type: component.duration-picker
+          instanceId: inspection-time
+          options:
+           label: Inspection duration
+           initialValue: 7200
+           color:
+             - when: true
+               color: warning
+           helperText: Site inspection average is 2 hours.
+           hours:
+             step: 2
+           minutes:
+             isEnabled: false
+             step: 30
+          
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Record site visit
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/work
+          method: create
+          data:
+            SiteName: =@ctx.components.SiteName.state.value
+            manager: =@ctx.components.manager.state.value
+            type: =@ctx.components.type.state.value
+            inspection-date: =@ctx.components.inspection-date.state.value
+            inspection-time: =@ctx.components.inspection-time.state.value
+            
+            
+            
+            
+                 
+               
+
+      
+               
+           
+           
+           

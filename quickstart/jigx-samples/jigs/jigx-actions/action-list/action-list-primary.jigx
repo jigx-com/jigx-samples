@@ -4,19 +4,24 @@ description: The first action will submit the form and the second action will re
 
 actions:
   - children:
-      - type: action.submit-form
-        options:
-          title: Submit form
-          formId: simple-form
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/employees
-          method: save
-          goBack: previous
-
+    - type: action.execute-entity
+      options:
+        title: Create Record
+        provider: DATA_PROVIDER_DYNAMIC
+        entity: default/employees
+        method: save
+        data:
+          firstname: =@ctx.components.firstname.state.value
+          lastname: =@ctx.components.lastname.state.value
+          phone:  =@ctx.components.phone.state.value
+        onSuccess: 
+          type: action.go-back
+            
 children:
   - type: component.form
     instanceId: simple-form
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
           instanceId: firstname

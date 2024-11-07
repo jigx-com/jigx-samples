@@ -40,6 +40,7 @@ children:
     instanceId: register
     when: =@ctx.components.new-customer.state.value ='Yes' ? true:false
     options:
+      isDiscardChangesAlertEnabled: false
       children:
         
         - type: component.text-field
@@ -93,7 +94,6 @@ actions:
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/customer
           method: create
-          goBack: stay
           onSuccess: 
             type: action.go-to
             options:

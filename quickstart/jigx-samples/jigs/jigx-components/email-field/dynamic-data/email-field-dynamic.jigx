@@ -3,14 +3,16 @@ type: jig.default
 
 actions:
   - children:
-      - type: action.submit-form
-        options:
-          formId: emails-form
-          provider: DATA_PROVIDER_DYNAMIC
-          title: Submit form
-          entity: default/form
-          method: save
-          goBack: previous
+    - type: action.execute-entity
+      options:
+        title: Create Record
+        provider: DATA_PROVIDER_DYNAMIC
+        entity: default/form
+        method: save
+        data:
+          email: =@ctx.components.email.state.value
+        onSuccess: 
+          type: action.go-back
 
 header:
   type: component.jig-header
@@ -21,7 +23,7 @@ header:
       options:
         title: Email 
         source:
-          uri: 'https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336'
+          uri: https://cdn2.webdamdb.com/v1_1280_6enPaxIBt9M3.jpg?1554490336
         
 children:
   - type: component.form

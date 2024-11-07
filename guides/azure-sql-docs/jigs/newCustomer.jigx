@@ -91,50 +91,53 @@ children:
               isDisabled: true
 actions:
   - children:
-      # Use an execute entity action to submit the values of the controls to the Jigx function to update Azure SQL and to save the new customer to the local SQLite database.
-      - type: action.execute-entity
+      - type: action.action-list
         options:
-          # The title of the save button.
           title: Save Customer
-          # The data provider to use for the remote data. This solution uses Azure SQL.
-          provider: DATA_PROVIDER_SQL
-          # The name of the local SQLite database that the new record will be created in.
-          entity: customers
-          # The name of the Jigx function used to save the data to Azure SQL.
-          function: create-customer
-          # Set the function parameters to values of the controls on the form.
-          functionParameters:
-            CustomerId: =@ctx.jig.inputs.custId
-            FirstName: =@ctx.components.FirstName.state.value
-            LastName: =@ctx.components.LastName.state.value
-            Email: =@ctx.components.Email.state.value
-            PhoneNumber: =@ctx.components.PhoneNumber.state.value
-            AddressLine1: =@ctx.components.AddressLine1.state.value
-            AddressLine2: =@ctx.components.AddressLine2.state.value
-            City: =@ctx.components.City.state.value
-            ZipCode: =@ctx.components.ZipCode.state.value
-            State: =@ctx.components.State.state.selected.code
-            Country: =@ctx.components.Country.state.value
-          # The command type to be executed on the local SQLite database.
-          method: create
-          # Navigate to the previous screen after the action has been performed.
-          goBack: previous
-          # Set the column values of the new record that will be created in the local SQLite Customers table.
-          data:
-            id: =@ctx.jig.inputs.custId
-            FirstName: =@ctx.components.FirstName.state.value
-            LastName: =@ctx.components.LastName.state.value
-            Email: =@ctx.components.Email.state.value
-            PhoneNumber: =@ctx.components.PhoneNumber.state.value
-            AddressLine1: =@ctx.components.AddressLine1.state.value
-            AddressLine2: =@ctx.components.AddressLine2.state.value
-            City: =@ctx.components.City.state.value
-            ZipCode: =@ctx.components.ZipCode.state.value
-            State: =@ctx.components.State.state.selected.code
-            Country: =@ctx.components.Country.state.value   
-          # Display a dialog box with a message if the new record is created successfully.    
-          onSuccess: 
-            description: New Customer Created Successfully
-            title: Customer Created
+          isSequential: true
+          actions:  
+            # Use an execute entity action to submit the values of the controls to the Jigx function to update Azure SQL and to save the new customer to the local SQLite database.
+            - type: action.execute-entity
+              options:
+                # The data provider to use for the remote data. This solution uses Azure SQL.
+                provider: DATA_PROVIDER_SQL
+                # The name of the local SQLite database that the new record will be created in.
+                entity: customers
+                # The name of the Jigx function used to save the data to Azure SQL.
+                function: create-customer
+                # Set the function parameters to values of the controls on the form.
+                functionParameters:
+                  CustomerId: =@ctx.jig.inputs.custId
+                  FirstName: =@ctx.components.FirstName.state.value
+                  LastName: =@ctx.components.LastName.state.value
+                  Email: =@ctx.components.Email.state.value
+                  PhoneNumber: =@ctx.components.PhoneNumber.state.value
+                  AddressLine1: =@ctx.components.AddressLine1.state.value
+                  AddressLine2: =@ctx.components.AddressLine2.state.value
+                  City: =@ctx.components.City.state.value
+                  ZipCode: =@ctx.components.ZipCode.state.value
+                  State: =@ctx.components.State.state.selected.code
+                  Country: =@ctx.components.Country.state.value
+                # The command type to be executed on the local SQLite database.
+                method: create
+                # Navigate to the previous screen after the action has been performed.
+                # Set the column values of the new record that will be created in the local SQLite Customers table.
+                data:
+                  id: =@ctx.jig.inputs.custId
+                  FirstName: =@ctx.components.FirstName.state.value
+                  LastName: =@ctx.components.LastName.state.value
+                  Email: =@ctx.components.Email.state.value
+                  PhoneNumber: =@ctx.components.PhoneNumber.state.value
+                  AddressLine1: =@ctx.components.AddressLine1.state.value
+                  AddressLine2: =@ctx.components.AddressLine2.state.value
+                  City: =@ctx.components.City.state.value
+                  ZipCode: =@ctx.components.ZipCode.state.value
+                  State: =@ctx.components.State.state.selected.code
+                  Country: =@ctx.components.Country.state.value   
+                # Display a dialog box with a message if the new record is created successfully.    
+                onSuccess: 
+                  description: New Customer Created Successfully
+                  title: Customer Created
+            - type: action.go-back
         
         

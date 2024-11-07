@@ -1,0 +1,83 @@
+title: Security check
+description: Duration picker (Minutes only)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1581568736305-49a04e012c13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VjdXJpdHklMjBwYXRyb2xzfGVufDB8fDB8fHww
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.patrol-form.state.data
+datasources:
+  patrol-area: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          zone: 1
+          Description: Factory floor
+        - id: 2
+          zone: 2A
+          Description: Outer perimeter
+        - id: 3
+          zone: 2B
+          Description: Outer car park
+        - id: 4
+          zone: 3
+          Description: Factory office 
+        - id: 5
+          zone: 4
+          Description: Basement      
+
+children:
+  - type: component.form
+    instanceId: patrol-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.dropdown
+          instanceId: patrol-area
+          options:
+            label: Area checked
+            data: =@ctx.datasources.patrol-area
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.Description
+                value: =@ctx.current.item.Description
+        - type: component.duration-picker
+          instanceId: patrol-duration
+          options: 
+            label: Patrol time
+            hours:
+              isEnabled: false
+            minutes: 
+              step: 10
+        - type: component.text-field
+          instanceId: issues 
+          options:
+            isMultiline: true
+            label: Patrol incident
+       
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Log security checkin
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/security
+          method: create
+          data:
+            patrol-area: =@ctx.components.patrol-area.state.value
+            patrol-duration: =@ctx.components.patrol-duration.state.value
+            issues: =@ctx.components.issues.state.value
+            
+            
+            

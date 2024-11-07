@@ -1,14 +1,18 @@
 icons:
   - actions-authentication-squares # auto-generated
   - add-circle-bold-alternate # auto-generated
+  - air-quality-check-magnifying-glass # auto-generated
   - alarm-bell # auto-generated
   - alarm-bell-1 # auto-generated
   - alert # auto-generated
   - alert-circle # auto-generated
   - alert-triangle # auto-generated
+  - amazon-inspector # auto-generated
   - ambulance-helicopter # auto-generated
   - apple # auto-generated
   - arrow-button-right-1 # auto-generated
+  - arrow-double-down # auto-generated
+  - arrow-double-up # auto-generated
   - arrow-right-1 # auto-generated
   - avatar-man-1-geometric # auto-generated
   - battery-charge # auto-generated
@@ -28,6 +32,7 @@ icons:
   - contact # auto-generated
   - content-browser-edit # auto-generated
   - conversation-chat-2 # auto-generated
+  - cross-over # auto-generated
   - currency-dollar # auto-generated
   - database-2 # auto-generated
   - delivery-truck-5 # auto-generated
@@ -43,8 +48,10 @@ icons:
   - dog-sit # auto-generated
   - dog-sit-1 # auto-generated
   - double-exclamation-mark-1-formatting # auto-generated
+  - double-exclamation-mark-2-formatting # auto-generated
   - email # auto-generated
   - email-action-at # auto-generated
+  - equal-math-symbol-circle # auto-generated
   - filter-1 # auto-generated
   - finger-touch # auto-generated
   - fitness-weights # auto-generated
@@ -54,6 +61,7 @@ icons:
   - gauge-dashboard # auto-generated
   - google # auto-generated
   - graph-stats-square-alternate # auto-generated
+  - hardware-hammer-nail-hit # auto-generated
   - hat # auto-generated
   - home # auto-generated
   - home-apps-logo # auto-generated
@@ -91,9 +99,11 @@ icons:
   - plane-1 # auto-generated
   - play # auto-generated
   - question-circle # auto-generated
+  - rating-star-1 # auto-generated
   - remove-circle # auto-generated
   - robot # auto-generated
   - scanner # auto-generated
+  - select # auto-generated
   - shop-1 # auto-generated
   - shopping-cart-empty-1 # auto-generated
   - space-rocket-flying # auto-generated
@@ -104,6 +114,7 @@ icons:
   - task-list # auto-generated
   - technology-privacy-photo-access-view # auto-generated
   - tennis-backhand # auto-generated
+  - thumb-up-like # auto-generated
   - time-clock-circle # auto-generated
   - time-clock-circle-2 # auto-generated
   - workout # auto-generated

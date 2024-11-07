@@ -19,6 +19,9 @@ options:
     - title: List with Avatars
       link: list-avatars-sd
       color: color6
+    - title: List with right numbered badge
+      link: list-right-number-badge
+      color: color12    
     - title: List with Pie Charts
       link: list-with-pie-charts-sd
       color: color7
@@ -55,5 +58,23 @@ options:
     - title: List items wrapped in a card
       link: list-item-contained
       color: color3
+    - title: List with value ratings
+      link: list-with-rating-value
+      color: color4
+    - title: List with value rating and icons
+      link: list-with-rating-value-max
+      color: color5
+    - title: List with a percentage rating
+      link: list-with-rating-percentage
+      color: color6
+    - title: List with percentage rating and icons
+      link: list-with-rating-percentage-max
+      color: color7
+    - title: List showing multiple tags
+      link: list-with-tags-multiple
+      color: color8
+    - title: List with rating, tags and badges 
+      link: list-with-tags-rating
+      color: color9 
       
         
