@@ -20,7 +20,7 @@ options:
       link: list-avatars-sd
       color: color6
     - title: List with right numbered badge
-      link: list-right-number-badge
+      link: list-right-numbered-badge
       color: color12    
     - title: List with Pie Charts
       link: list-with-pie-charts-sd
