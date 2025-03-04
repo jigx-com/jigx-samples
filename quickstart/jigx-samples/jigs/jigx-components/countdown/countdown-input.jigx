@@ -19,13 +19,13 @@ datasources:
       data:
         - id: 1
           dateType: Clothes Sale
-          date: "2024-08-17 07:00"
+          date: "2025-08-17 07:00"
         - id: 2
           dateType: flights
-          date: "2024-08-10 08:00"
+          date: "2025-08-10 08:00"
         - id: 3
           dateType: Books
-          date: "2024-07-18 14:00"
+          date: "2025-07-18 14:00"
 
 children:
   - type: component.section
@@ -34,7 +34,7 @@ children:
       children:
       - type: component.countdown
         options:
-          expiresAt: "2024-10-06 22:00"
+          expiresAt: "2025-10-06 22:00"
 
   - type: component.section
     options:
