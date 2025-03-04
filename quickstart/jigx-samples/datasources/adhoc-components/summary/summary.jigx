@@ -34,6 +34,10 @@ options:
       componentLink: countdown-summary
       icon: checkbox-checked  
     - color: color7
+      component: Custom components (Alpha)
+      componentLink: custom-components
+      icon: calendar-1 
+    - color: color7
       component: Date-picker
       componentLink: composite-date-picker
       icon: calendar-3
