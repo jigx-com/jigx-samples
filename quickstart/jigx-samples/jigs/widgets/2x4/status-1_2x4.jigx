@@ -20,7 +20,7 @@ children:
             value: Value
             
 widgets:
-  "2x4": 
+  status1-2x4: 
     type: widget.status
     options:
       statuses:

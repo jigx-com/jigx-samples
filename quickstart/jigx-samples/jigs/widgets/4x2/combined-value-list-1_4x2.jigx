@@ -31,7 +31,7 @@ children:
             value: Value
   
 widgets:
-  4x2: 
+  combined-value1-4x2: 
     type: widget.group
     options:
       children:

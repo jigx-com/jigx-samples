@@ -11,10 +11,12 @@ children:
             value: Value
 
 widgets:
-  "4x2": 
+  location1-4x2: 
     type: widget.location
     options:
-      address: Aviatická, 161 00 Praha 6, Czechia
+      viewPoint:
+        centerPosition: middle
+        address: Aviatická, 161 00 Praha 6, Czechia
       bottom:
         type: component.titles
         options:

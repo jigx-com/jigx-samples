@@ -51,7 +51,7 @@ children:
   
   
 widgets:
-  4x2: 
+  chart-list1-4x2: 
     type: widget.group
     options:
       children:

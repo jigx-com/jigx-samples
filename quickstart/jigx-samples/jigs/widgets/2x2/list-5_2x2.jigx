@@ -11,7 +11,7 @@ children:
             value: Value
             
 widgets:
-  2x2: 
+  list5-2x2: 
     type: widget.list
     instanceId: orders
     options:

@@ -25,7 +25,7 @@ children:
           color: color3
   
 widgets:
-  2x2: 
+  pie1-2x2: 
     type: widget.chart
     options:        
       chart: 

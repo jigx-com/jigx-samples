@@ -11,7 +11,7 @@ children:
             value: Value
 
 widgets:            
-  "4x2": 
+  list3-4x2: 
     type: widget.list
     options:
       data: =@ctx.datasources.users

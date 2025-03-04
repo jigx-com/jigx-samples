@@ -96,7 +96,7 @@ children:
           layout: area-gradient
 
 widgets:
-  4x2:
+  combined-chart1-4x2:
     type: widget.group
     options:
       children:

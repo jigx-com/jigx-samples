@@ -36,7 +36,7 @@ item:
     subtitle: =@ctx.current.item.position
 
 widgets:        
-  "2x2": 
+  list2-2x2: 
     type: widget.list
     options:
       data: =@ctx.datasources.employees

@@ -20,7 +20,7 @@ children:
             value: Value
     
 widgets:
-  4x2: 
+  pie1-4x2: 
     type: widget.chart
     options:        
       chart: 

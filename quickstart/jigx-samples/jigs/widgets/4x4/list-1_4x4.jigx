@@ -9,7 +9,7 @@ item:
     subtitle: =@ctx.current.item.subtitle
     
 widgets:            
-  "4x4": 
+  list1-4x4: 
     type: widget.list
     options:
       data: =@ctx.datasources.components

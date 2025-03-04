@@ -26,7 +26,7 @@ datasources:
           description: "" 
 
 widgets:
-  "2x2": 
+  list1-2x2: 
     type: widget.list
     options:
       data: =@ctx.datasources.tasklist
@@ -45,7 +45,7 @@ widgets:
             isStrikeThrough: =(@ctx.current.item.status= 'Finished' ? true :false)
           rightElement: 
             element: value      
-            text: =@ctx.current.item.value
+            text: =@ctx.current.item.status
             
         
 

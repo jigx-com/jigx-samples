@@ -11,7 +11,7 @@ children:
             value: Value
   
 widgets:
-  4x2: 
+  combined-avatar-list1-4x2: 
     type: widget.group
     options:
       children:

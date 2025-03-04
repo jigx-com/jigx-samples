@@ -43,7 +43,7 @@ children:
 
 
 widgets:  
-  4x2: 
+  bar2-4x2: 
     type: widget.chart
     options:
       top:

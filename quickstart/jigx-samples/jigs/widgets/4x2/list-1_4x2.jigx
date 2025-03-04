@@ -19,7 +19,7 @@ actions:
                 linkTo: all-opportunities    
 
 widgets:            
-  "4x2": 
+  list1-4x2: 
     type: widget.list
     instanceId: ddd
     options:

@@ -11,8 +11,7 @@ children:
             value: Value
             
 widgets:
-
-  "2x2": 
+  value3-2x2: 
     type: widget.value
     options:
       top: 

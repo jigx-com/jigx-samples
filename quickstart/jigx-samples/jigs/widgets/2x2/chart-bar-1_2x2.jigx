@@ -29,7 +29,7 @@ children:
             value: Value
 
 widgets:
-  2x2:
+  bar1-2x2:
     type: widget.chart
     options:
       top:

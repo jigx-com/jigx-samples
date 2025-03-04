@@ -26,7 +26,7 @@ children:
             value: Value
 
 widgets:
-  "4x4": 
+  line1-4x4: 
     type: widget.chart
     options:
       top: 

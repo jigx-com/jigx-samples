@@ -33,7 +33,7 @@ datasources:
         - 60
 
 widgets:
-  4x2:
+  bar1-4x2:
     type: widget.chart
     options:
       top:

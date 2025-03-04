@@ -26,9 +26,8 @@ item:
     title: =@ctx.current.item.device
     subtitle: =@ctx.current.item.room
               
-
 widgets:            
-  "2x2": 
+  list3-2x2: 
     type: widget.list
     options: 
       data: =@ctx.datasources.devices

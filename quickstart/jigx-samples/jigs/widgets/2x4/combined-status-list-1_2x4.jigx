@@ -32,7 +32,7 @@ item:
               
 
 widgets:            
-  "2x4":
+  combined-statuslist1-2x4:
     type: widget.group
     options:
       children:

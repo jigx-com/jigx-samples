@@ -13,7 +13,7 @@ children:
 
                 
 widgets:
-  "2x2": 
+  image2-2x2: 
     type: widget.image
     options:
       source:
