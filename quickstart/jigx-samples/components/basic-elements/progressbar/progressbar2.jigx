@@ -1,0 +1,25 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: 2
+              max: 3 
+            size: medium
+            
+            color: color9
+            
+            title:
+              value: Your goal
+              position: bottom
+              align: right
+            helperText: Your monthly goal are 3 new customers  
+            subtitle:
+              value: 2 of 3 New customers
+              position: bottom
+              align: right
+            
+              

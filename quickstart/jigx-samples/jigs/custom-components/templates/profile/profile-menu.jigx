@@ -1,0 +1,84 @@
+title: Profile
+type: jig.list
+icon: people-man-1-geometric
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: profile-cards
+          title: Profile Cards
+          icon: people-man-1-geometric
+          color: color1
+        - id: 2
+          jigId: profile-fullscreen
+          title: Profile Fullscreen
+          icon: people-man-1-geometric
+          color: color2
+        - id: 3
+          jigId: profile-header
+          title: Profile Header
+          icon: people-man-1-geometric
+          color: color3
+        - id: 4
+          jigId: profile-left-avatar-horizontal
+          title: Profile Left Avatar (Horizontal)
+          icon: people-man-1-geometric
+          color: color4
+        - id: 5
+          jigId: profile-left-avatar-vertical
+          title: Profile Left Avatar (Vertical)
+          icon: people-man-1-geometric
+          color: color5
+        - id: 6
+          jigId: profile-left-image-horizontal
+          title: Profile Left Image (Horizontal)
+          icon: people-man-1-geometric
+          color: color6
+        - id: 7
+          jigId: profile-left-image-vertical
+          title: Profile Left Image (Vertical)
+          icon: people-man-1-geometric
+          color: color7
+        - id: 8
+          jigId: profile
+          title: Profile Stats
+          icon: people-man-1-geometric
+          color: color8
+        - id: 9
+          jigId: profile-leaderboard
+          title: Profile with Leaderboard
+          icon: people-man-1-geometric
+          color: color9
+        - id: 10
+          jigId: profile1
+          title: Profile with Details
+          icon: people-man-1-geometric
+          color: color10
+        - id: 11
+          jigId: profile2
+          title: Profile with Details (Compact)
+          icon: people-man-1-geometric
+          color: color11
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

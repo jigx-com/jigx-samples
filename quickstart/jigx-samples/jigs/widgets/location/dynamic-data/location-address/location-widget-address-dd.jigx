@@ -1,14 +1,66 @@
 title: Location widget
 type: jig.default
-     
+
+datasources:
+  address: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          street: Národní 135/14
+          city: 110 00 Praha
+          country: Praha
+        - id: 2
+          street: 768 5th Ave
+          city: New York
+          country: US
 children:
   - type: component.location
     options:
-      address: Národní 135/14, 110 00 Praha
-
-      
+      viewPoint:
+        centerPosition: middle
+        # Add the address of the location.
+        address: Národní 135/14, 110 00 Praha
+      # Add a pin to the exact address.  
+      markers:
+        # To add a pin to the exact location, configure a marker & icon
+        data: =@ctx.datasources.address[0]
+        item:
+          type: component.marker-item
+          options:
+            address: =@ctx.datasources.address[0].street
+            children:
+              type: component.icon
+              options:
+                # Specify the color of the icon.
+                color: negative
+                # Specify the type of icon.
+                icon: pin-1-map 
+    
 widgets:
-  4x4:
+# Provide name for the widget that will be used as the widgetId.
+  widgetAddress:
     type: widget.location
+    instanceId: address
     options:
-      address: =@ctx.datasources.location.address
+      viewPoint:
+        centerPosition: middle
+        # Add the address of the location using a datasource.
+        address: |
+                =@ctx.datasources.address[0].street 
+                & ',' & @ctx.datasources.address[0].city
+                & ',' & @ctx.datasources.address[0].country
+      # To add a pin to the exact location, configure a marker & icon.
+      markers:
+        data: =@ctx.datasources.address[0]
+        item:
+          type: component.marker-item
+          options:
+            address: =@ctx.datasources.address[0].street
+            children:
+              type: component.icon
+              options:
+                # Specify the color of the icon.
+                color: negative
+                # Specify the type of icon.
+                icon: pin-1-map 

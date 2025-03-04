@@ -1,0 +1,200 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+        gap: medium
+          
+      children:
+        # POSITIVE TREND
+        - type: component.card
+          options:               
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1      
+                    alignItems: center
+                    
+                  children:     
+                    # LEFT ELEMENT
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          gap: minimal
+
+                          width: 80
+                        children:
+                          - type: component.text
+                            options:
+                              value: NKE
+                              size: regular
+                              weight: bold
+                            
+                          - type: component.text
+                            options:
+                              value: Nike
+                              size: small
+                              emphasis: medium
+              
+                    # CHART                  
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                        children:
+                          - type: component.line-chart
+                            options:
+                              chart:
+                                height: 40
+                              plotOptions:
+                                series:
+                                  marker:
+                                    isHidden: true
+                              xAxis:
+                                isHidden: true
+                              yAxis:
+                                isHidden: true
+                              legend:
+                                isHidden: true
+                              
+                              series:
+                                - data: =@ctx.inputs.trend
+                                  color: positive
+                    
+                    # RIGHT ELEMENT
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          gap: minimal
+                          width: 80
+                        children:
+                          - type: component.text
+                            options:
+                              value: 
+                                text: "175.41"
+                                format:
+                                  numberStyle: currency
+                                  currency: USD 
+                                  currencyDisplay: symbol
+                                 
+                              size: regular
+                              weight: bold
+                              align: right
+                          - type: component.text
+                            options:
+                              value: +22.38%
+                              size: small     
+                              align: right
+                              color: positive
+
+        # NEGATIVE TREND                      
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1      
+                    alignItems: center
+                  children:     
+                    # LEFT ELEMENT
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          gap: minimal
+                          width: 80                          
+                        children:
+                          - type: component.text
+                            options:
+                              value: TSL
+                              size: regular
+                              weight: bold
+                            
+                          - type: component.text
+                            options:
+                              value: Tesla Inc.
+                              size: small
+                              emphasis: medium
+              
+                    # CHART                  
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                        children:
+                          - type: component.line-chart
+                            options:
+                              chart:
+                                height: 40
+                              plotOptions:
+                                series:
+                                  marker:
+                                    isHidden: true
+                              xAxis:
+                                isHidden: true
+                              yAxis:
+                                isHidden: true
+                              legend:
+                                isHidden: true
+                              series:
+                                - data: =@ctx.inputs.trend2
+                                  color: negative
+                                  layout: area-gradient
+
+                    # RIGHT ELEMENT                              
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          alignItems: flex-end
+                          gap: minimal
+                          width: 80                          
+                        children:
+                          - type: component.text
+                            options:
+                              value: 
+                                text: "442.00"
+                                format:
+                                  numberStyle: currency
+                                  currency: USD 
+                                  currencyDisplay: symbol                              
+                              size: regular
+                              weight: bold
+                              align: right
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                  grow: 0
+                                alignItems: center
+                                background:
+                                  color: negative
+                                radius: tiny
+                                gap: minimal
+                                padding: minimal
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: -0.15%
+                                    size: tiny
+                                    align: right
+                                          

@@ -1,0 +1,21 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        
+        flex: 
+          direction: row
+        padding: 
+          left: large
+          bottom: medium
+          top: small
+        gap: regular
+      children:
+        - type: component.icon
+          options:
+            icon: =@ctx.inputs.icon
+            emphasis: high
+        - type: component.text
+          options:
+            value: =@ctx.inputs.description

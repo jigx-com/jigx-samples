@@ -1,0 +1,309 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+        margin:
+          bottom: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+                
+          
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+        margin:
+          bottom: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+                
+          
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+        margin:
+          bottom: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+                
+          
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+              gap: small
+
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: Title
+                
+              - type: component.view
+                options:
+                  style:
+                    height: 150
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfKT5yB_J4090MaWaCe-FJd5MP6_-nsgq91g&usqp=CAU
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          position: absolute
+                          right: medium
+                          top: medium
+
+                        children:
+                          - type: component.icon
+                            options:
+                              color: primary
+                              icon: pencil-1
+                              shape: circle
+                              type: contained
+
+              - type: component.text
+                options:
+                  align: center
+                  value: Additional info
+

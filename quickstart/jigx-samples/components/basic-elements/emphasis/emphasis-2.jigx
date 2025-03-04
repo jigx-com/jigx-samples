@@ -1,0 +1,37 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+        - type: component.text
+          options:
+            value: High
+            size: extra-large
+            weight: extra-bold
+            emphasis: high
+            numberOfLines: 1
+
+        - type: component.text
+          options:
+            value: Medium
+            size: extra-large  
+            weight: extra-bold
+            emphasis: medium
+            numberOfLines: 1
+
+        - type: component.text
+          options:
+            value: Low medium
+            size: extra-large
+            weight: extra-bold
+            emphasis: low-medium
+            numberOfLines: 1
+
+        - type: component.text
+          options:
+            value: Low
+            size: extra-large
+            weight: extra-bold
+            emphasis: low
+            numberOfLines: 1

@@ -1,0 +1,74 @@
+title: Profile Menu
+type: jig.default
+icon: restaurant-menu
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1620287341401-e2945a4b9daa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+onFocus:
+  type: action.set-state
+  options:
+    state: =@ctx.solution.state.profile
+    value: Contact
+
+datasources:
+  profileOptions:
+    type: datasource.static
+    options:
+      data:
+        - icon: phone
+          id: 1
+          linkto: contact-info
+          state: Contact
+          title: Contact
+        - icon: feedback
+          id: 2
+          state: Company
+          title: Company
+        - icon: truck-cargo
+          id: 3
+          linkto: trade
+          state: Trade
+          title: Trades
+        - icon: truck-cargo
+          id: 4
+          linkto: equipment-images
+          state: Tools
+          title: Tools
+        - icon: gallery
+          id: 5
+          linkto: prev-work-ims
+          state: Work
+          title: Work
+        - icon: document
+          id: 6
+          linkto: documents
+          state: Docs
+          title: Docs
+    
+children:
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.profileOptions
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: profile-menu
+        inputs:
+          from: profile
+          icon: =@ctx.current.item.icon
+          id: =@ctx.current.item.id
+          linkto: =@ctx.current.item.linkto
+          state: =@ctx.current.item.state
+          title: =@ctx.current.item.title
+
+

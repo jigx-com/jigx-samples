@@ -1,0 +1,42 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+        justifyContent: center
+        alignItems: center
+        padding: 
+          horizontal: small
+        width: 90
+        gap: medium
+      children:
+        - type: component.card
+          options:
+            color: =@ctx.inputs.subtitle = "Premium" ? "color3":""
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: facilities2
+                # parameters:
+                #   id: =@ctx.inputs.packageId
+                #   packageName: =@ctx.inputs.packageName
+                  
+            direction: column
+            children:                    
+              - type: component.image
+                options:
+                  source:
+                    uri: =@ctx.inputs.icon
+                  width: 28
+                  height: 28
+                  resizeMode: contain
+                  
+        - type: component.text
+          options:
+            value: =@ctx.inputs.title
+            size: tiny
+            align: center
+            numberOfLines: 1
+            

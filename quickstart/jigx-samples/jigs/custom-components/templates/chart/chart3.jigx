@@ -1,0 +1,32 @@
+title: Chart3
+type: jig.default
+icon: chart
+
+datasources:
+  static-data:
+    type: datasource.static
+    options:
+      data:
+        - color: primary
+          x: x1
+          y: 67
+        - color: negative
+          x: x2
+          y: 33
+    
+children:
+  - type: component.custom-component
+    componentId: chart3
+    inputs:
+      billableHours: "10"
+      buttonLink: Link
+      buttonName: Button
+      graphHours: =@ctx.datasources.static-data
+      graphSubtitle: Total Hours
+      graphTitle: "79"
+      nonBillableHours: "20"
+      projectID: xxx
+      projectOwner: Owner
+      projectType: Type
+      title: Title
+    

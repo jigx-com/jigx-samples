@@ -1,0 +1,11 @@
+title: Text (Line-through)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Line through"    
+  - type: component.custom-component
+    componentId: text-2

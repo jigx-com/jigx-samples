@@ -1,0 +1,11 @@
+title: Text (Number Lines)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Number of lines" 
+  - type: component.custom-component
+    componentId: text-6

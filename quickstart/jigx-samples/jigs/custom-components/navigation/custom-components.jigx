@@ -1,0 +1,36 @@
+title: Custom Components (Alpha)
+type: jig.default
+
+children:
+  - type: component.custom-component      
+    componentId: headline
+    inputs:
+      headline2: "Welcome to Custom Component Library"
+      subtitle: "Tap the View button and explore the categories!"
+
+  - type: component.custom-component
+    componentId: cards-home
+    inputs:
+      button: View
+      goTo: custom-home
+      icon: module-blocks
+      image: https://images.unsplash.com/photo-1626966380579-602bc8940177?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      subtitle: Atoms, molecules, pages, etc.
+      title: Custom Bits
+
+  - type: component.custom-component      
+    componentId: headline
+    inputs:
+      headline2: "Welcome to Custom Component Library"
+      subtitle: "Browse the template gallery!"
+      
+  - type: component.custom-component
+    componentId: cards-home
+    inputs:
+      button: Browse
+      goTo: custom-home-templates
+      icon: east-side-gallery-berlin-wall
+      image: https://images.unsplash.com/photo-1608371945786-d47d3cdd31da?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      subtitle: Templates and common use cases.
+      title: Custom Templates    
+       

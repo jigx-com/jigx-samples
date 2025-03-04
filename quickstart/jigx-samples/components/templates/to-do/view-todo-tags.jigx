@@ -1,0 +1,19 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: =@ctx.inputs.info.color
+        margin:
+          left: medium
+        padding: small
+        radius:
+          bottomLeft: tiny
+          bottomRight: large
+          topLeft: tiny
+          topRight: large
+      children:
+        - type: component.text
+          options:
+            value: =@ctx.inputs.info.title

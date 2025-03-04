@@ -1,0 +1,102 @@
+title: Plumbing
+type: jig.default
+icon: toilet-cleaning-plunger
+description: "JOE BLOGGS: PLUMBER"
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1661921394349-9e3f394d80da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fHBsdW1iaW5nfGVufDB8fDB8fHww
+
+actions:
+  - children:
+      - options:
+          title: Book Now
+        type: action.go-back
+
+datasources:
+  service-list:
+    type: datasource.static
+    options:
+      data:
+        - currency: EUR
+          price: 50
+          service: Moving house
+          unit: / Hour
+        - currency: EUR
+          price: 100
+          service: Locksmith
+          unit: / Hour
+        - currency: EUR
+          price: 100
+          service: Mobile mechanic
+          unit: / Hour
+        - currency: EUR
+          price: 50
+          service: Moving house
+          unit: / Hour
+        - currency: EUR
+          price: 100
+          service: Locksmith
+          unit: / Hour
+        - currency: EUR
+          price: 100
+          service: Mobile mechanic
+          unit: / Hour
+
+children:
+  - type: component.custom-component
+    componentId: header
+
+  - type: component.custom-component
+    componentId: specific-item
+    inputs:
+      currency: EUR
+      icon: currency-pound
+      note: "* If any supplies are needed, you will add and accept additional
+        charges."
+      price-description1: Standard callout charge
+      price-description2: / Hour
+      price1: 75
+
+  - type: component.custom-component
+    componentId: basic-item
+    inputs:
+      icon: location
+      subtitle: null
+      title: Based in London
+
+  - type: component.custom-component
+    componentId: basic-item
+    inputs:
+      icon: information-circle
+      subtitle: There is nothing our service plumbers can’t do. Company is dedicated
+        to offering you quick & efficient responses, competitive pricing, and
+        honest assessments for your commercial plumbing issues.
+      title: Additional services
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.service-list
+      item:
+        componentId: specific-list
+        inputs:
+          currency: =@ctx.current.item.currency
+          price: =@ctx.current.item.price
+          service: =@ctx.current.item.service
+          unit: =@ctx.current.item.unit
+        type: component.custom-component
+
+  - type: component.custom-component
+    componentId: basic-item
+    inputs:
+      icon: document
+      subtitle: null
+      title: Documentation
+

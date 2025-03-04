@@ -1,0 +1,59 @@
+title: Progress Bar
+type: jig.list
+icon: loading-half
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: progressbar-basic
+          title: Progress Bar - Basic
+          icon: loading-half
+          color: color1
+        - id: 2
+          jigId: progressbar-details
+          title: Progress Bar with Details
+          icon: loading-half
+          color: color2
+        - id: 3
+          jigId: progressbar-sizes-dynamic
+          title: Progress Bar Sizes (Dynamic)
+          icon: loading-half
+          color: color3
+        - id: 4
+          jigId: progressbar-steps-dynamic
+          title: Progress Bar Steps (Dynamic)
+          icon: loading-half
+          color: color4
+        - id: 5
+          jigId: progressbar-top-labels
+          title: Progress Bar with Top Labels
+          icon: loading-half
+          color: color5
+        - id: 6
+          jigId: progressbar-bottom-labels
+          title: Progress Bar with Bottom Labels
+          icon: loading-half
+          color: color6
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

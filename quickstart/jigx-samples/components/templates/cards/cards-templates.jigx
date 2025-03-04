@@ -1,0 +1,108 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+        gap: small
+      children:
+        - type: component.card
+          options:
+            color: color2
+            children:
+              - type: component.icon
+                options:
+                  icon: seo-search-page
+                  size: large
+                
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: View All
+                        weight: bold
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: high
+                        size: small
+                        value: Access all templates
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: custom-home-templates
+                
+                      
+        - type: component.card
+          options:
+            color: color13
+            children:
+              - type: component.icon
+                options:
+                  icon: business-card-hand-1
+                  size: large
+                
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: Use Cases
+                        weight: bold
+                      
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: high
+                        size: small
+                        value: Access by use case
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: custom-templates-filtered
+                parameters:
+                  category: useCases
+                
+        - type: component.card
+          options:
+            color: color14
+            children:
+              - type: component.icon
+                options:
+                  icon: science-molecule-structure
+                  size: large
+                
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: Comps
+                        weight: bold
+                      
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: high
+                        size: small
+                        value: Access by Component
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: custom-templates-filtered
+                parameters:
+                  category: components

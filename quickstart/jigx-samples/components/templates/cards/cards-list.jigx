@@ -1,0 +1,64 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding: 
+          bottom: regular
+      children:
+        - type: component.card
+          options:
+            children:
+              # CONTENT
+              - type: component.image
+                options:
+                  source:
+                    uri: https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80
+
+              # BOTTOM ROW
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1
+                      direction: row
+                    justifyContent: space-between
+                    alignItems: center
+                    gap: small
+                  children:    
+                    # LEFT ELEMENT
+                    - type: component.icon
+                      options:
+                        icon: =@ctx.inputs.icon
+                        
+                    # CONTENT     
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: column
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.title
+                              align: left
+                              size: medium
+                              weight: extra-bold
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.subtitle
+                              align: left
+                              size: small
+                              emphasis: medium
+                              
+                    # RIGHT ELEMENT
+                    - type: component.button
+                      options:
+                        title: =@ctx.inputs.button
+                        isCompact: true
+                        type: primary
+                        onPress: 
+                          type: action.go-back
+        
+        

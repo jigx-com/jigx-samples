@@ -1,0 +1,80 @@
+type: component.default
+inputs:
+  tabIndicator:
+    required: false
+    type: boolean
+  tabName:
+    required: true
+    type: string
+  tabValue:
+    required: true
+    type: string
+
+children:
+  - type: component.view
+    when: =@ctx.inputs.tabValue != null
+    options:
+      style:
+        flex:
+          basis: 1
+          direction: row
+          grow: 1
+        gap: minimal
+        padding:
+          right: large
+
+      children:
+        - type: component.view
+          options:
+            style:
+              gap: medium
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        emphasis: =@ctx.solution.state.tab = @ctx.inputs.tabValue ? "":"medium"
+                        value: =@ctx.inputs.tabName
+                        weight: bold
+
+              - type: component.view
+                options:
+                  children: []
+                  style:
+                    background:
+                      color: =@ctx.solution.state.tab = @ctx.inputs.tabValue ? "element":"transparent"
+                    flex:
+                      grow: 1
+                    height: 2
+
+        - type: component.view
+          when: =@ctx.inputs.tabIndicator = true
+          options:
+            style:
+              flex:
+                grow: 1
+            children:
+              - type: component.view
+                options:
+                  children: []
+                  style:
+                    background:
+                      color: negative
+                    height: 6
+                    radius: large
+                    width: 6
+
+      onPress:
+        type: action.set-state
+        options:
+          state: =@ctx.solution.state.tab
+          value: =@ctx.inputs.tabValue
+

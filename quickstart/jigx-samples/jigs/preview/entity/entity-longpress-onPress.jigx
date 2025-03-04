@@ -46,7 +46,7 @@ item:
       type: action.go-to
       options:
         linkTo: entity-detail
-        parameters:
+        inputs:
           id: =@ctx.current.item.id
           name: =@ctx.current.item.name
           location: =@ctx.current.item.location

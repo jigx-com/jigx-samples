@@ -1,0 +1,46 @@
+type: component.default
+inputs:
+  title:
+    default: ""
+    required: true
+    type: string
+  link:
+    default: ""
+    required: false
+    type: string
+  link-custom-name:
+    default: ""
+    required: false
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+          grow: 1
+        alignContent: space-between
+        justifyContent: space-between
+        alignItems: center
+        margin: 
+          top: medium     
+      children:    
+        - type: component.text
+          options:
+            size: medium
+            weight: extra-bold
+            value: =@ctx.inputs.title
+
+        - type: component.text
+          when: =@ctx.inputs.link != null
+          options:
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.link
+            value: =@ctx.inputs.link-custom-name != null ? @ctx.inputs.link-custom-name:"Show all" 
+            color: primary
+            size: regular            
+            
+        

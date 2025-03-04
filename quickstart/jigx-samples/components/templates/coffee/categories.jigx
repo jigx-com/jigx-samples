@@ -1,0 +1,30 @@
+type: component.default
+
+inputs:
+  category-name:
+    default: ""
+    required: true
+    type: string
+  category-selected:
+    default: false
+    required: true
+    type: boolean
+
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: =@ctx.inputs.category-selected = true ? "primary" :false
+        flex:
+          grow: 0
+        padding:
+          horizontal: regular
+          vertical: small
+        radius: large
+
+      children:
+        - type: component.text
+          options:
+            emphasis: =@ctx.inputs.category-selected = true ? "":"medium"
+            value: =@ctx.inputs.category-name

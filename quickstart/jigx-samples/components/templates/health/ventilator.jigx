@@ -1,0 +1,219 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding: 
+          horizontal: regular
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              justifyContent: space-between
+              padding: 
+                vertical: small
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                    gap: small
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: recycle
+                        color: color2
+                    - type: component.text
+                      options:
+                        value: Ventilator
+                        color: color2
+                        weight: bold
+              - type: component.text
+                options:
+                  value: 08:00
+                  emphasis: medium
+        - type: component.text
+          options:
+            value: Assist mode
+            weight: extra-bold
+            size: large
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              gap: small
+              padding: 
+                bottom: small
+                top: regular
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: Rate
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.rate
+                              weight: bold
+                              align: center
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: Volumes
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value:  =@ctx.inputs.volumes
+                              weight: bold
+                              align: center
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: PEEP
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value:  =@ctx.inputs.peep
+                              weight: bold
+                              align: center
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              gap: small
+              padding: 
+                bottom: small
+            children:
+              - type: component.card
+                options:
+                  color: =@ctx.inputs.ps > 10 ? 'color3':''
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: PS
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.ps
+                              weight: bold
+                              align: center
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: PIP
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value:  =@ctx.inputs.pip
+                              weight: bold
+                              align: center
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: FIO2
+                              emphasis: medium
+                              align: center
+                              size: small
+                          - type: component.text
+                            options:
+                              value:  =@ctx.inputs.fio2
+                              weight: bold
+                              align: center
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 0.33
+                basis: 0.33
+              justifyContent: flex-start
+              alignItems: flex-start
+              gap: small
+              padding: 
+                bottom: small
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 0.33
+                    justifyContent: flex-start
+                    gap: small
+                    padding: 
+                      right: small
+                  children:
+                    - type: component.card
+                      options:
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                padding: minimal
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: ETCO2
+                                    emphasis: medium
+                                    align: center
+                                    size: small
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.etco2
+                                    weight: bold
+                                    align: center
+                                    emphasis: ="none"
+

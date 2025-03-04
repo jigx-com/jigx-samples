@@ -1,0 +1,23 @@
+title: Profile with Avatar (Vertical)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.profiles
+      maximumItemsToRender: 8
+      item:
+        type: component.custom-component
+        componentId: profile-avatar-vertical
+        inputs:
+          info: =@ctx.current.item

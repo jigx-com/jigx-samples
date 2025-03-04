@@ -1,0 +1,38 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color5  #nejdou stíny, pokud změním barvu karty
+      direction: column 
+      children:     
+        - type: component.text
+          options:
+            value: Extra Large
+            size: extra-large
+            align: right
+        - type: component.text
+          options:
+            value: Large
+            size: large  
+            align: right
+        - type: component.text
+          options:
+            value: Medium
+            size: medium
+            align: center
+        - type: component.text
+          options:
+            value: Regular
+            size: regular
+            align: center
+        - type: component.text
+          options:
+            value: Small
+            size: small
+            align: left
+        - type: component.text
+          options:
+            value: Tiny
+            size: tiny
+            align: left              
+            

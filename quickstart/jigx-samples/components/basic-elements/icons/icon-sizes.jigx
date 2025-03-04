@@ -1,0 +1,54 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.text
+          options:
+            value: Extra large
+            emphasis: medium
+            align: center
+        - type: component.icon
+          options:
+            icon: animation
+            size: extra-large
+
+        - type: component.text
+          options:
+            value: Large
+            emphasis: medium
+            align: center
+        - type: component.icon
+          options:
+            icon: animation
+            size: large
+
+        - type: component.text
+          options:
+            value: Medium
+            emphasis: medium
+            align: center
+        - type: component.icon
+          options:
+            icon: animation
+            size: medium
+
+        - type: component.text
+          options:
+            value: Regular
+            emphasis: medium
+            align: center
+        - type: component.icon
+          options:
+            icon: animation
+            size: regular
+
+        - type: component.text
+          options:
+            value: Small
+            emphasis: medium
+            align: center
+        - type: component.icon
+          options:
+            icon: animation
+            size: small

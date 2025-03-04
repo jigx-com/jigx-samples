@@ -1,0 +1,160 @@
+type: component.default
+children:      
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+          grow: 1   
+        padding: 
+          bottom: regular
+          
+      children:
+        - type: component.card
+          options:
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.url
+            direction: column
+            children:
+              
+              # TOP ROW
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1    
+                    justifyContent: center     
+                    gap: small
+                  children:     
+                  
+                    # LEFT ELEMENT
+                    - type: component.avatar
+                      options:
+                        title: N/A
+                        uri: =@ctx.inputs.avatar
+                        size: small
+
+                    # CONTENT      
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1                
+                        children:
+                          # Title
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.name
+                              size: regular
+                              align: left
+                              weight: bold
+                          # Subtitle 
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.nick
+                              size: small
+                              align: left    
+                              emphasis: medium
+                              
+                    # RIGHT ELEMENT
+                    - type: component.view
+                      options:
+                        style:   
+                          flex: 
+                            direction: column
+                        children: 
+                          - type: component.button
+                            options:
+                              title: Download
+                              isCompact: true
+                              type: primary
+
+                                                                  
+              # CONTENT
+              - type: component.image
+                options:
+                  source:
+                    uri: =@ctx.inputs.image       
+                  height: 260
+
+              # BOTTOM ROW
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1       
+                    justifyContent: center                                    
+                  children:          
+                    # 1ST COLUMN                     
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          width: 75
+                        children:
+                          # Title
+                          - type: component.text
+                            options:
+                              value: Views
+                              size: tiny
+                              align: left
+                              emphasis: medium
+                          # Subtitle 
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.views
+                              size: small
+                              align: left  
+                              weight: bold
+                    # 2ND COLUMN        
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                          width: 75                                        
+                        children:
+                          # Title
+                          - type: component.text
+                            options:
+                              value: Downloads
+                              size: tiny    
+                              align: left
+                              emphasis: medium
+                          # Subtitle 
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.downloads
+                              size: small
+                              align: left   
+                              weight: bold
+                    # 3RD COLUMN
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                        children:
+                          # Title
+                          - type: component.text
+                            options:
+                              value: Featured in
+                              size: tiny    
+                              align: left
+                              emphasis: medium
+                              numberOfLines: 1
+                          # Subtitle 
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.featured-in
+                              size: small
+                              align: left   
+                              weight: bold
+                              numberOfLines: 1

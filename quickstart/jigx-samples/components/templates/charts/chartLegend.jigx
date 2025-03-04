@@ -1,0 +1,151 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style: 
+        flex: 
+          direction: row
+          grow: 1
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: column
+                grow: 1
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding: 
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row  
+                  children:
+                    - type: component.text
+                      options:
+                        value: Open
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.open
+                        weight: bold 
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding: 
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row
+                  children:
+                    - type: component.text
+                      options:
+                        value: High
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.high
+                        weight: bold      
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding: 
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row 
+                  children:
+                    - type: component.text
+                      options:
+                        value: Low
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.low
+                        weight: bold
+        - type: component.view
+          options:
+            style:
+              # gap: minimal
+              flex: 
+                direction: column
+                grow: 1
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding:
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row
+                  children:
+                    - type: component.text
+                      options:
+                        value: Avg
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.avg
+                        weight: bold
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding:
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row
+                  children:
+                    - type: component.text
+                      options:
+                        value: Won
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.won
+                        weight: bold
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    padding: 
+                      horizontal: small
+                      vertical: minimal
+                    gap: small
+                    justifyContent: space-between
+                    flex: 
+                      direction: row
+                  children:
+                    - type: component.text
+                      options:
+                        value: Lost
+                        emphasis: medium
+                        size: small
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.chartLegend1M.lost
+                        weight: bold

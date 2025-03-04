@@ -1,0 +1,34 @@
+title: Menu
+type: jig.default
+icon: restaurant-menu
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/uploads/14123892966835548e7bd/14369636?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
+
+onFocus:
+  type: action.set-state
+  options:
+    state: =@ctx.solution.state.viewJobMenu
+    value: details
+
+children:
+  - type: component.custom-component
+    componentId: jig-menu
+    inputs:
+      tabName1: Details
+      tabName2: Tasks
+      tabName3: Chat
+      tabName4: Bids
+      tabName5: Timeline
+      tabState1: details
+      tabState2: tasks
+      tabState3: chat
+      tabState4: bids
+      tabState5: timeline

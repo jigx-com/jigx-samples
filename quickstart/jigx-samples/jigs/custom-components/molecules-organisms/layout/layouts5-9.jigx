@@ -1,0 +1,38 @@
+title: Layout 5 - 9
+type: jig.default
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 5    
+  - type: component.custom-component
+    componentId: list-layout-5
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 6    
+  - type: component.custom-component
+    componentId: list-layout-6        
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 7            
+  - type: component.custom-component
+    componentId: list-layout-7     
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 8    
+  - type: component.custom-component
+    componentId: list-layout-8     
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 9    
+  - type: component.custom-component
+    componentId: list-layout-9

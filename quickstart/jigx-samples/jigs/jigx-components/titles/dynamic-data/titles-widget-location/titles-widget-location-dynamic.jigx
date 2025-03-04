@@ -1,28 +1,21 @@
 title: Location widget with title
 type: jig.default
-     
 children:
   - type: component.location
     options:
-      # address: Národní 135/14, 110 00 Praha
-      pathsData:
-        - lat: 50.081847 
-          lng: 14.417569
-
-      
+      viewPoint:
+        centerPosition: middle
+        latitude: 50.081847
+        longitude: 14.417569
+    
 widgets:
-  2x2:
+  location-titles-dd:
     type: widget.location
     options:
-      address: =@ctx.datasources.titles.address
-      # pathsData:
-      #   - lat: 50.081847 
-      #     lng: 14.417569
+      viewPoint:
+        address: =@ctx.datasources.titles.address
       bottom:
         type: component.titles
         options:
           title: =@ctx.datasources.titles.locationtitle
           subtitle: =@ctx.datasources.titles.locationsubtitle
-
-
-

@@ -1,0 +1,144 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.image
+                options:
+                  height: 160
+                  source:
+                    uri: =@ctx.inputs.image
+                
+              - type: component.view
+                options:
+                  children:
+                    - type: component.text
+                      options:
+                        align: left
+                        numberOfLines: 3
+                        size: medium
+                        value: =@ctx.inputs.name
+                        weight: extra-bold
+                      
+                    - type: component.view
+                      options:
+                        children:
+                          - type: component.view
+                            options:
+                              children:
+                                - type: component.text
+                                  options:
+                                    align: left
+                                    emphasis: medium
+                                    numberOfLines: 2
+                                    size: small
+                                    value: =@ctx.inputs.address
+                                  
+                                - type: component.view
+                                  options:
+                                    children:
+                                      - type: component.icon
+                                        options:
+                                          color: color4
+                                          icon: love-it
+                                          size: small
+                                        
+                                      - type: component.view
+                                        options:
+                                          children:
+                                            - type: component.text
+                                              options:
+                                                align: left
+                                                emphasis: medium
+                                                size: small
+                                                value: =@ctx.inputs.reviews-score
+                                              
+                                          style:
+                                            alignItems: center
+                                            flex:
+                                              direction: row
+                                            margin:
+                                              left: minimal
+                                        
+                                      - type: component.view
+                                        options:
+                                          children:
+                                            - options:
+                                                align: left
+                                                emphasis: medium
+                                                size: small
+                                                value: Rating
+                                              type: component.text
+                                          style:
+                                            alignItems: center
+                                        
+                                    style:
+                                      alignContent: flex-start
+                                      alignItems: center
+                                      flex:
+                                        direction: row
+                                        grow: 1
+                                        shrink: 1
+                                      gap: minimal
+                                      justifyContent: flex-start
+                                      padding:
+                                        right: medium
+                                        top: minimal
+                                  
+                              style:
+                                flex:
+                                  direction: column
+                                  grow: 1
+                                  shrink: 1
+                                justifyContent: center
+                                margin:
+                                  right: medium
+                            
+                          - type: component.view
+                            options:
+                              children:
+                                - type: component.text
+                                  options:
+                                    align: right
+                                    size: medium
+                                    value: =@ctx.inputs.price
+                                    weight: extra-bold
+                                  
+                                - type: component.text
+                                  options:
+                                    align: right
+                                    emphasis: medium
+                                    size: small
+                                    value: nightly
+                                  
+                              style:
+                                flex:
+                                  direction: column
+                                justifyContent: center
+                            
+                        style:
+                          flex:
+                            direction: row
+                            grow: 1
+                          margin:
+                            top: medium
+                      
+                  style:
+                    flex:
+                      direction: column
+                      grow: 1
+                
+            direction: column
+          
+      style:
+        flex:
+          direction: column
+        padding:
+          bottom: regular
+          right: medium
+        width: 340
+    
+

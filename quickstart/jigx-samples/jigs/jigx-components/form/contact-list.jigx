@@ -1,0 +1,33 @@
+title: Contacts
+type: jig.list
+description: Tap on the contact to view their details in the form. InitialValue is used in the form to reaturn the data in each field. 
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1528747045269-390fe33c19f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGFjdCUyMGxpc3R8ZW58MHx8MHx8fDA%3D
+
+data: =@ctx.datasources.contacts
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.firstName & ' ' & @ctx.current.item.lastName
+    subtitle: =@ctx.current.item.companyName
+    description: =@ctx.current.item.email
+    leftElement: 
+      element: avatar
+      text: A
+    onPress: 
+      type: action.go-to 
+      options:
+        linkTo: form-initialvalue
+        parameters: 
+          id: =@ctx.current.item.id
+    
+

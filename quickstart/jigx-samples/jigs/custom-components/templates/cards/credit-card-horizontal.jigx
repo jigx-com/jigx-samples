@@ -1,0 +1,80 @@
+title: Horizontal List of Credit Cards
+type: jig.default
+icon: credit-card-1-alternate
+
+datasources:
+  data:
+    type: datasource.static
+    options:
+      data:
+        - title: 1
+          subtitle: value
+          description: value
+
+  card:
+    type: datasource.static
+    options:
+      data:
+        - cardType: visa
+          cardColor: color3
+          cardNumber: 6446
+          cardHolder: Lucas Donovan
+          cardExpiration: 06/23
+          cardBackground: 4
+
+        - cardType: visa      
+          cardBackground: 1
+          cardColor: color2
+          cardNumber: 2258
+          cardHolder: Emma Sinclair
+          cardExpiration: 03/25   
+
+        - cardType: mastercard     
+          cardBackground: 2
+          cardColor: color8
+          cardNumber: 6954
+          cardHolder: James Whitfield
+          cardExpiration: 12/23
+
+
+        - cardType: mastercard      
+          cardBackground: 3
+          cardColor: color1
+          cardNumber: 8459
+          cardHolder: Olivia Monroe
+          cardExpiration: 01/25
+
+
+        - cardType: visa      
+          cardBackground: 4
+          cardColor: color5
+          cardNumber: 4478
+          cardHolder: Ethan Carmichael
+          cardExpiration: 02/24
+
+        - cardType: visa
+          cardColor: color3
+          cardNumber: 6446
+          cardHolder: Sophia Bennett
+          cardExpiration: 02/23
+          cardBackground: 4                 
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.card
+      maximumItemsToRender: 8
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item: 
+        type: component.custom-component
+        componentId: credit-card
+        inputs:
+          cardType: =@ctx.current.item.cardType
+          cardBackground: =@ctx.current.item.cardBackground
+          cardColor: =@ctx.current.item.cardColor
+          cardExpiration: =@ctx.current.item.cardExpiration
+          cardHolder: =@ctx.current.item.cardHolder
+          cardNumber: =@ctx.current.item.cardNumber
+          
+          

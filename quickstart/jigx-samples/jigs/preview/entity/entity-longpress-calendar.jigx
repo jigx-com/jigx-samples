@@ -2,6 +2,14 @@ title: Entity preview - Calendar
 type: jig.calendar
 icon: career
 
+inputs:
+  title: 
+    type: string
+  description: 
+    type: string
+  type: 
+    type: string
+  
 header: 
   type: component.jig-header
   options:
@@ -49,7 +57,7 @@ item:
       type: action.go-to
       options:
         linkTo: entity-calendar-detail
-        parameters:
+        inputs:
           title: =@ctx.current.item.title
           description: =@ctx.current.item.description
           type: =@ctx.current.item.type
@@ -58,7 +66,7 @@ item:
       options:
         title: Go to detail
         linkTo: entity-calendar-detail
-        parameters:
+        inputs:
           title: =@ctx.current.item.title
           description: =@ctx.current.item.description
           type: =@ctx.current.item.type

@@ -11,7 +11,7 @@ children:
             value: Value
                        
 widgets:
-  "4x2": 
+  value-s-4x2: 
     type: widget.value
     options:
       value: "2329999"

@@ -1,0 +1,32 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      firstName: Lucas
+      lastName: Donovan
+      age: 32
+      address: 742 Evergreen Terrace
+      city: Springfield,
+      state: IL
+      avatar: https://images.unsplash.com/photo-1463453091185-61582044d556?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbnxlbnwwfHwwfHx8MA%3D%3D
+      email: lucas@email.com
+
+    - id: 2
+      firstName: Emma
+      lastName: Sinclair
+      age: 34
+      address: 123 Maple Avenue
+      city: Boston
+      state: MA
+      avatar: https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D
+      email: emma.sinclair@email.com
+
+    - id: 3
+      firstName: James
+      lastName: Whitfield
+      age: 35
+      address: 456 Pine Street
+      city: Seattle
+      state: WA
+      avatar: https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww
+      email: james@email.com

@@ -1,0 +1,12 @@
+title: Icons Sizes
+type: jig.default
+icon: pen-draw-1
+
+children:
+  - type: component.custom-component
+    componentId: section4
+    inputs:
+      title: "Icon sizes"
+      
+  - type: component.custom-component
+    componentId: icon-sizes

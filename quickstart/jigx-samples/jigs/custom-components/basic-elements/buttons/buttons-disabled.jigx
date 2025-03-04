@@ -1,0 +1,12 @@
+title: Buttons (Disabled)
+type: jig.default
+icon: button-play
+
+children:    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Disabled"
+
+  - type: component.custom-component
+    componentId: button-4

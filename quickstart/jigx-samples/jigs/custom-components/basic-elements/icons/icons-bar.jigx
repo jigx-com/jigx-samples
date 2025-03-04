@@ -1,0 +1,7 @@
+title: Icons Bar
+type: jig.default
+icon: picture-polaroid-human
+
+children:
+  - type: component.custom-component
+    componentId: icons

@@ -1,19 +1,31 @@
 title: Location with address
 type: jig.default
-
-isCollapsible: true
-
 datasources:
-  address: 
-    type: datasource.static
+  address:
     options:
       data:
-        - street: 768 5th Ave
-          city: New York
+        - city: New York
           country: US
-
+          street: 768 5th Ave
+    type: datasource.static
 children:
   - type: component.location
     options:
-      address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city & ',' & @ctx.datasources.address.country
-      zoomLevel: 9
+      viewPoint:
+        centerPosition: middle
+        address: |
+                   =@ctx.datasources.address.street  
+                   & ',' & @ctx.datasources.address.city
+                   & ',' & @ctx.datasources.address.country
+        zoomLevel: 9
+      markers:
+        data: =@ctx.datasources.address.street
+        item:
+          type: component.marker-item
+          options:
+            children: 
+              type: component.icon
+              options:
+                icon: end-marker
+  
+isCollapsible: true

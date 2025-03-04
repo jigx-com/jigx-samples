@@ -1,0 +1,52 @@
+title: List of Jobs
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1469389335181-2198b4caa734?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbnN0cnVjdGlvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60
+
+datasources:
+  jobs:
+    type: datasource.static
+    options:
+      data:
+        - CreatedDate: 06/21/2023
+          DocURL: https://images.unsplash.com/photo-1482867899247-e295efdd8c1a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlJTIwaW5zaWRlJTIwa2l0Y2hlbnxlbnwwfHwwfHx8MA%3D%3D
+          EndDate: 07/21/2023
+          JobDetails: Run comps on property and surrounding rentals
+          StartDate: 07/17/2023
+          id: 1
+          jobBudget: 20000
+          jobTitle: Run Comps
+        - CreatedDate: 06/21/2023
+          DocURL: https://images.unsplash.com/photo-1627740283098-1c544d3a479d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhcmRlbmluZyUyMHdvcmt8ZW58MHx8MHx8fDA%3D
+          JobDetails: Clear out shrubs and trees that are in the way on remodel
+          StartDate: 06/26/2023
+          id: 2
+          jobBudget: 50000
+          jobTitle: Landscape Cleanup
+        - CreatedDate: 06/26/2023
+          DocURL: https://images.unsplash.com/photo-1605450099279-533bd3ce379a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vZnRvcCUyMHJlcGFpcnN8ZW58MHx8MHx8fDA%3D
+          EndDate: 06/28/2023
+          JobDetails: Inspector needed on site tomorrow to inspect roof leak
+          StartDate: 06/26/2023
+          id: 3
+          jobBudget: 5000
+          jobTitle: Roof Inspection Job
+    
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.jobs
+      item:
+        componentId: list-jobs
+        inputs:
+          info: =@ctx.current.item
+        type: component.custom-component
+      maximumItemsToRender: 8

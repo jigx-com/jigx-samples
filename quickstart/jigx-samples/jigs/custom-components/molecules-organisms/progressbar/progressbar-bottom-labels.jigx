@@ -1,0 +1,40 @@
+title: Progress Bars - Bottom Labels (Dynamic)
+description: Refresh to reset Progress Bar's Value
+type: jig.default
+icon: loading-half
+
+onFocus: 
+  type: action.set-state
+  when: =$not($exists(@ctx.solution.state.progressValue))
+  options:
+    state: =@ctx.solution.state.progressValue
+    value: 1
+    
+onRefresh:
+  type: action.set-state
+  options:
+    state: =@ctx.solution.state.progressValue
+    value: 0
+  
+actions:
+  - children:
+      - type: action.set-state
+        options:
+          title: Add 10%
+          state: =@ctx.solution.state.progressValue
+          value: =@ctx.solution.state.progressValue + 1
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1607434472257-d9f8e57a643d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGNvbWluZyUyMHNvb24lMjBsb2FkaW5nfGVufDB8fDB8fHww
+   
+children:
+  - type: component.custom-component
+    componentId: progressbar10
+    

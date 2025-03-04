@@ -1,0 +1,40 @@
+type: component.default
+children:  
+  - type: component.card
+    options:
+      color: color4 
+      direction: row
+      children:
+        
+        - type: component.text
+          options:
+            value: A
+            size: extra-large
+            weight: extra-bold
+            emphasis: high
+            numberOfLines: 1
+            align: center
+        - type: component.text
+          options:
+            value: A
+            size: extra-large 
+            weight: extra-bold 
+            emphasis: medium
+            numberOfLines: 1
+            align: center
+        - type: component.text
+          options:
+            value: A
+            size: extra-large
+            weight: extra-bold
+            emphasis: low-medium
+            numberOfLines: 1
+            align: center
+        - type: component.text
+          options:
+            value: A
+            size: extra-large
+            weight: extra-bold
+            emphasis: low
+            numberOfLines: 1
+            align: center

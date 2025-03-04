@@ -1,0 +1,42 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      children: []
+      style:
+        padding:
+          top: medium
+    
+  - type: component.view
+    when: =@ctx.inputs.title != 'null'
+    options:
+      style:
+        alignItems: center
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+      children:
+        - type: component.view
+          options:
+            style:
+              alignItems: flex-start
+              flex:
+                grow: 1
+                shrink: 1
+
+            children:
+              - type: component.text
+                options:
+                  numberOfLines: 1
+                  size: medium
+                  value: =@ctx.inputs.title
+                  weight: bold
+
+        - type: component.text
+          when: =@ctx.inputs.link != null
+          options:
+            color: primary
+            size: regular
+            value: =@ctx.inputs.link
+

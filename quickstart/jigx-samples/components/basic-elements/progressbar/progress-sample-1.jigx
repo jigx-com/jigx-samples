@@ -1,0 +1,59 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        gap: medium
+      children:
+        
+        - type: component.card
+          options:
+            children:
+              - type: component.progress-bar
+                options:
+                  value:
+                    current: =@ctx.solution.state.progressValue
+                    max: 20
+                  title:
+                    value: Title
+                    align: right
+                    position: bottom
+                  subtitle:
+                    value: Subtitle
+                    align: left
+                    position: bottom    
+
+        - type: component.card
+          options:
+            children:
+              - type: component.progress-bar
+                options:
+                  value:
+                    current: =@ctx.solution.state.progressValue
+                    max: 20
+                  size: extra-large
+                  title:
+                    value: Title
+                    align: left
+                    position: top
+                  subtitle:
+                    value: Subtitle
+                    align: right
+                    position: bottom                      
+
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    background:
+                      color: color12
+                  children:
+                    - type: component.progress-bar
+                      options:
+                        value:
+                          current: =@ctx.solution.state.progressValue
+                          max: 20
+
+

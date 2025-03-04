@@ -1,0 +1,94 @@
+title: Profile
+type: jig.default
+icon: people-man-1-geometric
+
+datasources:
+  players:
+    type: datasource.static
+    options:
+      data:
+        - postion: 4
+          score: 987
+          team-member1: Vojta
+          team-member2: David
+          team-member3: Pavel
+          team-member4: Jakub
+          team-name: Team 1
+        - postion: 5
+          score: 564
+          team-member1: Tereza
+          team-member2: Viktorie
+          team-member3: Zuzana
+          team-member4: Vojtěch
+          team-name: Team 2
+        - postion: 6
+          score: 234
+          team-member1: Šárka
+          team-member2: Pavlína
+          team-member3: Jana
+          team-member4: Vojtěch
+          team-name: Team 3
+    
+children:
+  - type: component.custom-component
+    componentId: profile2
+    inputs:
+      button1Icon: person
+      button2Icon: messages-bubble
+      button2LinkTo: test
+      button2Text: Message
+      button3Icon: three-dots
+      button3LinkTo: ""
+      button3Text: More
+      description: CEO Jigx, Because your satisfaction is everything & Standing out
+        from the rest, and that's what we want you to be as well
+      subtitle: Position
+      title: Lucas Donovan        
+    
+  - type: component.custom-component
+    componentId: headline
+    inputs:
+      headline1: Leaderboard
+      link: Show all
+      linkTo: test
+      subtitle: Best Teams so far
+    
+  - type: component.custom-component
+    componentId: leaderboard
+    inputs:
+      team-1-points: 6778
+      team-2-points: 8890
+      team-3-points: 9998
+      team1-member1: David
+      team1-member2: Pavel
+      team1-member3: Lukáš
+      team1-member4: Anna
+      team1-name: Team A
+      team2-member1: Luděk
+      team2-member2: Zuzka
+      team2-member3: Vojta
+      team2-member4: Tereza
+      team2-name: Team B
+      team3-member1: Pavel
+      team3-member2: Otto
+      team3-member3: Viktorie
+      team3-member4: Filip
+      team3-name: Team C
+    
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.players
+      item:
+        type: component.custom-component
+        componentId: table-row
+        inputs:
+          column1: 1+
+          column2: =@ctx.current.item.team-name
+          column2-1: |
+            =@ctx.current.item.team-member1 & ", " & 
+            @ctx.current.item.team-member2 & ", " &
+            @ctx.current.item.team-member3 & ", " &
+            @ctx.current.item.team-member4
+          column3: =@ctx.current.item.score
+

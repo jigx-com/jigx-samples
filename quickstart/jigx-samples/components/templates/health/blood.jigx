@@ -1,0 +1,237 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        justifyContent: space-between
+        padding: 
+          horizontal: regular
+          vertical: small
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              gap: small
+            children:
+              - type: component.icon
+                options:
+                  icon: love-it
+                  color: color4
+              - type: component.text
+                options:
+                  value: Blood pressure
+                  color: color4
+                  weight: extra-bold
+                  size: regular
+        - type: component.text
+          options:
+            value: 7 min ago
+            emphasis: medium
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        gap: small
+        padding: 
+          horizontal: regular
+          vertical: minimal
+
+      children:
+        - type: component.text
+          options:
+            value: 124 / 87
+            weight: extra-bold
+            size: large
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              justifyContent: center
+            children:
+              
+              - type: component.text
+                options:
+                  value: mmHg
+                  emphasis: medium
+  - type: component.view
+    options:
+      style:
+        padding: small
+        
+      children:
+        - type: component.line-chart
+          options:
+            plotOptions:
+              series:
+                marker:
+                  isHidden: true
+            yAxis:
+              max: 200
+              min: 0
+              tickAmount: 10
+              isFirstLabelHidden: false
+              isFirstTickHidden: false
+              
+            xAxis:
+              categories: =@ctx.inputs.myData.time
+              tickAmount: 5
+              
+              
+            series:
+              - data: =@ctx.inputs.myData.lowValue
+                dataLabels:
+                  - isEnabled: true
+                name: =@ctx.inputs.myData.lowValue
+                description: =@ctx.inputs.myData.lowValue
+                layout: area-gradient
+
+              - data: =@ctx.inputs.myData.highValue
+                color: negative
+                dataLabels:
+                  - isEnabled: true
+                name: =@ctx.inputs.myData.highValue
+                description: =@ctx.inputs.myData.highValue
+                layout: area-gradient    
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        gap: small
+        padding: 
+          horizontal: minimal
+          vertical: small
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: Time
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 08:00
+                        weight: bold
+                        align: center
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: RR
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 12
+                        weight: bold
+                        align: center
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: SATS
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 96
+                        weight: bold
+                        align: center
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        gap: small
+        padding: minimal
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: O2%
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 96
+                        weight: bold
+                        align: center
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: O2% Delivery
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 5
+                        weight: bold
+                        align: center
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding: minimal
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: ETCO2
+                        emphasis: medium
+                        align: center
+                        size: small
+                    - type: component.text
+                      options:
+                        value: 40
+                        weight: bold
+                        align: center

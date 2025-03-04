@@ -1,0 +1,24 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        # background:
+        #   color: color1
+        justifyContent: space-between
+        flex: 
+          direction: row
+        padding: 
+
+          bottom: medium
+        margin: 
+          horizontal: large
+        gap: small
+      children:
+        
+        - type: component.text
+          options:
+            value: =@ctx.inputs.description
+        - type: component.icon
+          options:
+            icon: =@ctx.inputs.icon

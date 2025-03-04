@@ -1,0 +1,124 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: =@ctx.inputs.color ? @ctx.inputs.color:''
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: row
+              gap: medium
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      basis: 1
+                      grow: 1
+                    justifyContent: center
+
+                  children:
+                    - type: component.avatar
+                      options:
+                        title: =@ctx.inputs.avatar
+                        size: large
+                        uri: =@ctx.inputs.avatar
+
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      basis: 2
+                      grow: 2
+                    justifyContent: center
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding:
+                            bottom: large
+
+                        children:
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.name
+
+                    - type: component.view
+                      options:
+                        style: {}
+
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: row
+                                gap: small
+                                padding:
+                                  bottom: small
+
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: phone
+                                    size: small
+                                  
+                                - type: component.text
+                                  options:
+                                    emphasis: high
+                                    value: =@ctx.inputs.phone
+                                  
+                              onPress:
+                                type: action.open-url
+                                options:
+                                  url: ='tel:' & 23132423
+
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: row
+                                gap: small
+                                padding:
+                                  bottom: small
+
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: envelope
+                                    size: small
+                                  
+                                - type: component.text
+                                  options:
+                                    emphasis: high
+                                    value: =@ctx.inputs.email
+                                  
+                              onPress:
+                                type: action.open-url
+                                options:
+                                  url: ='mailto:' & @ctx.inputs.email
+
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: row
+                                gap: small
+                                padding:
+                                  bottom: small
+
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: pin
+                                    size: small
+                                  
+                                - type: component.text
+                                  options:
+                                    emphasis: high
+                                    value: =@ctx.inputs.address

@@ -1,0 +1,137 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: row
+      children:
+      
+        # WRAPPER SPLITTED INTO THE ICON AND CONTENT
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              alignItems: center
+              gap: medium
+            children:   
+
+              # LEFT ELEMENT
+              - type: component.icon
+                options:
+                  icon: alarm-bell-1
+                  shape: rounded
+                  type: duotone              
+
+              # CONTENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      shrink: 1
+                      grow: 1
+                    gap: small
+                  children:
+                    # TOP ROW
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 1
+                            shrink: 1
+                          alignItems: center
+                          gap: medium
+                        children:        
+                        
+                          # CONTENT
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: column
+                                  grow: 1
+                                  shrink: 1
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Title element with with long text
+                                    size: regular  
+                                    weight: bold
+                                    numberOfLines: 1
+                                - type: component.text
+                                  options:
+                                    value: Subtitle element with very very very very long text, reall        
+                                    size: regular
+                                    numberOfLines: 3
+                                    emphasis: medium
+                                    
+                          # RIGHT ELEMENT
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: column  
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Title 
+                                    size: regular  
+                                    weight: bold
+                                    align: right
+                                    numberOfLines: 1
+                                - type: component.text
+                                  options:
+                                    value: Subtitle    
+                                    size: regular
+                                    align: right
+                                    emphasis: medium
+                                    numberOfLines: 1
+
+                    # BOTTOM ROW
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 0
+                          alignItems: flex-start
+                          gap: medium
+                          emphasis: medium
+                        children:        
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                gap: minimal
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: alarm-bell-1
+                                    size: small
+                                - type: component.text
+                                  options:
+                                    value: name
+                                    size: small  
+                                    numberOfLines: 1
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                gap: minimal
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: alarm-bell-1
+                                    size: small
+                                - type: component.text
+                                  options:
+                                    value: name
+                                    size: small  
+                                    numberOfLines: 1                                    
+
+  

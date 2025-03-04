@@ -1,0 +1,110 @@
+title: Ventilator
+type: jig.default
+icon: oxygen-tank-1
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1513224502586-d1e602410265?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaWNhbCUyMG1hY2hpbmVzfGVufDB8fDB8fHww
+
+actions:
+  - children:
+      - type: action.reset-state
+        options:
+          title: Reset State
+          state: =@ctx.solution.state.selectedTime
+#       - type: action.go-to
+#         options:
+#           title: Add reading
+#           linkTo: ventilation-add
+
+datasources:
+  ventilator:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          rate: 20
+          volumes: 500
+          peep: 5
+          ps: 12
+          pip: 20
+          fio2: 30
+          etco2: 40
+          time: 08:00
+        - id: 2
+          rate: 25
+          volumes: 455
+          peep: 4
+          ps: 10
+          pip: 15
+          fio2: 27
+          etco2: 35
+          time: 09:00
+        - id: 3
+          rate: 22
+          volumes: 480
+          peep: 4
+          ps: 10
+          pip: 18
+          fio2: 32
+          etco2: 40
+          time: 10:00
+        - id: 4
+          rate: 19
+          volumes: 400
+          peep: 5
+          ps: 12
+          pip: 20
+          fio2: 30
+          etco2: 44
+          time: 11:00
+        - id: 5
+          rate: 26
+          volumes: 465
+          peep: 4
+          ps: 10
+          pip: 15
+          fio2: 27
+          etco2: 38
+          time: 12:00
+        - id: 6
+          rate: 21
+          volumes: 490
+          peep: 4
+          ps: 10
+          pip: 18
+          fio2: 32
+          etco2: 45
+          time: 13:00
+
+children:
+  - type: component.custom-component
+    componentId: ventilator
+    inputs:
+      rate: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].rate 
+      volumes: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].volumes
+      peep: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].peep
+      ps: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].ps
+      pip: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].pip
+      fio2: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].fio2
+      etco2: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].etco2
+      time: =@ctx.datasources.ventilator[time=@ctx.solution.state.selectedTime].time
+
+  - type: component.list
+    options:
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      data: =@ctx.datasources.ventilator
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: ventilatorTimes
+        inputs:
+          time: =@ctx.current.item.time
+

@@ -1,0 +1,46 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 20
+            title:
+              value: Progress bar
+            size: tiny
+            color: color1
+
+        - type: component.progress-bar
+          options:
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 20
+            size: small
+            color: color2
+
+        - type: component.progress-bar
+          options:
+            value:
+              current: =@ctx.solution.state.progressValue * 1
+              max: 20
+            size: medium
+            color: color3
+
+        - type: component.progress-bar
+          options:
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 20
+            size: large
+            color: color4
+
+        - type: component.progress-bar
+          options:
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 20
+            size: extra-large
+            color: color5

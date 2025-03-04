@@ -1,0 +1,24 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: 7
+              max: 10 
+            size: extra-large
+            color: color11
+            errorText: Some error
+            title:
+              value: Your goal
+              align: left
+              position: bottom
+            helperText: Your monthly goal are 3 new customers  
+            subtitle:
+              value: 2 of 3 New customers
+              align: left
+              position: bottom
+            
+              

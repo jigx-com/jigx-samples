@@ -1,0 +1,36 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column 
+      children:
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: extra-large
+            numberOfLines: 3
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: large  
+            numberOfLines: 5
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: medium
+            numberOfLines: 3
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: regular
+            numberOfLines: 3           
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: small
+            numberOfLines: 3
+        - type: component.text
+          options:
+            value: is designed to be inclusive, so remote team members truly feel like part of the group. By being able to use your own device, everyone is seen and heard clearly — and no one ever sounds “far from the mic.” Everyone stays engaged. No one steals the spotlight.
+            size: tiny
+            numberOfLines: 3

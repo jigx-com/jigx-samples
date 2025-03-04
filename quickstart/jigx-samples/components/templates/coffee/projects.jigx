@@ -1,0 +1,81 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding:
+          bottom: medium
+
+      children:
+        - type: component.card
+          options:
+            direction: column
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: medium
+
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 160
+                          width: 100
+                        source:
+                          uri: =@ctx.inputs.image
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: column
+                            grow: 1
+                            shrink: 1
+                          gap: medium
+
+                        children:
+                          - type: component.text
+                            options:
+                              align: left
+                              numberOfLines: 2
+                              size: medium
+                              value: =@ctx.inputs.title
+                              weight: extra-bold
+
+                          - type: component.text
+                            options:
+                              numberOfLines: 1
+                              size: small
+                              value: =@ctx.inputs.address
+
+                          - type: component.text
+                            options:
+                              align: left
+                              emphasis: medium
+                              numberOfLines: 3
+                              size: small
+                              value: =@ctx.inputs.description
+
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: row
+                                gap: small
+
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: calendar
+                                    size: small
+
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    size: small
+                                    value: =@ctx.inputs.date
+

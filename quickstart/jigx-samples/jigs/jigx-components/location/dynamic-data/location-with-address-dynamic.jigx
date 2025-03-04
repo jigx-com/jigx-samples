@@ -1,9 +1,19 @@
-title: Location with address
+title: Location with address 
 type: jig.default
-     
 children:
   - type: component.location
     options:
-      address: =@ctx.datasources.location.address-us
+      viewPoint: 
+        centerPosition: middle
+        address: =@ctx.datasources.location.address-us
+      markers:
+        data: =@ctx.datasources.location.address-us
+        item:
+          type: component.marker-item
+          options:
+            children: 
+              type: component.icon
+              options:
+                icon: end-marker
 
       

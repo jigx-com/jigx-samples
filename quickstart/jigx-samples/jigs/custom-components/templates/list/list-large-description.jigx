@@ -1,0 +1,58 @@
+title: Large description list
+type: jig.default
+icon: list
+description: Would you like access to our additional resources?
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbnN0cnVjdGlvbiUyMHNpdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60
+
+datasources:
+  options:
+    type: datasource.static
+    options:
+      data:
+        - Description: Edit, phases, location, and disciplines for your project task list
+            templates.
+          icon: pencil-write
+          id: 1
+          linkto: edit-main-project-template
+          title: Edit Project Templates
+        - Description: Evaluate your project's profitability and engage with local lenders
+            to secure financing options.
+          icon: currency-dollar-circle
+          id: 2
+          linkto: deal-analyzer-comp
+          title: Fix n Flip Loan
+        - Description: Get expert architectural assistance with floor plans and leverage
+            general contractor licensing support for city permit acquisitions.
+          icon: pencil-write
+          id: 3
+          linkto: register-form
+          title: Plans & Permits
+        - Description: Work with a procurement specialist to source materials from a
+            selection of online and local vendors, to optimize cost-efficiency
+            for your project.
+          icon: delivery-truck-5
+          id: 4
+          linkto: register-form
+          title: Material Orders & Discounts
+
+children:
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.options
+      item:
+        type: component.custom-component
+        componentId: large-description-list
+        inputs:
+          info: =@ctx.current.item
+
+

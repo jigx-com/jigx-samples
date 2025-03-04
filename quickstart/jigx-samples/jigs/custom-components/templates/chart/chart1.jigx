@@ -1,0 +1,50 @@
+title: Chart
+type: jig.default
+icon: chart
+
+datasources:
+  trend:
+    type: datasource.static
+    options:
+      data:
+        - 15
+        - 20
+        - 10
+        - 16 
+        - 17
+        - 19
+        - 12
+        - 22
+        - 18
+        - 10 
+        - 30
+        - 21
+        - 28
+        - 27
+        - 24 
+  trend2:
+    type: datasource.static
+    options:
+      data:
+        - 22
+        - 18
+        - 10 
+        - 30
+        - 21
+        - 28
+        - 27
+        - 24    
+        - 15
+        - 20
+        - 17
+        - 19
+        - 12
+        - 10
+        - 16 
+        
+children:
+  - type: component.custom-component
+    componentId: chart
+    inputs:
+      trend: =@ctx.datasources.trend 
+      trend2: =@ctx.datasources.trend2 

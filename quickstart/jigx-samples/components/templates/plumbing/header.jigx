@@ -1,0 +1,95 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        border:
+          bottom:
+            emphasis: low
+            style: solid
+        flex:
+          direction: column
+          grow: 1
+        gap: medium
+        padding:
+          bottom: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              alignSelf: center
+              flex:
+                direction: column
+                grow: 1
+              height: 100
+              justifyContent: center
+              width: 200
+            children:
+              - type: component.image
+                options:
+                  resizeMode: contain
+                  size: 
+                    height: 120
+                  source:
+                    uri: https://img.freepik.com/free-vector/plumbing-service-stamp-vector-illustration-faucet-premium-quality-text-with-stars-plumbing-concept-logo_74855-12459.jpg?ga=GA1.1.1415676781.1731270122&semt=ais_hybrid
+
+        - type: component.view
+          options:
+            style:
+              alignItems: stretch
+              flex:
+                direction: row
+                grow: 1
+              gap: minimal
+              justifyContent: space-between
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: minimal
+
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: rating-star
+                        size: small
+
+                    - type: component.icon
+                      options:
+                        icon: rating-star
+                        size: small
+
+                    - type: component.icon
+                      options:
+                        icon: rating-star
+                        size: small
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        size: small
+                        value: (Based on 97 Review)
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                      grow: 0
+
+                  children:
+                    - type: component.icon
+                      options:
+                        color: positive
+                        icon: check
+                      
+                    - type: component.text
+                      options:
+                        size: small
+                        value: Available

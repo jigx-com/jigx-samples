@@ -1,0 +1,46 @@
+title: Ratings
+type: jig.default
+icon: star-half
+
+children:
+  - type: component.section
+    options:
+      title: stars
+      children:
+        - type: component.custom-component
+          componentId: rating-1
+
+  - type: component.section
+    options:
+      title: stars with statistics
+      children:
+        - type: component.custom-component
+          componentId: rating-2
+          inputs: 
+            rating: 4.5
+            rating-number: 6.4
+
+  - type: component.section
+    options:
+      title: Statistics
+      children:
+        - type: component.custom-component
+          componentId: rating-3
+          inputs: 
+            rating: 4.5
+            rating-number: 6.4   
+
+  - type: component.section
+    options:
+      title: Emoji rating - emphasis
+      children:
+        - type: component.custom-component
+          componentId: rating-4
+
+  - type: component.section
+    options:
+      title: Emoji rating - background
+      children:
+        - type: component.custom-component
+          componentId: rating-5
+

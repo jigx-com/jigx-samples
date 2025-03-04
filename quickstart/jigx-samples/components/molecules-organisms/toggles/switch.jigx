@@ -1,0 +1,228 @@
+type: component.default
+    
+inputs:
+  highlighted:
+    default: true
+    required: false
+    type: boolean
+  switchCount1:
+    required: false
+    type: number
+  switchCount2:
+    required: false
+    type: number
+  switchCount3:
+    required: false
+    type: number
+  switchName1:
+    required: true
+    type: string
+  switchName2:
+    required: true
+    type: string
+  switchName3:
+    required: false
+    type: string
+  switchValue1:
+    required: true
+    type: string
+  switchValue2:
+    required: true
+    type: string
+  switchValue3:
+    required: false
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: ="element"
+          emphasis: extra-low
+        flex:
+          direction: row
+          grow: 1
+        margin:
+          top: none
+        padding: minimal
+        radius: large
+
+      children:
+        - type: component.view
+          when: =@ctx.inputs.switchName1 != null
+          options:
+            style:
+              alignItems: center
+              background:
+                color: =@ctx.solution.state.switch = @ctx.inputs.switchValue1 ?
+                  @ctx.inputs.highlighted = true ? "primary":"card"
+              flex:
+                basis: 1
+                direction: row
+                grow: 1
+              gap: minimal
+              justifyContent: center
+              padding:
+                horizontal: medium
+                vertical: small
+              radius: large
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  color: |
+                    =@ctx.solution.state.switch = @ctx.inputs.switchValue1 and
+                    @ctx.inputs.highlighted = true ? "":"element"
+                  value: =@ctx.inputs.switchName1
+                
+              - type: component.view
+                when: =@ctx.inputs.switchCount1 != null
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      color: =@ctx.solution.state.switch = @ctx.inputs.switchValue1 and
+                        @ctx.inputs.highlighted = true ? "":"element"
+                      emphasis: medium
+                      style: solid
+                    height: 18
+                    justifyContent: center
+                    radius: large
+                    width: 18
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        color: |
+                          =@ctx.solution.state.switch = @ctx.inputs.switchValue1 and
+                          @ctx.inputs.highlighted = true ? "":"element"
+                        emphasis: medium
+                        size: tiny
+                        value: =@ctx.inputs.switchCount1
+                      
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.switch
+                value: =@ctx.inputs.switchValue1
+              
+          
+        - type: component.view
+          when: =@ctx.inputs.switchName2 != null
+          options:
+            style:
+              alignItems: center
+              background:
+                color: =@ctx.solution.state.switch = @ctx.inputs.switchValue2 ?
+                  @ctx.inputs.highlighted = true ? "primary":"card"
+              flex:
+                basis: 1
+                direction: row
+                grow: 1
+              gap: minimal
+              justifyContent: center
+              padding:
+                horizontal: medium
+                vertical: small
+              radius: large
+
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  color: =@ctx.solution.state.switch = @ctx.inputs.switchValue2 and
+                    @ctx.inputs.highlighted = true ? "":"element"
+                  value: =@ctx.inputs.switchName2
+                
+              - type: component.view
+                when: =@ctx.inputs.switchCount2 != null
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      color: =@ctx.solution.state.switch = @ctx.inputs.switchValue2 and
+                        @ctx.inputs.highlighted = true ? "":"element"
+                      emphasis: medium
+                      style: solid
+                    height: 18
+                    justifyContent: center
+                    radius: large
+                    width: 18
+
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        color: =@ctx.solution.state.switch = @ctx.inputs.switchValue2 and
+                          @ctx.inputs.highlighted = true ? "":"element"
+                        emphasis: medium
+                        size: tiny
+                        value: =@ctx.inputs.switchCount2
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.switch
+                value: =@ctx.inputs.switchValue2
+              
+          
+        - type: component.view
+          when: =@ctx.inputs.switchName3 != null
+          options:
+            style:
+              alignItems: center
+              background:
+                color: =@ctx.solution.state.switch = @ctx.inputs.switchValue3 ?
+                  @ctx.inputs.highlighted = true ? "primary":"card"
+              flex:
+                basis: 1
+                direction: row
+                grow: 1
+              gap: minimal
+              justifyContent: center
+              padding:
+                horizontal: medium
+                vertical: small
+              radius: large
+
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  color: =@ctx.solution.state.switch = @ctx.inputs.switchValue3 and
+                    @ctx.inputs.highlighted = true ? "":"element"
+                  value: =@ctx.inputs.switchName3
+                
+              - type: component.view
+                when: =@ctx.inputs.switchCount3 != null
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      color: =@ctx.solution.state.switch = @ctx.inputs.switchValue3 and
+                        @ctx.inputs.highlighted = true ? "":"element"
+                      emphasis: medium
+                      style: solid
+                    height: 18
+                    justifyContent: center
+                    radius: large
+                    width: 18
+
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        color: =@ctx.solution.state.switch = @ctx.inputs.switchValue3 and
+                          @ctx.inputs.highlighted = true ? "":"element"
+                        emphasis: medium
+                        size: tiny
+                        value: =@ctx.inputs.switchCount3
+                      
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.switch
+                value: =@ctx.inputs.switchValue3
+              
+          

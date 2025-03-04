@@ -1,0 +1,11 @@
+title: Text (Extra Large Weights)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Extra large - Font Weights"   
+  - type: component.custom-component
+    componentId: text-8       

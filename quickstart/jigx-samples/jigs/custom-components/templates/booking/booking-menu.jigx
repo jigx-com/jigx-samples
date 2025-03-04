@@ -1,0 +1,44 @@
+title: Booking
+type: jig.list
+icon: hotel-information
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: booking
+          title: Booking
+          icon: hotel-information
+          color: color1
+        - id: 2
+          jigId: booking-horizontal
+          title: Booking Horizontal
+          icon: hotel-information
+          color: color2
+        - id: 3
+          jigId: booking-rating
+          title: Booking with Rating
+          icon: hotel-information
+          color: color3
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

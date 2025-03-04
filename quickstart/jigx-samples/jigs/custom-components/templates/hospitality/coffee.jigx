@@ -1,0 +1,161 @@
+title: Coffee
+type: jig.default
+icon: coffee-cup-hot
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2861&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+datasources:
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - category-name: This week
+          category-selected: false
+        - category-name: Next week
+          category-selected: true
+        - category-name: This month
+          category-selected: false
+    
+  stories:
+    type: datasource.static
+    options:
+      data:
+        - image: https://images.unsplash.com/photo-1518553300442-dc00435b8b20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D
+          labelColor: color3
+          labelText: Just finished
+          subtitle: In publishing and graphic design, lorem ipsum is common placeholder
+            text used to demonstrate the graphic elements of a document or
+            visual presentation, such as web pages, typography, and graphical
+            layout. It is a form of "greeking".
+          title: The new taste of the coffee
+        - image: https://images.unsplash.com/photo-1469957761306-556935073eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D
+          labelColor: color2
+          labelText: Almost done
+          subtitle: subtitle
+          title: Story 2
+    
+children:
+  - type: component.custom-component
+    componentId: headline2
+    inputs:
+      linkName: Show more
+      linkTo: news
+      subtitle: What happend in the last month
+      title: Project stories
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 3
+      data: =@ctx.datasources.stories
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        componentId: stories
+        inputs:
+          image: =@ctx.current.item.image
+          labelColor: =@ctx.current.item.labelColor
+          labelText: =@ctx.current.item.labelText
+          subtitle: =@ctx.current.item.subtitle
+          title: =@ctx.current.item.title
+        type: component.custom-component
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 3
+      data: =@ctx.datasources.stories
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: stories2
+        inputs:
+          image: =@ctx.current.item.image
+          labelColor: =@ctx.current.item.labelColor
+          labelText: =@ctx.current.item.labelText
+          subtitle: =@ctx.current.item.subtitle
+          title: =@ctx.current.item.title
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.stories
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: stories3
+        inputs:
+          address: =@ctx.current.item.subtitle
+          image: =@ctx.current.item.image
+          labelColor: =@ctx.current.item.labelColor
+          labelText: =@ctx.current.item.labelText
+          name: =@ctx.current.item.title
+          price: =@ctx.current.item.labelText
+
+  - type: component.custom-component
+    componentId: divider
+
+  - type: component.custom-component
+    componentId: headline2
+    inputs:
+      linkName: Show all
+      linkTo: xxx
+      subtitle: Subtitle if needed
+      title: Upcoming projects
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.categories
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: categories
+        inputs:
+          category-name: =@ctx.current.item.category-name
+          category-selected: =@ctx.current.item.category-selected
+
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.stories
+      item:
+        type: component.custom-component
+        componentId: projects
+        inputs:
+          address: Pod Strediskem 768, 664 62 Hrusovany u Brna
+          date: 1/2/2024
+          description: =@ctx.current.item.subtitle
+          image: =@ctx.current.item.image
+          labelColor: =@ctx.current.item.labelColor
+          labelText: =@ctx.current.item.labelText
+          price: =@ctx.current.item.labelText
+          title: =@ctx.current.item.title
+
+  - type: component.widgets
+    options:
+      children:
+        - jigId: booking
+          size: 2x2
+        - jigId: booking
+          size: 2x2
+    
+  - type: component.custom-component
+    componentId: divider
+    
+  - type: component.custom-component
+    componentId: add-project
+    inputs:
+      icon: plus
+      linkTo: xx
+      title: Add new project
+

@@ -1,0 +1,17 @@
+title: Progress Bars with Details
+type: jig.default
+icon: loading-half
+        
+children:
+  - type: component.custom-component
+    componentId: progressbar
+  - type: component.custom-component
+    componentId: progressbar1
+  - type: component.custom-component
+    componentId: progressbar2
+  - type: component.custom-component
+    componentId: progressbar3
+  - type: component.custom-component
+    componentId: progressbar4
+  - type: component.custom-component
+    componentId: progressbar5

@@ -1,15 +1,17 @@
-title: Location widget 
+title: Location widget
 type: jig.default
-     
 children:
   - type: component.location
     options:
-      address: Národní 135/14, 110 00 Praha
-
-      
+      viewPoint:
+        centerPosition: middle
+        address: Národní 135/14, 110 00 Praha
+    
 widgets:
-  4x2:
+  widget-address:
     type: widget.location
     options:
-      address: Národní 135/14, 110 00 Praha
+      viewPoint:
+        centerPosition: middle
+        address: Národní 135/14, 110 00 Praha
       

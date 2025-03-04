@@ -1,0 +1,141 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+          grow: 1
+      children:
+        - type: component.view
+          when: =@ctx.inputs.tabName1 != null
+          options:
+            style:
+              background:
+                color: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState1 ? 'color1':''
+              flex:
+                direction: column
+              padding:
+                horizontal: regular
+                vertical: small
+              radius: large
+
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  emphasis: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState1 ?
+                    'none':'medium'
+                  value: =@ctx.inputs.tabName1
+                
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.viewJobMenu
+                value: =@ctx.inputs.tabState1
+              
+          
+        - type: component.view
+          when: =@ctx.inputs.tabName2 != null
+          options:
+            style:
+              background:
+                color: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState2 ? 'color1':''
+              flex:
+                direction: column
+              padding:
+                horizontal: regular
+                vertical: small
+              radius: large
+
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  emphasis: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState2 ?
+                    'none':'medium'
+                  value: =@ctx.inputs.tabName2
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.viewJobMenu
+                value: =@ctx.inputs.tabState2
+
+        - type: component.view
+          when: =@ctx.inputs.tabName3 != null
+          options:
+            style:
+              background:
+                color: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState3 ? 'color1':''
+              flex:
+                direction: column
+              padding:
+                horizontal: regular
+                vertical: small
+              radius: large
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  emphasis: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState3 ?
+                    'none':'medium'
+                  value: =@ctx.inputs.tabName3
+                
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.viewJobMenu
+                value: =@ctx.inputs.tabState3
+
+        - type: component.view
+          when: =@ctx.inputs.tabName4 != null
+          options:
+            style:
+              background:
+                color: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState4 ? 'color1':''
+              flex:
+                direction: column
+              padding:
+                horizontal: regular
+                vertical: small
+              radius: large
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  emphasis: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState4 ?
+                    'none':'medium'
+                  value: =@ctx.inputs.tabName4
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.viewJobMenu
+                value: =@ctx.inputs.tabState4
+
+        - type: component.view
+          when: =@ctx.inputs.tabName5 != null
+          options:
+            style:
+              background:
+                color: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState5 ? 'color1':''
+              flex:
+                direction: column
+              padding:
+                horizontal: regular
+                vertical: small
+              radius: large
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  emphasis: =@ctx.solution.state.viewJobMenu = @ctx.inputs.tabState5 ?
+                    'none':'medium'
+                  value: =@ctx.inputs.tabName5
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.viewJobMenu
+                value: =@ctx.inputs.tabState4

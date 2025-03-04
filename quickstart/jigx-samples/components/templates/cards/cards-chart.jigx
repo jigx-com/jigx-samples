@@ -1,0 +1,182 @@
+type: component.default
+children:
+
+- type: component.view
+  options:
+    style:
+      flex: 
+        direction: column
+        grow: 1
+
+      gap: medium
+    children:
+      
+      # ONE CARD
+      - type: component.card
+        options:
+          direction: column
+          children:
+            # BOTTOM ROW
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    grow: 1
+                    direction: row
+                  justifyContent: space-between
+                  alignItems: center
+                  gap: small
+                children:
+
+                  # CONTENT     
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+                          grow: 1
+                          direction: column
+                        gap: small
+                      children:
+                        - type: component.text
+                          options:
+                            value: =@ctx.inputs.title
+                            align: left
+                            size: medium
+                            weight: extra-bold
+                        - type: component.view
+                          options:
+                            style:
+                              flex: 
+                                grow: 1
+                                direction: column
+                              gap: minimal
+                            children:                            
+                              - type: component.text
+                                options:
+                                  value: =@ctx.inputs.subtitle
+                                  align: left
+                                  size: small
+                              - type: component.text
+                                options:
+                                  value: =@ctx.inputs.subtitle2
+                                  align: left
+                                  size: small
+                                  emphasis: medium                            
+                  
+            - type: component.line-chart
+              options:
+
+                plotOptions:
+                  series:
+                    marker:
+                      isHidden: true
+                yAxis:
+                  min: 0
+                  labels:
+                    format:
+                      compactDisplay: short
+                      notation: compact
+                      numberStyle: currency  
+                xAxis:
+                  categories:
+                    - "Jan"
+                    - "Feb"
+                    - "Mar"
+                    - "Apr"
+                  labels:
+                    format:
+                      compactDisplay: short
+                      notation: compact
+                      numberStyle: currency
+                series:
+                  - data: =@ctx.inputs.series1
+                    layout: area-gradient
+                    animation:
+                      direction: bottom-to-top
+                    color: =@ctx.inputs.color1
+                  - data: =@ctx.inputs.series2
+                    layout: area-gradient
+                    animation:
+                      direction: bottom-to-top
+                    color: =@ctx.inputs.color2
+                  - data: =@ctx.inputs.series3
+                    layout: area-gradient
+                    animation:
+                      direction: bottom-to-top
+                    color: =@ctx.inputs.color3
+
+            # BOTTOM ROW
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    
+                    direction: row
+                    grow: 0
+                  gap: regular
+                  alignItems: flex-start
+                children:
+
+                  # CONTENT     
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+
+                          direction: row
+                        alignItems: center
+                        gap: small
+                      children:
+                        - type: component.view
+                          options:
+                            style:
+                              height: 16
+                              width: 16
+                              radius: tiny
+                              background:
+                                color: =@ctx.inputs.color2
+                            children:
+                              - type: component.avatar
+                                options:
+                                  title: test
+                                when: false
+                              
+
+                        - type: component.text
+                          options:
+                            value: Year 2023
+                            align: left
+                            size: small
+                            emphasis: medium                            
+
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+                          
+                          direction: row
+                        alignItems: center
+                        gap: small
+                      children:
+                        - type: component.view
+                          options:
+                            style:
+                              height: 16
+                              width: 16
+                              radius: tiny
+                              background:
+                                color: =@ctx.inputs.color1
+                            children:
+                              - type: component.avatar
+                                options:
+                                  title: test
+                                when: false
+
+                        - type: component.text
+                          options:
+                            value: Year 2022
+                            align: left
+                            size: small
+                            emphasis: medium        
+
+

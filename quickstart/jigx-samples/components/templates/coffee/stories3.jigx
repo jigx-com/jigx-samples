@@ -1,0 +1,74 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: column
+        padding:
+          right: medium
+        width: 340
+
+      children:
+        - type: component.card
+          options:
+            direction: column
+            children:
+              - type: component.view
+                options:
+                  style:
+                    height: 160
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 160
+                        source:
+                          uri: =@ctx.inputs.image
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          background:
+                            color: =@ctx.inputs.labelColor
+                          padding:
+                            horizontal: medium
+                            vertical: small
+                          position: absolute
+                          radius:
+                            bottomLeft: medium
+                            bottomRight: medium
+                          right: medium
+                          top: none
+                        children:
+                          - type: component.text
+                            options:
+                              size: small
+                              value: =@ctx.inputs.labelText
+
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: column
+                      grow: 1
+                    gap: medium
+                    height: 90
+                  children:
+                    - type: component.text
+                      options:
+                        align: left
+                        numberOfLines: 1
+                        size: medium
+                        value: =@ctx.inputs.name
+                        weight: extra-bold
+                      
+                    - type: component.text
+                      options:
+                        align: left
+                        emphasis: medium
+                        numberOfLines: 3
+                        size: small
+                        value: =@ctx.inputs.address
+
+

@@ -4,4 +4,6 @@ type: jig.full-screen
 component: 
   type: component.location
   options:
-    address: =@ctx.datasources.location.address-us
+    viewPoint:
+      centerPosition: middle
+      address: =@ctx.datasources.location.address-us

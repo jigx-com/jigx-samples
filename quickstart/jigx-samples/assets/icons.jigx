@@ -1,6 +1,9 @@
 icons:
   - actions-authentication-squares # auto-generated
+  - ad # auto-generated
+  - add # auto-generated
   - add-circle-bold-alternate # auto-generated
+  - ag # auto-generated
   - air-quality-check-magnifying-glass # auto-generated
   - alarm-bell # auto-generated
   - alarm-bell-1 # auto-generated
@@ -9,31 +12,56 @@ icons:
   - alert-triangle # auto-generated
   - amazon-inspector # auto-generated
   - ambulance-helicopter # auto-generated
+  - animation # auto-generated
+  - app-window-four # auto-generated
   - apple # auto-generated
   - arrow-button-right-1 # auto-generated
   - arrow-double-down # auto-generated
   - arrow-double-up # auto-generated
+  - arrow-right # auto-generated
   - arrow-right-1 # auto-generated
+  - attachment # auto-generated
   - avatar-man-1-geometric # auto-generated
   - battery-charge # auto-generated
   - binocular # auto-generated
+  - blood-drop-search # auto-generated
+  - book-address # auto-generated
+  - building-cloudy-building # auto-generated
+  - business-card-1 # auto-generated
+  - business-card-hand-1 # auto-generated
+  - button-play # auto-generated
+  - button-play-alternate # auto-generated
   - calendar # auto-generated
+  - calendar-3 # auto-generated
+  - camera # auto-generated
+  - card-add-1 # auto-generated
+  - card-add-2 # auto-generated
   - career # auto-generated
   - chart # auto-generated
   - check # auto-generated
   - check-1 # auto-generated
   - check-2-alternate # auto-generated
   - check-circle-1 # auto-generated
+  - checkbox-checked # auto-generated
+  - checkbox-unchecked # auto-generated
   - checklist # auto-generated
   - coding-apps-website-apps-add-widget # auto-generated
+  - coding-apps-website-apps-add-widget-alternate # auto-generated
+  - coding-apps-website-apps-smartphone # auto-generated
+  - coffee-cup-hot # auto-generated
   - cog # auto-generated
   - cog-approved # auto-generated
   - color-painting-palette # auto-generated
   - contact # auto-generated
   - content-browser-edit # auto-generated
   - conversation-chat-2 # auto-generated
+  - credit-card # auto-generated
+  - credit-card-1-alternate # auto-generated
   - cross-over # auto-generated
   - currency-dollar # auto-generated
+  - currency-dollar-circle # auto-generated
+  - currency-pound # auto-generated
+  - data-transfer-horizontal # auto-generated
   - database-2 # auto-generated
   - delivery-truck-5 # auto-generated
   - document # auto-generated
@@ -49,74 +77,130 @@ icons:
   - dog-sit-1 # auto-generated
   - double-exclamation-mark-1-formatting # auto-generated
   - double-exclamation-mark-2-formatting # auto-generated
+  - east-side-gallery-berlin-wall # auto-generated
   - email # auto-generated
   - email-action-at # auto-generated
+  - end-marker # auto-generated
+  - envelope # auto-generated
   - equal-math-symbol-circle # auto-generated
+  - feedback # auto-generated
   - filter-1 # auto-generated
   - finger-touch # auto-generated
   - fitness-weights # auto-generated
   - flying-insect-fly # auto-generated
+  - folder-text-alternate # auto-generated
   - footwear-boots # auto-generated
   - form # auto-generated
+  - gallery # auto-generated
   - gauge-dashboard # auto-generated
   - google # auto-generated
   - graph-stats-square-alternate # auto-generated
   - hardware-hammer-nail-hit # auto-generated
   - hat # auto-generated
+  - healthcare-website-cross-heart-rate-1 # auto-generated
   - home # auto-generated
   - home-apps-logo # auto-generated
+  - hotel-information # auto-generated
   - hourglass # auto-generated
   - house # auto-generated
   - house-2-alternate # auto-generated
   - house-signal # auto-generated
   - image-document-jpg # auto-generated
+  - information-circle # auto-generated
   - jigx-solid # auto-generated
   - landmark-colosseum-1 # auto-generated
   - landmark-eiffel-tower # auto-generated
+  - landmark-empire-state # auto-generated
   - landmark-london-eye-1 # auto-generated
   - landmark-mountain # auto-generated
   - language-class-abc # auto-generated
+  - layout-5 # auto-generated
+  - layout-agenda # auto-generated
   - layout-corners-dashboard-1 # auto-generated
   - layout-dashboard-1 # auto-generated
+  - layout-module-1 # auto-generated
   - list # auto-generated
+  - list-quill # auto-generated
+  - loading-half # auto-generated
+  - location # auto-generated
   - lock-unlock-4 # auto-generated
   - login-keys # auto-generated
+  - love-it # auto-generated
   - maps-pin # auto-generated
+  - messages # auto-generated
+  - mindfullness # auto-generated
   - mobile-phone-1 # auto-generated
+  - module-blocks # auto-generated
+  - money-bag-dollar # auto-generated
   - multiple-neutral-2 # auto-generated
   - navigation-menu-4 # auto-generated
   - news # auto-generated
   - no-cloud # auto-generated
   - notes-paper-approve # auto-generated
   - notification # auto-generated
+  - oxygen-tank-1 # auto-generated
+  - pen-draw-1 # auto-generated
+  - pencil-1 # auto-generated
   - pencil-2 # auto-generated
   - pencil-write # auto-generated
+  - people-man-1-geometric # auto-generated
   - people-man-8 # auto-generated
   - person # auto-generated
   - phone # auto-generated
+  - phone-chatting # auto-generated
+  - phone-swap # auto-generated
+  - picture-landscape # auto-generated
+  - picture-polaroid-human # auto-generated
   - pin # auto-generated
+  - pin-1-map # auto-generated
   - pin-location # auto-generated
   - plane-1 # auto-generated
   - play # auto-generated
+  - plus # auto-generated
   - question-circle # auto-generated
+  - rating-star # auto-generated
   - rating-star-1 # auto-generated
+  - recycle # auto-generated
   - remove-circle # auto-generated
+  - resize-shrink # auto-generated
+  - restaurant-menu # auto-generated
+  - road-sign-oneway-right-alternate # auto-generated
   - robot # auto-generated
   - scanner # auto-generated
+  - science-molecule-structure # auto-generated
+  - search # auto-generated
   - select # auto-generated
+  - seo-search-page # auto-generated
   - shop-1 # auto-generated
   - shopping-cart-empty-1 # auto-generated
+  - single-neutral # auto-generated
+  - social-profile-avatar-alternate # auto-generated
+  - social-profile-bubble # auto-generated
   - space-rocket-flying # auto-generated
+  - stadium-1-building # auto-generated
+  - star-half # auto-generated
+  - suitcase # auto-generated
   - sunbathe # auto-generated
   - swimming-diving # auto-generated
   - swimming-goggles # auto-generated
   - synchronize-arrows-1 # auto-generated
+  - tags-double-1 # auto-generated
   - task-list # auto-generated
+  - task-list-multiple # auto-generated
   - technology-privacy-photo-access-view # auto-generated
   - tennis-backhand # auto-generated
+  - text-book # auto-generated
+  - three-dots # auto-generated
   - thumb-up-like # auto-generated
   - time-clock-circle # auto-generated
   - time-clock-circle-2 # auto-generated
+  - time-clock-circle-alternate # auto-generated
+  - time-reverse # auto-generated
+  - toggle-setting-off # auto-generated
+  - toilet-cleaning-plunger # auto-generated
+  - truck-cargo # auto-generated
+  - wave-hand # auto-generated
+  - weather # auto-generated
   - workout # auto-generated
   - world # auto-generated
   - yoga # auto-generated

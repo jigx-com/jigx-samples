@@ -1,0 +1,30 @@
+title: Flip Cards
+type: jig.default
+
+onFocus:
+  type: action.action-list
+  options:
+    actions:
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.contractorDetails
+          value: image
+
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.builderDetails
+          value: image
+
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.agentsDetails
+          value: image
+
+      - type: action.set-state
+        options:
+          state: =@ctx.solution.state.investorsDetails
+          value: image
+
+children:
+  - type: component.custom-component
+    componentId: flip-cards

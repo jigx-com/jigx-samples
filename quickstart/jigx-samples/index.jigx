@@ -40,32 +40,14 @@ onLoad:
           state: =@ctx.solution.state.onChange-key
           value: Initial state value
 
-stories:
-  - story-group-video-dd
-  - story-group-image-dd
-
-widgets: 
-  - size: 2x2
-    jigId: avatar-on-widget
-  - size: 1x1
-    jigId: types-summary
-  - size: 1x1
-    jigId: components-summary
-  - size: 1x1
-    jigId: actions-summary
-  - size: 1x1
-    jigId: preview-summary
-  - size: 1x1
-    jigId: expressions-summary   
-  - size: 1x1
-    jigId: notifications-summary
-  - size: "2x2"
+    
+tabs:
+  samples:
+    jigId: home-summary
+    icon: coding-apps-website-apps-smartphone
+  widgets:
     jigId: widget-overview
-  - size: 1x1
-    jigId: color-palete
-  - size: "1x1"
-    jigId: localization-summary
-  - size: "4x2"
-    jigId: location-4x4
+    icon:  coding-apps-website-apps-add-widget-alternate   
+  
 
 

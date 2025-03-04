@@ -1,0 +1,249 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: column
+        padding:
+          bottom: regular
+          horizontal: medium
+
+      children:
+        - type: component.card
+          options:
+            direction: column
+            children:
+              - type: component.image
+                options:
+                  size:
+                    height: 240
+                  source:
+                    uri: =@ctx.inputs.image
+
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: column
+                      grow: 1
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: row
+                          gap: medium
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: column
+                                  grow: 1
+                                gap: small
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    size: medium
+                                    value: =@ctx.inputs.name
+
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex:
+                                        direction: row
+                                      gap: minimal
+                                    children:
+                                      - type: component.image
+                                        when: =$number(@ctx.inputs.stars) > 0 ? true:false
+                                        options:
+                                          size:
+                                            height: 18
+                                            width: 18
+                                          source:
+                                            uri: https://t14345253.p.clickup-attachments.com/t14345253/647ab1ab-ecb1-43f6-9a14-3aa93c03d705/rating-star.png
+
+                                      - type: component.image
+                                        when: =$number(@ctx.inputs.stars) > 1 ? true:false
+                                        options:
+                                          size:
+                                            height: 18
+                                            width: 18
+                                          source:
+                                            uri: https://t14345253.p.clickup-attachments.com/t14345253/647ab1ab-ecb1-43f6-9a14-3aa93c03d705/rating-star.png
+
+                                      - type: component.image
+                                        when: =$number(@ctx.inputs.stars) > 2 ? true:false
+                                        options:
+                                          size:
+                                            height: 18
+                                            width: 18
+                                          source:
+                                            uri: https://t14345253.p.clickup-attachments.com/t14345253/647ab1ab-ecb1-43f6-9a14-3aa93c03d705/rating-star.png
+
+                                      - type: component.image
+                                        when: =$number(@ctx.inputs.stars) > 3 ? true:false
+                                        options:
+                                          size:
+                                            height: 18
+                                            width: 18
+                                          source:
+                                            uri: https://t14345253.p.clickup-attachments.com/t14345253/647ab1ab-ecb1-43f6-9a14-3aa93c03d705/rating-star.png
+
+                                      - type: component.image
+                                        when: =$number(@ctx.inputs.stars) > 4 ? true:false
+                                        options:
+                                          size:
+                                            height: 18
+                                            width: 18
+                                          source:
+                                            uri: https://t14345253.p.clickup-attachments.com/t14345253/647ab1ab-ecb1-43f6-9a14-3aa93c03d705/rating-star.png
+
+                          - type: component.view
+                            options:
+                              style:
+                                alignItems: center
+                                alignSelf: center
+                                background:
+                                  color: color4
+                                flex:
+                                  grow: 0
+                                justifyContent: center
+                                padding: small
+                                radius:
+                                  bottomRight: medium
+                                  topLeft: medium
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    size: regular
+                                    value: =@ctx.inputs.rating
+                                    weight: bold
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: row
+                            grow: 1
+                          gap: small
+                          margin:
+                            top: medium
+
+                        children:
+                          - type: component.view
+                            options:
+                              children:
+                                - type: component.icon
+                                  when: =$number(@ctx.inputs.guests) > 0 ? true:false
+                                  options:
+                                    icon: person
+                                    size: small
+
+                                - type: component.icon
+                                  when: =$number(@ctx.inputs.guests) = 2 ? true:false
+                                  options:
+                                    icon: single-neutral
+                                    size: small
+
+                                - type: component.icon
+                                  when: =$number(@ctx.inputs.guests) > 2 ? true:false
+                                  options:
+                                    icon: person
+                                    size: small
+
+                                - type: component.icon
+                                  when: =$number(@ctx.inputs.guests) > 3 ? true:false
+                                  options:
+                                    icon: single-neutral
+                                    size: small
+
+                                - type: component.icon
+                                  when: =$number(@ctx.inputs.guests) >= 4 ? true:false
+                                  options:
+                                    icon: single-neutral
+                                    size: small
+
+                              style:
+                                alignSelf: center
+                                background:
+                                  color: color14
+                                flex:
+                                  direction: row
+                                  grow: 0
+                                gap: small
+                                padding:
+                                  horizontal: small
+                                  vertical: small
+                                radius: medium
+
+                          - type: component.view
+                            options:
+                              style:
+                                alignItems: flex-start
+                                flex:
+                                  direction: column
+                                  grow: 1
+                                  shrink: 1
+                                gap: minimal
+                                justifyContent: center
+                                margin:
+                                  right: medium
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    align: left
+                                    emphasis: medium
+                                    numberOfLines: 2
+                                    size: small
+                                    value:
+                                      =$number(@ctx.inputs.bedrooms) = 1 ? @ctx.inputs.bedrooms & '
+                                      bedroom':@ctx.inputs.bedrooms & '
+                                      bedrooms'
+
+                                - type: component.text
+                                  options:
+                                    align: left
+                                    emphasis: medium
+                                    numberOfLines: 2
+                                    size: small
+                                    value:
+                                      =$number(@ctx.inputs.guests) <= 2 ? '1-' & @ctx.inputs.guests & '
+                                      guests':'2-' & @ctx.inputs.guests & '
+                                      guests'
+
+                          - type: component.view
+                            options:
+                              style:
+                                flex:
+                                  direction: column
+                                gap: minimal
+                                justifyContent: center
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    align: right
+                                    size: medium
+                                    value:
+                                      format:
+                                        currency: USD
+                                        currencySign: standard
+                                        numberStyle: currency
+                                      text: =@ctx.inputs.price
+                                    weight: extra-bold
+
+                                - type: component.text
+                                  options:
+                                    align: right
+                                    emphasis: medium
+                                    size: small
+                                    value:
+                                      =$number(@ctx.inputs.nights) = 1 ? 'unit / ' & @ctx.inputs.nights & '
+                                      night':'unit / ' & @ctx.inputs.nights & '
+                                      nights'

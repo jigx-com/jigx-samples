@@ -1,0 +1,67 @@
+title: Booking
+type: jig.default
+icon: hotel-information
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+  
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1586611292717-f828b167408c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80
+        title: Booking
+        subtitle: Find your dream space
+        
+datasources:
+  card-test: 
+    type: datasource.static
+    options:
+      data:
+        - image: https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          name: Hotel Guanacaste Lodge
+          address: 250 Metros Sur de Banco Nacional en Flaming
+          reviews-score: "4"
+          reviews-total: "5"
+          price: "$120"
+
+        - image: https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          name: Hotel Nany
+          address: iAlicante Mediterranean Homes, Torrevieja, Spain
+          reviews-score: "4.9"
+          reviews-total: "5"
+          price: "$342"
+
+        - image: https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80
+          name: Vacation Home
+          address: Akşemsettin, Dosso Dossi Hotels & Spa Downtown, Fatih/İstanbul, Turkey
+          reviews-score: "4.1"
+          reviews-total: "5"
+          price: "$257"
+
+          
+
+children:
+  - type: component.custom-component
+    componentId: section1
+    inputs:
+      title: Close to you
+      link: "Best rated" 
+          
+  - type: component.list
+    options:     
+      data: =@ctx.datasources.card-test
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: booking-2
+        inputs:
+          image: =@ctx.current.item.image
+          name: =@ctx.current.item.name
+          address: =@ctx.current.item.address
+          reviews-score: =@ctx.current.item.reviews-score
+          reviews-total: =@ctx.current.item.reviews-total
+          price: =@ctx.current.item.price
+             

@@ -1,0 +1,40 @@
+title: Cashback card
+type: jig.list
+icon: credit-card-1-alternate
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: credit-card-vertical
+          title: Credit Card - Vertical
+          icon: credit-card-1-alternate
+          color: color1
+        - id: 2
+          jigId: credit-card-horizontal
+          title: Credit Card - Horizontal
+          icon: credit-card-1-alternate
+          color: color2
+
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

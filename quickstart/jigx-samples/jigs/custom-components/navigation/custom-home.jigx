@@ -1,0 +1,150 @@
+title: Custom Bits
+type: jig.default
+
+children:
+  - type: component.custom-component      
+    componentId: headline
+    inputs:
+      headline1: Custom components 
+      subtitle: Components built based on CSS
+
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Atoms"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: buttons-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: emphasis
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: icons-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: text-menu                                                    
+ 
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Molecules & Organisms"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: cards-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: countdown
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: images-display
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: menu-of-menus   
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: layout-menu 
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: progressbar-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: rating    
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: section-menu 
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: stepper-menu         
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: tabs   
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: tags  
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: toggles      
+  
+widgets:
+  cc-home: 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1626966380579-602bc8940177?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      isContentOverlaid: true
+      bottom: 
+        type: component.titles
+        options:
+          title: Custom Components
+          subtitle: See CC Building Blocks!

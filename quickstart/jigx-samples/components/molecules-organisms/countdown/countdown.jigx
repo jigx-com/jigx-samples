@@ -1,0 +1,14 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+        - type: component.countdown
+          options:
+            expiresAt: =$fromMillis($toMillis($now()) + (14 * 24 * 60 * 60 * 1000))
+            labels:
+              position: bottom
+              isVisible: true
+            size: small
+            align: left

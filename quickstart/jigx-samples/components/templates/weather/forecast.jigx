@@ -1,0 +1,43 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style: 
+        width: 100
+        padding: 
+          right: medium
+          bottom: medium
+        alignContent: center
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.day
+                  align: center
+              - type: component.image
+                options:
+                  source:
+                    uri: =@ctx.inputs.image
+                  size: 
+                    width: 50
+                    height: 50
+                  
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                    justifyContent: center
+                    gap: small
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.max
+                        weight: semi-bold
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.min
+                        emphasis: high
+                        

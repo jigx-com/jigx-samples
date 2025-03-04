@@ -1,0 +1,36 @@
+children:
+  - options:
+      children:
+        - options:
+            children:
+              - options:
+                  emphasis: medium
+                  icon: add
+                  size: small
+                type: component.icon
+              - options:
+                  emphasis: medium
+                  size: medium
+                  value: =@ctx.inputs.title
+                type: component.text
+            style:
+              flex:
+                direction: row
+              gap: small
+              justifyContent: center
+              padding: minimal
+          type: component.view
+      onPress:
+        options:
+          actions:
+            - options:
+                parameters:
+                  data: =@ctx.inputs.data
+                  id: =@ctx.inputs.id
+                linkTo: add-notes
+              type: action.go-to
+              when: =@ctx.inputs.title = 'Add Notes'
+          isSequential: true
+        type: action.action-list
+    type: component.card
+type: component.default

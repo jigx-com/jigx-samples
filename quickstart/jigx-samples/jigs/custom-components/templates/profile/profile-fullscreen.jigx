@@ -1,0 +1,92 @@
+title: User profile
+type: jig.default
+icon: person
+children:
+  - type: component.section
+    options:
+      title: User profile fullscreen
+      children:
+        - componentId: user-profile
+          type: component.custom-component
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Address
+    
+  - type: component.entity
+    options:
+      isCompact: true
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Street
+                  value: 458 Oak Ln
+                
+              - type: component.entity-field
+                options:
+                  label: City
+                  value: Aspen
+                
+        - type: component.field-row
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Zip code
+                  value: "81611"
+                
+              - type: component.entity-field
+                options:
+                  label: Country
+                  value: USA
+
+  - type: component.expander
+    options:
+      isInitiallyCollapsed: false
+      header:
+        centerElement:
+          type: component.titles
+          options:
+            title: Address
+            align: left
+            icon: location
+            iconColor: primary
+
+      children:
+        - type: component.location
+          options:
+            address: 458 Oak Ln, Aspen, CO 81611, USA
+            zoomLevel: 14
+          
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Street
+                        value: 458 Oak Ln
+                      
+                    - type: component.entity-field
+                      options:
+                        label: City
+                        value: Aspen
+
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.entity-field
+                      options:
+                        label: Zip code
+                        value: "81611"
+                      
+                    - type: component.entity-field
+                      options:
+                        label: Country
+                        value: USA    

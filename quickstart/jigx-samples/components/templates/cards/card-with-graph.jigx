@@ -1,0 +1,92 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color3
+      children:
+        # - TOP TEXT
+        - type: component.text
+          options:
+            value: Case Conference
+            size: small
+        # CENTER PART WITH CHART
+        - type: component.view
+          options:
+            style:
+              flex:
+                grow: 1
+                direction: row
+              gap: small
+              alignItems: center                
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                      shrink: 1                            
+                    padding: 
+                      vertical: medium
+                    gap: small
+                  children:
+                    - type: component.text
+                      options:
+                        value: Active Case
+                        size: large
+                        weight: bold
+                    - type: component.text
+                      options:
+                        value: John Connors ./. Dirty Dan
+                        size: medium
+              - type: component.pie-chart
+                options:
+                  chart:
+                    title: 
+                      horizontalAlign: center
+                      text: 60%
+                      verticalAlign: center
+                    subtitle:
+                      horizontalAlign: center
+                      verticalAlign: center
+                      text: High
+                    height: 88
+                  series:
+                    - data: |
+                          =[
+                          {
+                            "y":60,
+                            "color":"color1"
+                          },
+                          {
+                            "y":30,
+                            "color":"transparent"
+                          }
+                          ]
+                      layout: pie
+                      dataLabels:
+                        - isEnabled: true
+        # BOTTOM TEXT
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              gap: minimal
+              alignItems: center
+              justifyContent: flex-start
+            children:
+              - type: component.icon
+                options:
+                  icon: arrow-right
+                  size: small
+                  emphasis: medium
+              - type: component.text
+                options:
+                  value: "Next step:"
+                  size: small   
+                  emphasis: medium
+              - type: component.text
+                options:
+                  value: "Assess documents"
+                  size: small                                                    

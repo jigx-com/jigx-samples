@@ -1,0 +1,48 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        margin: 
+          top: medium
+        alignItems: center
+      children:    
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: column
+                grow: 1
+                shrink: 1
+              margin: 
+                right: medium
+                
+            children:          
+            - type: component.text
+              options:
+                size: medium
+                weight: bold
+                value: =@ctx.inputs.title
+                
+            - type: component.text
+              options:
+                size: regular
+                value: =@ctx.inputs.subtitle
+                emphasis: medium
+                
+        - type: component.button
+          when: =@ctx.inputs.button-link
+          options:
+            onPress: 
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.button-link
+            title: =@ctx.inputs.button-custom-name != null ? @ctx.inputs.button-custom-name:"Show all" 
+            isCompact: true
+            type: primary
+            
+
+
+        

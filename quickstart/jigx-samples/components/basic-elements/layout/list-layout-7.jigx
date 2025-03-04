@@ -1,0 +1,66 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              alignItems: center
+              gap: medium
+            children:    
+            
+              # LEFT ELEMENT    
+              - type: component.icon
+                options:
+                  icon: alarm-bell-1
+                  shape: rounded
+                  type: duotone
+                  
+              # CONTENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1   
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title element with with long text
+                        size: regular  
+                        weight: bold
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Subtitle element with very very very very long text, reall        
+                        size: regular
+                        emphasis: medium
+                        numberOfLines: 3
+                        
+              # RIGHT ELEMENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column   
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title 
+                        size: regular  
+                        weight: bold
+                        align: right
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Subtitle    
+                        size: regular
+                        align: right
+                        emphasis: medium
+                        numberOfLines: 1
+  
+  

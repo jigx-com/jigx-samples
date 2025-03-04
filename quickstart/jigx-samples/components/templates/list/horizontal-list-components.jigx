@@ -1,0 +1,167 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin: 
+          bottom: medium
+          right: medium
+        width: 360
+      children:
+        - type: component.card
+          options:
+            children:              
+              - type: component.view
+                options:
+                  style: 
+                    flex: 
+                      direction: column
+                    gap: medium
+                  children:
+                    - type: component.image
+                      when: =@ctx.inputs.info.CoverPhotoDocURL != null
+                      options:
+                        source:
+                          uri: =@ctx.inputs.info.CoverPhotoDocURL
+                        isFlexible: true
+                        resizeMode: cover                              
+                    # tag and posted at    
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: flex-end
+                          gap: small
+                          position: absolute
+                          alignSelf: flex-end
+                          padding: 
+                            top: small
+                            right: small
+                        children:
+                          ## tag 
+                          - type: component.view
+                            options:
+                              style:
+                                background:
+                                  color: primary
+                                radius: large
+                                padding: 
+                                  vertical: minimal
+                                  horizontal: small
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Remodel
+                          ## posted at                                          
+                          - type: component.view
+                            when: =@ctx.inputs.info.CreatedDate != " "   
+                            options:
+                              style:
+                                radius: large
+                                padding: 
+                                  vertical: minimal
+                                  horizontal: small   
+                                background:
+                                  color: color14
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Today
+                                    # =@ctx.inputs.info.CreatedDate
+                                    # value: ='Created on:' & ' ' & $fromMillis($toMillis(@ctx.inputs.info.CreatedDate), '[M01]/[D01]/[Y0001]', @ctx.system.timezone.offset)
+                                    align: left   
+                                    numberOfLines: 1                          
+                        
+                    ## Bottom part
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            shrink: 1
+                            direction: column
+                          gap: regular
+                          justifyContent: center
+                        children:
+                          ## Title and price 
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  grow: 1
+                                  shrink: 1
+                                  direction: column
+                                gap: small
+                                justifyContent: center
+                                padding: 
+                                  bottom: medium
+                                border:
+                                  bottom:
+                                    style: solid
+                              children:                           
+                                ## title
+                                - type: component.view
+                                  when: =@ctx.inputs.info.jobTitle != null
+                                  options:
+                                    style: []
+                                    children:
+                                      - type: component.text
+                                        options:
+                                          value: =@ctx.inputs.info.jobTitle
+                                          size: medium
+                                          numberOfLines: 1
+                                - type: component.text
+                                  when: =@ctx.inputs.info.jobBudget != null
+                                  options:
+                                    value: ='$' & $formatNumber(@ctx.inputs.info.jobBudget, '#,###.00')
+                                    size: medium
+                                    color: primary   
+                                    weight: semi-bold
+                          ## Description
+                          - type: component.view
+                            when: =@ctx.inputs.info.JobDetails != null
+                            options:
+                              style: []
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.JobDetails
+                                    emphasis: medium 
+                                    numberOfLines: 3
+                          ## Start Date and End Date
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                gap: large
+                              children:
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex: 
+                                        direction: row
+                                      gap: small
+                                      justifyContent: center
+                                    children:
+                                      - type: component.text
+                                        options:
+                                          value: "From:"
+                                          emphasis: medium
+                                      - type: component.text
+                                        options:
+                                          value: =$fromMillis($toMillis(@ctx.inputs.info.StartDate), '[M01]/[D01]/[Y0001]', @ctx.system.timezone.offset)
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex: 
+                                        direction: row
+                                      gap: small
+                                      justifyContent: center
+                                    children:
+                                      - type: component.text
+                                        options:
+                                          value: "To:"
+                                          emphasis: medium
+                                      - type: component.text
+                                        options:
+                                          value: =$fromMillis($toMillis(@ctx.inputs.info.EndDate), '[M01]/[D01]/[Y0001]', @ctx.system.timezone.offset)                                                

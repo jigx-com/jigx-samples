@@ -1,0 +1,35 @@
+title: Cashback card - traveler
+type: jig.default
+icon: money-bag-dollar
+
+children:
+  - type: component.custom-component
+    componentId: cashback-card2
+    inputs:
+      cardColor: ="element"
+      title: Platinum Traveler
+      subtitle: 10% Cashback
+      balance: Your balance
+      currency: R
+      amount: 65,459.95
+            
+
+  - type: component.custom-component
+    componentId: cashback-card2
+    inputs:
+      cardColor: ="color3"
+      title: Gold Traveler
+      subtitle: 7% Cashback
+      balance: Your balance
+      currency: $
+      amount: 526,89    
+
+  - type: component.custom-component
+    componentId: cashback-card2
+    inputs:
+      cardColor: ="color14"
+      title: Silver Traveler
+      subtitle: 7% Cashback
+      balance: Your balance
+      currency: €
+      amount: 137,34    

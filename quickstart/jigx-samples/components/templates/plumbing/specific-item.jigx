@@ -1,0 +1,86 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: flex-start
+        flex:
+          direction: row
+        gap: medium
+      children:
+        - type: component.icon
+          options:
+            icon: =@ctx.inputs.icon
+            shape: rounded
+            size: medium
+            type: contained
+
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+                shrink: 1
+              gap: minimal
+              padding:
+                vertical: medium
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                      grow: 1
+                      shrink: 1
+                    gap: minimal
+
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value:
+                          format:
+                            currency: =@ctx.inputs.currency
+                            currencyDisplay: symbol
+                            numberStyle: currency
+                          text: =@ctx.inputs.price1
+                        weight: bold
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        value: =@ctx.inputs.price-description1
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                      grow: 1
+                      shrink: 1
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value:
+                          format:
+                            currency: =@ctx.inputs.currency
+                            currencyDisplay: symbol
+                            numberStyle: currency
+                          text: =@ctx.inputs.price2
+                        weight: bold
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        value: =@ctx.inputs.price-description2
+
+              - type: component.text
+                options:
+                  emphasis: medium
+                  size: tiny
+                  value: =@ctx.inputs.note

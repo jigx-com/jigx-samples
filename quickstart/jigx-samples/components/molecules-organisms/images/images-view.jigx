@@ -1,0 +1,16 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: color4
+        height: 300
+        padding: large
+
+      children:  
+      - type: component.image
+        options:
+          source:
+            uri: https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80
+          resizeMode: contain

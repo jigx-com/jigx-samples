@@ -1,0 +1,38 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color8
+      direction: column 
+      children:
+        - type: component.text
+          options:
+            value: Extra Bold
+            size: tiny
+            weight: extra-bold
+        - type: component.text
+          options:
+            value: Bold
+            size: tiny         
+            weight: bold
+        - type: component.text
+          options:
+            value: Semi Bold
+            size: tiny
+            weight: semi-bold
+        - type: component.text
+          options:
+            value: Regular
+            size: tiny
+            weight: regular
+        - type: component.text
+          options:
+            value: Light
+            size: tiny
+            weight: light
+        - type: component.text
+          options:
+            value: Extra light
+            size: tiny    
+            weight: extra-light  
+                        

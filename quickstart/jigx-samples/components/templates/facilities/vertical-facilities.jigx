@@ -1,0 +1,64 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+          grow: 1
+        padding: medium
+        border:
+          top:
+            style: solid
+            emphasis: extra-low
+        justifyContent: center
+        alignItems: center
+        gap: medium
+        
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                grow: 0
+                direction: column             
+              alignSelf: center
+              justifyContent: center
+              alignItems: center
+            children:
+              - type: component.card
+                options:
+                  color: =@ctx.inputs.subtitle = "Premium" ? "color3":""
+                  children:
+                    - type: component.image
+                      options:
+                        source:
+                          uri: =@ctx.inputs.icon
+                        width: 32
+                        height: 32
+                        resizeMode: contain
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: column
+                grow: 1
+                shrink: 1
+              gap: minimal
+              justifyContent: center
+              alignItems: flex-start
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.title
+                  align: left
+                  numberOfLines: 2
+              - type: component.text
+                when: =@ctx.inputs.subtitle
+                options:
+                  value: =@ctx.inputs.subtitle
+                  size: small
+                  align: center
+                  emphasis: medium
+                  numberOfLines: 1            
+            

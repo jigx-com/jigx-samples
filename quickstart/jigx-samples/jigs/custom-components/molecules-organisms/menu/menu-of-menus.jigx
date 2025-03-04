@@ -1,0 +1,49 @@
+title: Menu
+type: jig.list
+icon: restaurant-menu
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: menu
+          title: Menu
+          icon: restaurant-menu
+          color: color1
+        - id: 2
+          jigId: menu-horizontal
+          title: Menu Horizontal (Static)
+          icon: restaurant-menu
+          color: color2
+        - id: 3
+          jigId: menu-list
+          title: List Menu
+          icon: restaurant-menu
+          color: color3
+        - id: 4
+          jigId: menu-profile
+          title: Profile Menu
+          icon: restaurant-menu
+          color: color4
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

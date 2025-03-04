@@ -1,0 +1,68 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: center
+        flex:
+          direction: row
+        gap: small
+
+      children:
+        - type: component.avatar
+          options:
+            title: =@ctx.inputs.name
+            size: =@ctx.inputs.avatar-size
+            uri: =@ctx.inputs.avatar
+          
+        - type: component.view
+          options:
+            style:
+              flex:
+                grow: 1
+              gap: =@ctx.inputs.avatar-size = 'large' ? 'small':''
+
+            children:
+              - type: component.text
+                options:
+                  size: =@ctx.inputs.avatar-size = 'large' ? 'large':'medium'
+                  value: =@ctx.inputs.welcome-message & ', ' & @ctx.inputs.name
+                  weight: semi-bold
+                
+              - type: component.view
+                when: =@ctx.inputs.date != null
+                options:
+                  style:
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        emphasis: high
+                        size: small
+                        value: ="It's" & ' ' & @ctx.inputs.date
+
+        - type: component.view
+          when: =@ctx.inputs.right-icon != null
+          options:
+            style: {}
+            children:
+              - type: component.icon
+                options:
+                  color: =@ctx.inputs.right-icon-color
+                  icon: =@ctx.inputs.right-icon
+                  shape: circle
+                  size: small
+                  type: duotone
+                
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.right-icon-link
+              
+      onPress:
+        type: action.go-to
+        options:
+          linkTo: =@ctx.inputs.linkTo
+      
+    
+

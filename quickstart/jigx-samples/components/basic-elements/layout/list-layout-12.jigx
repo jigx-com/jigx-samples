@@ -1,0 +1,129 @@
+
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1      
+              height: 62
+              gap: medium
+              alignItems: center
+            children:     
+              # LEFT ELEMENT
+              - type: component.avatar
+                options:
+                  title: N/A
+                  uri: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fFVTRVJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60
+                  size: regular
+              # CONTENT                  
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1
+                    justifyContent: center
+                  children:
+                    # TOP ROW
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                          justifyContent: space-between
+                          padding: 
+                            bottom: minimal
+                        children:  
+                          # NAME                                  
+                          - type: component.text
+                            options:
+                              value: Name of the sender
+                              size: regular    
+                              align: left
+                              weight: bold                           
+                          # TIME
+                          - type: component.view
+                            options:
+                              style:  
+                                justifyContent: flex-start
+                              children: 
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex: 
+                                        direction: row
+                                      alignItems: center
+                                      justifyContent: center
+                                    children:                                  
+                                      - type: component.text
+                                        options:
+                                          value: "10:33"
+                                          size: small    
+                                          align: right
+                                          emphasis: medium        
+                                      - type: component.icon
+                                        options:
+                                          icon: arrow-right
+                                          size: small
+                    # BOTTOM ROW                       
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 1
+                          alignItems: flex-start
+                          alignContent: flex-start
+                          justifyContent: space-between
+                          gap: medium
+                        children:                                               
+                        # MESSAGE  
+                        - type: component.view
+                          options:
+                            style:
+                              flex: 
+                                direction: column
+                                grow: 1   
+                                shrink: 1          
+                            children:                
+                              - type: component.text
+                                options:
+                                  value: Message
+                                  size: regular
+                                  align: left
+                                  emphasis: medium
+                                  numberOfLines: 2
+                        # BADGE
+                        - type: component.view
+                          options:         
+                            style:
+                              radius: small
+                              padding: 
+                                vertical: minimal
+                                horizontal: small
+                              flex: 
+                                direction: row
+                                grow: 0
+                              background:
+                                color: color3
+                            children:   
+                              - type: component.text
+                                options:
+                                  value: "3"
+                                  size: small
+                                  align: center                                         
+                                      
+                
+                    
+
+
+                              
+
+
+              

@@ -1,0 +1,71 @@
+type: component.default
+inputs:
+  headline1:
+    default: ""
+    required: false
+    type: string
+  headline2:
+    default: ""
+    required: false
+    type: string
+  link:
+    default: ""
+    required: false
+    type: string
+  linkTo:
+    default: ""
+    required: false
+    type: string
+  subtitle:
+    default: ""
+    required: false
+    type: string
+
+children:
+  - type: component.view
+    options:
+      children:
+        - type: component.view
+          options:
+            children:
+              - type: component.text
+                when: =$exists(@ctx.inputs.headline1)
+                options:
+                  size: large
+                  value: =@ctx.inputs.headline1
+                
+              - type: component.text
+                when: =$exists(@ctx.inputs.headline2)
+                options:
+                  size: medium
+                  value: =@ctx.inputs.headline2
+                
+              - type: component.text
+                when: =$exists(@ctx.inputs.subtitle)
+                options:
+                  emphasis: medium
+                  value: =@ctx.inputs.subtitle
+                
+            style:
+              flex:
+                grow: 1
+                shrink: 1
+              gap: minimal
+          
+        - type: component.text
+          when: =$exists(@ctx.inputs.linkTo)
+          options:
+            color: primary
+            onPress:
+              options:
+                linkTo: =@ctx.inputs.linkTo
+              type: action.go-to
+            value: =@ctx.inputs.link != null ? @ctx.inputs.link:"Show more"
+          
+      style:
+        alignItems: center
+        flex:
+          direction: row
+        gap: medium
+        justifyContent: center
+    

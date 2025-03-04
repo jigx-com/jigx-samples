@@ -1,0 +1,72 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding: 
+          horizontal: medium
+          bottom: medium
+      children:
+        - type: component.card
+          options:
+            direction: row
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                    alignItems: center
+                    justifyContent: flex-start
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.day
+                        weight: semi-bold
+                        size: medium
+              - type: component.view
+                options:
+                  style:
+                    padding: 
+                      right: large
+                    justifyContent: center
+                  children:
+                    - type: component.image
+                      options:
+                        height: 50
+                        resizeMode: contain
+                        source:
+                          uri: =@ctx.inputs.image
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 2
+                    alignItems: center
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.max
+                              align: center
+                              weight: bold
+                              size: medium
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                        children:
+                          - type: component.text
+                            options:
+                              value:   =@ctx.inputs.min
+                              align: center
+                              emphasis: medium
+                              size: medium
+                              weight: bold

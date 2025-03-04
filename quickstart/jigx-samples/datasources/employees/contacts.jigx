@@ -1,0 +1,21 @@
+type: datasource.sqlite
+options:
+# The data provider being used. In this case, the Jigx Dynamic Data provider
+ provider: DATA_PROVIDER_DYNAMIC
+# The name of the table that the information is being returned from. All Dynamic Data-based tables
+# are defined in "default.jigx" under databases.
+ entities:
+  - default/contacts
+# The SQLite query used to specify the data to return 
+ query: |
+  SELECT 
+    id,
+    '$.firstName',
+    '$.lastName',
+    '$.jobTitle',
+    '$.companyName',
+    '$.phone',
+    '$.email'
+  FROM 
+    [default/contacts]
+  ORDER BY '$.companyName'

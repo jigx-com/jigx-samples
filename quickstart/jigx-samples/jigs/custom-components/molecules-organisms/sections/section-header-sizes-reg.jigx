@@ -1,0 +1,27 @@
+title: Section Header Regular
+type: jig.default
+icon: task-list-multiple
+
+children:
+  - type: component.custom-component
+    componentId: section1
+    inputs:
+      title: Section 1 with link custom name
+      link-custom-name: "Soft by"
+      link: news
+
+  - type: component.custom-component
+    componentId: section1
+    inputs:
+      title: Section 1 with default link name
+      link: news
+
+  - type: component.custom-component
+    componentId: section1
+    inputs:
+      title: Section 1 without link
+      
+  - type: component.image
+    options:
+      source:
+        uri: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80      

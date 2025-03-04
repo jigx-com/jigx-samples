@@ -1,0 +1,69 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+          # grow: 1
+        gap: medium
+      children:
+      
+        - type: component.card
+          options:
+            color: color6
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    padding: 
+                      bottom: small
+                  children:
+                    - type: component.image
+                      options:
+                        source:
+                          uri: https://images.unsplash.com/photo-1553969546-6f7388a7e07c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cnVubmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+                        width: 150
+                    - type: component.text
+                      options:
+                        value: Title
+                        weight: light
+                        align: left
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: Subtitle
+                        emphasis: low-medium
+                        align: left
+                        size: small
+
+        - type: component.card
+          options:
+            color: color12
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    padding: 
+                      bottom: small
+                  children:
+                    - type: component.image
+                      options:
+                        source:
+                          uri: https://images.unsplash.com/photo-1553729784-e91953dec042?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmVhZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+                        width: 150
+                    - type: component.text
+                      options:
+                        value: Title
+                        weight: light
+                        align: right
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: Subtitle
+                        emphasis: low-medium
+                        align: right
+                        size: small
+

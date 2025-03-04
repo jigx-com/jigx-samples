@@ -1,0 +1,76 @@
+title: Profile with Details (Compact)
+type: jig.default
+icon: social-profile-bubble
+
+datasources:
+  person: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          photo: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+          name: Matt
+          profession: Media content creator
+          age: 28
+          followers: 25000
+          phone: 678236028
+          email: matty@example.com
+          instagram: Matty's workout
+
+  details:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          icon: pin
+          description: Lives in Los Angeles, California
+        - id: 2
+          icon: camera
+          description: 'Social Media Platform: Instagram'
+        - id: 3
+          icon: workout
+          description: 'Content Focus: Fitness and Wellness'
+        - id: 4
+          icon: messages
+          description: Speaks English, Korean
+        - id: 5
+          icon: love-it
+          description: 'Free time activity: Long walks' 
+        - id: 6
+          icon: plane-2
+          description: 'Fun fact: I can a plane'
+
+children:
+  - type: component.custom-component
+    componentId: main-info
+    inputs:
+      photo: =@ctx.datasources.person.photo
+      name: =@ctx.datasources.person.name
+      profession: =@ctx.datasources.person.profession
+      age: =@ctx.datasources.person.age
+      followers: =@ctx.datasources.person.followers
+  - type: component.section
+    options:
+      title: Contact details
+      children:
+        
+        - type: component.custom-component
+          componentId: contact-2
+          inputs:
+            phone: =@ctx.datasources.person.phone
+            email: =@ctx.datasources.person.email
+            instagram: =@ctx.datasources.person.instagram
+  - type: component.section
+    options:
+      title: ='Facts about ' & @ctx.datasources.person.name
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.details
+            maximumItemsToRender: 8
+            item: 
+              type: component.custom-component
+              componentId: details-2
+              inputs:
+                icon: =@ctx.current.item.icon
+                description: =@ctx.current.item.description

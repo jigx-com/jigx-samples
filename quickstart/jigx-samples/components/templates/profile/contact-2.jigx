@@ -1,0 +1,93 @@
+type: component.default
+children:
+                        
+  - type: component.view
+    options:
+      style:
+        justifyContent: center
+        margin:
+          horizontal: medium
+
+      children:
+        
+        - type: component.view
+          options:
+            style:
+              justifyContent: space-between
+              alignItems: center
+              flex: 
+                direction: row
+                grow: 1
+              gap: small
+              padding: 
+                bottom: medium
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.phone
+                  onPress:
+                    type: action.open-url
+                    options:
+                      url: ='tel:' & @ctx.inputs.phone
+              - type: component.icon
+                options:
+                  icon: phone
+                  # onPress:
+                  #   type: action.open-url
+                  #   options:
+                  #     url: ='tel:' & @ctx.inputs.phone
+        - type: component.view
+          options:
+            style:
+              justifyContent: space-between
+              alignItems: center
+              flex: 
+                direction: row
+                grow: 1
+              gap: small
+              padding: 
+
+                bottom: medium
+            children:
+
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.email
+                  onPress:
+                    type: action.open-url
+                    options:
+                      url: ='mailto:' & @ctx.inputs.email
+              
+              - type: component.icon
+                options:
+                  icon: email
+                  # onPress:
+                  #   type: action.open-url
+                  #   options:
+                  #     url: ='mailto:' & @ctx.inputs.email
+        - type: component.view
+          options:
+            style:
+              justifyContent: space-between
+              alignItems: center
+              flex: 
+                direction: row
+                grow: 1
+              gap: small
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.instagram
+                  onPress:
+                    type: action.open-url
+                    options:
+                      url: https://www.instagram.com
+              - type: component.icon
+                options:
+                  icon: world
+                  
+                  # onPress:
+                  #   type: action.open-url
+                  #   options:
+                  #     url: https://www.instagram.com
+                      

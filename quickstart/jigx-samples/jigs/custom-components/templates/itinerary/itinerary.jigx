@@ -1,0 +1,121 @@
+title: Itinerary
+type: jig.default
+icon: road-sign-oneway-right-alternate
+
+datasources:
+  itinerary-day:
+    type: datasource.static
+    options:
+      data:
+        - day: 1
+          description: Start your day with a refreshing morning hike through a nearby
+            nature trail. Enjoy the scenic beauty and invigorating exercise as
+            you explore the lush greenery and perhaps spot some wildlife.
+          duration: 3 hours 30 mins
+          id: 1
+          time: 09:00
+          title: Morning Hike
+        - day: 1
+          description: Enhance your culinary skills with an optional cooking class. Learn
+            to prepare local delicacies under the guidance of expert chefs. This
+            class offers hands-on experience and the opportunity to savor your
+            delicious creations afterward.
+          duration: 1 hours 30 mins
+          extra: true
+          id: 2
+          image1: https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va2luZyUyMGNsYXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60
+          time: 13:00
+          title: Cooking Class
+        - day: 1
+          id: 3
+          time: 16:00
+          title: City Tour
+        - day: 1
+          description: Relax and unwind on a scenic sunset cruise. Set sail on tranquil
+            waters, admire the picturesque views, and witness the breathtaking
+            colors of the setting sun. This leisurely experience offers a
+            perfect end to your day.
+          duration: null
+          id: 4
+          image1: https://images.unsplash.com/photo-1642195349088-953f63a7d4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1bnNldCUyMGNydWlzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60
+          image2: https://images.unsplash.com/photo-1580541631950-7282082b53ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3J1aXNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60
+          time: 18:00
+          title: Sunset Cruise
+        - day: 2
+          description: null
+          duration: 3 hours
+          id: 5
+          image1: https://images.unsplash.com/photo-1534235826754-0a3572d1d6d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2V1bXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60
+          time: 09:00
+          title: Contemporary Art Museum Visit
+        - day: 2
+          description: Indulge in a guided wine tasting experience at a local vineyard.
+            Discover the flavors and aromas of exquisite wines as you learn
+            about the winemaking process. Expand your knowledge of different
+            varieties and enjoy the sophistication of this activity (additional
+            fee applies).
+          duration: null
+          id: 6
+          image1: https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2luZSUyMHRhc3Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60
+          image2: https://images.unsplash.com/photo-1513618827672-0d7c5ad591b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdpbmUlMjB0YXN0aW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60
+          image3: https://images.unsplash.com/photo-1598306442928-4d90f32c6866?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2luZSUyMHRhc3Rpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60
+          time: 13:00
+          title: Guided Wine Tasting
+        - day: 2
+          description: Get your adrenaline pumping with an outdoor adventure activity such
+            as zip-lining, rock climbing, or kayaking. Challenge yourself, enjoy
+            the thrill, and soak up the natural surroundings. This exciting
+            experience will leave you with unforgettable memories.
+          duration: 2 hours
+          id: 7
+          time: 15:00
+          title: Outdoor Adventure
+        - day: 2
+          extra: true
+          id: 8
+          time: 18:00
+          title: Dinner and Live Music
+    
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Day 1
+
+  - type: component.list
+    options:
+      data: =@ctx.datasources.itinerary-day[day=1]
+      maximumItemsToRender: 8
+      item:
+        type: component.custom-component
+        componentId: itinerary-day
+        inputs:
+          description: =@ctx.current.item.description
+          duration: =@ctx.current.item.duration
+          extra: =@ctx.current.item.extra
+          image1: =@ctx.current.item.image1
+          image2: =@ctx.current.item.image2
+          time: =@ctx.current.item.time
+          title: =@ctx.current.item.title
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Day 2
+
+  - type: component.list
+    options:
+      data: =@ctx.datasources.itinerary-day[day=2]
+      maximumItemsToRender: 8
+      item:
+        type: component.custom-component
+        componentId: itinerary-day
+        inputs:
+          description: =@ctx.current.item.description
+          duration: =@ctx.current.item.duration
+          extra: =@ctx.current.item.extra
+          image1: =@ctx.current.item.image1
+          image2: =@ctx.current.item.image2
+          image3: =@ctx.current.item.image3
+          time: =@ctx.current.item.time
+          title: =@ctx.current.item.title

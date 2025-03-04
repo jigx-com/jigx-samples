@@ -1,0 +1,107 @@
+type: component.default
+children:   
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          basis: 2
+          direction: column
+        
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: column
+            children:         
+            - type: component.image
+              options:
+                source:
+                  uri: https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80
+                resizeMode: cover
+
+        - type: component.view
+          options:
+            style:
+              margin: 
+                top: large
+              flex: 
+                direction: column
+                grow: 1
+              gap: small
+
+            children: 
+              - type: component.text
+                options:
+                  value: Welcome
+                  align: center
+                  size: large
+              - type: component.text
+                options:
+                  value: Discover more delicious recipes from around the world
+                  align: center
+                  size: regular
+                  emphasis: medium
+
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              justifyContent: center
+              alignItems: center
+              alignContent: center  
+              margin: 
+                vertical: large
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 0
+                    background:
+                      color: color14
+                    padding: 
+                      vertical: small
+                      horizontal: regular
+                    radius: large
+                    justifyContent: center
+                    alignItems: center
+                    alignContent: center                
+
+                  children:              
+                    - type: component.text
+                      options:
+                        value: 1 / 3
+                        size: small
+
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              alignContent: space-between
+              justifyContent: space-between
+              gap: medium
+              border:
+                top:
+                  style: solid
+                  emphasis: extra-low
+              padding: 
+                top: large
+              
+            children:
+            - type: component.button
+              options:
+                title: Skip
+                type: tertiary
+            
+            - type: component.button
+              options:
+                title: Next
+                type: primary

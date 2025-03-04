@@ -1,0 +1,48 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              alignItems: center
+              gap: medium
+            children:        
+              # RIGHT ELEMENT
+              - type: component.text
+                options:
+                  value: L-Dynamic element
+                  size: regular              
+            
+            # CONTENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1 
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title element with with long text
+                        size: regular  
+                        weight: bold
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Subtitle element with very very very very long text        
+                        size: regular
+                        numberOfLines: 3
+                        emphasis: medium
+                        
+              # RIGHT ELEMENT
+              - type: component.text
+                options:
+                  value: R-dynamic element
+                  size: regular  
+
+  

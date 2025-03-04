@@ -1,0 +1,17 @@
+title: Card with Graph
+type: jig.default
+icon: card-add-1
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1493932484895-752d1471eab5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80
+
+children:
+  - type: component.custom-component
+    componentId: card-with-graph

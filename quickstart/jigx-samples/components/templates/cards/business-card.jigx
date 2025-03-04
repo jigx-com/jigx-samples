@@ -1,0 +1,122 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color6
+      direction: row
+      children:
+        - type: component.view
+          options:
+            style: {}
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding:
+                      vertical: large
+
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: FULL NAME
+                        weight: extra-bold
+                      
+                    - type: component.text
+                      options:
+                        value: Position
+                      
+                
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: small
+                    padding:
+                      bottom: small
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: phone
+                        size: small
+                    - type: component.text
+                      options:
+                        size: small
+                        value: 846 736 039
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: small
+                    padding:
+                      bottom: small
+
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: email
+                        size: small
+                      
+                    - type: component.text
+                      options:
+                        size: small
+                        value: name@example.com
+                      
+                
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: small
+
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: pin
+                        size: small
+                      
+                    - type: component.text
+                      options:
+                        size: small
+                        value: Company address
+
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              flex:
+                grow: 1
+              justifyContent: center
+              margin:
+                bottom: medium
+            children:
+              - type: component.view
+                options:
+                  style:
+                    padding:
+                      vertical: medium
+                  children:
+                    - type: component.avatar
+                      options:
+                        title: ""
+                        size: large
+                        uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfj-Ghjj7eipWcb7zAuwFir0HzV_1ztXEV3Q&usqp=CAU
+
+              - type: component.text
+                options:
+                  align: center
+                  size: medium
+                  value: COMPANY NAME
+                  weight: extra-bold
+                
+              - type: component.text
+                options:
+                  align: center
+                  value: Company slogan

@@ -1,0 +1,281 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+        gap: small
+
+      children:
+        - type: component.card
+          when: =((@ctx.solution.state.contractorDetails = 'image') and (@ctx.solution.state.builderDetails = 'image')) ? true:false
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: column
+                    justifyContent: center
+                    width: 180
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 80
+                          width: 80
+                        resizeMode: contain
+                        source:
+                          uri: https://uploads-ssl.webflow.com/6176091da86f1b28c3c44b9c/6179042b3330ab01dfb0c320_408-worker-helmet-outline.gif
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Contractors
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.contractorDetails
+                value: details
+
+        - type: component.card
+          when: =@ctx.solution.state.contractorDetails = 'details'
+          options:
+            color: color1
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    justifyContent: flex-start
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Skilled Labor & Constractors
+                        weight: semi-bold
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        size: small
+                        value:
+                          Find, and get matched with jobs that need your skills. Only pay for jobs
+                          you win. ManyBuild gets paid when YOU get paid.
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.contractorDetails
+                value: image
+
+        - type: component.card
+          when: =((@ctx.solution.state.contractorDetails = 'image') and (@ctx.solution.state.builderDetails = 'image')) ? true:false
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    width: 180
+                    alignItems: center
+                    flex:
+                      direction: column
+                    justifyContent: center
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 80
+                          width: 80
+                        resizeMode: contain
+                        source:
+                          uri: https://uploads-ssl.webflow.com/6176091da86f1b28c3c44b9c/6179043818ecb1735f889e29_1653-drilling-machine-outline.gif
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Builders
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.builderDetails
+                value: details
+
+        - type: component.card
+          when: =@ctx.solution.state.builderDetails = 'details'
+          options:
+            color: color1
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    justifyContent: flex-start
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        value: General Constractors & Builders
+                        weight: semi-bold
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        size: small
+                        value:
+                          Project management as-a-services with virtual construction admins for
+                          FASTER contracting and porgress tracking. We take care
+                          of the paperwork so you can get back to building.
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.builderDetails
+                value: image
+
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+        gap: small
+        margin:
+          top: small
+      children:
+        - type: component.card
+          when: =((@ctx.solution.state.agentsDetails = 'image') and (@ctx.solution.state.investorsDetails = 'image')) ? true:false
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    width: 180
+                    flex:
+                      direction: column
+                    justifyContent: center
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 80
+                          width: 80
+                        resizeMode: contain
+                        source:
+                          uri: https://uploads-ssl.webflow.com/6176091da86f1b28c3c44b9c/6179042d2340fa2e1b68213e_1752-residence-mansion-outline.gif
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Brokers
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.agentsDetails
+                value: details
+
+        - type: component.card
+          when: =@ctx.solution.state.agentsDetails = 'details'
+          options:
+            color: color1
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    justifyContent: flex-start
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Real Estate Agents and Brokers
+                        weight: semi-bold
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        size: small
+                        value:
+                          Connect with hundreds of skilled contractors, handle inspection
+                          objections, and become a construction resource for you
+                          homeowner clients.
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.agentsDetails
+                value: image
+
+        - type: component.card
+          when: =((@ctx.solution.state.agentsDetails = 'image') and (@ctx.solution.state.investorsDetails = 'image')) ? true:false
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    width: 180
+                    alignItems: center
+                    flex:
+                      direction: column
+                    justifyContent: center
+                  children:
+                    - type: component.image
+                      options:
+                        size:
+                          height: 80
+                          width: 80
+                        resizeMode: contain
+                        source:
+                          uri: https://uploads-ssl.webflow.com/6176091da86f1b28c3c44b9c/643b3ad84eaafc348db9b462_ManyBuild%20Investor%20Icon%20(3).gif
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Investors
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.investorsDetails
+                value: details
+
+        - type: component.card
+          when: =@ctx.solution.state.investorsDetails = 'details'
+          options:
+            color: color1
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                    justifyContent: flex-start
+
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        value: Real Estate Investor and Private Lenders
+                        weight: semi-bold
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        size: small
+                        value:
+                          Access reak estate investment deals, and in-depth analysis with direct
+                          financing solutions all in one place
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.investorsDetails
+                value: image

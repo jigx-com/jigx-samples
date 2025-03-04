@@ -11,7 +11,7 @@ children:
             value: Value
             
 widgets:
-  "2x2": 
+  image3-2x2 : 
     type: widget.image
     options:
       source:

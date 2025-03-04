@@ -1,9 +1,29 @@
 title: Aquarium Location 
 type: jig.full-screen
 
+datasources:
+  address: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          address: 1483 Alaskan Way, Seattle, US
+         
 component: 
   type: component.location
-  options:
-    address: =@ctx.datasources.location.street & ',' & @ctx.datasources.location.city
-        & ',' & @ctx.datasources.location.country
-    zoomLevel: 15
+  options: 
+    viewPoint:
+      address: 1483 Alaskan Way, Seattle, US
+      zoomLevel: 15
+    markers:
+      data: =@ctx.datasources.address
+      item:
+        type: component.marker-item
+        options:
+          address: 1483 Alaskan Way, Seattle, US
+          children:
+            type: component.icon
+            options:
+              size: medium
+              color: negative
+              icon: end-marker  

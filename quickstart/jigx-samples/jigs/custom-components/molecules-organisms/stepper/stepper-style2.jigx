@@ -1,0 +1,19 @@
+title: Stepper Style 2
+type: jig.default
+icon: phone-swap
+
+children:
+  - type: component.custom-component
+    componentId: headline
+    inputs:
+      headline2: Stepper 2
+      subtitle: |
+        - numberOfSteps: 1-6 
+        - currentStep: 1-6
+      linkTo: stepper-style2-variations
+      link: variations
+  - type: component.custom-component
+    componentId: stepper2
+    inputs:
+      numberOfSteps: 5
+      currentStep: 3

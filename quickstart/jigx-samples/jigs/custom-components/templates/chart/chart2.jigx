@@ -1,0 +1,52 @@
+title: Chart 2
+type: jig.default
+icon: chart
+
+datasources: 
+  chartCustom1M: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          x: 
+          y: 163
+        - id: 3
+          x: 
+          y: 158
+        - id: 4
+          x: 
+          y: 168
+        - id: 4
+          x: 
+          y: 159
+        - id: 4
+          x: 
+          y: 155
+        - id: 4
+          x: 
+          y: 178
+        - id: 4
+          x: 
+          y: 175
+
+  chartLegend1M:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          open: 175.11
+          high: 177.28
+          low: 172.57
+          avg: 174.89
+          won: 130
+          lost: 107
+
+children:
+  - type: component.custom-component
+    componentId: chart2
+    inputs:
+      chartCustom: =@ctx.datasources.chartCustom1M
+  - type: component.custom-component
+    componentId: chartLegend
+    inputs:
+      chartLegend1M: =@ctx.datasources.chartLegend1M

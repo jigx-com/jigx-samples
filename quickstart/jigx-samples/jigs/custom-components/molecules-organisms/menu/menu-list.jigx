@@ -1,0 +1,55 @@
+title: List Menu
+type: jig.default
+icon: restaurant-menu
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1620287341401-e2945a4b9daa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+
+datasources:
+  menu-options:
+    type: datasource.static
+    options:
+      data:
+        - color: color3
+          icon: task-list
+          id: 1
+          linkTo: list-appointments
+          subtitle: View your appointments
+          title: Appointments
+        - color: secondary
+          icon: add
+          id: 2
+          linkTo: new-appointment
+          subtitle: Add a new appointment
+          title: New Appointment
+        - color: color3
+          icon: calendar
+          id: 3
+          linkTo: calendar
+          subtitle: View your calendar
+          title: Calendar
+        - color: secondary
+          icon: person
+          id: 4
+          linkTo: list-employees
+          subtitle: Colleague contact information
+          title: Staff Contacts
+    
+children:
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.menu-options
+      item:
+        type: component.custom-component
+        componentId: list-menu
+        inputs:
+          info: =@ctx.current.item

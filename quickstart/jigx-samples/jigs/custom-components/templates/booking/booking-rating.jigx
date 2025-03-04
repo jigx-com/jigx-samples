@@ -1,0 +1,60 @@
+title: Booking with Rating
+type: jig.default
+icon: hotel-information
+
+datasources:
+  packages:
+    type: datasource.static
+    options:
+      data:
+        - bedrooms: 2
+          guests: 4
+          name: Hotel Nany
+          nights: 6
+          photo: https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          price: "12000"
+          rating: 8,7
+          stars: 5
+        - bedrooms: 1
+          guests: 2
+          name: Vacation Home
+          nights: 5
+          photo: https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80
+          price: $10000
+          rating: 8,5
+          stars: 4
+        - bedrooms: 1
+          guests: 2
+          name: Hotel Guanacaste Lodge
+          nights: 3
+          photo: https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          price: $7000
+          rating: 8,0
+          stars: 3
+    
+children:
+  - type: component.custom-component
+    componentId: section
+    inputs:
+      link: Show all
+      title: TOP places around you
+
+    
+  - type: component.list
+    options:
+      data: =@ctx.datasources.packages
+      isHorizontal: false
+      maximumItemsToRender: 8
+      item:
+        type: component.custom-component
+        componentId: packages
+        inputs:
+          bedrooms: =@ctx.current.item.bedrooms
+          guests: =@ctx.current.item.guests
+          image: =@ctx.current.item.photo
+          name: =@ctx.current.item.name
+          nights: =@ctx.current.item.nights
+          price: =@ctx.current.item.price
+          rating: =@ctx.current.item.rating
+          stars: =@ctx.current.item.stars
+

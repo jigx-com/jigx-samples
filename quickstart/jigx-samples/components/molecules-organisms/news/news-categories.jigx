@@ -1,0 +1,21 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: =@ctx.inputs.category-selected = 'true' ? "primary" :false
+        radius: large
+        padding: 
+          left: regular
+          right: regular
+          top: small
+          bottom: small
+        margin: 
+          top: medium
+        flex: 
+          grow: 0
+      children:
+        - type: component.text
+          options:
+            value: =@ctx.inputs.category-name

@@ -12,8 +12,13 @@ header:
           uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
 
 children:
-  - type: component.widgets
-    options:
+  - type: component.grid
+    options: 
       children:
-        - size: 1x1
-          jigId: web-longpress-widget
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: web-longpress-widget

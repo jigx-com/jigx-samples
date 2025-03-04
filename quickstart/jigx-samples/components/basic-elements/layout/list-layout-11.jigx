@@ -1,0 +1,108 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+       
+        # TOP ROW
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              alignItems: flex-start
+            children:        
+
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1
+                    margin: 
+                      right: medium      
+                  children:
+                    - type: component.text
+                      options:
+                        value: CATEGORY
+                        size: small  
+                        color: color4
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Most of its text is made up from sections 1.10.32–3 of Cicero's De finibus bonorum et malorum (On the Boundaries of Goods and Evils; finibus may also be translated as purposes).      
+                        size: medium
+                        weight: bold
+                        numberOfLines: 3
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                    width: 100
+                  children:                        
+                    - type: component.image
+                      options:
+                        source:
+                          uri: https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+                        resizeMode: cover
+                        height: 100
+
+        # BOTTOM ROW                  
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              alignItems: center
+              justifyContent: space-between
+              gap: medium
+            children:      
+
+              # CONTENT  
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1
+                      shrink: 1
+                    gap: small
+                    emphasis: medium
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title
+                        size: small
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: "·" 
+                        size: small
+                        numberOfLines: 1                        
+                    - type: component.text
+                      options:
+                        value: Subtitle    
+                        size: small
+                        numberOfLines: 1
+              # RIGHT ELEMENTS
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                    gap: small
+                  children:
+                    - type: component.icon
+                      options:
+                        size: regular
+                        icon: love-it
+                        type: basic
+                       
+                    - type: component.icon
+                      options:
+                        size: regular
+                        icon: three-dots
+                        type: basic

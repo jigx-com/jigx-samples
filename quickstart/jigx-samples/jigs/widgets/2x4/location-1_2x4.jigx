@@ -11,11 +11,13 @@ children:
             value: Value
 
 widgets:
-  "2x4": 
+  location1-2x4: 
     type: widget.location
     options:
-      zoomLevel: 4
-      address: Av. Gustave Eiffel, 75007 Paris, France 
+      viewPoint:
+        centerPosition: middle
+        address: Av. Gustave Eiffel, 75007 Paris, France 
+        zoomLevel: 4
       top:
         type: component.titles
         options:

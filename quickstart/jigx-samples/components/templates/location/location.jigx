@@ -1,0 +1,92 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              gap: medium
+              alignItems: center
+
+            children:
+              - type: component.icon
+                options:
+                  icon: delivery-truck-5
+                  size: medium
+                  color: color14
+                  type: duotone
+                  shape: rounded
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title
+                        weight: bold
+                    - type: component.text
+                      options:
+                        value: Subtitle
+                        emphasis: medium
+                        size: small
+                        
+              - type: component.text
+                options:
+                  value:  =$fromMillis($toMillis($now()) , '[h#1]:[m01][P]')
+                  weight: bold
+                  align: right
+        - type: component.location
+          options:
+            address: Prague
+            zoomLevel: 11
+            
+        - type: component.view
+          options:
+            style: 
+              alignItems: center
+              flex: 
+                direction: row
+                grow: 1             
+            children:
+            
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                    flex: 
+                      grow: 1
+                      shrink: 1
+                  children:
+                    - type: component.text
+                      options:
+                        value: Prague
+                        weight: bold
+                    - type: component.text
+                      options:
+                        value: Address
+                        emphasis: medium
+                        size: small
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: row
+                  children:
+                    - type: component.button
+                      options:
+                        title: Navigate
+                        type: primary
+                        isCompact: true
+                        onPress: 
+                          type: action.open-url
+                          options:
+                            url: https://www.google.com/maps/place/Prague

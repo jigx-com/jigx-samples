@@ -1,0 +1,42 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: row
+      children:
+        - type: component.icon
+          options:
+            icon: animation
+            size: extra-large
+            shape: circle
+            type: duotone
+
+
+        - type: component.icon
+          options:
+            icon: animation
+            size: large
+            shape: circle
+            type: duotone
+
+
+        - type: component.icon
+          options:
+            icon: animation
+            size: medium
+            shape: circle
+            type: duotone
+
+        - type: component.icon
+          options:
+            icon: animation
+            size: regular
+            shape: circle
+            type: duotone
+
+        - type: component.icon
+          options:
+            icon: animation
+            size: small
+            shape: circle
+            type: duotone

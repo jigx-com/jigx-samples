@@ -1,0 +1,56 @@
+title: Tags
+type: jig.default
+icon: tags-double-1
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1578575737601-bd8f2557550c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlbGF4aW5nJTIwbmF0dXJlfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60
+      type: component.image
+
+datasources:
+  mydata:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          tags:
+            - color: color1
+              title: tag_1
+            - color: color2
+              title: tag_2
+            - color: color3
+              title: tag_3
+            - color: color4
+              title: tag_4
+    
+children:
+  - type: component.custom-component
+    componentId: header-2
+    inputs:
+      link: Add Tags
+      title: ""
+    
+  - type: component.list
+    when: =@ctx.datasources.mydata.tags != null
+    options:
+      maximumItemsToRender: 10
+      data: =@ctx.datasources.mydata.tags
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: view-todo-tags
+        inputs:
+          info: =@ctx.current.item
+
+  - type: component.custom-component
+    when: =@ctx.datasources.mydata.tags = null
+    componentId: add-button
+    inputs:
+      title: Add Tags
+    

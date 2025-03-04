@@ -1,0 +1,54 @@
+title: Icons
+type: jig.list
+icon: pen-draw-1
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: icons-sizes
+          title: Icons Sizes
+          icon: pen-draw-1
+          color: color1
+        - id: 2
+          jigId: icons-rounded
+          title: Rounded Icons
+          icon: pen-draw-1
+          color: color2
+        - id: 3
+          jigId: icons-circle
+          title: Circle Icons
+          icon: pen-draw-1
+          color: color3
+        - id: 4
+          jigId: icons-square
+          title: Square Icons
+          icon: pen-draw-1
+          color: color4
+        - id: 5
+          jigId: icons-bar
+          title: Icons Bar
+          icon: pen-draw-1
+          color: color5 
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

@@ -1,0 +1,37 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color3  #nejdou stíny, pokud změním barvu karty
+      direction: column 
+      children:
+        - type: component.text
+          options:
+            value: Extra Large
+            size: extra-large
+            decoration: underline
+        - type: component.text
+          options:
+            value: Large
+            size: large         
+            decoration: underline
+        - type: component.text
+          options:
+            value: Medium
+            size: medium
+            decoration: underline
+        - type: component.text
+          options:
+            value: Regular
+            size: regular
+            decoration: underline
+        - type: component.text
+          options:
+            value: Small
+            size: small
+            decoration: underline
+        - type: component.text
+          options:
+            value: Tiny
+            size: tiny
+            decoration: underline        

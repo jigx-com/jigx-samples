@@ -1,0 +1,57 @@
+title: Horizontal - Repairs
+type: jig.default
+icon: data-transfer-horizontal
+  
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1469389335181-2198b4caa734?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbnN0cnVjdGlvbnN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60
+
+datasources:
+  list-data:
+    type: datasource.static
+    options:
+      data:
+      - id: 1
+        jobTitle: Electrical Work
+        JobDetails: Installation of Electrical work. Pre-installations
+        jobBudget: 20000.00
+        CoverPhotoDocURL: https://images.unsplash.com/photo-1530240852689-f7a9c6d9f6c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZWxlY3RyaWNhbCUyMHdvcmt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+        StartDate: '2023-07-24'
+        EndDate: '2023-07-31'
+        CreatedDate: '2023-06-06 21:36:24.743'
+      - id: 2
+        jobTitle: Inspection Job
+        JobDetails: Inspection job for multiple rooms in the house
+        jobBudget: 9000.00
+        CoverPhotoDocURL: https://images.unsplash.com/photo-1533211428219-ad43d21f69cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb3BlcnR5JTIwaW5zcGVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
+        StartDate: '2023-06-26'
+        EndDate: '2023-06-30'
+        CreatedDate: '2023-06-06 19:56:55.033'
+      - id: 3
+        jobTitle: Roof Inspection Job
+        JobDetails: Inspector needed on site tomorrow to inspect roof leak 
+        jobBudget: 5000.00
+        CoverPhotoDocURL: https://images.unsplash.com/photo-1503594384566-461fe158e797?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjByb29mfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60
+        StartDate: '2023-06-27'
+        EndDate: '2023-06-28'
+        CreatedDate: '2023-06-26 20:05:30.833'
+
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.list-data
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      maximumItemsToRender: 10
+      item: 
+        type: component.custom-component
+        componentId: horizontal-list-components
+        inputs:
+          info: =@ctx.current.item 

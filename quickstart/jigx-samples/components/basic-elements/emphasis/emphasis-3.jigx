@@ -1,0 +1,38 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color2 
+      direction: column
+      children:
+        - type: component.text
+          options:
+            value: High
+            size: regular
+            emphasis: high
+            align: center
+            numberOfLines: 1
+            
+        - type: component.text
+          options:
+            value: Medium
+            size: regular
+            emphasis: medium
+            align: center
+            numberOfLines: 1
+            
+        - type: component.text
+          options:
+            value: Low medium
+            size: regular
+            emphasis: low-medium
+            align: center
+            numberOfLines: 1
+            
+        - type: component.text
+          options:
+            value: Low
+            size: regular
+            emphasis: low
+            align: center
+            numberOfLines: 1

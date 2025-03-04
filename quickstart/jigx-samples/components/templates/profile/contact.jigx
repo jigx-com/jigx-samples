@@ -1,0 +1,69 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      onPress:
+        type: action.open-url
+        options:
+          url: ='tel:' & @ctx.inputs.phone
+      style:
+        alignItems: center
+        flex: 
+          direction: row
+        gap: regular
+        padding: 
+          left: medium
+          bottom: medium
+      children:
+        - type: component.icon
+          options:
+            icon: phone
+            emphasis: high
+        - type: component.text
+          options:
+            value: =@ctx.inputs.phone
+  - type: component.view
+    options:
+      onPress:
+        type: action.open-url
+        options:
+          url: ='mailto:' & @ctx.inputs.email
+      style:
+        alignItems: center
+        flex: 
+          direction: row
+        gap: regular
+        padding: 
+          left: medium
+          bottom: medium
+          top: small
+      children:
+        - type: component.icon
+          options:
+            icon: email
+            emphasis: high
+        - type: component.text
+          options:
+            value: =@ctx.inputs.email
+  - type: component.view
+    options:
+      onPress:
+        type: action.open-url
+        options:
+          url: https://www.instagram.com
+      style:
+        alignItems: center
+        flex: 
+          direction: row
+        gap: regular
+        padding: 
+          left: medium
+          top: small
+      children:
+        - type: component.icon
+          options:
+            icon: world
+            emphasis: high
+        - type: component.text
+          options:
+            value: =@ctx.inputs.instagram

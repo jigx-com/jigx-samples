@@ -1,0 +1,90 @@
+title: Cards
+type: jig.list
+icon: card-add-1
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: cards-example1
+          title: Cards Example 1
+          icon: card-add-1
+          color: color1
+        - id: 2
+          jigId: cards-example2
+          title: Cards Example 2
+          icon: card-add-1
+          color: color2
+        - id: 3
+          jigId: cards-example3
+          title: Cards Example 3
+          icon: card-add-1
+          color: color3
+        - id: 4
+          jigId: flip-cards
+          title: Cards - Flip
+          icon: card-add-1
+          color: color4
+        - id: 5
+          jigId: cards-image
+          title: Cards Image
+          icon: card-add-1
+          color: color5
+        - id: 6
+          jigId: cards-in-list
+          title: Cards In List
+          icon: card-add-1
+          color: color6
+        - id: 7
+          jigId: cards-next-step
+          title: Cards Next Step
+          icon: card-add-1
+          color: color7
+        - id: 8
+          jigId: cards2
+          title: Cards (Two)
+          icon: card-add-2
+          color: color8
+        - id: 9
+          jigId: cards3
+          title: Cards (Three)
+          icon: card-add-1
+          color: color9
+        - id: 10
+          jigId: cards-case-actions
+          title: Cards with Case Actions
+          icon: card-add-1
+          color: color10
+        - id: 11
+          jigId: cards-case-actions1
+          title: Cards with Case Actions1
+          icon: card-add-1
+          color: color11
+        - id: 12
+          jigId: card-with-graph
+          title: Cards with Graph
+          icon: card-add-1
+          color: color12      
+          
+          
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

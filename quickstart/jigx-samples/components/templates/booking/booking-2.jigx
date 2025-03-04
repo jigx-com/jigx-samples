@@ -1,0 +1,137 @@
+type: component.default
+children:      
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+          grow: 1   
+        padding: 
+          bottom: regular
+      children:
+        - type: component.card
+          options:
+            direction: column
+            children:
+              - type: component.image
+                options:
+                  source:
+                    uri: =@ctx.inputs.image       
+                  height: 160
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1     
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.name
+                        size: medium
+                        align: left
+                        weight: extra-bold
+                        numberOfLines: 3
+                        
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 1   
+                          margin: 
+                            top: medium
+                        children:                                                       
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: column
+                                  grow: 1   
+                                  shrink: 1
+                      
+                                justifyContent: center
+                                margin: 
+                                  right: medium
+                              children:
+
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.address
+                                    size: small
+                                    align: left
+                                    emphasis: medium
+                                    numberOfLines: 2
+
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex: 
+                                        direction: row
+                                        grow: 1   
+                                        shrink: 1
+                                      justifyContent: flex-start
+                                      alignContent: flex-start
+                                      alignItems: center
+                                      padding: 
+                                        right: medium
+                                        top: minimal
+                                      gap: minimal
+                                    children:
+                                      - type: component.icon
+                                        options:
+                                          icon: love-it
+                                          size: small
+                                          color: color4
+                                      - type: component.view
+                                        options:
+                                          style:
+                                            flex: 
+                                              direction: row
+                                            margin: 
+                                              left: minimal
+                                            alignItems: center                                  
+                                          children:                                          
+                                          - type: component.text
+                                            options:
+                                              value: =@ctx.inputs.reviews-score
+                                              size: small
+                                              align: left    
+                                              emphasis: medium  
+                                      - type: component.view
+                                        options:
+                                          style:
+                                            alignItems: center
+                                          children:
+                                            - type: component.text
+                                              options:
+                                                value: Rating
+                                                size: small
+                                                align: left    
+                                                emphasis: medium                                                                      
+
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: column
+                                justifyContent: center                                              
+                              children:
+                                # Title
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.price
+                                    size: medium
+                                    align: right
+                                    weight: extra-bold
+                                # Subtitle 
+                                - type: component.text
+                                  options:
+                                    value: nightly
+                                    size: small
+                                    align: right    
+                                    emphasis: medium
+                                                                    
+
+
+

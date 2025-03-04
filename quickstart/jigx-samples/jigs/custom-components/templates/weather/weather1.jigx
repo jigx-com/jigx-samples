@@ -1,0 +1,57 @@
+title: Weather 2
+type: jig.default
+icon: weather
+
+datasources:
+  forecast: 
+    type: datasource.static
+    options:
+      data:
+        - day: Mon
+          max: 21°
+          min: 15°
+          image: https://assets.dryicons.com/uploads/icon/preview/2948/small_2x_clouds.png
+        - day: Tue
+          max: 18°
+          min: 9°
+          image: https://assets.dryicons.com/uploads/icon/preview/2959/small_2x_clouds_rain.png 
+        - day: Wed
+          max: 20°
+          min: 12°
+          image: https://assets.dryicons.com/uploads/icon/preview/4426/small_2x_clouds.png
+        - day: Thu
+          max: 25°
+          min: 17°
+          image: https://assets.dryicons.com/uploads/icon/preview/2980/small_2x_sun.png
+        - day: Fri
+          max: 25°
+          min: 17°
+          image: https://assets.dryicons.com/uploads/icon/preview/2980/small_2x_sun.png
+        - day: Sat
+          max: 22°
+          min: 14°
+          image: https://assets.dryicons.com/uploads/icon/preview/2967/small_2x_sun_clouds_thunder_rain.png
+        - day: Sun
+          max: 19°
+          min: 10°
+          image: https://assets.dryicons.com/uploads/icon/preview/4400/small_2x_thunders.png
+
+children:
+  - type: component.custom-component
+    componentId: weather
+    inputs:
+      day: =@ctx.datasources.forecast[6].day
+      max: =@ctx.datasources.forecast[6].max
+      min: =@ctx.datasources.forecast[6].min
+      image: =@ctx.datasources.forecast[6].image
+  - type: component.list
+    options:
+      data: =@ctx.datasources.forecast
+      item:
+        type: component.custom-component
+        componentId: forecast-2
+        inputs:
+          day: =@ctx.current.item.day
+          max: =@ctx.current.item.max
+          min: =@ctx.current.item.min
+          image: =@ctx.current.item.image

@@ -16,3 +16,6 @@ options:
     - title: Go-to onSuccess
       link: go-to-on-success
       color: color4
+    - color: color5
+      link: go-to-ismodal
+      title: Go-to isModal    

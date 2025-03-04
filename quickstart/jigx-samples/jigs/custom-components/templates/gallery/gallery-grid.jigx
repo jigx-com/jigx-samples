@@ -1,0 +1,6 @@
+title: Gallery - Grid
+type: jig.default
+icon: layout-module-1
+children:
+  - componentId: gallery-2
+    type: component.custom-component

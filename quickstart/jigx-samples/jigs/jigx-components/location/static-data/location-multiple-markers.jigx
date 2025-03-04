@@ -1,24 +1,35 @@
-title: Location with multiple markers
+title:  Location with multiple markers
 type: jig.default
-
 datasources:
+ # First datasource with address.
   address: 
     type: datasource.static
     options:
       data:
-        - street: 768 5th Ave
+        - id: 1
+          street: 768 5th Ave
           city: New York
           country: US
+  # Second datasource for points in latitude and longitude.
   points:
     type: datasource.static
     options:
       data:
-        - lat: 40.759412
-          lng: -73.912306
-        - lat: 40.745368
-          lng: -74.057189
+        - latitude: 40.759412
+          longitude: -73.912306
+        - latitude: 40.745368
+          longitude: -74.057189
+        - latitude: 40.76479429122513
+          longitude: -73.97429291692742    
+    
 children:
   - type: component.location
     options:
-      address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city & ',' & @ctx.datasources.address.country
-      markersData: =@ctx.datasources.points
+      viewPoint:
+        centerPosition: middle
+        address: |
+          =@ctx.datasources.address.street 
+          & ',' & @ctx.datasources.address.city
+          & ',' & @ctx.datasources.address.country
+      markers:
+        data: =@ctx.datasources.points

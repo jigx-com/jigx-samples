@@ -1,0 +1,99 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin:
+          horizontal: small
+          vertical: small
+        width: 320
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: regular
+                  children:
+                    - type: component.avatar
+                      options:
+                        title: =$substring(@ctx.inputs.info.firstName, 0, 1)
+                        size: large
+                        uri: =@ctx.inputs.info.avatar
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: column
+                            shrink: 1
+                          gap: small
+
+                        children:
+                          - type: component.view
+                            options:
+                              style: {}
+                              children:
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    value: Name
+
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.firstName & ' ' & @ctx.inputs.info.lastName
+
+                          - type: component.view
+                            options:
+                              style: {}
+                              children:
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    value: Age
+
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.age
+
+                          - type: component.view
+                            options:
+                              style: {}
+                              children:
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    value: Address
+
+                                - type: component.view
+                                  options:
+                                    style:
+                                      alignItems: center
+                                      flex:
+                                        direction: row
+                                        shrink: 1
+                                      gap: minimal
+                                    children:
+                                      - type: component.icon
+                                        options:
+                                          emphasis: medium
+                                          icon: pin
+                                          size: small
+
+                                      - type: component.view
+                                        options:
+                                          style:
+                                            flex:
+                                              direction: row
+                                              shrink: 1
+                                          children:
+                                            - type: component.text
+                                              options:
+                                                numberOfLines: 2
+                                                value:
+                                                  =@ctx.inputs.info.address & ', ' & @ctx.inputs.info.city & ', ' &
+                                                  @ctx.inputs.info.state

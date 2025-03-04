@@ -1,0 +1,100 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: row
+      children:
+        
+        # WRAPPER SPLITTED INTO THE ICON AND CONTENT
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              alignItems: flex-start
+              gap: medium
+            children:   
+              
+              # LEFT ELEMENT
+              - type: component.icon
+                options:
+                  icon: checkbox-unchecked
+                  size: regular
+              
+              # CONTENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                    
+                  children:
+                    # TOP ROW
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 1
+                          alignItems: center
+                          gap: medium
+                        children:  
+                           
+                          # CONTENT   
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: column
+                                  grow: 1
+                                  shrink: 1  
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Title element with long text
+                                    size: regular  
+                                    weight: bold
+                                    numberOfLines: 1
+                                - type: component.text
+                                  options:
+                                    value: Description      
+                                    size: regular
+                                    numberOfLines: 1
+                                    emphasis: medium
+                          # RIGHT ELEMENT
+                          - type: component.avatar                            
+                            options:
+                              title: NA
+                              size: small
+                              uri: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fFVTRVJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60
+
+                    # BOTTOM ROW
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                            grow: 0
+                          alignItems: flex-start
+                          margin: 
+                            top: small
+                          emphasis: medium
+                          gap: small
+                        children:        
+                          - type: component.icon
+                            options:
+                              icon: picture-landscape
+                              size: small                                 
+                          - type: component.icon
+                            options:
+                              icon: attachment
+                              size: small
+
+                          - type: component.icon
+                            options:
+                              icon: pencil-2
+                              size: small    
+
+  

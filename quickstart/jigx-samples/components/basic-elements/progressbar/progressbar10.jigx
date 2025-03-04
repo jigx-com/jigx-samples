@@ -1,0 +1,80 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+        - type: component.progress-bar
+          options:
+            title:
+              align: left
+              position: bottom
+              value: Left title
+            subtitle:
+              align: left
+              position: bottom
+              value: Left subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: right
+              position: bottom
+              value: Right title
+            subtitle:
+              align: right
+              position: bottom
+              value: Right subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 1
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: right
+              position: bottom
+              value: Right title
+            subtitle:
+              align: left
+              position: bottom
+              value: Left subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: left
+              position: bottom
+              value: Left title
+            subtitle:
+              align: right
+              position: bottom
+              value: Right subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 1
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: center
+              position: bottom
+              value: Center title
+            subtitle:
+              align: center
+              position: bottom
+              value: Center subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 10

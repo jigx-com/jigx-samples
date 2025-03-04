@@ -1,0 +1,99 @@
+type: component.default
+
+inputs:
+  column1:
+    default: ""
+    required: false
+    type: string
+  column2:
+    default: ""
+    required: false
+    type: string
+  column2-1:
+    default: ""
+    required: false
+    type: string
+  column3:
+    default: ""
+    required: false
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        border:
+          bottom:
+            style: solid
+        flex:
+          direction: row
+          grow: 1
+          shrink: 1
+        gap: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              justifyContent: center
+              padding:
+                left: medium
+                vertical: small
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color14
+                    height: 32
+                    justifyContent: center
+                    radius: large
+                    width: 32
+
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.column1
+
+        - type: component.view
+          options:
+            style:
+              alignItems: flex-start
+              flex:
+                grow: 1
+                shrink: 1
+              gap: minimal
+              justifyContent: center
+              padding:
+                vertical: small
+
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.column2
+                  weight: bold
+                
+              - type: component.text
+                options:
+                  emphasis: medium
+                  size: small
+                  value: =@ctx.inputs.column2-1
+
+        - type: component.view
+          options:
+            style:
+              alignItems: flex-end
+              justifyContent: center
+              padding:
+                right: medium
+                vertical: small
+
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.column3 & " pt"
+
+

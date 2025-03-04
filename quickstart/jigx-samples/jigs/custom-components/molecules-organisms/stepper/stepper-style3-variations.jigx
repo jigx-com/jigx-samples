@@ -1,0 +1,56 @@
+title: Stepper 3 - Variations
+type: jig.default
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 2 Items
+  - type: component.custom-component
+    componentId: stepper3
+    inputs:
+      numberOfSteps: 2
+      currentStep: 1    
+      step1Name: Personal detail 
+      step2Name: Policy
+      step3Name: insured items        
+
+  - type: component.custom-component
+    componentId: stepper3
+    inputs:
+      numberOfSteps: 2
+      currentStep: 2
+      step1Name: Personal detail 
+      step2Name: Policy
+      step3Name: insured items        
+
+ 
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 3 Items
+      
+  - type: component.custom-component
+    componentId: stepper3
+    inputs:
+      numberOfSteps: 3
+      currentStep: 1    
+      step1Name: Personal detail 
+      step2Name: Policy
+      step3Name: insured items        
+  - type: component.custom-component
+    componentId: stepper3
+    inputs:
+      numberOfSteps: 3
+      currentStep: 2
+      step1Name: Personal detail 
+      step2Name: Policy
+      step3Name: insured items        
+  - type: component.custom-component
+    componentId: stepper3
+    inputs:
+      numberOfSteps: 3
+      currentStep: 3   
+      step1Name: Personal detail 
+      step2Name: Policy
+      step3Name: insured items                     

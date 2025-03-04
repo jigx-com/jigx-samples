@@ -1,0 +1,74 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+            children:
+              
+              - type: component.view
+                options:
+                  style:
+                    padding: large
+                    justifyContent: center
+                    alignItems: center
+                    gap: minimal
+                    margin: 
+                      horizontal: medium
+                  children:
+                    - type: component.avatar
+                      options:
+                        title: =@ctx.inputs.name
+                        uri: =@ctx.inputs.photo
+                        size: large
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.name
+                        weight: bold
+                        size: large
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.profession
+                        size: small
+              - type: component.view
+                options:
+                  style:
+                    gap: medium
+                    justifyContent: center
+                    margin: 
+                      left: medium
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          {}
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.age
+                              weight: bold
+                              size: large
+                          - type: component.text
+                            options:
+                              value: Years old
+                              size: small
+                              emphasis: medium
+                    - type: component.view
+                      options:
+                        style:
+                          {}
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.followers
+                              weight: bold
+                              size: large
+                          - type: component.text
+                            options:
+                              value: Followers
+                              size: small
+                              emphasis: medium

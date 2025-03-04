@@ -1,0 +1,220 @@
+inputs:
+  numberOfSteps:
+    default: 1
+    required: true
+    type: number
+  currentStep:    
+    default: 1
+    required: true
+    type: number
+  step1Name:    
+    default: ""
+    required: false
+    type: string    
+  step2Name:    
+    default: ""
+    required: false
+    type: string  
+  step3Name:    
+    default: ""
+    required: false
+    type: string            
+
+type: component.default
+children:
+
+  # STEPPER
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          direction: row
+        alignItems: center
+        gap: small
+      children: 
+        # POINT 1
+        - type: component.view
+          options:
+            style:
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 1 ? "primary":""
+                emphasis: low
+              radius: large
+              flex: 
+                shrink: 1  
+                direction: row 
+                wrap: wrap
+              padding: small
+              justifyContent: center
+              alignItems: center 
+
+            children: 
+            - type: component.view
+              options:
+                style:
+                  background:
+                    color: primary
+                  radius: large
+                  height: 24
+                  width: 24
+                  justifyContent: center
+                  alignItems: center
+                children: 
+                  - type: component.text
+                    options:
+                      value: "1"
+                      size: small
+                      
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    shrink: 1                      
+                  padding: 
+                    horizontal: small
+                    vertical: minimal
+                children:
+                  - type: component.text
+                    options:
+                      value: =@ctx.inputs.step1Name != null ? @ctx.inputs.step1Name:"Step1"
+                      size: small
+                      color: primary
+                      numberOfLines: 2
+
+        # LINE 1
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 2 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 2 ? "":"low"
+              height: 2          
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 800 
+            children: []                        
+
+        # POINT 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 2 ? "primary":""
+                emphasis: low
+              radius: large
+              flex: 
+                direction: row  
+                shrink: 1 
+                wrap: wrap
+              padding: small
+              justifyContent: center
+              alignItems: center 
+
+            children: 
+            - type: component.view
+              options:
+                style:
+                  background:
+                    color: =$number(@ctx.inputs.currentStep) >= 2 ? "primary":"element"
+                    emphasis: =$number(@ctx.inputs.currentStep) >= 2 ? "":"low"
+                  radius: large
+                  height: 24
+                  width: 24
+                  justifyContent: center
+                  alignItems: center
+                children: 
+                  - type: component.text
+                    options:
+                      value: "2"
+                      size: small
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    shrink: 1  
+                  padding: 
+                    horizontal: small
+                    vertical: minimal
+                children:                      
+                - type: component.text
+                  options:
+                    value: =@ctx.inputs.step2Name != null ? @ctx.inputs.step2Name:"Step2"
+                    size: small
+                    color: =$number(@ctx.inputs.currentStep) >= 2 ? "primary":"element"
+                    emphasis: =$number(@ctx.inputs.currentStep) >= 2 ? "":"low-medium"
+                    numberOfLines: 2
+                    align: center
+        
+        # LINE 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 3 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 3 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 800
+            children: []                                                
+
+        # POINT 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 3 ? "primary":""
+                emphasis: low
+              radius: large
+              flex: 
+                direction: row  
+                shrink: 1
+                wrap: wrap
+              padding: small
+              justifyContent: center
+              alignItems: center  
+            children: 
+            - type: component.view
+              options:
+                style:
+                  background:
+                    color: =$number(@ctx.inputs.currentStep) >= 3 ? "primary":"element"
+                    emphasis: =$number(@ctx.inputs.currentStep) >= 3 ? "":"low"
+                  radius: large
+                  height: 24
+                  width: 24
+                  justifyContent: center
+                  alignItems: center
+                children: 
+                  - type: component.text
+                    options:
+                      value: "3"
+                      size: small
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    shrink: 1 
+                  padding: 
+                    horizontal: small   
+                    vertical: minimal
+                children:                      
+                - type: component.text
+                  options:
+                    value: =@ctx.inputs.step3Name != null ? @ctx.inputs.step3Name:"Step3"
+                    size: small
+                    color: =$number(@ctx.inputs.currentStep) >= 3 ? "primary":"element"
+                    emphasis: =$number(@ctx.inputs.currentStep) >= 3 ? "":"low-medium"
+                    numberOfLines: 2
+                    align: center
+
+

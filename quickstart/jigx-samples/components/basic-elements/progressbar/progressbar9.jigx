@@ -1,0 +1,70 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+        - type: component.progress-bar
+          options:
+            title:
+              align: left
+              value: Left title
+            subtitle:
+              align: left
+              value: Left subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: right
+              value: Right title
+            subtitle:
+              align: right
+              value: Right subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: right
+              value: Right title
+            subtitle:
+              align: left
+              value: Left subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 1
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: left
+              value: Left title
+            subtitle:
+              align: right
+              value: Right subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 10
+          
+        - type: component.progress-bar
+          options:
+            title:
+              align: center
+              value: Center title
+            subtitle:
+              align: center
+              value: Center subtitle
+            color: primary
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 10

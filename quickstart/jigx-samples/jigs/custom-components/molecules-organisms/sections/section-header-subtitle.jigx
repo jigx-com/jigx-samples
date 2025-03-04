@@ -1,0 +1,33 @@
+title: Section with Subtitle
+type: jig.default
+icon: task-list-multiple
+
+children:
+  - type: component.custom-component
+    componentId: section6
+    inputs:
+      title: Section 6
+      subtitle: Name of the section
+      button-link: news
+      button-custom-name: Button 
+
+  - type: component.custom-component
+    componentId: section6
+    inputs:
+      title: Section 6
+      subtitle: Name of the section
+      button-link: news
+      button-custom-name:  
+
+  - type: component.custom-component
+    componentId: section6
+    inputs:
+      title: Section 6
+      subtitle: Name of the section
+      button-link: 
+      button-custom-name:        
+            
+  - type: component.image
+    options: 
+      source:
+        uri: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80                              

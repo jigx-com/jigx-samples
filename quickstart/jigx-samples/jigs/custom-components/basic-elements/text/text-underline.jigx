@@ -1,0 +1,11 @@
+title: Text (Underline)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Underline"      
+  - type: component.custom-component
+    componentId: text-3               

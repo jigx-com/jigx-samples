@@ -1,0 +1,45 @@
+type: component.default
+
+inputs:
+  
+  switchName:
+    required: true
+    type: string
+    
+  switchValue:
+    required: true
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        background:
+          color: =@ctx.solution.state.list-item-switch = @ctx.inputs.switchValue ?
+            "primary":"element"
+          emphasis: =@ctx.solution.state.list-item-switch = @ctx.inputs.switchValue ?
+            "none":"extra-low"
+        flex:
+          direction: row
+        margin:
+          right: small
+        padding:
+          horizontal: medium
+          vertical: small
+        radius: large
+        
+      children:
+        - type: component.text
+          options:
+            color: =@ctx.solution.state.list-item-switch = @ctx.inputs.switchValue ?
+              "":"element"
+            value: =@ctx.inputs.switchName
+          
+      onPress:
+        type: action.set-state
+        options:
+          state: =@ctx.solution.state.list-item-switch
+          value: =@ctx.inputs.switchValue
+
+
+

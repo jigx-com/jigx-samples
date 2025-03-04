@@ -1,0 +1,7 @@
+title: Images in a Row
+type: jig.default
+icon: resize-shrink
+
+children:
+  - type: component.custom-component
+    componentId: images-row

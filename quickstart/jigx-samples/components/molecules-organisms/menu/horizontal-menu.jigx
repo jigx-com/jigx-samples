@@ -1,0 +1,12 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding: minimal
+      children:
+        - type: component.button
+          options:
+            title:  =@ctx.inputs.category-name
+            isCompact: true
+            type: =@ctx.inputs.category-selected = 'true' ? "primary":"secondary"

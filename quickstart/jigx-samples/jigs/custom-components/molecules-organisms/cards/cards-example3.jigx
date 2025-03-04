@@ -1,0 +1,54 @@
+title: Cards Example 3
+type: jig.default
+icon: credit-card
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1493932484895-752d1471eab5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80
+
+datasources:
+  chart:
+    type: datasource.static
+    options:
+      data:    
+        - title: "10 paying customers"
+          subtitle: Sales Performance
+          subtitle2: Today · last updated 3 April 16:10
+          color1: color9
+          color2: color5
+  
+  series1:
+    type: datasource.static
+    options:
+      data:
+        - 45000
+        - 64000
+        - 20000
+        - 50000        
+  
+  series2:
+    type: datasource.static
+    options:
+      data:
+        - 43445
+        - 48230
+        - 37230
+        - 89400
+
+children:
+  - type: component.custom-component
+    componentId: cards-chart
+    inputs:
+      series1: =@ctx.datasources.series1
+      series2: =@ctx.datasources.series2
+      title: =@ctx.datasources.chart.title
+      subtitle:  =@ctx.datasources.chart.subtitle
+      subtitle2:  =@ctx.datasources.chart.subtitle2
+      color1:  =@ctx.datasources.chart.color1
+      color2:  =@ctx.datasources.chart.color2

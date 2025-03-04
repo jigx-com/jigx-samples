@@ -1,0 +1,11 @@
+title: Text (Tiny Weights)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Tiny - Font Weights"  
+  - type: component.custom-component
+    componentId: text-13                

@@ -1,0 +1,39 @@
+title: Health
+type: jig.list
+icon: healthcare-website-cross-heart-rate-1
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: blood
+          title: Blood
+          icon: blood-drop-search
+          color: color1
+        - id: 2
+          jigId: ventilator
+          title: Ventilator
+          icon: oxygen-tank-1
+          color: color2
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

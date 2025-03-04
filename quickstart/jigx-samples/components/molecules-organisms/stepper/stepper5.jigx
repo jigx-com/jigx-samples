@@ -1,0 +1,251 @@
+type: component.default
+inputs:
+  numberOfSteps:
+    default: 1
+    required: true
+    type: number
+  currentStep:    
+    default: 1
+    required: true
+    type: number
+
+children:
+  # STEPPER
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          direction: row
+        alignItems: center
+        justifyContent: center
+        
+      children: 
+        # POINT 1
+        - type: component.view
+          options:
+            style:
+              background:
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              alignItems: center
+              justifyContent: center
+              border:
+                style: solid
+                color: ="element"
+            children: 
+              - type: component.text
+                options:
+                  value: "1"  
+        # LINE 1
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background: 
+                color: ="element"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                
+            children: []                        
+
+        # POINT 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background: 
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              padding: minimal
+            children: 
+              - type: component.view
+                options:
+                  style:
+                    background: 
+                      color: =$number(@ctx.inputs.currentStep) >= 2 ? "element":"screen"
+                    alignItems: center
+                    justifyContent: center   
+                    radius: large   
+                    height: 28
+                    width: 28                                                  
+                  children: 
+                    - type: component.text
+                      options:
+                        value: "2"  
+                        color: =$number(@ctx.inputs.currentStep) >= 2 ? "":"element"
+        # LINE 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background: 
+                color: ="element"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                
+            children: []                                                
+
+        # POINT 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background: 
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              padding: minimal
+            children: 
+              - type: component.view
+                options:
+                  style:
+                    background: 
+                      color: =$number(@ctx.inputs.currentStep) >= 3 ? "element":"screen"
+                    alignItems: center
+                    justifyContent: center   
+                    radius: large   
+                    height: 28
+                    width: 28                                                  
+                  children: 
+                    - type: component.text
+                      options:
+                        value: "3"  
+                        color: =$number(@ctx.inputs.currentStep) >= 3 ? "":"element"
+        # LINE 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 4
+          options:
+            style:
+              background: 
+                color: ="element"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                
+            children: []                          
+
+        # POINT 4
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 4
+          options:
+            style:
+              background: 
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              padding: minimal
+            children: 
+              - type: component.view
+                options:
+                  style:
+                    background: 
+                      color: =$number(@ctx.inputs.currentStep) >= 4 ? "element":"screen"
+                    alignItems: center
+                    justifyContent: center   
+                    radius: large   
+                    height: 28
+                    width: 28                                                  
+                  children: 
+                    - type: component.text
+                      options:
+                        value: "4"  
+                        color: =$number(@ctx.inputs.currentStep) >= 4 ? "":"element"
+        # LINE 4
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 5
+          options:
+            style:
+              background: 
+                color: ="element"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                
+            children: []                          
+
+        # POINT 5
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 5
+          options:
+            style:
+              background: 
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              padding: minimal
+            children: 
+              - type: component.view
+                options:
+                  style:
+                    background: 
+                      color: =$number(@ctx.inputs.currentStep) >= 5 ? "element":"screen"
+                    alignItems: center
+                    justifyContent: center   
+                    radius: large   
+                    height: 28
+                    width: 28                                                  
+                  children: 
+                    - type: component.text
+                      options:
+                        value: "5"  
+                        color: =$number(@ctx.inputs.currentStep) >= 5 ? "":"element"
+        # LINE 5
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 6
+          options:
+            style:
+              background: 
+                color: ="element"
+              height: 2
+              width: 
+                min: 8
+                max: 40
+              flex: 
+                grow: 1
+            children: []                           
+
+        # POINT 6
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 6
+          options:
+            style:
+              background: 
+                color: ="element"
+              radius: large
+              height: 32
+              width: 32
+              padding: minimal
+            children: 
+              - type: component.view
+                options:
+                  style:
+                    background: 
+                      color: =$number(@ctx.inputs.currentStep) >= 6 ? "element":"screen"
+                    alignItems: center
+                    justifyContent: center   
+                    radius: large   
+                    height: 28
+                    width: 28                                                  
+                  children: 
+                    - type: component.text
+                      options:
+                        value: "6"  
+                        color: =$number(@ctx.inputs.currentStep) >= 6 ? "":"element"

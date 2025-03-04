@@ -1,0 +1,154 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              justifyContent: space-between
+            children:                  
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: extra-large
+                  shape: rounded
+                  type: basic
+                  color: color9
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: large
+                  shape: rounded
+                  type: basic
+                  color: color9
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: medium
+                  shape: rounded
+                  type: basic
+                  color: color9
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: regular
+                  shape: rounded
+                  type: basic
+                  color: color9
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: small
+                  shape: rounded
+                  type: basic  
+                  color: color9     
+                  
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              justifyContent: space-between
+            children:
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: extra-large
+                  shape: rounded
+                  type: contained
+                  color: color8
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: large
+                  shape: rounded
+                  type: contained
+                  color: color8
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: medium
+                  shape: rounded
+                  type: contained
+                  color: color8
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: regular
+                  shape: rounded
+                  type: contained
+                  color: color8
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: small
+                  shape: rounded
+                  type: contained  
+                  color: color8            
+                  
+                  
+              
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              justifyContent: space-between
+            children:
+            
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: extra-large
+                  shape: rounded
+                  type: duotone
+                  color: color11
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: large
+                  shape: rounded
+                  type: duotone
+                  color: color11
+
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: medium
+                  shape: rounded
+                  type: duotone
+                  color: color11
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: regular
+                  shape: rounded
+                  type: duotone
+                  color: color11
+
+              - type: component.icon
+                options:
+                  icon: animation
+                  size: small
+                  shape: rounded
+                  type: duotone
+                  color: color11

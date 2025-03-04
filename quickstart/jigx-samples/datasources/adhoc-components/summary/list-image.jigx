@@ -4,9 +4,6 @@ options:
     - title: Image in Header
       link: header-image
       color: color1
-    - title: Image in Story
-      link: story-image
-      color: color2
     - title: Image in jig/default
       link: default-image
       color: color3

@@ -1,0 +1,167 @@
+title: Jig Templates
+type: jig.default
+
+children:
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Cards & Charts"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: business-card
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: cashback-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: credit-card-menu 
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: chart-menu                        
+
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Generic"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: chat
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: gallery-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: list-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: profile-menu      
+
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Industry Specific"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: health-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: news
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: plumbing
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: coffee      
+  
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: "Travel"
+  - type: component.grid
+    options: 
+      children:
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: booking-menu
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: facilities
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: itinerary
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: location
+        - type: component.grid-item
+          options:
+            size: "1x1"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: weather-menu                
+
+widgets:
+  cc-template: 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1608371945786-d47d3cdd31da?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      isContentOverlaid: true
+      bottom: 
+        type: component.titles
+        options:
+          title: Custom Templates
+          subtitle: Need some inspiration? Check out some templates

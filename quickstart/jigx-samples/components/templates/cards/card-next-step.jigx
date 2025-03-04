@@ -1,0 +1,44 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              padding: 
+                vertical: regular
+                left: regular
+                right: small
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 0.9
+                    gap: small
+                  children:
+                    - type: component.text
+                      options:
+                        value: "Next step: Assess documents"
+                        weight: extra-bold
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: Assess the available case documents
+                        emphasis: medium
+                        size: small
+              - type: component.view
+                options:
+                  style:
+                    flex: 0.1
+                    justifyContent: center
+                    padding: regular
+                  children:
+                    
+                    - type: component.icon
+                      options:
+                        icon: document
+                        size: medium
+                        

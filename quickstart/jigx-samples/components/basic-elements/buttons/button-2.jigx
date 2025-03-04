@@ -1,0 +1,100 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        # PRIMARY
+        - type: component.button
+          options:
+            title: Primary
+            type: primary
+            isCompact: true
+
+        - type: component.button
+          options:
+            title: Primary with left icon
+            type: primary
+            isCompact: true
+            icon:
+              left: alarm-bell
+
+        - type: component.button
+          options:
+            title: Primary with right icon
+            type: primary
+            isCompact: true
+            icon:
+              right: alarm-bell        
+
+        - type: component.button
+          options:
+            title: Primary with left & right icon
+            type: primary
+            isCompact: true
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                       
+            
+        # SECONDARY
+        - type: component.button
+          options:
+            title: Secondary
+            type: secondary
+            isCompact: true
+            
+        - type: component.button
+          options:
+            title: Secondary with left icon
+            type: secondary
+            isCompact: true
+            icon:
+              left: alarm-bell            
+                
+        - type: component.button
+          options:
+            title: Secondary with right icon
+            type: secondary
+            isCompact: true
+            icon:
+              right: alarm-bell   
+              
+        - type: component.button
+          options:
+            title: Secondary with left & right icon
+            type: secondary
+            isCompact: true    
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                                  
+
+        # TERTIARY
+        - type: component.button
+          options:
+            title: Tertiary
+            type: tertiary
+            isCompact: true
+
+        - type: component.button
+          options:
+            title: Tertiary with left icon
+            type: tertiary
+            isCompact: true
+            icon:
+              left: alarm-bell  
+                          
+        - type: component.button
+          options:
+            title: Tertiary with right icon
+            type: tertiary
+            isCompact: true
+            icon:
+              right: alarm-bell   
+              
+        - type: component.button
+          options:
+            title: Tertiary with left & right icon
+            type: tertiary
+            isCompact: true        
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                              

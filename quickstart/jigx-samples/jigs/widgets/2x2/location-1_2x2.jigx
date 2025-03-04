@@ -11,7 +11,9 @@ children:
             value: Value
 
 widgets:
-  "2x2": 
+  location1-2x2: 
     type: widget.location
     options:
-      address: Prague    
+      viewPoint:
+        centerPosition: middle
+        address: Prague      

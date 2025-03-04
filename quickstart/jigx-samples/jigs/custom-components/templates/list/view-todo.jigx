@@ -1,0 +1,102 @@
+title: Todo Title
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1578575737601-bd8f2557550c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlbGF4aW5nJTIwbmF0dXJlfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60
+
+datasources:
+  mydata:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/tododetails
+      query: |
+        SELECT 
+          id,
+          '$.description', 
+          '$.duedate', 
+          '$.estimated_time', 
+          '$.notes', 
+          '$.tags', 
+          '$.priority', 
+          '$.status', 
+          '$.subject' 
+        FROM [default/tododetails] WHERE id = @id
+      jsonProperties:
+        - notes
+        - tags
+      queryParameters:
+        id: =@ctx.jig.inputs.id
+    
+children:
+  - type: component.custom-component
+    componentId: view-todo-details
+    inputs:
+      info: =@ctx.datasources.mydata
+    
+  - type: component.custom-component
+    componentId: divider
+    
+  - type: component.custom-component
+    componentId: header-2
+    inputs:
+      link: Add Tags
+      title: Tags
+    
+  - type: component.list
+    when: =@ctx.datasources.mydata.tags != null
+    options:
+      data: =@ctx.datasources.mydata.tags
+      maximumItemsToRender: 10
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: view-todo-tags
+        inputs:
+          info: =@ctx.current.item
+
+  - type: component.custom-component
+    when: =@ctx.datasources.mydata.tags = null
+    componentId: add-button
+    inputs:
+      title: Add Tags
+    
+  - type: component.custom-component
+    componentId: divider
+    
+  - type: component.custom-component
+    componentId: header-2
+    inputs:
+      data: =@ctx.datasources.mydata.notes
+      id: =@ctx.datasources.mydata.id
+      link: Add Note
+      title: Notes
+    
+  - type: component.list
+    when: =@ctx.datasources.mydata.notes != null
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.mydata.notes
+      item:
+        componentId: view-todo-notes
+        inputs:
+          info: =@ctx.current.item
+        type: component.custom-component
+
+  - type: component.custom-component
+    when: =@ctx.datasources.mydata.notes = null
+    componentId: add-button
+    inputs:
+      data: []
+      id: =@ctx.datasources.mydata.id
+      title: Add Notes
+    

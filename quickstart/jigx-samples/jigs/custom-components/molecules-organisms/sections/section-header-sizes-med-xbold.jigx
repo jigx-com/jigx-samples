@@ -1,0 +1,28 @@
+title: Section Header Medium Extra Bold
+type: jig.default
+icon: task-list-multiple
+
+children:
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: Section 3 with link custom name
+      link-custom-name: "Soft by" 
+      link: booking       
+
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: Section 3 with default link name
+      link: booking       
+       
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: Section 3 without link
+      link-custom-name: "Soft by" 
+
+  - type: component.image
+    options: 
+      source:
+        uri: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80

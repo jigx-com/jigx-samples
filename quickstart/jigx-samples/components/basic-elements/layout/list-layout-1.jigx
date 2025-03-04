@@ -1,0 +1,33 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color5  
+      direction: row
+      children:
+        - type: component.text
+          options:
+            value: one-line element
+            size: regular  
+            align: center   
+            numberOfLines: 1
+        - type: component.text
+          options:
+            value: two-line element
+            size: regular 
+            align: center
+            numberOfLines: 2
+        - type: component.text
+          options:
+            value: three-line element with long text
+            size: regular 
+            align: center      
+            numberOfLines: 3                       
+        - type: component.text
+          options:
+            value: four-line element with long text
+            size: regular
+            align: center
+            numberOfLines: 4
+  
+  

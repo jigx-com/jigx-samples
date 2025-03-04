@@ -1,0 +1,33 @@
+title: Section Header Extra Large
+type: jig.default
+icon: task-list-multiple
+
+children:
+  - type: component.custom-component
+    componentId: section5
+    inputs:
+      title: Section 5 with link custom name
+      link-custom-name: Button
+      link: booking 
+      numberOfLines: 1
+      
+  - type: component.custom-component
+    componentId: section5
+    inputs:
+      title: Section 5 with default link name
+      link-custom-name: 
+      link: booking 
+      numberOfLines: 2
+
+  - type: component.custom-component
+    componentId: section5
+    inputs:
+      title: Section 5 without link
+      link-custom-name: Button
+      link:  
+      numberOfLines: 
+      
+  - type: component.image
+    options:
+      source:
+        uri: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80

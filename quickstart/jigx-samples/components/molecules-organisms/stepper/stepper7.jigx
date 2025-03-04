@@ -1,0 +1,271 @@
+type: component.default
+inputs:
+  currentStep: 
+    default: 1
+    required: true
+    type: number
+  numberOfSteps:
+    default: 1
+    required: true
+    type: number   
+  step1Name:    
+    default: ""
+    required: false
+    type: string    
+  step2Name:    
+    default: ""
+    required: false
+    type: string  
+  step3Name:    
+    default: ""
+    required: false
+    type: string          
+  step4Name:    
+    default: ""
+    required: false
+    type: string 
+  step5Name:    
+    default: ""
+    required: false
+    type: string       
+# Max steps: 5
+
+children:
+  - type: component.view
+    options:
+      style: 
+        flex: 
+          direction: row
+          grow: 1
+        gap: small
+        # background:
+        #   color: "card"
+        radius: small
+        
+      children:
+        # STEP 1
+        - type: component.view
+          options:
+            style:
+              flex: 
+                grow: 1
+                basis: 1
+                shrink: 1
+              gap: small
+              alignItems: center
+              alignContent: center 
+              border:
+                style: solid
+                emphasis: extra-low
+              radius: medium
+              padding: small
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 1 ? 'primary'
+            children:
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) > 1
+                options:
+                  icon: checkbox-checked
+                  size: regular
+                  color: positive
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) = 1
+                options:
+                  icon: checkbox-unchecked
+                  size: regular 
+                  emphasis: =$number(@ctx.inputs.currentStep) = 1 ? '':"medium"
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.step1Name
+                        size: tiny
+                        align: center
+        # STEP 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              flex: 
+                grow: 1
+                basis: 1
+                shrink: 1
+              gap: small
+              alignItems: center
+              alignContent: center 
+              border:
+                style: solid
+                emphasis: extra-low
+              radius: medium
+              padding: small
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 2 ? 'primary'
+            children:
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) > 2
+                options:
+                  icon: checkbox-checked
+                  size: regular
+                  color: positive 
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) <= 2
+                options:
+                  icon: checkbox-unchecked
+                  size: regular
+                  emphasis: =$number(@ctx.inputs.currentStep) = 2 ? '':"medium"
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1 
+                    justifyContent: center
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.step2Name
+                        emphasis: =$number(@ctx.inputs.currentStep) >=2 ? "none":"medium"       
+                        size: tiny   
+                        align: center
+
+        # STEP 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              flex: 
+                grow: 1
+                basis: 1
+                shrink: 1
+              gap: small
+              alignItems: center
+              alignContent: center 
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 3 ? 'primary'
+              border:
+                style: solid
+                emphasis: extra-low
+              radius: medium
+              padding: small
+            children:
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) > 3
+                options:
+                  icon: checkbox-checked
+                  size: regular
+                  color: positive    
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) <= 3
+                options:
+                  icon: checkbox-unchecked
+                  size: regular
+                  emphasis: =$number(@ctx.inputs.currentStep) = 3 ? '':"medium"
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1 
+                    justifyContent: center
+                  children:         
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.step3Name      
+                        emphasis: =$number(@ctx.inputs.currentStep) >=3 ? "none":"medium"       
+                        size: tiny       
+                        align: center            
+
+        # STEP 4
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 4
+          options:
+            style:
+              flex: 
+                grow: 1
+                basis: 1
+                shrink: 1
+              gap: small
+              alignItems: center
+              alignContent: center 
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 4 ? 'primary'
+              border:
+                style: solid
+                emphasis: extra-low
+              radius: medium
+              padding: small
+            children:
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) > 4
+                options:
+                  icon: checkbox-checked
+                  size: regular
+                  color: positive  
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) <= 4
+                options:
+                  icon: checkbox-unchecked
+                  size: regular
+                  emphasis: =$number(@ctx.inputs.currentStep) = 4 ? '':"medium"
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1 
+                    justifyContent: center
+                  children:            
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.step4Name     
+                        emphasis: =$number(@ctx.inputs.currentStep) >=4 ? "none":"medium"       
+                        size: tiny 
+                        align: center
+        
+        # STEP 5
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) = 5
+          options:
+            style:
+              flex: 
+                grow: 1
+                basis: 1
+                shrink: 1
+              gap: small
+              alignItems: center
+              alignContent: center 
+              background:
+                color: =$number(@ctx.inputs.currentStep) = 5 ? 'primary'
+              border:
+                style: solid
+                emphasis: extra-low
+              radius: medium
+              padding: small
+            children:
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) > 5
+                options:
+                  icon: checkbox-checked
+                  size: regular
+                  color: positive              
+              - type: component.icon
+                when: =$number(@ctx.inputs.currentStep) <= 5
+                options:
+                  icon: checkbox-unchecked
+                  size: regular
+                  emphasis: =$number(@ctx.inputs.currentStep) = 5 ? '':"medium"
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1 
+                    justifyContent: center
+                  children:           
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.step5Name    
+                        emphasis: =$number(@ctx.inputs.currentStep) >=5 ? "none":"medium"       
+                        size: tiny   
+                        align: center

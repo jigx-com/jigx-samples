@@ -1,0 +1,43 @@
+title: Section Header Samples
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1523289333742-be1143f6b766?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZpbGluZ3xlbnwwfHwwfHx8MA%3D%3D
+
+children:
+  - type: component.section
+    options:
+      title: NAME HEADER
+      children:
+        - type: component.custom-component
+          componentId: header-1
+          inputs:
+            title: ='Hello, ' & @ctx.user.displayName
+  - type: component.section
+    options:
+      title: CENTER HEADER
+      children:
+        - type: component.custom-component
+          componentId: header-3
+
+  - type: component.section
+    options:
+      title: HEADER EXAMPLES
+      children:
+        - type: component.custom-component
+          componentId: header-2
+          inputs:
+            link: Edit Header
+            title: Header with Link
+        - type: component.custom-component
+          componentId: header-2
+          inputs:
+            link: ""
+            title: Header with no link

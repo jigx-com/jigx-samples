@@ -1,0 +1,100 @@
+inputs:
+  cardColor:
+    default: "color2"
+    required: true
+    type: string
+  title:
+    default: "Title"
+    required: true
+    type: string
+  subtitle:
+    default: "Subtitle"
+    required: false
+    type: string    
+  balance:
+    default: "Your balance"
+    required: false
+    type: string    
+  currency:
+    default: $
+    required: true
+    type: string  
+  amount:
+    default: '0'
+    required: false
+    type: string
+
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: =@ctx.inputs.cardColor 
+      children:
+        # BACKGROUND LAYER (BUBBLES)
+        - type: component.view
+          options:
+            style:
+              position: absolute
+              top: none
+              right: none
+              bottom: none
+            children: 
+              - type: component.image
+                options:
+                  source:
+                    uri: https://t14345253.p.clickup-attachments.com/t14345253/1c3d3564-de92-4fe1-915b-96c5fc233def/background-6.png?view=open
+
+        # CARD CONTENT
+        - type: component.view
+          options:
+            style:
+              gap: large
+              padding: medium            
+              height: 
+                min: 180
+              justifyContent: center
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: small
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.title 
+                        size: medium
+                        weight: bold
+                    - type: component.text
+                      when: =@ctx.inputs.subtitle 
+                      options:
+                        value: =@ctx.inputs.subtitle 
+                        size: regular
+                        weight: regular    
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal                 
+                  children:
+                    - type: component.text
+                      options:
+                        value: =$uppercase(@ctx.inputs.balance)
+                        weight: bold
+                        size: small
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row
+                          gap: minimal   
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.currency != null ? @ctx.inputs.currency:"0"
+                              size: extra-large
+                              weight: light
+                              align: left                    
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.amount != null ? @ctx.inputs.amount:"0"
+                              size: extra-large
+                              align: left

@@ -1,0 +1,37 @@
+title: Emphasis
+type: jig.default
+icon: animation
+
+
+children:    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Emphasis - Big text / colored card"
+  - type: component.custom-component
+    componentId: emphasis-1
+    
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Emphasis - Big text"
+  - type: component.custom-component
+    componentId: emphasis-2
+    
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Emphasis - Small text"   
+  - type: component.custom-component
+    componentId: emphasis-3
+    
+
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Emphasis - Small text"
+  - type: component.custom-component
+    componentId: emphasis-4    

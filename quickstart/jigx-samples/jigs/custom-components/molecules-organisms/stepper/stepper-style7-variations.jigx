@@ -1,0 +1,156 @@
+title: Stepper 7 - Variations
+type: jig.default
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 2 items
+      
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 2
+      currentStep: 1
+      step1Name: Personal detail
+      step2Name: Policy 
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 2
+      currentStep: 2
+      step1Name: Personal detail
+      step2Name: Policy 
+ 
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 3 items
+      
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 3
+      currentStep: 1
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 3
+      currentStep: 2
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 3
+      currentStep: 3  
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+         
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 4 items
+      
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 4
+      currentStep: 1
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 4
+      currentStep: 2
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 4
+      currentStep: 3  
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 4
+      currentStep: 4    
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step                 
+
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 5 items
+      
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 5
+      currentStep: 1
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+      step5Name: Step 5
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 5
+      currentStep: 2
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+      step5Name: Step 5 
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 5
+      currentStep: 3  
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+      step5Name: Step 5
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 5
+      currentStep: 4  
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+      step5Name: Step 5
+  - type: component.custom-component
+    componentId: stepper7
+    inputs:
+      numberOfSteps: 5
+      currentStep: 5  
+      step1Name: Personal detail
+      step2Name: Policy 
+      step3Name: insured items
+      step4Name: Last step
+      step5Name: Step 5
+
+           

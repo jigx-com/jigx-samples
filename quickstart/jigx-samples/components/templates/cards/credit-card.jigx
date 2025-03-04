@@ -1,0 +1,186 @@
+# Proposed version
+# inputs:
+#   card:
+#     type: object
+#     properties:
+#       color:
+#         defaultValue: color1
+#         required: true
+#         type: string
+
+
+inputs:      
+  cardColor:
+    default: color1
+    required: true
+    type: string
+  cardBackground: 
+    default: 1
+    required: true
+    type: number
+  cardNumber: 
+    default: 
+    required: true
+    type: number    
+  cardHolder:
+    default: Name
+    required: true
+    type: string
+  cardExpiration: 
+    default: XX/XX
+    required: true
+    type: string
+  cardType: 
+    default: visa
+    required: true
+    type: string
+
+type: component.default
+children:
+
+  - type: component.view
+    options:
+      style:
+        alignItems: center
+        height: 210
+        margin: small
+      children:
+      
+        - type: component.card
+          options:
+            color: =@ctx.inputs.cardColor
+            children:
+              # CARD BACKGROUND
+              - type: component.view
+                options:
+                  style:
+                    overflow: hidden
+                    position: absolute
+                    top: none
+                    left: none
+                  children: 
+                    - type: component.image
+                      when: =@ctx.inputs.cardBackground = 1
+                      options:
+                        source:
+                          uri: https://t14345253.p.clickup-attachments.com/t14345253/9efb6b34-afd9-49ff-a8dd-ac66fc0b39e3/background-1.png
+                        size: 
+                          height: 250
+                          width: 340
+                    - type: component.image
+                      when: =@ctx.inputs.cardBackground = 2
+                      options:
+                        source:
+                          uri: https://t14345253.p.clickup-attachments.com/t14345253/ac1385e1-becf-415f-b965-51ed3250fbc5/background-2.png
+                        size: 
+                          height: 250
+                          width: 340
+                    - type: component.image
+                      when: =@ctx.inputs.cardBackground = 3
+                      options:
+                        source:
+                          uri: https://t14345253.p.clickup-attachments.com/t14345253/98401b3b-8f11-4727-8ba5-ab5863694fe7/background-3.png
+                        size: 
+                          height: 250
+                          width: 340    
+                    - type: component.image
+                      when: =@ctx.inputs.cardBackground = 4
+                      options:
+                        source:
+                          uri: https://t14345253.p.clickup-attachments.com/t14345253/e66d5ce5-138f-4abe-9362-d6366195cba7/background-4.png
+                        size: 
+                          height: 250
+                          width: 340                                            
+              
+              # CARD CONTENT
+              - type: component.view
+                options:
+                  style:
+                    gap: medium
+                    padding: 
+                      horizontal: medium
+                    justifyContent: center
+                    margin: 
+                      vertical: medium
+                    flex: 
+                      grow: 1
+                    height: 210  
+                    width: 316
+                  children:
+                    # LOGO
+                    - type: component.view
+                      options:
+                        style:
+                          width: 60
+                          height: 30
+                        children:
+                          - type: component.image
+                            when: =@ctx.inputs.cardType = "visa"
+                            options:
+                              source:
+                                uri: https://t14345253.p.clickup-attachments.com/t14345253/75437586-544f-412f-86be-ae157af67236/visa.png?view=open
+                              size: flexible
+                              resizeMode: contain    
+                          - type: component.image
+                            when: =@ctx.inputs.cardType = "mastercard"
+                            options:
+                              source:
+                                uri: https://t14345253.p.clickup-attachments.com/t14345253/874ac4df-4f39-4f17-9732-54479979691c/mastercard.png?view=open                                                        
+                              size: flexible
+                              resizeMode: contain                                  
+
+                    # CARD NUMBER
+                    - type: component.text
+                      options:
+                        value: ='**** **** **** ' & @ctx.inputs.card.cardNumber
+                        size: large
+                        align: left
+                    # CHIP
+                    - type: component.view
+                      options:
+                        style:
+                          width: 40
+                          height: 32
+                        children:
+                          - type: component.image
+                            options:
+                              source:
+                                uri: https://t14345253.p.clickup-attachments.com/t14345253/d99fd5dd-8fb1-4ccf-b9e0-703d7f5321f8/chip3.png?view=open
+                              size: flexible   
+                              resizeMode: contain
+                              
+                    # CARD HOLDER AND EXPIRATION
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: row                           
+                          justifyContent: space-between
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                gap: minimal
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: =$uppercase("Card holder")
+                                    size: tiny
+                                    emphasis: medium
+                                - type: component.text
+                                  options:
+                                    value: =$uppercase(@ctx.inputs.cardHolder)                             
+                          - type: component.view
+                            options:
+                              style:
+                                gap: minimal
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: =$uppercase("Valid thru")
+                                    size: tiny
+                                    emphasis: medium                              
+                                - type: component.text
+                                  options:
+                                    value: =$uppercase(@ctx.inputs.cardExpiration)

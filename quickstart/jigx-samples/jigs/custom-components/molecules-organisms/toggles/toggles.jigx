@@ -1,0 +1,120 @@
+title: Toggles
+type: jig.default
+icon: toggle-setting-off
+
+onFocus:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.set-state
+        when: =$not($exists(@ctx.solution.state.list-item-switch))
+        options:
+          state: =@ctx.solution.state.tab
+          value: ""
+
+      - type: action.set-state
+        when: =$not($exists(@ctx.solution.state.switch))
+        options:
+          state: =@ctx.solution.state.switch
+          value: switch-item1
+
+
+datasources:
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - category-name: All
+          state-value: ""
+        - category-name: Completed
+          state-value: completed
+        - category-name: In Progress
+          state-value: in-progress
+        - category-name: Closed
+          state-value: closed
+
+children:
+  - type: component.section
+    options:
+      title: List item categories
+      children:
+        - type: component.list
+          options:
+            maximumItemsToRender: 8
+            data: =@ctx.datasources.categories
+            isHorizontal: true
+            item:
+              type: component.custom-component
+              componentId: list-item-switch
+              inputs:
+                switchName: =@ctx.current.item.category-name
+                switchValue: =@ctx.current.item.state-value
+
+
+  - type: component.section
+    options:
+      title: Switch
+      children:
+        - type: component.custom-component
+          componentId: switch
+          inputs:
+            extraSpace: false
+            switchName1: Item 1
+            switchName2: Item 2
+            switchName3: Item 3
+            switchValue1: switch-item1
+            switchValue2: switch-item2
+            switchValue3: switch-item3
+          
+    
+  - type: component.section
+    options:
+      title: Switch - Highlighted
+      children:
+        - type: component.custom-component
+          componentId: switch
+          inputs:
+            extraSpace: false
+            highlighted: true
+            switchName1: Item 1
+            switchName2: Item 2
+            switchName3: Item 3
+            switchValue1: switch-item1
+            switchValue2: switch-item2
+            switchValue3: switch-item3
+          
+    
+  - type: component.section
+    options:
+      title: Switch with counters
+      children:
+        - type: component.custom-component
+          componentId: switch
+          inputs:
+            extraSpace: false
+            switchCount1: 3
+            switchCount2: 1
+            switchName1: Projects
+            switchName2: Tasks
+            switchValue1: switch-item1
+            switchValue2: switch-item2
+        
+    
+  - type: component.section
+    options:
+      title: Switch with counters - Highlighted
+      children:
+        - type: component.custom-component
+          componentId: switch
+          inputs:
+            extraSpace: false
+            highlighted: true
+            switchCount1: 3
+            switchCount2: 1
+            switchName1: Projects
+            switchName2: Tasks
+            switchValue1: switch-item1
+            switchValue2: switch-item2
+          
+    

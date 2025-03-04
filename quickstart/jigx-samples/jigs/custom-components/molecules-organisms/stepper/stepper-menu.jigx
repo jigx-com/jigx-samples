@@ -1,0 +1,69 @@
+title: Stepper
+type: jig.list
+icon: phone-swap
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: stepper-style1
+          title: Stepper Style 1
+          icon: phone-swap
+          color: color1
+        - id: 2
+          jigId: stepper-style2
+          title: Stepper Style 2
+          icon: phone-swap
+          color: color2
+        - id: 3
+          jigId: stepper-style3
+          title: Stepper Style 3
+          icon: phone-swap
+          color: color3
+        - id: 4
+          jigId: stepper-style4
+          title: Stepper Style 4
+          icon: phone-swap
+          color: color4
+        - id: 5
+          jigId: stepper-style5
+          title: Stepper Style 5
+          icon: phone-swap
+          color: color5
+        - id: 6
+          jigId: stepper-style6
+          title: Stepper Style 6
+          icon: phone-swap
+          color: color6
+        - id: 7
+          jigId: stepper-style7
+          title: Stepper Style 7
+          icon: phone-swap
+          color: color7
+        - id: 8
+          jigId: stepper-style8
+          title: Stepper Style 8
+          icon: phone-swap
+          color: color8
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

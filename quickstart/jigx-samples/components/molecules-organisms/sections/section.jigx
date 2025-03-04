@@ -1,0 +1,29 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      children:
+        - type: component.text
+          options:
+            emphasis: high
+            size: regular
+            value: =@ctx.inputs.title
+            weight: bold
+          
+        - type: component.text
+          options:
+            color: primary
+            size: regular
+            value: =@ctx.inputs.link
+          
+      style:
+        alignContent: space-between
+        alignItems: center
+        flex:
+          direction: row
+          grow: 1
+        justifyContent: space-between
+        margin:
+          top: medium
+    
+

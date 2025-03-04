@@ -1,0 +1,140 @@
+type: component.default
+inputs:
+  button1Icon:
+    default: icon
+    required: false
+    type: string
+  button1LinkTo:
+    default: ""
+    required: false
+    type: string
+  button1Text:
+    default: Button
+    required: false
+    type: string
+  button2Icon:
+    default: icon
+    required: false
+    type: string
+  button2LinkTo:
+    default: ""
+    required: false
+    type: string
+  button2Text:
+    default: Button
+    required: false
+    type: string
+  button3Icon:
+    default: icon
+    required: false
+    type: string
+  button3LinkTo:
+    default: ""
+    required: false
+    type: string
+  button3Text:
+    default: Button
+    required: false
+    type: string
+  description:
+    default: Description
+    required: false
+    type: string
+  subtitle:
+    default: Position
+    required: true
+    type: string
+  title:
+    default: Name
+    required: true
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: center
+        gap: large
+
+      children:
+        - type: component.avatar
+          options:
+            title: AV
+            size: large
+            uri: https://images.unsplash.com/photo-1704636487929-6a09f864d53f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+          
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              gap: minimal
+
+            children:
+              - type: component.text
+                options:
+                  emphasis: medium
+                  value: "@luckyluke"
+
+              - type: component.text
+                options:
+                  size: large
+                  value: Lucas Donovan
+
+              - type: component.text
+                options:
+                  emphasis: medium
+                  value: Position
+
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: row
+              gap: small
+
+            children:
+              - type: component.button
+                when: =$exists(@ctx.inputs.button1LinkTo)
+                options:
+                  type: primary
+                  title: =@ctx.inputs.button1Text
+                  icon:
+                    left: =@ctx.inputs.button1Icon
+                  isCompact: true
+                  onPress:
+                    type: action.go-to
+                    options:
+                      linkTo: =@ctx.inputs.button1LinkTo
+
+              - type: component.button
+                when: =$exists(@ctx.inputs.button2LinkTo)
+                options:
+                  type: secondary
+                  title: =@ctx.inputs.button2Text
+                  icon:
+                    left: =@ctx.inputs.button2Icon
+                  isCompact: true
+                  onPress:
+                    type: action.go-to
+                    options:
+                      linkTo: =@ctx.inputs.button2LinkTo
+
+              - type: component.button
+                when: =$exists(@ctx.inputs.button3LinkTo)
+                options:
+                  type: secondary
+                  title: =@ctx.inputs.button3Text
+                  icon:
+                    left: =@ctx.inputs.button3Icon
+                  isCompact: true
+                  onPress:
+                    type: action.go-to
+                    options:
+                      linkTo: =@ctx.inputs.button3LinkTo
+
+        - type: component.text
+          when: =@ctx.inputs.description
+          options:
+            align: center
+            emphasis: medium
+            value: =@ctx.inputs.description

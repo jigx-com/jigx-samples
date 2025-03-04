@@ -1,0 +1,41 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: flex-start
+        flex:
+          direction: row
+        gap: medium
+      children:
+        - type: component.icon
+          options:
+            icon: =@ctx.inputs.icon
+            shape: rounded
+            size: medium
+            type: duotone
+
+        - type: component.view
+          options:
+            style:
+              alignItems: flex-start
+              flex:
+                direction: column
+                grow: 1
+                shrink: 1
+              gap: small
+              padding:
+                vertical: medium
+            children:
+              - type: component.text
+                options:
+                  size: medium
+                  value: =@ctx.inputs.title
+                  weight: bold
+
+              - type: component.text
+                when: =@ctx.inputs.subtitle != null ? true:false
+                options:
+                  emphasis: medium
+                  value: =@ctx.inputs.subtitle
+

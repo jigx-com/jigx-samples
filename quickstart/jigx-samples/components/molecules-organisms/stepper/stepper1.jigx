@@ -1,0 +1,182 @@
+# USAGE:
+# - type: component.custom-component
+#   componentId: stepper1
+#   inputs:
+#     numberOfSteps: 1-6
+#     currentStep: 1-6
+
+inputs:
+  numberOfSteps:
+    default: 1
+    required: true
+    type: number
+  currentStep:    
+    default: 1
+    required: true
+    type: number
+
+type: component.default
+children:
+
+  # STEPPER
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          direction: row
+        alignItems: center
+        justifyContent: center
+        
+      children: 
+        # POINT 1
+        - type: component.view
+          options:
+            style:
+              background:
+                color: primary
+              radius: large
+              height: 24
+              width: 24
+            children: []
+        # LINE 1
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 2 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 2 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                  
+            children: []                        
+
+        # POINT 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 2
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 2 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 2 ? "":"low"
+              radius: large
+              height: 24
+              width: 24
+            children: []  
+        # LINE 2
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 3 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 3 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                  
+            children: []                                                
+
+        # POINT 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 3
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 3 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 3 ? "":"low"
+              radius: large
+              height: 24
+              width: 24
+            children: []   
+        # LINE 3
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 4
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 4 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 4 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                  
+            children: []                          
+
+        # POINT 4
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 4
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 4 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 4 ? "":"low"
+              radius: large
+              height: 24
+              width: 24
+            children: []  
+        # LINE 4
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 5
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 5 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 5 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                  
+            children: []                          
+
+        # POINT 5
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 5
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 5 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 5 ? "":"low"
+              radius: large
+              height: 24
+              width: 24
+            children: []   
+        # LINE 5
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 6
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 6 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 6 ? "":"low"
+              height: 2
+              flex: 
+                grow: 1
+              width: 
+                min: 8
+                max: 40                  
+            children: []                           
+
+        # POINT 6
+        - type: component.view
+          when: =$number(@ctx.inputs.numberOfSteps) >= 6 
+          options:
+            style:
+              background: 
+                color: =$number(@ctx.inputs.currentStep) >= 6 ? "primary":"element"
+                emphasis: =$number(@ctx.inputs.currentStep) >= 6 ? "":"low"
+              radius: large
+              height: 24
+              width: 24
+            children: []                                                                                                 
+  

@@ -27,8 +27,10 @@ children:
             children:
                   - type: component.location
                     options:
-                      address: =@ctx.datasources.users[3].address
-                      zoomLevel: 10                        
+                      viewPoint:
+                        centerPosition: middle
+                        address: =@ctx.datasources.users[3].address
+                        zoomLevel: 10                         
       color: color3
   - type: component.card
     options:

@@ -1,0 +1,22 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: column
+        gap: minimal
+        margin:
+          bottom: large
+          left: medium
+
+      children:
+        - type: component.text
+          options:
+            size: medium
+            value: =@ctx.inputs.info.title
+            weight: bold
+          
+        - type: component.text
+          options:
+            value: =@ctx.inputs.info.note

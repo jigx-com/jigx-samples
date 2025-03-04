@@ -1,0 +1,16 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      children: []
+      style:
+        background:
+          color: ="element"
+        emphasis: extra-low
+        flex:
+          grow: 1
+        height: 3
+        margin:
+          bottom: regular
+    
+

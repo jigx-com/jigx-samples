@@ -1,0 +1,60 @@
+title: Lists
+type: jig.list
+icon: list-quill
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: list-horizontal-repair
+          title: List - Horizontal (Repairs)
+          icon: list-quill
+          color: color1
+        - id: 2
+          jigId: list-horizontal
+          title: List - Horizontal
+          icon: list-quill
+          color: color2
+        - id: 3
+          jigId: list-large-description
+          title: List - Large Description
+          icon: list-quill
+          color: color3
+        - id: 4
+          jigId: list-products
+          title: List - Products
+          icon: list-quill
+          color: color4
+        - id: 5
+          jigId: list-todo
+          title: List - ToDo
+          icon: list-quill
+          color: color5
+        - id: 6
+          jigId: list-vertical
+          title: List - Vertical (Jobs)
+          icon: list-quill
+          color: color6
+          
+          
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

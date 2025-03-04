@@ -1,0 +1,118 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          shrink: 1
+          basis: 1
+          direction: row
+        justifyContent: space-evenly
+      children:
+        - type: component.view
+          options:
+            style:
+              justifyContent: center
+              alignItems: center
+              height: 60
+              width: 60
+              radius: large
+              background:
+                color: =$number(@ctx.solution.state.rating) = 1 ? 'color3':''
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 1
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  value: 😭
+        - type: component.view
+          options:
+            style:
+              justifyContent: center
+              alignItems: center
+              height: 60
+              width: 60
+              radius: large
+              background:
+                color: =$number(@ctx.solution.state.rating) = 2 ? 'color3':''
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 2
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  value: ☹️
+        - type: component.view
+          options:
+            style:
+              justifyContent: center
+              alignItems: center
+              height: 60
+              width: 60
+              radius: large
+              background:
+                color: =$number(@ctx.solution.state.rating) = 3 ? 'color3':''
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 3
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  value: 😐
+        - type: component.view
+          options:
+            style:
+              justifyContent: center
+              alignItems: center
+              height: 60
+              width: 60
+              radius: large
+              background:
+                color: =$number(@ctx.solution.state.rating) = 4 ? 'color3':''
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 4
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  value: 🙂
+        - type: component.view
+          options:
+            style:
+              justifyContent: center
+              alignItems: center
+              height: 60
+              width: 60
+              radius: large
+              background:
+                color: =$number(@ctx.solution.state.rating) = 5 ? 'color3':''
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 5
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  value: 😍
+                  

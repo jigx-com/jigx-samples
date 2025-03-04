@@ -1,0 +1,41 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      color: color12
+      children:
+        - type: component.progress-bar
+          options:
+            steps: 2
+            value:
+              current: =@ctx.solution.state.progressValue * 1
+              max: 20
+          
+        - type: component.progress-bar
+          options:
+            steps: 3
+            value:
+              current: =@ctx.solution.state.progressValue * 1.5
+              max: 20
+          
+        - type: component.progress-bar
+          options:
+            steps: 4
+            value:
+              current: =@ctx.solution.state.progressValue * 2
+              max: 20
+          
+        - type: component.progress-bar
+          options:
+            steps: 5
+            value:
+              current: =@ctx.solution.state.progressValue * 2.5
+              max: 20
+          
+        - type: component.progress-bar
+          options:
+            steps: 6
+            value:
+              current: =@ctx.solution.state.progressValue * 3
+              max: 20

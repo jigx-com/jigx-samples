@@ -1,0 +1,69 @@
+title: Sections
+type: jig.list
+icon: task-list-multiple
+
+datasources:
+  menuList:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: section-header-greetings
+          title: Section Header Greetings
+          icon: task-list-multiple
+          color: color1
+        - id: 2
+          jigId: section-header-samples
+          title: Section Header Samples
+          icon: task-list-multiple
+          color: color2
+        - id: 3
+          jigId: section-header-sizes-reg
+          title: Section Sizes - Regular
+          icon: task-list-multiple
+          color: color3
+        - id: 4
+          jigId: section-header-sizes-med
+          title: Section Sizes - Medium
+          icon: task-list-multiple
+          color: color4
+        - id: 5
+          jigId: section-header-sizes-med-xbold
+          title: Section Sizes - Medium (Extra Bold)
+          icon: task-list-multiple
+          color: color5
+        - id: 6
+          jigId: section-header-sizes-large
+          title: Section Sizes - Large
+          icon: task-list-multiple
+          color: color6
+        - id: 7
+          jigId: section-header-sizes-extra-large
+          title: Section Sizes - Extra Large
+          icon: task-list-multiple
+          color: color7
+        - id: 8
+          jigId: section-header-subtitle
+          title: Section Header with Subtitle
+          icon: task-list-multiple
+          color: color8
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement:
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement:
+      element: icon
+      icon: arrow-right-1
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

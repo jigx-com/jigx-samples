@@ -1,0 +1,21 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding: 
+          left: small
+          top: regular
+      children:
+        - type: component.card
+          options:
+            color: =@ctx.solution.state.selectedTime = @ctx.inputs.time ? 'primary':''
+            onPress: 
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.selectedTime
+                value: =@ctx.inputs.time
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.time

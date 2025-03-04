@@ -1,0 +1,41 @@
+title: Cards in List
+type: jig.default
+icon: credit-card
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1493932484895-752d1471eab5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80
+
+datasources:
+  cardList:
+    type: datasource.static
+    options:
+      data:
+        - icon: alert-circle
+          title: Title 1
+          subtitle: Subtitle 1
+          button: Button2
+        - icon: alert-circle
+          title: Title 2
+          subtitle: Subtitle 2
+          button: Button2
+
+children:   
+  - type: component.list
+    options:
+      data: =@ctx.datasources.cardList
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: cards-list
+        inputs:
+          icon: =@ctx.current.item.icon
+          title: =@ctx.current.item.title
+          subtitle:  =@ctx.current.item.subtitle
+          button: =@ctx.current.item.button

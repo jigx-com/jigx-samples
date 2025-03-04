@@ -1,0 +1,132 @@
+type: component.default
+children:      
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+          grow: 1   
+        padding: 
+          bottom: regular
+      children:         
+        - type: component.card
+          options:
+            direction: column
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1
+                    justifyContent: center 
+                    gap: small
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                            shrink: 1
+                          justifyContent: center 
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.brand     
+                              size: regular
+                              weight: bold
+                              align: left   
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.name     
+                              size: small
+                              align: left   
+                    - type: component.icon
+                      options:
+                        icon: love-it
+              - type: component.image
+                options:
+                  source:
+                    uri: =@ctx.inputs.image       
+                  height: 320
+                  resizeMode: contain
+
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1  
+                    justifyContent: flex-start
+                    alignItems: flex-start
+                    gap: small
+                  children:     
+                         
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                            shrink: 1
+                          justifyContent: center    
+                          gap: minimal
+                        children:                  
+                          - type: component.view
+                            options:
+                              children: 
+                              - type: component.text
+                                options:
+                                  value: =@ctx.inputs.sale
+                                  size: small
+                                  align: left
+                              style:
+                                justifyContent: center   
+                                background:
+                                  color: color9
+                                flex: 
+                                  grow: 0
+                                alignSelf: flex-start
+                                padding: minimal
+                                radius: tiny
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.old-price
+                              size: small
+                              align: left
+                              emphasis: medium
+                              decoration: line-through
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.new-price
+                              size: medium
+                              weight: extra-bold
+                              align: left    
+                              color: color4
+                          - type: component.text
+                            options:
+                              value: VAT included
+                              size: tiny
+                              align: left    
+                              emphasis: medium
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.best-price
+                              size: tiny
+                              align: left    
+                              emphasis: medium  
+                              numberOfLines: 2
+                    - type: component.view
+                      options:
+                        children: 
+                          - type: component.button
+                            options:
+                              title: Add to cart
+                              isCompact: true
+                              type: primary
+                        style:   
+                          justifyContent: center
+                                                                  
+
+

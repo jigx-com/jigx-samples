@@ -1,0 +1,44 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding:
+          bottom: medium
+          right: small
+          top: small
+      children:
+        - type: component.card
+          options:
+            color: =@ctx.solution.state.profile = @ctx.inputs.title ? 'color1':''
+            direction: column
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: column
+                    gap: small
+                    width: 80
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: =@ctx.inputs.icon
+
+                    - type: component.text
+                      options:
+                        align: center
+                        numberOfLines: 1
+                        size: small
+                        value: =@ctx.inputs.title
+
+            onPress:
+              type: action.action-list
+              options:
+                actions:
+                  - type: action.set-state
+                    options:
+                      state: =@ctx.solution.state.profile
+                      value: =@ctx.inputs.title
+

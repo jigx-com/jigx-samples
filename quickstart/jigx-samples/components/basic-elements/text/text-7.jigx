@@ -1,0 +1,47 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column 
+
+      children:
+        
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: extra-large
+            numberOfLines: 3
+            color: primary
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: large  
+            numberOfLines: 3
+            color: color1
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: medium
+            numberOfLines: 3
+            color: color2
+
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: regular
+            numberOfLines: 3
+            color: color3
+            
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: small
+            numberOfLines: 3
+            color: color4
+
+        - type: component.text
+          options:
+            value: Is designed to be inclusive, so remote team members truly feel like part of the group. 
+            size: tiny
+            numberOfLines: 3
+            color: color5

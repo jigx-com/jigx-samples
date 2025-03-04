@@ -49,9 +49,11 @@ item:
                     type: component.entity-field
               type: component.field-row
         type: component.entity
-      - options:
-          address: =@ctx.current.item.to
-        type: component.location
+      - type: component.location
+        options:
+          viewPoint:
+            centerPosition: middle
+            address: =@ctx.current.item.to
     header:
       centerElement:
         type: component.stage

@@ -1,0 +1,19 @@
+title: Business Card
+type: jig.default
+icon: business-card-1
+
+children:
+  - type: component.custom-component
+    componentId: business-card
+    inputs:
+      cardColor: color2
+      company: null
+      employee:
+        address: 742 Evergreen Terrace, Springfield, IL 62704
+        email: james@jigx.com
+        name: James Whitfield
+        phone: (123) 456 7890
+        position: Designer
+      image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfj-Ghjj7eipWcb7zAuwFir0HzV_1ztXEV3Q&usqp=CAU
+    
+

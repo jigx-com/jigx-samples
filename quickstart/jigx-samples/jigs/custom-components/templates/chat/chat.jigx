@@ -1,0 +1,84 @@
+title: Chat
+type: jig.default
+icon: phone-chatting
+
+actions:
+  - children:
+      - type: action.go-back
+        options:
+          title: New Message
+
+datasources:
+  users:
+    type: datasource.static
+    options:
+      data:
+        - first-name: Sabrina 
+          middle-name: 
+          last-name: Morales
+          avatar: https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          message: Hey bud, can you please help me with something special for the board meeting?
+          time-of-change: 10:33
+          new-number: 3
+
+        - first-name: Elle 
+          middle-name: 
+          last-name: Macdonald
+          avatar: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+          message: I was just thinking about you!
+          time-of-change: 9:21   
+          new-number: 1
+
+        - first-name: Arabella  
+          middle-name: (Belle)
+          last-name: Walter
+          avatar: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+          message: You are a great example for others
+          time-of-change: 08:31  
+          new-number: 0
+
+        - first-name: Jasper 
+          middle-name: 
+          last-name: Rhodes
+          avatar: https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+          message: I appreciate all of your opinions.
+          time-of-change: 2 days ago
+          new-number: 0
+
+        - first-name: Milo 
+          middle-name: 
+          last-name: Hartman
+          avatar: https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80
+          message: Hey bud, can you please help me with something special for the board meeting?
+          time-of-change: 2 Days ago 
+          new-number: 1                
+
+children:
+  - type: component.list
+    options:
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      data: =@ctx.datasources.users
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: favourite-users
+        inputs:
+          avatar: =@ctx.current.item.avatar
+          first-name: =@ctx.current.item.first-name
+
+  - type: component.list
+    options:
+      data: =@ctx.datasources.users
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: user-chat-1
+        inputs:
+          avatar: =@ctx.current.item.avatar
+          first-name: =@ctx.current.item.first-name
+          middle-name: =@ctx.current.item.middle-name
+          last-name: =@ctx.current.item.last-name
+          message: =@ctx.current.item.message
+          time-of-change: =@ctx.current.item.time-of-change
+          new-number: =@ctx.current.item.new-number

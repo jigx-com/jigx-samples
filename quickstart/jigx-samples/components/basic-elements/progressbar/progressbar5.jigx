@@ -1,0 +1,24 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color1
+      children:
+        - type: component.progress-bar
+          options:
+            value:
+              current: 7
+              max: 20 
+            size: small
+            # color: color2
+            title:
+              value: You rock!
+              align: center
+            subtitle:
+              value: 2 of 3 New customers
+              position: bottom
+              align: right
+            helperText: Helper text that is quite long
+            # errorText: Error text
+            
+              

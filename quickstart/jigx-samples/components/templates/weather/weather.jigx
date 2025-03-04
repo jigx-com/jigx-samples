@@ -1,0 +1,176 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      # color: color9
+      children:
+        - type: component.view
+          options:
+            style:
+              gap: small
+              flex: 
+                direction: row
+            children:
+              - type: component.view
+                options:
+                  style: 
+                    width: 160
+                    gap: minimal
+                  children:
+                    - type: component.image
+                      options:
+                        resizeMode: contain
+                        height: 160
+                        source:
+                          uri: =@ctx.inputs.image
+                        
+                    - type: component.view
+                      options:
+                        style:
+                          padding: 
+                            # left: medium
+                            top: medium
+                          
+                        children:
+                          
+                          - type: component.text
+                            options:
+                              value: Sunny
+                              # align: center
+                              size: large
+                              # emphasis: high
+                              # weight: regular
+                          - type: component.text
+                            options:
+                              value: Sunday, 12 Feb
+                        
+                          
+              - type: component.view
+                options:
+                  style: 
+                    
+                    alignItems: center
+                    flex: 
+                      grow: 1
+                    padding: 
+                      top: large
+                    # gap: small
+                    
+                  children:
+                
+                    
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.max & 'C'
+                        size: extra-large
+                        # emphasis: high
+                      
+                    - type: component.text
+                      options:
+                        value: Feels like 25°
+                        size: regular
+                        weight: regular
+                        
+                    - type: component.view
+                      options:
+                        style:
+                          # background:
+                          #   color: color1
+                          justifyContent: center
+                          alignItems: flex-end
+                          padding: 
+                            top: medium
+                            left: medium
+                          gap: small
+                          flex: 
+                            grow: 1
+                            direction: row
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                
+                                justifyContent: center
+                                alignItems: center
+                                flex: 
+                                  grow: 1
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: 6:00 am
+                                    weight: semi-bold
+                                    size: small
+                                - type: component.view
+                                  options:
+                                    style:
+                                      padding: 
+                                        top: small
+                                      # emphasis: high
+                                      justifyContent: center
+                                      alignItems: center
+                                    children:
+                                      - type: component.avatar
+                                        options:
+                                          size: small
+                                          title: ""
+                                          uri: data:image/png;base64,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
+                                          
+                                      - type: component.text
+                                        options:
+                                          value: Sunrise
+                                          size: small
+                          - type: component.view
+                            options:
+                              style:
+                                justifyContent: center
+                                alignItems: center
+                                flex: 
+                                  grow: 1
+                                
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: 8:00 pm
+                                    weight: semi-bold
+                                    size: small
+                                - type: component.view
+                                  options:
+                                    style:
+                                      padding: 
+                                        top: small
+                                      # emphasis: high
+                                      justifyContent: center
+                                      alignItems: center
+                                    children:
+                                      
+                                      - type: component.avatar
+                                        options:
+                                          size: small
+                                          title: ""
+                                          uri: data:image/png;base64,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
+                                      - type: component.text
+                                        options:
+                                          value: Sunset
+                                          size: small
+  - type: component.view
+    options:
+      style:
+        emphasis: medium
+        flex: 
+          direction: row
+        padding:  
+          top: large
+          left: small
+          # bottom: medium
+        alignContent: center
+        gap: small
+        
+      children:
+        - type: component.icon
+          options:
+            icon: calendar
+            size: small
+        - type: component.text
+          options:
+            value: 7-day forecast
+            size: regular

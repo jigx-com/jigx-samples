@@ -1,0 +1,90 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          grow: 1
+          shrink: 1
+          basis: 1
+          direction: row
+        justifyContent: space-evenly
+      children:
+        - type: component.view
+          options:
+            style: {}
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 1 
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  emphasis: =$number(@ctx.solution.state.rating) = 1 ? '':'medium'
+                  value: 😭
+        - type: component.view
+          options:
+            style: {}
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 2 
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  emphasis: =$number(@ctx.solution.state.rating) = 2 ? '':'medium'
+                  value: ☹️
+        - type: component.view
+          options:
+            style: {}
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 3  
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  
+                  size: extra-large
+                  emphasis: =$number(@ctx.solution.state.rating) = 3 ? '':'medium'
+                  value: 😐
+        - type: component.view
+          options:
+            style: {}
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 4 
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  size: extra-large
+                  emphasis: =$number(@ctx.solution.state.rating) = 4 ? '':'medium'
+                  value: 🙂
+        - type: component.view
+          options:
+            style: {}
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 5 
+            children:
+              - type: component.text
+                options:
+                  align: center
+                  
+                  size: extra-large
+                  emphasis: =$number(@ctx.solution.state.rating) = 5 ? '':'medium'
+                  value: 😍
+            

@@ -1,0 +1,103 @@
+title: Add new contact
+type: jig.default
+icon: book-address
+
+inputs:
+  id: 
+    type: string
+    required: true
+    
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+
+datasources:
+  contactData: 
+    type: datasource.sqlite
+    options:
+# The isDocument property for the datasource is set to true.
+# As a result, the datasource will return as a single record to be displayed,
+# instead of an array of records.  
+      isDocument: true
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/contacts
+      query: |
+        SELECT 
+          id,
+          '$.firstName',
+          '$.lastName',
+          '$.jobTitle',
+          '$.companyName',
+          '$.phone',
+          '$.email' 
+        FROM 
+          [default/contacts]
+         WHERE
+          id = @contactId
+      queryParameters:
+        contactId: =@ctx.jig.inputs.id
+        
+children:
+  - type: component.form
+    instanceId: new-contact
+    options:
+      initialValues: =@ctx.datasources.contactData
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.section
+          options:
+            title: Personal informations
+            children:
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  label: First name
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last name
+              - type: component.email-field
+                instanceId: email
+                options:
+                  label: Email
+                  icon: email
+              - type: component.number-field
+                instanceId: phone
+                options:
+                  label: Phone number
+                  icon: phone
+        - type: component.section
+          options:
+            title: Business informations
+            children:
+              - type: component.text-field
+                instanceId: jobTitle
+                options:
+                  label: Position
+              - type: component.text-field
+                instanceId: companyName
+                options:
+                  label: Company Name
+            
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Create Record
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/contacts
+          method: create
+          data:
+            firstName: =@ctx.components.firstName.state.value
+            lastName: =@ctx.components.lastName.state.value
+            email: =@ctx.components.email.state.value
+            phone: =@ctx.components.phone.state.value
+            jobTitle: =@ctx.components.jobTitle.state.value
+            companyName: =@ctx.components.companyName.state.value

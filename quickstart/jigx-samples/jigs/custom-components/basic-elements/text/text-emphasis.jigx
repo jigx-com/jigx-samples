@@ -1,0 +1,11 @@
+title: Text (Emphasis)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Emphasis" 
+  - type: component.custom-component
+    componentId: text-4

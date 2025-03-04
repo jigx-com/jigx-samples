@@ -10,7 +10,7 @@ children:
       align: left
 
 widgets:    
-  2x2:
+  avatar-widget:
     type: widget.avatar
     options:
       text: =$substring($substringBefore(@ctx.datasources.static-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.static-global.name, " "), 0, 1)

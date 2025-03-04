@@ -1,0 +1,37 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color2  #nejdou stíny, pokud změním barvu karty
+      direction: column 
+      children:                    
+        - type: component.text
+          options:
+            value: Extra Large
+            size: extra-large
+            decoration: line-through
+        - type: component.text
+          options:
+            value: Large
+            size: large         
+            decoration: line-through
+        - type: component.text
+          options:
+            value: Medium
+            size: medium
+            decoration: line-through
+        - type: component.text
+          options:
+            value: Regular
+            size: regular
+            decoration: line-through
+        - type: component.text
+          options:
+            value: Small
+            size: small
+            decoration: line-through
+        - type: component.text
+          options:
+            value: Tiny
+            size: tiny
+            decoration: line-through            

@@ -1,0 +1,131 @@
+title: Tabs
+type: jig.default
+icon: app-window-four
+
+onFocus:
+  type: action.action-list
+  options:
+    isSequential: false
+    actions:
+      - type: action.set-state
+        when: =$not($exists(@ctx.solution.state.tab))
+        options:
+          state: =@ctx.solution.state.tab
+          value: tab2
+
+datasources:
+  store-feed-tabs:
+    type: datasource.static
+    options:
+      data:
+        - tabName: Tab 1
+          tabValue: tab1
+        - tabName: Tab 2
+          tabValue: tab2
+        - tabIndicator: true
+          tabName: Tab 3
+          tabValue: tab3
+        - tabIndicator: true
+          tabName: Tab 4
+          tabValue: tab4
+        - tabName: Tab 5
+          tabValue: tab5
+        - tabName: Tab 6
+          tabValue: tab6
+    
+children:
+  - type: component.section
+    options:
+      title: Static tabs - Center Align
+      children:
+        - type: component.custom-component
+          componentId: tabs
+          inputs:
+            tabIndicator1: false
+            tabIndicator2: true
+            tabIndicator3: true
+            tabIndicator4: true
+            tabName1: Tab 1
+            tabName2: Tab 2
+            tabName3: Tab 3
+            tabName4: Tab 4
+            tabValue1: tab1
+            tabValue2: tab2
+            tabValue3: tab3
+            tabValue4: tab4
+            tabsAlignment: center
+          
+    
+  - type: component.section
+    options:
+      title: Static tabs - Left Align
+      children:
+        - type: component.custom-component
+          componentId: tabs
+          inputs:
+            tabIndicator1: false
+            tabIndicator2: true
+            tabIndicator3: true
+            tabIndicator4: true
+            tabName1: Tab 1
+            tabName2: Tab 2
+            tabName3: Tab 3
+            tabName4: Tab 4
+            tabValue1: tab1
+            tabValue2: tab2
+            tabValue3: tab3
+            tabValue4: tab4
+          
+    
+  - type: component.section
+    options:
+      title: Stretched static tabs
+      children:
+        - type: component.custom-component
+          componentId: tabs-stretched
+          inputs:
+            tabIndicator1: false
+            tabIndicator2: true
+            tabIndicator3: true
+            tabIndicator4: true
+            tabName1: Tab 1
+            tabName2: Tab 2
+            tabName3: Tab 3
+            tabName4: Tab 4
+            tabValue1: tab1
+            tabValue2: tab2
+            tabValue3: tab3
+            tabValue4: tab4
+          
+        - type: component.custom-component
+          componentId: tabs-stretched
+          inputs:
+            tabIndicator1: false
+            tabIndicator2: true
+            tabName1: Tab 1
+            tabName2: Tab 2
+            tabValue1: tab1
+            tabValue2: tab2
+          
+    
+  - type: component.section
+    options:
+      title: List item tabs
+      children:
+        - type: component.list
+          options:
+            maximumItemsToRender: 8
+            data: =@ctx.datasources.store-feed-tabs
+            isHorizontal: true
+            isHorizontalScrollIndicatorHidden: true
+            item:
+              type: component.custom-component
+              componentId: list-item-tabs
+              inputs:
+                tabIndicator: =@ctx.current.item.tabIndicator
+                tabName: =@ctx.current.item.tabName
+                tabValue: =@ctx.current.item.tabValue
+              
+            
+
+

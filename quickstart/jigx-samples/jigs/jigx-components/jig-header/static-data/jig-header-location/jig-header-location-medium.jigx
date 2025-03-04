@@ -1,27 +1,59 @@
 title: Header with location
-description: "height: medium"
 type: jig.default
+description: "height: medium"
 
-header: 
+datasources:
+  sites:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Empire State Building
+          latitude: 40.748676182418976
+          longitude: -73.98567513213604
+          address: 20 W 34th St., New York, NY 10001, United States
+          icon: landmark-empire-state
+        - id: 2
+          name: Great Lawn Softball Field 6
+          latitude: 40.782091612607864 
+          longitude: -73.9655512166898
+          address: 86th St Transverse, New York, NY 10024, United States
+          icon: stadium-1-building 
+
+header:
   type: component.jig-header
   options:
-    height: medium
     children:
       type: component.location
       options:
-        address: 20 W 34th St., New York, NY 10001, USA
-        zoomLevel: 8
-        isAnimationDisabled: false
-        markersData:
-          - lat: 40.7484445
-            lng: -73.9878531
-
-
+        viewPoint:
+          # Center the address in the middle of the screen.
+          centerPosition: middle
+          # Sepcify the address using a datasource.
+          address: =@ctx.datasources.sites[0].address
+          # Zoom in for map clearly.
+          zoomLevel: 8
+        # Add endpoint marker icon for the address.  
+        markers:
+          data: =@ctx.datasources.sites[0].address
+          item:
+            type: component.marker-item
+            options:
+              address: =@ctx.datasources.sites[0].address
+              children:
+                type: component.icon
+                options:
+                  # Dertermine the color of the marker icon.
+                  color: negative
+                  # Define the icon in the datasource.
+                  icon: =@ctx.datasources.sites[0].icon
+    height: medium
+  
 children:
-  - type: component.entity
+  - type: component.entity 
     options:
       children:
-        - type: component.entity-field
-          options:
+        - options:
             label: entity-field
             value: text
+          type: component.entity-field

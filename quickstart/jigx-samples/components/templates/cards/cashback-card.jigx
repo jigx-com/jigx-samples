@@ -1,0 +1,138 @@
+inputs:
+    
+  cardColor:
+    default: "color2"
+    required: true
+    type: string
+  labelColor:
+    default: "color4"
+    required: false
+    type: string  
+  label:
+    default: "label"
+    required: false
+    type: string      
+  title:
+    default: "Title"
+    required: true
+    type: string
+  subtitle:
+    default: "Subtitle"
+    required: false
+    type: string   
+  description:
+    default: "Description"
+    required: false
+    type: string       
+  balance:
+    default: "Your balance"
+    required: false
+    type: string    
+  currency:
+    default: $
+    required: true
+    type: string  
+  amount:
+    default: '0'
+    required: false
+    type: string   
+
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: =@ctx.inputs.cardColor 
+      children:
+        # BACKGROUND LAYER (BUBBLES)
+        - type: component.view
+          options:
+            style:
+              position: absolute
+              bottom: none
+              right: medium
+              emphasis: medium
+            children: 
+              - type: component.image
+                options:
+                  source:
+                    uri: https://t14345253.p.clickup-attachments.com/t14345253/62e8bc5d-4f16-4e79-a00c-3e07e2bd5a90/background.png?view=open
+                  height: 150
+                  width: 400
+        - type: component.view
+          options:
+            style:
+              gap: medium
+              padding: medium
+              height: 
+                min: 200
+              justifyContent: center
+            children:
+              # TOP PART
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    # LABEL
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 0
+                          alignSelf: flex-end
+                          background:
+                            color: =@ctx.inputs.labelColor 
+                          radius: tiny
+                          padding: 
+                            vertical: minimal
+                            horizontal: small
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.label 
+                              size: small
+                    # CARD NAME
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.title
+                          # Cash Back Plus
+                        size: medium
+                    # DESCRIPTION
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.description 
+                        numberOfLines: 3
+                        emphasis: medium
+                        size: small
+              # BOTTOM PART
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.balance
+                        # size: small
+                        emphasis: medium
+                    - type: component.view
+                      options:
+                        style:
+                          gap: minimal
+                          flex: 
+                            direction: row
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.currency
+                              size: extra-large
+                              weight: light
+                              align: left
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.amount
+                              size: extra-large
+                              align: left                        
+                    - type: component.text
+                      options:
+                        value: "Due date: 09 March 2027"

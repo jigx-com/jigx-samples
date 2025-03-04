@@ -1,0 +1,131 @@
+title: Stepper 1 - Variations
+type: jig.default
+
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 2 Items     
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 2
+      currentStep: 1
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 2
+      currentStep: 2
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 3 Items
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 3
+      currentStep: 1
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 3
+      currentStep: 2
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 3
+      currentStep: 3  
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 4 Items      
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 4
+      currentStep: 1
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 4
+      currentStep: 2
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 4
+      currentStep: 3  
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 4
+      currentStep: 4     
+
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 5 Items
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 5
+      currentStep: 1
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 5
+      currentStep: 2
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 5
+      currentStep: 3  
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 5
+      currentStep: 4           
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 5
+      currentStep: 5     
+
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: 6 Items
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 1
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 2
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 3  
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 4           
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 5    
+  - type: component.custom-component
+    componentId: stepper1
+    inputs:
+      numberOfSteps: 6
+      currentStep: 6  

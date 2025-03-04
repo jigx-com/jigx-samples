@@ -1,0 +1,70 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        justifyContent: space-evenly
+      children:
+        - type: component.text
+          options:
+            align: center
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 1
+            size: extra-large
+            color: =@ctx.solution.state.rating != null ? 'warning':'element'
+            emphasis: =@ctx.solution.state.rating != null ? '':'low'
+            value: ★
+        - type: component.text
+          options:
+            align: center
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 2
+            size: extra-large
+            color: =$number(@ctx.solution.state.rating) > 1 ? 'warning':'element'
+            emphasis: =$number(@ctx.solution.state.rating) > 1 ? '':'low'            
+            value: ★
+        - type: component.text
+          options:
+            align: center
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 3
+            size: extra-large
+            color: =$number(@ctx.solution.state.rating) > 2 ? 'warning':'element'
+            emphasis: =$number(@ctx.solution.state.rating) > 2 ? '':'low'
+            value: ★
+        - type: component.text
+          options:
+            align: center
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 4
+            size: extra-large
+            color: =$number(@ctx.solution.state.rating) > 3 ? 'warning':'element'
+            emphasis: =$number(@ctx.solution.state.rating) > 3 ? '':'low'
+            value: ★
+        - type: component.text
+          options:
+            align: center
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.rating
+                value: 5
+            size: extra-large
+            color: =$number(@ctx.solution.state.rating) > 4 ? 'warning':'element'
+            emphasis: =$number(@ctx.solution.state.rating) > 4 ? '':'low'
+            value: ★
+            

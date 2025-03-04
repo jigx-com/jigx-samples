@@ -1,18 +1,40 @@
-title: Location fullscreen
+title: Location fullscreen dynamic
 type: jig.full-screen
 
 datasources:
-  address:
+  address: 
     type: datasource.static
     options:
       data:
-        - city: New York
-          country: US
+        - id: 1
           street: 768 5th Ave
-    
+          city: New York
+          country: US
+        - id: 2
+          street: 137 W 111th St
+          city: New York
+          country: US  
+          
 component: 
   type: component.location
-  options:    
-      address: =@ctx.datasources.address.street & ',' & @ctx.datasources.address.city
-        & ',' & @ctx.datasources.address.country
-      zoomLevel: 9
+  options:
+    viewPoint:
+      # Center the address in the middle of the screen.
+      centerPosition: middle
+      # Sepcify the address using latitude and longitude.
+      address: =@ctx.datasources.address[0].street
+      # Zoom in to see the map clarity.
+      zoomLevel: 14
+    # Add endpoint marker icon for the address.   
+    markers:
+      data: =@ctx.datasources.address[0].street
+      item:
+        type: component.marker-item
+        options:
+          address: =@ctx.datasources.address[0].street
+          children:
+            type: component.icon
+            options:
+              # Dertermine the size of the marker icon.
+              size: large
+              icon: end-marker

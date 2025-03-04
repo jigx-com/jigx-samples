@@ -1,0 +1,52 @@
+title: Booking - Horizontal
+type: jig.default
+icon: hotel-information
+
+datasources:
+  card-list1:
+    type: datasource.static
+    options:
+      data:
+        - address: Calle de la Sierra de Guadarrama 8, 28280 El Escorial, Madrid, Spain
+          image: https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          name: Hotel Nany
+          price: $342
+          reviews-score: "4.9"
+          reviews-total: "5"
+        - address: Avenida de España 12, 28921 Alcorcón, Madrid, Spain
+          image: https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80
+          name: Vacation Home
+          price: $257
+          reviews-score: "4.1"
+          reviews-total: "5"
+        - address: Calle de la Estación 2, 28250 Torrelodones, Madrid, Spain
+          image: https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          name: Hotel Guanacaste Lodge
+          price: $120
+          reviews-score: "4"
+          reviews-total: "5"
+    
+children:
+  - type: component.custom-component
+    componentId: section
+    inputs:
+      link: Show all
+      title: TOP places around you
+    
+  - type: component.list
+    options:
+      data: =@ctx.datasources.card-list1
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      maximumItemsToRender: 8
+      item:
+        type: component.custom-component
+        componentId: hotel-list
+        inputs:
+          address: =@ctx.current.item.address
+          image: =@ctx.current.item.image
+          name: =@ctx.current.item.name
+          price: =@ctx.current.item.price
+          reviews-score: =@ctx.current.item.reviews-score
+          reviews-total: =@ctx.current.item.reviews-total
+

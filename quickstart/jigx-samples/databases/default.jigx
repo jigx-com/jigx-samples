@@ -26,4 +26,8 @@ tables:
   security: null
   inspection: null
   work: null
+  contacts: null
+  profile: null
+  todos: null
+  tododetails: null
   

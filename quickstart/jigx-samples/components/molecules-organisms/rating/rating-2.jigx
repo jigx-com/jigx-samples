@@ -1,0 +1,63 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        justifyContent: center
+        alignItems: center
+        gap: small
+      children:
+        - type: component.text
+          options:
+            value: =@ctx.inputs.rating-number & 'K' & ' RATINGS'
+            emphasis: medium
+            weight: semi-bold
+            size: small
+        - type: component.view
+          options:
+            style:
+              gap: minimal
+              alignItems: center
+            children:
+              - type: component.text
+                options:
+                  value: =@ctx.inputs.rating
+                  size: large
+                  weight: semi-bold
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: row
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: ★
+                        size: medium
+                        color: =@ctx.inputs.rating >= 1 ? 'warning':'element'
+                        emphasis: =@ctx.inputs.rating >= 1 ? '':'low'
+                    - type: component.text
+                      options:
+                        value: ★
+                        size: medium
+                        color: =@ctx.inputs.rating >= 2 ? 'warning':'element'
+                        emphasis: =@ctx.inputs.rating >= 2 ? '':'low'
+                    - type: component.text
+                      options:
+                        value: ★
+                        size: medium
+                        color: =@ctx.inputs.rating >= 3 ? 'warning':'element'
+                        emphasis: =@ctx.inputs.rating >= 3 ? '':'low'
+                    - type: component.text
+                      options:
+                        value: ★
+                        size: medium
+                        color: =@ctx.inputs.rating >= 4 ? 'warning':'element'
+                        emphasis: =@ctx.inputs.rating >= 4 ? '':'low'
+                    - type: component.text
+                      options:
+                        value: ★
+                        size: medium
+                        color: =@ctx.inputs.rating >= 4.5 ? 'warning':'element'
+                        emphasis: =@ctx.inputs.rating >= 4.5 ? '':'low'

@@ -1,0 +1,189 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignSelf: flex-start
+                    flex:
+                      direction: column
+                      grow: 1
+                      shrink: 0
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Description
+                        weight: bold
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.info.description
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      bottom:
+                        emphasis: low
+                        style: solid
+                      top:
+                        emphasis: low
+                        style: solid
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Status
+                        weight: bold
+
+                    - type: component.view
+                      options:
+                        style:
+                          background:
+                            color: >
+                              =@ctx.inputs.info.status = 'In Progress' ?
+                              'color7' :
+                                @ctx.inputs.info.status = "Completed" ? 'color2':'color14'
+                          padding:
+                            bottom: small
+                            left: large
+                            right: large
+                            top: small
+                          radius: medium
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.info.status
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      bottom:
+                        emphasis: low
+                        style: solid
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Subject
+                        weight: bold
+
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.info.subject
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      bottom:
+                        emphasis: low
+                        style: solid
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding: medium
+
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Due Date
+                        weight: bold
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                        children:
+                          - type: component.icon
+                            options:
+                              emphasis: medium
+                              icon: calendar-3
+                              size: small
+                            
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.info.duedate
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      bottom:
+                        emphasis: low
+                        style: solid
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Priority
+                        weight: bold
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          background:
+                            color: >
+                              =@ctx.inputs.info.priority = 'High Priority' ?
+                              "color4" :
+                                @ctx.inputs.info.priority = 'Low Priority' ? 'color2' :
+                                  @ctx.inputs.info.priority = 'Medium Priority' ? 'color7':'color14'
+                          padding:
+                            bottom: small
+                            left: large
+                            right: large
+                            top: small
+                          radius: medium
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.info.priority
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: Estimated Time
+                        weight: bold
+                      
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.info.estimated_time

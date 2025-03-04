@@ -1,0 +1,158 @@
+
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin: 
+          bottom: regular
+      children:   
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1      
+                    height: 62
+                    gap: medium
+                  children:     
+                    # LEFT ELEMENT
+                    - type: component.avatar
+                      options:
+                        title: N/A
+                        uri: =@ctx.inputs.avatar
+                        size: regular
+                    # CONTENT                  
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            direction: column
+                            grow: 1
+                            shrink: 1
+                          justifyContent: center
+                        children:
+                          # TOP ROW
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                justifyContent: space-between
+                                padding: 
+                                  bottom: minimal
+                              children:  
+                                # NAME            
+                                - type: component.view
+                                  options:
+                                    style:
+                                      flex: 
+                                        direction: row
+                                        grow: 1
+                                      alignItems: center                                                  
+                                      padding: 
+                                        bottom: minimal
+                                      gap: minimal
+                                    children:                           
+                                      - type: component.text
+                                        options:
+                                          value: =@ctx.inputs.first-name
+                                          size: regular    
+                                          align: left
+                                          weight: bold
+                                      - type: component.text
+                                        options:
+                                          value: =@ctx.inputs.middle-name
+                                          size: regular
+                                          align: left
+                                          weight: bold                 
+                                      - type: component.text
+                                        options:
+                                          value: =@ctx.inputs.last-name
+                                          size: regular    
+                                          align: left
+                                          weight: bold                             
+                                # TIME
+                                - type: component.view
+                                  options:
+                                    style:  
+                                      justifyContent: flex-start
+                                    children: 
+                                      - type: component.view
+                                        options:
+                                          style:
+                                            flex: 
+                                              direction: row
+                                            alignItems: center
+                                            justifyContent: center
+                                          children:                                  
+                                            - type: component.text
+                                              options:
+                                                value: =@ctx.inputs.time-of-change
+                                                size: small    
+                                                align: right
+                                                emphasis: medium        
+                                            - type: component.icon
+                                              options:
+                                                icon: arrow-right
+                                                size: small
+                          # BOTTOM ROW                       
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                  grow: 1
+                                alignItems: flex-start
+                                alignContent: flex-start
+                                justifyContent: space-between
+                                gap: medium
+                              children:                                               
+                              # MESSAGE  
+                              - type: component.view
+                                options:
+                                  style:
+                                    flex: 
+                                      direction: column
+                                      grow: 1   
+                                      shrink: 1          
+                                  children:                
+                                    - type: component.text
+                                      options:
+                                        value: =@ctx.inputs.message
+                                        size: regular
+                                        align: left
+                                        emphasis: medium
+                                        numberOfLines: 2
+                              # BADGE
+                              - type: component.view
+                                when: =@ctx.inputs.new-number > 1 ? true:false
+                                options:         
+                                  style:
+                                    radius: small
+                                    padding: 
+                                      vertical: minimal
+                                      horizontal: small
+                                    flex: 
+                                      direction: row
+                                      grow: 0
+                                    background:
+                                      color: color3
+                                  children:   
+                                    - type: component.text
+                                      options:
+                                        value: =@ctx.inputs.new-number
+                                        size: small
+                                        align: center                                         
+                                           
+                      
+                          
+
+
+                                    
+
+
+                    

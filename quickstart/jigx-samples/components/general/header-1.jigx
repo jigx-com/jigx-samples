@@ -1,0 +1,15 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      children: []
+      style:
+        padding:
+          top: medium
+    
+  - type: component.text
+    options:
+      align: left
+      size: large
+      value: =@ctx.inputs.title
+    

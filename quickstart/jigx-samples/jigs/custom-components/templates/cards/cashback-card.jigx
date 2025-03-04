@@ -1,0 +1,17 @@
+title: Cashback card
+type: jig.default
+icon: money-bag-dollar
+
+children:
+  - type: component.custom-component
+    componentId: cashback-card
+    inputs:
+      cardColor: ="color2"
+      labelColor: color5
+      label: Label
+      title: Cashback card name
+      subtitle: 10% Cashback
+      description: Your payout is due to you on 9th February 2035 and is projected somewhere. Your payout is due to you on 9th February 2035 and is projected somewhere.
+      balance: Your balance
+      currency: R
+      amount: 65,459.95

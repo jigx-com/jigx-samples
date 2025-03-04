@@ -1,0 +1,307 @@
+type: component.default
+
+inputs:
+  tabIndicator1:
+    required: false
+    type: boolean
+  tabIndicator2:
+    required: false
+    type: boolean
+  tabIndicator3:
+    required: false
+    type: boolean
+  tabIndicator4:
+    required: false
+    type: boolean
+  tabName1:
+    required: true
+    type: string
+  tabName2:
+    required: true
+    type: string
+  tabName3:
+    required: false
+    type: string
+  tabName4:
+    required: false
+    type: string
+  tabValue1:
+    required: true
+    type: string
+  tabValue2:
+    required: true
+    type: string
+  tabValue3:
+    required: false
+    type: string
+  tabValue4:
+    required: false
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        border:
+          bottom:
+            style: solid
+        flex:
+          direction: row
+          grow: 1
+        margin:
+          vertical: medium
+
+      children:
+        - type: component.view
+          when: =@ctx.inputs.tabValue1 != null
+          options:
+            style:
+              flex:
+                direction: row
+                grow: 1
+              gap: minimal
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                    gap: medium
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                            grow: 1
+                          gap: minimal
+                          justifyContent: center
+
+                        children:
+                          - type: component.text
+                            options:
+                              emphasis: =@ctx.solution.state.tab = @ctx.inputs.tabValue1 ? "":"medium"
+                              value: =@ctx.inputs.tabName1
+                              weight: bold
+                            
+                          - type: component.view
+                            when: =@ctx.inputs.tabIndicator1 = true
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: negative
+                                height: 6
+                                radius: large
+                                width: 6
+
+                    - type: component.view
+                      options:
+                        children: []
+                        style:
+                          background:
+                            color: =@ctx.solution.state.tab = @ctx.inputs.tabValue1 ?
+                              "element":"transparent"
+                          flex:
+                            grow: 1
+                          height: 2
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.tab
+                value: =@ctx.inputs.tabValue1
+              
+        - type: component.view
+          when: =@ctx.inputs.tabValue2 != null
+          options:
+            style:
+              flex:
+                direction: row
+                grow: 1
+              gap: minimal
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                    gap: medium
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                            grow: 1
+                          gap: minimal
+                          justifyContent: center
+
+                        children:
+                          - type: component.text
+                            options:
+                              emphasis: =@ctx.solution.state.tab = @ctx.inputs.tabValue2 ? "":"medium"
+                              value: =@ctx.inputs.tabName2
+                              weight: bold
+                            
+                          - type: component.view
+                            when: =@ctx.inputs.tabIndicator2 = true
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: negative
+                                height: 6
+                                radius: large
+                                width: 6
+
+                    - type: component.view
+                      options:
+                        children: []
+                        style:
+                          background:
+                            color: =@ctx.solution.state.tab = @ctx.inputs.tabValue2 ?
+                              "element":"transparent"
+                          flex: 
+                            grow: 1
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.tab
+                value: =@ctx.inputs.tabValue2
+              
+          
+        - type: component.view
+          when: =@ctx.inputs.tabValue3 != null
+          options:
+            style:
+              flex:
+                direction: row
+                grow: 1
+              gap: minimal
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                    gap: medium
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                            grow: 1
+                          gap: minimal
+                          justifyContent: center
+
+                        children:
+                          - type: component.text
+                            options:
+                              emphasis: =@ctx.solution.state.tab = @ctx.inputs.tabValue3 ? "":"medium"
+                              value: =@ctx.inputs.tabName3
+                              weight: bold
+                            
+                          - type: component.view
+                            when: =@ctx.inputs.tabIndicator3 = true
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: negative
+                                height: 6
+                                radius: large
+                                width: 6
+
+                    - type: component.view
+                      options:
+                        children: []
+                        style:
+                          background:
+                            color: =@ctx.solution.state.tab = @ctx.inputs.tabValue3 ?
+                              "element":"transparent"
+                          flex:
+                            grow: 1
+                          height: 2
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.tab
+                value: =@ctx.inputs.tabValue3
+
+        - type: component.view
+          when: =@ctx.inputs.tabValue4 != null
+          options:
+            style:
+              flex:
+                direction: row
+                grow: 1
+              gap: minimal
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                    gap: medium
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                            grow: 1
+                          gap: minimal
+                          justifyContent: center
+
+                        children:
+                          - type: component.text
+                            options:
+                              emphasis: =@ctx.solution.state.tab = @ctx.inputs.tabValue4 ? "":"medium"
+                              value: =@ctx.inputs.tabName4
+                              weight: bold
+                            
+                          - type: component.view
+                            when: =@ctx.inputs.tabIndicator4 = true
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: negative
+                                height: 6
+                                radius: large
+                                width: 6
+
+                    - type: component.view
+                      options:
+                        children: []
+                        style:
+                          background:
+                            color: =@ctx.solution.state.tab = @ctx.inputs.tabValue4 ?
+                              "element":"transparent"
+                          flex:
+                            grow: 1
+                          height: 2
+
+            onPress:
+              type: action.set-state
+              options:
+                state: =@ctx.solution.state.tab
+                value: =@ctx.inputs.tabValue4
+
+

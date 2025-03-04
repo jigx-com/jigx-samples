@@ -1,0 +1,242 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              gap: medium
+              flex: 
+                direction: row
+                  
+            children:
+              
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 0
+                    alignItems: center
+                    justifyContent: center
+                    padding: medium
+                  children:
+                    - type: component.text
+                      options:
+                        value: "4.7"
+                        size: extra-large
+                    - type: component.text
+                      options:
+                        value: out of 5
+                        size: small
+                        emphasis: medium
+                        
+
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      grow: 1
+                  children:
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: row
+                          alignContent: center                          
+                        children:
+                          # STARS
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                width: 50
+                                justifyContent: flex-end
+                                emphasis: low-medium
+                              children:
+                                - type: component.icon
+                                  options:
+                                    icon: rating-star
+                                    size: extra-small
+                                - type: component.icon
+                                  options:
+                                    icon: rating-star
+                                    size: extra-small
+                                - type: component.icon
+                                  options:
+                                    icon: rating-star
+                                    size: extra-small
+                                - type: component.icon
+                                  options:
+                                    icon: rating-star
+                                    size: extra-small
+                                - type: component.icon
+                                  options:
+                                    icon: rating-star
+                                    size: extra-small                                                                                                                    
+                          # PROGRESSBAR
+                          - type: component.progress-bar
+                            options:
+                              size: medium
+                              value:
+                                current: 0.5
+                                max: 20
+
+
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: row
+                          alignContent: center
+                        children:
+                          # STARS
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                width: 50
+                                justifyContent: flex-end
+                                emphasis: low-medium
+                              children:
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small                                                                                                               
+                          # PROGRESSBAR
+                          - type: component.progress-bar
+                            options:
+                              size: medium
+                              value:
+                                current: 0.5
+                                max: 20                                      
+                              
+
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: row
+                          alignContent: center                          
+                        children:
+                          # STARS
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                width: 50
+                                justifyContent: flex-end
+                                emphasis: low-medium
+                              children:
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small                                                                                                                 
+                          # PROGRESSBAR
+                          - type: component.progress-bar
+                            options:
+                              size: medium
+                              value:
+                                current: 0.5
+                                max: 20    
+                                      
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: row
+                          alignContent: center
+                        children:
+                          # STARS
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                width: 50
+                                justifyContent: flex-end
+                                emphasis: low-medium
+                              children:
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small 
+                          # PROGRESSBAR
+                          - type: component.progress-bar
+                            options:
+                              size: medium
+                              value:
+                                current: 0.5
+                                max: 20                                        
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex: 
+                            grow: 1
+                            direction: row
+                          alignContent: center
+                        children:
+                          # STARS
+                          - type: component.view
+                            options:
+                              style:
+                                flex: 
+                                  direction: row
+                                alignItems: center
+                                width: 50
+                                justifyContent: flex-end
+                                emphasis: low-medium
+                              children:
+                              - type: component.icon
+                                options:
+                                  icon: rating-star
+                                  size: extra-small                                                                                                                 
+                          # PROGRESSBAR
+                          - type: component.progress-bar
+                            options:
+                              size: medium
+                              value:
+                                current: 0.5
+                                max: 20   
+                              title:
+                                value: Title
+                                

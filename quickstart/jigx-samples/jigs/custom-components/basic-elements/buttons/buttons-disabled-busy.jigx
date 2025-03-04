@@ -1,0 +1,12 @@
+title: Buttons (Disabled & Busy)
+type: jig.default
+icon: button-play
+
+children:    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Disabled & Busy"
+      
+  - type: component.custom-component
+    componentId: button-5

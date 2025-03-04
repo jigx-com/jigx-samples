@@ -1,0 +1,59 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        gap: small
+      children:
+        - type: component.card
+          options:
+            color: color6
+            children:
+              - type: component.icon
+                options:
+                  icon: conversation-chat-2
+                  size: large
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: AI Advisor
+                        align: center
+                        weight: bold
+                        size: regular
+                    - type: component.text
+                      options:
+                        value: AI bases Case advisor
+                        emphasis: high
+                        size: small
+                        align: center
+        - type: component.card
+          options:
+            color: color2
+            children:
+              - type: component.icon
+                options:
+                  icon: suitcase
+                  size: large
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: New Case Request
+                        align: center
+                        weight: bold
+                        size: regular
+                    - type: component.text
+                      options:
+                        value: Register a new case
+                        emphasis: high
+                        size: small
+                        align: center

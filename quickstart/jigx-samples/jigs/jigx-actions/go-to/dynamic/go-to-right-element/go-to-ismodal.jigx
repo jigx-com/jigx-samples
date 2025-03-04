@@ -1,0 +1,21 @@
+title: Go to action (isModal)
+type: jig.list
+
+data: =@ctx.datasources.employees-dynamic
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.lastname
+    subtitle: =@ctx.current.item.firstname
+    leftElement: 
+      element: avatar
+      text: " "
+      uri: =@ctx.current.item.photo
+    rightElement: 
+      element: button
+      title: Go to
+      onPress:
+        type: action.go-to
+        options:
+          isModal: true
+          linkTo: default-employee-detail

@@ -1,0 +1,88 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      children:
+        # PRIMARY BUTTONS
+        - type: component.button
+          options:
+            title: Primary
+            type: primary
+            
+        - type: component.button
+          options:
+            title: Primary with left icon
+            type: primary
+            icon:
+              left: alarm-bell
+
+        - type: component.button
+          options:
+            title: Primary with right icon
+            type: primary
+            icon:
+              right: alarm-bell        
+
+        - type: component.button
+          options:
+            title: Primary with left & right icon
+            type: primary
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                       
+            
+        # SECONDARY BUTTONS
+        - type: component.button
+          options:
+            title: Secondary
+            type: secondary
+            
+        - type: component.button
+          options:
+            title: Secondary with left icon
+            type: secondary
+            icon:
+              left: alarm-bell  
+                          
+        - type: component.button
+          options:
+            title: Secondary with right icon
+            type: secondary
+            icon:
+              right: alarm-bell   
+              
+        - type: component.button
+          options:
+            title: Secondary with left & right icon
+            type: secondary
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                                  
+
+        # TERTIARY BUTTONS
+        - type: component.button
+          options:
+            title: Tertiary
+            type: tertiary
+
+        - type: component.button
+          options:
+            title: Tertiary with left icon
+            type: tertiary
+            icon:
+              left: alarm-bell    
+                        
+        - type: component.button
+          options:
+            title: Tertiary with right icon
+            type: tertiary
+            icon:
+              right: alarm-bell   
+              
+        - type: component.button
+          options:
+            title: Tertiary with left & right icon 
+            type: tertiary
+            icon:
+              right: alarm-bell   
+              left: alarm-bell                              

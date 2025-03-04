@@ -1,0 +1,119 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column 
+        padding: 
+          bottom: regular
+      children:
+      - type: component.card
+        options:
+          children:
+            # TOP ROW
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: row
+                  alignItems: flex-start
+                  gap: medium
+                children:  
+                      
+                  # CONTENT
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+                          direction: column
+                          grow: 1
+                          shrink: 1   
+                        gap: minimal
+                      children:
+                        - type: component.text
+                          options:
+                            value: =@ctx.inputs.category
+                            size: small  
+                            color: color4
+                            numberOfLines: 1
+                        - type: component.text
+                          options:
+                            value: =@ctx.inputs.title
+                            size: medium
+                            weight: bold
+                            numberOfLines: 3
+                            
+                  # RIGHT ELEMENT
+                  - type: component.view
+                    options:
+                      style:
+                        width: 100
+                      children:                        
+                      - type: component.image
+                        options:
+                          source:
+                            uri: =@ctx.inputs.image
+                          resizeMode: cover
+                          height: 100
+            # BOTTOM ROW           
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: row
+                    grow: 1
+                  alignItems: center
+                  justifyContent: space-between
+                  gap: medium
+                children: 
+
+                  # CONTENT
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+                          direction: row
+                          grow: 1
+                          shrink: 1
+                        gap: small
+                        emphasis: medium
+                      children:
+                        - type: component.text
+                          options:
+                            value: =@ctx.inputs.date
+                            size: small
+                            numberOfLines: 1
+                        - type: component.text
+                          options:
+                            value: "·" 
+                            size: small
+                            numberOfLines: 1                        
+                        - type: component.text
+                          options:
+                            value: =@ctx.inputs.time    
+                            size: small
+                            numberOfLines: 1
+
+                  # RIGHT ELEMENTS
+                  - type: component.view
+                    options:
+                      style:
+                        flex: 
+                          direction: row
+                        gap: small
+                      children:
+                        - type: component.icon
+                          options:
+                            size: regular
+                            icon: love-it
+                            type: basic
+                            shape: rounded
+                            
+                        - type: component.icon
+                          options:
+                            size: regular
+                            icon: three-dots
+                            type: basic
+                            shape: rounded 
+                            

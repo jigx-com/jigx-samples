@@ -1,0 +1,142 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin:
+          bottom: small
+          left: medium
+          right: medium
+          top: none
+
+      children:
+        - type: component.card 
+          options:
+            direction: row
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: =@ctx.inputs.info.DocURL
+                      
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: column
+                      grow: 2
+
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: row
+                          justifyContent: space-between
+
+                        children:
+                          - type: component.view
+                            options:
+                              style:
+                                background:
+                                  color: color14
+                                padding:
+                                  bottom: minimal
+                                  left: small
+                                  right: small
+                                  top: minimal
+                                radius: large
+
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: Remodel
+                                  
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: ='$' & $formatNumber(@ctx.inputs.info.jobBudget, '#,###.00')
+                            
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          margin:
+                            top: small
+
+                        children:
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.info.jobTitle
+                              weight: bold
+                            
+                          - type: component.text
+                            options:
+                              emphasis: medium
+                              value: =@ctx.inputs.info.JobDetails
+                            
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: row
+                          gap: large
+                          margin:
+                            top: small
+
+                        children:
+                          - type: component.view
+                            options:
+                              children:
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    value: Start Date
+                                  
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.StartDate
+                                  
+                              style:
+                                flex:
+                                  direction: column
+                            
+                          - type: component.view
+                            options:
+                              children:
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    value: End Date
+                                  
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.EndDate
+                                  
+                              style:
+                                flex:
+                                  direction: column
+                            
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          margin:
+                            top: small
+
+                        children:
+                          - type: component.text
+                            options:
+                              emphasis: medium
+                              value: ='Created on:' & ' ' & @ctx.inputs.info.CreatedDate
+
+

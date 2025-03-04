@@ -1,0 +1,105 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        gap: minimal
+        padding: 
+          bottom: medium
+      children:
+        - type: component.text
+          options:
+            value: $175.80
+            weight: bold
+            size: extra-large
+        - type: component.text
+          options:
+            value: +1.71 (0.98%)
+            color: color2
+            weight: bold
+            size: regular
+  - type: component.view
+    options:
+      style:
+        justifyContent: space-evenly
+        alignItems: center
+        flex: 
+          direction: row
+      children:
+        - type: component.button
+          options:
+            title: 1d
+            type: tertiary
+            # =@ctx.solution.state.chartTimePeriod = 1d ? primary:tertiary
+            isCompact: true
+            # onPress: 
+            #   type: action.set-state
+            #   options:
+            #     state: =@ctx.solution.state.chartTimePeriod 
+            #     value: 1d
+        - type: component.button
+          options:
+            title: 5d
+            type: tertiary
+              # =@ctx.solution.state.chartTimePeriod = 5d ? primary:tertiary
+            isCompact: true
+            # onPress: 
+            #   type: action.set-state
+            #   options:
+            #     state: =@ctx.solution.state.chartTimePeriod 
+            #     value: 5d
+        - type: component.button
+          options:
+            title: 1M
+            type: primary
+              # =@ctx.solution.state.chartTimePeriod = 1M ? primary:tertiary
+            isCompact: true
+            # onPress: 
+            #   type: action.set-state
+            #   options:
+            #     state: =@ctx.solution.state.chartTimePeriod 
+            #     value: 1M
+        - type: component.button
+          options:
+            title: 6M
+            type: tertiary
+              # =@ctx.solution.state.chartTimePeriod = 6M ? primary:tertiary
+            isCompact: true
+            # onPress: 
+            #   type: action.set-state
+            #   options:
+            #     state: =@ctx.solution.state.chartTimePeriod 
+            #     value: 6M
+        - type: component.button
+          options:
+            title: 1y
+            type: tertiary
+              # =@ctx.solution.state.chartTimePeriod = 1y ? primary:tertiary
+            isCompact: true
+            # onPress: 
+            #   type: action.set-state
+            #   options:
+            #     state: =@ctx.solution.state.chartTimePeriod 
+            #     value: 1y
+            
+
+  - type: component.line-chart
+    options:
+      chart:
+        # height: 200
+        isAnimated: true
+      xAxis:
+        isHidden: true
+      yAxis:
+        labels:
+          format:
+            numberStyle: currency
+            notation: compact
+      series:
+        - data: =@ctx.inputs.chartCustom
+          animation:
+              direction: left-to-right
+          layout: area-gradient
+          dataLabels:
+            - isEnabled: false
+      

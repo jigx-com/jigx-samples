@@ -1,0 +1,31 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color1 
+      direction: column 
+      children:
+        - type: component.text
+          options:
+            value: Extra Large 123
+            size: extra-large
+        - type: component.text
+          options:
+            value: Large 123
+            size: large         
+        - type: component.text
+          options:
+            value: Medium 123
+            size: medium
+        - type: component.text
+          options:
+            value: Regular 123
+            size: regular
+        - type: component.text
+          options:
+            value: Small 123
+            size: small
+        - type: component.text
+          options:
+            value: Tiny 123
+            size: tiny

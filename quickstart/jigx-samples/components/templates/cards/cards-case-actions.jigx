@@ -1,0 +1,86 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+        gap: small
+      children:
+        - type: component.card
+          options:
+            color: color9
+            children:
+              - type: component.icon
+                options:
+                  icon: search
+                  size: large
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: My Case
+                        weight: bold
+                        align: center
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: View all case and court details
+                        align: center
+                        emphasis: high
+                        size: small
+        - type: component.card
+          options:
+            color: color2
+            children:
+              - type: component.icon
+                options:
+                  icon: document
+                  size: large
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: Docs
+                        weight: bold
+                        align: center
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: Access your court documents
+                        align: center
+                        emphasis: high
+                        size: small
+        - type: component.card
+          options:
+            color: color6
+            children:
+              - type: component.icon
+                options:
+                  icon: calendar
+                  size: large
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        value: Dates
+                        weight: bold
+                        align: center
+                        size: medium
+                    - type: component.text
+                      options:
+                        value: Court dates and milestones
+                        align: center
+                        emphasis: high
+                        size: small
+                          
+                  

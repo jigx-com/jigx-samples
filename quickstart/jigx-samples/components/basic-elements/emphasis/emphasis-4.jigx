@@ -1,0 +1,30 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color5  
+      direction: column
+      children:
+        - type: component.text
+          options:
+            value: High
+            size: small
+            emphasis: high
+            
+        - type: component.text
+          options:
+            value: Medium
+            size: small
+            emphasis: medium
+            
+        - type: component.text
+          options:
+            value: Low medium
+            size: small
+            emphasis: low-medium
+            
+        - type: component.text
+          options:
+            value: Low
+            size: small
+            emphasis: low            

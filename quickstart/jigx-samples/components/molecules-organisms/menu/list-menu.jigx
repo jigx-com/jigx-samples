@@ -1,0 +1,60 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        padding:
+          vertical: minimal
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: row
+                    justifyContent: space-between
+                    padding:
+                      horizontal: minimal
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: regular
+                        children:
+                          - type: component.icon
+                            options:
+                              color: =@ctx.inputs.info.color
+                              icon: =@ctx.inputs.info.icon
+                              shape: circle
+                              type: duotone
+                            
+                          - type: component.view
+                            options:
+                              style:
+                                gap: minimal
+                              children:
+                                - type: component.text
+                                  options:
+                                    value: =@ctx.inputs.info.title
+                                    weight: bold
+                                  
+                                - type: component.text
+                                  options:
+                                    emphasis: medium
+                                    size: small
+                                    value: =@ctx.inputs.info.subtitle
+
+                    - type: component.icon
+                      options:
+                        emphasis: medium
+                        icon: arrow-right
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.info.linkTo

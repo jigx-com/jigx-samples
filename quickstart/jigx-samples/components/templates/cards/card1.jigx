@@ -1,0 +1,45 @@
+type: component.default
+children:      
+  - type: component.card
+    options:
+      direction: column
+      children:
+        - type: component.image
+          options:
+            source:
+              uri: https://images.unsplash.com/photo-1682547095156-65970db2ec04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1        
+              justifyContent: center 
+              gap: medium                                   
+            children:                              
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                    justifyContent: center
+                  children:
+                    # Title
+                    - type: component.text
+                      options:
+                        value: Title
+                        size: regular    
+                        align: left
+                        weight: bold
+                    # Subtitle 
+                    - type: component.text
+                      options:
+                        value: Subtitle
+                        size: small
+                        align: left
+                        emphasis: medium
+              - type: component.icon
+                options:
+                  icon: information-circle
+                  color: primary

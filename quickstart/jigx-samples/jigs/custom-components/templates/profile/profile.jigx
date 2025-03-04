@@ -1,0 +1,37 @@
+title: Profile
+type: jig.default
+icon: people-man-1-geometric
+
+datasources:
+  players:
+    type: datasource.static
+    options:
+      data:
+        - postion: 4
+          score: 987
+          team-member1: Vojta
+          team-member2: David
+          team-member3: Pavel
+          team-member4: Jakub
+          team-name: Team 1
+        - postion: 5
+          score: 564
+          team-member1: Tereza
+          team-member2: Viktorie
+          team-member3: Zuzana
+          team-member4: Vojtěch
+          team-name: Team 2
+        - postion: 6
+          score: 234
+          team-member1: Šárka
+          team-member2: Pavlína
+          team-member3: Jana
+          team-member4: Vojtěch
+          team-name: Team 3
+    
+children:
+  - type: component.custom-component
+    componentId: profile1
+    inputs:
+      subtitle: Position
+      title: Name

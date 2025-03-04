@@ -1,0 +1,214 @@
+type: component.default
+inputs:
+  billableHours:
+    type: string
+  buttonLink:
+    type: string
+  buttonName:
+    type: string
+  from:
+    type: string
+  graphHours:
+    type: string
+  graphSubtitle:
+    type: string
+  graphTitle:
+    type: string
+  nonBillableHours:
+    type: string
+  projectID:
+    type: number
+  projectOwner:
+    type: string
+  projectType:
+    type: string
+  title:
+    type: string
+  to:
+    type: string
+
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              border:
+                bottom:
+                  style: solid
+              flex:
+                direction: row
+              gap: medium
+              padding:
+                bottom: medium
+            children:
+              - type: component.icon
+                options:
+                  color: primary
+                  icon: time-clock-circle-alternate
+                  shape: circle
+                  type: duotone
+
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      grow: 1
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: =@ctx.inputs.title
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        value: =@ctx.inputs.projectType
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        value: =@ctx.inputs.projectOwner
+
+          
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: row
+              padding: medium
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    border:
+                      right:
+                        style: solid
+                    flex:
+                      basis: 1
+                      grow: 1
+                    gap: small
+                    justifyContent: center
+                    padding:
+                      right: medium
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: small
+                          justifyContent: center
+                        children:
+                          - type: component.view
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: primary
+                                height: 12
+                                radius: large
+                                width: 12
+                            
+                          - type: component.text
+                            options:
+                              size: small
+                              value: Billable
+
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: =@ctx.inputs.billableHours
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      basis: 1
+                      grow: 1
+                    gap: small
+                    justifyContent: center
+                    padding:
+                      left: medium
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: small
+                          justifyContent: center
+                        children:
+                          - type: component.view
+                            options:
+                              children: []
+                              style:
+                                background:
+                                  color: negative
+                                height: 12
+                                radius: large
+                                width: 12
+                            
+                          - type: component.text
+                            options:
+                              size: small
+                              value: Non-Billable
+                            
+                      
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: =@ctx.inputs.nonBillableHours
+                      
+                
+          
+        - type: component.view
+          options:
+            style:
+              flex: 1
+            children:
+              - type: component.pie-chart
+                options:
+                  chart:
+                    width: 260
+                  series:
+                    - data: =@ctx.inputs.graphHours
+                      layout: arch
+                
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    bottom: small
+                    justifyContent: center
+                    left: small
+                    position: absolute
+                    right: small
+                    top: small
+                  children:
+                    - type: component.text
+                      options:
+                        size: large
+                        value: =@ctx.inputs.graphTitle
+                      
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        value: =@ctx.inputs.graphSubtitle
+
+        - type: component.button
+          options:
+            title: =@ctx.inputs.buttonName
+            type: primary
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.buttonLink
+

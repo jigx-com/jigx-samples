@@ -1,0 +1,11 @@
+title: Text (Colored)
+type: jig.default
+icon: text-book
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Colored text" 
+  - type: component.custom-component
+    componentId: text-7  

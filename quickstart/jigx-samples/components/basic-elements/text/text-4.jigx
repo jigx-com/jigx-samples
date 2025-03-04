@@ -1,0 +1,32 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      color: color4  #nejdou stíny, pokud změním barvu karty
+      direction: column 
+      children:
+        
+        - type: component.text
+          options:
+            value: High
+            size: extra-large
+            emphasis: high
+
+        - type: component.text
+          options:
+            value: Medium
+            size: extra-large  
+            emphasis: medium
+
+
+        - type: component.text
+          options:
+            value: Low medium
+            size: extra-large
+            emphasis: low-medium
+
+        - type: component.text
+          options:
+            value: Low
+            size: extra-large
+            emphasis: low

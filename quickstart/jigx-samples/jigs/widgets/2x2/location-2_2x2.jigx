@@ -11,10 +11,12 @@ children:
             value: Value
 
 widgets:
-  "2x2": 
+  location2-2x2: 
     type: widget.location
     options:
-      address: 2 Officers Row Yellowstone National Park Headquarters Yellowstone National Park, WY 82190
+      viewPoint:
+        centerPosition: middle
+        address: 2 Officers Row Yellowstone National Park Headquarters Yellowstone National Park, WY 82190 
       bottom:
         type: component.titles
         options:
@@ -25,7 +27,6 @@ widgets:
           iconColor: color4  
           style:
             isPositive: true
-      zoomLevel: 3
   
           
           

@@ -1,0 +1,46 @@
+title: Countdown
+type: jig.default
+icon: time-reverse
+children:
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: STANDARD COMPONENTS
+  - type: component.countdown
+    options:
+      expiresAt: =$fromMillis($toMillis($now()) + (14 * 24 * 60 * 60 * 1000))
+      labels:
+        position: top
+        isVisible: true
+      align: stretch
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: CUSTOM COMPONENTS
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Small
+  - type: component.custom-component
+    componentId: countdown
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Medium    
+  - type: component.custom-component
+    componentId: countdown2
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Large   
+  - type: component.custom-component
+    componentId: countdown3
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Extra Large    
+  - type: component.custom-component
+    componentId: countdown4
+    

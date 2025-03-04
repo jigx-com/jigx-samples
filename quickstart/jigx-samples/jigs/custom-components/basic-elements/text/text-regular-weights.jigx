@@ -1,0 +1,11 @@
+title: Text (Regular Weights)
+type: jig.default
+icon: text-book
+
+children:  
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Regular - Font Weights" 
+  - type: component.custom-component
+    componentId: text-11

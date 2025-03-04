@@ -1,0 +1,277 @@
+type: component.default 
+children:
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: column
+        gap: small
+        margin:
+          right: large
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: row
+              gap: regular
+              margin:
+                bottom: medium
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: =@ctx.inputs.info.color
+                    justifyContent: center
+                    padding: small
+                    radius: small
+                    width: 200
+                  children:
+                    - type: component.text
+                      options:
+                        value: =@ctx.inputs.info.classcode
+
+              - type: component.icon
+                options:
+                  emphasis: medium
+                  icon: add
+                  size: small
+                
+              - type: component.icon
+                options:
+                  emphasis: medium
+                  icon: three-dots
+                
+          
+        - type: component.view
+          when: =@ctx.inputs.task1 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task1
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task1id
+
+        - type: component.view
+          when: =@ctx.inputs.task2 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task2
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task2id
+
+        - type: component.view
+          when: =@ctx.inputs.task3 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task3
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task3id
+
+        - type: component.view
+          when: =@ctx.inputs.task4 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task4
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task4id
+
+          
+        - type: component.view
+          when: =@ctx.inputs.task5 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task5
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task5id
+
+        - type: component.view
+          when: =@ctx.inputs.task6 != null
+          options:
+            style:
+              margin:
+                top: minimal
+            children:
+              - type: component.card
+                options:
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                          gap: medium
+                          width: 220
+                        children:
+                          - type: component.text
+                            options:
+                              color: color7
+                              size: extra-large
+                              value: •
+                            
+                          - type: component.text
+                            options:
+                              size: medium
+                              value: =@ctx.inputs.task6
+                              weight: bold
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: view-todo
+                parameters:
+                  id: =@ctx.inputs.task6id
+
+    

@@ -1,0 +1,31 @@
+title: Layouts 1 - 4 
+type: jig.default
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 1  
+  - type: component.custom-component
+    componentId: list-layout-1
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 2    
+  - type: component.custom-component
+    componentId: list-layout-2
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 3      
+  - type: component.custom-component
+    componentId: list-layout-3
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 4    
+  - type: component.custom-component
+    componentId: list-layout-4

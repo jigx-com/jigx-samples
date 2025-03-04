@@ -1,0 +1,32 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: column
+        justifyContent: center
+        alignItems: center
+        width: 110
+        margin: 
+          bottom: medium
+      children:
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: column
+              padding: 
+                bottom: small
+            children:
+              - type: component.avatar
+                options:
+                  title: N/A
+                  size: large
+                  uri: =@ctx.inputs.avatar
+        - type: component.text
+          options:
+            value: =@ctx.inputs.first-name
+            size: small
+            align: center
+            numberOfLines: 1

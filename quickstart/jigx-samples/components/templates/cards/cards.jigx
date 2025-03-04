@@ -1,0 +1,106 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        flex: 
+          direction: row
+          grow: 1
+        gap: medium
+      children:
+        - type: component.card
+          options:
+            color: color6
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: flex-start
+                    gap: regular
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: alarm-bell
+                    - type: component.view
+                      options:
+                        style: 
+                          gap: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: Title
+                              weight: bold
+                              size: medium
+                          - type: component.text
+                            options:
+                              value: Subtitle
+                              emphasis: medium
+                              size: small
+
+        - type: component.card
+          options:
+            color: color12
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    gap: regular
+                  children:
+                    - type: component.icon
+                      options:
+                        icon: attachment
+                    - type: component.view
+                      options:
+                        style: 
+                          gap: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: Title
+                              weight: bold
+                              align: center
+                              size: medium
+                          - type: component.text
+                            options:
+                              value: Subtitle
+                              emphasis: medium
+                              align: center
+                              size: small
+
+        - type: component.card
+          options:
+            color: color9
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: flex-end
+                    gap: regular
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          padding: 
+                            right: small
+                        children:
+                          - type: component.icon
+                            options:
+                              icon: calendar
+                    - type: component.view
+                      options:
+                        style: 
+                          gap: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: Title
+                              weight: bold
+                            
+                              size: medium   
+                          - type: component.text
+                            options:
+                              value: Subtitle
+                              emphasis: medium
+                            
+                              size: small   

@@ -1,0 +1,126 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: flex-start
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+        justifyContent: flex-start
+        padding:
+          bottom: medium
+          horizontal: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              emphasis: medium
+              flex:
+                direction: column
+              width: 50
+
+            children:
+              - type: component.text
+                options:
+                  align: left
+                  value: =@ctx.inputs.time
+
+        - type: component.view
+          options:
+            style:
+              border:
+                bottom:
+                  emphasis: extra-low
+                  style: solid
+              flex:
+                direction: column
+                grow: 1
+                shrink: 1
+              gap: small
+              padding:
+                bottom: medium
+
+            children:
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    flex:
+                      direction: row
+                    gap: small
+                    justifyContent: flex-start
+
+                  children:
+                    - type: component.text
+                      when: =@ctx.inputs.title
+                      options:
+                        align: left
+                        value: =@ctx.inputs.title
+                        weight: bold
+                      
+                    - type: component.view
+                      when: =@ctx.inputs.extra = true ? true:false
+                      options:
+                        style:
+                          alignSelf: flex-start
+                          background:
+                            color: color3
+                          flex:
+                            grow: 0
+                          padding:
+                            horizontal: small
+                            vertical: minimal
+                          radius: tiny
+
+                        children:
+                          - type: component.text
+                            options:
+                              size: small
+                              value: Extra
+
+              - type: component.text
+                when: =@ctx.inputs.duration != null ? true :false
+                options:
+                  align: left
+                  emphasis: medium
+                  size: small
+                  value: =@ctx.inputs.duration
+
+              - type: component.text
+                when: =@ctx.inputs.description != null ? true :false
+                options:
+                  align: left
+                  emphasis: medium
+                  size: small
+                  value: =@ctx.inputs.description
+
+              - type: component.view
+                when: =@ctx.inputs.image1 != null ? true :false
+                options:
+                  style:
+                    flex:
+                      direction: row
+                    gap: small
+                    height: 100
+
+                  children:
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: =@ctx.inputs.image1
+                      
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: =@ctx.inputs.image2
+                      
+                    - type: component.image
+                      options:
+                        size: flexible
+                        source:
+                          uri: =@ctx.inputs.image3

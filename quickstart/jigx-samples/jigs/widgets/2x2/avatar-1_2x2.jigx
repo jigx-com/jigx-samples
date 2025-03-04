@@ -11,7 +11,7 @@ children:
             value: Value
     
 widgets:
-  2x2: 
+  avatar1-2x2: 
     type: widget.avatar
     options:
       text: LS

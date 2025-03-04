@@ -1,0 +1,59 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin:
+          bottom: medium
+          horizontal: small
+      children:
+        - type: component.card
+          options:
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: row
+                      shrink: 1
+                    gap: medium
+                  children:
+                    - type: component.icon
+                      options:
+                        color: primary
+                        icon: =@ctx.inputs.info.icon
+                        shape: circle
+                        size: medium
+                        type: duotone
+
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            direction: column
+                            shrink: 1
+                          gap: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value: =@ctx.inputs.info.title
+                              weight: bold
+
+                          - type: component.text
+                            options:
+                              emphasis: medium
+                              value: =@ctx.inputs.info.Description
+
+                    - type: component.icon
+                      when: =@ctx.inputs.info.linkto != null
+                      options:
+                        emphasis: medium
+                        icon: arrow-right
+                        size: regular
+
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: =@ctx.inputs.info.linkto
+                parameters:
+                  title: =@ctx.inputs.info.title

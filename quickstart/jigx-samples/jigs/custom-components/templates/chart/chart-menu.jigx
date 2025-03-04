@@ -1,0 +1,44 @@
+title: Charts
+type: jig.list
+icon: chart
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: chart1
+          title: Chart Example 1
+          icon: chart
+          color: color1
+        - id: 2
+          jigId: chart2
+          title: Chart Example 2
+          icon: chart
+          color: color2
+        - id: 3
+          jigId: chart3
+          title: Chart Example 3
+          icon: chart
+          color: color3
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

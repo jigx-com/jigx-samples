@@ -1,0 +1,51 @@
+title: Horizontal Static Menu
+type: jig.default
+icon: restaurant-menu
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1620287341401-e2945a4b9daa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+datasources:
+  categories: 
+    type: datasource.static
+    options:
+      data:
+      - category-name: All
+        category-selected: ""
+      - category-name: News  
+        category-selected: "" 
+      - category-name: Sport 
+        category-selected: "true"  
+      - category-name: Reel  
+        category-selected: "" 
+
+      - category-name: Worklife
+        category-selected: ""   
+      - category-name: Travel
+        category-selected: ""   
+      - category-name: Future
+        category-selected: ""   
+      - category-name: Culture
+        category-selected: "" 
+
+children:
+  - type: component.list
+    options:
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      
+      data: =@ctx.datasources.categories
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: horizontal-menu
+        inputs:
+          category-name: =@ctx.current.item.category-name
+          category-selected: =@ctx.current.item.category-selected

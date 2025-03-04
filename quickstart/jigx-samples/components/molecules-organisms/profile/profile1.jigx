@@ -1,0 +1,99 @@
+type: component.default
+inputs:
+  subtitle:
+    default: Position
+    required: true
+    type: string
+  title:
+    default: Name
+    required: true
+    type: string
+
+children:
+  - options:
+      children:
+        - options:
+            title: AV
+            size: large
+            uri: https://images.unsplash.com/photo-1704636487929-6a09f864d53f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+          type: component.avatar
+        - options:
+            children:
+              - options:
+                  size: large
+                  value: Lucas Donovan
+                type: component.text
+              - options:
+                  emphasis: medium
+                  value: Position
+                type: component.text
+            style:
+              alignItems: center
+              gap: minimal
+          type: component.view
+        - options:
+            children:
+              - options:
+                  children:
+                    - options:
+                        size: medium
+                        value: "108"
+                      type: component.text
+                    - options:
+                        emphasis: medium
+                        size: small
+                        value: Badges
+                      type: component.text
+                  style:
+                    alignItems: center
+                    flex:
+                      grow: 1
+                type: component.view
+              - options:
+                  children:
+                    - options:
+                        size: medium
+                        value: 3,899
+                      type: component.text
+                    - options:
+                        emphasis: medium
+                        size: small
+                        value: Followers
+                      type: component.text
+                  style:
+                    alignItems: center
+                    flex:
+                      grow: 1
+                type: component.view
+              - options:
+                  children:
+                    - options:
+                        size: medium
+                        value: 6,890
+                      type: component.text
+                    - options:
+                        emphasis: medium
+                        size: small
+                        value: Following
+                      type: component.text
+                  style:
+                    alignItems: center
+                    flex:
+                      grow: 1
+                type: component.view
+            style:
+              border:
+                bottom:
+                  style: solid
+                top:
+                  style: solid
+              flex:
+                direction: row
+              padding:
+                vertical: medium
+          type: component.view
+      style:
+        alignItems: center
+        gap: medium
+    type: component.view
+

@@ -1,0 +1,104 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: column
+      children:
+        
+        # TOP ROW
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+              alignItems: center   
+              gap: medium
+            children:  
+                  
+              # CONTENT
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: column
+                      grow: 1
+                      shrink: 1  
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title element with with long text
+                        size: regular
+                        weight: semi-bold
+                        decoration: line-through
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Subtitle element with very very very very long text, reall        
+                        size: small
+                        emphasis: medium
+                        numberOfLines: 1
+
+              # RIGHT ELEMENT
+              - type: component.icon
+                options:
+                  icon: checkbox-checked
+                  color: primary
+                  
+        # BOTTOM ROW                  
+        - type: component.view
+          options:
+            style:
+              flex: 
+                direction: row
+                grow: 1
+              alignItems: center
+              justifyContent: space-between
+              gap: medium
+            children:
+                    
+              # CONTENT  
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                      grow: 1
+                      shrink: 1
+                    gap: small
+                  children:
+                    - type: component.text
+                      options:
+                        value: Title
+                        size: small
+                        emphasis: medium
+                        numberOfLines: 1
+                    - type: component.text
+                      options:
+                        value: Subtitle    
+                        size: small
+                        emphasis: medium
+                        numberOfLines: 1
+
+              # RIGHT ELEMENTS
+              - type: component.view
+                options:
+                  style:
+                    flex: 
+                      direction: row
+                    gap: small
+                  children:
+                    - type: component.avatar
+                      options:
+                        title: A
+                        size: small
+                        uri: https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+                    - type: component.avatar
+                      options:
+                        title: B
+                        size: small
+                        uri: https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+                    - type: component.avatar
+                      options:
+                        title: C
+                        size: small        
+                        uri: https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60

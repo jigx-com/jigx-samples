@@ -1,0 +1,68 @@
+title: Gallery - List
+type: jig.default
+icon: layout-agenda
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80
+
+datasources:
+  card-test: 
+    type: datasource.static
+    options:
+      data:
+        - avatar: https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80
+          image: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          name: Ong Cheng Zheng
+          nick: ocz0929
+          views: "485,552"
+          downloads: "1,938"
+          featured-in: "Editorial"
+          url: booking
+        - avatar: https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          image: https://images.unsplash.com/photo-1681797485212-7491d3f3619c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+          name: Woody Yan
+          nick: woodyyan
+          views: "234"
+          downloads: "87"
+          featured-in: "Editorial, Textures & Patterns"    
+          url: text      
+        - avatar: https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80
+          image: https://images.unsplash.com/photo-1681802731183-c07ee779dabd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+          name: Max Lissenden
+          nick: mlissenden
+          views: "569,045"
+          downloads: "1,676"
+          featured-in: "Editorial, Arts & Culture"
+          url: others
+
+children:
+
+  - type: component.custom-component
+    componentId: section3
+    inputs:
+      title: Earth
+      link: "Popular" 
+
+  - type: component.list
+    options:
+      data: =@ctx.datasources.card-test
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: gallery
+        inputs:
+          avatar: =@ctx.current.item.avatar
+          image: =@ctx.current.item.image
+          name: =@ctx.current.item.name
+          nick: =@ctx.current.item.nick
+          views: =@ctx.current.item.views
+          downloads: =@ctx.current.item.downloads
+          featured-in: =@ctx.current.item.featured-in
+          url: =@ctx.current.item.url    

@@ -1,0 +1,70 @@
+title: Product list
+type: jig.default
+icon: gallery
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.shopify.com/s/files/1/0601/6024/5917/articles/SANVT_blog_hoodie_vs_sweatshirt_1920x800_13c2e704-12e6-43f8-a550-b5e7fed1448f.jpg
+
+datasources:
+  card-test: 
+    type: datasource.static
+    options:
+      data:
+        - image: https://cdn.aboutstatic.com/file/images/0792302a47203a17a8effd0e5349ed46.jpg
+          name: Mikina
+          brand: ALIFE AND KICKIN
+          sale: -12 %
+          old-price: $ 77.90 
+          new-price: $ 67.90
+          price: $ 77.90 
+          best-price: "Best price for the last 30 days**: $ 65,40 (-16%)"
+          
+        - image: https://cdn.aboutstatic.com/file/images/e5954cb4956c1e95f44b83b125265e77.jpg
+          name: Mikina 'SteffiAK'
+          brand: ALIFE AND KICKIN
+          sale: -31 %
+          old-price: $ 82.90 
+          new-price: $ 56.90
+          price: $ 82.90 
+          best-price: "Best price for the last 30 days**: $ 65.50 (-21%)"      
+        - image: https://cdn.aboutstatic.com/file/images/36839270038a454f83ba675a4572d67f.png
+          name: Max Lissenden
+          brand: Nike
+          sale: -22 %
+          old-price: $ 99.90 
+          new-price: $ 77.90
+          price: $ 99.90  
+          best-price: "Best price for the last 30 days**: $ 89,90 (-10%)"
+
+children:
+  - type: component.custom-component      
+    componentId: section1
+    inputs:
+      title: Hoodies
+      link: "Popular" 
+
+  - type: component.list
+    options:
+      data: =@ctx.datasources.card-test
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: product-1
+        inputs:
+          image: =@ctx.current.item.image
+          name: =@ctx.current.item.name
+          brand: =@ctx.current.item.brand
+          sale: =@ctx.current.item.sale
+          old-price: =@ctx.current.item.old-price
+          new-price: =@ctx.current.item.new-price
+          price: =@ctx.current.item.price
+          best-price: =@ctx.current.item.best-price
+
+            

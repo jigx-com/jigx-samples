@@ -1,0 +1,263 @@
+type: component.default
+children:
+
+- type: component.view
+  options:
+    style:
+      flex: 
+        direction: column
+        grow: 1
+
+      gap: medium
+    children:
+      
+      # ONE CARD
+      - type: component.card
+        options:
+          direction: column
+          children:
+            - type: component.image
+              options:
+                source:
+                  uri: https://t14345253.p.clickup-attachments.com/t14345253/18ebe021-fdd9-4695-b04d-88ddf0ba08f4/package.png?view=open
+                height: 56
+                resizeMode: contain
+            - type: component.text
+              options:
+                value: Package
+                weight: bold
+                align: center
+      
+      # TWO CARDS
+      - type: component.view
+        options:
+          style:
+            flex: 
+              direction: row
+              grow: 1
+            gap: medium
+          children:     
+            - type: component.card
+              options:
+                direction: column
+                children:
+                  - type: component.image
+                    options:
+                      source:
+                        uri: https://t14345253.p.clickup-attachments.com/t14345253/3debc4ea-aa07-48e5-9cec-17253988a98c/luggage.png
+                      height: 56                       
+                      resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Ride
+                      weight: bold
+                      align: left     
+            - type: component.card
+              options:
+                direction: column
+                children:
+                  - type: component.image
+                    options:
+                      source:
+                        uri: https://t14345253.p.clickup-attachments.com/t14345253/18ebe021-fdd9-4695-b04d-88ddf0ba08f4/package.png?view=open
+                      height: 56
+                      resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Package
+                      weight: bold
+                      align: left                               
+
+      # THREE CARDS
+      - type: component.view
+        options:
+          style:
+            flex: 
+              direction: row
+              grow: 1
+            gap: medium
+          children:
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/482e8b4f-9580-4f2a-b724-3afaef94e66f/reserve.png
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Reserve
+                      weight: bold
+                      align: center
+                      size: small       
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/18ebe021-fdd9-4695-b04d-88ddf0ba08f4/package.png?view=open
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Hourly
+                      weight: bold
+                      align: center
+                      size: small       
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1                    
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/3debc4ea-aa07-48e5-9cec-17253988a98c/luggage.png
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Rent
+                      weight: bold
+                      align: center
+                      size: small       
+
+
+      # FOUR CARDS
+      - type: component.view
+        options:
+          style:
+            flex: 
+              direction: row
+              grow: 1
+            gap: medium
+          children:
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/3debc4ea-aa07-48e5-9cec-17253988a98c/luggage.png
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Travel
+                      weight: bold
+                      align: center
+                      size: small       
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/482e8b4f-9580-4f2a-b724-3afaef94e66f/reserve.png
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Transit
+                      weight: bold
+                      align: center
+                      size: small       
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/18ebe021-fdd9-4695-b04d-88ddf0ba08f4/package.png?view=open
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Charter
+                      weight: bold
+                      align: center
+                      size: small       
+            - type: component.view
+              options:
+                style:
+                  flex: 
+                    direction: column
+                    grow: 1
+                    basis: 1
+                  gap: minimal
+                children:
+                  - type: component.card
+                    options:
+                      children:
+                        - type: component.image
+                          options:
+                            source:
+                              uri: https://t14345253.p.clickup-attachments.com/t14345253/3debc4ea-aa07-48e5-9cec-17253988a98c/luggage.png
+                            height: 48
+                            resizeMode: contain
+                  - type: component.text
+                    options:
+                      value: Explore
+                      weight: bold
+                      align: center
+                      size: small       
+
+
+
+
+      

@@ -1,0 +1,45 @@
+title: Icons (Circle)
+type: jig.default
+icon: pen-draw-1
+
+children:   
+  - type: component.custom-component
+    componentId: section4
+    inputs:
+      title: "2. Circle"
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.0 - Basic"
+  - type: component.custom-component
+    componentId: icons-2.0  
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.1 - Contained"
+  - type: component.custom-component
+    componentId: icons-2.1  
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.2 - Duotone"
+  - type: component.custom-component
+    componentId: icons-2.2
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.3 - Card with color"
+  - type: component.custom-component
+    componentId: icons-2.3  
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.4 - Icons with color"
+  - type: component.custom-component
+    componentId: icons-2.4        
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "2.5 - Card with color + Icons with color" 
+  - type: component.custom-component
+    componentId: icons-2.5

@@ -1,0 +1,27 @@
+title: Section Header Medium
+type: jig.default
+icon: task-list-multiple
+
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Section 2 with link custom name
+      link: chat
+      link-custom-name: "Soft by" 
+      
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Section 2 with default link name
+      link: chat    
+      
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Section 2 without link
+                  
+  - type: component.image
+    options: 
+      source:
+        uri: https://plus.unsplash.com/premium_photo-1675826774817-fe983ceb0475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80

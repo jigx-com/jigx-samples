@@ -1,0 +1,94 @@
+title: Text
+type: jig.list
+icon: text-book
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: text-alignment
+          title: Text Alignment
+          icon: folder-text-alternate
+          color: color1
+        - id: 2
+          jigId: text-colored
+          title: Text Colored
+          icon: folder-text-alternate
+          color: color2
+        - id: 3
+          jigId: text-emphasis
+          title: Text Emphasis
+          icon: folder-text-alternate
+          color: color3
+        - id: 4
+          jigId: text-font-sizes
+          title: Text Font Sizes
+          icon: folder-text-alternate
+          color: color4
+        - id: 5
+          jigId: text-line-through
+          title: Text Line Through
+          icon: folder-text-alternate
+          color: color5
+        - id: 6
+          jigId: text-number-lines
+          title: Text Number of Lines
+          icon: folder-text-alternate
+          color: color6
+        - id: 7
+          jigId: text-underline
+          title: Text Underline
+          icon: folder-text-alternate
+          color: color7
+        - id: 8
+          jigId: text-extra-large-weights
+          title: Text Weights - Extra Large
+          icon: folder-text-alternate
+          color: color8
+        - id: 9
+          jigId: text-large-weights
+          title: Text Weights - Large
+          icon: folder-text-alternate
+          color: color9
+        - id: 10
+          jigId: text-medium-weights
+          title: Text Weights - Medium
+          icon: folder-text-alternate
+          color: color10
+        - id: 11
+          jigId: text-regular-weights
+          title: Text Weights - Regular
+          icon: folder-text-alternate
+          color: color11
+        - id: 12
+          jigId: text-small-weights
+          title: Text Weights - Small
+          icon: folder-text-alternate
+          color: color12
+        - id: 13
+          jigId: text-tiny-weights
+          title: Text Weights - Tiny
+          icon: folder-text-alternate
+          color: color13
+
+data: =@ctx.datasources.menuList
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.title
+    color:
+      - when: true
+        color: =@ctx.current.item.color
+    leftElement: 
+      element: icon
+      icon: =@ctx.current.item.icon
+      isDuotone: true
+    rightElement: 
+      element: icon
+      icon: arrow-right-1
+    onPress: 
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.jigId

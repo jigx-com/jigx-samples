@@ -1,0 +1,12 @@
+title: Buttons (Compact)
+type: jig.default
+icon: button-play
+
+children:    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: "Compact"
+      
+  - type: component.custom-component
+    componentId: button-2

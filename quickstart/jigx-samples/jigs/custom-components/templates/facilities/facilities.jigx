@@ -1,0 +1,49 @@
+title: Facilities
+type: jig.default
+icon: building-cloudy-building
+
+datasources:
+  facilities:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/b8be754f-5b55-4750-8c40-8a6e12ec145c/bathroom-shower.png?view=open
+          title: Outdoor shower
+          subtitle: Premium
+        - id: 2
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/9cb3fd58-61e5-415e-b182-105e5f241611/natural-disaster-water-level.png?view=open
+          title: Private splash pool
+          subtitle: Premium
+        - id: 3
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/90d05107-b60a-45a8-b894-bbda749cdb28/chef-gear-hat.png?view=open
+          title: Chef prepared daily
+          subtitle: Breakfast, lunch & dinner
+        - id: 4
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/788d34c3-b060-4a31-8b56-4d482ef18d76/fan.png?view=open
+          title: Air conditioning / heating
+          subtitle:
+        - id: 5
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/105ead47-0458-4840-8067-91a6f3d88d76/outdoors-water-birds.png?view=open
+          title: Patio with lake view
+          subtitle:
+        - id: 6
+          icon: https://t14345253.p.clickup-attachments.com/t14345253/d4c54659-61f5-4aef-890b-bfd9471e6689/wifi.png?view=open
+          title: Wi-Fi
+          subtitle:
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.facilities
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      maximumItemsToRender: 30
+      item: 
+        type: component.custom-component
+        componentId: horizontal-facilities
+        inputs:
+          icon: =@ctx.current.item.icon
+          title: =@ctx.current.item.title
+          subtitle: =@ctx.current.item.subtitle
+

@@ -1,0 +1,64 @@
+title: Images
+type: jig.default
+icon: resize-shrink
+isHomeButtonVisible: false
+
+datasources:
+  menuList: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jigId: images-on-view
+          title: Image on coloured view
+          icon: resize-shrink
+          color: color1
+        - id: 2
+          jigId: images-in-row
+          title: Images in rows
+          icon: resize-shrink
+          color: color2
+        - id: 3
+          jigId: images-with-details
+          title: Image with details and actions
+          icon: resize-shrink
+          color: color3
+
+children:
+  - type: component.section
+    options:
+      title: STANDARD IMAGE DISPLAY
+      children:
+        - type: component.image
+          options:
+            source:
+              uri: https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80
+
+  - type: component.section
+    options:
+      title: IMAGES OPTIONS (CLICK TO VIEW)
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.menuList
+            maximumItemsToRender: 8
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.title
+                color:
+                  - when: true
+                    color: =@ctx.current.item.color
+                leftElement: 
+                  element: icon
+                  icon: =@ctx.current.item.icon
+                  isDuotone: true
+                rightElement: 
+                  element: icon
+                  icon: arrow-right-1
+                onPress: 
+                  type: action.go-to
+                  options:
+                    linkTo: =@ctx.current.item.jigId
+
+

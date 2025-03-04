@@ -1,0 +1,49 @@
+title: Horizontal list - Courses
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
+
+datasources:
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - icon: attachment
+          image: https://images.unsplash.com/photo-1631557777150-452c4568cc14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80
+          link: resources
+          subtitle: null
+          title: Resources
+        - icon: pencil-2
+          image: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80
+          link: courses
+          subtitle: 4 Courses available
+          title: Courses
+        - icon: career
+          image: https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80
+          link: groups
+          subtitle: 3 Groups
+          title: Groups
+
+children:
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.categories
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: false
+      item:
+        type: component.custom-component
+        componentId: horizontal
+        inputs:
+          info: =@ctx.current.item
+
+
+

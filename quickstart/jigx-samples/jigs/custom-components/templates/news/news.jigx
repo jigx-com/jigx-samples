@@ -1,0 +1,127 @@
+title: News
+type: jig.default
+icon: news
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1691223733678-095fee90a0a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmV3c3xlbnwwfHwwfHx8MA%3D%3D
+        title: BBC news
+        
+datasources:
+  categories: 
+    type: datasource.static
+    options:
+      data:
+      - category-name: All   
+        category-selected: ""
+      - category-name: News  
+        category-selected: "" 
+      - category-name: Sport 
+        category-selected: "true"  
+      - category-name: Reel  
+        category-selected: "" 
+
+      - category-name: Worklife
+        category-selected: ""   
+      - category-name: Travel
+        category-selected: ""   
+      - category-name: Future
+        category-selected: ""   
+      - category-name: Culture
+        category-selected: ""
+      
+  card-list1: 
+    type: datasource.static
+    options:
+      data:
+      - image: https://ichef.bbci.co.uk/news/976/cpsprodpb/E844/production/_129506495_e5eaae540704e686043c4c2faa677c503fcb89f70_453_5500_30941000x563.jpg.webp
+        title: Ukraine's Zelensky holds first war phone call with China's Xi
+        date: 6 hours ago
+        time: 7 min read
+        category: SPORT
+      - image: https://ichef.bbci.co.uk/news/976/cpsprodpb/CA09/production/_129512715_ejeancarroll.jpg.webp
+        title: "Donald Trump rape accuser E Jean Carroll takes the stand"
+        date: 3 hours ago
+        time: 3 min read
+        category: SPORT
+      - image: https://ichef.bbci.co.uk/news/976/cpsprodpb/17046/production/_129487249_crownonstage.jpg.webp
+        title: "Freddie Mercury: Queen star's friend Mary Austin to auction his personal treasures"
+        date: 4 hours ago
+        time: 5 min read
+        category: SPORT        
+
+  card-list2: 
+    type: datasource.static
+    options:
+      data:
+      - image: https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/3D5F/production/_129511751_rex.png
+        title: Man City hammer Arsenal to move two points off top
+        date: 4 min ago
+        time: 2 min readw
+        category: SPORT
+      - image: https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/1F18/production/_129506970_emma_raducanu_getty.jpg
+        title: "Madrid Open: Emma Raducanu withdraws with hand injury before first-round match"
+        date: 1 hour ago
+        time: 3 min read
+        category: SPORT
+      - image: https://ichef.bbci.co.uk/onesport/cps/976/cpsprodpb/4985/production/_129512881_tost2.jpg
+        title: "Franz Tost: Alpha Tauri team principal to be replaced by Ferrari's Laurent Mekies"
+        date: 1 hour ago
+        time: 6 min read
+        category: SPORT        
+
+children:
+  - type: component.custom-component      
+    componentId: section1
+    inputs:
+      title: Breaking news
+      link: See all    
+
+  - type: component.list
+    options:
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      data: =@ctx.datasources.card-list1
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: news-card-1
+        inputs:
+          image: =@ctx.current.item.image
+          title: =@ctx.current.item.title
+          date: =@ctx.current.item.date
+          time: =@ctx.current.item.time
+          category: =@ctx.current.item.category
+
+  - type: component.list
+    options:
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      data: =@ctx.datasources.categories
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: news-categories
+        inputs:
+          category-name: =@ctx.current.item.category-name
+          category-selected: =@ctx.current.item.category-selected
+
+  - type: component.list
+    options:     
+      data: =@ctx.datasources.card-list2
+      maximumItemsToRender: 8
+      item: 
+        type: component.custom-component
+        componentId: news-card-2
+        inputs:
+          image: =@ctx.current.item.image
+          title: =@ctx.current.item.title
+          date: =@ctx.current.item.date
+          time: =@ctx.current.item.time
+          category: =@ctx.current.item.category

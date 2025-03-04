@@ -1,0 +1,349 @@
+type: component.default
+inputs:
+  team-1-points:
+    default: ""
+    required: true
+    type: number
+  team-2-points:
+    default: ""
+    required: true
+    type: number
+  team-3-points:
+    default: ""
+    required: true
+    type: number
+  team1-member1:
+    default: ""
+    required: true
+    type: string
+  team1-member2:
+    default: ""
+    required: true
+    type: string
+  team1-member3:
+    default: ""
+    required: true
+    type: string
+  team1-member4:
+    default: ""
+    required: true
+    type: string
+  team1-name:
+    default: ""
+    required: true
+    type: string
+  team2-member1:
+    default: ""
+    required: true
+    type: string
+  team2-member2:
+    default: ""
+    required: true
+    type: string
+  team2-member3:
+    default: ""
+    required: true
+    type: string
+  team2-member4:
+    default: ""
+    required: true
+    type: string
+  team2-name:
+    default: ""
+    required: true
+    type: string
+  team3-member1:
+    default: ""
+    required: true
+    type: string
+  team3-member2:
+    default: ""
+    required: true
+    type: string
+  team3-member3:
+    default: ""
+    required: true
+    type: string
+  team3-member4:
+    default: ""
+    required: true
+    type: string
+  team3-name:
+    default: ""
+    required: true
+    type: string
+
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: flex-end
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                basis: 1
+                grow: 1
+
+            children:
+              - type: component.view
+                options:
+                  children: []
+                  style:
+                    height: 32
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color14
+                      emphasis: medium
+                    gap: small
+                    height:
+                      min: 200
+                    justifyContent: flex-end
+                    padding:
+                      horizontal: small
+                      vertical: large
+                    radius: large
+
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: =@ctx.inputs.team1-name
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: =@ctx.inputs.team-1-points & " pt"
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        value: |
+                          =@ctx.inputs.team1-member1 & '\n' & 
+                          @ctx.inputs.team1-member2 & '\n' & 
+                          @ctx.inputs.team1-member3 & '\n' & 
+                          @ctx.inputs.team1-member4
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color13
+                      emphasis: ="transparent"
+                    justifyContent: center
+                    left: none
+                    position: absolute
+                    right: none
+                    top: none
+
+                  children:
+                    - type: component.icon
+                      options:
+                        color: color13
+                        icon: rating-star
+                        size: extra-large
+
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          height: 64
+                          justifyContent: center
+                          position: absolute
+                          top: none
+
+                        children:
+                          - type: component.text
+                            options:
+                              align: center
+                              value: "3"
+                              weight: bold
+
+        - type: component.view
+          options:
+            style:
+              flex:
+                basis: 1
+                grow: 1
+
+            children:
+              - type: component.view
+                options:
+                  children: []
+                  style:
+                    height: 32
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color14
+                      emphasis: medium
+                    gap: small
+                    height:
+                      min: 250
+                    justifyContent: flex-end
+                    padding:
+                      horizontal: small
+                      vertical: large
+                    radius: large
+
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: =@ctx.inputs.team2-name
+
+                    - type: component.text
+                      options:
+                        align: center
+                        value: =@ctx.inputs.team-2-points & " pt"
+
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        value: |
+                          =@ctx.inputs.team2-member1 & '\n' & 
+                          @ctx.inputs.team2-member2 & '\n' & 
+                          @ctx.inputs.team2-member3 & '\n' & 
+                          @ctx.inputs.team2-member4
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: ="warning"
+                      emphasis: ="transparent"
+                    justifyContent: center
+                    left: none
+                    position: absolute
+                    right: none
+                    top: none
+
+                  children:
+                    - type: component.icon
+                      options:
+                        color: ="warning"
+                        icon: rating-star
+                        size: extra-large
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          height: 64
+                          justifyContent: center
+                          position: absolute
+                          top: none
+                        children:
+                          - type: component.text
+                            options:
+                              align: center
+                              value: "1"
+                              weight: bold
+
+        - type: component.view
+          options:
+            style:
+              flex:
+                basis: 1
+                grow: 1
+
+            children:
+              - type: component.view
+                options:
+                  children: []
+                  style:
+                    height: 32
+                
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color14
+                      emphasis: medium
+                    gap: small
+                    height:
+                      min: 225
+                    justifyContent: flex-end
+                    padding:
+                      horizontal: small
+                      vertical: large
+                    radius: large
+                    
+                  children:
+                    - type: component.text
+                      options:
+                        align: center
+                        size: medium
+                        value: =@ctx.inputs.team3-name
+                      
+                    - type: component.text
+                      options:
+                        align: center
+                        value: =@ctx.inputs.team-3-points & " pt"
+                      
+                    - type: component.text
+                      options:
+                        align: center
+                        emphasis: medium
+                        value: |
+                          =@ctx.inputs.team3-member1 & '\n' & 
+                          @ctx.inputs.team3-member2 & '\n' & 
+                          @ctx.inputs.team3-member3 & '\n' & 
+                          @ctx.inputs.team3-member4
+
+              - type: component.view
+                options:
+                  style:
+                    alignItems: center
+                    background:
+                      color: color14
+                      emphasis: ="transparent"
+                    justifyContent: center
+                    left: none
+                    position: absolute
+                    right: none
+                    top: none
+
+                  children:
+                    - type: component.icon
+                      options:
+                        color: color14
+                        icon: rating-star
+                        size: extra-large
+
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          height: 64
+                          justifyContent: center
+                          position: absolute
+                          top: none
+
+                        children:
+                          - type: component.text
+                            options:
+                              align: center
+                              value: "2"
+                              weight: bold
+

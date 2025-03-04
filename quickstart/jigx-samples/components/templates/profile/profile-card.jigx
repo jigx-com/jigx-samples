@@ -1,0 +1,54 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: center
+        flex:
+          direction: row
+          grow: 1
+        gap: medium
+      children:
+        - type: component.avatar
+          options:
+            title: =$substring(@ctx.inputs.info.firstName, 0, 1)
+            size: large
+            uri: =@ctx.inputs.info.avatar
+
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: column
+                grow: 1
+                shrink: 1
+              justifyContent: center
+            children:
+              - type: component.view
+                options:
+                  style:
+                    gap: minimal
+                  children:
+                    - type: component.text
+                      options:
+                        size: medium
+                        value: =@ctx.inputs.info.firstName & ' ' & @ctx.inputs.info.lastName
+
+                    - type: component.text
+                      options:
+                        emphasis: medium
+                        size: regular
+                        value: =@ctx.inputs.info.email
+
+              - type: component.view
+                when: =$boolean(@ctx.inputs.edit-profile-hidden)
+                options:
+                  style:
+                    padding:
+                      vertical: medium
+                  children:
+                    - type: component.text
+                      options:
+                        color: primary
+                        size: small
+                        value: Edit your profile

@@ -1,0 +1,57 @@
+title: ToDo List
+description: Click on any of the task to see examples of task info displays
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1578575737601-bd8f2557550c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlbGF4aW5nJTIwbmF0dXJlfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60
+
+datasources:
+  todos:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/todos
+      query: SELECT id, '$.classcode', '$.todo', '$.color' FROM [default/todos] ORDER
+        BY '$.classcode'
+      jsonProperties:
+        - todo
+
+children:
+  - type: component.list
+    options:
+      maximumItemsToRender: 8
+      data: =@ctx.datasources.todos
+      isHorizontal: true
+      isHorizontalScrollIndicatorHidden: true
+      item:
+        type: component.custom-component
+        componentId: todo
+        inputs:
+          info: =@ctx.current.item
+          task1: =@ctx.current.item.todo[0].name
+          task1id: =@ctx.current.item.todo[0].id
+          task2: =@ctx.current.item.todo[1].name
+          task2id: =@ctx.current.item.todo[1].id
+          task3: =@ctx.current.item.todo[2].name
+          task3id: =@ctx.current.item.todo[2].id
+          task4: =@ctx.current.item.todo[3].name
+          task4id: =@ctx.current.item.todo[3].id
+          task5: =@ctx.current.item.todo[4].name
+          task5id: =@ctx.current.item.todo[4].id
+          task6: =@ctx.current.item.todo[5].name
+          task6id: =@ctx.current.item.todo[5].id
+
+widgets:
+  "2x2": 
+    type: widget.image
+    options:
+      source:
+        uri: https://images.unsplash.com/photo-1578575737601-bd8f2557550c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlbGF4aW5nJTIwbmF0dXJlfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60

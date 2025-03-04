@@ -1,0 +1,40 @@
+type: component.default
+children:        
+  - type: component.progress-bar
+    options:
+      value:
+        current: 5
+        max: 10
+      steps: 5
+      size: medium    # default: medium  || tiny / small / medium / large / extra-large
+      color: primary  # default: primary  ||  color1-14, primary, positive, negative, warning
+      # style:
+      #   isDisabled: true
+      
+      title:
+        value: Title
+        align: left       # default: left  ||  left / right / center
+        position: top     # default: top  ||  top / bottom
+        # color:          # default: text color  ||  positive / negative / warning
+        
+        # DELETE
+        # emphasis: none    # default: none  ||  medium / high / none
+        # weight:
+        
+      subtitle:
+        value: Subtitle
+        align: left       # default: left  ||  left / right / center
+        position: top     # default: top  ||  top / bottom
+        # color:          # default: text color  ||  positive / negative / warning
+        
+        # DELETE
+        # weight:
+              
+# BUGS
+# 1) Default color: primary
+# 1.1) If I put progress on the card, it is still primary
+# 1.2) If I set the card's background color to, e.g., color1, the color of the progress bar switches to the color of the text
+# 1.3) I can explicitly change the color of the progress bar and thus affect the output
+# 2) Progressbar adds left + right padding if placed in a custom component (even if not in a view or tab)
+# 3) If there is a title and subtitle with position top, the progress bar has extra padding-bottom (shouldn't have)
+# 4) If a title and subtitle are situated at the position: top and both elements are aligned to opposite sides (left + right), they should be on the same row.

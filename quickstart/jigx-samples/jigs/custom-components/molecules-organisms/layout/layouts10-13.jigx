@@ -1,0 +1,76 @@
+title: Layouts 10 - 13
+type: jig.default
+icon: layout-5
+
+datasources:
+  trend:
+    type: datasource.static
+    options:
+      data:
+        - 15
+        - 20
+        - 10
+        - 16 
+        - 17
+        - 19
+        - 12
+        - 22
+        - 18
+        - 10 
+        - 30
+        - 21
+        - 28
+        - 27
+        - 24 
+  trend2:
+    type: datasource.static
+    options:
+      data:
+        - 22
+        - 18
+        - 10 
+        - 30
+        - 21
+        - 28
+        - 27
+        - 24    
+        - 15
+        - 20
+        - 17
+        - 19
+        - 12
+        - 10
+        - 16 
+              
+children:
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 10    
+  - type: component.custom-component
+    componentId: list-layout-10        
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 11    
+  - type: component.custom-component
+    componentId: list-layout-11               
+    
+
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 12  
+  - type: component.custom-component
+    componentId: list-layout-12
+    
+  - type: component.custom-component
+    componentId: section2
+    inputs:
+      title: Layout 13
+  - type: component.custom-component
+    componentId: list-layout-13   
+    inputs:
+      trend: =@ctx.datasources.trend 
+      trend2: =@ctx.datasources.trend2

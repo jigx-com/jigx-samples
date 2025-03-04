@@ -1,0 +1,51 @@
+type: component.default
+children:
+  - type: component.card
+    options:
+      direction: row
+      children:              
+        - type: component.icon
+          options:
+            icon: shopping-cart-empty-1
+            size: large
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.amazon.com
+
+        - type: component.icon
+          options:
+            icon: mindfullness
+            size: large
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.calm.com
+
+        - type: component.icon
+          options:
+            icon: weather
+            size: large
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.accuweather.com
+
+        - type: component.icon
+          options:
+            icon:  single-neutral
+            size: large
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.linkedin.com
+
+        - type: component.icon
+          options:
+            icon: location
+            size: large
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.google.com/maps/
+

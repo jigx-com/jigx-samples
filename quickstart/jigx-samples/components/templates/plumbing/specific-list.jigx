@@ -1,0 +1,66 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        alignItems: center
+        flex:
+          direction: row
+        gap: medium
+      children:
+        - type: component.view
+          options:
+            style:
+              flex:
+                direction: row
+                grow: 1
+                shrink: 1
+              margin:
+                left: large
+              padding:
+                bottom: medium
+                left: large
+            children:
+              - type: component.view
+                options:
+                  style:
+                    flex:
+                      direction: row
+                      grow: 1
+                      shrink: 1
+                    gap: small
+                    justifyContent: space-between
+                    margin:
+                      left: medium
+                    padding:
+                      horizontal: medium
+                  children:
+                    - type: component.text
+                      options:
+                        size: regular
+                        value: =@ctx.inputs.service
+                        weight: bold
+                      
+                    - type: component.view
+                      options:
+                        style:
+                          alignItems: center
+                          flex:
+                            direction: row
+                            grow: 0
+                          gap: minimal
+                        children:
+                          - type: component.text
+                            options:
+                              value:
+                                format:
+                                  currency: =@ctx.inputs.currency
+                                  currencyDisplay: symbol
+                                  numberStyle: currency
+                                text: =@ctx.inputs.price
+                              weight: bold
+                            
+                          - type: component.text
+                            options:
+                              emphasis: medium
+                              value: =@ctx.inputs.unit

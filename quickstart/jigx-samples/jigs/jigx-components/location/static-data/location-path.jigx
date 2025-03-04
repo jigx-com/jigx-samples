@@ -1,33 +1,72 @@
 title: Location displaying path
 type: jig.default
-
 datasources:
-  coordinates:
+  points:
     type: datasource.static
     options:
       data:
- 
-        - lat: 40.769702
-          lng: -74.038241
-        - lat: 40.759412
-          lng: -73.912306
-        - lat: 40.803495
-          lng: -73.950694
-
+        - latitude: 40.759412
+          longitude: -73.912306
+        - latitude: 40.745368
+          longitude: -74.057189
+        - latitude: 40.76479429122513
+          longitude: -73.97429291692742    
 children:
-    - type: component.section
-      options:
-        title: Animation Enabled
-        children:
-          - type: component.location
-            options:
-              pathsData: =@ctx.datasources.coordinates
-              isAnimationDisabled: false
-    - type: component.section
-      options:
-        title: Animation Disabled
-        children:
-          - type: component.location
-            options:
-              pathsData: =@ctx.datasources.coordinates
-              isAnimationDisabled: true
+  - type: component.section
+    options:
+      title: Animation Enabled
+      children:
+        - type: component.location
+          options:
+            viewPoint:
+              # Starting address specified.
+              centerPosition: middle
+              latitude: 40.759412
+              longitude: -73.912306
+              isAnimationEnabled: true
+              zoomLevel: 9
+            # Add an icon markers for the addresses
+            markers:
+              data: =@ctx.datasources.points
+              item:
+                type: component.marker-item
+                options:
+                  latitude: =@ctx.current.item.latitude
+                  longitude: =@ctx.current.item.longitude
+                  children:
+                    type: component.icon
+                    options: 
+                      icon: end-marker  
+            # Paths defined in a datasource in Latitude and longitude                 
+            paths:
+              data: =@ctx.datasources.points
+                          
+  - type: component.section
+    options:
+      title: Animation Disabled
+      children:
+        - type: component.location
+          options:
+            viewPoint:
+              # Starting address specified.
+              centerPosition: middle
+              latitude: 40.759412
+              longitude: -73.912306
+              isAnimationEnabled: false
+              zoomLevel: 9
+            # Add an icon markers for the addresses
+            markers:
+              data: =@ctx.datasources.points
+              item:
+                type: component.marker-item
+                options:
+                  latitude: =@ctx.current.item.latitude
+                  longitude: =@ctx.current.item.longitude
+                  children:
+                    type: component.icon
+                    options: 
+                      icon: end-marker  
+            # Paths defined in a datasource in Latitude and longitude                 
+            paths:
+              data: =@ctx.datasources.points
+    

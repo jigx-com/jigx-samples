@@ -1,0 +1,26 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        gap: minimal
+        padding:
+          bottom: small
+          horizontal: medium
+          top: medium
+      children:
+        - type: component.text
+          options:
+            align: center
+            color: primary
+            size: small
+            value: OUR PRODUCT
+            weight: bold
+
+        - type: component.text
+          options:
+            align: center
+            size: medium
+            value: Who we help
+            weight: bold
+

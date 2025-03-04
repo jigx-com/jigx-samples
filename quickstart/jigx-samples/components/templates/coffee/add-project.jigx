@@ -1,0 +1,49 @@
+type: component.default
+
+inputs:
+  icon:
+    default: ""
+    required: false
+    type: string
+  linkTo:
+    default: ""
+    required: false
+    type: string
+  title:
+    default: ""
+    required: false
+    type: string
+
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.view
+          options:
+            style:
+              alignItems: center
+              flex:
+                direction: row
+                grow: 1
+              gap: medium
+              justifyContent: center
+              padding: medium
+            children:
+              - type: component.icon
+                when: =@ctx.inputs.icon != null
+                options:
+                  color: primary
+                  icon: =@ctx.inputs.icon
+                  size: small
+                
+              - type: component.text
+                when: =@ctx.inputs.title != null
+                options:
+                  color: primary
+                  value: =@ctx.inputs.title
+
+      onPress:
+        type: action.go-to
+        options:
+          linkTo: =@ctx.inputs.linkTo
+

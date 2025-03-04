@@ -1,0 +1,77 @@
+type: component.default
+children:
+  - type: component.view
+    options:
+      style:
+        margin:
+          right: medium
+        width: 200
+      children:
+        - type: component.view
+          options:
+            style: {}
+            children:
+              - type: component.image
+                options:
+                  size:
+                    height: 150
+                    width: 200
+                  source:
+                    uri: =@ctx.inputs.info.image
+
+              - type: component.view
+                options:
+                  style:
+                    alignContent: flex-start
+                    alignItems: flex-start
+                    background:
+                      color: ="overlay"
+                      emphasis: medium
+                    flex:
+                      grow: 1
+                    height: 150
+                    justifyContent: flex-end
+                    padding: medium
+                    position: absolute
+                    radius: medium
+                    width: 200
+                  children:
+                    - type: component.view
+                      options:
+                        style:
+                          flex:
+                            grow: 0
+                          justifyContent: flex-end
+                        children:
+                          - type: component.icon
+                            options:
+                              icon: =@ctx.inputs.info.icon
+                              shape: circle
+                              size: medium
+                              type: contained
+
+        - type: component.view
+          options:
+            style:
+              gap: small
+              padding:
+                top: medium
+            children:
+              - type: component.text
+                when: =@ctx.inputs.info.title
+                options:
+                  size: medium
+                  value: =@ctx.inputs.info.title
+                  weight: bold
+
+              - type: component.text
+                when: =@ctx.inputs.info.subtitle
+                options:
+                  emphasis: medium
+                  size: small
+                  value: =@ctx.inputs.info.subtitle
+
+      onPress:
+        type: action.go-to
+        options:
+          linkTo: =@ctx.inputs.info.link
