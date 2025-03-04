@@ -1,29 +1,43 @@
-title: All Widgets
+title: ' '
 type: jig.default
 icon: coding-apps-website-apps-add-widget
 
-children:
-  - type: component.widgets
+children: 
+  - type: component.grid
     options:
       children:
-        - size: "4x2"
-          jigId: jigx-widgets
-        - size: "2x4"
-          jigId: widget-sizes
-        - size: "2x4"
-          jigId: widget-type
-        
-widgets:
-  "2x2": 
-   type: widget.status
-   options:
-    statuses:
-      - when: true
-        icon: coding-apps-website-apps-add-widget
-        bottom:
-          type: component.titles
+        - type: component.grid-item
           options:
-            subtitle: See widgets in action
-            align: center
+            size: "4x2"
+            children: 
+              type: component.image
+              options:
+                source:
+                  uri: https://s3.amazonaws.com/docs.jigx.com/general-images/widgets-image2.png
+                onPress: 
+                  type: action.go-to
+                  options:
+                    linkTo: jigx-widgets
+
+  - type: component.grid
+    options:
+      children:
+        - type: component.grid-item
+          options:
+            size: "2x4"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: widget-sizes
+                
+         
+        - type: component.grid-item
+          options:
+            size: "2x4"
+            children: 
+              type: component.jig-widget
+              options:
+                jigId: widget-type
+                                       
         
         
