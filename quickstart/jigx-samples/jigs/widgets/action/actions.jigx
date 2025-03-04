@@ -11,7 +11,7 @@ children:
             value: This is the representations of jw-action
 
 widgets:
-  2x2:
+  actions-2x2:
     type: widget.actions
     options:
       footer: Show more

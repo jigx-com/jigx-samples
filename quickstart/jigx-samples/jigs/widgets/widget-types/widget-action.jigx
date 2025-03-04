@@ -1,16 +1,22 @@
-title: See all widgets
-type: jig.default
-icon: coding-apps-website-apps-add-widget
+title: Action widgets
+type: jig.grid
 
 children:
-  - type: component.widgets
+  - type: component.grid-item
     options:
-      children:
-        - size: 2x2
+      size: "2x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: actions 
-          
-        - size: "1x1"
-          jigId: onpress_4x2    
+          widgetId: actions-2x2
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: onpress_4x2      
           onPress: 
             type: action.info-modal
             options:

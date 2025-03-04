@@ -1,32 +1,68 @@
 title: Widgets groups
-type: jig.default
+type: jig.grid
 
 children:
-  - type: component.widgets
+  - type: component.grid-item
     options:
+      size: "4x2"
       children: 
-
-        - size: "4x2"
-          jigId: combined-chart-list-1_4x2  
-          
-        - size: "4x4"
-          jigId: combined-avatar-list-1_4x4   
-          
-        - size: "4x2"
-          jigId: combined-image-image-1_4x2  
-
-        - size: "4x2"
+        type: component.jig-widget
+        options:
+          jigId: combined-chart-list-1_4x2
+          widgetId: chart-list1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-avatar-list-1_4x4 
+          widgetId: combined-avatar-list1-4x4
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-image-image-1_4x2
+          widgetId: combined-image1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-chart-chart-1_4x2
-          
-        - size: "4x2"
+          widgetId: combined-chart1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-value-list-1_4x2
-          
-        - size: "4x2"
-          jigId: combined-avatar-list-1_4x2    
-
-        - size: "4x2"
+          widgetId: combined-value1-4x2
+  - type: component.grid-item
+    options:
+      size: 4x2
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-avatar-list-1_4x2  
+          widgetId: combined-avatar-list1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-avatar-list-2_4x2 
-
-        - size: "2x4"
-          jigId: combined-status-list-1_2x4   
-        
+          widgetId: combined-avatar-list2-4x2
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-status-list-1_2x4
+          widgetId: combined-statuslist1-2x4

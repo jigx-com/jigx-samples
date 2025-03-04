@@ -1,63 +1,81 @@
 title: My places
 type: jig.default
 icon: home-apps-logo
-
-header:
-  type: component.jig-header
-  options:
-    height: small
-    children:
-      type: component.image
-      options:
-        source:
-          uri: https://images.unsplash.com/photo-1471623320832-752e8bbf8413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhY2UlMjBtYXB8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
-          
 datasources:
   my-places:
-    type: datasource.static
     options:
       data:
         - lat: 50.091918
-          lng: 14.427220
-        - lat: 50.099090
+          lng: 14.42722
+        - lat: 50.09909
           lng: 14.395192
         - lat: 50.091402
           lng: 14.417972
-        - lat: 50.090937 
+        - lat: 50.090937
           lng: 14.428027
-            
+    type: datasource.static
 children:
   - type: component.location
     options:
-      markersData: =@ctx.datasources.my-places
-      zoomLevel: 11
-  - type: component.entity
-    options:
-      isCompact: true
+      viewPoint:
+        address: =@ctx.datasources.my-places
+        zoomLevel: 11
+      markers:
+        data: =@ctx.datasources.my-places
+        item:
+          type: component.marker-item
+          options:
+            children: 
+              type: component.icon
+              options:
+                icon: end-marker
+    
+  - options:
       children:
-        - type: component.entity-field
-          options:
+        - options:
             label: Home
-            value: Kafkova 682/28    
-        - type: component.entity-field
-          options:
+            value: Kafkova 682/28
+          type: component.entity-field
+        - options:
             label: School
             value: Pařížská 97
-        - type: component.entity-field
-          options:
+          type: component.entity-field
+        - options:
             label: Work
             value: Hradební 1044
-        - type: component.entity-field
-          options:
+          type: component.entity-field
+        - options:
             label: Gym
             value: Revoluční 1200/16
-
-
-
+          type: component.entity-field
+      isCompact: true
+    type: component.entity
+header:
+  options:
+    children:
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1471623320832-752e8bbf8413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhY2UlMjBtYXB8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60
+      type: component.image
+    height: small
+  type: component.jig-header
 widgets:
-  "4x4": 
+  cc-widget-location:
     type: widget.location
     options:
-      markersData: =@ctx.datasources.my-places
-      zoomLevel: 11
+      viewPoint:
+        address: =@ctx.datasources.my-places
+        zoomLevel: 11
+      markers:
+        data: =@ctx.datasources.my-places
+        item:
+          type: component.marker-item
+          options:
+            children: 
+              type: component.icon
+              options:
+                icon: end-marker
         
+        
+      
+    

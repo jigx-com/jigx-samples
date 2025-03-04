@@ -1,62 +1,172 @@
 title: Widgets 4x2
-type: jig.default
+type: jig.grid
 
 children:
-  - type: component.widgets
+  - type: component.grid-item
     options:
-      children:
-        - size: "4x2"
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-chart-list-1_4x2
-        - size: "4x2"
+          widgetId: chart-list1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: image-2_4x2
-        - size: "4x2"
+          widgetId: image2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-image-image-1_4x2
-        - size: "4x2"
+          widgetId: combined-image1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-chart-chart-1_4x2
-        - size: "4x2"
-          jigId: combined-value-list-1_4x2 
-        - size: "4x2"
+          widgetId: combined-chart1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-value-list-1_4x2
+          widgetId: combined-value1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: combined-avatar-list-1_4x2    
-
-        - size: "4x2"
+          widgetId: combined-avatar-list1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: chart-line-3_4x2
-
-        - size: "4x2"
-          jigId: combined-avatar-list-2_4x2 
-
-        - size: "4x2"
+          widgetId: line2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-avatar-list-2_4x2
+          widgetId: combined-avatar-list2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: chart-pie-1_4x2
-        - size: "4x2"
-          jigId: chart-line-1_4x2  
-        - size: "4x2"
+          widgetId: pie1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-line-1_4x2 
+          widgetId: line1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: location-2_4x2
-      
-        - size: "4x2"
+          widgetId: location2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: chart-line-2_4x2
-
-        - size: "4x2"
-          jigId: chart-bar-1_4x2  
-        - size: "4x2"
-          jigId: image-2_4x2   
-            
-        - size: "4x2"
-          jigId: list-3_4x2     
-
-        - size: "4x2"
-          jigId: chart-bar-2_4x2         
-
-        - size: "4x2"
+          widgetId: line2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-bar-1_4x2
+          widgetId: bar1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: image-2_4x2 
+          widgetId: image2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: list-3_4x2
+          widgetId: list3-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-bar-2_4x2 
+          widgetId: bar2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: value-1_4x2
-          
-        - size: "4x2"
+          widgetId: value1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: list-1_4x2
-          
-        - size: "4x2"
+          widgetId: list1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: list-2_4x2  
-          
-        - size: "4x2"
+          widgetId: list2-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: status-1_4x2
-        
-        - size: "4x2"
+          widgetId: status1-4x2
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: list-4_4x2
-        
+          widgetId: list4-4x2           

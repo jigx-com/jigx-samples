@@ -1,22 +1,40 @@
 title: Widget size 4x4
-type: jig.default
+type: jig.grid
 
 children:
-  - type: component.widgets
+  - type: component.grid-item
     options:
-      children:
-         
-        - size: "4x4"
-          jigId: combined-avatar-list-1_4x4   
-
-        - size: "4x4"
-          jigId: chart-line-1_4x4   
-        
-        - size: "4x4"
-          jigId: list-1_4x4 
-
-        - size: "4x4"
-          jigId: chart-line-2_4x4  
+      size: "4x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-avatar-list-1_4x4 
+          widgetId: combined-avatar-list1-4x4
+  - type: component.grid-item
+    options:
+      size: "4x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-line-1_4x4 
+          widgetId: line1-4x4
+  - type: component.grid-item
+    options:
+      size: "4x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: list-1_4x4
+          widgetId: list1-4x4
+  - type: component.grid-item
+    options:
+      size: "4x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-line-2_4x4 
+          widgetId: line2-4x4
+  
  
         
  

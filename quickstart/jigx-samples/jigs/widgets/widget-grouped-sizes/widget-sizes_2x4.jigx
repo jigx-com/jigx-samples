@@ -1,42 +1,93 @@
 title: Widgets 2x4
-type: jig.default
+type: jig.grid
 
 children:
-  - type: component.widgets
+  - type: component.grid-item
     options:
-      children:
-       
-        - size: "2x4"
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: location-1_2x4
-        
-        - size: "2x4"
+          widgetId: location1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: chart-line-1_2x4 
-         
-        - size: "2x4"
-          jigId: chart-pie-1_2x4  
-          
-        - size: "2x4"
+          widgetId: line1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: chart-pie-1_2x4
+          widgetId: pie1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: location-2_2x4 
-          
-        - size: "2x4"
+          widgetId: location2-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: image-1_2x4
-        
-        - size: "2x4"
+          widgetId: image1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: value-1_2x4
-       
-        - size: "2x4"
+          widgetId: value1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: list-1_2x4
-          
-        - size: "2x4"
+          widgetId: list1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: image-2_2x4
-              
-        - size: "2x4"
+          widgetId: image2-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: list-2_2x4
-          
-        - size: "2x4"
+          widgetId: list2-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
           jigId: status-1_2x4
-        
-        - size: "2x4"
-          jigId: combined-status-list-1_2x4   
-        
-          
+          widgetId: status1-2x4
+  - type: component.grid-item
+    options:
+      size: "2x4"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: combined-status-list-1_2x4
+          widgetId: combined-statuslist1-2x4  
+ 
