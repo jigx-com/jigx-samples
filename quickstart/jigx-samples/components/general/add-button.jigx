@@ -24,7 +24,7 @@ children:
         options:
           actions:
             - options:
-                parameters:
+                inputs:
                   data: =@ctx.inputs.data
                   id: =@ctx.inputs.id
                 linkTo: add-notes

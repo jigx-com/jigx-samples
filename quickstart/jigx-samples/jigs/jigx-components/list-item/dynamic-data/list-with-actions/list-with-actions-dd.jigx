@@ -33,7 +33,7 @@ item:
       type: action.go-to
       options:
         linkTo: form-row-children-dd
-        parameters:
+        inputs:
           id: =@ctx.current.item.id
           service: =@ctx.current.item.service
       

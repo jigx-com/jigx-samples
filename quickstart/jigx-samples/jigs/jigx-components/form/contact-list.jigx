@@ -27,7 +27,7 @@ item:
       type: action.go-to 
       options:
         linkTo: form-initialvalue
-        parameters: 
+        inputs:
           id: =@ctx.current.item.id
     
 

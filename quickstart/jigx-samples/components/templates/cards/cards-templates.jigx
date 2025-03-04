@@ -70,7 +70,7 @@ children:
               type: action.go-to
               options:
                 linkTo: custom-templates-filtered
-                parameters:
+                inputs:
                   category: useCases
                 
         - type: component.card
@@ -104,5 +104,5 @@ children:
               type: action.go-to
               options:
                 linkTo: custom-templates-filtered
-                parameters:
+                inputs:
                   category: components

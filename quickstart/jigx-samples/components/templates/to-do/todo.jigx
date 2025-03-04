@@ -80,7 +80,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task1id
 
         - type: component.view
@@ -118,7 +118,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task2id
 
         - type: component.view
@@ -156,7 +156,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task3id
 
         - type: component.view
@@ -194,7 +194,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task4id
 
           
@@ -233,7 +233,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task5id
 
         - type: component.view
@@ -271,7 +271,7 @@ children:
               type: action.go-to
               options:
                 linkTo: view-todo
-                parameters:
+                inputs:
                   id: =@ctx.inputs.task6id
 
     

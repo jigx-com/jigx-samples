@@ -18,7 +18,7 @@ children:
             onPress: 
               type: action.go-to
               options:
-                linkTo: facilities2
+                linkTo: facilities
                 # parameters:
                 #   id: =@ctx.inputs.packageId
                 #   packageName: =@ctx.inputs.packageName

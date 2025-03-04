@@ -46,7 +46,7 @@ item:
         type: action.go-to
         options:
           linkTo: countdown-jig-input
-          parameters:
+          inputs:
             packageDate: =$fromMillis($toMillis($now()) + (@ctx.current.item.days * 24 * 60 * 60 * 1000))
             packagePrice: =@ctx.current.item.Price
             packageName: =@ctx.current.item.name

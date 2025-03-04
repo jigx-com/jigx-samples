@@ -49,7 +49,7 @@ item:
       type: action.go-to
       options:
         linkTo: entity-calendar-detail
-        parameters:
+        inputs:
           title: =@ctx.current.item.title
           description: =@ctx.current.item.description
           type: =@ctx.current.item.type
@@ -58,7 +58,7 @@ item:
       options:
         title: Go to detail
         linkTo: entity-calendar-detail
-        parameters:
+        inputs:
           title: =@ctx.current.item.title
           description: =@ctx.current.item.description
           type: =@ctx.current.item.type

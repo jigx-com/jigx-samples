@@ -55,5 +55,5 @@ children:
               type: action.go-to
               options:
                 linkTo: =@ctx.inputs.info.linkto
-                parameters:
+                inputs:
                   title: =@ctx.inputs.info.title

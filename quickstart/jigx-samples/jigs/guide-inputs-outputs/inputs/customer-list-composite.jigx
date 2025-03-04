@@ -24,6 +24,6 @@ item:
       type: action.go-to
       options:
         linkTo: customer-overview
-        parameters:
+        inputs:
           customerId: =@ctx.current.item.customerId
           customerName: =@ctx.current.item.name

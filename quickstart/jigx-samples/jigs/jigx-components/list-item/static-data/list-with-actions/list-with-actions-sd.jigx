@@ -33,7 +33,7 @@ item:
       type: action.go-to
       options:
         linkTo: entity-field-sd
-        parameters:
+        inputs:
           id: =@ctx.current.item.id
           service: =@ctx.current.item.service
       
