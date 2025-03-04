@@ -36,7 +36,7 @@ options:
     - color: color7
       component: Custom components (Alpha)
       componentLink: custom-components
-      icon: calendar-1 
+      icon: composition-net 
     - color: color7
       component: Date-picker
       componentLink: composite-date-picker
