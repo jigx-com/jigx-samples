@@ -6,6 +6,6 @@ parameters:
     location: path
     type: string
     required: true
-url: 'https://api.pro.coinbase.com/products/BTC-EUR/candles'
+url: 'https://api.exchange.coinbase.com/products/BTC-EUR/candles'
 outputTransform: >-
   $.{ "ms": $[0] * 1000, "close": $formatNumber($number($[4]), '#.00000000') }
