@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  4x2:
+  lineChartDD-4x2:
     type: widget.chart
     options:
       chart:

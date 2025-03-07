@@ -13,7 +13,7 @@ children:
         
     
 widgets:
-  2x2:
+  listitemDD-2x2:
     type: widget.list
     options:
       data: =@ctx.datasources.calendar-data-dynamic

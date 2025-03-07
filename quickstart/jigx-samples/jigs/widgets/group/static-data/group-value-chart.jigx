@@ -29,7 +29,7 @@ children:
         - data: =@ctx.datasources.series1
           
 widgets:
-  2x4: 
+  groupValue-2x4: 
     type: widget.group
     options:
       children:

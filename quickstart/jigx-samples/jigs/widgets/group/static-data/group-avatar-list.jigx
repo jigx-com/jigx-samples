@@ -27,7 +27,7 @@ item:
       uri: =@ctx.current.item.img
 
 widgets:
-  4x2: 
+  groupAvatar-4x2: 
     type: widget.group
     options:
       children:

@@ -12,14 +12,14 @@ children:
             value: Value
 
 widgets:
-  2x2:
+  productStatic-2x2:
     type: widget.list
     options:
       data: =@ctx.datasources.flight-schedule-static
       item: 
         type: component.stage
         options:
-          icon: plane-2
+          icon: plane-1
           right:
             title: =@ctx.current.item.toabrv
             subtitle: =@ctx.current.item.to

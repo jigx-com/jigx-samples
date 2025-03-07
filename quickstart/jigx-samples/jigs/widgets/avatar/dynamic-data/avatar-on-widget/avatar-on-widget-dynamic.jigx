@@ -10,7 +10,7 @@ children:
       align: left
 
 widgets:    
-  2x2:
+  avatar-meeting:
     type: widget.avatar
     options:
       text: =$substring($substringBefore(@ctx.datasources.dynamic-global.name, " "), 0, 1) & $substring($substringAfter(@ctx.datasources.dynamic-global.name, " "), 0, 1)

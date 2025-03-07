@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  2x2:
+  trendList-2x2:
     type: widget.list
     options:
       data: =@ctx.datasources.static-global-multiple

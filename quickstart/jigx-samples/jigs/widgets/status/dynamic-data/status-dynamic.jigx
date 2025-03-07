@@ -11,7 +11,7 @@ children:
             value: This is the representations of jw-status
 
 widgets:
-  2x2: 
+  statusDD-2x2: 
     type: widget.status
     options:
       statuses:

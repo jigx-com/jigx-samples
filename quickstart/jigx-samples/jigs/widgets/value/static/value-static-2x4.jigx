@@ -11,7 +11,7 @@ children:
             value: Value    
             
 widgets:    
-  "2x4":
+  valueStatic-2x4:
     type: widget.value
     options:
       align: center

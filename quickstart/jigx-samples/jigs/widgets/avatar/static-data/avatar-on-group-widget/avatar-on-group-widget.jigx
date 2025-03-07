@@ -10,7 +10,7 @@ children:
       align: left
 
 widgets:
-  4x2:
+  patientStatic-4x2:
     type: widget.group
     options:
       children:

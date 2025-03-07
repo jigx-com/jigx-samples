@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  2x2:
+  trendListDD-2x2:
     type: widget.list
     options:
       data: =@ctx.datasources.employees-dynamic

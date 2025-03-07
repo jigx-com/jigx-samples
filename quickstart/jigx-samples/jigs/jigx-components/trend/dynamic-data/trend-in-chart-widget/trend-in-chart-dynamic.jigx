@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  4x4:
+  trendDD-4x4:
     type: widget.chart
     options:
       top:

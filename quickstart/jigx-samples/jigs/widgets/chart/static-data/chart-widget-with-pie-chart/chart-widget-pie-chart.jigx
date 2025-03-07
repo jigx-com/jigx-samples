@@ -11,7 +11,7 @@ children:
             value: Not implemented yet
 
 widgets:
-  2x2:
+  pieChartStatic-2x2:
     type: widget.chart
     options:
       chart:

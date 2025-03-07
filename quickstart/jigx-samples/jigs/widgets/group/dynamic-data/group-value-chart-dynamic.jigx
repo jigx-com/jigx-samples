@@ -20,7 +20,7 @@ children:
         - data: =@ctx.datasources.series1-dynamic
           
 widgets:
-  2x4: 
+  groupValueDD-2x4: 
     type: widget.group
     options:
       children:
@@ -38,4 +38,4 @@ widgets:
               options:
                 series:
                   - data: =@ctx.datasources.series1-dynamic
-          
+        

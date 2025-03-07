@@ -20,7 +20,7 @@ children:
             value: Value
             
 widgets:
-  "2x2": 
+  valueDD-2x2: 
     type: widget.value
     options:
       top: 

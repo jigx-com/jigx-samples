@@ -68,7 +68,7 @@ children:
             value: Text
 
 widgets:
-  "4x4": 
+  list-horizontal-4x4: 
     type: widget.group
     options:
       split: horizontal
