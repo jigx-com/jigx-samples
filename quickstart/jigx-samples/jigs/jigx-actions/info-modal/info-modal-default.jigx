@@ -48,7 +48,7 @@ children:
             label: Photo
         - type: component.section
           options:
-            title: Personal informations
+            title: Personal information
             children:
               - type: component.text-field
                 instanceId: employee-first-name
@@ -79,7 +79,7 @@ children:
                   icon: phone
         - type: component.section
           options:
-            title: Business informations
+            title: Business information
             children:
               - type: component.text-field
                 instanceId: employee-position

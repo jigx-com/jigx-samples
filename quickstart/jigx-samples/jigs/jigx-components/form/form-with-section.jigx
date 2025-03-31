@@ -5,7 +5,7 @@ actions:
   - children:
       - type: action.submit-form
         options:
-          formId: personal-informations-form
+          formId: personal-information-form
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/form
           method: save
@@ -13,12 +13,12 @@ actions:
 
 children:
   - type: component.form
-    instanceId: personal-informations-form
+    instanceId: personal-information-form
     options:
       children:
           - type: component.section
             options:
-              title: Personal informations
+              title: Personal information
               children:
                   - type: component.field-row
                     options:
@@ -44,7 +44,7 @@ children:
                             label: Phone number
           - type: component.section
             options:
-              title: Address informations
+              title: Address information
               children:
                 - type: component.text-field
                   instanceId: address
