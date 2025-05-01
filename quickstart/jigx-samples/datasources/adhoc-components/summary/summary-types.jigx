@@ -1,29 +1,33 @@
 type: datasource.static
 options:
   data:
-    - type: Calendar
-      typeLink: list-type-calendar
+    - color: color1
       icon: calendar-3
-      color: color1
-    - type: Composite
-      typeLink: list-type-composite
+      type: Calendar
+      typeLink: list-type-calendar
+    - color: color2
       icon: cog-double
-      color: color2
-    - type: Default
-      typeLink: list-type-default
+      type: Composite
+      typeLink: list-type-composite
+    - color: color3
       icon: navigation-menu-4
-      color: color3
-    - type: Document
-      typeLink: list-type-document
+      type: Default
+      typeLink: list-type-default
+    - color: color4
       icon: document
-      color: color4
-    - type: List
-      typeLink: list-type-list
-      icon: list
-      color: color5
-    - type: Fullscreen
-      typeLink: fullscreen-location-dd 
+      type: Document
+      typeLink: list-type-document
+    - color: color6
       icon: local-image-content
-      color: color6
+      type: Fullscreen
+      typeLink: fullscreen-location-dd
+    - color: color6
+      icon: local-image-content
+      type: Grid
+      typeLink: grid-summary
+    - color: color5
+      icon: list
+      type: List
+      typeLink: list-type-list
       
         

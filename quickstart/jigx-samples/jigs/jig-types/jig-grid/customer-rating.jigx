@@ -1,0 +1,62 @@
+title: Rating  
+description: Customer Survey
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1628313388777-9b9a751dfc6a?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+datasources:
+  customer-satisfaction: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          option: 😀 Happy
+        - id: 2
+          option: 😕 Neutral  
+        - id: 3
+          option: 😡 Sad 
+
+children:
+  - type: component.form
+    instanceId: customer-survey
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.choice-field
+          instanceId: satisfaction
+          options:
+            itemsPerRow: 3
+            label: How satisfied were you with our service today?
+            data: =@ctx.datasources.customer-satisfaction
+            item:
+              type: component.choice-field-item
+              options:
+                title: =@ctx.current.item.option
+                value: =@ctx.current.item.option
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: submit
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/customer
+          method: create
+          onSuccess: 
+            type: action.info-modal
+            options:
+              modal:
+                element: 
+                  type: image
+                  uri: https://images.unsplash.com/photo-1643878037082-ba1fd9a60b16?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                title: Survey complete
+                buttonText: Thank you
+          data:
+            satisfaction: =@ctx.components.satisfaction.state.value

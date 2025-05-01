@@ -1,0 +1,74 @@
+type: jig.grid
+title: ="Morning " & @ctx.user.displayName
+
+children:
+  - type: component.grid-item
+    options:
+      size: "2x2"
+      children: 
+        type: component.image
+        options:
+          title: Today's deliveries
+          source:
+            uri: https://cdn.pixabay.com/photo/2021/04/05/16/28/packages-6153947_1280.jpg
+          onPress: 
+            type: action.go-to
+            options:
+              linkTo: delivery-list
+        
+  - type: component.grid-item
+    options:
+      size: "2x2"
+      children: 
+        type: component.image
+        options:
+          title: Inspection checklist
+          onPress: 
+            type: action.go-to
+            options:
+              behaviour: existing
+              linkTo: inspection
+            
+          source:
+            uri: https://cdn.pixabay.com/photo/2014/11/20/19/16/insurance-539659_640.jpg
+        
+  
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: time-log
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: fuel-log
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: customer-complaints              
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children: 
+        type: component.jig-widget
+        options:
+          jigId: customer-rating    
+          
+  - type: component.grid-item
+    options:
+      size: "4x4"
+      children: 
+        type: component.custom-component
+        componentId: grid-location
+

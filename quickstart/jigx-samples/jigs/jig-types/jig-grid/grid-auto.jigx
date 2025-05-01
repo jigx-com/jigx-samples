@@ -1,0 +1,16 @@
+title: Cleaning services
+description: Available services in your area.
+
+type: jig.grid        
+data: =@ctx.datasources.cleaning-services-dynamic
+item:
+
+  type: component.grid-item
+  options:
+    size: "2x2"
+    children:   
+      type: component.image
+      options:
+        title: =@ctx.current.item.service
+        source:  
+          uri: =@ctx.current.item.image

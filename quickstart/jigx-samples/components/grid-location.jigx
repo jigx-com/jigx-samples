@@ -1,0 +1,44 @@
+type: component.default
+children:
+
+  - type: component.card
+    options:
+      children:
+        - type: component.entity
+          options:
+            children:
+                  - type: component.field-row
+                    options:
+                      children:
+                        - type: component.entity-field
+                          options:
+                            rightIcon: shield-warning 
+                            style:
+                              isNegative: true
+                            label: URGENT DELIVERY 
+                            value: 345 Harrison Ave, Boston, MA 02118
+        - type: component.location
+          options:
+            viewPoint:
+              centerPosition: middle
+              address: 345 Harrison Ave, Boston, MA 02118
+              zoomLevel: 11
+       
+  - type: component.view
+    options:
+      style:
+        flex:
+          direction: row
+        bottom: medium
+        top: medium
+        alignSelf: flex-end
+      children:
+        - type: component.button
+          options:
+            title: Navigate
+            type: primary
+            isCompact: true
+            onPress: 
+              type: action.open-url
+              options:
+                url: https://www.google.com/maps/place/Boston

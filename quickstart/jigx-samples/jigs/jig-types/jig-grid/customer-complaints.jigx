@@ -1,0 +1,25 @@
+title: Complaints
+type: jig.default
+icon: people-conflict-1
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1503525537183-c84679c9147f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YW5ncnklMjBjdXN0b21lcnxlbnwwfHwwfHx8MA%3D%3D
+
+placeholders:
+  - title: No data to display
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Placeholder
+            

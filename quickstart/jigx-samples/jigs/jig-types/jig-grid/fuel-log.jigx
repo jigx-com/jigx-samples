@@ -1,0 +1,27 @@
+title: Fuel log
+description: Description of your Jig
+type: jig.default
+icon: fuel-pump-reload
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1602853175733-5ad62dc6a2c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnVlbHxlbnwwfHwwfHx8MA%3D%3D
+
+placeholders:
+  - title: No data to display
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder
+            value: Placeholder
+            
+  

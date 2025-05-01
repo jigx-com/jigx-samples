@@ -1,0 +1,63 @@
+title: Today's Delivery List
+type: jig.default
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.solution.state
+    
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1480632563560-30f503c09195?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFyY2VsfGVufDB8fDB8fHww
+
+datasources:
+  deliveries: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          delivery-no: ABB3456
+          name: Paul Harrison
+          address: 12 Maple Close Beacon Hill Boston
+        - id: 2
+          delivery-no: WDX5635
+          name: Claudia Trent
+          address:  77 N Washington Street Boston
+        - id: 3
+          delivery-no: YGD4465
+          name: Kate Masson
+          address: 200 Claredon Street FL 49 Boston
+        - id: 4
+          delivery-no: RDE3957
+          name: Ronald Price
+          address: 88 Wareham Street Boston    
+
+children: 
+  - type: component.list
+    options:
+      data: =@ctx.datasources.deliveries
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.address
+          subtitle: =@ctx.current.item.name
+          leftElement: 
+            element: icon
+            icon: package-size-l
+       
+
+              
+                
+              
+  
+
+              
+    
+                    
