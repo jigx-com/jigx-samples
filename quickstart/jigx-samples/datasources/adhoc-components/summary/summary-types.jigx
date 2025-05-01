@@ -21,8 +21,8 @@ options:
       icon: local-image-content
       type: Fullscreen
       typeLink: fullscreen-location-dd
-    - color: color6
-      icon: local-image-content
+    - color: color7
+      icon: grid-guides
       type: Grid
       typeLink: grid-summary
     - color: color5

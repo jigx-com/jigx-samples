@@ -34,6 +34,10 @@ icons:
   - calendar # auto-generated
   - calendar-3 # auto-generated
   - camera # auto-generated
+  - car-dashboard-lights # auto-generated
+  - car-dashboard-window-rear # auto-generated
+  - car-dashboard-window-rear-wipe # auto-generated
+  - car-key-1 # auto-generated
   - card-add-1 # auto-generated
   - card-add-2 # auto-generated
   - career # auto-generated
@@ -91,6 +95,7 @@ icons:
   - folder-text-alternate # auto-generated
   - footwear-boots # auto-generated
   - form # auto-generated
+  - fuel-pump-reload # auto-generated
   - gallery # auto-generated
   - gauge-dashboard # auto-generated
   - google # auto-generated
@@ -139,10 +144,12 @@ icons:
   - notes-paper-approve # auto-generated
   - notification # auto-generated
   - oxygen-tank-1 # auto-generated
+  - package-size-l # auto-generated
   - pen-draw-1 # auto-generated
   - pencil-1 # auto-generated
   - pencil-2 # auto-generated
   - pencil-write # auto-generated
+  - people-conflict-1 # auto-generated
   - people-man-1-geometric # auto-generated
   - people-man-8 # auto-generated
   - person # auto-generated
@@ -171,6 +178,7 @@ icons:
   - search # auto-generated
   - select # auto-generated
   - seo-search-page # auto-generated
+  - shield-warning # auto-generated
   - shop-1 # auto-generated
   - shopping-cart-empty-1 # auto-generated
   - single-neutral # auto-generated
@@ -195,6 +203,7 @@ icons:
   - time-clock-circle # auto-generated
   - time-clock-circle-2 # auto-generated
   - time-clock-circle-alternate # auto-generated
+  - time-monthly-1 # auto-generated
   - time-reverse # auto-generated
   - toggle-setting-off # auto-generated
   - toilet-cleaning-plunger # auto-generated
