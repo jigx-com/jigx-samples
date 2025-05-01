@@ -1,0 +1,48 @@
+title: Time-tracking
+  # id: Time-tracking
+type: jig.default
+
+inputs:
+  Team: 
+    type: string
+    required: true
+  shift: 
+    type: string
+    required: true
+  hours:
+    type: number
+    required: true
+  color:
+    type: string
+    required: false
+    
+children:
+  - type: component.list-item
+    instanceId: rotation
+    options:  
+      title: =@ctx.jig.inputs.Team
+      color: =@ctx.jig.inputs.color
+      leftElement: 
+        element: icon
+        icon: multiple-man-woman-2-geometric-close-up
+        isContained: true
+  - type: component.list-item
+    instanceId: work-day
+    options:  
+      title: =@ctx.jig.inputs.shift
+      color: =@ctx.jig.inputs.color
+      leftElement: 
+        element: icon
+        icon: calendar
+        isContained: true
+  - type: component.list-item
+    instanceId: time
+    options:  
+      title: =@ctx.jig.inputs.hours 
+      color: =@ctx.jig.inputs.color
+      leftElement: 
+        element: icon
+        icon: time-clock-circle-1-alternate
+        isDuotone: true
+        
+

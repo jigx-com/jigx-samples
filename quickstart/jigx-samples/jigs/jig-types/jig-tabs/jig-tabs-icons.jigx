@@ -1,0 +1,35 @@
+type: jig.tabs
+title: Global INC
+areTabsScrollable: false
+
+children:
+  - jigId: appointments
+    tab:
+      type: component.tab-button
+      options:
+       title: Today
+       # Add an icon to the tab. The title is diplayed below the icon.
+       # When active the icon uses the primary color.   
+       icon: calendar-3
+  - jigId: inventory
+    tab:
+      type: component.tab-button
+      options:
+        title: Stock
+        # Add an icon to the tab. The title is diplayed below the icon. 
+        icon: supply-chain-shipping-fee-included-truck
+  - jigId: timelogs
+    tab:
+      type: component.tab-button
+      options:
+        title: Logs
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: time-clock-circle-1-alternate
+   
+  - jigId: manuals
+    tab:
+      type: component.tab-button
+      options:
+        title: Help
+        # Add an icon to the tab. The title is diplayed below the icon.    
+        icon: book-book-pages

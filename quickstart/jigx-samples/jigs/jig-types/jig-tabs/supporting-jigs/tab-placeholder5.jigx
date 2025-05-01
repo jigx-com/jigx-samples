@@ -1,0 +1,12 @@
+title: Placeholder Five
+description: This screen is a placeholder for demo purposes
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder 5
+            value: Placeholder 5

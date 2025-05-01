@@ -1,0 +1,40 @@
+title: Inventory
+description: Select the parts required for the job
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1664382950442-0748f82f2752?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW52ZW50b3J5fGVufDB8fDB8fHwy
+
+datasources:
+  inventory: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          item: Compressor 
+        - id: 2
+          item: Condenser Coil 
+        - id: 3
+          item: Refrigerant 
+        - id: 4 
+          item: Expansion Valve 
+        - id: 5
+          item: Fan Motor                        
+
+data: =@ctx.datasources.inventory
+item:
+  type: component.list-item
+  options:
+    leftElement: 
+      element: icon
+      icon: tool-organizer-1
+      isDuotone: true
+    title: =@ctx.current.item.item
+    

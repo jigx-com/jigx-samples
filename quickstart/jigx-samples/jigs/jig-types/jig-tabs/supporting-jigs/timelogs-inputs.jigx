@@ -1,0 +1,60 @@
+title: Time logging
+description: Log the time taken to complete the job
+type: jig.default
+
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.shift-form.state.data
+
+inputs:  
+  Name: 
+    type: string
+    required: true
+  email: 
+    type: string
+    required: true
+  contact: 
+    type: number
+    required: true
+        
+children:
+  - type: component.form
+    instanceId: shift-form
+    options:  
+      children:
+        - type: component.text-field
+          instanceId: Name
+          options:
+            initialValue: =@ctx.jig.inputs.Name
+            label: Name  
+        - type: component.email-field  
+          instanceId: email
+          options:
+            initialValue: =@ctx.jig.inputs.email
+            label: Email  
+        - type: component.text-field
+          instanceId: contact
+          options:
+            initialValue: =@ctx.jig.inputs.contact
+            textContentType: telephoneNumber
+            label: Contact number
+        - type: component.field-row
+          options:
+            children:
+              - type: component.date-picker
+                instanceId: shift-date
+                options:
+                  label: Select shift date 
+              - type: component.duration-picker
+                instanceId: shift-duration
+                options:
+                  label: Log your shift duration
+                  initialValue: 14400
+                  helperText: Standard shift is 4 hours 
+                  errorText: =@ctx.component.state.value > 14400 ? 'Shift time needs approval':'' 
+                  hours:
+                    step: 4
+                  minutes:
+                    step: 2  
+                    

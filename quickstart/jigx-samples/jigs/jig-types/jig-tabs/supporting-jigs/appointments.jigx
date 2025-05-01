@@ -1,0 +1,56 @@
+title: Today
+description: My appointments for today
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1667921686462-da83bb890fed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNjaGVkdWxlfGVufDB8fDB8fHww
+
+datasources:
+  appointments: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          time: 8:00am
+          customer: Jay Motors
+          address: 13 Sunnydale Road
+        - id: 2
+          time: 11:30am
+          customer: Elementary School
+          address: 1 Harold Street
+        - id: 3
+          time: 8:00am
+          customer: Becker Consulting
+          address: Suite A, Tower building, Main street  
+children:
+  - type: component.form
+    instanceId: schedule-appt
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.choice-field
+          instanceId: appointment
+          options:
+            label: Today
+            data: =@ctx.datasources.appointments
+            item:
+              type: component.choice-field-item
+              options:
+                title: =@ctx.current.item.customer
+                value: =@ctx.current.item.address
+                
+widgets:
+  appointment: 
+    type: widget.status
+    options:
+      statuses:
+        - when: =@ctx.components.schedule-appt.state.isValid
+          icon: check-2
+          color: positive

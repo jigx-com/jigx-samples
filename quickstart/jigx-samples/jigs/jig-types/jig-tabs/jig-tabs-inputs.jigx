@@ -1,0 +1,32 @@
+type: jig.tabs
+title: Global INC
+areTabsScrollable: false
+
+# Specify the jigs that will open in each tab.
+children:
+  - jigId: appointments
+    tab:
+      type: component.tab-button
+      options:
+        title: Today
+  - jigId: inventory
+    tab:
+      type: component.tab-button
+      options:
+        title: Stock
+  - jigId: timelogs-inputs
+    tab:
+      type: component.tab-button
+      options:
+        title: Logs
+    # The jig that displays in the tab has inputs defined. 
+    # Provide the values for the inputs to the jig.      
+    inputs:
+      Name: =@ctx.user.displayName
+      email: =@ctx.user.email
+      contact: 1345632
+  - jigId: manuals
+    tab:
+      type: component.tab-button
+      options:
+        title: Help            

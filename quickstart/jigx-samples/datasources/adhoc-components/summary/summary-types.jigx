@@ -29,5 +29,8 @@ options:
       icon: list
       type: List
       typeLink: list-type-list
-      
+    - color: color8
+      icon: tabbed-table
+      type: Tabs
+      typeLink: tabs-summary  
         

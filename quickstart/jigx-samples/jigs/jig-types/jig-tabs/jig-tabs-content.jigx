@@ -1,0 +1,44 @@
+type: jig.tabs
+title: Time-tracking
+  
+isSwipeable: true
+areTabsScrollable: false
+initialTabId: week1
+
+children:
+  - jigId: timecard
+    instanceId: week1
+    tab:
+      type: component.tab-button
+      options:
+        title: Week 1 
+        icon: number-one-circle
+    inputs:
+      Team: HVAC Team
+      shift: Day
+      hours: 8
+      
+  - jigId: timecard
+    instanceId: week2
+    tab:
+      type: component.tab-button
+      options:
+        title: Week 2
+        icon: number-two-circle
+    inputs:
+      Team: Electrical Team
+      shift: Night
+      hours: 12
+      color: color2
+  - jigId: timecard
+    instanceId: week3
+    tab:
+      type: component.tab-button
+      options:
+        title: Week 3
+        icon: number-three-circle  
+    inputs:
+      Team: Plumbing Team
+      shift: Split
+      hours: 6
+      color: color4

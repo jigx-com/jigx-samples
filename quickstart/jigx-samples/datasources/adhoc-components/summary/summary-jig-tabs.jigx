@@ -1,0 +1,33 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: calendar-3
+      type: Basic tabs
+      typeLink: jig-tabs-basic
+    - color: color2
+      icon: cog-double
+      type: Scrollable tabs
+      typeLink: jig-tabs-scrollable
+    - color: color3
+      icon: navigation-menu-4
+      type: Swipable tabs
+      typeLink: jig-tabs-swipeable
+    - color: color4
+      icon: document
+      type: Default tab
+      typeLink: jig-tabs-intialtabid
+    - color: color5
+      icon: ice-snowflake
+      type: Tabs with icons
+      typeLink: jig-tabs-icons
+    - color: color6
+      icon: local-image-content
+      type: Tabs with inputs
+      typeLink: jig-tabs-inputs
+    - color: color8
+      icon: local-image-content
+      type: Tab's content from single jig
+      typeLink: jig-tabs-content
+  
+

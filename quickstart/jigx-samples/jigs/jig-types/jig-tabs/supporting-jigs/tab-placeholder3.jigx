@@ -1,0 +1,12 @@
+title: Placeholder Three
+description: This screen is a placeholder for demo purposes
+type: jig.default
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: Placeholder 3
+            value: Placeholder 3

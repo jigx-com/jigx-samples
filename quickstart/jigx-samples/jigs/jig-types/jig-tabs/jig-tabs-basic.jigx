@@ -1,0 +1,34 @@
+type: jig.tabs
+title: Global INC
+areTabsScrollable: false
+
+children:
+  # Specify the jig that will open when the tab is pressed.
+  # Tab 1
+  - jigId: appointments
+    tab:
+      type: component.tab-button
+      options:
+        # Give the tabs a name,you can use an expression, datasource or text. 
+        title: Today  
+  # Tab 2        
+  - jigId: inventory
+    tab:
+      type: component.tab-button
+      options:
+        title: Stock
+  # Tab 3      
+  - jigId: timelogs
+    tab:
+      type: component.tab-button
+      options: 
+       title: Logs
+  # Tab 4  
+  - jigId: manuals
+    tab:
+      type: component.tab-button
+      options:
+        title: Help           
+  
+        
+  

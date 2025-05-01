@@ -1,0 +1,16 @@
+title: Placeholder 
+description: This screen is a placeholder for demo purposes
+type: jig.default
+
+placeholders:
+  - title: No data to display
+    icon: missing-data
+    
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: ' '
+            value: ' '

@@ -1,0 +1,28 @@
+type: jig.tabs
+title: Global INC
+areTabsScrollable: false
+isSwipeable: true
+
+children:
+  # Specify the jigs that will open when the tabs are pressed. 
+  - jigId: appointments
+    tab:
+      type: component.tab-button
+      options:
+        title: Today
+  - jigId: inventory
+    tab:
+      type: component.tab-button
+      options:
+        title: Stock
+  - jigId: timelogs
+    tab:
+      type: component.tab-button
+      options:
+        title: Logs
+  - jigId: manuals
+    tab:
+      type: component.tab-button
+      options:
+        title: Help           
+          
