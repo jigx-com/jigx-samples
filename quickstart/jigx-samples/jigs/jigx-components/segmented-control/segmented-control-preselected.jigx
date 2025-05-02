@@ -1,0 +1,30 @@
+title: Segmented-control
+type: jig.default
+         
+children:
+  - type: component.section
+    options:
+      title: Set default segment
+      children:
+        # Segment-control - Preselected segmented-control. 
+        - type: component.segmented-control
+          instanceId: default-segment
+          options:
+            # Configure which segment will be active when the jig opens.          
+            initialValue: Manager Group B 
+            # Configure the number of segments, name and their values.                
+            data:
+              - title: Available
+                value: Team A
+              - title: On Duty
+                value: Manager Group B
+              - title: Off Duty
+                value: Team B         
+        - type: component.entity
+          options:
+            children:
+            - type: component.entity-field
+              options:
+                label: Roster
+                # Display the segments values in a field as you toggle the segments.                 
+                value: =@ctx.components.default-segment.state.value    

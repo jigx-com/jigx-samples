@@ -1,0 +1,84 @@
+title: Invoice
+description: "Send an invoice via: "
+type: jig.default
+# Clear the form's field on refresh.
+onRefresh: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.form.state.data
+# Clear the form's field when the app is in focus.
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.form.state.data
+                   
+children:
+    # configure the segment-control to use state.
+    - type: component.segmented-control
+      instanceId: choice
+      options:
+        # Configure which segment will be active when the jig opens.
+        initialValue: Phone
+        # Configure the number of segments, name and their values.
+        data:
+          - title: Phone
+            value: Phone
+          - title: Email
+            value: Email
+    - type: component.entity
+      options:
+        children:
+          - type: component.entity-field
+            # Set a condition that defines what content displays,
+            # when the Phone segment is tapped.
+            when: =@ctx.components.choice.state.value = 'Phone'
+            options:
+              label: ="You are sending an invoice to this phone number " & @ctx.components.phonenum.state.value
+              value: " "
+          - type: component.entity-field
+            # Set a condition that defines what content displays,
+            # when the Email segment is tapped.
+            when: =@ctx.components.choice.state.value = 'Email'
+            options:
+              label: ="You are sending an invoice to this email address " & @ctx.components.emailaddress.state.value
+              value: " "
+    - type: component.form
+      instanceId: form
+      options:
+        isDiscardChangesAlertEnabled: false
+        children:
+          - type: component.number-field
+            # Set a condition that defines what form field to display,
+            # when the Phone segment is tapped.
+            when: =@ctx.components.choice.state.value = 'Phone'
+            instanceId: phonenum
+            options:
+              label: "Insert a phone number to send the invoice to:"
+          - type: component.email-field
+            # Set a condition that defines what form field to display,
+            # when the Email segment is tapped.
+            when: =@ctx.components.choice.state.value = 'Email'
+            instanceId: emailaddress
+            options:
+              label: "Insert an email to send the invoice to:"
+
+actions:
+    - children:
+        - type: action.action-list
+          options:
+            # Only show the action button when Phone segment is tapped.  
+            isHidden: =@ctx.components.choice.state.value = 'Phone'
+            title: Send
+            isSequential: true
+            actions:
+              - type: action.generate-pdf
+                instanceId: generate-pdf-id
+                options:
+                  html: =@ctx.datasources.monthly-invoice-HTML.invoice-html
+                  fileName: invoice-1  
+              - type: action.share
+                options:
+                  email: =@ctx.components.emailaddress.state.value
+                  fileUri: =@ctx.actions.generate-pdf-id.outputs.uri
+                  message: Global Invoice 
+                  subject: Invoice for January       

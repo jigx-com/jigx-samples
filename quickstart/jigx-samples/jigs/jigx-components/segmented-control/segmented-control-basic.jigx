@@ -1,0 +1,31 @@
+title: Segmented-control
+type: jig.default
+         
+children:
+  - type: component.section
+    options:
+      title: Basic segmented-control
+      children:
+       # Segment-control - Basic Segmented-control.      
+        - type: component.segmented-control
+          instanceId: numbers
+          options:
+            # Configure the number of segments, name and their values.          
+            data:
+              - title: One
+                value: 1
+              - title: Two
+                value: 2
+              - title: Three
+                value: 3
+              - title: Four
+                value: 4  
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Numbers
+                  # Display the segments values in a field as you toggle the segments.                
+                  value: =@ctx.components.numbers.state.value     
+       

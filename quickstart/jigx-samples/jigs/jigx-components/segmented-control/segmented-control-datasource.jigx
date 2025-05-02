@@ -1,0 +1,41 @@
+title: Segmented-control
+type: jig.default
+
+datasources:
+  content:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Home
+          icon: home-5g
+          value: 35 Sunset boulevard, Hollywood
+        - id: 2
+          title: Schedule
+          icon: scheduled-phone-call
+          value: Deliver parcel
+        - id: 3
+          title: Timesheet
+          icon: hourglass-1-alternate 
+          value: ⏱️ record time spent on the job 
+                   
+children:
+  - type: component.section
+    options:
+      title: Segmented-control using datasource
+      children:
+        # Segment-control - Segmented-control with a datasource.       
+        - type: component.segmented-control
+          instanceId: work
+          options:
+            # Configure the number of segments, name and their values. 
+            # Use datasources to define the data for the title and value.          
+            data: =@ctx.datasources.content
+        - type: component.entity
+          options:
+            children:
+            - type: component.entity-field
+              options:
+                label: Task
+               # Display the segments values in a field as you toggle the segments.                
+                value: =@ctx.components.work.state.value   

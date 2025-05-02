@@ -129,6 +129,10 @@ options:
       component: Section
       componentLink: list-section
       icon: left-panel
+    - color: color10
+      component: Segmented-control
+      componentLink: segmented-control-summary
+      icon: three-dots
     - color: color2
       component: Signature-field
       componentLink: signature-field

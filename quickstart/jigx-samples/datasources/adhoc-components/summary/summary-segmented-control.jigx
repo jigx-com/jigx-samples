@@ -1,0 +1,25 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: three-dots
+      type: Basic segmented-control
+      typeLink: segmented-control-basic
+    - color: color2
+      icon: line-break-chart
+      type: Segmented-control with datasource
+      typeLink: segmented-control-datasource
+    - color: color3
+      icon: navigation-menu-4
+      type: Disabled segmented-control
+      typeLink: segmented-control-disabled
+    - color: color4
+      icon: tabbed-table
+      type: Preselected segmented-control
+      typeLink: segmented-control-preselected
+    - color: color5
+      icon: button-controller-grid-down
+      type: Segmented-control using states
+      typeLink: segmented-control-state
+    
+

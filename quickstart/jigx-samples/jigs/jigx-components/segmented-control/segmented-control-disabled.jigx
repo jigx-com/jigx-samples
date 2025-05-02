@@ -1,0 +1,21 @@
+title: Segmented-control
+type: jig.default
+         
+children:  
+  - type: component.section
+    options:
+      # Segment-control -Disabled segmented-control.
+      title: Disabled segmented-control
+      children:
+        - type: component.segmented-control
+          options:
+            # Disable the segmented control, rendering in in a read only mode.          
+            isDisabled: true
+            # Configure the number of segments, name and their values.             
+            data:
+              - title: Clock In
+                value: 1
+              - title: Break
+                value: 2
+              - title: Clock Out
+                value: 3  
