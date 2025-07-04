@@ -1,0 +1,37 @@
+title: Update delivery status
+type: jig.default
+
+inputs:
+  status:
+    type: string
+    required: true
+  id:
+    type: string
+    required: true
+    
+children:
+  - type: component.form
+    instanceId: edit-table
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: status
+          options:
+            initialValue: =@ctx.jig.inputs.status
+            label: Update status
+
+actions:
+  - numberOfVisibleActions: 1
+    children:
+      - type: action.execute-entity
+        options:
+          title: Update Record
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/product-delivery
+          method: update
+          data:
+            id: =@ctx.jig.inputs.id
+            status: =@ctx.components.status.state.value
+          goBack: previous
+            

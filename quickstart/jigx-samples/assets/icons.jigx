@@ -20,14 +20,18 @@ icons:
   - arrow-double-up # auto-generated
   - arrow-right # auto-generated
   - arrow-right-1 # auto-generated
+  - asian-food-barbeque-sucking-pork-roasted # auto-generated
+  - asian-food-noodle-ramen-bowl # auto-generated
   - attachment # auto-generated
   - avatar-man-1-geometric # auto-generated
+  - barbecue-steak # auto-generated
   - battery-charge # auto-generated
   - binocular # auto-generated
   - blood-drop-search # auto-generated
   - book-address # auto-generated
   - book-book-pages # auto-generated
   - building-cloudy-building # auto-generated
+  - bus # auto-generated
   - business-card-1 # auto-generated
   - business-card-hand-1 # auto-generated
   - button-play # auto-generated
@@ -51,6 +55,8 @@ icons:
   - checkbox-checked # auto-generated
   - checkbox-unchecked # auto-generated
   - checklist # auto-generated
+  - checklist-alternate # auto-generated
+  - chicken-body # auto-generated
   - coding-apps-website-apps-add-widget # auto-generated
   - coding-apps-website-apps-add-widget-alternate # auto-generated
   - coding-apps-website-apps-smartphone # auto-generated
@@ -69,6 +75,8 @@ icons:
   - currency-pound # auto-generated
   - data-transfer-horizontal # auto-generated
   - database-2 # auto-generated
+  - delivery-person-motorcycle-1 # auto-generated
+  - delivery-truck-2 # auto-generated
   - delivery-truck-5 # auto-generated
   - document # auto-generated
   - dog # auto-generated
@@ -92,9 +100,11 @@ icons:
   - feedback # auto-generated
   - filter-1 # auto-generated
   - finger-touch # auto-generated
+  - fishing-bait-fish # auto-generated
   - fitness-weights # auto-generated
   - flying-insect-fly # auto-generated
   - folder-text-alternate # auto-generated
+  - food-delivery-bag # auto-generated
   - footwear-boots # auto-generated
   - form # auto-generated
   - fuel-pump-reload # auto-generated
@@ -135,6 +145,7 @@ icons:
   - lock-unlock-4 # auto-generated
   - login-keys # auto-generated
   - love-it # auto-generated
+  - low-fuel # auto-generated
   - maps-pin # auto-generated
   - messages # auto-generated
   - mindfullness # auto-generated
@@ -163,22 +174,27 @@ icons:
   - person # auto-generated
   - phone # auto-generated
   - phone-chatting # auto-generated
+  - phone-mobile-device-iphone-x-2 # auto-generated
   - phone-swap # auto-generated
   - picture-landscape # auto-generated
   - picture-polaroid-human # auto-generated
   - pin # auto-generated
   - pin-1-map # auto-generated
   - pin-location # auto-generated
+  - plane # auto-generated
   - plane-1 # auto-generated
   - play # auto-generated
   - plus # auto-generated
   - question-circle # auto-generated
+  - rating-five-star # auto-generated
   - rating-star # auto-generated
   - rating-star-1 # auto-generated
   - recycle # auto-generated
   - remove-circle # auto-generated
   - resize-shrink # auto-generated
+  - restaurant-food-truck # auto-generated
   - restaurant-menu # auto-generated
+  - restaurant-seat # auto-generated
   - road-sign-oneway-right-alternate # auto-generated
   - robot # auto-generated
   - scanner # auto-generated
@@ -214,12 +230,17 @@ icons:
   - time-clock-circle-1-alternate # auto-generated
   - time-clock-circle-2 # auto-generated
   - time-clock-circle-alternate # auto-generated
+  - time-clock-file-add # auto-generated
   - time-monthly-1 # auto-generated
   - time-reverse # auto-generated
   - toggle-setting-off # auto-generated
   - toilet-cleaning-plunger # auto-generated
   - tool-organizer-1 # auto-generated
+  - train-location # auto-generated
+  - transportation-ticket-train-alternate # auto-generated
   - truck-cargo # auto-generated
+  - vegan-vegetarian-food-dome # auto-generated
+  - vegetable-mushroom-2 # auto-generated
   - wave-hand # auto-generated
   - weather # auto-generated
   - workout # auto-generated

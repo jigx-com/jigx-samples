@@ -1,0 +1,77 @@
+title: grid-item-all
+type: jig.default
+
+children:
+  - type: component.section
+    options:
+      title: Grid item default icon
+      children:
+        - type: component.grid
+          options:
+            children:
+              - type: component.grid-item
+                options:
+                  size: 1x1
+                  children:
+                    type: component.jig-widget
+                    options:
+                      jigId: placeholder
+  - type: component.section
+    options:
+      title: Grid item custom icon
+      children:
+        - type: component.grid
+          options:
+            children:
+              - type: component.grid-item
+                options:
+                  size: "1x1"
+                  children:
+                    type: component.jig-widget
+                    options:
+                      jigId: placeholder
+                      icon: delivery-truck-2
+                      title: " "
+  - type: component.section
+    options:
+      title: Grid item custom title
+      children:
+        - type: component.grid
+          options:
+            children:
+              - type: component.grid-item
+                options:
+                  size: "1x1"
+                  children:
+                    type: component.jig-widget
+                    options:
+                      jigId: time-log
+                      icon: time-clock-file-add
+                      title: Log
+  - type: component.section
+    options:
+      title: Grid item with onPress event
+      children:
+        - type: component.grid
+          options:
+            children:
+              - type: component.grid-item
+                options:
+                  size: "1x1"
+                  children:
+                    type: component.jig-widget
+                    options:
+                      jigId: inspection
+                      icon: air-quality-check-magnifying-glass
+                      title: Checklist
+                      onPress:
+                        type: action.info-modal
+                        options:
+                          modal:
+                            title: Inspection checklist
+                            description: Complete the manual inspection checklist
+                            element:
+                              type: icon
+                              icon: checklist-alternate
+                              color: warning
+                            buttonText: Exit

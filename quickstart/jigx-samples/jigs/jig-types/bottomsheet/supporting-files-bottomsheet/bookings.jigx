@@ -1,0 +1,47 @@
+title: Reservation
+type: jig.default
+
+
+children:
+  - type: component.form
+    instanceId: reservation
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: fullname
+          options:
+            label: Name
+        - type: component.text-field
+          instanceId: phone
+          options:
+            label: Contact
+            icon: phone
+        - type: component.number-field
+          instanceId: number
+          options:
+            label: Number of guests
+            stepper:
+              isEnabled: true
+              value: 2
+        - type: component.date-picker
+          instanceId: reservation-date
+          options:
+            label: Reservation date & time
+             
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Book Now
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/bookings
+          method: create
+          data:
+            fullname: =@ctx.components.fullname.state.value
+            phone: =@ctx.components.phone.state.value
+            number: =@ctx.components.number.state.value
+            reservation-date: =@ctx.components.reservation-date.state.value
+            
+            
+            

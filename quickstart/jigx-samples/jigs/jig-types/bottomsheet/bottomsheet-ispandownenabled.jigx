@@ -1,0 +1,94 @@
+title: Global Eats (pandown)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1713667417581-9b755dbf7031?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VmVnZ2llJTIwUGxhdHRlcnxlbnwwfHwwfHx8MA%3D%3D
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.solution.state
+datasources:
+  menu-list: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          option: Grilled Lemon Herb Chicken
+          description: Juicy chicken breast marinated in a blend of fresh lemon, rosemary, thyme, and garlic. Grilled to perfection and served with roasted vegetables and a side of garlic mashed potatoes.
+          price: $18.95
+          icon: chicken-body 
+          photo: https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdyaWxsZWQlMjBjaGlja2VufGVufDB8fDB8fHww
+        - id: 2
+          option: Slow-Cooked Beef Bourguignon
+          description: Tender beef stewed in a rich red wine sauce with pearl onions, carrots, and mushrooms. Accompanied by buttered egg noodles or crusty bread for dipping.
+          price: $24.95
+          icon: barbecue-steak
+          photo: https://images.unsplash.com/photo-1548869206-93b036288d7e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2xvdyUyMENvb2tlZCUyMEJlZWYlMjBCb3VyZ3VpZ25vbnxlbnwwfHwwfHx8MA%3D%3D
+        - id: 3
+          option: Pan-Seared Salmon with Dill Cream Sauce
+          description: Fresh Atlantic salmon fillet, seared to a golden crisp, topped with a creamy dill and lemon sauce. Served with wild rice pilaf and steamed asparagus.
+          price: $22.50
+          icon: fishing-bait-fish 
+          photo: https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U2FsbW9ufGVufDB8fDB8fHww
+        - id: 4
+          option: Vegetarian Mushroom Risotto
+          description: Creamy Arborio rice cooked with earthy mushrooms, white wine, and parmesan cheese. Garnished with fresh parsley and a drizzle of truffle oil.
+          price: $16.95
+          icon: vegetable-mushroom-2 
+          photo: https://images.unsplash.com/photo-1609770424775-39ec362f2d94?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Umlzb3R0b3xlbnwwfHwwfHx8MA%3D%3D
+        - id: 5
+          option: Spaghetti Carbonara
+          description: Classic Italian pasta dish featuring al dente spaghetti tossed with crispy pancetta, eggs, and Parmesan cheese. Finished with freshly cracked black pepper.
+          price: $17.50
+          icon: asian-food-noodle-ramen-bowl 
+          photo: https://images.unsplash.com/photo-1588013273468-315fd88ea34c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3BhZ2hldHRpJTIwQ2FyYm9uYXJhfGVufDB8fDB8fHww
+        - id: 6
+          option: Mediterranean Veggie Platter
+          description: A colorful assortment of falafel, hummus, tzatziki, tabbouleh, and warm pita bread. Paired with a Greek salad of cucumbers, tomatoes, olives, and feta cheese.
+          price: $15.95
+          icon: vegan-vegetarian-food-dome 
+          photo: https://images.unsplash.com/photo-1567122256639-d880e21e48a5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFZlZ2dpZSUyMFBsYXR0ZXJ8ZW58MHx8MHx8fDA%3D           
+                    
+children:
+  - type: component.section
+    options:
+      title: Dinner Menu
+      children:
+        - type: component.grid
+          options:
+            data: =@ctx.datasources.menu-list
+            item:
+              type: component.grid-item
+              options:
+                size: "2x2"
+                children: 
+                  type: component.image
+                  options:
+                    title: =@ctx.current.item.option
+                    subtitle: =@ctx.current.item.price
+                    source:
+                      uri: =@ctx.current.item.photo
+    
+bottomSheet:
+  isPanDownToCloseEnabled: false
+  snapPoints:
+    - 40%
+  children:
+    - jigId: options
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Options
+          linkTo: options-action
+          isModal: true
+          
+

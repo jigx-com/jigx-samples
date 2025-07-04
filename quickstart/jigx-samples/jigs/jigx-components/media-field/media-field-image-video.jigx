@@ -1,4 +1,4 @@
-title: Media field image or video upload
+title: Share your experience with us
 type: jig.default
 icon: image-document-jpg
 
@@ -6,7 +6,7 @@ header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -19,9 +19,9 @@ children:
       isDiscardChangesAlertEnabled: false
       children:
         - type: component.text-field
-          instanceId: media
+          instanceId: experience
           options:
-            label: Share your experience with us
+            label: Your experience
         - type: component.date-picker
           instanceId: date-visted
           options:
@@ -35,8 +35,8 @@ children:
 
 actions:
   - children:
-  # Media field requires an action to be uploaded. 
-  # For this example we upload to the local data provider, 
+      # Media field requires an action to be uploaded.
+      # For this example we upload to the local data provider,
       - type: action.execute-entity
         options:
           title: Upload
@@ -44,8 +44,10 @@ actions:
           entity: products
           method: create
           data:
-            image: =@ctx.components.media-mixed.state.value.state.value
+            experience: =@ctx.components.experience.state.value
+            date-visted: =@ctx.components.date-visted.state.value
+            media-mixed: =@ctx.components.media-mixed.state.value.state.value
             createdby: =@ctx.user.displayName
             createDate: =$now()
-          onSuccess: 
+          onSuccess:
             type: action.go-back

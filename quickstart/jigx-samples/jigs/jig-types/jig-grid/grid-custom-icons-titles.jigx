@@ -1,0 +1,59 @@
+title: Grid custom titles
+type: jig.grid
+
+children:
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children:
+        type: component.image
+        options:
+          source:
+            uri: https://images.unsplash.com/photo-1507183711269-1235bed98f14?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+          title: Today's quote
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: fuel-log
+          icon: fuel-pump-reload
+          title: Fuel
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: inspection
+          icon: air-quality-check-magnifying-glass
+          title: Checklist
+  - type: component.grid-item
+    options:
+      size: "2x2"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: delivery-list
+          icon: delivery-person-motorcycle-1
+          title: Deliveries
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: time-log
+          icon: time-clock-circle-alternate
+          title: Job card
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: customer-rating
+          icon: rating-five-star
+          title: Rating

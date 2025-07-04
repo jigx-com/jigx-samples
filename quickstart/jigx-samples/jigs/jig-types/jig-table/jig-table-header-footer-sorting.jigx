@@ -1,0 +1,75 @@
+title: Weekly Technican Roster
+type: jig.table
+isSortable: true
+
+datasources:
+  roster: 
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+  
+      entities:
+        - default/roster
+  
+      query: 
+        SELECT id,
+         '$.TechnicianName', 
+         '$.Monday',
+         '$.Tuesday',
+         '$.Wednesday',
+         '$.Thursday',
+         '$.Friday',
+         '$.Notes' 
+         FROM [default/roster] 
+  
+# data for table (the same as jig.list type)
+# data: =@ctx.datasources.roster
+data: |
+  =$sort(@ctx.datasources.roster, function($l, $r) {
+    @ctx.jig.state.sort.isDescending ?
+      ($lookup($l, @ctx.jig.state.sort.columnId) > $lookup($r, @ctx.jig.state.sort.columnId)) :
+      ($lookup($l, @ctx.jig.state.sort.columnId) < $lookup($r, @ctx.jig.state.sort.columnId))
+  })
+  
+# expressions:
+#   filtered: =@ctx.datasources.roster[[0..30]]  
+  
+# you can access this as =@ctx.jig.state.sort
+sort: 
+  columnId: TechnicianName
+  isDescending: true
+ 
+  
+item:
+  type: component.table-row
+  # Ask Jiri why we need options and cannot have it without?
+  options:
+    color:
+      - when: false
+        color: color1
+tableHeader:
+  type: component.table-header
+  # Ask Jiri why we need when and cannot have colors straight?
+  options:
+    color:
+      - when: true
+        color: color2
+
+tableFooter:
+  type: component.table-footer
+  options:
+    color:
+      - when: true
+        color: color2
+    
+# this says what columns are going to be displayed
+# you can either write the definition inline or with reference to columnDefinition (so we can reuse the same definition)
+# also this columns can be expression to make it dynamic (for example column: =@ctx.datasource....)
+columns: 
+  - id: TechnicianName  
+  - id: Monday   
+  - id: Tuesday  
+  - id: Wednesday
+  - id: Thursday 
+  - id: Friday   
+  

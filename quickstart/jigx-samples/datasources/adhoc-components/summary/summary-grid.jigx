@@ -3,9 +3,17 @@ options:
   data:
     - color: color1
       icon: grid-artboard
-      type: Auto grid 
+      type: Auto grid
       typeLink: grid-auto
     - color: color2
       icon: cog-double
       type: Custom grid
       typeLink: grid-custom
+    - color: color3
+      icon: cog-double
+      type: Custom grid with custom icons and titles
+      typeLink: grid-custom-icons-titles
+    - color: color4
+      icon: cog-double
+      type: Custom grid with no titles
+      typeLink: grid-custom-no-titles

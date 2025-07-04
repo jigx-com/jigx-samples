@@ -1,0 +1,54 @@
+title: Site Deliveries
+type: jig.table
+     
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1592818993411-eba55f84e788?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlcG9ydHMlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8fDA%3D
+
+
+onFocus: 
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_DYNAMIC
+    entities:
+      - default/product-delivery
+
+data: =@ctx.datasources.product-delivery
+
+item:
+  type: component.table-row
+  options:
+    onPress: 
+      type: action.action-list
+      options:
+        isSequential: true
+        actions:
+          - type: action.go-to
+            options:
+              isModal: true
+              linkTo: table-onpress-edit  
+              inputs:
+                status: =@ctx.current.item.status
+                id: =@ctx.current.item.id
+                    
+tableHeader:
+  type: component.table-header
+  options:
+    color:
+      - when: true
+        color: color14
+columns: 
+  # =@ctx.datasources.site-delivery
+    
+  - id: deliveryId
+  - id: Item
+  - id: destination
+  - id: status
+         
+    # =@ctx.datasources.site-delivery.destination  

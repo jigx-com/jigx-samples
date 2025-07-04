@@ -9,9 +9,9 @@ children:
           options:
             label: Label
             value: Value
-  
+
 widgets:
-  combined-image1-4x2: 
+  combined-image1-4x2:
     type: widget.group
     options:
       children:
@@ -19,25 +19,23 @@ widgets:
           options:
             isContentOverlaid: false
             source:
-              uri: https://seeklogo.com/images/O/oakland-athletics-logo-2BAC84D00D-seeklogo.com.png
-            resizeMode: contain              
-            bottom: 
+              uri: https://images.jigx.com/docs/group-widget-1-transparent.png
+            resizeMode: contain
+            bottom:
               type: component.titles
               options:
                 title: "3"
-                subtitle: "Oakland Invaders"    
+                subtitle: "S.C International Football League"
                 align: center
         - type: widget.image
           options:
             isContentOverlaid: false
             source:
-              uri: https://seeklogo.com/images/K/kane-county-cougars-logo-47AAB515C1-seeklogo.com.png
+              uri: https://s3.us-east-1.amazonaws.com/docs.jigx.com/general-images/group-widget-2-transparent.png
             resizeMode: contain
-            bottom: 
+            bottom:
               type: component.titles
               options:
                 title: "2"
-                subtitle: "Kane County Cougars"
+                subtitle: "National Football League"
                 align: center
-
-                  

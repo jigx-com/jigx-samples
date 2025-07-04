@@ -1,0 +1,51 @@
+title: Status
+type: jig.default
+
+
+
+
+datasources:
+  transport-status: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          transport: American Flight JFK
+          status: Arriving
+          ETA: 11:25
+          icon: plane
+        - id: 2
+          transport: NY-Stage Coach 
+          status: Boarding
+          ETA: 7:30
+          icon: bus
+        - id: 3
+          transport: NY Central line
+          status: Delayed
+          ETA: 14:15 
+          icon: train-location    
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.transport-status
+      maximumItemsToRender: 8
+      item: 
+        type: component.list-item
+        options:
+          leftElement: 
+            element: icon
+            icon: =@ctx.current.item.icon
+          rightElement: 
+            element: value
+            text: =@ctx.current.item.status
+          title: =@ctx.current.item.transport
+          subtitle: =@ctx.current.item.ETA
+          color:
+            - when: =@ctx.current.item.status = "Arriving"
+              color: positive
+            - when: =@ctx.current.item.status = "Delayed"
+              color: negative
+              
+  
+  

@@ -16,27 +16,27 @@ options:
     - color: color9
       component: Card
       componentLink: card-summary
-      icon: card-add-1   
+      icon: card-add-1
     - color: color4
       component: Carousel
       componentLink: carousel-summary
-      icon: carousel-horizontal 
+      icon: carousel-horizontal
     - color: color5
       component: Checkbox
       componentLink: composite-checkbox
       icon: checkbox-checked
     - color: color12
       component: Choice-field
-      componentLink: choice-field-summary 
+      componentLink: choice-field-summary
       icon: cursor-choose
     - color: color6
       component: Countdown
       componentLink: countdown-summary
-      icon: checkbox-checked  
+      icon: checkbox-checked
     - color: color7
       component: Custom components (Alpha)
       componentLink: custom-components
-      icon: composition-net 
+      icon: composition-net
     - color: color7
       component: Date-picker
       componentLink: composite-date-picker
@@ -48,7 +48,7 @@ options:
     - color: color5
       component: Duration-picker
       componentLink: duration-picker-summary
-      icon: time-clock-file-1    
+      icon: time-clock-file-1
     - color: color9
       component: Email-field
       componentLink: email-field
@@ -77,6 +77,10 @@ options:
       component: Form
       componentLink: list-form
       icon: form
+    - color: color8
+      component: grid
+      componentLink: grid-item-summary
+      icon: grid-guides
     - color: color2
       component: Image
       componentLink: list-image
@@ -88,7 +92,7 @@ options:
     - color: color5
       component: Jig-header
       componentLink: jig-header-summary
-      icon: image-file-add  
+      icon: image-file-add
     - color: color6
       component: Line-chart
       componentLink: line-chart-summary
@@ -123,7 +127,7 @@ options:
       icon: task-list
     - color: color14
       component: Progress-bar
-      componentLink: progress-bar-summary 
+      componentLink: progress-bar-summary
       icon: coding-apps-website-web-form-progress-2
     - color: color1
       component: Section
@@ -169,4 +173,3 @@ options:
       component: Widgets
       componentLink: widget-summary
       icon: layout-dashboard
-

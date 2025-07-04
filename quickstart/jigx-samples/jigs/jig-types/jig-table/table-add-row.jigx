@@ -1,0 +1,40 @@
+title: Add new sale
+type: jig.default
+
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.components.add-row.state.data
+       
+children:
+  - type: component.form
+    instanceId: add-row
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: Product
+          options:
+            label: Product
+        - type: component.number-field
+          instanceId: TotalRevenue
+          options:
+            label: Sale amount
+        - type: component.number-field
+          instanceId: UnitsSold
+          options:
+            label: Units Sold   
+actions:
+  - numberOfVisibleActions: 1
+    children:
+      - type: action.execute-entity
+        options:
+          title: Update Record
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/sales
+          method: create
+          data: 
+            Product: =@ctx.components.Product.state.value
+            TotalRevenue: =@ctx.components.TotalRevenue.state.value
+            UnitsSold: =@ctx.components.UnitsSold.state.value
+          goBack: previous

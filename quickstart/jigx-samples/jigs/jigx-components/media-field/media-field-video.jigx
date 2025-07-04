@@ -1,4 +1,4 @@
-title: Media field video upload
+title: Media-field video upload
 type: jig.default
 icon: image-document-jpg
 
@@ -6,7 +6,7 @@ header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -20,7 +20,7 @@ children:
         - type: component.text-field
           instanceId: video-info
           options:
-            label: Description       
+            label: Description
         - type: component.media-field
           instanceId: media-video
           options:
@@ -30,8 +30,8 @@ children:
 
 actions:
   - children:
-  # Media field requires an action to be uploaded. 
-  # For this example we upload to the local data provider, 
+      # Media field requires an action to be uploaded.
+      # For this example we upload to the local data provider,
       - type: action.execute-entity
         options:
           title: Upload
@@ -39,9 +39,9 @@ actions:
           entity: products
           method: create
           data:
-            image: =@ctx.components.media-video.state.value
+            video-info: =@ctx.components.video-info.state.value
+            media-video: =@ctx.components.media-video.state.value
             createdby: =@ctx.user.displayName
             createDate: =$now()
-          onSuccess: 
-            type: action.go-back  
-        
+          onSuccess:
+            type: action.go-back

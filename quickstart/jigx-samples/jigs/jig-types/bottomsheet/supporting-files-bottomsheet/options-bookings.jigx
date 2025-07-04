@@ -1,0 +1,43 @@
+title: Options
+type: jig.default
+
+datasources:
+  restaurant-options: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          booking: Dine-in 
+          icon: restaurant-seat
+        - id: 2
+          booking: Takeaway 
+          icon: food-delivery-bag
+        - id: 3
+          booking: Delivery 
+          icon: restaurant-food-truck
+
+children:
+  - type: component.form
+    instanceId: rest-options
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.choice-field
+          instanceId: eating-options
+          options:
+            itemsPerRow: 3
+            label: Restaurant options
+            data: =@ctx.datasources.restaurant-options
+            item:
+              type: component.choice-field-item
+              options:
+                title: =@ctx.current.item.booking
+                value: =@ctx.current.item.booking
+
+# Configure the go-to action for the second bottomsheet jig. 
+actions:
+  - children:   
+        - type: action.go-to
+          options:
+            title: Book Now
+            linkTo: bookings

@@ -1,7 +1,7 @@
-title: Media field image upload with freestyle cropping
+title: Media-field image upload with freestyle cropping
 type: jig.default
 icon: image-document-jpg
-   
+
 children:
   - type: component.form
     instanceId: media-form
@@ -9,7 +9,7 @@ children:
       isDiscardChangesAlertEnabled: false
       children:
         - type: component.media-field
-          instanceId: media-field
+          instanceId: image
           options:
             mediaType: image
             label: Upload image
@@ -21,18 +21,17 @@ children:
 
 actions:
   - children:
-  # Media field requires an action to be uploaded. 
-  # For this example we upload to the local data provider, you can use other data stores, e.g. REST data provider
+      # Media field requires an action to be uploaded.
+      # For this example we upload to the local data provider, you can use other data stores, e.g. REST data provider
       - type: action.execute-entity
         options:
-          title: Create Record
+          title: Upload image
           provider: DATA_PROVIDER_LOCAL
           entity: products
           method: create
           data:
-            image: =@ctx.components.media-field.state.value
+            image: =@ctx.components.image.state.value
             createdby: =@ctx.user.displayName
             createDate: =$now()
-          onSuccess: 
-            type: action.go-back  
-        
+          onSuccess:
+            type: action.go-back

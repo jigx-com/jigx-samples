@@ -1,0 +1,52 @@
+title: Construction Project Status Report
+type: jig.table
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children: 
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1592818993411-eba55f84e788?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlcG9ydHMlMjBjb25zdHJ1Y3Rpb258ZW58MHx8MHx8fDA%3D
+datasources:
+  projects:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Downtown Office Tower
+          status: In Progress
+          percentage: 65% 
+        - id: 2
+          name: Riverside Housing Units
+          status: Completed
+          percentage: 100%
+        - id: 3
+          name: Northside Shopping Plaza
+          status: Not Started
+          percentage: 0% 
+        - id: 4
+          name: Eastside Logistics Center
+          status: Planning
+          percentage: 20% 
+        - id: 5
+          name: Hillview Apartment Block
+          status: Delayed
+          percentage: 40%       
+
+data: =@ctx.datasources.projects
+
+item:
+  type: component.table-row
+  options: 
+    color:
+      - when: =@ctx.current.item.status = 'Delayed'
+        color: negative
+      - when: =@ctx.current.item.status = 'Completed'
+        color: positive
+columns:
+  - id: name 
+  - id: status
+  - id: percentage  

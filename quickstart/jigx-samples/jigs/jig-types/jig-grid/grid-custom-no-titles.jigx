@@ -1,0 +1,59 @@
+title: Grid custom no titles icons
+type: jig.grid
+
+children:
+  - type: component.grid-item
+    options:
+      size: "4x2"
+      children:
+        type: component.image
+        options:
+          source:
+            uri: https://images.unsplash.com/photo-1507183711269-1235bed98f14?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: fuel-log
+          icon: low-fuel
+          title: ""
+
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: inspection
+          icon: checklist-alternate
+          title: ""
+  - type: component.grid-item
+    options:
+      size: "2x2"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: delivery-list
+          icon: delivery-truck-2
+          title: ""
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: time-log
+          icon: time-clock-circle-2
+          title: ""
+  - type: component.grid-item
+    options:
+      size: "1x1"
+      children:
+        type: component.jig-widget
+        options:
+          jigId: customer-rating
+          icon: rating-five-star
+          title: ""

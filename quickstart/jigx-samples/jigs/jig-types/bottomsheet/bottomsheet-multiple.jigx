@@ -1,0 +1,103 @@
+title: Global Eats (multiple)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVzdHVyYW50JTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D
+onFocus: 
+  type: action.reset-state
+  options:
+    state: =@ctx.solution.state
+datasources:
+  menu-list: 
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          option: Grilled Lemon Herb Chicken
+          description: Juicy chicken breast marinated in a blend of fresh lemon, rosemary, thyme, and garlic. Grilled to perfection and served with roasted vegetables and a side of garlic mashed potatoes.
+          price: $18.95
+          icon: chicken-body 
+        - id: 2
+          option: Slow-Cooked Beef Bourguignon
+          description: Tender beef stewed in a rich red wine sauce with pearl onions, carrots, and mushrooms. Accompanied by buttered egg noodles or crusty bread for dipping.
+          price: $24.95
+          icon: barbecue-steak
+        - id: 3
+          option: Pan-Seared Salmon with Dill Cream Sauce
+          description: Fresh Atlantic salmon fillet, seared to a golden crisp, topped with a creamy dill and lemon sauce. Served with wild rice pilaf and steamed asparagus.
+          price: $22.50
+          icon: fishing-bait-fish 
+        - id: 4
+          option: Vegetarian Mushroom Risotto
+          description: Creamy Arborio rice cooked with earthy mushrooms, white wine, and parmesan cheese. Garnished with fresh parsley and a drizzle of truffle oil.
+          price: $16.95
+          icon: vegetable-mushroom-2 
+        - id: 5
+          option: Spaghetti Carbonara
+          description: Classic Italian pasta dish featuring al dente spaghetti tossed with crispy pancetta, eggs, and Parmesan cheese. Finished with freshly cracked black pepper.
+          price: $17.50
+          icon: asian-food-noodle-ramen-bowl 
+        - id: 6
+          option: Honey-Glazed Pork Chops
+          description: Thick-cut pork chops glazed with a sweet and savory honey-mustard sauce. Served with roasted sweet potatoes and sautéed green beans.
+          price: $19.95
+          icon: asian-food-barbeque-sucking-pork-roasted 
+        - id: 7
+          option: Mediterranean Veggie Platter
+          description: A colorful assortment of falafel, hummus, tzatziki, tabbouleh, and warm pita bread. Paired with a Greek salad of cucumbers, tomatoes, olives, and feta cheese.
+          price: $15.95
+          icon: vegan-vegetarian-food-dome             
+                    
+children:
+  - type: component.section
+    options:
+      title: Dinner Menu
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.menu-list
+            maximumItemsToRender: 8
+            item: 
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.option
+                subtitle: =@ctx.current.item.description
+                leftElement: 
+                  element: icon
+                  icon: =@ctx.current.item.icon
+                rightElement: 
+                  element: value
+                  text: =@ctx.current.item.price
+    
+bottomSheet:
+  initialValue: options-bookings
+  children:
+    - jigId: options-bookings
+      snapPoints:
+        - 40%
+    - jigId: bookings
+      snapPoints:
+      - 20% # First snap point at 20% of screen height
+      - 40% # Second snap point at 40% of screen height
+      - 60% # Third snap point at 60% of screen height
+      backdrop:
+        opacity: 0.5
+      snapIndex: 1
+           
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Booking options
+          linkTo: options-bookings
+          isModal: true
+          
+          
+

@@ -5,7 +5,7 @@ header:
   type: component.jig-header
   options:
     height: medium
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -14,17 +14,17 @@ header:
 summary:
   children:
     type: component.summary
-    options: 
+    options:
       layout: cart
       title: "Flights found:"
       value: 3
-      
+
 data: =@ctx.datasources.flight-schedule-static
 item:
   type: component.expander
   options:
     header:
-      centerElement: 
+      centerElement:
         type: component.stage
         options:
           right:
@@ -83,4 +83,3 @@ item:
           viewPoint:
             centerPosition: middle
             address: =@ctx.current.item.to
-          

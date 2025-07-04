@@ -29,8 +29,16 @@ options:
       icon: list
       type: List
       typeLink: list-type-list
+    - color: color9
+      icon: tablet-computers
+      type: Table
+      typeLink: table-summary  
     - color: color8
       icon: tabbed-table
       type: Tabs
       typeLink: tabs-summary  
+    - color: color10
+      icon: upload-bottom
+      type: BottomSheet
+      typeLink: bottomsheet-summary  
         

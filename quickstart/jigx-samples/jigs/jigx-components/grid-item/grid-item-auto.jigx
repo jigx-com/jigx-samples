@@ -1,0 +1,70 @@
+title: grid-item-auto
+type: jig.default
+
+datasources:
+  products-items:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: iphone 14
+          image: https://images.unsplash.com/photo-1609692814988-576d087865ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          price: $900
+        - id: 2
+          name: M1 Bluetooth Wireless Mouse
+          image: https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+          price: $250
+        - id: 3
+          name: Headphones WH-1000XM4
+          image: https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80
+          price: $176
+        - id: 4
+          name: Macbook Pro
+          image: https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          price: $1750
+
+children:
+  - type: component.section
+    options:
+      title: Products
+      children:
+        - type: component.grid
+          options:
+            data: =@ctx.datasources.products-items
+            item:
+              type: component.grid-item
+              options:
+                size: 2x2
+                children:
+                  type: component.image
+                  options:
+                    source:
+                      uri: =@ctx.current.item.image
+                    title: =@ctx.current.item.name
+                    subtitle: =@ctx.current.item.price
+  - type: component.form
+    instanceId: order-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: order-item
+          options:
+            label: Item
+        - type: component.number-field
+          instanceId: quantity
+          options:
+            stepper:
+              isEnabled: true
+              value: 1
+            label: quantity
+actions:
+  - children:
+      - type: action.confirm
+        options:
+          title: Place order
+          isConfirmedAutomatically: false
+          onConfirmed:
+            type: action.go-back
+          modal:
+            title: Your order has been placed.

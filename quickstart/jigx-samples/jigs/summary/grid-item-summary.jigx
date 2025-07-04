@@ -1,7 +1,7 @@
-title: Segmented-control
+title: grid
 type: jig.list
-icon: navigation-menu-4
-data: =@ctx.datasources.summary-segmented-control
+icon: cog
+data: =@ctx.datasources.summary-grid-item
 item:
   type: component.list-item
   options:

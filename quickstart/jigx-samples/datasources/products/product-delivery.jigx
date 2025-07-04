@@ -1,0 +1,15 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - default/product-delivery
+
+  query: 
+    SELECT id,
+     '$.deliveryId',
+     '$.Item',
+     '$.destination',
+     '$.status',
+     '$.expectedDelivery'
+    FROM [default/product-delivery]

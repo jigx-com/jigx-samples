@@ -1,0 +1,74 @@
+title: Sales Summary
+type: jig.table
+
+data: =@ctx.datasources.sales-summary
+
+item: 
+  type: component.table-row
+          
+columnDefinition:
+  Product: 
+    width: regular
+  TotalRevenue:
+    width: small
+    cell:
+      type: component.table-cell
+      options:
+        children: 
+          type: component.text
+          options:
+            value: 
+              text: =@ctx.current.item.TotalRevenue
+              format:
+                numberStyle: currency
+                currency: USD
+    footer:
+      type: component.table-footer-cell
+      options:
+        children: 
+          type: component.text
+          options:
+            value: 
+              text: =$sum(@ctx.datasources.sales-summary.TotalRevenue)
+              format: 
+                numberStyle: currency
+                currency: USD
+  UnitsSold:
+    footer:
+      type: component.table-footer-cell
+      options:
+        children: 
+          type: component.text
+          options:
+            value: =$sum(@ctx.datasources.sales-summary.UnitsSold)
+         
+columns: 
+  - id: Product
+    columnDefinitionId: Product
+  - id: TotalRevenue
+    columnDefinitionId: TotalRevenue
+  - id: UnitsSold  
+    columnDefinitionId: UnitsSold
+
+tableHeader:
+  type: component.table-header
+  options:
+    color:
+      - when: true
+        color: color14
+
+tableFooter:
+  type: component.table-footer
+  options:
+    color:
+      - when: true
+        color: color14
+
+toolbar:
+  actions:
+    - type: action.go-to
+      options:
+        title: Add sale
+        linkTo: table-add-row
+        isModal: true
+        

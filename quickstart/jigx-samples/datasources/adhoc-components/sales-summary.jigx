@@ -1,0 +1,13 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+
+  entities:
+    - default/sales
+
+  query: 
+    SELECT id,
+     '$.Product',
+     '$.TotalRevenue',
+     '$.UnitsSold'
+    FROM [default/sales]

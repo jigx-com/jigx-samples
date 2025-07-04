@@ -1,0 +1,30 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: table-column-selected
+      type: Basic table with color
+      typeLink: jig-table-basic
+    - color: color2
+      icon: table-tools
+      type: Table with header, footer, sorting
+      typeLink: jig-table-columndef-width
+    - color: color3
+      icon: table-row-selected
+      type: Table with columnDefinitions
+      typeLink: jig-table-header-footer-sorting
+    - color: color4
+      icon: table-favorite-cell-star
+      type: Edit table rows using onPress
+      typeLink: jig-table-onpress-edit
+    - color: color5
+      icon: tablet-computers
+      type: Delete selected rows (selectableToolbar)
+      typeLink: jig-table-delete-select-toolbar
+    - color: color6
+      icon: workflow-data-table-smartphone
+      type: Add a new row (toolbar)
+      typeLink: jig-table-add-toolbar
+   
+  
+

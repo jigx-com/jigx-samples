@@ -1,0 +1,11 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: grid-artboard
+      type: Auto grid-item
+      typeLink: grid-item-auto
+    - color: color2
+      icon: cog-double
+      type: Custom grid-item
+      typeLink: grid-item-custom

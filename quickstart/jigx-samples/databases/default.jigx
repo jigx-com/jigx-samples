@@ -30,4 +30,8 @@ tables:
   profile: null
   todos: null
   tododetails: null
+  sales: null
+  roster: null
+  product-delivery: null
+  bookings: null
   

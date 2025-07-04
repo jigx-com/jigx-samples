@@ -1,0 +1,35 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: mobile-phone
+      type: Basic bottomSheet
+      typeLink: bottomsheet-basic
+    - color: color2
+      icon: mobile-qr-code
+      type: BottomSheet with backdrop
+      typeLink: bottomsheet-backdrop
+    - color: color3
+      icon: phone-mobile-device-iphone-x-1
+      type: BottomSheet with backdrop and index
+      typeLink: bottomsheet-backdrop-index
+    - color: color4
+      icon: phone-mobile-device-samsung-2
+      type: BottomSheet with snapPoints
+      typeLink: bottomsheet-snappoints
+    - color: color5
+      icon: upload-bottom
+      type: Multiple bottomSheets
+      typeLink: bottomsheet-multiple
+    - color: color7
+      icon: panoramic
+      type: BottomSheet opens when jig opens
+      typeLink: bottomsheet-initialvalue    
+    - color: color8
+      icon: bottom-distance
+      type: BottomSheet with pan down disabled
+      typeLink: bottomsheet-ispandownenabled 
+    - color: color9
+      icon: align-text-bottom-formatting
+      type: Detached bottomSheet
+      typeLink: bottomsheet-detached       

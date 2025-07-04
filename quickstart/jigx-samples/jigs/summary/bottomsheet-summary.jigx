@@ -1,9 +1,8 @@
-title: Tabs
+title: jig with bottomSheet
 type: jig.list
 icon: navigation-menu-4
-data: =@ctx.datasources.summary-segmented-control
+data: =@ctx.datasources.summary-jig-bottomsheet
 item:
-  type: component.list-item
   options:
     title: =@ctx.current.item.type
     color:
@@ -23,4 +22,4 @@ item:
     rightElement:
       element: icon
       icon: arrow-right-1
-  
+  type: component.list-item
