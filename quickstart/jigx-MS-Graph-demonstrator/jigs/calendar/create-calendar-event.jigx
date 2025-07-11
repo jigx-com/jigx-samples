@@ -126,7 +126,26 @@ actions:
               ={"dateTime": $fromMillis($toMillis(@ctx.components.endDateTime.state.value), "[Y0001]-[M01]-[D01]T[H]:[m]:[s].[f001]", @ctx.system.timezone.offset), "timeZone":"UTC"}
             location: =@ctx.components.location.state.value
           onSuccess:
-            description: 'Event Created'
-            title: 'Event Created'
+            type: action.confirm
+            options:
+              isConfirmedAutomatically: true
+              onConfirmed:
+                type: action.action-list
+                options:
+                  isSequential: true
+                  actions:
+                    - type: action.execute-action
+                      options:
+                        action: this-week-events
+                    - type: action.execute-action
+                      options:
+                        action: next-week-events
+                    - type: action.go-to
+                      options:
+                        linkTo: view-calendar-events-next-week
+              modal:
+                title: Event Created!
+                description: Your event has successfully been created
+
           style:
             isDisabled: =$not(@ctx.components.newEeventForm.state.isValid)

@@ -40,6 +40,13 @@ actions:
             file: =@ctx.components.profilePicture.state.value
           method: functionCall
           onSuccess:
-            type: action.go-back
+            type: action.action-list
+            options:
+              isSequential: true
+              actions:
+                - type: action.execute-action
+                  options:
+                    action: get-user-calls
+                - type: action.go-back
           style:
             isDisabled: =$not(@ctx.components.pictureForm.state.isValid)

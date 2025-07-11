@@ -37,7 +37,7 @@ options:
       json_extract(Data, '$.location.address.street') || "," || json_extract(Data, '$.location.address.city') ||"," || json_extract(Data, '$.location.address.state') ||"," || json_extract(Data, '$.location.address.postalCode') ||"," || json_extract(Data, '$.location.address.countryOrRegion') as locationAddress,
       json_extract(Data, '$.location.displayName') as locationDisplayName
     FROM [next-week-calendar-events]
-    WHERE startTime > datetime('now','localtime')
+    WHERE startTime > datetime('now')
     ORDER by startTime ASC
     LIMIT 1
   isDocument: true

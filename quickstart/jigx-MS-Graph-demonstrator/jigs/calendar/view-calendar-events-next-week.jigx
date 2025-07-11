@@ -65,7 +65,7 @@ datasources:
           json_extract(Data, '$.location.address.street') || "," || json_extract(Data, '$.location.address.city') ||"," || json_extract(Data, '$.location.address.state') ||"," || json_extract(Data, '$.location.address.postalCode') ||"," || json_extract(Data, '$.location.address.countryOrRegion') as locatoinAddress,
           json_extract(Data, '$.location.displayName') as locationDisplayName
         FROM [next-week-calendar-events]
-        WHERE startTime > datetime('now','localtime')
+        WHERE startTime > datetime('now')
         ORDER by startTime asc
 
 data: =@ctx.datasources.calendarEvents
