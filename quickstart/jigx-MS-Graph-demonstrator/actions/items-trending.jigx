@@ -1,0 +1,9 @@
+action:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: items-trending
+        function: get-items-trending
+        functionParameters:
+          accessToken: microsoft.OAuth

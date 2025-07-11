@@ -1,0 +1,28 @@
+action:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.sync-entities
+        options:
+          provider: DATA_PROVIDER_REST
+          entities:
+            - entity: todo-task-lists
+              function: get-task-lists
+              functionParameters:
+                accessToken: microsoft.OAuth
+            - entity: todo-tasks
+              function: get-all-todo-tasks
+              functionParameters:
+                accessToken: microsoft.OAuth
+                taskListIds: |
+                  ={
+                    "requests": $map(@ctx.datasources.task-lists.id, function($v, $i, $a) {
+                      {
+                        "id": $string($i + 1),
+                        "method": "GET",
+                        "url": "me/todo/lists/" & $v & "/tasks?$top100",
+                        "dependsOn": $i>0? [$string($i)]
+                      }
+                    })
+                  }

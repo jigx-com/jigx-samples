@@ -1,0 +1,52 @@
+title: Home
+type: jig.grid
+
+children:
+  - type: component.grid-item
+    options:
+      size: 2x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: view-user-jigx
+          widgetId: profileImage
+  - type: component.grid-item
+    options:
+      size: 2x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: calendar-summary
+          widgetId: nextDays
+  - type: component.grid-item
+    when: =$boolean(@ctx.datasources.next-meeting.locationAddress)
+    options:
+      size: 4x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: next-meeting
+          widgetId: meeting-location
+  - type: component.grid-item
+    options:
+      size: 2x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: list-email-messages
+  - type: component.grid-item
+    options:
+      size: 2x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: list-task-lists
+          widgetId: taskList
+  - type: component.grid-item
+    options:
+      size: 4x2
+      children:
+        type: component.jig-widget
+        options:
+          jigId: items-trending
+          widgetId: trending

@@ -7,21 +7,16 @@ header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
           uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
 
-onRefresh: 
-  type: action.sync-entities
+onRefresh:
+  type: action.execute-action
   options:
-    provider: DATA_PROVIDER_REST
-    entities:
-      - entity: calendars
-        function: get-calendar-list
-        functionParameters:
-          accessToken: microsoft.OAuth
+    action: calendar-list
 
 datasources:
   calendarList:
@@ -31,19 +26,20 @@ datasources:
       entities:
         - entity: calendars
       query: |
-        SELECT id,
-        '$.id' as calId,
-        '$.name',
-        '$.color',
-        '$.hexColor',
-        '$.isDefaultCalendar',
-        '$.canShare',
-        '$.canViewPrivateItems',
-        '$.canEdit',
-        '$.allowedOnlineMeetingProviders',
-        '$.defaultOnlineMeetingProvider',
-        '$.isRemovable',
-        '$.owner'
+        SELECT 
+          id,
+          '$.id' as calId,
+          '$.name',
+          '$.color',
+          '$.hexColor',
+          '$.isDefaultCalendar',
+          '$.canShare',
+          '$.canViewPrivateItems',
+          '$.canEdit',
+          '$.allowedOnlineMeetingProviders',
+          '$.defaultOnlineMeetingProvider',
+          '$.isRemovable',
+          '$.owner'
         FROM [calendars]
 
 data: =@ctx.datasources.calendarList
@@ -52,13 +48,12 @@ item:
   options:
     title: =@ctx.current.item.name
     subtitle: =@ctx.current.item.color
-    leftElement: 
+    leftElement:
       element: icon
       icon: calendar-3
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: view-calendar-events
-        parameters:
+        inputs:
           calId: =@ctx.current.item.calId
-          

@@ -1,7 +1,6 @@
 title: |
   ="Next Up: " & @ctx.datasources.next-meeting.subject
 type: jig.default
-
 header:
   type: component.jig-header
   options:
@@ -51,10 +50,10 @@ children:
     options:
       isInitiallyCollapsed: true
       header:
-        centerElement: 
+        centerElement:
           type: component.titles
-          options: 
-            title: Task Message (Expand to Read)  
+          options:
+            title: Task Message (Expand to Read)
       children:
         - type: component.web-view
           options:
@@ -74,7 +73,7 @@ children:
     options:
       data: =@ctx.datasources.next-meeting.attendees
       maximumItemsToRender: 8
-      item: 
+      item:
         type: component.list-item
         options:
           title: =@ctx.current.item.emailAddress.name
@@ -87,7 +86,7 @@ children:
                 color: color2
               - when: =@ctx.current.item.type != 'required'
                 color: color7
-          leftElement: 
+          leftElement:
             element: avatar
             text: =$uppercase(@ctx.current.item.emailAddress.name)
 
@@ -99,12 +98,13 @@ actions:
           url: =@ctx.datasources.next-meeting.onlineMeetingUrl
           isHidden: |
             =@ctx.datasources.next-meeting.isOnlineMeeting? false: true
-            
+
 widgets:
-  "4x2": 
+  meeting-location:
     type: widget.location
     options:
-      address: =@ctx.datasources.next-meeting.locationAddress
+      viewPoint:
+        address: =@ctx.datasources.next-meeting.locationAddress
       bottom:
         type: component.titles
         options:

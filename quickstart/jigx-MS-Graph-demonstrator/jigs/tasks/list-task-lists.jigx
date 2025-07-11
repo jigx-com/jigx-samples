@@ -13,27 +13,20 @@ header:
           uri: https://www.windowslatest.com/wp-content/uploads/2018/12/Office-apps-new-icons.jpg
 
 onRefresh:
-  type: action.action-list
+  type: action.execute-action
   options:
-    actions:
-      - type: action.sync-entities
-        options:
-          provider: DATA_PROVIDER_REST
-          entities:
-            - entity: todo-task-lists
-              function: get-task-lists
-              functionParameters:
-                accessToken: microsoft.OAuth
+    action: get-todo-lists-tasks
 
 datasources:
-  mydata: 
+  mydata:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: todo-task-lists
         - entity: todo-tasks
-      query: SELECT json_extract(tlists.Data, '$.id') as tlId, json_extract(tlists.Data, '$.displayName') as tlDisplayName,
+      query:
+        SELECT json_extract(tlists.Data, '$.id') as tlId, json_extract(tlists.Data, '$.displayName') as tlDisplayName,
         json_extract(tlists.Data, '$.isOwner') as isOwner, count(json_extract(tasks.Data, '$.id')) AS task_count
         FROM [todo-task-lists] tlists
         LEFT JOIN [todo-tasks] tasks ON json_extract(tlists.Data, '$.id') = json_extract(tasks.Data, '$.toDoListId')
@@ -45,11 +38,11 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.tlDisplayName
-    leftElement: 
+    leftElement:
       element: icon
       icon: task-list
     divider: solid
-    rightElement: 
+    rightElement:
       element: icon
       icon: arrow-right
     subtitle: |
@@ -57,17 +50,17 @@ item:
     label:
       title: |
         =@ctx.current.item.task_count
-    
+
 widgets:
-  "2x2": 
+  taskList:
     type: widget.list
     options:
       data: =@ctx.datasources.mydata
-      item: 
+      item:
         type: component.list-item
         options:
           title: =@ctx.current.item.tlDisplayName
-          leftElement: 
+          leftElement:
             element: icon
             icon: task-list
           divider: solid

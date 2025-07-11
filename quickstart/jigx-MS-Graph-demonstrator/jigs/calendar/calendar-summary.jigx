@@ -14,79 +14,119 @@ header:
 onRefresh:
   type: action.action-list
   options:
+    isSequential: true
     actions:
-      - type: action.sync-entities
+      - type: action.execute-action
         options:
-          provider: DATA_PROVIDER_REST
-          entities:
-            - entity: next-week-calendar-events
-              function: get-calendar-events-next-week
-              functionParameters:
-                accessToken: microsoft.OAuth
-                startdatetime: =$fromMillis($millis())
-                enddatetime: =$fromMillis($millis()+604800000)
-            - entity: calendars
-              function: get-calendar-list
-              functionParameters:
-                accessToken: microsoft.OAuth
+          action: this-week-events
+      - type: action.execute-action
+        options:
+          action: next-week-events
+      - type: action.execute-action
+        options:
+          action: calendar-list
 
 datasources:
-  calendarEvents: 
+  this-week:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
-        - entity: next-week-calendar-events
-      jsonProperties: 
+        - entity: this-week-calendar-events
+      jsonProperties:
         - attendees
       query: |
-        SELECT id,
-        '$.id' as eventId,
-        '$.createdDateTime',
-        '$.lastModifiedDateTime',
-        '$.originalStartTimeZone',
-        '$.originalEndTimeZone',
-        '$.reminderMinutesBeforeStart',
-        '$.isReminderOn',
-        '$.hasAttachments',
-        '$.subject',
-        '$.bodyPreview',
-        '$.importance',
-        '$.sensitivity',
-        '$.isCancelled',
-        '$.isOrganizer',
-        '$.showAs',
-        '$.webLink',
-        '$.isOnlineMeeting',
-        json_extract(Data, '$.onlineMeeting.joinUrl') as onlineMeetingUrl,
-        '$.isOnlineMeeting',
-        '$.onlineMeetingProvider',
-        '$.onlineMeeting',
-        json_extract(Data, '$.body.contentType') as bodyContentType,
-        json_extract(Data, '$.body.content') as bodyContent,
-        json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
-        json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
-        '$.location',
-        '$.attendees',
-        '$.organizer'
-        FROM [next-week-calendar-events]
-        where startTime > datetime('now','localtime')
-        order by startTime asc
+        SELECT 
+          id,
+          '$.createdDateTime',
+          '$.lastModifiedDateTime',
+          '$.originalStartTimeZone',
+          '$.originalEndTimeZone',
+          '$.reminderMinutesBeforeStart',
+          '$.isReminderOn',
+          '$.hasAttachments',
+          '$.subject',
+          '$.bodyPreview',
+          '$.importance',
+          '$.sensitivity',
+          '$.isCancelled',
+          '$.isOrganizer',
+          '$.showAs',
+          '$.webLink',
+          '$.isOnlineMeeting',
+          json_extract(Data, '$.onlineMeeting.joinUrl') as onlineMeetingUrl,
+          '$.isOnlineMeeting',
+          '$.onlineMeetingProvider',
+          '$.onlineMeeting',
+          json_extract(Data, '$.body.contentType') as bodyContentType,
+          json_extract(Data, '$.body.content') as bodyContent,
+          json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
+          json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
+          '$.location',
+          '$.attendees',
+          '$.organizer'
+        FROM [this-week-calendar-events]
+        WHERE startTime > datetime('now','localtime')
+        ORDER BY startTime asc
 
-  onlineEventsCount: 
+  next-week:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: next-week-calendar-events
-      jsonProperties: 
+      jsonProperties:
+        - attendees
+      query: |
+        SELECT 
+          id,
+          '$.createdDateTime',
+          '$.lastModifiedDateTime',
+          '$.originalStartTimeZone',
+          '$.originalEndTimeZone',
+          '$.reminderMinutesBeforeStart',
+          '$.isReminderOn',
+          '$.hasAttachments',
+          '$.subject',
+          '$.bodyPreview',
+          '$.importance',
+          '$.sensitivity',
+          '$.isCancelled',
+          '$.isOrganizer',
+          '$.showAs',
+          '$.webLink',
+          '$.isOnlineMeeting',
+          json_extract(Data, '$.onlineMeeting.joinUrl') as onlineMeetingUrl,
+          '$.isOnlineMeeting',
+          '$.onlineMeetingProvider',
+          '$.onlineMeeting',
+          json_extract(Data, '$.body.contentType') as bodyContentType,
+          json_extract(Data, '$.body.content') as bodyContent,
+          json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
+          json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
+          '$.location',
+          '$.attendees',
+          '$.organizer',
+          json_extract(Data, '$.location.address.street') || "," || json_extract(Data, '$.location.address.city') ||"," || json_extract(Data, '$.location.address.state') ||"," || json_extract(Data, '$.location.address.postalCode') ||"," || json_extract(Data, '$.location.address.countryOrRegion') as locatoinAddress,
+          json_extract(Data, '$.location.displayName') as locationDisplayName
+        FROM [next-week-calendar-events]
+        WHERE startTime > datetime('now','localtime')
+        ORDER BY startTime asc
+
+  onlineEventsCount:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_LOCAL
+      entities:
+        - entity: next-week-calendar-events
+      jsonProperties:
         - attendees
       query: |
         SELECT count(id) as count
         FROM [next-week-calendar-events]
-        where '$.isOnlineMeeting' = 1
+        WHERE '$.isOnlineMeeting' = 1
       isDocument: true
-        
+
   calendarList:
     type: datasource.sqlite
     options:
@@ -94,82 +134,105 @@ datasources:
       entities:
         - entity: calendars
       query: |
-        SELECT id,
-        '$.id' as calId,
-        '$.name',
-        '$.color',
-        '$.hexColor',
-        '$.isDefaultCalendar',
-        '$.canShare',
-        '$.canViewPrivateItems',
-        '$.canEdit',
-        '$.allowedOnlineMeetingProviders',
-        '$.defaultOnlineMeetingProvider',
-        '$.isRemovable',
-        '$.owner'
+        SELECT 
+          id,
+          '$.name',
+          '$.color',
+          '$.hexColor',
+          '$.isDefaultCalendar',
+          '$.canShare',
+          '$.canViewPrivateItems',
+          '$.canEdit',
+          '$.allowedOnlineMeetingProviders',
+          '$.defaultOnlineMeetingProvider',
+          '$.isRemovable',
+          '$.owner'
         FROM [calendars]
 
 children:
-  - type: component.widgets
+  - type: component.grid
     options:
       children:
-        - size: "2x2"
-          jigId: calendar-summary
-        - size: "2x2"
-          jigId: view-calendar-events-next-week
+        - type: component.grid-item
+          options:
+            size: 2x2
+            children:
+              type: component.jig-widget
+              options:
+                jigId: calendar-summary
+                widgetId: nextDays
+                onPress:
+                  type: action.info-modal
+                  options:
+                    modal:
+                      title: See events list!
+                      description: This is for overview purposes, to view the list of events, click on the below calendars or the list of events to the right.
+                      element:
+                        type: icon
+                        icon: calendar-date-mark-check
+                      buttonText: Close
+        - type: component.grid-item
+          options:
+            size: 2x2
+            children:
+              type: component.jig-widget
+              options:
+                jigId: view-calendar-events-next-week
+                widgetId: next-events
   - type: component.section
     options:
-      title: Your calendars
+      title: YOUR CALENDARS
       children:
         - type: component.list
           options:
             data: =@ctx.datasources.calendarList
             maximumItemsToRender: 8
-            item: 
+            item:
               type: component.list-item
               options:
                 title: =@ctx.current.item.name
                 subtitle: =@ctx.current.item.color
-                leftElement: 
+                leftElement:
                   element: icon
                   icon: calendar-3
-                onPress: 
+                  color: primary
+                  shape: rounded
+                onPress:
                   type: action.go-to
                   options:
                     linkTo: view-calendar-events
-                    parameters:
-                      calId: =@ctx.current.item.calId
-  
+                    inputs:
+                      calId: =@ctx.current.item.id
 
 widgets:
-  "2x2": 
+  nextDays:
     type: widget.value
     options:
-      value: =$count(@ctx.datasources.calendarEvents)
+      value: =$count(@ctx.datasources.next-week)
       format:
-        unit: Events this week
-      top: 
+        unit: Events coming up
+      top:
         type: component.titles
         options:
           align: left
           icon: person
           iconColor: color10
-          title: =@ctx.datasources.onlineEventsCount.count & " online meetings"
-          subtitle: ="with " & $count($distinct(@ctx.datasources.calendarEvents.attendees.emailAddress.address)) & " different people"
-      bottom: 
+          title: =@ctx.datasources.onlineEventsCount.count & " meetings"
+          subtitle: ="with " & $count($distinct(@ctx.datasources.next-week.attendees.emailAddress.address)) & " people"
+      bottom:
         type: component.titles
         options:
           icon: calendar
           iconColor: color11
-          title: =$fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[MNn] [D] [h]:[m01] [PN]', @ctx.system.timezone.offset)
-          subtitle: =@ctx.datasources.calendarEvents[0].subject
-          
+          title: =$fromMillis($toMillis(@ctx.datasources.next-meeting[0].startTime), '[MNn] [D] [h]:[m01] [PN]', @ctx.system.timezone.offset)
+          subtitle: =@ctx.datasources.next-meeting[0].subject
+
 preview:
-  header: 
+  header:
     type: component.jig-header
     options:
       height: small
-      children: 
+      children:
         type: component.image
         options:
           source:
@@ -178,31 +241,31 @@ preview:
   children:
     - type: component.entity
       options:
-        children: 
-        - type: component.entity-field
-          options:
-            label: Subject
-            value: =@ctx.datasources.calendarEvents[0].subject
-            contentType: default
-        - type: component.field-row
-          options:
-            children:
-              - type: component.entity-field
-                options:
-                  label: Day
-                  value: =$fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[MNn] [D], [Y]', @ctx.system.timezone.offset)
-              - type: component.entity-field
-                options:
-                  label: Time
-                  value: |
-                    = $fromMillis($toMillis(@ctx.datasources.calendarEvents[0].startTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
-                    & " to " & 
-                    $fromMillis($toMillis(@ctx.datasources.calendarEvents[0].endTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
-        - type: component.entity-field
-          options:
-            label: Summary
-            value: =@ctx.datasources.calendarEvents[0].bodyPreview
-            isMultiline: true
+        children:
+          - type: component.entity-field
+            options:
+              label: Subject
+              value: =@ctx.datasources.next-meeting[0].subject
+              contentType: default
+          - type: component.field-row
+            options:
+              children:
+                - type: component.entity-field
+                  options:
+                    label: Day
+                    value: =$fromMillis($toMillis(@ctx.datasources.next-week[0].startTime), '[MNn] [D], [Y]', @ctx.system.timezone.offset)
+                - type: component.entity-field
+                  options:
+                    label: Time
+                    value: |
+                      = $fromMillis($toMillis(@ctx.datasources.next-week[0].startTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+                      & " to " & 
+                      $fromMillis($toMillis(@ctx.datasources.next-week[0].endTime), '[h]:[m01] [PN]', @ctx.system.timezone.offset)
+          - type: component.entity-field
+            options:
+              label: Summary
+              value: =@ctx.datasources.next-week[0].bodyPreview
+              isMultiline: true
     - type: component.web-view
       options:
         isTrackingTransparencyRequired: false
@@ -214,15 +277,15 @@ preview:
               <meta name=" & "'" & "viewport" & "'" & " content=" & "'" & "width=device-width, " & "initial-scale=1" & "'" & "/>
             </head>
             <body>" 
-              & @ctx.datasources.calendarEvents[0].bodyContent
+              & @ctx.datasources.next-week[0].bodyContent
           & "</body>
           </html>")
   actions:
     # - when: =@ctx.jig.inputs.isOnlineMeeting = 1
     - children:
-      - type: action.open-url
-        options:
-          title: Join Meeting
-          url: =@ctx.datasources.calendarEvents[0].onlineMeetingUrl
-          isHidden: |
-            =@ctx.datasources.calendarEvents[0].isOnlineMeeting? false: true
+        - type: action.open-url
+          options:
+            title: Join Meeting
+            url: =@ctx.datasources.next-week[0].onlineMeetingUrl
+            isHidden: |
+              =@ctx.datasources.next-week[0].isOnlineMeeting? false: true

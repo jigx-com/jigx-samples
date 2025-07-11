@@ -7,40 +7,27 @@ header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
           uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
-      
-onRefresh: 
-  type: action.sync-entities
+
+onRefresh:
+  type: action.execute-action
   options:
-    provider: DATA_PROVIDER_REST
-    entities:
-      - entity: user-profile
-        function: get-user-profile
-        functionParameters:
-          accessToken: microsoft.OAuth
-      - entity: profile-picture
-        function: get-profile-picture
-        functionParameters:
-          accessToken: microsoft.OAuth 
-          userId: =@ctx.user.email
-      - entity: user-emails
-        function: get-user-emails-addresses
-        functionParameters:
-          accessToken: microsoft.OAuth
-      
+    action: get-user-calls
+
 datasources:
-  userProfile: 
+  userProfile:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: user-profile
       query: |
-        SELECT id, 
+        SELECT 
+        id, 
         '$.displayName', 
         '$.givenName', 
         '$.jobTitle', 
@@ -49,36 +36,45 @@ datasources:
         '$.officeLocation',
         '$.surname',
         '$.userPrincipalName',
-        '$.businessPhones',
-        '$.id' 
+        '$.businessPhones'
         FROM [user-profile]
       isDocument: true
-      
+
   profilePhoto:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: profile-picture
-      query: SELECT id, '$.userId', '$.data' FROM [profile-picture]
+      query: |
+        SELECT
+          id,
+          '$.userId',
+          '$.data'
+        FROM [profile-picture]
       isDocument: true
-      
+
   userEmails:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
-  
       entities:
         - entity: user-emails
-  
-      query: SELECT id, '$.address', '$.type', '$.allowedAudiences' FROM [user-emails]
+
+      query: |
+        SELECT
+          id,
+          '$.address',
+          '$.type',
+          '$.allowedAudiences'
+        FROM [user-emails]
 
 children:
   - type: component.image
     options:
       source:
-        uri: =@ctx.datasources.profilePhoto.data 
-          #  ="data:image/png," & @ctx.datasources.profilePhoto.data 
+        uri: =@ctx.datasources.profilePhoto.data
+        #  ="data:image/png," & @ctx.datasources.profilePhoto.data
       height: 200
       resizeMode: contain
   - type: component.entity
@@ -111,14 +107,14 @@ children:
         - type: component.field-row
           options:
             children:
-            - type: component.entity-field
-              options:
-                label: Job Title
-                value: =@ctx.datasources.userProfile.jobTitle
-            - type: component.entity-field
-              options:
-                label: Mobile Phone
-                value: =@ctx.datasources.userProfile.mobilePhone
+              - type: component.entity-field
+                options:
+                  label: Job Title
+                  value: =@ctx.datasources.userProfile.jobTitle
+              - type: component.entity-field
+                options:
+                  label: Mobile Phone
+                  value: =@ctx.datasources.userProfile.mobilePhone
         - type: component.entity-field
           options:
             label: Office Location
@@ -131,18 +127,18 @@ children:
           options:
             data: =@ctx.datasources.userEmails
             maximumItemsToRender: 8
-            item: 
+            item:
               type: component.list-item
               options:
                 divider: solid
-                leftElement: 
+                leftElement:
                   element: icon
                   icon: email
                 title: =@ctx.current.item.address
                 subtitle: |
                   ="Type: " & @ctx.current.item.type
                 description: |
-                  ="Allowed Audiences: " & @ctx.current.item.allowedAudiences               
+                  ="Allowed Audiences: " & @ctx.current.item.allowedAudiences
 
 actions:
   - children:
@@ -150,16 +146,17 @@ actions:
         options:
           title: Update Profile Picture
           linkTo: update-profile-picture
-            
+
 widgets:
-  "2x4": 
+  profileAvatar:
     type: widget.group
     options:
       children:
         - type: widget.avatar
           options:
-            text: "Your Profile"
-            uri: =@ctx.datasources.profilePhoto.data
+            text: 'Your Profile'
+            uri:
+              =@ctx.datasources.profilePhoto.data
               # ="data:image/png," & @ctx.datasources.profilePhoto.data
             bottom:
               type: component.titles
@@ -167,23 +164,17 @@ widgets:
                 align: center
                 title: =@ctx.datasources.userProfile.displayName
                 subtitle: =@ctx.datasources.userProfile.jobTitle
-                
-  "2x2": 
+
+  profileImage:
     type: widget.image
     options:
       isContentOverlaid: true
       source:
-        uri: =@ctx.datasources.profilePhoto.data
+        uri:
+          =@ctx.datasources.profilePhoto.data
           # ="data:image/png," & @ctx.datasources.profilePhoto.data
-      bottom: 
+      bottom:
         type: component.titles
         options:
           title: =@ctx.datasources.userProfile.displayName
           subtitle: =@ctx.datasources.userProfile.jobTitle
-        
-  
-
-        
-        
-                
-            

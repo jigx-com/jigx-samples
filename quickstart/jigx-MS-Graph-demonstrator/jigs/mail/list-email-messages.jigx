@@ -13,35 +13,25 @@ header:
           uri: https://blog.smu.edu/itconnect/files/2020/12/Featured-Image-Email-354CA1-1.png
 
 onRefresh:
-  type: action.action-list
+  type: action.execute-action
   options:
-    actions:
-      - type: action.sync-entities
-        options:
-          provider: DATA_PROVIDER_REST
-          entities:
-            - entity: email-messages
-              function: get-email-messages
-              functionParameters:
-                accessToken: microsoft.OAuth
-                $filter: ="receivedDateTime ge " & $fromMillis($millis()-432000000)
-                $top: "200"
+    action: get-emails
 
 datasources:
-  mydata: 
+  mydata:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
       entities:
         - entity: email-messages
-      jsonProperties: 
+      jsonProperties:
         - body
         - sender
         - from
         - toRecipients
         - replyTo
-      query: SELECT id, 
-        '$.receivedDateTime', 
+      query: SELECT id,
+        '$.receivedDateTime',
         '$.sentDateTime',
         '$.hasAttachments',
         '$.subject',
@@ -73,18 +63,18 @@ item:
     divider: solid
     subtitle: =@ctx.current.item.subject
     description: =@ctx.current.item.bodyPreview
-    rightElement: 
+    rightElement:
       element: icon
       icon: =(@ctx.current.item.hasAttachments = 1 ? 'document' :'')
-    leftElement: 
+    leftElement:
       element: avatar
       text: =$substring(@ctx.current.item.from.emailAddress.name, 0, 1)
       uri: ''
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: view-email
-        parameters:
+        inputs:
           receivedDateTime: =@ctx.current.item.receivedDateTime
           sentDateTime: =@ctx.current.item.sentDateTime
           hasAttachments: =@ctx.current.item.hasAttachments
@@ -101,10 +91,11 @@ item:
           ccRecipients: =@ctx.current.item.ccRecipients
           bccRecipients: =@ctx.current.item.bccRecipients
           replyTo: =@ctx.current.item.replyTo
-          
-filter: 
-  - title: Focused
-    value: focused
-  - title: Other
-    value: other
-      
+
+filter:
+  initialValue: focused
+  data:
+    - title: Focused
+      value: focused
+    - title: Other
+      value: other

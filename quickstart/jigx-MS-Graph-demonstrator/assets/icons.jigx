@@ -2,8 +2,10 @@ icons:
   - arrow-right # auto-generated
   - calendar # auto-generated
   - calendar-3 # auto-generated
+  - calendar-date-mark-check # auto-generated
   - contact # auto-generated
   - email # auto-generated
   - gauge-dashboard # auto-generated
+  - home # auto-generated
   - person # auto-generated
   - task-list # auto-generated

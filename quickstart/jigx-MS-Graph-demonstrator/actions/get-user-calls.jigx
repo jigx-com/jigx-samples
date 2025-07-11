@@ -1,0 +1,18 @@
+action:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: user-profile
+        function: get-user-profile
+        functionParameters:
+          accessToken: microsoft.OAuth
+      - entity: profile-picture
+        function: get-profile-picture
+        functionParameters:
+          accessToken: microsoft.OAuth
+          userId: =@ctx.user.email
+      - entity: user-emails
+        function: get-user-emails-addresses
+        functionParameters:
+          accessToken: microsoft.OAuth

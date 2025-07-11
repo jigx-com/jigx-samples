@@ -1,0 +1,11 @@
+action:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: email-messages
+        function: get-email-messages
+        functionParameters:
+          accessToken: microsoft.OAuth
+          $filter: ="receivedDateTime ge " & $fromMillis($millis()-432000000)
+          $top: '200'

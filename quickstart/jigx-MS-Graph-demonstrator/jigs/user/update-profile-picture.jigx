@@ -6,7 +6,7 @@ header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -25,7 +25,7 @@ children:
             mediaType: image
             isMultiple: false
             imageQuality: 80 # optimized photo size with minimal quality loss
-            
+
 actions:
   - children:
       - type: action.execute-entity
@@ -37,8 +37,9 @@ actions:
           functionParameters:
             accessToken: microsoft.OAuth
             Content-Type: image/jpeg
-            file: =@ctx.components.profilePicture.state.value 
+            file: =@ctx.components.profilePicture.state.value
           method: functionCall
-          onSuccess: 
+          onSuccess:
             type: action.go-back
-          
+          style:
+            isDisabled: =$not(@ctx.components.pictureForm.state.isValid)

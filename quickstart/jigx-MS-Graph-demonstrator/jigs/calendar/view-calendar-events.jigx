@@ -1,17 +1,17 @@
 title: Calendar
 type: jig.calendar
 
-header: 
+header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
           uri: https://support.content.office.net/en-us/media/f1c4b693-4670-4e7a-8102-bbf1749e83fe.jpg
 
-onFocus: 
+onFocus:
   type: action.sync-entities
   options:
     provider: DATA_PROVIDER_REST
@@ -23,7 +23,7 @@ onFocus:
           calendarId: =@ctx.jig.inputs.calId
           $filter: ="start/dateTime ge '" & $fromMillis($millis()-86400000) & "' and end/dateTime le '" & $fromMillis($millis()+5184000000) & "'"
 
-onRefresh: 
+onRefresh:
   type: action.sync-entities
   options:
     provider: DATA_PROVIDER_REST
@@ -36,7 +36,7 @@ onRefresh:
           $filter: ="start/dateTime ge '" & $fromMillis($millis()-86400000) & "' and end/dateTime le '" & $fromMillis($millis()+5184000000) & "'"
 
 datasources:
-  calendarEvents: 
+  calendarEvents:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_LOCAL
@@ -45,34 +45,34 @@ datasources:
       jsonProperties:
         - attendees
       query: |
-        SELECT id,
-        '$.id' as eventId,
-        '$.createdDateTime',
-        '$.lastModifiedDateTime',
-        '$.originalStartTimeZone',
-        '$.originalEndTimeZone',
-        '$.reminderMinutesBeforeStart',
-        '$.isReminderOn',
-        '$.hasAttachments',
-        '$.subject',
-        '$.bodyPreview',
-        '$.importance',
-        '$.sensitivity',
-        '$.isCancelled',
-        '$.isOrganizer',
-        '$.showAs',
-        '$.webLink',
-        json_extract(Data, '$.onlineMeetingUrl.joinUrl') as onlineMeetingUrl,
-        '$.isOnlineMeeting',
-        '$.onlineMeetingProvider',
-        '$.onlineMeeting',
-        json_extract(Data, '$.body.contentType') as bodyContentType,
-        json_extract(Data, '$.body.content') as bodyContent,
-        json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
-        json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
-        '$.location',
-        '$.attendees',
-        '$.organizer'
+        SELECT 
+          id,
+          '$.createdDateTime',
+          '$.lastModifiedDateTime',
+          '$.originalStartTimeZone',
+          '$.originalEndTimeZone',
+          '$.reminderMinutesBeforeStart',
+          '$.isReminderOn',
+          '$.hasAttachments',
+          '$.subject',
+          '$.bodyPreview',
+          '$.importance',
+          '$.sensitivity',
+          '$.isCancelled',
+          '$.isOrganizer',
+          '$.showAs',
+          '$.webLink',
+          json_extract(Data, '$.onlineMeetingUrl.joinUrl') as onlineMeetingUrl,
+          '$.isOnlineMeeting',
+          '$.onlineMeetingProvider',
+          '$.onlineMeeting',
+          json_extract(Data, '$.body.contentType') as bodyContentType,
+          json_extract(Data, '$.body.content') as bodyContent,
+          json_extract(Data, '$.start.dateTime') || 'Z' as startTime,
+          json_extract(Data, '$.end.dateTime') || 'Z' as endTime,
+          '$.location',
+          '$.attendees',
+          '$.organizer'
         FROM [calendarEvents]
 
 data: =@ctx.datasources.calendarEvents
@@ -86,12 +86,12 @@ item:
     description: =@ctx.current.item.bodyPreview
     people: "=@ctx.current.item.attendees.{'fullName': emailAddress.address, 'email': emailAddress.address}"
     buttonTitle: View Event Details
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: view-calendar-event-details-w
-        parameters:
-          eventId: =@ctx.current.item.eventId
+        inputs:
+          eventId: =@ctx.current.item.id
           evtFrom: =@ctx.current.item.startTime
           evtTo: =@ctx.current.item.endTime
           bodyContent: =@ctx.current.item.bodyContent
@@ -102,7 +102,7 @@ item:
           bodyPreview: =@ctx.current.item.bodyPreview
           attendees: =@ctx.current.item.attendees
           onlineMeetingProvider: =@ctx.current.item.onlineMeetingProvider
-          
+
 actions:
   - children:
       - type: action.go-to

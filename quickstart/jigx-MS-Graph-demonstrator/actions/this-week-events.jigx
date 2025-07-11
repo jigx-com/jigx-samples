@@ -1,0 +1,11 @@
+action:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: this-week-calendar-events
+        function: get-calendar-events-by-week
+        functionParameters:
+          accessToken: microsoft.OAuth
+          startdatetime: =$fromMillis($startOfWeek)
+          enddatetime: =$fromMillis($thisWeek)

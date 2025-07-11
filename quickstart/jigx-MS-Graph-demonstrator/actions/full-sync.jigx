@@ -1,0 +1,26 @@
+action:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.execute-action
+        options:
+          action: get-user-calls
+      - type: action.execute-action
+        options:
+          action: calendar-list
+      - type: action.execute-action
+        options:
+          action: this-week-events
+      - type: action.execute-action
+        options:
+          action: next-week-events
+      - type: action.execute-action
+        options:
+          action: items-trending
+      - type: action.execute-action
+        options:
+          action: get-emails
+      - type: action.execute-action
+        options:
+          action: get-todo-lists-tasks

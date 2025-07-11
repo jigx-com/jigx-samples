@@ -1,0 +1,9 @@
+action:
+  type: action.sync-entities
+  options:
+    provider: DATA_PROVIDER_REST
+    entities:
+      - entity: calendars
+        function: get-calendar-list
+        functionParameters:
+          accessToken: microsoft.OAuth
