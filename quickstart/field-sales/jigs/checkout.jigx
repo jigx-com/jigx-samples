@@ -47,10 +47,9 @@ summary:
         =$sum(@ctx.jig.inputs.items.amount) & ' items = $' &
         $sum(@ctx.jig.inputs.items.(amount * $number(($val := id;
         @ctx.datasources.all-products[id=$val]).cost)))
-      
+
       leftIcon:
         element: icon
         isContained: true
-        isDuotone: true
+        type: duotone
         icon: shopping-cart-empty-1
-    

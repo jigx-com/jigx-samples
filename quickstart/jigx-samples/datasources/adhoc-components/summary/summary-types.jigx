@@ -21,6 +21,10 @@ options:
       icon: local-image-content
       type: Fullscreen
       typeLink: fullscreen-location-dd
+    - color: color9
+      icon: gallery
+      type: Gallery
+      typeLink: gallery-summary
     - color: color7
       icon: grid-guides
       type: Grid
@@ -32,13 +36,12 @@ options:
     - color: color9
       icon: tablet-computers
       type: Table
-      typeLink: table-summary  
+      typeLink: table-summary
     - color: color8
       icon: tabbed-table
       type: Tabs
-      typeLink: tabs-summary  
+      typeLink: tabs-summary
     - color: color10
       icon: upload-bottom
       type: BottomSheet
-      typeLink: bottomsheet-summary  
-        
+      typeLink: bottomsheet-summary

@@ -31,7 +31,7 @@ item:
     leftElement:
       element: icon
       isContained: true
-      isDuotone: true
+      type: duotone
       icon: shopping-cart-empty-1
     onPress:
       type: action.go-to
@@ -46,7 +46,6 @@ item:
         text: =@ctx.current.item.order-total
         format:
           numberStyle: currency
-        
 
 widgets:
   4x2:
@@ -68,7 +67,7 @@ widgets:
                   $now()]) = 0 ? 0 : $sum(@ctx.datasources.all-orders[order-date
                   >= $fromMillis($toMillis($now()) - 2592000000) and order-date
                   < $now()].order-total)
-              
+
             chart:
               type: component.pie-chart
               options:
@@ -92,7 +91,7 @@ widgets:
                         "y": $sum(($val := id; @ctx.datasources.all-orders[order-account = $val]).order-total),
                         "color": "color" & $string($number($i) + 4)}
                     layout: pie
-              
+
         - type: widget.chart
           options:
             chart:
@@ -131,6 +130,4 @@ widgets:
                       ]
                     dataLabels:
                       - isEnabled: true
-                    layout: area-gradient              
-          
-    
+                    layout: area-gradient

@@ -1,0 +1,72 @@
+title: Count Up
+type: jig.default
+
+# Reset the jig state to the initial values when the jig is refreshed.
+onRefresh:
+  type: action.reset-jig-state
+  options:
+    changes:
+      - startTime
+# Reset the jig state to the initial values when the jig comes into focus.
+onFocus:
+  type: action.reset-jig-state
+  options:
+    changes:
+      - startTime
+# Set initial states in the jig.
+state:
+  startTime:
+    initialValue: Start
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2019/01/15/09/36/stopwatch-3933687_640.jpg
+
+children:
+  - type: component.list-item
+    instanceId: repair1
+    options:
+      title: Repair brickwork
+      subtitle: Job starts when you select the appointment from the list
+      leftElement:
+        element: icon
+        color: color4
+        type: contained
+        icon: hammer
+      # Configure a button with the onPress event to,
+      # start the job by setting the state to 'In Progress'.
+      rightElement:
+        element: button
+        title: =@ctx.jig.state.startTime
+        onPress:
+          type: action.set-jig-state
+          options:
+            changes:
+              startTime: In progress
+  - type: component.list-item
+    instanceId: install
+    options:
+      title: Install new HVAC
+      subtitle: Job starts when you select the appointment from the list
+      leftElement:
+        element: icon
+        color: color9
+        type: contained
+        icon: fan
+      tags:
+        - text: Complete
+          color: color2
+
+  - type: component.count-up
+    instanceId: workTime
+    # Set the when condition to determine when the count-up is visible.
+    # The count-up starts using the timestamp provided once it is visible.
+    when: =@ctx.jig.state.startTime = "In progress"
+    options:
+      startTimestamp: =$millis() - 10000

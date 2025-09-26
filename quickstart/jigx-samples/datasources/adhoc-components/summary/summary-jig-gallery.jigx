@@ -1,0 +1,19 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: gallery
+      type: Basic gallery jig
+      typeLink: jig-gallery-simple
+    - color: color2
+      icon: gallery-view
+      type: Gallery jig with share and delete
+      typeLink: jig-gallery-share-delete
+    - color: color3
+      icon: east-side-gallery-berlin-wall
+      type: Gallery jig with a bottomSheet
+      typeLink: jig-gallery-bottomsheet
+    - color: color4
+      icon: image-file-light-alternate
+      type: Gallery jig in a tab jig
+      typeLink: jig-gallery-tab

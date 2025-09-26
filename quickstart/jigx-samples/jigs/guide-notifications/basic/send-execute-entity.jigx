@@ -8,7 +8,7 @@ actions:
           provider: DATA_PROVIDER_REST
           entity: send-notification
           function: send-notification
-          functionParameters:
+          parameters:
             accessToken: jigx
             deviceId: jig
             emails: =@ctx.user.email

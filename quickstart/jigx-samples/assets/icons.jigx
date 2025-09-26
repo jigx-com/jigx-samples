@@ -1,4 +1,5 @@
 icons:
+  - accounting-invoice # auto-generated
   - actions-authentication-squares # auto-generated
   - ad # auto-generated
   - add # auto-generated
@@ -30,6 +31,7 @@ icons:
   - blood-drop-search # auto-generated
   - book-address # auto-generated
   - book-book-pages # auto-generated
+  - building-1-building # auto-generated
   - building-cloudy-building # auto-generated
   - bus # auto-generated
   - business-card-1 # auto-generated
@@ -97,6 +99,7 @@ icons:
   - end-marker # auto-generated
   - envelope # auto-generated
   - equal-math-symbol-circle # auto-generated
+  - fan # auto-generated
   - feedback # auto-generated
   - filter-1 # auto-generated
   - finger-touch # auto-generated
@@ -112,6 +115,7 @@ icons:
   - gauge-dashboard # auto-generated
   - google # auto-generated
   - graph-stats-square-alternate # auto-generated
+  - hammer # auto-generated
   - hardware-hammer-nail-hit # auto-generated
   - hat # auto-generated
   - healthcare-website-cross-heart-rate-1 # auto-generated
@@ -138,6 +142,7 @@ icons:
   - layout-corners-dashboard-1 # auto-generated
   - layout-dashboard-1 # auto-generated
   - layout-module-1 # auto-generated
+  - lighthouse-bird # auto-generated
   - list # auto-generated
   - list-quill # auto-generated
   - loading-half # auto-generated

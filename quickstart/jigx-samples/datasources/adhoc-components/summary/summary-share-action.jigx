@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: share
+      action: Share images
+      actionLink: action-share-images
+    - color: color2
+      icon: share-1
+      action: Generate a PDF, save and share
+      actionLink: action-share-pdf
+    - color: color3
+      icon: share-content-sign
+      action: Share by email
+      actionLink: action-share-email

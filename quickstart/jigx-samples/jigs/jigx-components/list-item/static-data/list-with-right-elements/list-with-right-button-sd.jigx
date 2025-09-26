@@ -17,14 +17,15 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+      fontSize: regular
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+    rightElement:
       element: button
       title: Press Me
-      onPress: 
+      onPress:
         type: action.go-back
-
-
-
-      

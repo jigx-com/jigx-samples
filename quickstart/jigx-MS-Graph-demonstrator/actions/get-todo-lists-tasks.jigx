@@ -9,11 +9,11 @@ action:
           entities:
             - entity: todo-task-lists
               function: get-task-lists
-              functionParameters:
+              parameters:
                 accessToken: microsoft.OAuth
             - entity: todo-tasks
               function: get-all-todo-tasks
-              functionParameters:
+              parameters:
                 accessToken: microsoft.OAuth
                 taskListIds: |
                   ={

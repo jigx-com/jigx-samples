@@ -22,7 +22,7 @@ summary:
         element: icon
         icon: shopping-cart-empty-1
         isContained: true
-        isDuotone: true
+        type: duotone
 actions:
   - children:
       - type: action.go-to
@@ -138,10 +138,12 @@ item:
         color: color3
     title: =@ctx.current.item.name
     description: =@ctx.current.item.description
-    subtitle: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? "Low
+    subtitle:
+      =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? "Low
       inventory" :""
     style:
-      isError: =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? true
+      isError:
+        =((@ctx.current.item.current / @ctx.current.item.total) < 0.25) ? true
         :false
     progress: =(@ctx.current.item.current / @ctx.current.item.total)
     leftElement:

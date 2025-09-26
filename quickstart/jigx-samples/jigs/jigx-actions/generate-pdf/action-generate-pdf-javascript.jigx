@@ -1,0 +1,103 @@
+title: Monthly invoicing
+description: Provide your details
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGludm9pY2luZ3xlbnwwfHwwfHx8MA%3D%3D
+datasources:
+  customer:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      # Use isDocument true to record a single record.
+      isDocument: true
+      entities:
+        - default/invoices
+
+      query: |
+        SELECT
+          id,
+          '$.firstName',
+          '$.email', 
+          '$.phoneNumber',
+          '$.customerCompany',
+          '$.address'
+        FROM [default/invoices] 
+        WHERE firstName = 'John Smith'
+children:
+  - type: component.section
+    options:
+      title: Details
+      children:
+        - type: component.form
+          instanceId: inputValues
+          options:
+            children:
+              - type: component.text-field
+                instanceId: customerCompany
+                options:
+                  initialValue: =@ctx.datasources.customer.customerCompany
+                  label: First name
+                  isRequired: false
+              - type: component.text-field
+                instanceId: firstName
+                options:
+                  initialValue: =@ctx.datasources.customer.firstName
+                  label: First name
+                  isRequired: false
+              - type: component.email-field
+                instanceId: email
+                options:
+                  initialValue: =@ctx.datasources.customer.email
+                  label: Email address
+              - type: component.number-field
+                instanceId: phoneNumber
+                options:
+                  initialValue: =@ctx.datasources.customer.phoneNumber
+                  label: Mobile number
+# Create an action list that creates the PDF from the JavaScript HTML function,
+# secondly share the pdf file via one of the devices apps.
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Send Invoice
+          isSequential: true
+          actions:
+            # First action to create the pdf.
+            - type: action.generate-pdf
+              instanceId: generate-pdf-id
+              options:
+                # Reference the JavaScript HTML function in an expression,
+                # and provide the reference to the datasource for the inputs.
+                html: =$html.generateHTML(@ctx.datasources.customer)
+                # Provide the name of the pdf.
+                fileName: invoice
+            # Save the PDF to the database.
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/documents
+                method: create
+                data:
+                  fileName: invoice
+                  date: =$now()
+                file:
+                  # Use the action instance output to reference the file
+                  # that is stored in Dynamic data files.
+                  localPath: =@ctx.actions.generate-pdf-id.outputs.uri
+            # Add the second action to share out the pdf,
+            # on one of the devices apps.
+            - type: action.share
+              options:
+                # Use the action instance output to reference the file.
+                fileUri: =@ctx.actions.generate-pdf-id.outputs.uri
+                message: Global Invoice
+                subject: Invoice for January

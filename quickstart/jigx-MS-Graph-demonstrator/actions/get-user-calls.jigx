@@ -5,14 +5,14 @@ action:
     entities:
       - entity: user-profile
         function: get-user-profile
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth
       - entity: profile-picture
         function: get-profile-picture
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth
           userId: =@ctx.user.email
       - entity: user-emails
         function: get-user-emails-addresses
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth

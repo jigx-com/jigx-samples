@@ -3,7 +3,7 @@ type: jig.list
 icon: card-add-1
 
 datasources:
-  menuList: 
+  menuList:
     type: datasource.static
     options:
       data:
@@ -66,9 +66,8 @@ datasources:
           jigId: card-with-graph
           title: Cards with Graph
           icon: card-add-1
-          color: color12      
-          
-          
+          color: color12
+
 data: =@ctx.datasources.menuList
 item:
   type: component.list-item
@@ -77,14 +76,14 @@ item:
     color:
       - when: true
         color: =@ctx.current.item.color
-    leftElement: 
+    leftElement:
       element: icon
       icon: =@ctx.current.item.icon
-      isDuotone: true
-    rightElement: 
+      type: duotone
+    rightElement:
       element: icon
       icon: arrow-right-1
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: =@ctx.current.item.jigId

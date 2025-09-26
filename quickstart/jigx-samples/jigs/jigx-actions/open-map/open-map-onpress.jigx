@@ -1,0 +1,58 @@
+title: Open map
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D
+
+datasources:
+  adresses:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: John Smith
+          address: New York, US
+          icon: home-apps-logo
+        - id: 2
+          name: Empire State Building
+          address:
+            latitude: 40.74860
+            longitude: "-73.98566"
+          icon: landmark-empire-state
+        - id: 3
+          name: The lighthouse
+          address: "40.74789, -74.01113"
+          icon: lighthouse-bird
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.adresses
+      maximumItemsToRender: 8
+      item:
+        type: component.list-item
+        options:
+          description: =$string(@ctx.current.item.address)
+          title: =@ctx.current.item.name
+          leftElement:
+            element: icon
+            icon: =@ctx.current.item.icon
+          # Add a button on the right that can be tapped to open the modal with
+          # map options.
+          rightElement:
+            element: button
+            title: Navigate
+            # Use the onPress event to trigger the action.
+            onPress:
+              # Configure the action with an address derived from a datasource
+              # or static value.
+              type: action.open-map
+              options:
+                address: =@ctx.current.item.address

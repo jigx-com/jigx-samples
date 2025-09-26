@@ -1,7 +1,6 @@
 title: |
   ='Orders (' & $count(@ctx.datasources.orders) & ')'
 type: jig.list
-
 datasources:
   orders:
     type: datasource.sqlite
@@ -26,13 +25,13 @@ datasources:
         - order-items
       queryParameters:
         accountid: =@ctx.jig.inputs.account-id
-    
+
 data: =@ctx.datasources.orders
 item:
   type: component.list-item
   options:
     title: |
-      =$sum(@ctx.current.item.order-items.amount) & ' items' 
+      =$sum(@ctx.current.item.order-items.amount) & ' items'
     subtitle: >
       =$fromMillis($toMillis(@ctx.current.item.order-date),
       '[Y0001]/[M01]/[D01]') & ' at ' &
@@ -40,7 +39,7 @@ item:
     leftElement:
       element: icon
       isContained: true
-      isDuotone: true
+      type: duotone
       icon: shopping-cart-empty-1
     onPress:
       type: action.go-to
@@ -49,15 +48,13 @@ item:
         parameters:
           account-id: =@ctx.current.item.order-account
           items: =@ctx.current.item.order-items
-        
-      
+
     rightElement:
       element: value
       text:
         format:
           numberStyle: currency
         text: =@ctx.current.item.order-total
-  
 
 placeholders:
   - icon: missing-data
@@ -70,5 +67,3 @@ placeholders:
         linkTo: create-order
         parameters:
           account-id: =@ctx.jig.inputs.account-id
-        
-

@@ -17,5 +17,14 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
+    isContained: true
+    title:
+      text: =@ctx.current.item.service
+      fontSize: regular
+      color: color1
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      fontSize: small
+      isSubtle: true
+      numberOfLines: 3

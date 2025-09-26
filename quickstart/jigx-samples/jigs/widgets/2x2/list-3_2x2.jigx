@@ -11,27 +11,27 @@ datasources:
           icon: alarm-bell-1
           color: color3
         - device: Security
-          room: Home  
+          room: Home
           icon: login-keys
           color: color2
         - device: Security
           room: Garage
           icon: login-keys
           color: color2
-            
+
 data: =@ctx.datasources.devices
-item: 
+item:
   type: component.list-item
-  options: 
+  options:
     title: =@ctx.current.item.device
     subtitle: =@ctx.current.item.room
-              
-widgets:            
-  list3-2x2: 
+
+widgets:
+  list3-2x2:
     type: widget.list
-    options: 
+    options:
       data: =@ctx.datasources.devices
-      item: 
+      item:
         type: component.list-item
         options:
           color:
@@ -39,10 +39,10 @@ widgets:
               color: =@ctx.current.item.color
           title: =@ctx.current.item.device
           subtitle: =@ctx.current.item.room
-          leftElement: 
+          leftElement:
             element: icon
             icon: =@ctx.current.item.icon
-            isDuotone: true
-            isContained: true        
-          rightElement: 
+            type: duotone
+            isContained: true
+          rightElement:
             element: switch

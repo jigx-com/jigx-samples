@@ -59,7 +59,7 @@ item:
     leftElement:
       element: icon
       icon: =@ctx.current.item.icon
-      isDuotone: true
+      type: duotone
     rightElement:
       element: icon
       icon: arrow-right-1

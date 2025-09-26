@@ -11,7 +11,7 @@ item:
         when: true
     leftElement:
       element: icon
-      isDuotone: true
+      type: duotone
       icon: =@ctx.current.item.icon
     onPress:
       options:

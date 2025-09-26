@@ -17,10 +17,15 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    leftElement: 
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 3
+
+    leftElement:
       element: avatar
       text: $substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
       uri: =@ctx.current.item.illustration
-      
+      size: regular

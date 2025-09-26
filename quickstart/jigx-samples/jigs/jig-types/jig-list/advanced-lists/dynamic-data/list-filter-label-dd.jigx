@@ -4,14 +4,14 @@ type: jig.list
 icon: notes-paper-approve
 
 filter:
-  data: 
-  - title: All
-    value: ''
-  - title: Indoor
-    value: "TRUE"
-  - title: Outdoor
-    value: "FALSE"
-  
+  data:
+    - title: All
+      value: "All"
+    - title: Indoor
+      value: "TRUE"
+    - title: Outdoor
+      value: "FALSE"
+
 header:
   type: component.jig-header
   options:
@@ -27,10 +27,10 @@ datasources:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
+
       entities:
         - entity: default/cleaning-services
-  
+
       query: |
         SELECT 
           id, 
@@ -44,11 +44,10 @@ datasources:
           '$.service', 
           '$.time' 
         FROM [default/cleaning-services] 
-        WHERE '$.indoor' LIKE @filter or @filter IS NULL
+        WHERE '$.indoor' LIKE @filter or @filter IS 'All'
       queryParameters:
         filter: =@ctx.jig.state.filter
-        
-  
+
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
@@ -57,8 +56,7 @@ item:
     subtitle: =@ctx.current.item.area
     label:
       title: =(@ctx.current.item.indoor = "TRUE" ? 'Indoor' :'Outdoor')
-    leftElement: 
+    leftElement:
       element: avatar
       text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
       uri: =@ctx.current.item.image
-    

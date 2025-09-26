@@ -5,12 +5,12 @@ isHorizontalScrollIndicatorHidden: true
 isCollapsible: true
 actions:
   - children:
-    - type: action.go-back
-      options:
-        title: Secondary action 1
-    - type: action.go-back
-      options:
-        title: Secondary action 2
+      - type: action.go-back
+        options:
+          title: Secondary action 1
+      - type: action.go-back
+        options:
+          title: Secondary action 2
 
 datasources:
   components:
@@ -64,7 +64,7 @@ item:
       element: icon
       icon: =@ctx.current.item.icon
       isContained: true
-      isDuotone: true
+      type: duotone
 
     rightElement:
       element: switch

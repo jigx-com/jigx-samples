@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: file-pdf
+      type: Basic generate-pdf action
+      typeLink: action-generate-pdf
+    - color: color2
+      icon: office-file-pdf
+      type: Generate pdf, save and share
+      typeLink: action-generate-pdf-save-share
+    - color: color3
+      icon: office-file-pdf-1
+      type: Generate pdf from JS
+      typeLink: action-generate-pdf-javascript

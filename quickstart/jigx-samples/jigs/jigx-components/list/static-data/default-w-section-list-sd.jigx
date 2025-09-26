@@ -6,7 +6,7 @@ header:
   type: component.jig-header
   options:
     height: medium
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -16,15 +16,17 @@ children:
   - type: component.list
     options:
       sections:
-      - title: Services incl Materials
-        data: =@ctx.datasources.repair-services-static[materials=true]
-      - title: Services excl Materials
-        data: =@ctx.datasources.repair-services-static[materials=false]
-        
+        - title: Services incl Materials
+          data: =@ctx.datasources.repair-services-static[materials=true]
+        - title: Services excl Materials
+          data: =@ctx.datasources.repair-services-static[materials=false]
       item:
         type: component.list-item
         options:
+          isContained: true
           title: =@ctx.current.item.service
-          subtitle: =@ctx.current.item.description
+          subtitle:
+            text: =@ctx.current.item.description
+            numberOfLines: 2
           label:
             title: =@ctx.current.item.time & ' mins'

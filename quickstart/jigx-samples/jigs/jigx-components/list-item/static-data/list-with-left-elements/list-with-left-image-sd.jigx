@@ -18,9 +18,12 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
     leftElement:
       element: image
       text: =@ctx.current.item.service
       uri: =@ctx.current.item.image
-      
+      shape: landscape
+      size: regular

@@ -6,7 +6,7 @@ icon: list
 description: >
   ='Main Contact: ' &  @ctx.datasources.all-accounts[id =
   @ctx.jig.inputs.account-id].contact-name
-  
+
 isSearchable: true
 
 header:
@@ -30,7 +30,7 @@ actions:
             items: =@ctx.jig.state.amounts[amount > 0]
           style:
             isDisabled: "=$sum(@ctx.jig.state.amounts.amount) > 0 ? false : true"
-        
+
 datasources:
   products:
     type: datasource.sqlite
@@ -55,14 +55,14 @@ datasources:
         OR @search IS NULL
       queryParameters:
         search: =@ctx.jig.state.searchText
-      jsonProperties: 
+      jsonProperties:
         - image
 
       conversions:
         - property: image
           from: base64
           to: local-uri
-    
+
 data: =@ctx.datasources.products
 item:
   type: component.list-item
@@ -106,5 +106,5 @@ summary:
         element: icon
         isContained: true
         isDuotone: true
+        type: 
         icon: shopping-cart-empty-1
-    

@@ -8,7 +8,7 @@ actions:
           provider: DATA_PROVIDER_REST
           entity: send-notification-target-jig
           function: send-notification-target-jig
-          functionParameters:
+          parameters:
             accessToken: jigx
             deviceId: jig
             emails: =@ctx.user.email
@@ -28,6 +28,5 @@ children:
       children:
         - type: component.entity-field
           options:
-            label: Send a notification 
+            label: Send a notification
             value: To get notified of the latest promotions tap on the send now button below. You will receive a notification, tap on the notification to see the promotion details in a new jig (screen).
-              

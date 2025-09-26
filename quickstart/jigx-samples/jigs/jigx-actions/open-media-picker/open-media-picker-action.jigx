@@ -1,0 +1,64 @@
+title: Job details
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: >
+            https://images.unsplash.com/photo-1640682841767-cdfce3aea6e0
+            ?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3
+            &ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBsdW1iZXJ8ZW58MHx8MHx8fDA%3D
+
+children:
+  - type: component.form
+    instanceId: form-details
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: job-number
+          options:
+            label: Job Number
+        - type: component.text-field
+          instanceId: job-notes
+          options:
+            isMultiline: true
+            label: Add notes
+        - type: component.checkbox
+          instanceId: checklist
+          options:
+            icon: check
+            color: positive
+            label: Completed checklist?
+        - type: component.date-picker
+          instanceId: job-date
+          options:
+            label: Job date
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Take a photo
+          isSequential: true
+          actions:
+            # Add the media-picker action to open the media modal.
+            - type: action.open-media-picker
+              # Use an id that is used to reference
+              # the action's output when saved as data.
+              instanceId: job-photo
+              options:
+                # Specify the type of media required.
+                mediaType: image
+            # Use an action to save the images to a data provider.
+            - type: action.execute-entities
+              options:
+                provider: DATA_PROVIDER_LOCAL
+                method: save
+                entity: local-images
+                # Use the action's output to reference the image file.
+                data: =@ctx.actions.job-photo.outputs

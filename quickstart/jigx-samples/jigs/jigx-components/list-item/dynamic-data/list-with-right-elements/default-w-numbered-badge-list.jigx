@@ -1,5 +1,5 @@
 title: Team task priorities list
-description: A list displaying priorities, with a numbered badge for each. 
+description: A list displaying priorities, with a numbered badge for each.
 type: jig.default
 
 header:
@@ -35,7 +35,7 @@ datasources:
         GROUP BY priority
         ORDER BY priority DESC
 
-  priority: 
+  priority:
     type: datasource.static
     options:
       data:
@@ -60,7 +60,7 @@ children:
     options:
       data: =@ctx.datasources.team-tasks
       maximumItemsToRender: 8
-      item: 
+      item:
         type: component.list-item
         options:
           color:
@@ -79,9 +79,7 @@ children:
           leftElement:
             element: icon
             icon: =@ctx.datasources.priority[name = @ctx.current.item.priority].icon
-            isDuotone: true
-          rightElement: 
+            type: duotone
+          rightElement:
             element: badge
             value: =@ctx.current.item.taskCount
-          
-          

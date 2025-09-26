@@ -17,17 +17,23 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    leftElement: 
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+    leftElement:
       element: icon
       icon: =(@ctx.current.item.materials = true ? 'home' :'car-garage')
-    rightElement: 
+      shape: circle
+      type: duotone
+    rightElement:
       element: value
       text: ='$ ' & $number(@ctx.current.item.hourlyRate)
     swipeable:
       left:
-        - onPress: 
+        - onPress:
             type: action.go-to
             options:
               linkTo: action-list-onPress
@@ -35,14 +41,10 @@ item:
           icon: alarm-bell
           color: primary
           # note that the secondary action is only for demo purposes, you can stop at the primary action
-        - onPress: 
+        - onPress:
             type: action.go-to
             options:
               linkTo: action-list-onPress
           label: Secondary Action
           icon: alert-triangle
           color: warning
- 
-   
-        
-      

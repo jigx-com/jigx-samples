@@ -17,11 +17,17 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    isContained: true
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+    rightElement:
       element: value
-      text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
-   
-        
-      
+      text: |
+        =(@ctx.current.item.hourlyrate) != 'NA'
+        ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr'
+        : '$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
+      color: color4

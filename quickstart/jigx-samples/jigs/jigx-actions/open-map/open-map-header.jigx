@@ -1,0 +1,41 @@
+title: New York Financial District
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: >
+            https://images.unsplash.com/photo-1532952626554-d0cace1cd3fc
+            ?w=900&auto=format&fit=crop&q=60
+            &ixlib=rb-4.0.3
+            &ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9yayUyMGZpbmFuY2lhbCUyMGRpc3RyaWN0fGVufDB8fDB8fHww
+    actions:
+      # Configure a component action on the header to open the modal.
+      - type: action.open-map
+        options:
+          title: Financial District
+          # Add an icon that displays in the right of the header.
+          icon: maps-pin
+          style:
+            # Style the icon.
+            isDanger: true
+          # Specify the address for the action icon.
+          address: 1 Wall St, New York, NY 10005, United States
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            isMultiline: true
+            label: " "
+            value: >
+              This is the city's buzzing financial heart, home to Wall Street and 
+              glittering skyscrapers. Sidewalks bustle during the week and, after work, 
+              young professionals fill the restaurants and bars of the South Street Seaport 
+              and pedestrian-only Stone Street.

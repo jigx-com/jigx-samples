@@ -17,10 +17,17 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+      fontSize: regular
+    subtitle:
+      text: =@ctx.current.item.description
+      isSubtle: true
+      numberOfLines: 2
+    rightElement:
       element: icon
       icon: =(@ctx.current.item.materials = true ? 'attachment' :'alert-triangle')
-
-      
+      type: contained
+      shape: circle
+      color: color14

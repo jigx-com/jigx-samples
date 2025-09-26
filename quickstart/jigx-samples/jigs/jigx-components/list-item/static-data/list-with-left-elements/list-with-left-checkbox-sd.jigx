@@ -17,9 +17,13 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
+    title:
+      text: =@ctx.current.item.service
+      color: primary
+    subtitle:
+      text: =@ctx.current.item.description
+      fontSize: small
+      numberOfLines: 2
     leftElement:
       element: checkbox
       initialValue: =(@ctx.current.item.materials) = true ? true :false
-      

@@ -32,9 +32,7 @@ datasources:
           isWarning: false
           isDisabled: false
           icon: house-signal
-          isContained: true
-          isDuotone: true
-          
+          type: duotone
         - name: Connection
           subtitle: Disconnected
           label-title: IsError
@@ -45,8 +43,6 @@ datasources:
           isWarning: false
           isDisabled: false
           icon: house-signal
-          isContained: false
-          isDuotone: false
 
         - name: Connection
           subtitle: Poor
@@ -58,8 +54,7 @@ datasources:
           isWarning: true
           isDisabled: false
           icon: house-signal
-          isContained: true
-          isDuotone: false
+          type: contained
 
         - name: Connection
           subtitle: Not available
@@ -71,9 +66,7 @@ datasources:
           isWarning: false
           isDisabled: true
           icon: house-signal
-          isContained: true
-          isDuotone: false
-
+          type: contained
         - name: Kitchen lamp
           subtitle: Good
           label-title: isHighlighted
@@ -84,9 +77,7 @@ datasources:
           isWarning: false
           isDisabled: false
           icon: house-signal
-          isContained: false
-          isDuotone: true
-
+          type: duotone
         - name: Daily task
           subtitle: Build the fence
           label-title: isStrikeThrough
@@ -97,8 +88,7 @@ datasources:
           isWarning: false
           isDisabled: false
           icon: pencil-write
-          isContained: false
-          isDuotone: true
+          type: duotone
 
 data: =@ctx.datasources.styles
 item:
@@ -126,6 +116,4 @@ item:
     leftElement:
       element: icon
       icon: =@ctx.current.item.icon
-      isContained: =@ctx.current.item.isContained
-      isDuotone: =@ctx.current.item.isDuotone
-     
+      type: =@ctx.current.item.type

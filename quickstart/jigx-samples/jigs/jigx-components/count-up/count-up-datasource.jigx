@@ -1,0 +1,42 @@
+title: Count-up using datasource
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2018/03/07/13/28/stopwatch-3205980_640.jpg
+
+datasources:
+  time:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          timeStamp: 1742380984000
+          type: millis
+        - id: 2
+          timeStamp: 2025-06-06T23:00:00Z
+          type: ISO
+
+children:
+  - type: component.section
+    options:
+      title: Count-up - datasource start time in millis
+      children:
+        - type: component.count-up
+          options:
+            # Start time defined in milliseconds in a datasource.
+            startTimestamp: =@ctx.datasources.time[0].timeStamp
+  - type: component.section
+    options:
+      title: Count-up - datasource start time in ISO format
+      children:
+        - type: component.count-up
+          options:
+            # Start time defined in ISO format in a datasource converted to milliseconds.
+            startTimestamp: =$toMillis(@ctx.datasources.time[1].timeStamp)

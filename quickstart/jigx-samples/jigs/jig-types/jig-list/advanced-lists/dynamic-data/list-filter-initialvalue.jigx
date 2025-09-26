@@ -2,7 +2,7 @@ title: Filter List with default tab
 description: A dynamic list displaying filter options opening with a default tab showing tasks Team B
 type: jig.list
 icon: filter-1
-  
+
 header:
   type: component.jig-header
   options:
@@ -29,23 +29,22 @@ datasources:
           '$.taskId', 
           '$.taskStatus',
           '$.team', 
-          '$.Profile'
-         
+          '$.Profile'         
         FROM [default/tasks]
-        WHERE '$.team' LIKE @filter or @filter IS NULL
+        WHERE '$.team' LIKE @filter
       queryParameters:
-          filter: =@ctx.jig.state.filter
+        filter: =@ctx.jig.state.filter
 
 filter:
-    initialValue: teamB
-    data: 
-      - title: Team A
-        value: teamA
-      - title: Team B
-        value: teamB
-      - title: Team C
-        value: teamC 
-          
+  initialValue: teamB
+  data:
+    - title: Team A
+      value: teamA
+    - title: Team B
+      value: teamB
+    - title: Team C
+      value: teamC
+
 data: =@ctx.datasources.department
 item:
   type: component.list-item
@@ -57,9 +56,7 @@ item:
         - when: true
           color: color1
       title: =@ctx.current.item.team
-    leftElement: 
+    leftElement:
       element: avatar
       text: =@ctx.current.item.taskAssignee
       uri: =@ctx.current.item.Profile
-
-

@@ -1,0 +1,25 @@
+title: Basic count-up
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2024/10/02/18/24/ai-generated-9091889_640.jpg
+
+children:
+  - type: component.count-up
+    options:
+      # Set labels showing hours, minutes and seconds to visible.
+      labels:
+        isVisible: true
+        # Position the labels under the count-up component.
+        position: bottom
+      # Set the required size of the component.
+      size: extra-large
+      # Provide the start time.
+      startTimestamp: =$now()

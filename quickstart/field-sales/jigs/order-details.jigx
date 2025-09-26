@@ -9,7 +9,7 @@ children:
   - jigId: order-items
     inputs:
       items: =@ctx.jig.inputs.items
-    
+
 summary:
   children:
     type: component.summary
@@ -23,6 +23,5 @@ summary:
       leftIcon:
         element: icon
         isContained: true
-        isDuotone: true
+        type: duotone
         icon: shopping-cart-empty-1
-    

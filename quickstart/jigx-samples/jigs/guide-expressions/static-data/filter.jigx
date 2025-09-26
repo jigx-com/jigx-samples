@@ -1,6 +1,6 @@
-title: Filter, progress and label 
+title: Filter, progress and label
 type: jig.list
-  
+
 datasources:
   filter-list:
     type: datasource.static
@@ -8,42 +8,41 @@ datasources:
       data:
         - title: Title 1
           subtitle: Subtitle - active
-          status: 'active'
+          status: "active"
           progress: 0.2
         - title: Title 2
           subtitle: Subtitle - active
-          status: 'active'
+          status: "active"
           progress: 0.56
         - title: Title 3
           subtitle: Subtitle - inactive
-          status: 'inactive'
+          status: "inactive"
           progress: 0.8
         - title: Title 4
           subtitle: Subtitle - inactive
-          status: 'inactive'
+          status: "inactive"
           progress: 0.3
         - title: Title 5
           subtitle: Subtitle - active
-          status: 'active'
+          status: "active"
           progress: 0.1
         - title: Title 6
           subtitle: Subtitle - inactive
-          status: 'inactive'
+          status: "inactive"
           progress: 0.9
 
 filter:
   data:
-  - title: All
-    value: ""
-  - title: Active
-    value: active
-  - title: Inactive
-    value: inactive
-      
-data:
-  =$filter(@ctx.datasources.filter-list, function($v, $a, $i) { @ctx.jig.state.filter = "" or $v.status = @ctx.jig.state.filter })[]
-    
-item: 
+    - title: All
+      value: "all"
+    - title: Active
+      value: active
+    - title: Inactive
+      value: inactive
+
+data: =$filter(@ctx.datasources.filter-list, function($v, $a, $i) { @ctx.jig.state.filter = "all" or $v.status = @ctx.jig.state.filter })[]
+
+item:
   type: component.list-item
   options:
     title: =@ctx.current.item.title
@@ -52,7 +51,7 @@ item:
     color:
       - when: =@ctx.current.item.status = 'active'
         color: color2
-      - when:  =@ctx.current.item.status  = 'inactive'
+      - when: =@ctx.current.item.status  = 'inactive'
         color: color4
     label:
       title: Label active

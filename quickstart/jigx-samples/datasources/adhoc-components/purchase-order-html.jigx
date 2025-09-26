@@ -1,0 +1,82 @@
+type: datasource.static
+options:
+  data:
+    - id: 1
+      order: |
+        <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Purchase Order</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 20px;
+                        padding: 20px;
+                        background-color: #f4f4f4;
+                    }
+                    .purchase-order {
+                        background: #fff;
+                        padding: 20px;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        max-width: 600px;
+                        margin: auto;
+                    }
+                    h2 {
+                        text-align: center;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 10px;
+                    }
+                    table, th, td {
+                        border: 1px solid #000;
+                    }
+                    th, td {
+                        padding: 8px;
+                        text-align: left;
+                    }
+                    .footer {
+                        margin-top: 20px;
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="purchase-order">
+                    <h2>Purchase Order</h2>
+                    <p><strong>Order Number:</strong> PO12345</p>
+                    <p><strong>Date:</strong> February 13, 2025</p>
+                    <p><strong>Supplier:</strong> ABC Supplies Ltd.</p>
+                    <table>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Concrete Blocks</td>
+                            <td>100</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td>Steel Rods</td>
+                            <td>50</td>
+                            <td>$750</td>
+                        </tr>
+                        <tr>
+                            <td>Cement Bags</td>
+                            <td>20</td>
+                            <td>$200</td>
+                        </tr>
+                    </table>
+                    <p><strong>Total Amount:</strong> $1450</p>
+                    <div class="footer">
+                        <p>Authorized by: ______________</p>
+                    </div>
+                </div>
+            </body>
+            </html>

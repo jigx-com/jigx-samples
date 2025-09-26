@@ -5,7 +5,7 @@ action:
     entities:
       - entity: next-week-calendar-events
         function: get-calendar-events-by-week
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth
           startdatetime: =$fromMillis($todayStart)
           enddatetime: =$fromMillis($next7)

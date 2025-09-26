@@ -17,9 +17,13 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    divider: solid
+    title:
+      text: =@ctx.current.item.service
+      fontSize: regular
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+    rightElement:
       element: switch
       initialValue: =(@ctx.current.item.materials = true ? true:false)
-      

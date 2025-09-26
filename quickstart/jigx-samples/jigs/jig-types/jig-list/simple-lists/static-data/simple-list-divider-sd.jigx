@@ -1,7 +1,7 @@
-title: Simple Divided List (Global Static Data)
-description: A simple list to display divided static data
+title: Simple Divided List (Global Data)
 type: jig.list
 icon: task-list
+description: A simple list to display divided static data
 
 header:
   type: component.jig-header
@@ -17,6 +17,15 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
     divider: solid
+    title:
+      text: =@ctx.current.item.service
+      fontSize: regular
+      color: color4
+      isBold: true
+
+    subtitle:
+      text: =@ctx.current.item.description
+      fontSize: small
+      isSubtle: true
+      numberOfLines: 3

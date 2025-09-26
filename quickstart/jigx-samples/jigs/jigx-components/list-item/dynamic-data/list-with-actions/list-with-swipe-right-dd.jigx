@@ -17,17 +17,28 @@ data: =@ctx.datasources.cleaning-services-dynamic
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    leftElement: 
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+      fontSize: regular
+    subtitle:
+      text: =@ctx.current.item.description
+      isSubtle: true
+      numberOfLines: 4
+    leftElement:
       element: icon
       icon: =(@ctx.current.item.indoor = "TRUE" ? 'home' :'car-garage')
-    rightElement: 
+      type: contained
+    rightElement:
       element: value
-      text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
+      text: |
+        =(@ctx.current.item.hourlyrate) != 'NA' 
+        ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr'
+        :'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
+      color: color4
     swipeable:
       right:
-        - onPress: 
+        - onPress:
             type: action.go-to
             options:
               linkTo: action-list-onPress
@@ -35,11 +46,10 @@ item:
           icon: alarm-bell
           color: primary
           # note that the secondary action is only for demo purposes, you can stop at the primary action
-        - onPress: 
+        - onPress:
             type: action.go-to
             options:
               linkTo: action-list-onPress
           label: Secondary Action
           icon: alert-triangle
           color: warning
- 

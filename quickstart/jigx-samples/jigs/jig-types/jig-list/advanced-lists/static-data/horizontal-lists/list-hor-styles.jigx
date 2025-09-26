@@ -138,7 +138,7 @@ item:
       element: icon
       icon: =@ctx.current.item.icon
       isContained: true
-      isDuotone: true
+      type: duotone
     # leftElement:
     #   type: checkbox
     #   value: true
@@ -154,7 +154,7 @@ item:
 #   type: icon
 #   icon: alarm-bell
 #   isContained: true
-#   isDuotone: true
+#   type: duotone
 
 # rightElement:
 #   type: switch

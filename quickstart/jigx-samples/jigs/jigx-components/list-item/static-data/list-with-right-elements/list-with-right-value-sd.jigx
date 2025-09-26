@@ -17,11 +17,14 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    isContained: true
+    title:
+      text: =@ctx.current.item.service
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+    rightElement:
       element: value
       text: ='$ ' & @ctx.current.item.hourlyRate
-      
-   
-      
+      color: color4

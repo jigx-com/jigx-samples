@@ -3,7 +3,7 @@ type: jig.list
 icon: list-quill
 
 datasources:
-  menuList: 
+  menuList:
     type: datasource.static
     options:
       data:
@@ -37,8 +37,7 @@ datasources:
           title: List - Vertical (Jobs)
           icon: list-quill
           color: color6
-          
-          
+
 data: =@ctx.datasources.menuList
 item:
   type: component.list-item
@@ -47,14 +46,14 @@ item:
     color:
       - when: true
         color: =@ctx.current.item.color
-    leftElement: 
+    leftElement:
       element: icon
       icon: =@ctx.current.item.icon
-      isDuotone: true
-    rightElement: 
+      type: duotone
+    rightElement:
       element: icon
       icon: arrow-right-1
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: =@ctx.current.item.jigId

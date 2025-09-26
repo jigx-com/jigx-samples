@@ -2,7 +2,7 @@ title: Search and Filter List (Dynamic)
 description: A dynamic list displaying filter and search options
 type: jig.default
 icon: notes-paper-approve
-  
+
 header:
   type: component.jig-header
   options:
@@ -18,15 +18,15 @@ datasources:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
+
       entities:
         - entity: default/cleaning-services
-  
-      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services] WHERE ('$.indoor' LIKE @filter OR @filter IS NULL) AND ('$.service' LIKE '%'||@search||'%' OR @search IS NULL)
+
+      query: SELECT id, '$.area', '$.description', '$.hourlyrate', '$.illustration', '$.image', '$.indoor', '$.onceoffrate', '$.service', '$.time' FROM [default/cleaning-services] WHERE ('$.indoor' LIKE @filter OR @filter IS 'all') AND ('$.service' LIKE '%'||@search||'%' OR @search IS NULL)
       queryParameters:
         filter: =@ctx.components.cleaning_serv_items.state.filter
         search: =@ctx.components.cleaning_serv_items.state.searchText
-      
+
 children:
   - type: component.list
     instanceId: cleaning_serv_items
@@ -34,14 +34,14 @@ children:
       data: =@ctx.datasources.cleaning-services-dynamic
       isSearchable: true
       maximumItemsToRender: 50
-      filter: 
+      filter:
         data:
-        - title: All
-          value: ''
-        - title: Indoor
-          value: "TRUE"
-        - title: Outdoor
-          value: "FALSE"
+          - title: All
+            value: "all"
+          - title: Indoor
+            value: "TRUE"
+          - title: Outdoor
+            value: "FALSE"
       item:
         type: component.list-item
         options:
@@ -49,8 +49,7 @@ children:
           subtitle: =@ctx.current.item.area
           label:
             title: =(@ctx.current.item.indoor = "TRUE" ? 'Indoor' :'Outdoor')
-          leftElement: 
+          leftElement:
             element: avatar
             text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
             uri: =@ctx.current.item.image
-    

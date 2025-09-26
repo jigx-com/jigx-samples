@@ -17,9 +17,15 @@ data: =@ctx.datasources.repair-services-static
 item:
   type: component.list-item
   options:
-    title: =@ctx.current.item.service
-    subtitle: =@ctx.current.item.description
-    rightElement: 
+    isContained: true
+    title:
+      text: =@ctx.current.item.service
+      fontSize: regular
+      isBold: true
+    subtitle:
+      text: =@ctx.current.item.description
+      numberOfLines: 2
+      fontSize: small
+    rightElement:
       element: badge
       isHidden: =(@ctx.current.item.materials) = true ? true :false
-      

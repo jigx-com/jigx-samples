@@ -29,10 +29,14 @@ options:
       component: Choice-field
       componentLink: choice-field-summary
       icon: cursor-choose
-    - color: color6
+    - color: color3
       component: Countdown
       componentLink: countdown-summary
-      icon: checkbox-checked
+      icon: arrow-button-circle-down-1
+    - color: color6
+      component: Count-up
+      componentLink: count-up-summary
+      icon: arrow-button-circle-up-1
     - color: color7
       component: Custom components (Alpha)
       componentLink: custom-components

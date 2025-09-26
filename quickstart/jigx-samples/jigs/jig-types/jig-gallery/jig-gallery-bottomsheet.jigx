@@ -1,0 +1,71 @@
+title: Job task gallery
+type: jig.gallery
+
+datasources:
+  task-images:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/tasks
+      query: SELECT
+        id,
+        json_extract(file, '$.localPath') as localPath,
+        json_extract(file, '$.fileName')  as filename,
+        json_extract(file, '$.thumbnail.base64') as thumbnail
+        FROM [default/tasks]
+
+# Data binding: fetch images from the task-images datasource.
+data: =@ctx.datasources.task-images
+item:
+  # Use the standard gallery-item component for each image to render.
+  type: component.gallery-item
+  options:
+    # For images stored in Dynamic Files use the thumbnail image URI from the server,
+    # see the expression below.
+    # For other providers use =@ctx.current.item.image.
+    imageUri: |
+      ='data:image/png;base64,' & @ctx.current.item.thumbnail
+    # Configure the action to execute when the share icon is pressed.
+    onSharePress:
+      type: action.share
+      options:
+        fileUri: ='data:image/png;base64,' & @ctx.current.item.thumbnail
+        message: Today's progress at the job appointment
+        subject: Current progress
+    # Configure the actions to execute when the delete icon is pressed.
+    # Include a confirmation modal before deleting the image.
+    onDeletePress:
+      type: action.action-list
+      options:
+        isSequential: true
+        actions:
+          - type: action.confirm
+            options:
+              isConfirmedAutomatically: false
+              onConfirmed:
+                type: action.execute-entity
+                options:
+                  provider: DATA_PROVIDER_DYNAMIC
+                  entity: default/tasks
+                  method: delete
+                  data:
+                    id: =@ctx.current.item.id
+              modal:
+                title: Are you sure you want to delete this image?
+
+# Add the appointments jig to open as a bottomSheet.
+bottomSheet:
+  children:
+    - jigId: appointments
+# Configuring a bottomSheet requires that the go-to action be set,
+# with the same jig name as in the jigId specified in the linkTo property.
+# isModal set to true is required for the jig to open in the bottomSheet,
+# if not set, then normal navigation will take place.
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Go to appointment
+          linkTo: appointments
+          isModal: true

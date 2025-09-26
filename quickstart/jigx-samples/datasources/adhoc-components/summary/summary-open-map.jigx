@@ -1,0 +1,19 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: maps
+      type: Open-map action
+      typeLink: open-map-action
+    - color: color2
+      icon: maps-mark
+      type: Open-map with onPress
+      typeLink: open-map-onpress
+    - color: color3
+      icon: maps-pin-1
+      type: Open-map from secondary action
+      typeLink: open-map-secondary
+    - color: color4
+      icon: maps-pin
+      type: Jig-header with open-map action icon
+      typeLink: open-map-header

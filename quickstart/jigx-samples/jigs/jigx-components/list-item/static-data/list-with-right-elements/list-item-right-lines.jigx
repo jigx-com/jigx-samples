@@ -1,0 +1,94 @@
+title: Global Projects
+type: jig.default
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRldmVsb3BlciUyMHByb2plY3RzfGVufDB8fDB8fHww
+
+datasources:
+  employee-groups:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Project Management
+          groupId: 103
+          people:
+            - uri: https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80
+              text: Karl Fisher
+            - rate: $46 per hour
+          project: A cross-functional project to deliver an app for field task management.
+        - id: 2
+          title: Developers
+          groupId: 101
+          people:
+            - uri: https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+              text: Harry Smith
+            - rate: $50 per hour
+          project: Build an application that uses a modular architecture to manage and display data.
+        - id: 3
+          title: UX Design
+          groupId: 102
+          people:
+            - uri: https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80
+              text: July Nelson
+            - rate: $40 per hour
+          project: Design project focused on streamlining task management for field technicians.
+
+children:
+  # Data configured to use datasource (static)
+  - type: component.list
+    options:
+      data: =@ctx.datasources.employee-groups
+      item:
+        type: component.list-item
+        options:
+          isContained: true
+          title:
+            text: =@ctx.datasources.employee-groups.title
+            color: color1
+            fontSize: regular
+            isBold: true
+            numberOfLines: 1
+
+          subtitle:
+            text: = 'Group id:'& ' ' & @ctx.datasources.employee-groups.groupId
+            color: color4
+
+          description:
+            text: =@ctx.datasources.employee-groups.project
+            isSubtle: true
+            fontSize: small
+            numberOfLines: 3
+
+          leftElement:
+            element: avatar
+            text: =@ctx.datasources.employee-groups.people.text
+            uri: =@ctx.datasources.employee-groups.people.uri
+            size: large
+            color: color6
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: list-avatars-sd
+
+          rightElement:
+            element: text
+            firstLine:
+              text: 10 hours
+              isBold: true
+            secondLine:
+              text: =@ctx.datasources.employee-groups.people.rate
+              isSubtle: true
+              color: color1
+            thirdLine:
+              text: 2 days left
+              fontSize: medium
+              color: negative

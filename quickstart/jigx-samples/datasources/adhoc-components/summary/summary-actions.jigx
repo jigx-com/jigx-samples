@@ -19,16 +19,28 @@ options:
       color: color4
     - action: Info-modal
       actionLink: info-modal-summary
-      icon: camera  
+      icon: camera
       color: color5
+    - action: Generate-pdf
+      actionLink: generate-pdf-summary
+      color: color9
+      icon: document
     - action: Go-back
       actionLink: list-action-go-back
-      icon: close 
+      icon: close
       color: color6
     - action: Go-to
       actionLink: list-action-go-to
       icon: flight
       color: color7
+    - action: Open-map
+      actionLink: summary-actions-open-map
+      icon: maps-pin
+      color: color1
+    - action: Open-media-picker
+      actionLink: open-media-picker-action
+      icon: image-file-add
+      color: color3
     - action: Open-scanner
       actionLink: list-action-open-scanner
       icon: camera
@@ -45,6 +57,10 @@ options:
       actionLink: list-action-set-state
       icon: check-circle-1
       color: color11
+    - action: Share
+      actionLink: share-summary
+      color: color1
+      icon: share
     - action: Submit-form
       actionLink: submit-form
       icon: check-circle-1
@@ -53,4 +69,3 @@ options:
       actionLink: list-action-sync-entities
       icon: synchronize-arrows-1
       color: color13
-

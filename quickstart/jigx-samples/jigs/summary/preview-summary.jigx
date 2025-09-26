@@ -3,25 +3,24 @@ type: jig.list
 icon: technology-privacy-photo-access-view
 
 data: =@ctx.datasources.summary-preview
-item: 
+item:
   type: component.list-item
   options:
     color:
       - when: true
         color: =@ctx.current.item.color
     title: =@ctx.current.item.action
-    onPress: 
+    onPress:
       type: action.action-list
       options:
         actions:
           - type: action.go-to
             options:
               linkTo: =@ctx.current.item.actionLink
-    rightElement: 
+    rightElement:
       element: icon
       icon: arrow-right-1
-    leftElement: 
+    leftElement:
       element: icon
       icon: =@ctx.current.item.icon
-      isDuotone: true
-      
+      type: duotone

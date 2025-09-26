@@ -34,7 +34,7 @@ actions:
           provider: DATA_PROVIDER_REST
           entity: profile-picture
           function: update-profile-picture
-          functionParameters:
+          parameters:
             accessToken: microsoft.OAuth
             Content-Type: image/jpeg
             file: =@ctx.components.profilePicture.state.value

@@ -37,7 +37,7 @@ options:
     - title: List with right badges
       link: list-with-right-badge-sd
       color: color12
-    - title: List with right numbered badges 
+    - title: List with right numbered badges
       link: default-w-numbered-badge-list
       color: color1
     - title: List with right buttons
@@ -64,7 +64,7 @@ options:
     - title: List with sections
       link: default-w-section-list-sd
       color: color6
-    - title: List items wrapped in a card 
+    - title: List items wrapped in a card
       link: list-item-contained
       color: color7
     - title: List-items with value ratings
@@ -84,5 +84,7 @@ options:
       color: color12
     - title: List-item with rating, tags and badges
       link: list-item-tags-rating
-      color: color13 
-        
+      color: color13
+    - color: color1
+      link: list-item-right-lines
+      title: List-item with multiple lines in right element

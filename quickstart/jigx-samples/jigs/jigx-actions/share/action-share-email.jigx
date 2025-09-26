@@ -1,0 +1,43 @@
+title: Global Invoice
+type: jig.document
+icon: accounting-invoice
+# The datasource returns the pdf file that will be sent
+datasources:
+  storage:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/documents
+      query: |
+        SELECT 
+          id,
+          '$.fileName',
+          '$.date', 
+          '$.html',
+          '$.file' 
+        FROM [default/documents] 
+        WHERE '$.fileName' = "purchase-order"
+
+source:
+  documentType: HTML
+  content: =@ctx.datasources.purchase-order-html.order
+actions:
+  - children:
+      # Add the share action, and configure the email details.
+      - type: action.share
+        options:
+          # The title will display on the action button.
+          title: Send order
+          # Add the email address which populates the To field in an email.
+          # For iOS you can only supply a single email address.
+          # If you supply more, the To field will be left blank.
+          # This is not an issue on Android,
+          # but for consistency it is best to keep to one email address.
+          email: john@gobal.com
+          # Specify the file that will be shared as an attachment to the email
+          fileUri: =@ctx.datasources.storage.file
+          # Provide a message which populates the body of the email.
+          message: Hi John, attached is your purchase order.
+          # Provide a subject for the email's subject line.
+          subject: Purchase order March 2025

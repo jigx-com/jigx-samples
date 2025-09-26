@@ -2,28 +2,28 @@ type: datasource.static
 options:
   data:
     - id: 1
-      description: Installation or repairs for doors. Doors to be provided by client
+      description: Installation or repairs for doors. Doors to be provided by client.We offer expert installation and repair of all types of doors, including interior, exterior, sliding, and security doors.
       hourlyRate: 70
       illustration: https://clipart-library.com/data_images/436224.png
       image: https://images.unsplash.com/photo-1500281781950-6cd80847ebcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80
       materials: false
-      service: Door Installation/Repair
+      service: Door Installation/Repair.
       time: 60
     - id: 2
-      description: Repairs to door handles 
+      description: Repairs to door handles. Fast, reliable fixes for loose handles, faulty locks, and jammed mechanisms.
       hourlyRate: 40
       illustration: https://clipart-library.com/img1/1332215.jpg
       image: https://images.unsplash.com/photo-1538766017398-415434a31a5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
       materials: true
-      service: Door Handle/Lock Repairs
-      time: 60        
+      service: Door Handle/Lock Repairs.
+      time: 60
     - id: 3
-      description: Installation or repairs of tiled surfaces. Tiles have to be provided by client
+      description: Installation or repairs of tiled surfaces.  We handle the installation and repair of all tiled surfaces. Clients are required to supply the tiles and tile adhesive.
       hourlyRate: 110
       illustration: https://clipart-library.com/images/kcKnbzbXi.jpg
       image: https://images.unsplash.com/photo-1523413184730-e85dbbd04aba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
       materials: false
-      service: Tile Installation/Repair
+      service: Tile Installation/Repair.
       time: 120
     - id: 4
       description: Installation or repairs of dry-wall surfaces
@@ -34,7 +34,7 @@ options:
       service: Drywall Installation/Repair
       time: 120
     - id: 5
-      description: Repairs to bathroom rails, toilets, etc
+      description: Bathroom fixture repairs. We repair and secure bathroom rails, toilets, and related fittings to ensure safety, and stability.
       hourlyRate: 90
       illustration: https://clipart-library.com/new_gallery/53-530190_black-and-white-toilet-png.png
       image: https://images.unsplash.com/photo-1585313647787-7a061b5a85a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1423&q=80
@@ -42,7 +42,7 @@ options:
       service: Bathroom Repairs
       time: 60
     - id: 6
-      description: Painting as required. Paint and tools not provided 
+      description: Painting as required. Paint and tools not provided.
       hourlyRate: 70
       illustration: https://clipart-library.com/img/853166.jpg
       image: https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1431&q=80
@@ -50,7 +50,7 @@ options:
       service: Painting Services
       time: 120
     - id: 7
-      description: Repairs to fences. Tools and items not included
+      description: Repairs to fences. Tools and items not included.
       hourlyRate: 90
       illustration: https://clipart-library.com/img/18345.gif
       image: https://images.unsplash.com/photo-1583805978118-ba9a81ac1399?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
@@ -58,7 +58,7 @@ options:
       service: Fence Installation/Repair
       time: 60
     - id: 8
-      description: Removal of graffiti and painting. Paint and brushes not included in cost
+      description: Removal of graffiti and painting. Paint and brushes not included in cost.
       hourlyRate: 110
       illustration: https://clipart-library.com/images/6cy5aL5gi.jpg
       image: https://images.unsplash.com/photo-1581850518616-bcb8077a2336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
@@ -66,7 +66,7 @@ options:
       service: Removal of Graffiti
       time: 120
     - id: 9
-      description: Repairs to cupboard doors
+      description: Repairs to cupboard doors.
       hourlyRate: 60
       illustration: https://clipart-library.com/img1/1605140.jpg
       image: https://images.unsplash.com/photo-1522791465802-47616431a4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1451&q=80
@@ -74,7 +74,7 @@ options:
       service: Cupboard Door Repairs
       time: 60
     - id: 10
-      description: Plumbing issues and repairs
+      description: Plumbing issues and repairs. Ideal for addressing loose fixtures, leaks, or general wear and tear.
       hourlyRate: 90
       illustration: https://clipart-library.com/images_k/plumbing-silhouette/plumbing-silhouette-6.png
       image: https://images.unsplash.com/photo-1591804774220-c1db3673d05b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80

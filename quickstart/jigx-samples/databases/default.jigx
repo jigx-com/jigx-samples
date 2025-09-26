@@ -34,4 +34,4 @@ tables:
   roster: null
   product-delivery: null
   bookings: null
-  
+  invoices: null

@@ -1,0 +1,19 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: arrow-button-circle-up
+      type: count-up basic
+      typeLink: count-up-basic
+    - color: color2
+      icon: arrow-button-circle-up-1
+      type: count-up sizes
+      typeLink: count-up-sizes
+    - color: color3
+      icon: arrow-circle-up
+      type: count-up usinga datasource
+      typeLink: count-up-datasource
+    - color: color4
+      icon: arrow-double-up
+      type: count-up using an expresion
+      typeLink: count-up-expression

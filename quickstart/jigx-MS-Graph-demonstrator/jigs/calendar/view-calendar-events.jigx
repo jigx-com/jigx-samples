@@ -18,7 +18,7 @@ onFocus:
     entities:
       - entity: calendarEvents
         function: get-calendar-event-list
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth
           calendarId: =@ctx.jig.inputs.calId
           $filter: ="start/dateTime ge '" & $fromMillis($millis()-86400000) & "' and end/dateTime le '" & $fromMillis($millis()+5184000000) & "'"
@@ -30,7 +30,7 @@ onRefresh:
     entities:
       - entity: calendarEvents
         function: get-calendar-event-list
-        functionParameters:
+        parameters:
           accessToken: microsoft.OAuth
           calendarId: =@ctx.jig.inputs.calId
           $filter: ="start/dateTime ge '" & $fromMillis($millis()-86400000) & "' and end/dateTime le '" & $fromMillis($millis()+5184000000) & "'"

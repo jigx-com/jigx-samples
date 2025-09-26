@@ -12,7 +12,7 @@ header:
       options:
         source:
           uri: https://images.unsplash.com/photo-1529220502050-f15e570c634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1829&q=80
-          
+
 datasources:
   cleaning-services-static:
     type: datasource.static
@@ -45,7 +45,7 @@ datasources:
           illustration: https://clipart-library.com/img1/872145.png
           image: https://images.unsplash.com/photo-1650538250295-6ef68d7ae1f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80
           status: outdoor
-          onceoffrate: 
+          onceoffrate:
           service: Window Cleaning - External
           time: 60
         - area: Driveway
@@ -103,15 +103,15 @@ children:
     instanceId: search-filter-list
     options:
       filter:
-        data: 
-        - title: All
-          value: ''
-        - title: Indoor
-          value: indoor
-        - title: Outdoor
-          value: outdoor
+        data:
+          - title: All
+            value: "all"
+          - title: Indoor
+            value: indoor
+          - title: Outdoor
+            value: outdoor
       isSearchable: true
-      data: =$filter($filter(@ctx.datasources.cleaning-services-static, function($v){$contains($string($v.service),$string(@ctx.components.search-filter-list.state.searchText != null ? @ctx.components.search-filter-list.state.searchText:'')) }), function($v){$contains($string($v.status), $string(@ctx.components.search-filter-list.state.filter != null ? @ctx.components.search-filter-list.state.filter:'')) })[]                                                                                                                                                                                                
+      data: =$filter($filter(@ctx.datasources.cleaning-services-static, function($v){$contains($string($v.service),$string(@ctx.components.search-filter-list.state.searchText != null ? @ctx.components.search-filter-list.state.searchText:'')) }), function($v){$contains($string($v.status), $string(@ctx.components.search-filter-list.state.filter != null ? @ctx.components.search-filter-list.state.filter:'all')) })[]
       item:
         type: component.list-item
         options:
@@ -119,7 +119,7 @@ children:
           subtitle: =@ctx.current.item.area
           label:
             title: =(@ctx.current.item.status = "indoor" ? 'Indoor' :'Outdoor')
-          leftElement: 
+          leftElement:
             element: avatar
             text: =$substring($substringBefore(@ctx.current.item.service, " "), 1, 1) & $substring($substringAfter(@ctx.current.item.service, " ") , 1, 1)
             uri: =@ctx.current.item.image

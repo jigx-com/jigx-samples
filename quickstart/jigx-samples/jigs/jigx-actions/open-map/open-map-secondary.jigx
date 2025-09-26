@@ -1,0 +1,36 @@
+title: Central Park NY
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1631729779674-1f369e1116b4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2VudHJhbCUyMHBhcmt8ZW58MHx8MHx8fDA%3D
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            isMultiline: true
+            label: " "
+            value: A green oasis amidst the towering skyscrapers, Central Park spans 843 acres. This park is a microcosm of New York City itself.
+
+actions:
+  - children:
+      - type: action.go-to
+        options:
+          title: Book trip
+          linkTo: booking
+      - type: action.open-map
+        options:
+          style:
+            isSecondary: true
+          icon: end-marker
+          title: Navigate
+          address: 40.7827902614508, -73.96559413203381

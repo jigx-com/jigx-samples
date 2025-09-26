@@ -10,7 +10,7 @@ item:
         when: true
     leftElement:
       element: icon
-      isDuotone: true
+      type: duotone
       icon: layout-dashboard-1
     onPress:
       options:
@@ -22,4 +22,3 @@ item:
     rightElement:
       element: icon
       icon: arrow-right-1
-  

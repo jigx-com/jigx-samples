@@ -1,0 +1,43 @@
+title: Count-up sizes and labels
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2018/09/24/08/16/stopwatch-3699317_640.jpg
+
+children:
+  - type: component.section
+    options:
+      title: Count-up - EXTRA LARGE WITH TOP LABELS
+      children:
+        - type: component.count-up
+          options:
+            labels:
+              isVisible: true
+              # Position the labels (Hours : Minutes: Seconds) above the component.
+              position: top
+            # Set the component's size as extra-large.
+            size: extra-large
+            # Start time defined in ISO format converted to milliseconds.
+            startTimestamp: =$toMillis('2025-06-19T10:43:04.377Z')
+
+  - type: component.section
+    options:
+      title: Count-up - MEDIUM WITH BOTTOM LABELS
+      children:
+        - type: component.count-up
+          options:
+            labels:
+              isVisible: true
+              # Position labels (Days: Hours : Minutes: Seconds) below the component.
+              position: bottom
+            # Set the component's size as medium.
+            size: medium
+            # Start time defined in ISO format converted to milliseconds.
+            startTimestamp: =$toMillis('2025-07-06T23:00:00Z')

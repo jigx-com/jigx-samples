@@ -52,7 +52,6 @@ datasources:
           ms DESC
         LIMIT 1 + 1 * 7
 
-
 children:
   - type: component.line-chart
     options:
@@ -87,7 +86,7 @@ children:
             notation: compact
             currency: EUR
             maximumSignificantDigits: 5
-            maximumFractionDigits: 5                      
+            maximumFractionDigits: 5
         tickAmount: 3
       series:
         - data: =@ctx.datasources.etherum
@@ -101,9 +100,9 @@ widgets:
     options:
       children:
         - type: widget.chart
-          
+
           options:
-            top: 
+            top:
               type: component.titles
               options:
                 title: Bitcoin
@@ -161,7 +160,7 @@ widgets:
                       notation: compact
                       currency: EUR
                       maximumSignificantDigits: 5
-                      maximumFractionDigits: 5                      
+                      maximumFractionDigits: 5
                   tickAmount: 3
                 series:
                   - data: =@ctx.datasources.etherum

@@ -1,0 +1,56 @@
+title: Job task gallery
+type: jig.gallery
+
+datasources:
+  task-images:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/tasks
+      query: SELECT
+        id,
+        json_extract(file, '$.localPath') as localPath,
+        json_extract(file, '$.fileName')  as filename,
+        json_extract(file, '$.thumbnail.base64') as thumbnail
+        FROM [default/tasks]
+
+# Data binding: fetch images from the task-images datasource.
+data: =@ctx.datasources.task-images
+item:
+  # Use the standard gallery-item component for each image to render.
+  type: component.gallery-item
+  options:
+    # For images stored in Dynamic Files use the thumbnail image URI from the server,
+    # see the expression below.
+    # For other providers use =@ctx.current.item.image.
+    imageUri: |
+      ='data:image/png;base64,' & @ctx.current.item.thumbnail
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Add image
+          isSequential: true
+          actions:
+            # Open the media picker to select or take an image.
+            - type: action.open-media-picker
+              instanceId: taskmedia
+              options:
+                mediaType: image
+                imageQuality: 20
+                imageCropping:
+                  isEnabled: true
+            # Create a new task-image record in Dynamic files in Dyanmic Data.
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/tasks
+                method: create
+                data:
+                  # Save selected image name.
+                  name: task image
+                file:
+                  # Attach the selected file by its local path.
+                  localPath: =@ctx.actions.taskmedia.outputs.newItems

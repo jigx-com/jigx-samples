@@ -105,7 +105,7 @@ actions:
           function: create-calendar-event
           entity: calendarEvents
           method: create
-          functionParameters:
+          parameters:
             accessToken: microsoft.OAuth
             calendarId: =@ctx.components.calendarId.state.selected.id
             subject: =@ctx.components.subject.state.value

@@ -1,4 +1,4 @@
-title: Filter List with default tab 
+title: Filter List with default tab
 description: A dynamic list displaying filter options opening with a default tab showing tasks in progress
 type: jig.default
 icon: notes-paper-approve
@@ -13,7 +13,6 @@ header:
       type: component.image
     height: medium
 
-  
 datasources:
   team-tasks:
     type: datasource.sqlite
@@ -33,27 +32,27 @@ datasources:
           '$.Profile'
          
         FROM [default/tasks]
-        WHERE '$.taskStatus' LIKE @filter or @filter IS NULL
+        WHERE '$.taskStatus' LIKE @filter or @filter IS 'All'
       queryParameters:
-          filter: =@ctx.components.task-progress.state.filter
-    
+        filter: =@ctx.components.task-progress.state.filter
+
 children:
   - type: component.list
     instanceId: task-progress
     options:
       filter:
-       initialValue: "In Progress"
-       data:
-        - title: All
-          value: ""
-        - title: Not Started
-          value: Not Started  
-        - title: In Progress
-          value: In Progress
-        - title: Complete
-          value: Complete 
-          
-      data: =@ctx.datasources.team-tasks        
+        initialValue: "In Progress"
+        data:
+          - title: All
+            value: "All"
+          - title: Not Started
+            value: Not Started
+          - title: In Progress
+            value: In Progress
+          - title: Complete
+            value: Complete
+
+      data: =@ctx.datasources.team-tasks
       item:
         type: component.list-item
         options:
@@ -71,7 +70,5 @@ children:
           leftElement:
             element: avatar
             text: =@ctx.current.item.taskAssignee
-            uri: =@ctx.current.item.Profile  
+            uri: =@ctx.current.item.Profile
       maximumItemsToRender: 50
-    
-

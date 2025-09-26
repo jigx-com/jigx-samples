@@ -18,8 +18,8 @@ children:
   - type: component.form
     instanceId: frmNewCustomer
     options:
-      # When a form submit action is used to save the values of the controls on a form, the form will warn the user when navigating away without saving the form's content. 
-      # When any other action type is used to save the values of the controls on a form, the form is unaware of the saved state, and isDiscardChangesAlertEnabled needs to be set to false to avoid seeing the dialog even when data has been saved. 
+      # When a form submit action is used to save the values of the controls on a form, the form will warn the user when navigating away without saving the form's content.
+      # When any other action type is used to save the values of the controls on a form, the form is unaware of the saved state, and isDiscardChangesAlertEnabled needs to be set to false to avoid seeing the dialog even when data has been saved.
       isDiscardChangesAlertEnabled: false
       children:
         - type: component.field-row
@@ -54,7 +54,7 @@ children:
         - type: component.text-field
           instanceId: AddressLine2
           options:
-            label: Address Line 2           
+            label: Address Line 2
             textContentType: streetAddressLine2
             isRequired: false
         - type: component.text-field
@@ -62,7 +62,7 @@ children:
           options:
             label: City
             textContentType: addressCity
-        # A dropdown control is used to list the USA states. 
+        # A dropdown control is used to list the USA states.
         - type: component.dropdown
           instanceId: State
           options:
@@ -73,7 +73,7 @@ children:
               type: component.dropdown-item
               options:
                 title: =@ctx.current.item.name
-                value: =@ctx.current.item.code            
+                value: =@ctx.current.item.code
         - type: component.text-field
           instanceId: ZipCode
           options:
@@ -95,7 +95,7 @@ actions:
         options:
           title: Save Customer
           isSequential: true
-          actions:  
+          actions:
             # Use an execute entity action to submit the values of the controls to the Jigx function to update Azure SQL and to save the new customer to the local SQLite database.
             - type: action.execute-entity
               options:
@@ -106,7 +106,7 @@ actions:
                 # The name of the Jigx function used to save the data to Azure SQL.
                 function: create-customer
                 # Set the function parameters to values of the controls on the form.
-                functionParameters:
+                parameters:
                   CustomerId: =@ctx.jig.inputs.custId
                   FirstName: =@ctx.components.FirstName.state.value
                   LastName: =@ctx.components.LastName.state.value
@@ -133,11 +133,9 @@ actions:
                   City: =@ctx.components.City.state.value
                   ZipCode: =@ctx.components.ZipCode.state.value
                   State: =@ctx.components.State.state.selected.code
-                  Country: =@ctx.components.Country.state.value   
-                # Display a dialog box with a message if the new record is created successfully.    
-                onSuccess: 
+                  Country: =@ctx.components.Country.state.value
+                # Display a dialog box with a message if the new record is created successfully.
+                onSuccess:
                   description: New Customer Created Successfully
                   title: Customer Created
             - type: action.go-back
-        
-        

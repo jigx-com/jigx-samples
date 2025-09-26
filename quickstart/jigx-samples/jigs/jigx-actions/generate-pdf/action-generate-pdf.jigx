@@ -1,0 +1,92 @@
+title: Site Checklist
+type: jig.document
+
+datasources:
+  html-data:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          checklist-html: |
+            <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Construction Site Checklist</title>
+                  <style>
+                      body {
+                          font-family: Arial, sans-serif;
+                          margin: 20px;
+                          padding: 20px;
+                          background-color: #f4f4f4;
+                      }
+                      .checklist {
+                          background: #fff;
+                          padding: 20px;
+                          border-radius: 5px;
+                          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                      }
+                      h2 {
+                          text-align: center;
+                      }
+                      ul {
+                          list-style: none;
+                          padding: 0;
+                      }
+                      li {
+                          margin: 10px 0;
+                      }
+                      input[type="checkbox"] {
+                          margin-right: 10px;
+                      }
+                  </style>
+              </head>
+              <body>
+                  <div class="checklist">
+                      <h2>Construction Site Checklist</h2>
+                      <ul>
+                          <li><input type="checkbox"> Safety gear checked (helmets, vests, gloves, etc.)</li>
+                          <li><input type="checkbox"> Equipment inspected and functional</li>
+                          <li><input type="checkbox"> Site hazards identified and secured</li>
+                          <li><input type="checkbox"> Workers briefed on tasks and safety</li>
+                          <li><input type="checkbox"> Materials delivered and accounted for</li>
+                          <li><input type="checkbox"> Work permits and documentation verified</li>
+                          <li><input type="checkbox"> Emergency procedures reviewed</li>
+                          <li><input type="checkbox"> Waste disposal managed</li>
+                          <li><input type="checkbox"> Final site walk-through completed</li>
+                      </ul>
+                  </div>
+              </body>
+              </html>
+
+source:
+  documentType: HTML
+  # Use a datasource with the required raw HTML
+  content: =@ctx.datasources.html-data.checklist-html
+# Create an action list that will first create the PDF from the HTML,
+# secondly share the pdf file via one of the devices messaging apps.
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Send checklist
+          isSequential: true
+          actions:
+            # First action to create the pdf.
+            - type: action.generate-pdf
+              # Add an instanceId to use in the actions output expression.
+              instanceId: share-pdf
+              options:
+                # Provide the HTML of the checklist.
+                html: =@ctx.datasources.html-data.checklist-html
+                # Provide the name of the pdf
+                fileName: foreman-checklist
+            # Add the second action to share out the pdf,
+            # on one of the devices messaging apps.
+            - type: action.share
+              options:
+                message: Completed morning checks on Site B
+                subject: Site checks complete
+                # Use the action instance output to reference the file.
+                fileUri: =@ctx.actions.share-pdf.outputs.uri

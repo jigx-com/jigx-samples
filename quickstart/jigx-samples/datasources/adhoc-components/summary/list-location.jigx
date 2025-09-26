@@ -13,6 +13,6 @@ options:
     - title: Location - fullscreen
       link: location-fullscreen
       color: color4
-    # - title: Location - sharing
-    #   link: location-sharing
-    #   color: color5
+    - title: Location with radius
+      link: location-with-radius
+      color: color5

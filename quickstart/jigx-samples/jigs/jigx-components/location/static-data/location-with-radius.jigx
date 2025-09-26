@@ -1,0 +1,38 @@
+title: Location with radius
+type: jig.default
+
+datasources:
+  points:
+    type: datasource.static
+    options:
+      data:
+        - latitude: 40.759412
+          longitude: -73.912306
+children:
+  - type: component.location
+    options:
+      viewPoint:
+        # Starting address specified.
+        centerPosition: middle
+        latitude: 40.759412
+        longitude: -73.912306
+        address: =@ctx.datasources.points
+      # Add the marker point that the radius will use as the center point.
+      markers:
+        data: =@ctx.datasources.points
+        item:
+          type: component.marker-item
+          options:
+            latitude: =@ctx.current.item.latitude
+            longitude: =@ctx.current.item.longitude
+            # Specify the radius units, size (value) and color.
+            radius:
+              isEnabled: true
+              # The value determines the radius circle, e.g. 4km.
+              value: 4
+              unit: kilometers
+              color: color4
+            children:
+              type: component.icon
+              options:
+                icon: end-marker
