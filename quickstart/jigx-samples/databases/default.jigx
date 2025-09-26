@@ -35,3 +35,4 @@ tables:
   product-delivery: null
   bookings: null
   invoices: null
+  task-images: null

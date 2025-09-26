@@ -2,21 +2,21 @@ title: Job task gallery
 type: jig.gallery
 
 datasources:
-  task-images:
+  gallery-images:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
       entities:
-        - default/tasks
+        - default/task-images
       query: SELECT
         id,
         json_extract(file, '$.localPath') as localPath,
         json_extract(file, '$.fileName')  as filename,
         json_extract(file, '$.thumbnail.base64') as thumbnail
-        FROM [default/tasks]
+        FROM [default/task-images]
 
 # Data binding: fetch images from the task-images datasource.
-data: =@ctx.datasources.task-images
+data: =@ctx.datasources.gallery-images
 item:
   # Use the standard gallery-item component for each image to render.
   type: component.gallery-item
