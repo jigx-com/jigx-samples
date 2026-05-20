@@ -164,6 +164,7 @@ options:
     - color: color1
       component: Slider
       componentLink: slider-summary
+      icon: settings-slider
     - color: color3
       component: Stage
       componentLink: composite-stage
