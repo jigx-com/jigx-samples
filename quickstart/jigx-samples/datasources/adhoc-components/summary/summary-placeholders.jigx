@@ -1,0 +1,23 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: gaming-first-place
+      type: Default list placeholders
+      typeLink: placeholder-default
+    - color: color2
+      icon: notes-add
+      type: Customized List placeholders
+      typeLink: placeholder-list
+    - color: color3
+      icon: allowances-no-photos
+      type: Gallery placeholders
+      typeLink: placeholder-gallery
+    - color: color4
+      icon: folder-empty
+      type: Tab placeholders
+      typeLink: placeholder-tabs
+    - color: color5
+      icon: folder-empty
+      type: Placeholders bottomSheet
+      typeLink: placeholder-bottomsheet
