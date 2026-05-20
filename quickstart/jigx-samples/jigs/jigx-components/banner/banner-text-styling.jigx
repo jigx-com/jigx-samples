@@ -1,4 +1,4 @@
-title: Global Prdocuts
+title: Global Products
 type: jig.default
 
 datasources:
@@ -52,7 +52,7 @@ children:
       item:
         type: component.product-item
         options:
-          tag: =@ctx.current.state.amount =10 ? 'max amount':''
+          tags: =@ctx.current.state.amount =10 ? 'max amount':''
           title: =@ctx.current.item.title
           image:
             uri: =@ctx.current.item.uri
