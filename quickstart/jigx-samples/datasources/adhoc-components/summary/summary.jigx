@@ -16,6 +16,7 @@ options:
     - color: color12
       component: Banner
       componentLink: banner-summary
+      icon: fantasy-medieval-war-banner-guild-faction-2
     - color: color3
       component: Bar-chart
       componentLink: bar-chart-summary
