@@ -27,7 +27,7 @@ options:
       type: Multi-column product-items (card)
     - color: color6
       icon: cashless-payment-e-wallet-browser
-      typeLink: card-product-item-columns-tags
+      typeLink: card-product-item-tags
       type: Multi-column product-items with tags (card)
     - color: color8
       icon: cashless-payment-e-wallet-smartphone
