@@ -9,7 +9,7 @@ header:
       type: component.image
       options:
         source:
-          uri: https://unsplash.com/photos/cooked-rice-with-green-peas-and-carrots-on-stainless-steel-bowl-oYvZ-stypr4
+          uri: https://unsplash.com/photos/poached-egg-with-vegetables-and-tomatoes-on-blue-plate-jUPOXXRNdcA
 onFocus:
   type: action.reset-state
   options:
