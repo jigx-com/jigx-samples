@@ -1,4 +1,4 @@
 type: datasource.static
 options:
   data:
-    - url: https://www.jigx.com
+    - url: https://jigx.com/

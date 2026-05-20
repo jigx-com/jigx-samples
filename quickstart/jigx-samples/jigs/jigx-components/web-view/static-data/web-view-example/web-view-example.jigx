@@ -1,9 +1,9 @@
 type: jig.default
 title: Web view
-isScrollable: false
 
 children:
   - type: component.web-view
     options:
       uri: =@ctx.datasources.web-view.url
       isTrackingTransparencyRequired: true
+      height: 1000
