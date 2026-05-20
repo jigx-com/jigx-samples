@@ -1,0 +1,77 @@
+title: Campaign Budget
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&auto=format&fit=crop&q=60
+
+children:
+  - type: component.form
+    instanceId: budget-form
+    options:
+      children:
+        - type: component.slider
+          instanceId: budget
+          options:
+            label: Select monthly budget
+            minimum: 0
+            maximum: 1000
+            step: 10
+            initialValue: 250
+            displayValue:
+              format:
+                numberStyle: currency
+                currency: EUR
+              isHidden: false
+              isSubtle: false
+        - type: component.slider
+          instanceId: video-budget
+          options:
+            label: Select video budget
+            minimum: 0
+            maximum: 1000
+            step: 10
+            initialValue: 500
+            displayValue:
+              format:
+                numberStyle: currency
+                currency: EUR
+              isHidden: false
+              isSubtle: false
+            color: color3
+        - type: component.slider
+          instanceId: copywrite-budget
+          options:
+            label: Select copywrite budget
+            minimum: 0
+            maximum: 1000
+            step: 10
+            initialValue: 100
+            displayValue:
+              format:
+                numberStyle: currency
+                currency: EUR
+              isHidden: false
+              isSubtle: false
+            color: color12
+        - type: component.slider
+          instanceId: photos-budget
+          options:
+            label: Select photos budget
+            minimum: 0
+            maximum: 1000
+            step: 10
+            initialValue: 30
+            displayValue:
+              format:
+                numberStyle: currency
+                currency: EUR
+              isHidden: false
+              isSubtle: false
+            color: color4

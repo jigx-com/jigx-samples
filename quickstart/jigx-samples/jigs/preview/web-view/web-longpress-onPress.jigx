@@ -1,12 +1,12 @@
-title: Web view preview - onPress
+title: Web view preview - onPress (iOS feature)
 type: jig.list
 icon: world
 
-header: 
+header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         title: Activities
@@ -14,7 +14,7 @@ header:
           uri: https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fHNwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60
 
 datasources:
-  activities: 
+  activities:
     type: datasource.static
     options:
       data:
@@ -38,11 +38,11 @@ item:
   type: component.list-item
   options:
     title: =@ctx.current.item.name
-    subtitle: =@ctx.current.item.location  
-    rightElement: 
+    subtitle: =@ctx.current.item.location
+    rightElement:
       element: icon
       icon: =@ctx.current.item.image
-    onPress: 
+    onPress:
       type: action.go-to
       options:
         linkTo: web-detail

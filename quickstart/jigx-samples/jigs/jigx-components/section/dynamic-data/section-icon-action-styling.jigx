@@ -1,0 +1,146 @@
+title: Delivery Confirmation
+type: jig.default
+
+datasources:
+  details:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          orderId: RZ4532
+          dateId: 2025-10-03
+          customerName: West Primary School
+          contactPhone: 45344445
+          item1: door-frame
+          item1qty: 3
+          item2: cement
+          item2qty: 5
+          address: St John's Wood Rd, London NW8 9HJ, UK
+
+children:
+  - type: component.form
+    instanceId: deliveryForm
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.section
+          options:
+            title:
+              # Section header text with font and boldness defined.
+              text: Delivery Details
+              fontSize: medium
+              isBold: true
+            # Section icon displayed before the section text.
+            icon:
+              name: delivery-person-motorcycle
+              color: primary
+              shape: circle
+              type: duotone
+            # Section action displayed as an icon on the righthand side
+            # of section that opens the map modal to navigate to the address.
+            actions:
+              - type: action.open-map
+                options:
+                  title: Directions
+                  address: =@ctx.datasources.details.address
+                  icon: maps-pin
+                  # Styling applied to the action button.
+                  style:
+                    isDanger: true
+            children:
+              - type: component.text-field
+                instanceId: orderId
+                options:
+                  initialValue: =@ctx.datasources.details.orderId
+                  label: Order ID
+              - type: component.date-picker
+                instanceId: dateId
+                options:
+                  initialValue: =@ctx.datasources.details.dateId
+                  label: Delivery Date
+              - type: component.text-field
+                instanceId: customerName
+                options:
+                  initialValue: =@ctx.datasources.details.customerName
+                  label: Customer
+              - type: component.number-field
+                instanceId: contactPhone
+                options:
+                  initialValue: =@ctx.datasources.details.contactPhone
+                  label: Contact Number
+
+        - type: component.section
+          options:
+            # Section header text with font and boldness defined.
+            title:
+              text: Items Delivered
+              fontSize: medium
+              isBold: true
+            # Section subtitle displayed below the title defined.
+            subtitle: Mark delivered items and adjust quantities if needed.
+            children:
+              - type: component.expander
+                options:
+                  header:
+                    centerElement:
+                      type: component.titles
+                      options:
+                        title: Items for delivery
+                        subtitle: See list of items to be delivered
+
+                  children:
+                    - type: component.text-field
+                      instanceId: item1
+                      options:
+                        initialValue: =@ctx.datasources.details.item1
+                        label: Item
+
+                    - type: component.number-field
+                      instanceId: item1qty
+                      options:
+                        initialValue: =@ctx.datasources.details.item1qty
+                        label: Qty Delivered
+
+                    - type: component.text-field
+                      instanceId: item2
+                      options:
+                        initialValue: =@ctx.datasources.details.item2
+                        label: Item
+                    - type: component.number-field
+                      instanceId: item2qty
+                      options:
+                        initialValue: =@ctx.datasources.details.item2qty
+                        label: Qty Delivered
+
+        - type: component.section
+          options:
+            # Section header text with font and boldness defined.
+            title:
+              text: Proof of Delivery
+              fontSize: medium
+              isBold: true
+            # Section action displayed as a button on the righthand side
+            # of section that saves the signature and notes to dynamic data..
+            actions:
+              - type: action.execute-entity
+                options:
+                  title: Complete
+                  provider: DATA_PROVIDER_DYNAMIC
+                  entity: default/deliveries
+                  method: create
+                  data:
+                    recipientSignature: =@ctx.components.recipientSignature.state.value
+                    driverNotes: =@ctx.components.driverNotes.state.value
+                  # Styling applied to the action button.
+                  style:
+                    isPrimary: true
+            children:
+              - type: component.text-field
+                instanceId: driverNotes
+                options:
+                  label: Driver Notes
+              - type: component.signature-field
+                instanceId: recipientSignature
+                options:
+                  label: Recipient Signature
+                  isRequired: true

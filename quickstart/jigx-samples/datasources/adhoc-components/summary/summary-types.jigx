@@ -45,3 +45,7 @@ options:
       icon: upload-bottom
       type: BottomSheet
       typeLink: bottomsheet-summary
+    - color: color11
+      icon: loading-1
+      type: Placeholders
+      typeLink: placeholder-summary

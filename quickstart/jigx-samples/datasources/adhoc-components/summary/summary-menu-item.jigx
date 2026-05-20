@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: menu
+      typeLink: menu-item-basic
+      type: Menu-item basic
+    - color: color2
+      icon: layout-two-columns
+      typeLink: menu-item-list
+      type: Menu-item with icons
+    - color: color3
+      icon: square-stack
+      typeLink: menu-item-by-device
+      type: Menu-item (device specific)

@@ -1,0 +1,299 @@
+title: Customers
+type: jig.document
+
+source:
+  documentType: HTML
+  content: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Q1 2025 Customer Report</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #f7f7f7;
+          color: #333;
+        }
+
+        .report-container {
+          max-width: 900px;
+          margin: 0 auto;
+          background-color: #ffffff;
+          padding: 24px 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2, h3 {
+          color: #123456;
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.25rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+          margin-top: 1.8rem;
+        }
+
+        .meta {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 1.5rem;
+        }
+
+        .section-divider {
+          border-top: 1px solid #e0e0e0;
+          margin: 1.5rem 0;
+        }
+
+        .highlight {
+          font-weight: bold;
+        }
+
+        ul {
+          margin: 0.3rem 0 1rem 1.2rem;
+        }
+
+        .metrics-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 12px;
+          margin: 0.5rem 0 1rem 0;
+        }
+
+        .metric-card {
+          background-color: #f5f8fd;
+          border-radius: 6px;
+          padding: 10px 12px;
+          border: 1px solid #e0e6f2;
+          font-size: 0.95rem;
+        }
+
+        .metric-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          color: #777;
+        }
+
+        .metric-value {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-top: 4px;
+        }
+
+        .metric-note {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 4px;
+        }
+
+        @media print {
+          body {
+            background-color: #ffffff;
+          }
+          .report-container {
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="report-container">
+        <header>
+          <h1>Q1 2025 Customer Report</h1>
+          <div class="meta">
+            <div><span class="highlight">Focus:</span> Customer Growth • Engagement • Satisfaction • Support Trends</div>
+            <div><span class="highlight">Reporting Period:</span> January – March 2025</div>
+          </div>
+          <div class="section-divider"></div>
+        </header>
+
+        <!-- 1. Summary -->
+        <section>
+          <h2>1. Summary</h2>
+          <p>
+            Q1 2025 showed healthy growth in the customer base, strong engagement with products and services,
+            and an increase in repeat business. Customer satisfaction remained high, with support tickets resolved
+            faster than in previous quarters.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 2. Customer Growth -->
+        <section>
+          <h2>2. Customer Growth</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Active Customers</div>
+              <div class="metric-value">1,240</div>
+              <div class="metric-note">Across all segments</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">New Customers</div>
+              <div class="metric-value">185</div>
+              <div class="metric-note">Added in Q1</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Growth Rate</div>
+              <div class="metric-value">+8%</div>
+              <div class="metric-note">Quarter-over-quarter</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Retention Rate</div>
+              <div class="metric-value">92%</div>
+              <div class="metric-note">Strong customer loyalty</div>
+            </div>
+          </div>
+
+          <p>
+            <span class="highlight">Insight:</span>
+            Referrals accounted for 27% of new customers, showing strong word-of-mouth trust.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 3. Customer Engagement -->
+        <section>
+          <h2>3. Customer Engagement</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Product Usage</div>
+              <div class="metric-value">+11%</div>
+              <div class="metric-note">Increase in activity</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Repeat Purchases</div>
+              <div class="metric-value">46%</div>
+              <div class="metric-note">Customers returning</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Top Segment</div>
+              <div class="metric-value">SMBs</div>
+              <div class="metric-note">Most engaged customers</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Primary Touchpoint</div>
+              <div class="metric-value">62%</div>
+              <div class="metric-note">Mobile app interactions</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Key Drivers:</span></p>
+          <ul>
+            <li>Improved onboarding experience.</li>
+            <li>More timely communication.</li>
+            <li>New feature releases driving engagement.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 4. Customer Satisfaction -->
+        <section>
+          <h2>4. Customer Satisfaction</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Satisfaction Score</div>
+              <div class="metric-value">4.6 / 5</div>
+              <div class="metric-note">Overall customer rating</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">NPS</div>
+              <div class="metric-value">+52</div>
+              <div class="metric-note">Strong promoter base</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Most Praised Areas:</span></p>
+          <ul>
+            <li>Ease of use</li>
+            <li>Friendly support</li>
+            <li>Reliability</li>
+          </ul>
+
+          <p><span class="highlight">Challenges Identified:</span></p>
+          <ul>
+            <li>Requests for more customization options.</li>
+            <li>Occasional delays in response during peak times.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 5. Support & Service Trends -->
+        <section>
+          <h2>5. Support & Service Trends</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Support Tickets</div>
+              <div class="metric-value">312</div>
+              <div class="metric-note">Submitted in Q1</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Avg Resolution Time</div>
+              <div class="metric-value">3.8 hrs</div>
+              <div class="metric-note">Faster than Q4</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">FCR Rate</div>
+              <div class="metric-value">78%</div>
+              <div class="metric-note">Resolved on first contact</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Top Ticket Categories:</span></p>
+          <ul>
+            <li>Login & access issues</li>
+            <li>Billing questions</li>
+            <li>Feature guidance</li>
+          </ul>
+
+          <p>
+            <span class="highlight">Observation:</span>
+            Ticket volume decreased by 9% vs. Q4, reflecting improved stability and better self-help resources.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 6. Opportunities -->
+        <section>
+          <h2>6. Opportunities for Q2 2025</h2>
+          <ul>
+            <li>Introduce customer education sessions and micro-tutorials.</li>
+            <li>Improve feature discoverability in the mobile app.</li>
+            <li>Expand the self-service help center.</li>
+            <li>Strengthen early-customer retention programs.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 7. Closing Note -->
+        <section>
+          <h2>7. Closing Note</h2>
+          <p>
+            Q1 demonstrated strong customer loyalty, meaningful engagement, and positive sentiment.
+            Continued focus on customer experience and support efficiency will help accelerate growth into Q2.
+          </p>
+        </section>
+      </div>
+    </body>
+    </html>

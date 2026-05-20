@@ -1,0 +1,57 @@
+title: My Day
+type: jig.default
+
+datasources:
+  today:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          job: Replace valve
+          time: 9am
+          location: Building A
+
+        - id: 2
+          job: Paint wall in lobby
+          time: 10:30am
+          location: Building F
+
+        - id: 3
+          job: Hang new mirrors in bathroom
+          time: 1pm
+          location: Customer Center
+
+        - id: 4
+          job: Fix leaking pipe in kitchen
+          time: 3pm
+          location: Building C
+
+children:
+  # Add a basic banner with title and subtitle
+  - type: component.banner
+    options:
+      title: HR News
+      subtitle: Welcome Paul Smith, who joins Global Inc today!
+  - type: component.divider
+  - type: component.section
+    options:
+      title:
+        text: Today's Jobs
+        fontSize: medium
+        color: primary
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.today
+            maximumItemsToRender: 8
+            item:
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.job
+                subtitle: =@ctx.current.item.location
+                rightElement:
+                  element: value
+                  text: =@ctx.current.item.time
+                leftElement:
+                  element: checkbox
+                  value: false

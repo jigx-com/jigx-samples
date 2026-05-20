@@ -1,0 +1,113 @@
+title: Inspection tasks
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2025/04/25/09/49/ai-generated-9558304_640.jpg
+
+state:
+  checksStarted:
+    initialValue: false
+  checksCompleted:
+    initialValue: false
+
+onFocus:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.reset-jig-state
+        options:
+          changes:
+            - checksStarted
+            - checksCompleted
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.checklist.state.data
+
+onRefresh:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.reset-jig-state
+        options:
+          changes:
+            - checksStarted
+            - checksCompleted
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.checklist.state.data
+
+datasources:
+  checklist-items:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: "Inspect equipment"
+        - id: 2
+          title: "Gather materials"
+        - id: 3
+          title: "Complete task report"
+
+children:
+  # Banner shows only when task started
+  - type: component.banner
+    when: =@ctx.jig.state.checksCompleted = true
+    options:
+      title: "Checks completed"
+      subtitle: "Remember to record time and materials used."
+      style:
+        isPositive: true
+      leftElement:
+        element: icon
+        icon: check-2
+        type: duotone
+
+  - type: component.form
+    instanceId: checklist
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.checkbox
+          instanceId: check1
+          options:
+            label: =@ctx.datasources.checklist-items[0].title
+            initialValue: false
+            style:
+              isDisabled: =@ctx.jig.state.checksCompleted = true
+              isPositive: true
+
+        - type: component.checkbox
+          instanceId: check2
+          options:
+            label: =@ctx.datasources.checklist-items[1].title
+            initialValue: false
+            style:
+              isDisabled: =@ctx.jig.state.checksCompleted = true
+              isPositive: true
+        - type: component.checkbox
+          instanceId: check3
+          options:
+            label: =@ctx.datasources.checklist-items[2].title
+            initialValue: false
+            style:
+              isDisabled: =@ctx.jig.state.checksCompleted = true
+              isPositive: true
+
+actions:
+  - numberOfVisibleActions: 1
+    when: =@ctx.jig.state.checksCompleted = false
+    children:
+      - type: action.set-jig-state
+        options:
+          changes:
+            checksCompleted: true
+          title: Inspection Complete

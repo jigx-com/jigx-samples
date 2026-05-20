@@ -22,24 +22,20 @@ datasources:
 children:
   - type: component.section
     options:
-      title: Carousel with card & pagination (outside)
+      title: Carousel with pagination (outside)
       children:
         - type: component.carousel
           options:
             data: =@ctx.datasources.products
-            item: 
-              type: component.card
+            item:
+              type: component.image
               options:
-                children:
-                  - type: component.image
-                    options:
-                      source:
-                        uri: =@ctx.current.item.image
-                color: color2
+                source:
+                  uri: =@ctx.current.item.image
             pagination:
               position: outside
               isContained: false
-        
+
   - type: component.section
     options:
       title: Carousel with image & pagination (inside)
@@ -47,7 +43,7 @@ children:
         - type: component.carousel
           options:
             data: =@ctx.datasources.products
-            item: 
+            item:
               type: component.image
               options:
                 source:
@@ -55,4 +51,3 @@ children:
             pagination:
               position: inside
               isContained: true
-      

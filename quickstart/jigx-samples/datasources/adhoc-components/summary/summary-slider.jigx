@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: alert
+      type: Basic slider
+      typeLink: slider-basic
+    - color: color2
+      icon: alert-bell-notification-1
+      type: Slider in a form
+      typeLink: slider-form
+    - color: color3
+      icon: alert-circle
+      type: Slider with conditional styling
+      typeLink: slider-conditional

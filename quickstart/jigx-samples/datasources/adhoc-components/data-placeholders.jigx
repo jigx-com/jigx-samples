@@ -1,0 +1,13 @@
+type: datasource.sqlite
+options:
+  provider: DATA_PROVIDER_DYNAMIC
+  entities:
+    - default/placeholders
+
+  query: SELECT
+    id,
+    '$.description',
+    '$.name',
+    '$.image',
+    '$.type'
+    FROM [default/placeholders]

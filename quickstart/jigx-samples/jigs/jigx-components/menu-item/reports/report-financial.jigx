@@ -1,0 +1,315 @@
+title: Financial Report
+type: jig.document
+
+source:
+  documentType: HTML
+  content: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Q1 2025 Financial Report</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #f7f7f7;
+          color: #333;
+        }
+
+        .report-container {
+          max-width: 900px;
+          margin: 0 auto;
+          background-color: #ffffff;
+          padding: 24px 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2, h3 {
+          color: #123456;
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.25rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+          margin-top: 1.8rem;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+          margin-top: 1rem;
+          margin-bottom: 0.4rem;
+        }
+
+        .meta {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          margin: 0.3rem 0 0.8rem 0;
+        }
+
+        .section-divider {
+          border-top: 1px solid #e0e0e0;
+          margin: 1.5rem 0;
+        }
+
+        .highlight {
+          font-weight: bold;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 0.5rem 0 1rem 0;
+          font-size: 0.95rem;
+        }
+
+        th, td {
+          text-align: left;
+          padding: 8px 10px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+          background-color: #f0f4fa;
+          font-weight: 600;
+        }
+
+        .numeric {
+          text-align: right;
+          white-space: nowrap;
+        }
+
+        .subheading {
+          font-weight: bold;
+          margin-top: 0.6rem;
+        }
+
+        ul {
+          margin: 0.3rem 0 1rem 1.2rem;
+        }
+
+        @media print {
+          body {
+            background-color: #ffffff;
+          }
+          .report-container {
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="report-container">
+        <header>
+          <h1>Q1 2025 Financial Report</h1>
+          <div class="meta">
+            <div><span class="highlight">Reporting Period:</span> January – March 2025</div>
+            <div><span class="highlight">Company Type:</span> Small Business</div>
+          </div>
+          <div class="section-divider"></div>
+        </header>
+
+        <!-- 1. Executive Summary -->
+        <section>
+          <h2>1. Executive Summary</h2>
+          <p>
+            The company delivered a stable first quarter with steady revenue growth,
+            controlled expenses, and a positive net profit margin. Customer demand
+            remained consistent, and operational efficiencies improved compared to
+            the previous quarter.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 2. Financial Highlights -->
+        <section>
+          <h2>2. Financial Highlights</h2>
+
+          <h3>Revenue</h3>
+          <table>
+            <tr>
+              <th>Item</th>
+              <th class="numeric">Amount (USD)</th>
+            </tr>
+            <tr>
+              <td>Total Revenue</td>
+              <td class="numeric">$245,000</td>
+            </tr>
+            <tr>
+              <td>Quarter-over-Quarter Growth</td>
+              <td class="numeric">+6%</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="subheading">By Source</td>
+            </tr>
+            <tr>
+              <td>Product Sales</td>
+              <td class="numeric">$170,000</td>
+            </tr>
+            <tr>
+              <td>Services</td>
+              <td class="numeric">$60,000</td>
+            </tr>
+            <tr>
+              <td>Other Income</td>
+              <td class="numeric">$15,000</td>
+            </tr>
+          </table>
+
+          <h3>Expenses</h3>
+          <table>
+            <tr>
+              <th>Category</th>
+              <th class="numeric">Amount (USD)</th>
+            </tr>
+            <tr>
+              <td>Total Operating Expenses</td>
+              <td class="numeric">$182,000</td>
+            </tr>
+            <tr>
+              <td>Cost of Goods Sold (COGS)</td>
+              <td class="numeric">$95,000</td>
+            </tr>
+            <tr>
+              <td>Salaries &amp; Wages</td>
+              <td class="numeric">$45,000</td>
+            </tr>
+            <tr>
+              <td>Marketing &amp; Sales</td>
+              <td class="numeric">$12,000</td>
+            </tr>
+            <tr>
+              <td>Rent &amp; Utilities</td>
+              <td class="numeric">$10,000</td>
+            </tr>
+            <tr>
+              <td>Software &amp; Subscriptions</td>
+              <td class="numeric">$8,000</td>
+            </tr>
+            <tr>
+              <td>Miscellaneous</td>
+              <td class="numeric">$12,000</td>
+            </tr>
+          </table>
+
+          <h3>Gross &amp; Net Profit</h3>
+          <table>
+            <tr>
+              <th>Metric</th>
+              <th class="numeric">Value</th>
+            </tr>
+            <tr>
+              <td>Gross Profit</td>
+              <td class="numeric">$150,000</td>
+            </tr>
+            <tr>
+              <td>Gross Margin</td>
+              <td class="numeric">61%</td>
+            </tr>
+            <tr>
+              <td>Net Profit</td>
+              <td class="numeric">$63,000</td>
+            </tr>
+            <tr>
+              <td>Net Margin</td>
+              <td class="numeric">26%</td>
+            </tr>
+          </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 3. Cash Flow Overview -->
+        <section>
+          <h2>3. Cash Flow Overview</h2>
+
+          <h3>Cash Inflows</h3>
+          <table>
+            <tr>
+              <th>Source</th>
+              <th class="numeric">Amount (USD)</th>
+            </tr>
+            <tr>
+              <td>Operating Activities</td>
+              <td class="numeric">$210,000</td>
+            </tr>
+            <tr>
+              <td>Financing Activities</td>
+              <td class="numeric">$0</td>
+            </tr>
+            <tr>
+              <td>Investing Activities (net)</td>
+              <td class="numeric">- $5,000</td>
+            </tr>
+          </table>
+
+          <h3>Cash Outflows</h3>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th class="numeric">Amount (USD)</th>
+            </tr>
+            <tr>
+              <td>Operating Outflows</td>
+              <td class="numeric">$165,000</td>
+            </tr>
+          </table>
+
+          <h3>Net Cash Position</h3>
+          <table>
+            <tr>
+              <th>Item</th>
+              <th class="numeric">Amount (USD)</th>
+            </tr>
+            <tr>
+              <td>Opening Cash Balance</td>
+              <td class="numeric">$40,000</td>
+            </tr>
+            <tr>
+              <td>Closing Cash Balance</td>
+              <td class="numeric">$80,000</td>
+            </tr>
+          </table>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 4. Operational Insights -->
+        <section>
+          <h2>4. Operational Insights</h2>
+          <ul>
+            <li>Increased customer acquisition from improved marketing campaigns.</li>
+            <li>Inventory turnover improved with better stock forecasting.</li>
+            <li>Digital tools reduced manual workload, lowering administrative costs.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 5. Outlook -->
+        <section>
+          <h2>5. Outlook for Q2 2025</h2>
+          <ul>
+            <li>Projected revenue growth of 5–8% driven by seasonal demand.</li>
+            <li>Planned investment in customer support and expanded service offerings.</li>
+            <li>Continued focus on operational efficiency and reducing overhead.</li>
+          </ul>
+        </section>
+      </div>
+    </body>
+    </html>

@@ -1,6 +1,6 @@
 title: Sections, Rows and Entity Fields
-description:   Jig to display sections, rows & entity fields
 type: jig.default
+description: Jig to display sections with icons, text styling, rows & entity fields
 
 header:
   type: component.jig-header
@@ -11,16 +11,13 @@ header:
       options:
         source:
           uri: =@ctx.datasources.cleaning-services-dynamic[0].image
-          
+
 datasources:
   cleaning-services-dynamic:
-    type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
       entities:
         - entity: default/cleaning-services
-  
       query: |
         SELECT 
           id, 
@@ -34,14 +31,22 @@ datasources:
           '$.service', 
           '$.time' 
         FROM [default/cleaning-services]
-
+    type: datasource.sqlite
 children:
   - type: component.entity
     options:
       children:
         - type: component.section
           options:
-            title: Cleaning Services
+            title:
+              text: Cleaning Services
+              fontSize: regular
+              isBold: true
+            icon:
+              name: cleaning-broom
+              color: color1
+              shape: rounded
+              type: contained
             children:
               - type: component.field-row
                 options:
@@ -63,20 +68,28 @@ children:
                         value: =@ctx.datasources.cleaning-services-dynamic[0].time & ' minutes'
                     - type: component.entity-field
                       options:
+                        contentType: checkbox
                         label: Indoor
                         value: =@ctx.datasources.cleaning-services-dynamic[0].indoor
-                        contentType: checkbox
               - type: component.field-row
                 options:
                   children:
                     - type: component.entity-field
                       options:
+                        isMultiline: true
                         label: Description
                         value: =@ctx.datasources.cleaning-services-dynamic[0].description
-                        isMultiline: true
         - type: component.section
           options:
-            title: Rates
+            title:
+              text: Rates
+              fontSize: regular
+              isBold: true
+            icon:
+              name: currency-dollar
+              color: color4
+              shape: rounded
+              type: contained
             children:
               - type: component.field-row
                 options:
@@ -84,8 +97,12 @@ children:
                     - type: component.entity-field
                       options:
                         label: Hourly Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate != null ? @ctx.datasources.cleaning-services-dynamic[0].hourlyrate:'N/A'
+                        value:
+                          =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate != null ?
+                          @ctx.datasources.cleaning-services-dynamic[0].hourlyrate:'N/A'
                     - type: component.entity-field
                       options:
                         label: Once Off Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ? @ctx.datasources.cleaning-services-dynamic[0].onceoffrate:'N/A'
+                        value:
+                          =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ?
+                          @ctx.datasources.cleaning-services-dynamic[0].onceoffrate:'N/A'

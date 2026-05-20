@@ -1,0 +1,15 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: number-one-circle
+      typeLink: basic-amount-control
+      type: Basic amount-control
+    - color: color2
+      icon: number-two-circle
+      typeLink: amount-control-onchange-ondelete
+      type: Amount-control with onChange/onDelete
+    - color: color3
+      icon: number-three-circle
+      typeLink: amount-control-standalone
+      type: Standalone amount-control

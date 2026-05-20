@@ -1,0 +1,75 @@
+title: Global Tech Products
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dGVjaG5vbG9neSUyMHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60
+        title: Product items
+        subtitle: List with product item
+
+datasources:
+  product:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id, 
+          '$.title', 
+          '$.uri',
+          '$.tag', 
+          '$.price',
+          '$.discount', 
+          '$.quantity',
+          '$.category',
+          '$.productId',
+          '$.deal',
+          '$.precise-detail'
+        FROM [default/products]
+
+children:
+  - type: component.list
+    instanceId: cartId
+    options:
+      data: =@ctx.datasources.product
+      numberOfColumns: 2
+      maximumItemsToRender: 8
+      item:
+        type: component.product-item
+        options:
+          type: card
+          title: =@ctx.current.item.title
+          image:
+            uri: =@ctx.current.item.uri
+            resizeMode: cover
+          discount: =@ctx.current.item.discount
+          price:
+            value: =@ctx.current.item.price
+            format:
+              numberStyle: currency
+          tags:
+            - text: =@ctx.current.item.tag
+              color: primary
+            - text: =@ctx.current.item.deal
+              color: warning
+          onPress:
+            type: action.go-to
+            options:
+              linkTo: product-details
+              inputs:
+                productId: =@ctx.current.item.productId
+                imageUri: =@ctx.current.item.uri
+                title: =@ctx.current.item.title
+                price: =@ctx.current.item.price
+                discount: =@ctx.current.item.discount
+                tag: =@ctx.current.item.tag
+                precise-detail: =@ctx.current.item.precise-detail
+              isModal: true

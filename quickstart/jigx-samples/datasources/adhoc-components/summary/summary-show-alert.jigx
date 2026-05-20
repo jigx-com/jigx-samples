@@ -1,0 +1,27 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: alert
+      type: Show-alert as a toast
+      typeLink: action-show-alert-toast
+    - color: color2
+      icon: alert-bell-notification-1
+      type: Show-alert as a modal
+      typeLink: action-show-alert-modal
+    - color: color3
+      icon: alert-circle
+      type: Show-alert with styling onFocus
+      typeLink: action-show-alert-styling
+    - color: color4
+      icon: alert-hexagon
+      type: Show-alert with icons and styling onChange
+      typeLink: action-show-alert-icon-styling
+    - color: color5
+      icon: alert-user
+      type: Show-alert with automatic dismissal
+      typeLink: action-show-alert-dismissal
+    - color: color6
+      icon: alert-notification-bars-1
+      type: Show-alert with groupId
+      typeLink: action-show-alert-groupid

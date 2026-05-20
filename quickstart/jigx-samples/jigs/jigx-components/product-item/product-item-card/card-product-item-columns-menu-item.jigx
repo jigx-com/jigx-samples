@@ -1,0 +1,100 @@
+title: Global online store
+# description: ="State " & @ctx.jig.state.category & @ctx.datasources.store-items[0].category & $boolean(@ctx.jig.state.category)
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1506463108611-88834e9f6169?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+state:
+  category:
+    initialValue: ""
+
+onRefresh:
+  type: action.reset-jig-state
+  options:
+    changes:
+      - category
+
+datasources:
+  store-items:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/marketplace
+      query: |
+        SELECT
+        id,
+        '$.category',
+        '$.image_uri',
+        '$.name',
+        '$.price',
+        '$.quantity',
+        '$.tag',
+        '$.discount'
+        FROM [default/marketplace]
+        WHERE '$.category' = @categoryFilter
+      queryParameters:
+        categoryFilter: =$lowercase(@ctx.jig.state.category)
+
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Clothing
+        - id: 2
+          name: Outdoor
+        - id: 3
+          name: Homeware
+        - id: 4
+          name: Electronics
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.categories
+      numberOfColumns: 4
+      maximumItemsToRender: 8
+      item:
+        type: component.menu-item
+        options:
+          title:
+            text: =@ctx.current.item.name
+            fontSize: regular
+            color: color9
+            isBold: true
+            transform: uppercase
+          onPress:
+            type: action.set-jig-state
+            options:
+              changes:
+                category: =@ctx.current.item.name
+  - type: component.divider
+  - type: component.list
+    when: =$boolean(@ctx.jig.state.category)
+    options:
+      data: =@ctx.datasources.store-items
+      numberOfColumns: 2
+      item:
+        type: component.product-item
+        options:
+          type: card
+          title: =@ctx.current.item.name
+          image:
+            uri: =@ctx.current.item.image_uri
+            resizeMode: cover
+          discount: =@ctx.current.item.discount
+          price:
+            value: =@ctx.current.item.price
+            format:
+              numberStyle: currency
+          tags:
+            - text: =@ctx.current.item.tag
+              color: primary

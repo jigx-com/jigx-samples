@@ -1,18 +1,18 @@
 type: datasource.static
 options:
   data:
-    - title: Entity with sections, rows and entity fields
+    - color: color1
       link: section-row-entity-field-dd
-      color: color1
-    - title: Form with sections, rows and children components 
+      title: Entity with sections, rows and entity fields
+    - color: color2
       link: form-section-row-children-dd
-      color: color2
-    - title: (Basic) Entity with sections and entity-fields
-      link: section-entity-field-dd
-      color: color3
-    - title: (Compact) Entity with sections and entity-fields
-      link: section-entity-field-dd-compact
-      color: color3
-    - title: Form with sections and entity-fields
+      title: Form with sections, rows and children components
+    - color: color3
+      link: section-icon-subtitle
+      title: Sections with icons, multi-line subtitle
+    - color: color4
+      link: section-icon-action-styling
+      title: Sections with icons, action and custom styling
+    - color: color5
       link: form-section-children-dd
-      color: color3
+      title: Form with sections and entity-fields

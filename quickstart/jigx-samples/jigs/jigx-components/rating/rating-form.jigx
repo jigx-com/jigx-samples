@@ -1,0 +1,111 @@
+title: Hotel Feedback
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400
+datasources:
+  visit:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Business
+
+        - id: 2
+          title: Leisure
+
+        - id: 3
+          title: Family Vacation
+
+        - id: 4
+          title: Romantic Getaway
+
+        - id: 5
+          title: Other
+
+children:
+  - type: component.form
+    instanceId: hotelFeedbackForm
+    options:
+      children:
+        # Guest Information
+        - type: component.section
+          options:
+            title: Guest Information
+            children:
+              - type: component.text-field
+                instanceId: guestName
+                options:
+                  label: Guest Name
+                  isRequired: true
+
+              - type: component.text-field
+                instanceId: roomNumber
+                options:
+                  label: Room Number
+                  isRequired: true
+
+              - type: component.date-picker
+                instanceId: checkInDate
+                options:
+                  label: Check-in Date
+                  isRequired: true
+
+              - type: component.date-picker
+                instanceId: checkOutDate
+                options:
+                  label: Check-out Date
+                  isRequired: true
+              - type: component.dropdown
+                instanceId: visitPurpose
+                options:
+                  data: =@ctx.datasources.visit
+                  label: Purpose of Visit
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.title
+
+        # Overall Experience
+        - type: component.section
+          options:
+            title: Overall Experience
+            children:
+              - type: component.rating
+                instanceId: overallRating
+                options:
+                  label: Overall Stay Rating
+                  icon: rating-star-alternate
+                  color: color3
+                  isRequired: true
+                  maximum: 5
+
+actions:
+  - children:
+      - type: action.action-list
+        options:
+          title: Submit Feedback
+          isSequential: true
+          actions:
+            - type: action.submit-form
+              options:
+                formId: hotelFeedbackForm
+                provider: DATA_PROVIDER_LOCAL
+                entity: hotel-feedback
+                method: create
+            - type: action.show-alert
+              options:
+                title: Thank You!
+                presentAs: modal
+                icon: check-circle
+                subtitle: Your feedback has been submitted successfully.
+                style:
+                  isPositive: true

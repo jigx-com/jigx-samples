@@ -1,0 +1,62 @@
+title: Customer Sign-Off
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400
+
+children:
+  - type: component.form
+    instanceId: signOffForm
+    options:
+      children:
+        - type: component.section
+          options:
+            title: Acknowledgment
+            children:
+              - type: component.checkbox
+                instanceId: reviewedTerms
+                options:
+                  label: I agree to the terms and conditions
+                  isRequired: true
+
+              - type: component.checkbox
+                instanceId: reviewedEquipment
+                options:
+                  label: I reviewed the equipment specifications and quantities
+                  isRequired: true
+
+              - type: component.checkbox
+                instanceId: reviewedPricing
+                options:
+                  label: I confirm the pricing and payment terms are acceptable
+                  isRequired: true
+
+        # Signature
+        - type: component.section
+          options:
+            title: Signature
+            children:
+              - type: component.signature-field
+                instanceId: customerSignature
+                options:
+                  label: Customer Signature
+                  isRequired: true
+
+              - type: component.date-picker
+                instanceId: signatureDate
+                options:
+                  label: Date
+                  isRequired: true
+
+              - type: component.text-field
+                instanceId: additionalComments
+                options:
+                  label: Additional Comments (optional)
+                  isMultiline: true

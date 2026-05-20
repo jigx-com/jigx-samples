@@ -1,16 +1,16 @@
-title: Form with Sections and Children Components
+title: (Basic) Form with Sections
 description: Jig to display a form with sections & children components
 type: jig.default
 
 header:
   type: component.jig-header
   options:
-    height: medium
+    height: small
     children:
       type: component.image
       options:
         source:
-          uri: =@ctx.datasources.cleaning-services-dynamic[0].image
+          uri: =@ctx.datasources.cleaning-services-dynamic[1].image
 
 actions:
   - children:
@@ -35,10 +35,10 @@ datasources:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
+
       entities:
         - entity: default/cleaning-services
-  
+
       query: |
         SELECT 
           id, 
@@ -52,54 +52,68 @@ datasources:
           '$.service', 
           '$.time', 
           '$.category' 
-        FROM [default/cleaning-services] 
-          
+        FROM [default/cleaning-services]
+
 children:
   - type: component.form
     options:
       children:
         - type: component.section
           options:
-            title: Cleaning Services
+            title:
+              text: Cleaning Services
+              fontSize: medium
+              isBold: true
+            icon:
+              name: gardening-lawn-mower-1-farming
+              shape: basic
+              type: basic
             children:
               - type: component.text-field
                 instanceId: cleaning_serv_tf
                 options:
                   label: Service
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].service
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].service
               - type: component.text-field
                 instanceId: cleaning_serv_area_tf
                 options:
                   label: Area
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].area
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].area
               - type: component.number-field
                 instanceId: cleaning_serv_time_num
                 options:
                   label: Time
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].time & ' minutes'
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].time & ' minutes'
                   keyboardType: number-pad
               - type: component.checkbox
                 instanceId: cleaning_serv_indoor_checkbox
                 options:
                   label: Indoor
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].indoor
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].indoor
               - type: component.text-field
                 instanceId: cleaning_serv_desc_tf
                 options:
                   label: Description
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].description
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].description
                   isMultiline: true
         - type: component.section
           options:
-            title: Rates
+            title:
+              text: Rates
+              fontSize: medium
+              isBold: true
+            icon:
+              name: cost-of-living-money-chat-real-estate
+              shape: basic
+              type: basic
             children:
               - type: component.text-field
                 instanceId: cleaning_serv_hourly_tf
                 options:
                   label: Hourly Rate
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate != null ? @ctx.datasources.cleaning-services-dynamic[0].hourlyrate:'N/A'
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].hourlyrate != null ? @ctx.datasources.cleaning-services-dynamic[1].hourlyrate:'N/A'
               - type: component.text-field
                 instanceId: cleaning_serv_once_tf
                 options:
                   label: Once Off Rate
-                  value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ? =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate :'N/A'               
+                  value: =@ctx.datasources.cleaning-services-dynamic[1].onceoffrate != null ? @ctx.datasources.cleaning-services-dynamic[1].onceoffrate :'N/A'

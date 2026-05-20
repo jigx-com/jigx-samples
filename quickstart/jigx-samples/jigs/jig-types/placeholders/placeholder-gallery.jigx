@@ -1,0 +1,19 @@
+title: Gallery
+type: jig.gallery
+
+placeholders:
+  - title: No photos available
+    description: Tap Upload to add your first image.
+    icon: no-image
+    when: true
+    onPress:
+      type: action.open-media-picker
+      options:
+        title: Upload
+        mediaType: image
+
+data: =@ctx.datasources.data-placeholders
+item:
+  type: component.gallery-item
+  options:
+    imageUri: =@ctx.current.item.image

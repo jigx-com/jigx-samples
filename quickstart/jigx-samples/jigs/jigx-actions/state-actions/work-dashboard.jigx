@@ -1,0 +1,105 @@
+title: Today's Work Dashboard
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1533378890784-b2a5b0a59d40?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D
+
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.field-row
+          options:
+            children:
+              # Configure the entity-field to read and display the solution
+              # state project-code value.
+              - type: component.entity-field
+                options:
+                  label: Project code
+                  value: =@ctx.solution.state.project
+              # Configure the entity-field to read and display the solution
+              # state site value.
+              - type: component.entity-field
+                options:
+                  label: Site
+                  value: =@ctx.solution.state.site
+        # Configure the entity-field to read and display the solution
+        # state team value.
+        - type: component.entity-field
+          options:
+            label: Team
+            value: =@ctx.solution.state.team
+  - type: component.section
+    options:
+      title:
+        text: Log
+        fontSize: medium
+        isSubtle: false
+        isBold: true
+        numberOfLines: 1
+      # Configure the action to submit the work log data to the
+      # work-logs entity in Dynamic, including uploading any images
+      # captured on site.
+      actions:
+        - type: action.execute-entity
+          options:
+            title: Submit Log
+            style:
+              isPrimary: true
+            provider: DATA_PROVIDER_DYNAMIC
+            entity: default/work-logs
+            method: create
+            data:
+              # Take note of how certain data is derived from the solution state,
+              # and other from the component state.
+              project-code: =@ctx.solution.state.project
+              team: =@ctx.solution.state.team
+              site: =@ctx.solution.state.site
+              date: =@ctx.components.date.state.value
+              time-log: =@ctx.components.time-log.state.value
+              notes: =@ctx.components.notes.state.value
+            # Upload images to Dynamic files.
+            file:
+              localPath: =@ctx.components.images.state.value
+            # Handle success alert after log submission to notify user that the log data has been submitted.
+            onSuccess:
+              type: action.show-alert
+              options:
+                title: Work Log Submitted
+                description: Your work log has been successfully submitted.
+                presentAs: modal
+                dismiss:
+                  autoAfter: 3
+                icon: check-circle
+                style:
+                  isPositive: true
+
+      children:
+        - type: component.date-picker
+          instanceId: date
+          options:
+            initialValue: =$now()
+            label: Select the day
+        - type: component.duration-picker
+          instanceId: time-log
+          options:
+            label: Log your hours
+        - type: component.text-field
+          instanceId: notes
+          options:
+            label: Enter work log notes here...
+            isMultiline: true
+            maxLength: 250
+            icon: notes-add
+        - type: component.media-field
+          instanceId: images
+          options:
+            mediaType: image
+            label: Capture site images

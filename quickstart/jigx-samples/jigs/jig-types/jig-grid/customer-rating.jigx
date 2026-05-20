@@ -1,4 +1,4 @@
-title: Rating  
+title: Rating
 description: Customer Survey
 type: jig.default
 
@@ -13,16 +13,16 @@ header:
           uri: https://images.unsplash.com/photo-1628313388777-9b9a751dfc6a?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 
 datasources:
-  customer-satisfaction: 
+  customer-satisfaction:
     type: datasource.static
     options:
       data:
         - id: 1
           option: 😀 Happy
         - id: 2
-          option: 😕 Neutral  
+          option: 😕 Neutral
         - id: 3
-          option: 😡 Sad 
+          option: 😡 Sad
 
 children:
   - type: component.form
@@ -45,15 +45,16 @@ actions:
   - children:
       - type: action.execute-entity
         options:
-          title: submit
+          isHidden: =@ctx.components.customer-survey.state.isDirty = false
+          title: Submit
           provider: DATA_PROVIDER_DYNAMIC
           entity: default/customer
           method: create
-          onSuccess: 
+          onSuccess:
             type: action.info-modal
             options:
               modal:
-                element: 
+                element:
                   type: image
                   uri: https://images.unsplash.com/photo-1643878037082-ba1fd9a60b16?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
                 title: Survey complete

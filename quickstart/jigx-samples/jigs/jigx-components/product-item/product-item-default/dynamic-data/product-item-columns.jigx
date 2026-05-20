@@ -1,0 +1,44 @@
+title: Product item (columns)
+type: jig.default
+
+datasources:
+  product:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id, 
+          '$.title', 
+          '$.uri',
+          '$.tag', 
+          '$.price',
+          '$.discount', 
+          '$.quantity',
+          '$.category',
+          '$.productId'
+        FROM [default/products] WHERE '$.title' LIKE '%'||@search||'%' AND '$.category' = "product" OR @search IS NULL AND '$.category' = "product" ORDER BY '$.title'
+      queryParameters:
+        search: =@ctx.jig.state.searchText
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.product
+      numberOfColumns: 2
+      item:
+        type: component.product-item
+        options:
+          type: default
+          tags:
+            - text: =@ctx.current.state.amount =10 ? 'max amount':''
+              color: primary
+          title: =@ctx.current.item.title
+          image:
+            uri: =@ctx.current.item.uri
+          discount: =@ctx.current.item.discount
+          price:
+            value: =@ctx.current.item.price
+            format:
+              numberStyle: currency

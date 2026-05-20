@@ -1,0 +1,39 @@
+title: Alert - modal
+type: jig.default
+
+children:
+  - type: component.list-item
+    options:
+      title: Show Alert modal
+      rightElement:
+        element: icon
+        icon: arrow-button-right
+        color: color10
+        # Configure the show-alert on the OnPress event.
+        onPress:
+          type: action.show-alert
+          options:
+            # Give the alert a title.
+            title: This is an alert modal
+            subtitle: Secondary text that appears below the title, providing additional context or supplementary information.
+            # Configure the type of alert to present on the screen.
+            presentAs: modal
+            # Add two actions buttons in the alert.
+            actions:
+              - type: action.go-back
+                options:
+                  title: go-back
+              - type: action.go-to
+                options:
+                  title: Continue
+                  linkTo: billing-form
+                  # Style the second action button as secondary action.
+                  style:
+                    isSecondary: true
+            # Add the details of the alert, which are displayed in the modal.
+            description: This is a alert description and can include static text, inputs, dynamic data from expressions
+            # Select an icon in context with the alert.
+            icon: check
+            # Style the alert depending on the severity
+            style:
+              isPositive: true

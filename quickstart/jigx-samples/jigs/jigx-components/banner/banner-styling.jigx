@@ -1,0 +1,27 @@
+title: Product App
+type: jig.default
+
+children:
+  - type: component.banner
+    options:
+      title:
+        text: Your Trial Has Expired
+        fontSize: regular
+        isBold: true
+      subtitle:
+        text: Complete your billing details to make the transition
+      leftElement:
+        element: icon
+        icon: time-clock-circle-alternate
+        type: duotone
+        shape: circle
+        color: negative
+      actions:
+        - type: action.go-back
+          options:
+            title: Enter Details
+        - type: action.go-back
+          options:
+            title: Dismiss Now
+      style:
+        isNegative: true

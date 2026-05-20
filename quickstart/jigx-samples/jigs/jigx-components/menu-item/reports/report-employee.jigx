@@ -1,0 +1,314 @@
+title: Employee/Workforce Report
+type: jig.document
+
+source:
+  documentType: HTML
+  content: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Q1 2025 Workforce Report</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #f7f7f7;
+          color: #333;
+        }
+
+        .report-container {
+          max-width: 900px;
+          margin: 0 auto;
+          background-color: #ffffff;
+          padding: 24px 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2, h3 {
+          color: #123456;
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 0.25rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+          margin-top: 1.8rem;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+          margin-top: 1rem;
+          margin-bottom: 0.4rem;
+        }
+
+        .meta {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          margin: 0.3rem 0 0.8rem 0;
+        }
+
+        .section-divider {
+          border-top: 1px solid #e0e0e0;
+          margin: 1.5rem 0;
+        }
+
+        .highlight {
+          font-weight: bold;
+        }
+
+        ul {
+          margin: 0.3rem 0 1rem 1.2rem;
+        }
+
+        .metrics-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 12px;
+          margin: 0.5rem 0 1rem 0;
+        }
+
+        .metric-card {
+          background-color: #f5f8fd;
+          border-radius: 6px;
+          padding: 10px 12px;
+          border: 1px solid #e0e6f2;
+          font-size: 0.95rem;
+        }
+
+        .metric-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          color: #777;
+        }
+
+        .metric-value {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-top: 4px;
+        }
+
+        .metric-note {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 4px;
+        }
+
+        @media print {
+          body {
+            background-color: #ffffff;
+          }
+          .report-container {
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="report-container">
+        <header>
+          <h1>Q1 2025 Workforce Report</h1>
+          <div class="meta">
+            <div><span class="highlight">Focus Areas:</span> Attendance • Scheduling • Productivity • HR Metrics</div>
+            <div><span class="highlight">Reporting Period:</span> January – March 2025</div>
+          </div>
+          <div class="section-divider"></div>
+        </header>
+
+        <!-- 1. Summary -->
+        <section>
+          <h2>1. Summary</h2>
+          <p>
+            Q1 2025 showed strong workforce stability, improved attendance, and steady productivity levels
+            across teams. Scheduling compliance improved, and employee engagement remained positive.
+            HR indicators suggest a healthy and well-supported workforce with low turnover.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 2. Attendance Highlights -->
+        <section>
+          <h2>2. Attendance Highlights</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Overall Attendance Rate</div>
+              <div class="metric-value">96%</div>
+              <div class="metric-note">Across all teams</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Late Arrivals</div>
+              <div class="metric-value">-12%</div>
+              <div class="metric-note">vs. Q4 2024</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Unplanned Absences</div>
+              <div class="metric-value">1.3 days</div>
+              <div class="metric-note">Average per employee</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Top Performing Team</div>
+              <div class="metric-value">Field Ops</div>
+              <div class="metric-note">98% attendance</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Key Insight:</span> Improved attendance was linked to clearer scheduling and better communication of shift changes.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 3. Scheduling Overview -->
+        <section>
+          <h2>3. Scheduling Overview</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Shift Coverage</div>
+              <div class="metric-value">99%</div>
+              <div class="metric-note">Scheduled shifts filled</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Schedule Compliance</div>
+              <div class="metric-value">93%</div>
+              <div class="metric-note">Planned vs. actual</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Last-Minute Changes</div>
+              <div class="metric-value">-15%</div>
+              <div class="metric-note">Fewer urgent edits</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Digital Scheduling Use</div>
+              <div class="metric-value">78%</div>
+              <div class="metric-note">Teams using digital tools</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Note:</span> Teams adopting automated scheduling had fewer conflicts and better on-time attendance.</p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 4. Productivity Metrics -->
+        <section>
+          <h2>4. Productivity Metrics</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Productivity Index</div>
+              <div class="metric-value">88 / 100</div>
+              <div class="metric-note">Overall efficiency score</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Tasks per Employee</div>
+              <div class="metric-value">142</div>
+              <div class="metric-note">Completed in the quarter</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">On-Time Completion</div>
+              <div class="metric-value">91%</div>
+              <div class="metric-note">Tasks completed on schedule</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Downtime Reduction</div>
+              <div class="metric-value">+7%</div>
+              <div class="metric-note">Less idle time</div>
+            </div>
+          </div>
+
+          <p><span class="highlight">Drivers of Productivity:</span></p>
+          <ul>
+            <li>More streamlined workflows.</li>
+            <li>Better access to mobile tools and job information.</li>
+            <li>Improved cross-team coordination.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 5. HR & People Metrics -->
+        <section>
+          <h2>5. HR &amp; People Metrics</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Employee Count</div>
+              <div class="metric-value">42</div>
+              <div class="metric-note">Active employees</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">New Hires</div>
+              <div class="metric-value">3</div>
+              <div class="metric-note">Onboarded in Q1</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Departures</div>
+              <div class="metric-value">1</div>
+              <div class="metric-note">Voluntary exit</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Turnover Rate</div>
+              <div class="metric-value">2.3%</div>
+              <div class="metric-note">Quarterly</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Training Hours</div>
+              <div class="metric-value">120</div>
+              <div class="metric-note">Total delivered</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Satisfaction Score</div>
+              <div class="metric-value">4.5 / 5</div>
+              <div class="metric-note">From internal survey</div>
+            </div>
+          </div>
+
+          <p>
+            <span class="highlight">Insight:</span>
+            Employees expressed strong confidence in leadership communication and in the tools provided for daily work.
+          </p>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 6. Key Opportunities -->
+        <section>
+          <h2>6. Key Opportunities for Q2 2025</h2>
+          <ul>
+            <li>Expand digital scheduling to remaining teams.</li>
+            <li>Increase training in mobile workflows to boost productivity further.</li>
+            <li>Implement a recognition program for high-performing individuals and teams.</li>
+            <li>Review shift patterns to reduce peak-hour pressure.</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 7. Closing Note -->
+        <section>
+          <h2>7. Closing Note</h2>
+          <p>
+            The workforce demonstrated resilience and effectiveness in Q1, with positive trends across attendance,
+            scheduling, and productivity. Continued investment in people, tools, and training will help sustain
+            this momentum into Q2 and beyond.
+          </p>
+        </section>
+      </div>
+    </body>
+    </html>

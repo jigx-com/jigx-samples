@@ -1,0 +1,124 @@
+title: Weekly schedule
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1658534983135-d6a899a6dc7e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFja2dyb3VuZCUyMHdvcmt8ZW58MHx8MHx8fDA%3D
+
+onRefresh:
+  type: action.reset-jig-state
+  options:
+    changes:
+      - dayFilter
+
+state:
+  dayFilter:
+    initialValue: ""
+
+datasources:
+  roster:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/week-roster
+      query: |
+        SELECT id,
+          '$.TechnicianName',
+          '$.Monday',
+          '$.Tuesday',
+          '$.Wednesday',
+          '$.Thursday',
+          '$.Friday',
+          '$.Notes',
+          '$.avatar',
+          '$.position'
+        FROM [default/week-roster]
+        WHERE 
+            (@filter = 'Monday' and '$.Monday' != 'Off')
+            OR (@filter = 'Tuesday' and '$.Tuesday' != 'Off')
+            OR (@filter = 'Wednesday' and '$.Wednesday' != 'Off')
+            OR (@filter = 'Thursday' and '$.Thursday' != 'Off')
+            OR (@filter = 'Friday' and '$.Friday' != 'Off')
+
+      queryParameters:
+        filter: =@ctx.jig.state.dayFilter
+
+  week-day:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          day: Monday
+        - id: 2
+          day: Tuesday
+        - id: 3
+          day: Wednesday
+        - id: 4
+          day: Thursday
+        - id: 5
+          day: Friday
+
+children:
+  - type: component.list
+    instanceId: day-roster
+    options:
+      data: =@ctx.datasources.week-day
+      numberOfColumns: 2
+      maximumItemsToRender: 8
+      item:
+        type: component.menu-item
+        options:
+          title:
+            text: =@ctx.current.item.day
+            fontSize: regular
+            color: color1
+            isSubtle: false
+            isBold: true
+            numberOfLines: 1
+          leftElement:
+            element: avatar
+            text: =@ctx.current.item.day
+            color: color3
+          onPress:
+            type: action.set-jig-state
+            options:
+              changes:
+                dayFilter: =@ctx.current.item.day
+  - type: component.divider
+  - type: component.section
+    when: =$boolean(@ctx.jig.state.dayFilter)
+    options:
+      title:
+        text: =@ctx.jig.state.dayFilter & " team"
+        fontSize: regular
+        isBold: true
+        transform: uppercase
+      children:
+        - type: component.list
+          when: =$boolean(@ctx.jig.state.dayFilter)
+          options:
+            data: =@ctx.datasources.roster
+            maximumItemsToRender: 8
+            item:
+              type: component.list-item
+              options:
+                isContained: true
+                title:
+                  text: =@ctx.current.item.TechnicianName
+                  fontSize: regular
+                  isBold: true
+                  transform: uppercase
+                leftElement:
+                  element: avatar
+                  text: =@ctx.current.item.TechnicianName
+                  uri: =@ctx.current.item.avatar
+                label:
+                  title: =@ctx.current.item.position
+                  color: color1

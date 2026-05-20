@@ -1,0 +1,25 @@
+title: Amount-control
+type: jig.list
+icon: sign-badge-badge
+data: =@ctx.datasources.summary-amount-control
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.type
+    color:
+      - color: =@ctx.current.item.color
+        when: true
+    leftElement:
+      element: icon
+      type: duotone
+      icon: =@ctx.current.item.icon
+    onPress:
+      options:
+        actions:
+          - options:
+              linkTo: =@ctx.current.item.typeLink
+            type: action.go-to
+      type: action.action-list
+    rightElement:
+      element: icon
+      icon: arrow-right-1

@@ -1,0 +1,78 @@
+title: Reports
+type: jig.list
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1681487769650-a0c3fbaed85a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVwb3J0c3xlbnwwfHwwfHx8MA%3D%3D
+
+datasources:
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          category: Financial
+          description: Includes income statement, balance sheet, and cash-flow overview.
+          icon: report-f-grade
+          myjig: report-financial
+        - id: 2
+          category: Employees
+          description: Shows stock levels, reorder alerts, shrinkage, and usage trends.
+          icon: recruiting-employee-search-document
+          myjig: report-employee
+        - id: 3
+          category: Customers
+          description: Summarises customer activity, support tickets, satisfaction, and retention.
+          icon: hand-shake-heart
+          myjig: report-customer
+        - id: 4
+          category: Inventory
+          description: Shows stock levels, reorder alerts, shrinkage, and usage trends.
+          icon: supply-chain-distributor-box-package
+          myjig: report-inventory
+        - id: 5
+          category: Operational
+          description: Provides insights into efficiency, workflow bottlenecks, and key KPIs across departments.
+          icon: amazon-elastic-service-operational-analytics
+          myjig: report-operations
+        - id: 6
+          category: Sales
+          description: Tracks revenue, sales performance, top products, and trends.
+          icon: monetization-approve
+          myjig: report-sales
+
+data: =@ctx.datasources.categories
+numberOfColumns: 2
+item:
+  type: component.menu-item
+  options:
+    title:
+      text: =@ctx.current.item.category
+      fontSize: regular
+      isSubtle: false
+      isBold: true
+      numberOfLines: 1
+      transform: none
+    subtitle:
+      text: =@ctx.current.item.description
+      fontSize: regular
+      isSubtle: true
+      isBold: false
+      numberOfLines: 5
+    leftElement:
+      element: icon
+      icon: =@ctx.current.item.icon
+      color: color1
+      type: contained
+      shape: circle
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.myjig

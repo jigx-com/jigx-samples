@@ -1,0 +1,37 @@
+title: Product Review
+type: jig.list
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1682309642428-3f8b37637434?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmF0aW5nc3xlbnwwfHwwfHx8MA%3D%3D
+
+data: =@ctx.datasources.data-placeholders
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.name
+    subtitle: =@ctx.current.item.description
+    avatars: =@ctx.datasources.product-users[product =
+      @ctx.current.item.id].{"text":text,"uri":avatars}[]
+    description: =@ctx.current.item.description
+    isContained: true
+    label:
+      title: =@ctx.current.item.name
+    leftElement:
+      element: avatar
+      text: ""
+      uri: =@ctx.current.item.image
+    rating:
+      value: =@ctx.current.item.type
+      ratingIcon:
+        color: color3
+        current: =@ctx.current.item.type
+        icon: rating-star-1
+        maximum: 5

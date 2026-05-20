@@ -1,0 +1,66 @@
+title: Online store
+type: jig.default
+
+inputs:
+  category:
+    type: string
+    required: true
+
+expressions:
+  cart-sum: =$sum(@ctx.components.prod.state.amounts.amount)
+
+datasources:
+  store-items:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/marketplace
+      query: |
+        SELECT
+        id,
+        json_extract(data, '$.category') as category,
+        json_extract(data, '$.image_uri') as image_uri,
+        json_extract(data, '$.name') as name,
+        json_extract(data, '$.price') as price,
+        json_extract(data, '$.quantity') as quantity,
+        json_extract(data, '$.tag') as tag,
+        json_extract(data, '$.discount') as discount
+        FROM [default/marketplace]
+        WHERE category = @category
+
+      queryParameters:
+        category: =@ctx.jig.inputs.category
+
+children:
+  - type: component.list
+    instanceId: prod
+    options:
+      data: =@ctx.datasources.store-items
+      numberOfColumns: 2
+      item:
+        type: component.product-item
+        options:
+          type: card
+          title: =@ctx.current.item.name
+          image:
+            uri: =@ctx.current.item.image_uri
+            resizeMode: cover
+          discount: =@ctx.current.item.discount
+          price:
+            value: =@ctx.current.item.price
+            format:
+              numberStyle: currency
+          tags:
+            - text: =@ctx.current.item.tag
+              color: color4
+          amountControl:
+            initialValue: 0
+
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: cart
+      title: Your Cart
+      value: =$cart-sum

@@ -1,0 +1,208 @@
+title: Sales
+type: jig.document
+
+source:
+  documentType: HTML
+  content: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Q1 2025 Sales Report – By Region</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #f7f7f7;
+          color: #333;
+        }
+
+        .report-container {
+          max-width: 900px;
+          margin: 0 auto;
+          background-color: #ffffff;
+          padding: 24px 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2, h3 {
+          color: #123456;
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+          margin-top: 1.6rem;
+        }
+
+        h3 {
+          font-size: 1.15rem;
+          margin-top: 1.4rem;
+        }
+
+        .section-divider {
+          border-top: 1px solid #e0e0e0;
+          margin: 1.4rem 0;
+        }
+
+        .metric {
+          margin-left: 12px;
+          margin-bottom: 6px;
+        }
+
+        .chart-wrapper {
+          margin: 30px 0;
+          padding: 20px;
+          background: #f5f8fd;
+          border-radius: 8px;
+          border: 1px solid #e0e6f2;
+        }
+
+        @media print {
+          body {
+            background-color: #ffffff;
+          }
+          .report-container {
+            box-shadow: none;
+            border-radius: 0;
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="report-container">
+
+        <h1>Q1 2025 Sales Report – By Region</h1>
+        <p>A simple overview of sales performance across all regions for the first quarter.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Section: Regional Sales Overview -->
+        <section>
+          <h2>1. Regional Sales Overview</h2>
+
+          <h3>North Region</h3>
+          <div class="metric">Total Sales: <strong>$520,000</strong></div>
+          <div class="metric">Growth: <strong>+7%</strong> vs Q4</div>
+          <div class="metric">Top Products: Product A, Product C</div>
+          <div class="metric">Insight: Strong retail demand and returning customers</div>
+
+          <h3>South Region</h3>
+          <div class="metric">Total Sales: <strong>$410,000</strong></div>
+          <div class="metric">Growth: <strong>+4%</strong> vs Q4</div>
+          <div class="metric">Top Products: Product B, Product D</div>
+          <div class="metric">Insight: Stable performance with rising wholesale orders</div>
+
+          <h3>East Region</h3>
+          <div class="metric">Total Sales: <strong>$305,000</strong></div>
+          <div class="metric">Growth: <strong>+2%</strong> vs Q4</div>
+          <div class="metric">Top Products: Product A, Product E</div>
+          <div class="metric">Insight: Logistics delays affected early-quarter performance</div>
+
+          <h3>West Region</h3>
+          <div class="metric">Total Sales: <strong>$265,000</strong></div>
+          <div class="metric">Growth: <strong>+5%</strong> vs Q4</div>
+          <div class="metric">Top Products: Product C, Product F</div>
+          <div class="metric">Insight: Growth supported by new marketing campaigns</div>
+
+          <h3>Central Region</h3>
+          <div class="metric">Total Sales: <strong>$350,000</strong></div>
+          <div class="metric">Growth: <strong>+3%</strong> vs Q4</div>
+          <div class="metric">Top Products: Product B, Product C</div>
+          <div class="metric">Insight: Strong enterprise customer base driving consistency</div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- BAR CHART SECTION -->
+        <section>
+          <h2>Bar Chart: Sales by Region</h2>
+
+          <div class="chart-wrapper">
+            <canvas id="salesChart"></canvas>
+          </div>
+        </section>
+
+        <script>
+          const ctx = document.getElementById('salesChart').getContext('2d');
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['North', 'South', 'East', 'West', 'Central'],
+              datasets: [{
+                label: 'Sales ($)',
+                data: [520000, 410000, 305000, 265000, 350000],
+                backgroundColor: [
+                  '#123456',
+                  '#1e5799',
+                  '#2980b9',
+                  '#35adff',
+                  '#6bb9f0'
+                ],
+                borderColor: '#0f2a45',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              plugins: { legend: { display: false }},
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    callback: function(value) {
+                      return '$' + value.toLocaleString();
+                    }
+                  },
+                  title: {
+                    display: true,
+                    text: 'Sales (USD)'
+                  }
+                },
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Region'
+                  }
+                }
+              }
+            }
+          });
+        </script>
+
+        <div class="section-divider"></div>
+
+        <!-- Totals Section -->
+        <section>
+          <h2>2. Total Sales Summary</h2>
+          <ul>
+            <li><strong>Total Q1 Sales:</strong> $1,850,000</li>
+            <li><strong>Overall Growth:</strong> +4.3%</li>
+            <li><strong>Best Performing Region:</strong> North</li>
+            <li><strong>Region with Improvement Opportunity:</strong> East</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Insight Section -->
+        <section>
+          <h2>3. Quick Insight</h2>
+          <p>
+            Regional sales remained balanced with strong momentum in the North and South.
+            East region sales are expected to improve in Q2 as supply and logistics issues stabilize.
+          </p>
+        </section>
+
+      </div>
+    </body>
+    </html>

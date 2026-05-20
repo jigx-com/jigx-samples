@@ -1,0 +1,19 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: rating-five-star
+      type: Basic rating
+      typeLink: rating-basic
+    - color: color2
+      icon: rating-star-check
+      type: Rating with custom icon
+      typeLink: rating-custom-icon
+    - color: color3
+      icon: rating-hotel
+      type: Rating in a form
+      typeLink: rating-form
+    - color: color5
+      icon: rating-booklet
+      type: Rating options
+      typeLink: rating-options

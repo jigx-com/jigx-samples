@@ -1,0 +1,74 @@
+title: Team task list
+description: Team work list, select your task to start working on it.
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    children:
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1590402494628-9b9acf0b90ae?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      type: component.image
+    height: medium
+
+datasources:
+  team-tasks:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/tasks
+      query: |
+        SELECT 
+          id, 
+          '$.taskAssignee',
+          '$.taskName',
+          '$.taskCost',
+          '$.taskId', 
+          '$.taskStatus',
+          '$.team', 
+          '$.Profile',
+          '$.priority'         
+        FROM [default/tasks]
+data: =@ctx.datasources.team-tasks
+item:
+  type: component.list-item
+  options:
+    isContained: true
+    title: =@ctx.current.item.taskAssignee
+    subtitle: =@ctx.current.item.taskName
+    # Add multiple tags to the list-items.
+    # Each tag can have its own color.
+    # Tags are shown in the order they configured.
+    tags:
+      - text: =@ctx.current.item.team
+        color: primary
+      - text: =@ctx.current.item.priority
+        color: warning
+      - text: =@ctx.current.item.taskStatus
+        color: color2
+    leftElement:
+      element: avatar
+      text: =@ctx.current.item.taskAssignee
+      uri: =@ctx.current.item.Profile
+    rightElement:
+      element: button
+      title: Start
+      onPress:
+        type: action.action-list
+        options:
+          isSequential: true
+          actions:
+            - type: action.show-alert
+              when: =@ctx.user.displayName != @ctx.current.item.taskAssignee
+              options:
+                title: Access denied
+                description: This task is assigned to someone else.
+                presentAs: toast
+                group:
+                  id: task-allocation
+            - type: action.go-to
+              when: =@ctx.user.displayName = @ctx.current.item.taskAssignee
+              options:
+                linkTo: appointments

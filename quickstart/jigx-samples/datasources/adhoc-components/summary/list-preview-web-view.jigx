@@ -1,9 +1,9 @@
 type: datasource.static
 options:
   data:
-    - title: Long-press on a widget
+    - title: Long-press on a widget (iOS feature)
       link: web-widget
       color: color1
-    - title: Long-press - onPress action
+    - title: Long-press - onPress action (iOS feature)
       link: web-longpress-onPress
       color: color2

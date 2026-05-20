@@ -13,6 +13,9 @@ options:
     - title: List with Stages
       link: list-with-stage-sd
       color: color4
+    - title: List with menu-item
+      link: menu-item-list
+      color: color1
     - title: List with Product-items
       link: list-with-product-item-dd
       color: color5
@@ -21,7 +24,7 @@ options:
       color: color6
     - title: List with right numbered badge
       link: list-right-numbered-badge
-      color: color12    
+      color: color12
     - title: List with Pie Charts
       link: list-with-pie-charts-sd
       color: color7
@@ -39,7 +42,7 @@ options:
       color: color11
     - title: Filter list with default tab
       link: list-filter-initialvalue
-      color: color4  
+      color: color4
     - title: List with Search and Filter functionality
       link: list-filter-search-label-dd
       color: color12
@@ -73,8 +76,6 @@ options:
     - title: List showing multiple tags
       link: list-with-tags-multiple
       color: color8
-    - title: List with rating, tags and badges 
+    - title: List with rating, tags and badges
       link: list-with-tags-rating
-      color: color9 
-      
-        
+      color: color9

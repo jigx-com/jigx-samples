@@ -1,4 +1,4 @@
-title: Media-field image upload with freestyle cropping
+title: Media-field image upload
 type: jig.default
 icon: image-document-jpg
 
@@ -14,10 +14,6 @@ children:
             mediaType: image
             label: Upload image
             maximumFileSize: none
-            imageCropping:
-              width: 500
-              height: 450
-              isFreeStyleCropEnabled: true
 
 actions:
   - children:

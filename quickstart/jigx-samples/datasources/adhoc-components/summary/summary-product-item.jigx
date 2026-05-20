@@ -1,17 +1,39 @@
 type: datasource.static
-options:  
+options:
   data:
     - color: color1
       icon: products-shopping-bags-double
       typeLink: product-item-tags-dynamic
-      type: Product-item with tags
+      type: Product-item with tags (default)
     - color: color2
       icon: products-give-purse
       typeLink: product-item-example-dynamic
-      type: Product-item with onChange, amountControl, search
+      type: Product-item with onChange, amountControl, search (default)
     - color: color3
       icon: cashless-payment-camera-product-scanning-cart
       typeLink: product-item-summary-static
-      type: Product-item with summary
-    
-    
+      type: Product-item with summary (default)
+    - color: color4
+      icon: cashless-payment-cad-top-up-wallet-add
+      typeLink: product-item-columns
+      type: Multi-column product-items (default)
+    - color: color7
+      icon: cashless-payment-camera-product-scanning-basket
+      typeLink: card-product-item-tags
+      type: product-items with tags (card)
+    - color: color5
+      icon: cashless-payment-card-top-up-smartphone
+      typeLink: card-product-item-columns
+      type: Multi-column product-items (card)
+    - color: color6
+      icon: cashless-payment-e-wallet-browser
+      typeLink: card-product-item-columns-tags
+      type: Multi-column product-items with tags (card)
+    - color: color8
+      icon: cashless-payment-e-wallet-smartphone
+      typeLink: card-product-item-columns-tabs
+      type: Multi-column product-items in tabs (card)
+    - color: color9
+      icon: cashless-payment-market-basket-card
+      typeLink: card-product-item-columns-menu-item
+      type: Menu-items with multi-column product-items (card)

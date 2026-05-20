@@ -1,0 +1,180 @@
+title: ="Welcome " & @ctx.user.displayName
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D
+
+datasources:
+  work-selection:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          project-code: PRJ001
+          site: Harbour View Residences
+          electrical: team-A
+          plumbing: team-B
+          icon: building-1-building
+          color: color2
+
+        - id: 2
+          project-code: PRJ002
+          site: Riverside Business Park
+          electrical: team-A
+          plumbing: team-B
+          building: team-C
+          icon: building-2-building
+          color: color3
+        - id: 3
+          project-code: PRJ003 # solution state = project
+          site: Cedar Grove Estate # solution state = site
+          painting: team-D
+          plumbing: team-B
+          installation: team-E
+          icon: building-building
+          color: color2
+        - id: 4
+          project-code: PRJ004
+          site: Northgate Infrastructure Upgrade
+          painting: team-D
+          landscape: team-F
+          building: team-C
+          icon: building-house-building
+          color: color3
+  work-teams:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Electrical Team
+          icon: light-bulb
+          color: color4
+        - id: 2
+          name: Plumbing Team
+          icon: water-protection-faucet
+          color: color6
+        - id: 3
+          name: Building Team
+          icon: equipment-cement-cart
+          color: color4
+        - id: 4
+          name: Painting Team
+          icon: construction-paint-building
+          color: color6
+        - id: 5
+          name: Installation Team
+          icon: door-left-hand-open-building
+          color: color4
+        - id: 6
+          name: Landscape Team
+          icon: outdoors-landscape-farming
+          color: color6
+children:
+  - type: component.section
+    options:
+      title:
+        text: Workday Selection
+        fontSize: medium
+        color: primary
+        isSubtle: false
+        isBold: true
+        numberOfLines: 1
+      children:
+        # Use a dropdown to select the project.
+        - type: component.dropdown
+          instanceId: projectId
+          options:
+            label: Select a Project
+            data: =@ctx.datasources.work-selection
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.site
+                value: =@ctx.current.item.site
+                leftElement:
+                  element: icon
+                  icon: =@ctx.current.item.icon
+                  color: =@ctx.current.item.color
+            # Configure onChange to set solution state values for project and site.
+            onChange:
+              type: action.set-solution-state
+              options:
+                changes:
+                  site: =@ctx.components.projectId.state.selected.site
+                  project: =@ctx.components.projectId.state.selected.project-code
+        # Use a dropdown to select the team.
+        - type: component.dropdown
+          instanceId: teamId
+          options:
+            label: Select your team
+            data: =@ctx.datasources.work-teams
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.name
+                value: =@ctx.current.item.id
+                leftElement:
+                  element: icon
+                  icon: =@ctx.current.item.icon
+                  color: =@ctx.current.item.color
+            # Configure onChange to set solution state values for team.
+            onChange:
+              type: action.set-solution-state
+              options:
+                changes:
+                  team: =@ctx.components.teamId.state.selected.name
+
+        - type: component.entity
+          options:
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    # Display the selected project, site and team from the solution state.
+                    - type: component.entity-field
+                      options:
+                        label: Project code
+                        value: =@ctx.solution.state.project
+                    - type: component.entity-field
+                      options:
+                        label: Project site
+                        value: =@ctx.solution.state.site
+              - type: component.entity-field
+                options:
+                  label: team
+                  value: =@ctx.solution.state.team
+
+actions:
+  - numberOfVisibleActions: 2
+    children:
+      # Go to the work dashboard when starting the day using the solution state values set in the dropdowns.
+      - type: action.go-to
+        options:
+          linkTo: work-dashboard
+          title: Start the day
+      - type: action.action-list
+        options:
+          isSequential: true
+          title: Cancel
+          actions:
+            # Reset the solution state values for project, team and site back to the initial values set in the index.jigx.
+            - type: action.reset-solution-state
+              options:
+                changes:
+                  - project
+                  - team
+                  - site
+            # Reset the dropdown component states back to their initial values.
+            - type: action.reset-state
+              options:
+                state: =@ctx.components.projectId.state.value
+            - type: action.reset-state
+              options:
+                state: =@ctx.components.teamId.state.value

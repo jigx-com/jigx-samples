@@ -1,0 +1,119 @@
+title: Global Inc orders
+type: jig.default
+
+datasources:
+  store-items:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/marketplace
+      query: |
+        SELECT
+        id,
+        '$.category',
+        '$.image_uri',
+        '$.name',
+        '$.price',
+        '$.quantity',
+        '$.tag',
+        '$.discount'
+        FROM [default/marketplace]
+
+  orders:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/product-orders
+      query: |
+        SELECT
+          id, 
+          '$.orderId',
+          '$.productId',
+          '$.product',
+          '$.price',
+          '$.totalPrice',
+          '$.stock',
+          '$.quantity',
+          '$.customerName',
+          '$.customerEmail',
+          '$.createdDateTime'
+        FROM [default/product-orders]
+
+children:
+  - type: component.list
+    instanceId: custom-orders
+    options:
+      data: =@ctx.datasources.store-items
+      maximumItemsToRender: 8
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.name
+          subtitle:
+            text: =@ctx.current.item.price
+            format:
+              numberStyle: currency
+              currency: USD
+            fontSize: regular
+            color: negative
+            isBold: true
+          leftElement:
+            element: image
+            text: =@ctx.current.item.name
+            uri: =@ctx.current.item.image_uri
+          rightElement:
+            element: amount-control
+            initialValue: 0
+            minimum: 0
+            maximum: 10
+            step: 1
+            onChange:
+              type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/product-orders
+                data:
+                  createdDateTime: =$now()
+                  customerEmail: =@ctx.user.email
+                  customerName: =@ctx.user.displayName
+                  id: =@ctx.datasources.orders[productId = @ctx.current.item.id].id
+                  price: =@ctx.current.item.price
+                  product: =@ctx.current.item.name
+                  productId: =@ctx.current.item.id
+                  quantity: =@ctx.current.state.amount
+                  totalPrice: =@ctx.current.item.price * @ctx.current.state.amount
+                method: save
+                onSuccess:
+                  type: action.info-modal
+                  when: =@ctx.current.state.amount > 0
+                  options:
+                    modal:
+                      buttonText: OK
+                      element:
+                        color: positive
+                        icon: check-circle-1
+                        type: icon
+                      title: Order Added
+
+            onDelete:
+              # when: =@ctx.current.state.amount = 0
+              type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/product-orders
+                data:
+                  id: =@ctx.current.item.id
+                method: delete
+                onSuccess:
+                  type: action.info-modal
+
+                  options:
+                    modal:
+                      buttonText: OK
+                      element:
+                        color: negative
+                        icon: delete-2
+                        type: icon
+                      title: Order Deleted

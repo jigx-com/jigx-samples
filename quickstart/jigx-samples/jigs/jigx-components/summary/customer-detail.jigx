@@ -1,0 +1,55 @@
+title: Customer Details
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400
+
+children:
+  - type: component.form
+    instanceId: customerForm
+    options:
+      children:
+        - type: component.text-field
+          instanceId: firstName
+          options:
+            label: First Name
+            isRequired: true
+
+        - type: component.text-field
+          instanceId: lastName
+          options:
+            label: Last Name
+            isRequired: true
+
+        - type: component.email-field
+          instanceId: email
+          options:
+            label: Email Address
+            isRequired: true
+
+        - type: component.text-field
+          instanceId: phone
+          options:
+            label: Phone Number
+            isRequired: true
+            keyboardType: phone-pad
+
+        - type: component.text-field
+          instanceId: company
+          options:
+            label: Company Name
+            isRequired: false
+
+        - type: component.text-field
+          instanceId: address
+          options:
+            label: Address
+            isMultiline: true
+            isRequired: false

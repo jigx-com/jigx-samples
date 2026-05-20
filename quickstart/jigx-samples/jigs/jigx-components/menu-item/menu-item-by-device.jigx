@@ -1,0 +1,77 @@
+title: Global Online
+type: jig.list
+icon: contact
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1561715276-a2d087060f1d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hvcHBpbmclMjBiYWd8ZW58MHx8MHx8fDA%3D
+
+datasources:
+  categories:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Daily Deals
+          myjig: placeholder
+          icon: shopping-bag-check
+        - id: 2
+          name: Special
+          myjig: placeholder
+          icon: shop-sale-1
+        - id: 3
+          name: Home
+          myjig: placeholder
+          icon: home
+        - id: 4
+          name: Camp
+          myjig: placeholder
+          icon: camping-trekking-2
+        - id: 5
+          name: Kids
+          myjig: placeholder
+          icon: child-care-2
+        - id: 6
+          name: Men
+          myjig: placeholder
+          icon: person
+        - id: 7
+          name: Women
+          myjig: placeholder
+          icon: workflow-manager-female-crown
+        - id: 8
+          name: Pets
+          myjig: placeholder
+          icon: french-bulldog
+        - id: 9
+          name: Scents
+          myjig: placeholder
+          icon: body-care-perfume-1
+
+data: =@ctx.datasources.categories
+numberOfColumns: =@ctx.system.deviceType = 'Tablet' ? 5:3
+item:
+  type: component.menu-item
+  options:
+    title:
+      text: =@ctx.current.item.name
+      fontSize: small
+      isSubtle: false
+      isBold: false
+      numberOfLines: 2
+    leftElement:
+      element: icon
+      icon: =@ctx.current.item.icon
+      color: color4
+      shape: rounded
+      type: duotone
+    onPress:
+      type: action.go-to
+      options:
+        linkTo: =@ctx.current.item.myjig

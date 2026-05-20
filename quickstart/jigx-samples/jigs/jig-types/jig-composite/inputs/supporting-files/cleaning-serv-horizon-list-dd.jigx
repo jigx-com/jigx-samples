@@ -1,7 +1,7 @@
 title: List of available services
 
 type: jig.list
-icon: contact 
+icon: contact
 isHorizontal: true
 isCollapsible: false
 isInitiallyCollapsed: true
@@ -18,37 +18,40 @@ header:
         source:
           uri: https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
 
+state:
+  servicesId:
+    initialValue: ""
+
 outputs:
-  output-key: =@ctx.solution.state.servicesId
-  
+  output-key: =@ctx.jig.state.servicesId
+
 data: =@ctx.datasources.cleaning-services-dynamic
 item:
-  
   type: component.list-item
   options:
     title: =@ctx.current.item.service
     subtitle: =@ctx.current.item.description
     horizontalItemSize: large
-    
-    progress: =@ctx.current.item.id = @ctx.solution.state.servicesId ? 1 :0
+
+    progress: =@ctx.current.item.id = @ctx.jig.state.servicesId ? 1 :0
     color:
-      - when: =@ctx.current.item.id = @ctx.solution.state.servicesId ? true :false
+      - when: =@ctx.current.item.id = @ctx.jig.state.servicesId ? true :false
         color: color2
-    leftElement: 
+    leftElement:
       element: image
-      text: ''
+      text: ""
       uri: =@ctx.current.item.image
     label:
       title: =@ctx.current.item.time & ' minutes'
     rightElement:
       element: value
       text: =(@ctx.current.item.hourlyrate) != 'NA' ? '$ ' & $number(@ctx.current.item.hourlyrate) & ' p/hr':'$ ' & $number(@ctx.current.item.onceoffrate) & ' once off'
-    onPress: 
+    onPress:
       type: action.action-list
       options:
         actions:
- # set the solution state and the value as id of the current selected item       
-          - type: action.set-state
+          # set the solution state and the value as id of the current selected item
+          - type: action.set-jig-state
             options:
-              state: =@ctx.solution.state.servicesId
-              value: =@ctx.current.item.id
+              changes:
+                servicesId: =@ctx.current.item.id

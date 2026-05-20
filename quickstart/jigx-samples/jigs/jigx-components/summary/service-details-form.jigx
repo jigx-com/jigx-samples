@@ -1,0 +1,57 @@
+title: Installation Required
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400
+datasources:
+  installation:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Yes - Full Installation
+          value: full-install
+        - id: 2
+          title: Yes - Partial Installation
+          value: partial-install
+        - id: 3
+          title: No - Equipment Only
+          value: equipment-only
+        - id: 4
+          title: Customer Will Self-Install
+          value: self-install
+children:
+  - type: component.form
+    instanceId: installationForm
+    options:
+      children:
+        - type: component.dropdown
+          instanceId: installationRequired
+          options:
+            data: =@ctx.datasources.installation
+            label: Installation Required?
+            item:
+              type: component.dropdown-item
+              options:
+                title: =@ctx.current.item.title
+                value: =@ctx.current.item.value
+            isRequired: true
+
+        - type: component.date-picker
+          instanceId: preferredInstallDate
+          options:
+            label: Preferred Installation Date
+
+        - type: component.text-field
+          instanceId: installationNotes
+          options:
+            label: Installation Notes
+            helperText: Any special requirements or site conditions
+            isMultiline: true

@@ -11,11 +11,15 @@ icons:
   - alert # auto-generated
   - alert-circle # auto-generated
   - alert-triangle # auto-generated
+  - amazon-elastic-service-operational-analytics # auto-generated
   - amazon-inspector # auto-generated
   - ambulance-helicopter # auto-generated
   - animation # auto-generated
   - app-window-four # auto-generated
   - apple # auto-generated
+  - appliances-blender # auto-generated
+  - arrow-button-circle-right # auto-generated
+  - arrow-button-right # auto-generated
   - arrow-button-right-1 # auto-generated
   - arrow-double-down # auto-generated
   - arrow-double-up # auto-generated
@@ -29,10 +33,15 @@ icons:
   - battery-charge # auto-generated
   - binocular # auto-generated
   - blood-drop-search # auto-generated
+  - body-care-perfume-1 # auto-generated
   - book-address # auto-generated
   - book-book-pages # auto-generated
+  - book-star # auto-generated
   - building-1-building # auto-generated
+  - building-2-building # auto-generated
+  - building-building # auto-generated
   - building-cloudy-building # auto-generated
+  - building-house-building # auto-generated
   - bus # auto-generated
   - business-card-1 # auto-generated
   - business-card-hand-1 # auto-generated
@@ -41,6 +50,8 @@ icons:
   - calendar # auto-generated
   - calendar-3 # auto-generated
   - camera # auto-generated
+  - camping-tent # auto-generated
+  - camping-trekking-2 # auto-generated
   - car-dashboard-lights # auto-generated
   - car-dashboard-window-rear # auto-generated
   - car-dashboard-window-rear-wipe # auto-generated
@@ -53,12 +64,14 @@ icons:
   - check-1 # auto-generated
   - check-2 # auto-generated
   - check-2-alternate # auto-generated
+  - check-circle # auto-generated
   - check-circle-1 # auto-generated
   - checkbox-checked # auto-generated
   - checkbox-unchecked # auto-generated
   - checklist # auto-generated
   - checklist-alternate # auto-generated
   - chicken-body # auto-generated
+  - child-care-2 # auto-generated
   - coding-apps-website-apps-add-widget # auto-generated
   - coding-apps-website-apps-add-widget-alternate # auto-generated
   - coding-apps-website-apps-smartphone # auto-generated
@@ -66,6 +79,8 @@ icons:
   - cog # auto-generated
   - cog-approved # auto-generated
   - color-painting-palette # auto-generated
+  - construction-paint-building # auto-generated
+  - construction-sign-building # auto-generated
   - contact # auto-generated
   - content-browser-edit # auto-generated
   - conversation-chat-2 # auto-generated
@@ -77,6 +92,7 @@ icons:
   - currency-pound # auto-generated
   - data-transfer-horizontal # auto-generated
   - database-2 # auto-generated
+  - delete-2 # auto-generated
   - delivery-person-motorcycle-1 # auto-generated
   - delivery-truck-2 # auto-generated
   - delivery-truck-5 # auto-generated
@@ -91,14 +107,18 @@ icons:
   - dog-race-compettion-2 # auto-generated
   - dog-sit # auto-generated
   - dog-sit-1 # auto-generated
+  - door-left-hand-open-building # auto-generated
   - double-exclamation-mark-1-formatting # auto-generated
   - double-exclamation-mark-2-formatting # auto-generated
+  - drill-robot-arm # auto-generated
+  - e-learning-ai-teacher-3 # auto-generated
   - east-side-gallery-berlin-wall # auto-generated
   - email # auto-generated
   - email-action-at # auto-generated
   - end-marker # auto-generated
   - envelope # auto-generated
   - equal-math-symbol-circle # auto-generated
+  - equipment-cement-cart # auto-generated
   - fan # auto-generated
   - feedback # auto-generated
   - filter-1 # auto-generated
@@ -110,14 +130,17 @@ icons:
   - food-delivery-bag # auto-generated
   - footwear-boots # auto-generated
   - form # auto-generated
+  - french-bulldog # auto-generated
   - fuel-pump-reload # auto-generated
   - gallery # auto-generated
   - gauge-dashboard # auto-generated
   - google # auto-generated
   - graph-stats-square-alternate # auto-generated
   - hammer # auto-generated
+  - hand-shake-heart # auto-generated
   - hardware-hammer-nail-hit # auto-generated
   - hat # auto-generated
+  - hat-architect # auto-generated
   - healthcare-website-cross-heart-rate-1 # auto-generated
   - home # auto-generated
   - home-5g # auto-generated
@@ -131,6 +154,7 @@ icons:
   - image-document-jpg # auto-generated
   - information-circle # auto-generated
   - jigx-solid # auto-generated
+  - job-responsibility-bag-check # auto-generated
   - landmark-colosseum-1 # auto-generated
   - landmark-eiffel-tower # auto-generated
   - landmark-empire-state # auto-generated
@@ -142,6 +166,7 @@ icons:
   - layout-corners-dashboard-1 # auto-generated
   - layout-dashboard-1 # auto-generated
   - layout-module-1 # auto-generated
+  - light-bulb # auto-generated
   - lighthouse-bird # auto-generated
   - list # auto-generated
   - list-quill # auto-generated
@@ -151,22 +176,27 @@ icons:
   - login-keys # auto-generated
   - love-it # auto-generated
   - low-fuel # auto-generated
+  - maintenance-wrench # auto-generated
   - maps-pin # auto-generated
   - messages # auto-generated
   - mindfullness # auto-generated
   - mobile-phone-1 # auto-generated
   - module-blocks # auto-generated
+  - monetization-approve # auto-generated
   - money-bag-dollar # auto-generated
   - multiple-man-woman-2-geometric-close-up # auto-generated
   - multiple-neutral-2 # auto-generated
   - navigation-menu-4 # auto-generated
   - news # auto-generated
   - no-cloud # auto-generated
+  - no-image # auto-generated
+  - notes-add # auto-generated
   - notes-paper-approve # auto-generated
   - notification # auto-generated
   - number-one-circle # auto-generated
   - number-three-circle # auto-generated
   - number-two-circle # auto-generated
+  - outdoors-landscape-farming # auto-generated
   - oxygen-tank-1 # auto-generated
   - package-size-l # auto-generated
   - pen-draw-1 # auto-generated
@@ -174,6 +204,7 @@ icons:
   - pencil-2 # auto-generated
   - pencil-write # auto-generated
   - people-conflict-1 # auto-generated
+  - people-man-1 # auto-generated
   - people-man-1-geometric # auto-generated
   - people-man-8 # auto-generated
   - person # auto-generated
@@ -190,16 +221,24 @@ icons:
   - plane-1 # auto-generated
   - play # auto-generated
   - plus # auto-generated
+  - power-tools-circular-saw # auto-generated
+  - power-tools-drill # auto-generated
+  - power-tools-wood-cutter # auto-generated
+  - power-tools-wood-cutter-1 # auto-generated
   - question-circle # auto-generated
   - rating-five-star # auto-generated
   - rating-star # auto-generated
   - rating-star-1 # auto-generated
+  - rating-star-alternate # auto-generated
+  - recruiting-employee-search-document # auto-generated
   - recycle # auto-generated
   - remove-circle # auto-generated
+  - report-f-grade # auto-generated
   - resize-shrink # auto-generated
   - restaurant-food-truck # auto-generated
   - restaurant-menu # auto-generated
   - restaurant-seat # auto-generated
+  - road-sign-no-entry # auto-generated
   - road-sign-oneway-right-alternate # auto-generated
   - robot # auto-generated
   - scanner # auto-generated
@@ -210,7 +249,11 @@ icons:
   - seo-search-page # auto-generated
   - shield-warning # auto-generated
   - shop-1 # auto-generated
+  - shop-sale-1 # auto-generated
+  - shopping-bag-check # auto-generated
   - shopping-cart-empty-1 # auto-generated
+  - sign-badge-badge # auto-generated
+  - signature # auto-generated
   - single-neutral # auto-generated
   - social-profile-avatar-alternate # auto-generated
   - social-profile-bubble # auto-generated
@@ -219,10 +262,12 @@ icons:
   - star-half # auto-generated
   - suitcase # auto-generated
   - sunbathe # auto-generated
+  - supply-chain-distributor-box-package # auto-generated
   - supply-chain-shipping-fee-included-truck # auto-generated
   - swimming-diving # auto-generated
   - swimming-goggles # auto-generated
   - synchronize-arrows-1 # auto-generated
+  - t-shirt # auto-generated
   - tags-double-1 # auto-generated
   - task-list # auto-generated
   - task-list-multiple # auto-generated
@@ -246,8 +291,10 @@ icons:
   - truck-cargo # auto-generated
   - vegan-vegetarian-food-dome # auto-generated
   - vegetable-mushroom-2 # auto-generated
+  - water-protection-faucet # auto-generated
   - wave-hand # auto-generated
   - weather # auto-generated
+  - workflow-manager-female-crown # auto-generated
   - workout # auto-generated
   - world # auto-generated
   - yoga # auto-generated

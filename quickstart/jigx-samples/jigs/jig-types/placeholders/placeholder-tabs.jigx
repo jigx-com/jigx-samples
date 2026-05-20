@@ -1,0 +1,68 @@
+title: My work dashboard
+type: jig.tabs
+areTabsScrollable: false
+
+# Specify the jigs that will open in each tab.
+children:
+  - jigId: appointments-placeholder
+    instanceId: appointments
+    tab:
+      type: component.tab-button
+      options:
+        title: Today
+        # Add an icon to the tab. The title is diplayed below the icon.
+        # When active the icon uses the primary color.
+        icon: calendar-3
+  - jigId: inventory
+    instanceId: inventory
+    tab:
+      type: component.tab-button
+      options:
+        title: Stock
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: supply-chain-shipping-fee-included-truck
+  - jigId: timelogs
+    instanceId: timelogs
+    tab:
+      type: component.tab-button
+      options:
+        title: Logs
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: time-clock-circle-1-alternate
+  # - jigId: manuals
+  #   instanceId: manuals
+  #   tab:
+  #     type: component.tab-button
+  #     options:
+  #       title: Help
+  #       # Add an icon to the tab. The title is diplayed below the icon.
+  #       icon: book-book-pages
+
+actions:
+  - numberOfVisibleActions: 1
+    children:
+      - type: action.action-list
+        options:
+          isHidden: =@ctx.jig.state.activeTabId ="inventory"
+          title: Continue
+          isSequential: false
+          actions:
+            - type: action.info-modal
+              when: =@ctx.jig.state.activeTabId ="timelogs"
+              options:
+                modal:
+                  title: Successfully submitted
+                  buttonText: Exit
+                  element:
+                    type: icon
+                    icon: check-2
+                    color: positive
+            - type: action.open-map
+              when: =@ctx.jig.state.activeTabId ="appointments"
+              options:
+                title: Directions
+                address: 105 Othello Dr, Woodstock, GA 30189, United States
+            - type: action.open-url
+              when: =@ctx.jig.state.activeTabId ="manuals"
+              options:
+                url: https://www.manualslib.com/

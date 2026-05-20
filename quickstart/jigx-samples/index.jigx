@@ -40,14 +40,18 @@ onLoad:
           state: =@ctx.solution.state.onChange-key
           value: Initial state value
 
-    
+state:
+  project:
+    initialValue: "none"
+  team:
+    initialValue: "none"
+  site:
+    initialValue: "none"
+
 tabs:
   samples:
     jigId: home-summary
     icon: coding-apps-website-apps-smartphone
   widgets:
     jigId: widget-overview
-    icon:  coding-apps-website-apps-add-widget-alternate   
-  
-
-
+    icon: coding-apps-website-apps-add-widget-alternate

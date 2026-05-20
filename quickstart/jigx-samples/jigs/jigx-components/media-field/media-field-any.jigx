@@ -28,10 +28,6 @@ children:
             mediaType: any
             label: Submit your claim documents
             maximumFileSize: none
-            imageCropping:
-              width: 500
-              height: 450
-              isFreeStyleCropEnabled: true
             isMultiple: true
 
 actions:

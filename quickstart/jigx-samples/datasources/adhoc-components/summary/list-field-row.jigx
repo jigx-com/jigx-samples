@@ -7,3 +7,6 @@ options:
     - title: Field-row on form
       link: form-row-children-dd
       color: color2
+    - color: color3
+      link: form-row-children-flex
+      title: Field-row with flex style

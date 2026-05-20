@@ -40,8 +40,7 @@ actions:
               options:
                 mediaType: image
                 imageQuality: 20
-                imageCropping:
-                  isEnabled: true
+
             # Create a new task-image record in Dynamic files in Dyanmic Data.
             - type: action.execute-entity
               options:

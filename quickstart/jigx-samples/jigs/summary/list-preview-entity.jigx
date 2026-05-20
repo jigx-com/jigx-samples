@@ -1,4 +1,4 @@
-title: Preview - Entity
+title: Preview - Entity (iOS feature)
 type: jig.list
 
 data: =@ctx.datasources.list-preview-entity

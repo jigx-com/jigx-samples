@@ -1,0 +1,151 @@
+title: HVAC Purchase Order
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400
+datasources:
+  equipment:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+        - title: Air Conditioning Unit
+          value: ac-unit
+        - id: 2
+          title: Furnace
+          value: furnace
+        - id: 3
+          title: Heat Pump
+          value: heat-pump
+        - id: 4
+          title: Boiler
+          value: boiler
+        - id: 5
+          title: Air Handler
+          value: air-handler
+        - id: 6
+          title: Ductwork
+          value: ductwork
+        - id: 7
+          title: Thermostat
+          value: thermostat
+        - id: 8
+          title: Other
+          value: other
+  shippingMethod:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Standard Delivery
+          value: standard
+        - id: 2
+          title: Express Delivery
+          value: express
+        - id: 3
+          title: Will Call / Pickup
+          value: pickup
+        - id: 4
+          title: Freight
+          value: freight
+
+children:
+  - type: component.form
+    instanceId: hvacPurchaseOrderForm
+    options:
+      children:
+        # Order Information
+        - type: component.section
+          options:
+            title: Order Information
+            children:
+              - type: component.text-field
+                instanceId: poNumber
+                options:
+                  label: PO Number
+                  isRequired: true
+
+              - type: component.date-picker
+                instanceId: orderDate
+                options:
+                  label: Order Date
+                  isRequired: true
+
+              - type: component.date-picker
+                instanceId: requiredDate
+                options:
+                  label: Required Delivery Date
+                  isRequired: true
+
+        # Equipment Details
+        - type: component.section
+          options:
+            title: Equipment Details
+            children:
+              - type: component.dropdown
+                instanceId: equipmentType
+                options:
+                  data: =@ctx.datasources.equipment
+                  label: Equipment Type
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.title
+                  isRequired: true
+
+              - type: component.number-field
+                instanceId: quantity
+                options:
+                  label: Quantity
+                  isRequired: true
+                  minimum: 1
+
+              - type: component.number-field
+                instanceId: unitPrice
+                options:
+                  label: Unit Price
+                  format:
+                    numberStyle: currency
+                    currency: USD
+                  isRequired: true
+                  minimum: 0
+
+              - type: component.text-field
+                instanceId: totalPrice
+                options:
+                  label: Total Price
+                  style:
+                    isDisabled: true
+                  value: =@ctx.components.quantity.state.value * @ctx.components.unitPrice.state.value
+
+        # Shipping Information
+        - type: component.section
+          options:
+            title: Shipping Information
+            children:
+              - type: component.text-field
+                instanceId: shippingAddress
+                options:
+                  label: Delivery Address
+                  isRequired: true
+                  helperText: Enter complete delivery address
+                  isMultiline: true
+
+              - type: component.dropdown
+                instanceId: shippingMethod
+                options:
+                  label: Shipping Method
+                  data: =@ctx.datasources.shippingMethod
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.value

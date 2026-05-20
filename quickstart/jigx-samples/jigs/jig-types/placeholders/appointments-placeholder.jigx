@@ -1,0 +1,35 @@
+title: Today
+description: My appointments for today
+type: jig.default
+
+placeholders:
+  - title: No jobs scheduled
+    icon: oil-drop
+    description: Use today to catch up on equipment maintenance and restocking supplies.
+    when: true
+datasources:
+  appointments:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          time:
+          customer:
+          address:
+
+children:
+  - type: component.form
+    instanceId: schedule-appt
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.choice-field
+          instanceId: appointment
+          options:
+            label: Today
+            data: =@ctx.datasources.appointments
+            item:
+              type: component.choice-field-item
+              options:
+                title: =@ctx.current.item.customer
+                value: =@ctx.current.item.address

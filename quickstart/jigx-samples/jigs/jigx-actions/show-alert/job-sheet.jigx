@@ -1,0 +1,66 @@
+title: Job Sheet
+type: jig.default
+
+inputs:
+  job:
+    type: string
+    required: true
+  location:
+    type: string
+  time:
+    type: string
+  PPE:
+    type: boolean
+  ppeItems:
+    type: array
+  priority:
+    type: string
+
+children:
+  - type: component.section
+    options:
+      title: Job Information
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: Job Title
+                  value: =@ctx.jig.inputs.job
+              - type: component.entity-field
+                options:
+                  label: Location
+                  value: =@ctx.jig.inputs.location
+
+              - type: component.entity-field
+                options:
+                  label: Assigned To
+                  value: =@ctx.user.displayName
+
+              - type: component.entity-field
+                options:
+                  label: Scheduled Time
+                  value: =@ctx.jig.inputs.time
+
+              - type: component.entity-field
+                options:
+                  label: Priority
+                  value: =@ctx.jig.inputs.priority
+
+  - type: component.section
+    options:
+      title: Safety Requirements
+      children:
+        - type: component.entity
+          options:
+            children:
+              - type: component.entity-field
+                options:
+                  label: PPE Required
+                  value: =@ctx.jig.inputs.PPE
+
+              - type: component.entity-field
+                options:
+                  label: Required PPE Items
+                  value: =@ctx.jig.inputs.ppeItems

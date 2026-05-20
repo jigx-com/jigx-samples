@@ -1,0 +1,54 @@
+title: Add your review
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://plus.unsplash.com/premium_photo-1682309642428-3f8b37637434?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmF0aW5nc3xlbnwwfHwwfHx8MA%3D%3D
+
+children:
+  - type: component.form
+    instanceId: review-form
+    options:
+      isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.text-field
+          instanceId: title
+          options:
+            label: Product
+        - type: component.text-field
+          instanceId: subtitle
+          options:
+            label: Review
+        - type: component.number-field
+          instanceId: rating
+          options:
+            label: Rating
+            maximum: 5
+        - type: component.media-field
+          instanceId: productImage
+          options:
+            mediaType: image
+            label: Photo
+actions:
+  - numberOfVisibleActions: 1
+    children:
+      - type: action.execute-entity
+        options:
+          title: Submit Review
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/product-review
+          method: create
+          data:
+            title: =@ctx.components.title.state.value
+            subtitle: =@ctx.components.subtitle.state.value
+            productImage: =@ctx.components.productImage.state.value
+            rating: =@ctx.components.rating.state.value
+          style:
+            isSecondary: true
+            isDisabled: true

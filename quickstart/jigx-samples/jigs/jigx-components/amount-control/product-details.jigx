@@ -1,0 +1,83 @@
+title: Product details
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://builder.jigx.com/assets/images/header.jpg
+
+inputs:
+  productId:
+    type: string
+    required: true
+  imageUri:
+    type: string
+  title:
+    type: string
+  price:
+    type: number
+  discount:
+    type: number
+  tag:
+    type: string
+  precise-detail:
+    type: string
+children:
+  - type: component.card
+    options:
+      children:
+        - type: component.image
+          options:
+            source:
+              uri: =@ctx.jig.inputs.imageUri
+            resizeMode: cover
+            height: 250
+
+  - type: component.list-item
+    options:
+      title:
+        text: =@ctx.jig.inputs.title
+        fontSize: medium
+        color: color1
+        isSubtle: false
+        isBold: true
+        numberOfLines: 1
+        transform: uppercase
+      subtitle:
+        text: =@ctx.jig.inputs.precise-detail
+        fontSize: regular
+        # color:
+        isSubtle: false
+        isBold: false
+        numberOfLines: 4
+        transform: none
+      rightElement:
+        element: text
+        firstLine:
+          text: =@ctx.jig.inputs.price
+          format:
+            numberStyle: currency
+            currency: USD
+          fontSize: regular
+          color: negative
+          transform: none
+  - type: component.amount-control
+    instanceId: cart-amount
+    options:
+      initialValue: 1
+      minimum: 0
+      maximum: 10
+      step: 1
+summary:
+  children:
+    type: component.summary
+    instanceId: cartNo
+    options:
+      layout: cart
+      value: =@ctx.components.cart-amount.state.value
+      title: Items in your cart

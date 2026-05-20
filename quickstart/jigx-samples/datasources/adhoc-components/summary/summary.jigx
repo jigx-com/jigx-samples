@@ -1,6 +1,10 @@
 type: datasource.static
 options:
   data:
+    - color: color11
+      component: Amount-control
+      componentLink: amount-control-summary
+      icon: currency-dollar-circle
     - color: color1
       component: Avatar
       componentLink: composite-avatar
@@ -9,6 +13,9 @@ options:
       component: Avatar-field
       componentLink: avatar-field-example
       icon: career
+    - color: color12
+      component: Banner
+      componentLink: banner-summary
     - color: color3
       component: Bar-chart
       componentLink: bar-chart-summary
@@ -117,6 +124,10 @@ options:
       component: Media-field
       componentLink: media-field-summary
       icon: attachment
+    - color: color1
+      component: Menu-item
+      componentLink: menu-item-summary
+      icon: column-insert
     - color: color11
       component: Number-field
       componentLink: number-field
@@ -133,6 +144,10 @@ options:
       component: Progress-bar
       componentLink: progress-bar-summary
       icon: coding-apps-website-web-form-progress-2
+    - color: color6
+      component: Rating
+      componentLink: rating-summary
+      icon: rating-five-star
     - color: color1
       component: Section
       componentLink: list-section
@@ -145,6 +160,9 @@ options:
       component: Signature-field
       componentLink: signature-field
       icon: signature
+    - color: color1
+      component: Slider
+      componentLink: slider-summary
     - color: color3
       component: Stage
       componentLink: composite-stage

@@ -1,0 +1,36 @@
+title: What do you rate this book?
+type: jig.default
+
+inputs:
+  bookId:
+    type: string
+    required: true
+  book-title:
+    type: string
+    required: true
+
+children:
+  - type: component.rating
+    instanceId: rating
+    options:
+      label: =@ctx.jig.inputs.book-title
+      icon: book-star
+      color: warning
+      maximum: 5
+actions:
+  - numberOfVisibleActions: 1
+    children:
+      - type: action.action-list
+        options:
+          title: Submit rating
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/book-review
+                method: update
+                data:
+                  id: =$string(@ctx.jig.inputs.bookId)
+                  rating: =@ctx.components.rating.state.value
+            - type: action.go-back

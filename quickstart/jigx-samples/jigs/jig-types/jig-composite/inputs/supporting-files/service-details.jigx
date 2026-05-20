@@ -4,19 +4,21 @@ placeholders:
   - title: Please choose a service
     when: =@ctx.datasources.cleaningServices.service != null ? false:true
     icon: loading-data
-      
+inputs:
+  id:
+    type: string
 datasources:
   cleaningServices:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
+
       entities:
         - entity: default/cleaning-services
       queryParameters:
-        servId: =@ctx.solution.state.servicesId
-  
-      query: | 
+        servId: =@ctx.jig.inputs.id
+
+      query: |
         SELECT 
           id,
           '$.area', 

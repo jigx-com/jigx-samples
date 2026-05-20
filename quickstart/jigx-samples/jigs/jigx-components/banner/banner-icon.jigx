@@ -1,0 +1,42 @@
+title: Job notification
+type: jig.default
+
+children:
+  - type: component.banner
+    options:
+      title: New Job Assigned
+      subtitle: "You’ve been assigned a new task. Open your jobs list for details."
+      leftElement:
+        element: icon
+        icon: job-responsibility-bag-check
+        color: negative
+        type: contained
+        shape: rounded
+  - type: component.grid
+    options:
+      children:
+        - type: component.grid-item
+          options:
+            size: "2x2"
+            children:
+              type: component.jig-widget
+              options:
+                jigId: banner-jobs-assign
+                title: Assigned Jobs
+                icon: maintenance-wrench
+
+        - type: component.grid-item
+          options:
+            size: "2x2"
+            children:
+              type: component.jig-widget
+              options:
+                jigId: inventory
+                title: Inventory
+                icon: list
+  - type: component.location
+    options:
+      viewPoint:
+        address: 400 Broad St, Seattle, WA 98109, USA
+        centerPosition: middle
+        zoomLevel: 12

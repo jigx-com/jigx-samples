@@ -1,0 +1,176 @@
+title: Inventory
+type: jig.document
+
+source:
+  documentType: HTML
+  content: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Q1 2025 Inventory Report</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background-color: #f7f7f7;
+          color: #333;
+        }
+
+        .report-container {
+          max-width: 800px;
+          margin: 0 auto;
+          background-color: #ffffff;
+          padding: 24px 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1, h2 {
+          color: #123456;
+          margin-top: 0;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+          margin-top: 1.6rem;
+        }
+
+        .section-divider {
+          border-top: 1px solid #e0e0e0;
+          margin: 1.4rem 0;
+        }
+
+        .metric-box {
+          background-color: #f5f8fd;
+          border: 1px solid #e0e6f2;
+          border-radius: 6px;
+          padding: 14px 16px;
+          margin-bottom: 12px;
+        }
+
+        .metric-title {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          color: #777;
+          letter-spacing: 0.03em;
+        }
+
+        .metric-value {
+          font-size: 1.4rem;
+          font-weight: bold;
+          margin-top: 4px;
+          color: #123456;
+        }
+
+        ul {
+          margin: 0.4rem 0 1rem 1.3rem;
+        }
+
+        p {
+          margin: 0.3rem 0 1rem 0;
+        }
+
+        @media print {
+          body {
+            background-color: #ffffff;
+          }
+          .report-container {
+            box-shadow: none;
+            border-radius: 0;
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="report-container">
+        <h1>Q1 2025 Inventory Report</h1>
+        <p>A simple overview of inventory movement for the first quarter.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Key Metrics -->
+        <section>
+          <h2>1. Key Inventory Metrics</h2>
+
+          <div class="metric-box">
+            <div class="metric-title">Opening Stock (Jan 1, 2025)</div>
+            <div class="metric-value">$184,000</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-title">Closing Stock (Mar 31, 2025)</div>
+            <div class="metric-value">$176,500</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-title">Stock Received</div>
+            <div class="metric-value">$92,300</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-title">Stock Sold / Used</div>
+            <div class="metric-value">$99,800</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-title">Inventory Turnover</div>
+            <div class="metric-value">3.2×</div>
+          </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Best Performing Items -->
+        <section>
+          <h2>2. Best-Performing Items</h2>
+          <ul>
+            <li>Item A – Sold out twice</li>
+            <li>Item B – Turnover rate 4.1</li>
+            <li>Item C – Strong repeat demand</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Slow-Moving Items -->
+        <section>
+          <h2>3. Slow-Moving Items</h2>
+          <ul>
+            <li>Item D – Minimal sales</li>
+            <li>Item E – Long holding time</li>
+            <li><strong>Recommendation:</strong> Consider clearance or reduced orders</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Stock Issues -->
+        <section>
+          <h2>4. Stock Issues Noted</h2>
+          <ul>
+            <li>Stockouts reduced by 20% vs Q4 due to better forecasting</li>
+            <li>Two items overstocked — reorder levels need adjustment</li>
+          </ul>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Insight -->
+        <section>
+          <h2>5. Quick Insight</h2>
+          <p>
+            Inventory remained balanced in Q1. Strong turnover of core items supported healthy cash flow,
+            while improved forecasting reduced stockouts. Q2 should focus on optimizing slow-moving stock
+            and fine-tuning reorder points.
+          </p>
+        </section>
+      </div>
+    </body>
+    </html>

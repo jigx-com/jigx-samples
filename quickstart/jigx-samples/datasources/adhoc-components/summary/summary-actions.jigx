@@ -49,23 +49,35 @@ options:
       actionLink: list-action-open-url
       icon: hyperlink-3
       color: color9
+    - action: Set-reset-jig-state
+      actionLink: jig-state-set-reset
+      color: color10
+      icon: settings-horizontal
+    - action: Set-reset-solution-state
+      actionLink: solution-state-set-reset
+      icon: electronics-variable-capacitor-computers
+      color: color11
     - action: Reset-state
       actionLink: list-action-reset-state
       icon: loading-circle
-      color: color10
+      color: color12
     - action: Set-state
       actionLink: list-action-set-state
       icon: check-circle-1
-      color: color11
+      color: color13
     - action: Share
       actionLink: share-summary
       color: color1
       icon: share
     - action: Submit-form
       actionLink: submit-form
-      icon: check-circle-1
-      color: color12
+      color: color2
+      icon: button-loop-forward
+    - action: Show-alert
+      actionLink: show-alert-summary
+      color: color3
+      icon: alert
     - action: Sync-entities
       actionLink: list-action-sync-entities
       icon: synchronize-arrows-1
-      color: color13
+      color: color4

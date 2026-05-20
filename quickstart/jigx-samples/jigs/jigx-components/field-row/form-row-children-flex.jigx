@@ -1,0 +1,122 @@
+title: Field Row with Flex Style
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1588333489536-0ec90908a41f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+datasources:
+  dial-code:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          country: United States
+          code: US
+        - id: 2
+          country: United Kingdom
+          code: UK
+        - id: 3
+          country: India
+          code: IN
+        - id: 4
+          country: South Africa
+          code: SA
+
+children:
+  - type: component.section
+    options:
+      title: Field row (Flex ratio -Equal 1:1:2)
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.text-field
+                instanceId: title
+                options:
+                  label: Title
+                  style:
+                    flex: 1
+              - type: component.text-field
+                instanceId: initials
+                options:
+                  label: Initials
+                  style:
+                    flex: 1
+              - type: component.text-field
+                instanceId: lastName
+                options:
+                  label: Last name
+                  style:
+                    flex: 2
+  - type: component.section
+    options:
+      title: Field row (Flex ratio -Equal 2:1)
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.dropdown
+                instanceId: country
+                options:
+                  label: Country
+                  data: =@ctx.datasources.dial-code
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.country
+                      value: =@ctx.current.item.country
+                  style:
+                    flex: 2
+              - type: component.dropdown
+                instanceId: code
+                options:
+                  label: Code
+                  data: =@ctx.datasources.dial-code
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.code
+                      value: =@ctx.current.item.code
+                  style:
+                    flex: 1
+  - type: component.section
+    options:
+      title: Field row (Flex ratio -Equal 1:2:2)
+      children:
+        - type: component.field-row
+          options:
+            children:
+              - type: component.number-field
+                instanceId: amount
+                options:
+                  label: Amount
+                  style:
+                    flex: 1
+              - type: component.number-field
+                instanceId: tax
+                options:
+                  label:
+                    text: Tax %
+                    format:
+                      numberStyle: percent
+                  value: 0.05
+                  style:
+                    flex: 2
+              - type: component.number-field
+                instanceId: total
+                options:
+                  label:
+                    text: Total
+                    format:
+                      numberStyle: currency
+                      currency: USD
+                  value: =@ctx.components.amount.state.value * @ctx.components.tax.state.value
+                  style:
+                    flex: 2

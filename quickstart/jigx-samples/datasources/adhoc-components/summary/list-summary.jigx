@@ -1,5 +1,5 @@
 type: datasource.static
-options:  
+options:
   data:
     - color: color1
       link: summary
@@ -12,11 +12,16 @@ options:
       title: Summary - cart (Expander)
     - color: color4
       link: summary-cart-action
-      title: Summary - cart with action  
+      title: Summary - cart with action
     - color: color5
       link: summary-counter
       title: Summary - counter (Product-item)
     - color: color6
       link: summary-counter-expander
       title: Summary - counter (Expander)
-
+    - color: color7
+      link: summary-progress-tabs
+      title: Summary - progress in tabs
+    - color: color8
+      link: summary-progress
+      title: Summary - progress in forms

@@ -1,0 +1,77 @@
+title: Job Assignments
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://unsplash.com/photos/man-in-black-jacket-and-yellow-hard-hat-standing-on-top-of-building-during-daytime-umD2Bj4FmMU
+datasources:
+  task-list:
+    type: datasource.static
+    options:
+      data:
+        - icon: person
+          task-number: Task 4
+          name: Meet With Colleagues
+          status: waiting
+          avatars:
+            - text: VM
+              uri: https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+            - text: DR
+              uri: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+        - icon: checklist
+          task-number: Task 5
+          name: Use Jigx App
+          status: waiting
+          avatars:
+            - text: VM
+              uri: https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+            - text: DR
+              uri: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+        - icon: synchronize-arrows-1
+          task-number: Task 3
+          name: Meet Your Manager
+          status: done
+          avatars:
+            - text: VM
+              uri: https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+            - text: DR
+              uri: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+        - icon: synchronize-arrows-1
+          task-number: Task 2
+          name: Set Email & Calendar
+          status: done
+          avatars:
+            - text: VM
+              uri: https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+            - text: DR
+              uri: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+        - icon: play
+          task-number: Task 1
+          name: Watch Jigx Intro Video
+          status: done
+          avatars:
+            - text: VM
+              uri: https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+            - text: DR
+              uri: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60
+
+children:
+  - type: component.section
+    options:
+      title: Job Assignments
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.task-list
+            maximumItemsToRender: 8
+            item:
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.name
+                subtitle: =@ctx.current.item.task-number

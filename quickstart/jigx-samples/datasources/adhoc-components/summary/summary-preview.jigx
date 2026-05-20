@@ -1,11 +1,11 @@
 type: datasource.static
 options:
   data:
-    - action: Entity
+    - action: Entity (iOS feature)
       actionLink: list-preview-entity
       icon: navigation-menu-4
       color: color1
-    - action: Web-view
+    - action: Web-view (iOS feature)
       actionLink: list-preview-web-view
       icon: earth-3
       color: color2

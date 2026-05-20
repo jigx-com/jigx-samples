@@ -1,0 +1,53 @@
+type: jig.tabs
+title: Online shopping
+isSwipeable: true
+areTabsScrollable: false
+initialTabId: clothingId
+
+children:
+  # Tab 1
+  # Note all the tabs use the same jigId.
+  - jigId: shopping-cart
+    instanceId: clothingId
+    tab:
+      type: component.tab-button
+      options:
+        title: Clothing
+        icon: t-shirt
+    # Provide the values for the inputs to the jig to display on the jig.
+    inputs:
+      category: clothing
+  # Tab 2
+  # Note all the tabs use the same jigId.
+  - jigId: shopping-cart
+    instanceId: outdoorId
+    tab:
+      type: component.tab-button
+      options:
+        title: Outdoor
+        icon: camping-tent
+    # Provide the values for the inputs to the jig to display on the jig.
+    inputs:
+      category: outdoor
+  # Tab 3
+  # Note all the tabs use the same jigId.
+  - jigId: shopping-cart
+    instanceId: homewareId
+    tab:
+      type: component.tab-button
+      options:
+        title: Homeware
+        icon: home-apps-logo
+    # Provide the values for the inputs to the jig to display on the jig.
+    inputs:
+      category: homeware
+  - jigId: shopping-cart
+    instanceId: electronicsId
+    tab:
+      type: component.tab-button
+      options:
+        title: Electronics
+        icon: appliances-blender
+    # Provide the values for the inputs to the jig to display on the jig.
+    inputs:
+      category: electronics

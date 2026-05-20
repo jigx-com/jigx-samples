@@ -1,10 +1,10 @@
 type: datasource.static
-options:  
+options:
   data:
     - color: color1
       icon: image-file-add
       typeLink: media-field-image
-      type: Media-field image (freestyle cropping)
+      type: Media-field image
     - color: color2
       icon: video-edit-play
       typeLink: media-field-video
@@ -16,6 +16,4 @@ options:
     - color: color4
       icon: formstack-logo
       typeLink: media-field-any
-      type: Media-field any files 
-    
-    
+      type: Media-field any files

@@ -1,0 +1,110 @@
+title: Today's Jobs
+type: jig.default
+
+datasources:
+  todays-jobs:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          jobTitle: Roof Inspection
+          location: Building A - Rooftop
+          time: 08:00 AM
+          requiresPPE: true
+          ppeItems: Hard Hat, Safety Harness, Steel-Toe Boots
+          priority: high
+        - id: 2
+          jobTitle: Office Furniture Assembly
+          location: Floor 3 - Office 305
+          time: 09:30 AM
+          requiresPPE: false
+          ppeItems: None
+          priority: low
+        - id: 3
+          jobTitle: Electrical Panel Maintenance
+          location: Basement - Utility Room
+          time: 11:00 AM
+          requiresPPE: true
+          ppeItems: Insulated Gloves, Safety Glasses, Hard Hat
+          priority: high
+        - id: 4
+          jobTitle: Paint Touch-up
+          location: Lobby Area
+          time: 01:00 PM
+          requiresPPE: false
+          ppeItems: None
+          priority: medium
+        - id: 5
+          jobTitle: HVAC Duct Cleaning
+          location: Building B - Mechanical Room
+          time: 02:30 PM
+          requiresPPE: true
+          ppeItems: Respirator, Safety Goggles, Gloves
+          priority: medium
+        - id: 6
+          jobTitle: Door Lock Replacement
+          location: Floor 2 - Room 215
+          time: 03:30 PM
+          requiresPPE: false
+          ppeItems: None
+          priority: low
+        - id: 7
+          jobTitle: Welding Repair
+          location: Workshop - Bay 4
+          time: 04:00 PM
+          requiresPPE: true
+          ppeItems: Welding Helmet, Fire-Resistant Gloves, Apron
+          priority: high
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.todays-jobs
+      item:
+        type: component.list-item
+        options:
+          title:
+            text: =@ctx.current.item.jobTitle
+            isBold: true
+          subtitle: =@ctx.current.item.location & ' • ' & @ctx.current.item.time
+          leftElement:
+            element: icon
+            icon: job-responsibility-bag-check
+            color: color9
+            type: contained
+            shape: rounded
+          rightElement:
+            element: button
+            title: Select
+            onPress:
+              type: action.action-list
+              options:
+                isSequential: true
+                actions:
+                  # Trigger an alert message
+                  - type: action.show-alert
+                    # Only show if the current item requires PPE.
+                    when: =@ctx.current.item.requiresPPE = true
+                    options:
+                      title: PPE required
+                      description: ="Ensure you are wearing the correct PPE (Personal Protective Equipment) for this specific job. These include " & @ctx.current.item.ppeItems
+                      # Display the alert as a toast (non-blocking banner-style alert)
+                      # Change to modal if preferred.
+                      presentAs: toast
+                      # Automatically dismiss the toast after 3 seconds.
+                      dismiss:
+                        autoAfter: 3
+                      style:
+                        # Apply branding warning styling (usually yellow/orange).
+                        isWarning: true
+                      # Icon to visually reinforce the PPE requirement.
+                      icon: hat-architect
+                  - type: action.go-to
+                    options:
+                      linkTo: job-sheet
+                      inputs:
+                        job: =@ctx.current.item.jobTitle
+                        location: =@ctx.current.item.location
+                        time: =@ctx.current.item.time
+                        PPE: =@ctx.current.item.requiresPPE
+                        ppeItems: =@ctx.current.item.ppeItems
+                        priority: =@ctx.current.item.priority

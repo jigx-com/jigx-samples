@@ -1,0 +1,127 @@
+title: Sales Order
+type: jig.default
+
+onFocus:
+  # Display an alert modal to remind the sales person to get a signature.
+  type: action.show-alert
+  options:
+    # Alert title displays below the icon.
+    title: Reminder
+    # Modal presentation style (overlays the current screen).
+    # Change it to a toast.
+    presentAs: modal
+    subtitle: Customer signature is required
+    # Icon provides a visual engagement
+    icon: signature
+    # Visual styling to indicate this is a informative/positive action
+    style:
+      isPositive: true
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&auto=format&fit=crop&q=60
+
+children:
+  - type: component.form
+    instanceId: sales-order-form
+    options:
+      isDiscardChangesAlertEnabled: true
+      children:
+        - type: component.section
+          options:
+            title: Customer Information
+            children:
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.text-field
+                      instanceId: customerFirstName
+                      options:
+                        label: First Name
+                        isRequired: true
+                    - type: component.text-field
+                      instanceId: customerLastName
+                      options:
+                        label: Last Name
+                        isRequired: true
+              - type: component.email-field
+                instanceId: customerEmail
+                options:
+                  label: Email
+                  icon: email
+                  isRequired: true
+              - type: component.number-field
+                instanceId: customerPhone
+                options:
+                  label: Phone Number
+                  icon: phone
+                  keyboardType: number-pad
+
+        - type: component.section
+          options:
+            title: Order Details
+            children:
+              - type: component.dropdown
+                instanceId: product
+                options:
+                  label: Select Product
+                  isRequired: true
+                  data: =@ctx.datasources.products
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.name
+                      value: =@ctx.current.item.id
+              - type: component.field-row
+                options:
+                  children:
+                    - type: component.number-field
+                      instanceId: quantity
+                      options:
+                        label: Quantity
+                        isRequired: true
+                        keyboardType: number-pad
+                    - type: component.number-field
+                      instanceId: unitPrice
+                      options:
+                        label: Unit Price
+                        isRequired: true
+                        keyboardType: decimal-pad
+
+        - type: component.section
+          options:
+            icon:
+              name: signature
+            title: Customer Signature
+            children:
+              - type: component.signature-field
+                instanceId: customerSignature
+                options:
+                  label: Sign Below
+                  helperText: Please provide your signature to authorize this order
+
+actions:
+  - children:
+      - type: action.execute-entity
+        options:
+          title: Submit Order
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/sales-orders
+          method: create
+          data:
+            customerFirstName: =@ctx.components.customerFirstName.state.value
+            customerLastName: =@ctx.components.customerLastName.state.value
+            customerEmail: =@ctx.components.customerEmail.state.value
+            customerPhone: =@ctx.components.customerPhone.state.value
+            productId: =@ctx.components.product.state.value
+            quantity: =@ctx.components.quantity.state.value
+            unitPrice: =@ctx.components.unitPrice.state.value
+            totalAmount: =@ctx.components.quantity.state.value * @ctx.components.unitPrice.state.value
+            customerSignature: =@ctx.components.customerSignature.state.value
+            createdAt: =@ctx.solution.state.now

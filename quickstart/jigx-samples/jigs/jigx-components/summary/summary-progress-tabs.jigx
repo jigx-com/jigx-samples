@@ -1,0 +1,95 @@
+title: Purchase Order
+type: jig.tabs
+areTabsScrollable: false
+
+# Specify the jigs that will open in each tab.
+children:
+  - jigId: customer-detail
+    instanceId: customer
+    tab:
+      type: component.tab-button
+      options:
+        title: Customer
+        icon: people-man-1
+  - jigId: order-details
+    instanceId: order
+    tab:
+      type: component.tab-button
+      options:
+        title: Equipment
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: supply-chain-shipping-fee-included-truck
+  - jigId: service-details-form
+    instanceId: services
+    tab:
+      type: component.tab-button
+      options:
+        title: Services
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: cog
+  - jigId: sign-off
+    instanceId: signature
+    tab:
+      type: component.tab-button
+      options:
+        title: Sign off
+        # Add an icon to the tab. The title is diplayed below the icon.
+        icon: signature
+
+summary:
+  children:
+    type: component.summary
+    options:
+      layout: progress
+      value:
+        current: =@ctx.jig.state.activeTabId = 'customer' ? 1 :@ctx.jig.state.activeTabId = 'order' ? 2 :@ctx.jig.state.activeTabId = 'services' ? 3 :@ctx.jig.state.activeTabId = 'signature' ? 4:0
+        max: 4
+      color: color7
+      size: small
+      steps: 4
+      title:
+        value: Purchase order progress
+
+actions:
+  - numberOfVisibleActions: 2
+    children:
+      - type: action.execute-entity
+        options:
+          isHidden: =@ctx.jig.state.activeTabId != 'signature'
+          title: Submit order
+          provider: DATA_PROVIDER_DYNAMIC
+          entity: default/purchase-orders
+          method: create
+          data:
+            firstName: =@ctx.jigs.customer.components.firstName.state.value
+            lastName: =@ctx.jigs.customer.components.lastName.state.value
+            email: =@ctx.jigs.customer.components.email.state.value
+            phone: =@ctx.jigs.customer.components.phone.state.value
+            company: =@ctx.jigs.customer.components.company.state.value
+            address: =@ctx.jigs.customer.components.address.state.value
+            poNumber: =@ctx.jigs.order.components.poNumber.state.value
+            orderDate: =@ctx.jigs.order.components.orderDate.state.value
+            requiredDate: =@ctx.jigs.order.components.requiredDate.state.value
+            equipmentType: =@ctx.jigs.order.components.equipmentType.state.selected.value
+            quantity: =@ctx.jigs.order.components.quantity.state.value
+            unitPrice: =@ctx.jigs.order.components.unitPrice.state.value
+            totalPrice: =@ctx.jigs.order.components.totalPrice.state.value
+            shippingAddress: =@ctx.jigs.order.components.shippingAddress.state.value
+            shippingMethod: =@ctx.jigs.order.components.shippingMethod.state.selected.value
+            installationRequired: =@ctx.jigs.services.components.installationRequired.state.selected.value
+            preferredInstallDate: =@ctx.jigs.services.components.preferredInstallDate.state.value
+            installationNotes: =@ctx.jigs.services.components.installationNotes.state.value
+            signatureDate: =@ctx.jigs.signature.components.signatureDate.state.value
+            customerSignature: =@ctx.jigs.signature.components.customerSignature.state.value
+          style:
+            isDisabled: =$not(@ctx.jigs.customer.components.customerForm.state.isValid and @ctx.jigs.order.components.hvacPurchaseOrderForm.state.isValid and @ctx.jigs.services.components.installationForm.state.isValid and @ctx.jigs.signature.components.signOffForm.state.isValid)
+          onSuccess:
+            type: action.info-modal
+            options:
+              modal:
+                title: Order successfully submitted
+                element:
+                  type: icon
+                  icon: thumb-up-like
+                  color: positive
+                buttonText: Close

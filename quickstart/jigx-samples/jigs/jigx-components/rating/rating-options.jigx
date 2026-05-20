@@ -1,0 +1,128 @@
+title: Ratings
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1585853565090-5227d79f2171?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmF0aW5nfGVufDB8fDB8fHww
+onFocus:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-align.state.value
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-event.state.value
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-icon.state.value
+onRefresh:
+  type: action.action-list
+  options:
+    isSequential: true
+    actions:
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-align.state.value
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-event.state.value
+      - type: action.reset-state
+        options:
+          state: =@ctx.components.rating-icon.state.value
+
+children:
+  - type: component.section
+    options:
+      title:
+        text: Basic rating in a card
+        fontSize: regular
+        # color: primary
+        isBold: true
+        numberOfLines: 1
+        transform: uppercase
+      children:
+        - type: component.card
+          options:
+            color: color14
+            children:
+              - type: component.image
+                options:
+                  source:
+                    uri: https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmF0aW5nfGVufDB8fDB8fHww
+              - type: component.rating
+                instanceId: rating
+                options:
+                  label: Rate your wilderness experience
+                  align: center
+                  icon: rating-star
+                  maximum: 7
+  - type: component.section
+    options:
+      title:
+        text: Dynamic rating with custom icon & colors
+        fontSize: regular
+        # color: warning
+        isBold: true
+        numberOfLines: 1
+        transform: uppercase
+      children:
+        - type: component.rating
+          instanceId: rating-icon
+          options:
+            label: Rate this page
+            icon: =@ctx.component.state.value > 3 ? 'emoji-great' :'emoji-confuse-1'
+            color:
+              - when: =@ctx.component.state.value > 3
+                color: positive
+              - when: =@ctx.component.state.value < 3
+                color: negative
+              - when: =@ctx.component.state.value = 3
+                color: warning
+            maximum: 6
+  - type: component.section
+    options:
+      title:
+        text: Rating left aligned with helperText
+        fontSize: regular
+        # color: primary
+        isBold: true
+        numberOfLines: 1
+        transform: uppercase
+      children:
+        - type: component.rating
+          instanceId: rating-align
+          options:
+            label: Rate your stay
+            icon: thumb-up-like
+            color: color3
+            align: left
+            maximum: 5
+            helperText: Tap the stars to rate your overall experience at the resort.
+  - type: component.section
+    options:
+      title:
+        text: Rating right aligned with intial value
+        fontSize: regular
+        # color: primary
+        isBold: true
+        numberOfLines: 1
+        transform: uppercase
+      children:
+        - type: component.rating
+          instanceId: rating-event
+          options:
+            label: Rate the appointment
+            icon: star-half
+            color: color11
+            initialValue: 2
+            align: right
+            maximum: 3

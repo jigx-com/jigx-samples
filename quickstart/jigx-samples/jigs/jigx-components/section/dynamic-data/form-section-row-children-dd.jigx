@@ -1,5 +1,5 @@
-title: Form with Sections, Rows and Children Components
-description: Jig to display a form with sections, rows & children components
+title: Form with Sections and Children Components
+description: Jig to display a form with sections & children components
 type: jig.default
 
 header:
@@ -11,25 +11,27 @@ header:
       options:
         source:
           uri: =@ctx.datasources.cleaning-services-dynamic[0].image
-
-actions:
-  - children:
-      - type: action.execute-entity
-        options:
-          title: Update Service
-          provider: DATA_PROVIDER_DYNAMIC
-          entity: default/cleaning-services
-          method: update
-          data: 
-            id: sectionRowId
-            service: =@ctx.components.cleaning_serv_tf.state.value
-            area: =@ctx.components.cleaning_serv_area_tf.state.value
-            time: =@ctx.components.cleaning_serv_time_num.state.value
-            indoor: =@ctx.components.cleaning_serv_indoor_checkbox.state.value
-            description: =@ctx.components.cleaning_serv_desc_tf.state.value
-            hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
-            onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
-
+datasources:
+  cleaning-services-dynamic:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - entity: default/cleaning-services
+      query: |
+        SELECT 
+          id, 
+          '$.area', 
+          '$.description', 
+          '$.hourlyrate', 
+          '$.illustration', 
+          '$.image', 
+          '$.indoor', 
+          '$.onceoffrate', 
+          '$.service', 
+          '$.time', 
+          '$.category' 
+        FROM [default/cleaning-services]
 
 children:
   - type: component.form
@@ -37,62 +39,70 @@ children:
       children:
         - type: component.section
           options:
-            title: Cleaning Services
+            title:
+              text: Cleaning Services
+              fontSize: medium
+              color: primary
+              isBold: true
+            actions:
+              - type: action.execute-entity
+                options:
+                  title: Update Service & rates
+                  provider: DATA_PROVIDER_DYNAMIC
+                  entity: default/cleaning-services
+                  method: update
+                  data:
+                    id: sectionId
+                    service: =@ctx.components.cleaning_serv_tf.state.value
+                    area: =@ctx.components.cleaning_serv_area_tf.state.value
+                    time: =@ctx.components.cleaning_serv_time_num.state.value
+                    indoor: =@ctx.components.cleaning_serv_indoor_checkbox.state.value
+                    description: =@ctx.components.cleaning_serv_desc_tf.state.value
+                    hourlyRate: =@ctx.components.cleaning_serv_hourly_tf.state.value
+                    onceOffRate: =@ctx.components.cleaning_serv_once_tf.state.value
             children:
-              - type: component.field-row
+              - type: component.text-field
+                instanceId: cleaning_serv_tf
                 options:
-                  children:
-                    - type: component.text-field
-                      instanceId: cleaning_serv_tf
-                      options:
-                        label: Service
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].service
-                    - type: component.text-field
-                      instanceId: cleaning_serv_area_tf
-                      options:
-                        label: Area
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].area
-              - type: component.field-row
+                  label: Service
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].service
+              - type: component.text-field
+                instanceId: cleaning_serv_area_tf
                 options:
-                  children:
-                    - type: component.number-field
-                      instanceId: cleaning_serv_time_num
-                      options:
-                        label: Time in mins
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].time
-                        keyboardType: number-pad
-                    - type: component.checkbox
-                      instanceId: cleaning_serv_indoor_checkbox
-                      options:
-                        label: Indoor
-                        value: =@ctx.datasources.cleaning-services-dynamic[0]].indoor
-                     
-              - type: component.field-row
+                  label: Area
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].area
+              - type: component.number-field
+                instanceId: cleaning_serv_time_num
                 options:
-                  children:
-                    - type: component.text-field
-                      instanceId: cleaning_serv_desc_tf
-                      options:
-                        textArea: dynamic
-                        label: Description
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].description
-                        isMultiline: true
+                  label: Time
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].time & ' minutes'
+                  keyboardType: number-pad
+              - type: component.checkbox
+                instanceId: cleaning_serv_indoor_checkbox
+                options:
+                  label: Indoor
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].indoor
+              - type: component.text-field
+                instanceId: cleaning_serv_desc_tf
+                options:
+                  label: Description
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].description
+                  isMultiline: true
         - type: component.section
           options:
-            title: Rates
+            title:
+              text: Rates
+              fontSize: medium
+              color: color4
+              isBold: true
             children:
-              - type: component.field-row
+              - type: component.text-field
+                instanceId: cleaning_serv_hourly_tf
                 options:
-                  children:
-                    - type: component.text-field
-                      instanceId: cleaning_serv_hourly_tf
-                      options:
-                        label: Hourly Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate != null ? @ctx.datasources.cleaning-services-dynamic[0].hourlyrate:'N/A'
-                    - type: component.text-field
-                      instanceId: cleaning_serv_once_tf
-                      options:
-                        label: Once Off Rate
-                        value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ? @ctx.datasources.cleaning-services-dynamic[0].onceoffrate :'N/A'                   
-
-
+                  label: Hourly Rate
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].hourlyrate != null ? @ctx.datasources.cleaning-services-dynamic[0].hourlyrate:'N/A'
+              - type: component.text-field
+                instanceId: cleaning_serv_once_tf
+                options:
+                  label: Once Off Rate
+                  value: =@ctx.datasources.cleaning-services-dynamic[0].onceoffrate != null ? @ctx.datasources.cleaning-services-dynamic[0].onceoffrate :'N/A'

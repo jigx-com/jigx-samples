@@ -1,0 +1,65 @@
+title: Revenue reporting
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1711915482570-a7714a3a4660?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+datasources:
+  budget:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Food
+          value: Food
+        - id: 2
+          title: Travel
+          value: Travel
+        - id: 3
+          title: Entertainment
+          value: Entertainment
+        - id: 4
+          title: Luxury items
+          value: Luxury items
+        - id: 5
+          title: Clothes
+          value: Clothes
+children:
+  # Basic slider example.
+  # The selected slider value is stored in component state:
+  #   =@ctx.components.slider7.state.value
+  - type: component.slider
+    instanceId: slider7
+    options:
+      isHidden: false
+      # Preset the initial slider position.
+      initialValue: ="10"
+      label: Earnings per week
+      # Define the range limits.
+      minimum: 0
+      maximum: 1000
+      # Allow selection in steps of 1.
+      step: 1
+      # Display the selected value above the thumb.
+      displayValue:
+        format:
+          numberStyle: currency
+          currency: EUR
+        isHidden: =false
+        isSubtle: =false
+  - type: component.choice-field
+    instanceId: budget-items
+    options:
+      label: What is included in your budget?
+      data: =@ctx.datasources.budget
+      item:
+        type: component.choice-field-item
+        options:
+          title: =@ctx.current.item.title
+          value: =@ctx.current.item.value

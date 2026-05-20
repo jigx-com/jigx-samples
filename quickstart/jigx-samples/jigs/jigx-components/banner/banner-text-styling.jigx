@@ -1,0 +1,75 @@
+title: Global Prdocuts
+type: jig.default
+
+datasources:
+  product:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/products
+      query: |
+        SELECT 
+          id, 
+          '$.title', 
+          '$.uri',
+          '$.tag', 
+          '$.price',
+          '$.discount', 
+          '$.quantity',
+          '$.category',
+          '$.productId'
+        FROM [default/products]
+
+children:
+  # Banner with actions and text styling.
+  - type: component.banner
+    options:
+      title:
+        # Style the title text by adding color, size and boldness.
+        text: Flash Sale on all headsets
+        fontSize: medium
+        color: negative
+        isBold: true
+      # Style the subtitle text by adding size.
+      subtitle:
+        text: Up To 50% Off
+        fontSize: regular
+        isSubtle: false
+      # Configure the actions to display on the banner.
+      actions:
+        - type: action.go-back
+          options:
+            title: Shop Now
+        - type: action.go-back
+          options:
+            title: Dismiss
+  # Product list with amount control.
+  - type: component.list
+    options:
+      data: =@ctx.datasources.product
+      maximumItemsToRender: 8
+      item:
+        type: component.product-item
+        options:
+          tag: =@ctx.current.state.amount =10 ? 'max amount':''
+          title: =@ctx.current.item.title
+          image:
+            uri: =@ctx.current.item.uri
+          discount: =@ctx.current.item.discount
+          price:
+            value: =@ctx.component.state.amount = 0 ? @ctx.current.item.price :(@ctx.component.state.amount * $number(@ctx.current.item.price))
+            format:
+              numberStyle: currency
+          amountControl:
+            initialValue: =$number(@ctx.current.item.quantity)
+            maximum: 10
+            onChange:
+              type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/products
+                method: update
+                data:
+                  id: =@ctx.current.item.id
+                  quantity: =@ctx.current.state.amount

@@ -1,0 +1,77 @@
+title: Tool Checkout
+description: Use the checkbox to select a tool for your job. If the tool is unavailable, an alert will be shown.
+type: jig.default
+
+onRefresh:
+  type: action.reset-state
+  options:
+    state: =@ctx.components.toolshed.state.value
+
+onFocus:
+  type: action.reset-state
+  options:
+    state: =@ctx.components.toolshed.state.value
+
+datasources:
+  tools:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Power Drill
+          location: Workshop A
+          available: true
+          icon: drill-robot-arm
+        - id: 2
+          name: Circular Saw
+          location: Workshop A
+          available: true
+          icon: power-tools-circular-saw
+        - id: 3
+          name: Impact Driver
+          location: Workshop B
+          available: false
+          icon: power-tools-drill
+        - id: 4
+          name: Angle Grinder
+          location: Workshop B
+          available: true
+          icon: power-tools-wood-cutter-1
+        - id: 5
+          name: Jigsaw
+          location: Workshop A
+          available: true
+          icon: power-tools-wood-cutter
+
+children:
+  - type: component.list
+    instanceId: toolshed
+    options:
+      data: =@ctx.datasources.tools
+      item:
+        type: component.list-item
+        options:
+          title:
+            text: =@ctx.current.item.name
+            isBold: true
+          subtitle:
+            text: =@ctx.current.item.location
+          leftElement:
+            element: icon
+            icon: =@ctx.current.item.icon
+            shape: circle
+            type: contained
+            color: color3
+          rightElement:
+            element: checkbox
+            initialValue: false
+            onChange:
+              type: action.show-alert
+              when: =@ctx.current.item.available = false
+              options:
+                title: =@ctx.current.item.name & " unavailable"
+                description: Tool unavailable, select a different tool for the job."
+                presentAs: modal
+                style:
+                  isNegative: true
+                icon: road-sign-no-entry

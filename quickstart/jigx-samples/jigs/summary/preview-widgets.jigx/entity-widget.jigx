@@ -1,11 +1,11 @@
-title: Entity preview
+title: Entity preview (iOS feature)
 type: jig.default
 
-header: 
+header:
   type: component.jig-header
   options:
     height: small
-    children: 
+    children:
       type: component.image
       options:
         source:
@@ -18,9 +18,7 @@ children:
         - type: component.grid-item
           options:
             size: "1x1"
-            children: 
+            children:
               type: component.jig-widget
               options:
                 jigId: entity-longpress-widget
-
-        

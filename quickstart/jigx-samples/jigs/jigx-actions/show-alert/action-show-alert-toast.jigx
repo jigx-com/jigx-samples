@@ -1,0 +1,39 @@
+title: Alert - toast
+type: jig.default
+
+children:
+  - type: component.list-item
+    options:
+      title: Show Alert toast
+      rightElement:
+        element: icon
+        icon: arrow-button-circle-right
+        # Configure the show-alert on the OnPress event.
+        onPress:
+          type: action.show-alert
+          options:
+            # Give the alert a title.
+            title: This is an alert toast
+            # Configure the type of alert to present on the screen.
+            presentAs: toast
+            # Add two actions buttons in the alert.
+            actions:
+              - type: action.go-back
+                options:
+                  title: go-back
+              - type: action.go-to
+                options:
+                  title: Continue
+                  linkTo: billing-form
+                  # Style the second action button as secondary action.
+                  style:
+                    isSecondary: true
+            # Add the details of the alert, which are displayed when the
+            # toast alert is tapped.
+            description: This is an alert description
+            # Select an icon in context with the alert.
+            icon: alert
+            # Style the alert depending on the severity
+            style:
+              isNegative: true
+            subtitle: Secondary text that appears below the title, providing additional context or supplementary information.

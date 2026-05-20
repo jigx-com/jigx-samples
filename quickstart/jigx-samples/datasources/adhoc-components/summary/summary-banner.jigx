@@ -1,0 +1,27 @@
+type: datasource.static
+options:
+  data:
+    - color: color1
+      icon: sign-badge-badge
+      type: Basic banner
+      typeLink: banner-basic
+    - color: color2
+      icon: sign-badge-badge-1
+      type: Banner with title and subtitle styling
+      typeLink: banner-text-styling
+    - color: color3
+      icon: sign-badge-badge-1-alternate
+      type: Banner with actions
+      typeLink: banner-actions
+    - color: color4
+      icon: sign-badge-badge-alternate
+      type: Banner with icon
+      typeLink: banner-icon
+    - color: color5
+      icon: sign-badge-bubble-message
+      type: Banner with styling, icon and an action
+      typeLink: banner-action-icon-style
+    - color: color6
+      icon: sign-badge-rectangular-round
+      type: Banner with styling
+      typeLink: banner-styling

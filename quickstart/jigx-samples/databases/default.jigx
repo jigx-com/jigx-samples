@@ -36,3 +36,13 @@ tables:
   bookings: null
   invoices: null
   task-images: null
+  deliveries: null
+  sales-orders: null
+  work-logs: null
+  product-review: null
+  placeholders: null
+  week-roster: null
+  marketplace: null
+  product-orders: null
+  book-review: null
+  purchase-orders: null

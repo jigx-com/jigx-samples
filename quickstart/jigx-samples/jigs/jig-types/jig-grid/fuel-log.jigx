@@ -1,5 +1,4 @@
 title: Fuel log
-description: Description of your Jig
 type: jig.default
 icon: fuel-pump-reload
 
@@ -23,5 +22,3 @@ children:
           options:
             label: Placeholder
             value: Placeholder
-            
-  

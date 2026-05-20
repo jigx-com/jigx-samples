@@ -1,0 +1,67 @@
+title: Book reviews
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://cdn.pixabay.com/photo/2016/10/22/15/19/book-1760998_1280.jpg
+
+datasources:
+  books:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+
+      entities:
+        - default/book-review
+
+      query: SELECT
+        id,
+        '$.title',
+        '$.author',
+        '$.image',
+        '$.rating'
+        FROM [default/book-review]
+
+children:
+  - type: component.list
+    options:
+      data: =@ctx.datasources.books
+      maximumItemsToRender: 8
+      item:
+        type: component.list-item
+        options:
+          title: =@ctx.current.item.title
+          subtitle: =@ctx.current.item.author
+          rating:
+            value: =@ctx.current.item.rating
+            ratingIcon:
+              icon: book-star
+              color: warning
+              maximum: 5
+
+          isContained: true
+          leftElement:
+            element: image
+            text: ""
+            uri: =@ctx.current.item.image
+            resizeMode: center
+            size: regular
+            shape: square
+
+          rightElement:
+            element: button
+            title: Rate this book
+            onPress:
+              type: action.go-to
+              options:
+                linkTo: book-rating
+                isModal: true
+                inputs:
+                  book-title: =@ctx.current.item.title
+                  bookId: =@ctx.current.item.id

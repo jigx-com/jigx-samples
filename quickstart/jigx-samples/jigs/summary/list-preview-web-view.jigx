@@ -1,4 +1,4 @@
-title: Preview - Web-view
+title: Preview - Web-view (iOS feature)
 type: jig.list
 
 data: =@ctx.datasources.list-preview-web-view

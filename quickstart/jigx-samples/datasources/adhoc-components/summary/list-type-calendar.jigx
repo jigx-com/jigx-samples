@@ -4,6 +4,6 @@ options:
     - title: Calendar
       link: calendar-example-dynamic
       color: color1
-    - title: Calendar with preview
+    - title: Calendar with preview (iOS feature)
       link: calendar-jig
       color: color2

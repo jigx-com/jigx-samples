@@ -1,0 +1,81 @@
+title: Global Inc Workday
+type: jig.default
+
+datasources:
+  today:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          job: Replace valve
+          time: 9am
+          location: Building A
+
+        - id: 2
+          job: Paint wall in lobby
+          time: 10:30am
+          location: Building F
+
+        - id: 3
+          job: Hang new mirrors in bathroom
+          time: 1pm
+          location: Customer Center
+
+        - id: 4
+          job: Fix leaking pipe in kitchen
+          time: 3pm
+          location: Building C
+
+children:
+  - type: component.banner
+    options:
+      # Select the line options in intelliscene to style the title text.
+      title:
+        text: Scheduled Downtime
+        fontSize: regular
+        isBold: true
+      # Add default text to the subtitle.
+      subtitle:
+        text: Our app will be unavailable on October 15th, from 00:00 to 23:59 due to scheduled maintenance. Thank you for your understanding.
+      # Add an icon to the left element that is customized with color,
+      # shape and type.
+      leftElement:
+        element: icon
+        icon: construction-sign-building
+        type: duotone
+        shape: circle
+        color: warning
+      # Add one action to go back to the previous screen, styled as a
+      # secondary button.
+      actions:
+        - type: action.go-back
+          options:
+            title: Got it
+            style:
+              isSecondary: true
+      # Add a colored border around the banner.
+      style:
+        isWarning: true
+  - type: component.divider
+  - type: component.section
+    options:
+      title:
+        text: Today's Jobs
+        fontSize: medium
+        color: primary
+      children:
+        - type: component.list
+          options:
+            data: =@ctx.datasources.today
+            maximumItemsToRender: 8
+            item:
+              type: component.list-item
+              options:
+                title: =@ctx.current.item.job
+                subtitle: =@ctx.current.item.location
+                rightElement:
+                  element: value
+                  text: =@ctx.current.item.time
+                leftElement:
+                  element: checkbox
+                  value: false

@@ -3,23 +3,23 @@ type: jig.default
 
 actions:
   - children:
-    - type: action.action-list
-      options:
-        title: Create Record
-        isSequential: true
-        actions:  
-        - type: action.execute-entity
-          options:
-            provider: DATA_PROVIDER_DYNAMIC
-            entity: default/form
-            method: save
-            data:
-              avatar-field: =@ctx.components.avatar-field.state.value
-            onSuccess: 
-              description: Your form was submitted
-              title: Avatar form
-        - type: action.go-back
-      
+      - type: action.action-list
+        options:
+          title: Create Record
+          isSequential: true
+          actions:
+            - type: action.execute-entity
+              options:
+                provider: DATA_PROVIDER_DYNAMIC
+                entity: default/form
+                method: save
+                data:
+                  avatar-field: =@ctx.components.avatar-field.state.value
+                onSuccess:
+                  description: Your form was submitted
+                  title: Avatar form
+            - type: action.go-back
+
 children:
   - type: component.form
     instanceId: avatar-form
@@ -34,8 +34,5 @@ children:
                 color: color2
             style:
               flex: 1
-            imageCropping:
-              width: 120
-              height: 120
             isHidden: false
             isIgnored: false

@@ -1,0 +1,236 @@
+title: Order Form
+type: jig.default
+isHomeButtonVisible: false
+header:
+  type: component.jig-header
+  options:
+    height: medium
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400
+
+datasources:
+  installation:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          title: Yes - Full Installation
+          value: full-install
+        - id: 2
+          title: Yes - Partial Installation
+          value: partial-install
+        - id: 3
+          title: No - Equipment Only
+          value: equipment-only
+  equipment:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+        - title: Air Conditioning Unit
+          value: ac-unit
+        - id: 2
+          title: Furnace
+          value: furnace
+        - id: 3
+          title: Heat Pump
+          value: heat-pump
+        - id: 4
+          title: Boiler
+          value: boiler
+        - id: 5
+          title: Air Handler
+          value: air-handler
+        - id: 6
+          title: Ductwork
+          value: ductwork
+        - id: 7
+          title: Thermostat
+          value: thermostat
+        - id: 8
+          title: Other
+          value: other
+children:
+  - type: component.form
+    instanceId: form1
+    options:
+      # isDiscardChangesAlertEnabled: false
+      children:
+        # Customer Information Expander
+        - type: component.expander
+          instanceId: customerInfo
+          options:
+            header:
+              centerElement:
+                type: component.titles
+                options:
+                  title: Customer Information
+            children:
+              - type: component.text-field
+                instanceId: customerName
+                options:
+                  label: Customer Name
+                  isRequired: true
+
+              - type: component.email-field
+                instanceId: customerEmail
+                options:
+                  label: Email Address
+                  isRequired: true
+
+              - type: component.text-field
+                instanceId: customerPhone
+                options:
+                  label: Phone Number
+                  isRequired: true
+                  keyboardType: phone-pad
+
+              - type: component.text-field
+                instanceId: serviceAddress
+                options:
+                  label: Service Address
+                  isRequired: true
+                  helperText: Enter complete address
+                  isMultiline: true
+
+        # Equipment Details Expander
+  - type: component.form
+    instanceId: form2
+    options:
+      # isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.expander
+          instanceId: equipInfo
+          options:
+            header:
+              centerElement:
+                type: component.titles
+                options:
+                  title: Equipment Details
+
+            children:
+              - type: component.dropdown
+                instanceId: equipmentType
+                options:
+                  data: =@ctx.datasources.equipment
+                  label: Equipment Type
+                  item:
+                    type: component.dropdown-item
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.value
+                  isRequired: true
+
+              - type: component.text-field
+                instanceId: modelNumber
+                options:
+                  label: Model Number
+
+              - type: component.number-field
+                instanceId: quantity
+                options:
+                  label: Quantity
+                  isRequired: true
+                  minimum: 1
+
+        # Installation Details Expander
+  - type: component.form
+    instanceId: form3
+    options:
+      # isDiscardChangesAlertEnabled: false
+      children:
+        - type: component.expander
+          instanceId: installInfo
+          options:
+            header:
+              centerElement:
+                type: component.titles
+                options:
+                  title: Installation Details
+
+            children:
+              - type: component.choice-field
+                instanceId: installationRequired
+                options:
+                  data: =@ctx.datasources.installation
+                  item:
+                    type: component.choice-field-item
+                    options:
+                      title: =@ctx.current.item.title
+                      value: =@ctx.current.item.title
+                  label: Installation required?
+
+              - type: component.date-picker
+                instanceId: preferredInstallDate
+                options:
+                  label: Preferred Installation Date
+summary:
+  children:
+    type: component.summary
+    instanceId: progressSummary
+    options:
+      layout: progress
+      value:
+        current: =@ctx.components.form3.state.isValid ? 3 :@ctx.components.form2.state.isValid ? 2 :@ctx.components.form1.state.isValid ?1 :0
+        max: 3
+      color: color1
+      size: small
+      title:
+        value:
+          text: Purchase order progress
+          fontSize: regular
+          isBold: true
+        align: center
+        position: top
+actions:
+  - numberOfVisibleActions: 2
+    style:
+      isDisabled: =$not(@ctx.components.form1.state.isValid and @ctx.components.form2.state.isValid and @ctx.components.form3.state.isValid)
+    children:
+      - type: action.action-list
+        options:
+          title: Place order
+          isSequential: true
+          actions:
+            - type: action.submit-form
+              options:
+                formId: form1
+                provider: DATA_PROVIDER_LOCAL
+                entity: order
+                method: create
+            - type: action.submit-form
+              options:
+                formId: form2
+                provider: DATA_PROVIDER_LOCAL
+                entity: order
+                method: create
+            - type: action.submit-form
+              options:
+                formId: form3
+                provider: DATA_PROVIDER_LOCAL
+                entity: order
+                method: create
+                onSuccess:
+                  type: action.info-modal
+                  options:
+                    modal:
+                      title: Order Placed
+                      description: Your order has been successfully placed. We will contact you shortly to confirm the details.
+                      buttonText: Close
+            - type: action.reset-state
+              options:
+                state: =@ctx.components.form1.state.data
+            - type: action.reset-state
+              options:
+                state: =@ctx.components.form2.state.data
+            - type: action.reset-state
+              options:
+                state: =@ctx.components.form3.state.data
+      - type: action.go-back
+        options:
+          title: Cancel
+          style:
+            isSecondary: true
