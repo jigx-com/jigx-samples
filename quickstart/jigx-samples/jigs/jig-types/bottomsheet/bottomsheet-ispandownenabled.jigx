@@ -4,7 +4,7 @@ type: jig.default
 header:
   type: component.jig-header
   options:
-    height: small
+    height: medium
     children:
       type: component.image
       options:
