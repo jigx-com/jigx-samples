@@ -193,7 +193,3 @@ options:
       component: Web-view
       componentLink: web-view-example
       icon: earth-3
-    - color: color6
-      component: Widgets
-      componentLink: widget-summary
-      icon: layout-dashboard
