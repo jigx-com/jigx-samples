@@ -1,5 +1,5 @@
 type: datasource.static
-options:  
+options:
   data:
     - color: color1
       icon: card-add-1
@@ -9,14 +9,10 @@ options:
       icon: card-add-2
       typeLink: card-color
       type: Cards with different colors & components
-    - color: color3
-      icon: card-flip
-      typeLink: carousel-card-avatar
-      type: Carousel with card, avatar & Entity-field
     - color: color4
       icon: card-game-heart
       typeLink: card-onPress
-      type: Card with onPress 
+      type: Card with onPress
     - color: color5
       icon: card-remove-2
       typeLink: card-style
