@@ -10,9 +10,7 @@ header:
       options:
         source:
           uri: >
-            https://images.unsplash.com/photo-1485871981521-5b1fd3805eee
-            ?w=800&auto=format&fit=crop&q=60
-            &ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D
+            https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D
 
 children:
   - type: component.entity
