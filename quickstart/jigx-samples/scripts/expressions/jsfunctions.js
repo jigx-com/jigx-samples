@@ -184,8 +184,8 @@ export function getNextBusinessDay(date) {
 }
 
 export function getEmployeeInfo(employee) {
-  console.log(`Name: ${employee.firstName} ${employee.lastName}`);
-  return `${employee.firstName} ${employee.lastName} is a ${employee.position} and can be reached at ${employee.email}`;
+  console.log(`Name: ${employee.firstname} ${employee.lastname}`);
+  return `${employee.firstname} ${employee.lastname} is a ${employee.position} and can be reached at ${employee.email}`;
 }
 
 export function calculateLoanPayment(principal, annualRatePercent, years) {

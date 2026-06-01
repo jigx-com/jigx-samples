@@ -13,21 +13,21 @@ header:
       options:
         source:
           uri: https://miro.medium.com/v2/resize:fit:720/format:webp/1*M9cY0UHTbmlBfoPMCQwxYA.png
-            
+
 datasources:
   employee:
     type: datasource.sqlite
     options:
       provider: DATA_PROVIDER_DYNAMIC
-  
+
       entities:
         - default/employees
-  
+
       query: |
         SELECT
           emp.id as empID,
-          json_extract(emp.data, '$.firstName') as firstname,
-          json_extract(emp.data, '$.lastName') as lastname,
+          json_extract(emp.data, '$.firstname') as firstname,
+          json_extract(emp.data, '$.lastname') as lastname,
           json_extract(emp.data, '$.position') as position,
           json_extract(emp.data, '$.department') as department,
           json_extract(emp.data, '$.email') as email,
@@ -36,10 +36,10 @@ datasources:
             [default/employees] as emp
         WHERE 
           empID = @empId
-        
+
       queryParameters:
-        empId: '02512d5a-5529-4efc-93ec-1732292971c1'
-        
+        empId: "0f5d59ac-4ecd-4fba-84f4-38c3ace59cf5"
+
       isDocument: true
 
 children:
