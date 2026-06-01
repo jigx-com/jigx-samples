@@ -46,3 +46,5 @@ tables:
   product-orders: null
   book-review: null
   purchase-orders: null
+  orders: null
+  site: null
