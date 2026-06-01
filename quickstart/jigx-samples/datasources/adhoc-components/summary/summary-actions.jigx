@@ -34,7 +34,7 @@ options:
       icon: flight
       color: color7
     - action: Open-map
-      actionLink: summary-actions-open-map
+      actionLink: open-map-summary
       icon: maps-pin
       color: color1
     - action: Open-media-picker
