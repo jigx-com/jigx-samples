@@ -5,5 +5,5 @@ options:
       link: section-row-entity-example-sd
       color: color1
     - title: (Compact) Entity - Section, Entity field
-      link: section-entity-field-dd-compact
+      link: section-entity-field-sd-compact
       color: color2
