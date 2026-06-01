@@ -11,56 +11,51 @@ header:
         source:
           uri: https://images.unsplash.com/photo-1580828343064-fde4fc206bc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvbW90aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60
         title: Countdown to Sale
-      
+
 datasources:
-  dates: 
+  dates:
     type: datasource.static
     options:
       data:
         - id: 1
           dateType: Clothes Sale
-          date: "2025-08-17 07:00"
+          date: "2026-08-17 07:00"
         - id: 2
           dateType: flights
-          date: "2025-08-10 08:00"
+          date: "2026-08-10 08:00"
         - id: 3
           dateType: Books
-          date: "2025-07-18 14:00"
+          date: "2026-07-18 14:00"
 
 children:
   - type: component.section
     options:
       title: COUNTDOWN WITH STATIC VALUE
       children:
-      - type: component.countdown
-        options:
-          expiresAt: "2025-10-06 22:00"
+        - type: component.countdown
+          options:
+            expiresAt: "2026-10-06 22:00"
 
   - type: component.section
     options:
       title: COUNTDOWN WITH COUNT FROM NOW
       children:
-      - type: component.countdown
-        options:
-          expiresAt: =$fromMillis($toMillis($now()) + 3600000)
+        - type: component.countdown
+          options:
+            expiresAt: =$fromMillis($toMillis($now()) + 3600000)
 
   - type: component.section
     options:
       title: COUNTDOWN WITH DATASOURCE INPUT (STATIC)
       children:
-      - type: component.countdown
-        options:
-          expiresAt: =@ctx.datasources.dates[1].date
+        - type: component.countdown
+          options:
+            expiresAt: =@ctx.datasources.dates[1].date
 
   - type: component.section
     options:
       title: COUNTDOWN WITH DATASOURCE INPUT (DYNAMIC)
       children:
-      - type: component.countdown
-        options:
-          expiresAt: =@ctx.datasources.event-dd[2].StartDate
-                          
- 
-           
-           
-       
+        - type: component.countdown
+          options:
+            expiresAt: =@ctx.datasources.event-dd[2].StartDate
