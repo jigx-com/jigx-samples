@@ -1,0 +1,188 @@
+[
+  {
+    "rid": "11ed5d11-aa3f-4922-9a1f-31d68358b04c",
+    "content": {
+      "task": "Production possibility frontier (PPF) analysis",
+      "subject": "ECO101",
+      "duedate": "Dec 5th",
+      "description": "Conduct an analysis of the production possibility frontier for a given economy.",
+      "priority": "Medium Priority",
+      "status": "Not started",
+      "estimated_time": "3 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "39101889-d631-4651-9262-e1d986677234",
+    "content": {
+      "task": "Opportunity cost calculation",
+      "subject": "ECO101",
+      "duedate": "Nov 20th",
+      "description": "Calculate the opportunity cost for a specific economic decision.",
+      "priority": "High Priority",
+      "status": "In Progress",
+      "estimated_time": "1.5 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "62650519-fcfd-41b4-9a54-11a8a2231296",
+    "content": {
+      "task": "Elasticity measurement",
+      "subject": "ECO101",
+      "duedate": "Dec 10th",
+      "description": "Calculate and analyze price elasticity for a specific product.",
+      "priority": "Low Priority",
+      "status": "Not started",
+      "estimated_time": "2 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "637e91ad-1c8e-4375-a919-647c114921a1",
+    "content": {
+      "task": "Financial Statements",
+      "notes": [
+        {
+          "title": "Adding a new note",
+          "note": "Adding a new note with no other notes present "
+        }
+      ],
+      "subject": "ACC101",
+      "duedate": "Nov 1st",
+      "description": "Prepare basic financial statements, such as an income statement and a balance sheet.",
+      "priority": "No Priority",
+      "status": "Not started",
+      "estimated_time": "1 hours",
+      "tags": [
+        {
+          "title": "Exam Preperation",
+          "color": "color8"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "75b0c973-7a54-49e8-8a4f-3843f77b111a",
+    "content": {
+      "task": "Journal Entries",
+      "notes": [
+        {
+          "title": "Started but had some questions",
+          "note": "Send a message to professor and waiting on a response"
+        },
+        {
+          "title": "Group meeting",
+          "note": "there were only two out of the five of group members who showed up at the group meeting"
+        },
+        {
+          "title": "New notes",
+          "note": "Testing adding a new note"
+        }
+      ],
+      "subject": "ACC101",
+      "duedate": "Oct 11th",
+      "description": "Prepare journal entries for specific transactions",
+      "priority": "High Priority",
+      "status": "In Progress",
+      "estimated_time": "2 hours",
+      "tags": [
+        {
+          "title": "Group Assignment",
+          "color": "color5"
+        },
+        {
+          "title": "Week 1",
+          "color": "color6"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "8bc59427-2b62-4e68-8410-58a290099f76",
+    "content": {
+      "task": "Supply and Demand analysis",
+      "subject": "ECO101",
+      "duedate": "Nov 15th",
+      "description": "Analyze the supply and demand dynamics in a given market.",
+      "priority": "Medium Priority",
+      "status": "Not started",
+      "estimated_time": "2.5 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "a83e2f6b-7744-49e5-8eec-ebbe4fa999bc",
+    "content": {
+      "task": "Market structures and competition",
+      "subject": "ECO101",
+      "duedate": "Dec 20th",
+      "description": "Study and analyze different market structures and their impact on competition.",
+      "priority": "Medium Priority",
+      "status": "Not started",
+      "estimated_time": "2.5 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "acfffd34-bab3-4332-a001-c369595538a4",
+    "content": {
+      "task": "Cost-benefit analysis",
+      "subject": "ECO101",
+      "duedate": "Dec 15th",
+      "description": "Conduct a cost-benefit analysis for a proposed project or policy.",
+      "priority": "High Priority",
+      "status": "Not started",
+      "estimated_time": "4 hours",
+      "tags": [
+        {
+          "title": "Economics",
+          "color": "color3"
+        }
+      ]
+    }
+  },
+  {
+    "rid": "bcd86eed-fb78-4ee9-9fee-35c8f90eae73",
+    "content": {
+      "task": "Trial Balance",
+      "notes": [
+        {
+          "title": "Check with professor",
+          "note": "Reach out to check if both credit and debit is required"
+        }
+      ],
+      "subject": "ACC101",
+      "duedate": "Sep 20th",
+      "description": "Prepare a trial balance from a given set of ledger account balances.",
+      "priority": "Low Priority",
+      "status": "In Progress",
+      "estimated_time": "3 hours"
+    }
+  }
+]

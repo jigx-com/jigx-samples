@@ -1,0 +1,45 @@
+[
+  {
+    "rid": "1f482b7f-b0d9-41bf-a5c9-4564ffccfce2",
+    "content": {
+      "icon": "checkbox-checked",
+      "iswaiting": "false",
+      "title": "Order",
+      "value": "1",
+      "iscompleted": "true",
+      "isactive": "false"
+    }
+  },
+  {
+    "rid": "57be3e7d-0116-428f-aac7-2aee50390f6d",
+    "content": {
+      "iswaiting": "true",
+      "title": "On the way to you",
+      "value": "3",
+      "iscompleted": "false",
+      "isactive": "false"
+    }
+  },
+  {
+    "rid": "6133ade6-69c2-409a-89c2-4bf83da3cea3",
+    "content": {
+      "iswaiting": "true",
+      "title": "Delivered to the recipient",
+      "value": "4",
+      "iscompleted": "false",
+      "isactive": "false"
+    }
+  },
+  {
+    "rid": "77758a9d-ef6b-43f6-a5ba-239562f7be32",
+    "content": {
+      "iswaiting": "false",
+      "isactive": "true",
+      "icon": "time-clock-circle",
+      "description": "The shipment is in transit.",
+      "title": "Shipment in transit",
+      "value": "2",
+      "iscompleted": "false"
+    }
+  }
+]

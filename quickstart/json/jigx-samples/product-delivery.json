@@ -1,0 +1,32 @@
+[
+  {
+    "rid": "22d0d418-c388-4d29-b768-5a9463cf73f5",
+    "content": {
+      "destination": "Midtown Commercial Site",
+      "Item": "Concrete Blocks (1000x)",
+      "deliveryId": "D001",
+      "expectedDelivery": "April 15, 2025",
+      "status": "In Transit"
+    }
+  },
+  {
+    "rid": "7e2f1004-18fa-43f9-94bd-db9700b95602",
+    "content": {
+      "destination": "Museum District Expansion",
+      "Item": "Steel Rebar (12mm x 6m)",
+      "deliveryId": "D003",
+      "expectedDelivery": "April 16, 2025",
+      "status": "Returned"
+    }
+  },
+  {
+    "rid": "f27281e4-61ac-484c-9d02-1e1d04cd8232",
+    "content": {
+      "destination": "East Downtown Warehouse",
+      "Item": "Scaffolding Set",
+      "deliveryId": "D004",
+      "expectedDelivery": "April 14, 2025",
+      "status": "Packed"
+    }
+  }
+]

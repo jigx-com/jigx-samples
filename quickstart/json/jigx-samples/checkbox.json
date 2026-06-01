@@ -1,0 +1,52 @@
+[
+  {
+    "rid": "1f773131-936e-4641-93a4-87471dd1fdf1",
+    "content": {
+      "day": "Sunday",
+      "agreement": "I agree",
+      "order": "1"
+    }
+  },
+  {
+    "rid": "2c235ec4-86f4-4bfb-9d6d-e5775667b692",
+    "content": {
+      "day": "Thursday",
+      "order": "5"
+    }
+  },
+  {
+    "rid": "2c7e8258-7273-4fab-83bb-22214d917f2a",
+    "content": {
+      "day": "Friday",
+      "order": "6"
+    }
+  },
+  {
+    "rid": "3c33b8db-390d-406c-8393-4976ff099b60",
+    "content": {
+      "day": "Monday",
+      "order": "2"
+    }
+  },
+  {
+    "rid": "62b4d54a-4f93-403d-80a9-23d51a991496",
+    "content": {
+      "day": "Wednesday",
+      "order": "4"
+    }
+  },
+  {
+    "rid": "7a6ca06b-f420-4ce7-8238-3085e27d75e6",
+    "content": {
+      "day": "Tuesday",
+      "order": "3"
+    }
+  },
+  {
+    "rid": "ab6830bc-4de4-49b8-b6d2-7f56c1459fe1",
+    "content": {
+      "day": "Saturday",
+      "order": "7"
+    }
+  }
+]

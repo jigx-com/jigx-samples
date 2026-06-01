@@ -1,0 +1,44 @@
+[
+  {
+    "rid": "09bfac4e-f36d-40c4-ae07-a5c4d3fab2bf",
+    "content": {
+      "title": "The Diary of a Young Girl",
+      "image-uri": "https://inspiredbyannefrank.com/wp-content/uploads/anne-franks-diary-opened-1536x1024.jpg",
+      "author": "Anne Frank"
+    }
+  },
+  {
+    "rid": "2d1fcc9d-4dae-42ad-a78b-c61c6df33657",
+    "content": {
+      "rating": 2,
+      "title": "Pride and Prejudice",
+      "image-uri": "https://classicliterature.info/wp-content/uploads/2023/05/pride-and-prejudice-cover-1024x576.jpg",
+      "author": "Jane Austen"
+    }
+  },
+  {
+    "rid": "a5d592b5-0969-465c-8e2f-fe6a3ffffad5",
+    "content": {
+      "title": "Animal Farm",
+      "image-uri": "https://m.media-amazon.com/images/I/81z9x9XfL-L._SL1500_.jpg",
+      "author": "George Orwell"
+    }
+  },
+  {
+    "rid": "db42a9b1-54af-45e6-bf96-c13412f72173",
+    "content": {
+      "title": "To Kill a Mockingbird",
+      "image-uri": "https://m.media-amazon.com/images/I/81OoUSkLveL._SL1500_.jpg",
+      "author": "Harper Lee"
+    }
+  },
+  {
+    "rid": "ff10e5e2-e5d9-408c-9962-b16a84e7092d",
+    "content": {
+      "rating": 4,
+      "title": 1984,
+      "image-uri": "https://m.media-amazon.com/images/I/71iiATs-RVL._SL1500_.jpg",
+      "author": "George Orwell"
+    }
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "rid": "256bdfa5-4030-423d-b52b-3f46da3cdc52",
+    "content": {
+      "color": "color2",
+      "category": "pie-chart",
+      "seriesy": "2"
+    }
+  },
+  {
+    "rid": "35f1e40b-aa3b-433d-8a5d-5194a73458e0",
+    "content": {
+      "color": "color3",
+      "seriesx": "Q4",
+      "category": "chart1",
+      "seriesy": "120000"
+    }
+  },
+  {
+    "rid": "3a925b39-53cf-4585-a41b-f3cd94bad7f1",
+    "content": {
+      "color": "color2",
+      "seriesx": "Q1/20",
+      "category": "chart2",
+      "seriesy": "32000"
+    }
+  },
+  {
+    "rid": "3ea8a09f-fbf2-4d1b-9b3d-b247d0a0ae66",
+    "content": {
+      "color": "color3",
+      "seriesx": "Q1",
+      "category": "chart1",
+      "seriesy": "12000"
+    }
+  },
+  {
+    "rid": "51c94e93-d9cb-4331-949c-afb818396c6a",
+    "content": {
+      "color": "color4",
+      "category": "pie-chart-list",
+      "title": "45%",
+      "subtitle": "Brno",
+      "seriesy": "55"
+    }
+  },
+  {
+    "rid": "5e9ec430-15b0-4168-ac6a-46034127e718",
+    "content": {
+      "color": "color2",
+      "seriesx": "Q4/20",
+      "category": "chart2",
+      "seriesy": "86000"
+    }
+  },
+  {
+    "rid": "68863109-8df3-4c0a-ae96-77dfd8b95815",
+    "content": {
+      "color": "color4",
+      "category": "pie-chart",
+      "seriesy": "1"
+    }
+  },
+  {
+    "rid": "6d1c1c4b-76fd-425c-a388-f383dddc8b5a",
+    "content": {
+      "category": "pie-chart-list",
+      "title": "33%",
+      "color": "color5",
+      "subtitle": "Prague",
+      "seriesy": "67"
+    }
+  },
+  {
+    "rid": "709ac520-8090-4a9f-b544-4f7196feb5e5",
+    "content": {
+      "color": "color3",
+      "seriesx": "Q3",
+      "category": "chart1",
+      "seriesy": "36000"
+    }
+  },
+  {
+    "rid": "a0cb6a91-d681-42e4-8b16-2e9a9f0ac050",
+    "content": {
+      "color": "color3",
+      "seriesx": "Q2",
+      "category": "chart1",
+      "seriesy": "48000"
+    }
+  },
+  {
+    "rid": "a659dba3-13ef-47b6-a4e6-5f6e8fdab035",
+    "content": {
+      "color": "color2",
+      "seriesx": "Q3/20",
+      "category": "chart2",
+      "seriesy": "45000"
+    }
+  },
+  {
+    "rid": "ab0c6eef-97e7-40cd-a5db-40c644b5e329",
+    "content": {
+      "color": "color3",
+      "category": "pie-chart",
+      "seriesy": "1"
+    }
+  },
+  {
+    "rid": "dbb48b53-bef2-451b-8fde-fcfb4c7a758d",
+    "content": {
+      "color": "color2",
+      "seriesx": "Q2/20",
+      "category": "chart2",
+      "seriesy": "25000"
+    }
+  },
+  {
+    "rid": "e0ee6aa3-d802-4952-9428-554d450a856c",
+    "content": {
+      "color": "color4",
+      "category": "arch-chart",
+      "seriesy": "1"
+    }
+  },
+  {
+    "rid": "e74317e1-86a7-4d03-9483-7fa622fa8d66",
+    "content": {
+      "category": "pie-chart-list",
+      "title": "25%",
+      "color": "color6",
+      "subtitle": "As",
+      "seriesy": "75"
+    }
+  },
+  {
+    "rid": "eaf96ec9-9e35-4d84-a455-b2db5296fd29",
+    "content": {
+      "color": "color2",
+      "category": "arch-chart",
+      "seriesy": "2"
+    }
+  }
+]

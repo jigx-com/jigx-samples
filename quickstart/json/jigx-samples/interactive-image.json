@@ -1,0 +1,274 @@
+[
+  {
+    "rid": "025d98ab-22f1-4c6e-9575-3cd227649a16",
+    "content": {
+      "isreserved": "false",
+      "name": "Table 15",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "23"
+    }
+  },
+  {
+    "rid": "1fb0b97a-42e7-4dda-af45-95ef2bdb0a78",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 1",
+      "ycoordinate": "12",
+      "category": "floorplan-dynamic",
+      "pax": "4",
+      "xcoordinate": "7"
+    }
+  },
+  {
+    "rid": "2697270e-1ba6-4d94-8add-e06d334f264e",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 5",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "2",
+      "xcoordinate": "56"
+    }
+  },
+  {
+    "rid": "37a34dbb-abd8-48db-ad63-d9ae75144a7e",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 12",
+      "ycoordinate": "60",
+      "category": "floorplan-restaurant",
+      "pax": "8",
+      "xcoordinate": "11"
+    }
+  },
+  {
+    "rid": "3895a078-4a68-4762-915e-562f22f48609",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Hot Desk 1",
+      "ycoordinate": "12",
+      "category": "floorplan-office",
+      "xcoordinate": "22"
+    }
+  },
+  {
+    "rid": "3e65163e-a2ff-4dfc-978a-a4d126b01c6e",
+    "content": {
+      "name": "Table 2",
+      "isreserved": "TRUE",
+      "ycoordinate": "12",
+      "category": "floorplan-dynamic",
+      "pax": "2",
+      "xcoordinate": "15"
+    }
+  },
+  {
+    "rid": "421f6542-4dc5-4c45-a752-4c326f148b0c",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 11",
+      "ycoordinate": "35",
+      "category": "floorplan-restaurant",
+      "pax": "8",
+      "xcoordinate": "11"
+    }
+  },
+  {
+    "rid": "4fe021c4-b77e-4a63-bc98-ff730cec5a40",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 8",
+      "ycoordinate": "60",
+      "category": "floorplan-restaurant",
+      "pax": "8",
+      "xcoordinate": "64"
+    }
+  },
+  {
+    "rid": "4fed92db-7c47-4668-9fc4-345c06c0f9d7",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 4",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "48"
+    }
+  },
+  {
+    "rid": "5ce4a580-b1eb-4d20-b4ad-acf22616069d",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 2",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "2",
+      "xcoordinate": "15"
+    }
+  },
+  {
+    "rid": "6b83ae84-1efa-4b43-8b4d-6121cf274871",
+    "content": {
+      "isreserved": "false",
+      "name": "Table 3",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "23"
+    }
+  },
+  {
+    "rid": "6fdc3106-f3ca-4336-82ac-05359d55f537",
+    "content": {
+      "name": "Table 9",
+      "isreserved": "false",
+      "ycoordinate": "40",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "48"
+    }
+  },
+  {
+    "rid": "7b313422-65a3-47d8-833d-95d281ae1480",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 19",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "2",
+      "xcoordinate": "74"
+    }
+  },
+  {
+    "rid": "afd3191a-b214-40c9-83d8-c7315e011171",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 16",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "49"
+    }
+  },
+  {
+    "rid": "b331de7d-0d44-425a-81b2-5026a8271c0d",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 1",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "7"
+    }
+  },
+  {
+    "rid": "c0867dfb-7f85-4d23-9660-d8ce4667fba9",
+    "content": {
+      "isreserved": "FALSE",
+      "name": "Table 3",
+      "ycoordinate": "12",
+      "category": "floorplan-dynamic",
+      "pax": "4",
+      "xcoordinate": "23"
+    }
+  },
+  {
+    "rid": "c5077ea6-1a59-4cd0-8c7d-a4ef3c1fe2fe",
+    "content": {
+      "isreserved": "FALSE",
+      "name": "Meeting Room",
+      "ycoordinate": "43",
+      "category": "floorplan-office",
+      "xcoordinate": "65"
+    }
+  },
+  {
+    "rid": "cba01d3c-26cd-4dea-884c-099d2a31436f",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 6",
+      "ycoordinate": "12",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "64"
+    }
+  },
+  {
+    "rid": "cfd77a9b-9c92-4c56-8aa9-f31f34af6b64",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 17",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "2",
+      "xcoordinate": "58"
+    }
+  },
+  {
+    "rid": "d6014bce-2894-4c3e-9f58-3b9b19b7b39b",
+    "content": {
+      "isreserved": "FALSE",
+      "name": "Hot Desk 2",
+      "ycoordinate": "23",
+      "category": "floorplan-office",
+      "xcoordinate": "22"
+    }
+  },
+  {
+    "rid": "d613abb1-9ebe-4684-bafc-229ee5d27e7a",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 7",
+      "ycoordinate": "35",
+      "category": "floorplan-restaurant",
+      "pax": "8",
+      "xcoordinate": "64"
+    }
+  },
+  {
+    "rid": "e0410cf8-814b-486e-92df-cca12f3bebac",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 13",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "6"
+    }
+  },
+  {
+    "rid": "e6029b34-1fa5-4178-8b2f-1edb83475671",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 18",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "66"
+    }
+  },
+  {
+    "rid": "ef2aabc4-e945-49d8-98cf-a25d9f1865c9",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 14",
+      "ycoordinate": "87",
+      "category": "floorplan-restaurant",
+      "pax": "2",
+      "xcoordinate": "15"
+    }
+  },
+  {
+    "rid": "faa44689-1648-451e-86ed-0f4367b78a2d",
+    "content": {
+      "isreserved": "TRUE",
+      "name": "Table 10",
+      "ycoordinate": "60",
+      "category": "floorplan-restaurant",
+      "pax": "4",
+      "xcoordinate": "25"
+    }
+  }
+]

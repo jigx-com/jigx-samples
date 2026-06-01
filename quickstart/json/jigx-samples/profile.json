@@ -1,0 +1,41 @@
+[
+  {
+    "rid": "5b053b41-bc92-40a6-8af5-a6768b1b64d6",
+    "content": {
+      "firstName": "Steven",
+      "lastName": "Henderson",
+      "address": "7126 St Andrews Ln 111333444",
+      "city": "Snoqualmie",
+      "state": "WA",
+      "avatar": "jigx://bbe7ffd47cf22cb90fd958ac8fb3a9360f2bb188.jpg",
+      "age": 13,
+      "email": "steven@global.com"
+    }
+  },
+  {
+    "rid": "795ce5bc-9efc-4152-925c-da8d65917cc9",
+    "content": {
+      "firstName": "Joe",
+      "lastName": "Wesson",
+      "address": "33414 SE 114th Street",
+      "city": "Issaquah",
+      "state": "WA",
+      "avatar": "jigx://34d7a294515692fb9d9f569ca7bdfcc1ad3b5ba1.jpg",
+      "age": 24,
+      "email": "jo@global.com"
+    }
+  },
+  {
+    "rid": "c12c2479-272e-48c2-9573-c1775ed73ef1",
+    "content": {
+      "firstName": "Suzanne",
+      "lastName": "Pillay",
+      "address": "300 E Bender Rd",
+      "city": "Ellensburg",
+      "state": "WA",
+      "avatar": "jigx://b7bea966f0250c7d9794518f825d60ee82191072.jpg",
+      "age": 22,
+      "email": "suzanne@global.com"
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "rid": "19903edc-a9c0-482b-b863-3cd4c5bd1dbd",
+    "content": {
+      "date": "2022-07-03T10:00:00Z",
+      "name": "Order4",
+      "category": "order",
+      "items": "1",
+      "value": "1000"
+    }
+  },
+  {
+    "rid": "2f6b9b89-1442-489a-856b-d048484f1e82",
+    "content": {
+      "title": "Last week",
+      "category": "trend",
+      "value": "1250",
+      "financevalue": "23850"
+    }
+  },
+  {
+    "rid": "3fa6792a-4634-4a4f-acf3-8ecaf44a7fff",
+    "content": {
+      "date": "2022-06-29T10:00:00Z",
+      "name": "Order2",
+      "category": "order",
+      "items": "2"
+    }
+  },
+  {
+    "rid": "53917368-2ef1-48a9-9733-82398e1a3b62",
+    "content": {
+      "date": "2022-07-04T10:00:00Z",
+      "name": "Order5",
+      "category": "order",
+      "items": "3"
+    }
+  },
+  {
+    "rid": "5693b1d1-dad9-49a4-abc0-b5d02b6fcbc4",
+    "content": {
+      "date": "2022-06-26T10:00:00Z",
+      "name": "Order1",
+      "category": "order",
+      "items": "4"
+    }
+  },
+  {
+    "rid": "5c4a76e9-dec4-4657-a477-372e54a9d367",
+    "content": {
+      "number": "Add a numeric value",
+      "title": "Your first name",
+      "category": "field-values",
+      "email": "sample@jigx.com"
+    }
+  },
+  {
+    "rid": "a39a735d-d641-4a48-b620-cc7afeaae0bc",
+    "content": {
+      "title": "Daily revenue",
+      "category": "revenue",
+      "value": "7500"
+    }
+  },
+  {
+    "rid": "e065b433-c0a0-4665-81ef-facf949303a5",
+    "content": {
+      "date": "2022-06-30T10:00:00Z",
+      "name": "Order3",
+      "category": "order",
+      "items": "6"
+    }
+  }
+]

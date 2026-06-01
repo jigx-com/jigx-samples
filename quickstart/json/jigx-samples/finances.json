@@ -1,0 +1,580 @@
+[
+  {
+    "rid": "0b09ac68-dea6-45b2-b6e0-de78f5c61c75",
+    "content": {
+      "amount": "1250",
+      "financeid": "3",
+      "category": "finance-month",
+      "month": "August"
+    }
+  },
+  {
+    "rid": "0c34efdb-4611-46ce-a5bb-7c7a22630818",
+    "content": {
+      "date": "July",
+      "amount": "1562",
+      "quarterid": "1",
+      "year": "2020",
+      "financeid": "2",
+      "share": "0,074462507",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "0d856c3c-8a5d-4090-a5b9-139a59104e4f",
+    "content": {
+      "date": "August",
+      "amount": "1526",
+      "quarterid": "1",
+      "year": "2020",
+      "financeid": "3",
+      "share": "0,072746341",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "128bbf38-7e8a-44ac-9290-a9b668284429",
+    "content": {
+      "date": "October",
+      "amount": "1650",
+      "quarterid": "2",
+      "year": "2019",
+      "financeid": "5",
+      "share": "0,085310997",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "1301dada-2116-4013-ac25-c70530d8f638",
+    "content": {
+      "amount": "1765",
+      "financeid": "9",
+      "month": "February",
+      "category": "finance-month",
+      "color": "color7"
+    }
+  },
+  {
+    "rid": "173965fd-57d6-4b18-b1b7-470a80b0290a",
+    "content": {
+      "category": "finance-review",
+      "title": "Sales",
+      "year": "2020",
+      "subtitle": "Sales Income"
+    }
+  },
+  {
+    "rid": "1a2780a4-19c3-4ab3-8312-717e71951ce2",
+    "content": {
+      "date": "April",
+      "amount": "1543",
+      "quarterid": "4",
+      "year": "2019",
+      "financeid": "11",
+      "share": "0,079778708",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "1e356e7f-5e05-4d8f-8dde-c16494ffe927",
+    "content": {
+      "amount": "2151",
+      "financeid": "10",
+      "month": "March",
+      "category": "finance-month",
+      "color": "color8"
+    }
+  },
+  {
+    "rid": "2e461dbd-ea25-4a97-9972-74fb258634dd",
+    "content": {
+      "category": "finance-review",
+      "title": "Sales",
+      "year": "2019",
+      "subtitle": "Sales Income"
+    }
+  },
+  {
+    "rid": "30c36da1-7417-402a-b7d6-f303b04e2baf",
+    "content": {
+      "amount": "1650",
+      "financeid": "5",
+      "month": "October",
+      "category": "finance-month",
+      "color": "color9"
+    }
+  },
+  {
+    "rid": "3315c2b2-e44b-4bc4-8989-f40019e92cd6",
+    "content": {
+      "date": "March",
+      "amount": "2151",
+      "quarterid": "4",
+      "year": "2019",
+      "financeid": "10",
+      "share": "0,111214518",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "37dba2c1-d405-4ea6-9700-84b6131d9ef9",
+    "content": {
+      "date": "February",
+      "amount": "1927",
+      "quarterid": "3",
+      "year": "2021",
+      "financeid": "9",
+      "share": "0,085842837",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "3b54f7ab-da13-48bc-9dd8-94bbb328c10d",
+    "content": {
+      "date": "March",
+      "amount": "2072",
+      "quarterid": "4",
+      "year": "2021",
+      "financeid": "10",
+      "share": "0,09230221",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "46870981-88f3-42b4-96cb-95006fdb9da2",
+    "content": {
+      "amount": "1430",
+      "financeid": "7",
+      "month": "December",
+      "category": "finance-month",
+      "color": "color10"
+    }
+  },
+  {
+    "rid": "48f3996b-555d-45f0-b639-2c3a59c1cd92",
+    "content": {
+      "date": "September",
+      "amount": "2067",
+      "quarterid": "2",
+      "year": "2019",
+      "financeid": "4",
+      "share": "0,106871413",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "53a42fa7-3c3c-4865-965d-3d6bf619ed53",
+    "content": {
+      "date": "September",
+      "amount": "2518",
+      "quarterid": "2",
+      "year": "2021",
+      "financeid": "4",
+      "share": "0,112170349",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "57f68533-f58e-442f-95ad-b0959c2478c4",
+    "content": {
+      "date": "April",
+      "amount": "1427",
+      "quarterid": "4",
+      "year": "2020",
+      "financeid": "11",
+      "share": "0,068026887",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "5a50b556-5232-4918-b75a-4600263d844c",
+    "content": {
+      "amount": "2067",
+      "financeid": "4",
+      "month": "September",
+      "category": "finance-month",
+      "color": "color11"
+    }
+  },
+  {
+    "rid": "5a668b5a-ac76-4532-8032-38ee4a6aa057",
+    "content": {
+      "date": "December",
+      "amount": "1430",
+      "quarterid": "3",
+      "year": "2019",
+      "financeid": "7",
+      "share": "0,073936198",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "634027b9-824d-4519-8158-40d6a5ab767a",
+    "content": {
+      "date": "July",
+      "amount": "1625",
+      "quarterid": "1",
+      "year": "2021",
+      "financeid": "2",
+      "share": "0,072389522",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "67527ebc-853a-4215-b3cc-95e4778992ad",
+    "content": {
+      "date": "April",
+      "amount": "1628",
+      "quarterid": "4",
+      "year": "2021",
+      "financeid": "11",
+      "share": "0,072523165",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "6bc449e6-9f06-488f-9d87-5f2369348676",
+    "content": {
+      "date": "July",
+      "amount": "1483",
+      "quarterid": "1",
+      "year": "2019",
+      "financeid": "2",
+      "share": "0,07667649",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "6d1e2583-eb72-41ca-9927-c195dc450ec4",
+    "content": {
+      "date": "December",
+      "amount": "1298",
+      "quarterid": "3",
+      "year": "2020",
+      "financeid": "7",
+      "share": "0,061877294",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "6d868692-19b4-44c3-879e-ceee29080427",
+    "content": {
+      "date": "May",
+      "amount": "1720",
+      "quarterid": "4",
+      "year": "2021",
+      "financeid": "12",
+      "share": "0,076621525",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "70b8ece8-4417-4aea-9cce-4aadb3e20f87",
+    "content": {
+      "date": "June",
+      "amount": "1926",
+      "quarterid": "1",
+      "year": "2020",
+      "financeid": "1",
+      "share": "0,091814845",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "72d54826-a4df-4961-846b-e7f1949fed4a",
+    "content": {
+      "category": "finance-review",
+      "title": "Sales",
+      "year": "2021",
+      "subtitle": "Sales Income"
+    }
+  },
+  {
+    "rid": "73954a63-709d-469c-96cf-048e2acf781e",
+    "content": {
+      "date": "November",
+      "amount": "2103",
+      "quarterid": "2",
+      "year": "2020",
+      "financeid": "6",
+      "share": "0,100252658",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "77e8fe85-c4ac-4e35-abab-c15333de5433",
+    "content": {
+      "date": "May",
+      "amount": "1475",
+      "quarterid": "4",
+      "year": "2019",
+      "financeid": "12",
+      "share": "0,076262861",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "87de0525-46da-4b26-a346-b1d0c242714b",
+    "content": {
+      "date": "February",
+      "amount": "1820",
+      "quarterid": "3",
+      "year": "2020",
+      "financeid": "9",
+      "share": "0,086761691",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "95133587-174b-45fa-a304-acd5075d128b",
+    "content": {
+      "date": "November",
+      "amount": "1280",
+      "quarterid": "2",
+      "year": "2019",
+      "financeid": "6",
+      "share": "0,066180652",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "a37b76d5-b38e-44de-b9f9-20788d783b9b",
+    "content": {
+      "date": "June",
+      "amount": "2102",
+      "quarterid": "1",
+      "year": "2021",
+      "financeid": "1",
+      "share": "0,093638632",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "abaa26c9-bc43-4845-bf4f-0f822028f88b",
+    "content": {
+      "date": "October",
+      "amount": "1726",
+      "quarterid": "2",
+      "year": "2021",
+      "financeid": "5",
+      "share": "0,07688881",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "b300dee3-c0f8-4b4b-a655-fd55d61b76ed",
+    "content": {
+      "date": "December",
+      "amount": "1829",
+      "quarterid": "3",
+      "year": "2021",
+      "financeid": "7",
+      "share": "0,081477192",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "b4c64d55-42d6-47d9-abb8-dea8b0627922",
+    "content": {
+      "amount": "1475",
+      "financeid": "12",
+      "month": "May",
+      "category": "finance-month",
+      "color": "color1"
+    }
+  },
+  {
+    "rid": "b977b517-7ed6-4954-b769-35803051e78e",
+    "content": {
+      "amount": "1851",
+      "financeid": "1",
+      "month": "June",
+      "category": "finance-month",
+      "color": "color2"
+    }
+  },
+  {
+    "rid": "be08b4d3-b660-4ef7-921c-1de88c0a6bed",
+    "content": {
+      "date": "January",
+      "amount": "1398",
+      "quarterid": "3",
+      "year": "2019",
+      "financeid": "8",
+      "share": "0,072281681",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "c240579f-2097-4e80-a812-010609287696",
+    "content": {
+      "date": "October",
+      "amount": "1589",
+      "quarterid": "2",
+      "year": "2020",
+      "financeid": "5",
+      "share": "0,075749631",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "c9f5b223-f03b-457f-a820-8d741a22f7e2",
+    "content": {
+      "date": "February",
+      "amount": "1763",
+      "quarterid": "3",
+      "year": "2019",
+      "financeid": "9",
+      "share": "0,091153508",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "ccd06567-f954-44c6-b733-20c6e0cc516c",
+    "content": {
+      "date": "August",
+      "amount": "1628",
+      "quarterid": "1",
+      "year": "2021",
+      "financeid": "3",
+      "share": "0,072523165",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "ccd5a6f0-734e-4be1-8c00-2dbf08bb6d2d",
+    "content": {
+      "date": "August",
+      "amount": "1250",
+      "quarterid": "1",
+      "year": "2019",
+      "financeid": "3",
+      "share": "0,064629543",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "cf8831a4-548c-4dcd-b2e4-dbd9c707c193",
+    "content": {
+      "amount": "1398",
+      "financeid": "8",
+      "month": "January",
+      "category": "finance-month",
+      "color": "color3"
+    }
+  },
+  {
+    "rid": "d6a07a41-ec16-4d69-a285-2c8fc4744eb0",
+    "content": {
+      "date": "November",
+      "amount": "2346",
+      "quarterid": "2",
+      "year": "2021",
+      "financeid": "6",
+      "share": "0,104508197",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "d8cbcd95-3e38-4751-8ed6-90fc5bb99191",
+    "content": {
+      "date": "September",
+      "amount": "2396",
+      "quarterid": "2",
+      "year": "2020",
+      "financeid": "4",
+      "share": "0,114220337",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "d8f30d74-aac3-48ad-a2b6-084621ccfce3",
+    "content": {
+      "amount": "1483",
+      "financeid": "2",
+      "month": "July",
+      "category": "finance-month",
+      "color": "color4"
+    }
+  },
+  {
+    "rid": "e42eb007-2ec6-4df1-9fd2-a46f40e72143",
+    "content": {
+      "date": "May",
+      "amount": "1827",
+      "quarterid": "4",
+      "year": "2020",
+      "financeid": "12",
+      "share": "0,08709539",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "e5b2c556-6ead-43e0-9854-1e55845a9159",
+    "content": {
+      "date": "January",
+      "amount": "1327",
+      "quarterid": "3",
+      "year": "2021",
+      "financeid": "8",
+      "share": "0,059114398",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "ece52ea3-ce84-4773-9e22-2c063dd00bd1",
+    "content": {
+      "amount": "1280",
+      "financeid": "6",
+      "month": "November",
+      "category": "finance-month",
+      "color": "color5"
+    }
+  },
+  {
+    "rid": "f07f48d2-bbe8-4507-a248-1b900dca238f",
+    "content": {
+      "amount": "1543",
+      "financeid": "11",
+      "month": "April",
+      "category": "finance-month",
+      "color": "color6"
+    }
+  },
+  {
+    "rid": "f1f1e095-6ccd-44b3-bd66-26f6faca8b91",
+    "content": {
+      "date": "June",
+      "amount": "1851",
+      "quarterid": "1",
+      "year": "2019",
+      "financeid": "1",
+      "share": "0,095703428",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "f45c2095-003c-4b62-8109-f370ebd7ae8b",
+    "content": {
+      "date": "March",
+      "amount": "1986",
+      "quarterid": "4",
+      "year": "2020",
+      "financeid": "10",
+      "share": "0,09467512",
+      "category": "finance"
+    }
+  },
+  {
+    "rid": "f7b5c6d9-229a-4c11-a941-cccfbb40a48a",
+    "content": {
+      "date": "January",
+      "amount": "1517",
+      "quarterid": "3",
+      "year": "2020",
+      "financeid": "8",
+      "share": "0,0723173",
+      "category": "finance"
+    }
+  }
+]

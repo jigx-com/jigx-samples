@@ -1,0 +1,164 @@
+[
+  {
+    "rid": "39f3c026-f45f-4750-96b5-f430aa583e2c",
+    "content": {
+      "amount": 2,
+      "deal": "Online only",
+      "productid": "5",
+      "price": "191.6",
+      "discount": "0.15",
+      "tag": "in stock",
+      "id": "9e35187f-9b12-40b6-960e-b97b041ffb18",
+      "category": "product",
+      "title": "Bluetooth speaker Charge 5",
+      "uri": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80",
+      "precise-detail": "The Charge 5 is a powerful, portable Bluetooth speaker designed for crisp audio and all-day performance. With its rugged waterproof and dustproof build, it’s perfect for outdoor adventures, poolside parties, and everyday listening. The speaker delivers rich bass and clear highs, while its long-lasting battery lets you enjoy your music for hours without interruption. With Bluetooth connectivity, you can stream wirelessly from any device, and its built-in power bank feature allows you to charge your phone on the go. Durable, versatile, and great-sounding—the Charge 5 brings big audio wherever you take it."
+    }
+  },
+  {
+    "rid": "5240e8dd-f306-4449-ad43-7b5ae302bad4",
+    "content": {
+      "amount": 3,
+      "deal": "In-store only",
+      "productid": "1",
+      "price": "71.08",
+      "tag": "in stock",
+      "id": "ed170c71-30f2-4a2b-8306-22b3eb4d2f4e",
+      "category": "product",
+      "title": "Multifunction charging station",
+      "uri": "https://images.unsplash.com/photo-1587749091230-fb8a034d695c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+      "precise-detail": "The Multifunction Charging Station keeps all your essential devices powered, organized, and ready to go. Designed to charge multiple devices at once, it supports phones, smartwatches, earbuds, and more—reducing clutter and simplifying your desk or bedside setup. With fast-charging capability, built-in safety protections, and a sleek, compact design, it ensures efficient and reliable power delivery throughout the day. Perfect for home or office, it’s the all-in-one charging solution that brings convenience and order to your digital life."
+    }
+  },
+  {
+    "rid": "56e3c724-cb38-4c17-9a68-d5751d60e312",
+    "content": {
+      "date": "2022-06-13T10:00:00Z",
+      "deal": "Online only",
+      "quantity": 1,
+      "price": "1000",
+      "id": "0f7b0faf-a44c-4a46-a8a0-49f431d374d2",
+      "category": "assets",
+      "title": "iPhone 12",
+      "uri": "https://images.unsplash.com/photo-1609692814988-576d087865ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "precise-detail": "The iPhone 12 delivers fast performance, stunning visuals, and a sleek, durable design. Its Super Retina XDR display offers incredible brightness and clarity, while the A14 Bionic chip ensures smooth multitasking and exceptional efficiency.",
+      "status": "Active"
+    }
+  },
+  {
+    "rid": "5d465158-83ed-4d0a-82c7-402b857ee16f",
+    "content": {
+      "amount": 10,
+      "deal": "In-store only",
+      "productid": "3",
+      "price": "59.96",
+      "tag": "in stock",
+      "id": "1063fc63-64ca-469a-b43d-10785ac9d8c1",
+      "category": "product",
+      "title": "M1 Bluetooth Wireless Mouse",
+      "uri": "https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "precise-detail": "The XM1 Bluetooth Wireless Mouse offers smooth, precise control in a lightweight, ergonomic design. With responsive tracking and seamless Bluetooth connectivity, it’s perfect for work, study, or everyday navigation. The silent-click buttons and comfortable shape make it ideal for long hours of use, while the rechargeable battery ensures reliable performance without constant replacements"
+    }
+  },
+  {
+    "rid": "84047c44-fe07-41e6-bbf5-97add76c8d12",
+    "content": {
+      "overview": "The upgraded wireless charging station can charge five devices at the same time: mobile phones x 2, for IWatch series 5/4/3/2/1, for AirPods 1/2/3. Flexible options to meet the charging needs of all your devices. Please note that in order to charge faster and more safely, please use 12V/ 2A or 9V/2. 7A adapter or QC3. 0 Adapter (include), does not include the original watch magnetic charger.",
+      "shipping-detail": "Free USA shipping on orders over $40 with a 30-day return policy. International duties & taxes may apply and are not calculated at checkout. Orders ship within 1-2 business days.",
+      "deal": "Online/in-store",
+      "quantity": 1,
+      "productid": "2",
+      "title": "Headphones WH-1000XM4",
+      "uri": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+      "compatible-detial": "The wireless charging supports for iWatch series 5/4/3/2/1, for Airpods 3/2/1, for iPhone 11/11 Pro/Xs/XsMax/Xr/X/8/8 Plus, for Samsung Galaxy S10/S10 Plus/S9/S9 Plus/S8/S8 Plus/S7/S7 Edge/S6 Edge Plus/Note 9/Note 8 and other Qi-enabled mobile phones.",
+      "price": "211.96",
+      "weight-detail": "15.00 x 14.00 x 8.00 Inches",
+      "guarantee-detail": "1 Year Manufacturer Warranty",
+      "id": "1408ae22-6609-47be-ac61-4b437c87439f",
+      "category": "detail",
+      "precise-detail": "The WH-1000XM4 headphones deliver industry-leading noise cancellation and exceptional sound quality, making them perfect for travel, work, or immersive listening at home. Powered by intelligent audio processing, they adapt to your environment and optimize noise reduction in real time."
+    }
+  },
+  {
+    "rid": "933f9217-9166-439b-950f-914109e86472",
+    "content": {
+      "amount": 10,
+      "deal": "Online only",
+      "productid": "4",
+      "price": "84.3",
+      "discount": "0.10",
+      "tag": "in stock",
+      "id": "1146919f-12bd-498d-9ac7-cc0ef43750dc",
+      "category": "product",
+      "title": "Wireless headphones T3S",
+      "uri": "https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "precise-detail": "The T3S Wireless Headphones combine powerful sound with a sleek, comfortable design made for everyday use. With reliable Bluetooth connectivity, they deliver clear audio, deep bass, and smooth performance whether you’re listening to music, podcasts, or taking calls on the go."
+    }
+  },
+  {
+    "rid": "b1040496-883e-4191-bb34-1bab28122535",
+    "content": {
+      "amount": 10,
+      "deal": "In-store only",
+      "productid": "2",
+      "price": "211.96",
+      "discount": "0.10",
+      "tag": "free transport",
+      "id": "3b110cda-f5f7-4e98-b0cd-787ad65454ba",
+      "category": "product",
+      "title": "Headphones WH-1000XM4",
+      "uri": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+      "precise-detail": "The WH-1000XM4 headphones deliver industry-leading noise cancellation and exceptional sound quality, making them perfect for travel, work, or immersive listening at home. Powered by intelligent audio processing, they adapt to your environment and optimize noise reduction in real time."
+    }
+  },
+  {
+    "rid": "c40c8aec-ed14-43d6-8cda-9dc403053a93",
+    "content": {
+      "date": "2022-06-12T10:00:00Z",
+      "quantity": 1,
+      "price": "899",
+      "id": "69fcd645-1b99-4748-81cc-32cbe451d485",
+      "category": "assets",
+      "title": "iPad",
+      "uri": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1415&q=80",
+      "precise-detail": "The iPad combines powerful performance with effortless portability, making it ideal for work, creativity, and entertainment. Its vibrant Retina display brings photos, videos, and apps to life with stunning clarity, while the fast processor ensures smooth multitasking and responsive performance. With support for the Apple Pencil and Smart Keyboard, the iPad adapts to your needs—whether you’re taking notes, sketching, or getting work done on the go. Lightweight, long-lasting, and beautifully designed, it’s the perfect everyday tablet for all ages.",
+      "status": "Inactive"
+    }
+  },
+  {
+    "rid": "c52097b2-4043-44c3-9d78-d24fb15a0928",
+    "content": {
+      "overview": "Complete your desktop with the Satechi M1 Bluetooth Mouse, featuring Bluetooth 4.0 connection, rechargeable Type-C port and modern, ergonomic design. Seamlessly connect to your favorite Bluetooth-enabled device for wireless control of your desktop or laptop, with a range of up to 32 ft.",
+      "shipping-detail": "Free USA shipping on orders over $40 with a 30-day return policy. International duties & taxes may apply and are not calculated at checkout. Orders ship within 1-2 business days.",
+      "deal": "Online/in-store",
+      "quantity": 1,
+      "productid": "3",
+      "bluetooth-detail": "Easily connect to almost any Bluetooth-enabled device for wireless navigation control, from up to 32 ft. away. Simply, place your M1 Mouse into pairing mode and finish the connection process on your Bluetooth device. Supports both Mac and Windows OS.",
+      "design-detail": "Its curved, ergonomic design fits comfortably in the palm of your hand and is ideal for both left- and right-hand users. The M1 Mouse features a brushed aluminum finish to complete your modern desk setup.",
+      "title": "M1 Bluetooth Wireless Mouse",
+      "uri": "https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "compatible-detial": "2020/2018 Mac Mini, 2019/2017 iMac, iMac Pro, 2020/2019/2018/2017/2016 MacBook Pro, 2020/2018 MacBook Air, 2020/2018 iPad Pro (running iOS 13), 2019 iPad, iPhone 11 Pro Max/11 Pro/11, XS Max/XS/XR/X (iOS 13), MacBook, Chromebook, Microsoft Surface Go, Dell XPS, Lenovo, HP Spectre, ASUS, most Bluetooth-enabled computers and tablets. Supports Mac, iOS devices running iOS 13, Windows, Android and Chrome OS. Due to using older Bluetooth versions (2.1), we do not recommend using with 2012 & earlier Mac devices.",
+      "price": "59.96",
+      "weight-detail": "4.37 x 2.25 x 1.25 inches, 6.2 oz",
+      "guarantee-detail": "1 Year Manufacturer Warranty",
+      "id": "3f024e7b-ddc5-45e4-92ab-6bf6e618a86a",
+      "category": "detail",
+      "precise-detail": "Features optical sensors for precise tracking and fast scrolling when browsing the web, working or data entry. With soft touch navigation buttons and aluminum scroll wheel, the M1 Mouse becomes a natural extension of your Bluetooth device.",
+      "recharge-detail": "Equipped with a convenient Type-C recharging port, the M1 Mouse eliminates the need for single-use batteries and quickly charges to reduce downtime. Includes Type-C to Type-A charging cable."
+    }
+  },
+  {
+    "rid": "efc1dfd6-c822-429e-8ff9-07604d7719dc",
+    "content": {
+      "date": "2022-06-12T10:00:00Z",
+      "quantity": 1,
+      "price": "2200",
+      "id": "3ded578a-2fbd-4378-bc53-09b2f44a8d71",
+      "category": "assets",
+      "title": "Macbook Pro",
+      "uri": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "precise-detail": "The MacBook Pro delivers exceptional power, speed, and efficiency for professionals who need top-tier performance. Built with Apple’s advanced silicon chips, it offers lightning-fast processing, stunning graphics, and impressive battery life—all in a sleek, lightweight design. The vibrant Retina display brings incredible color accuracy and detail, while the Magic Keyboard and spacious trackpad provide a smooth, comfortable workspace. With high-speed ports, studio-quality microphones, and secure Touch ID, the MacBook Pro is engineered for creativity, productivity, and uncompromising performance.",
+      "status": "Active"
+    }
+  }
+]

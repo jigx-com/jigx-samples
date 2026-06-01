@@ -1,0 +1,18 @@
+[
+  {
+    "rid": "22ebc7ed-f42b-427f-8085-f8973d6a111b",
+    "content": {
+      "category": "web-view",
+      "uri": "https://jigx.com/"
+    }
+  },
+  {
+    "rid": "7458870a-3c09-4537-bce1-3d53db9ceb9a",
+    "content": {
+      "title": "Team work",
+      "category": "video-player",
+      "uri": "https://cdn.pixabay.com/video/2021/09/15/88697-606080045_small.mp4",
+      "subtitle": "Video-player usage examples"
+    }
+  }
+]

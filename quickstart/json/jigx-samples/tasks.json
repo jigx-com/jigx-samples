@@ -1,0 +1,194 @@
+[
+  {
+    "rid": "01768431-8056-4ce6-b042-ec2f3f9b4f73",
+    "content": {
+      "taskCost": 765,
+      "taskAssignee": "Jane",
+      "taskName": "TASK: Client Data Onboarding",
+      "team": "teamA",
+      "priority": "Urgent",
+      "taskId": 7297,
+      "taskStatus": "Not Started",
+      "Profile": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "rid": "196e6873-09a4-41c9-ad2b-e50d3ca59ddc",
+    "content": {
+      "taskCost": 475,
+      "taskAssignee": "Nadia",
+      "taskName": "TASK: Budget Forecast Data Capture",
+      "team": "teamC",
+      "priority": "Closed",
+      "Profile": "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW58ZW58MHx8MHx8fDA%3D",
+      "taskId": 7654,
+      "taskStatus": "Complete"
+    }
+  },
+  {
+    "rid": "2ba3691c-d87e-4f1e-958a-7331a0df5129",
+    "content": {
+      "taskCost": 657,
+      "taskAssignee": "Hazel",
+      "taskName": "TASK: Transaction Data Import",
+      "team": "teamB",
+      "priority": "Closed",
+      "Profile": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=2967&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "taskId": 9876,
+      "taskStatus": "Complete"
+    }
+  },
+  {
+    "rid": "36710a9d-b7d6-4efe-b7d8-a5edc7c77102",
+    "content": {
+      "taskCost": 432,
+      "taskAssignee": "Paul",
+      "taskName": "TASK: Financial Statement Data Extraction",
+      "team": "teamA",
+      "priority": "Medium",
+      "taskId": 6195,
+      "taskStatus": "In Progress",
+      "Profile": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBhdmF0YXJ8ZW58MHx8MHx8fDA%3D"
+    }
+  },
+  {
+    "rid": "3c3b64e6-d6a9-485b-83f7-5934f40aad1c",
+    "content": {
+      "taskCost": 3422,
+      "taskAssignee": "Hazel",
+      "taskName": "TASK: Customer Demographics Capture",
+      "team": "teamB",
+      "priority": "Low",
+      "Profile": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=2967&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "taskId": 55431,
+      "taskStatus": "Not Started"
+    }
+  },
+  {
+    "rid": "407187c0-ff8c-4811-954c-b35131b0b5d0",
+    "content": {
+      "taskCost": 50,
+      "taskAssignee": "Jane",
+      "taskName": "TASK: Expense Report Collection",
+      "team": "teamA",
+      "priority": "High",
+      "taskId": "2345",
+      "taskStatus": "In Progress",
+      "Profile": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "rid": "42c06d19-734a-4e2d-b50d-1910c6dea22b",
+    "content": {
+      "taskCost": 265,
+      "taskAssignee": "John",
+      "taskName": "TASK: Revenue Data Aggregation",
+      "team": "teamA",
+      "priority": "Closed",
+      "taskId": "6483",
+      "taskStatus": "Complete",
+      "Profile": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbiUyMGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "rid": "473ad883-f0f0-41c3-9973-b49b7177498b",
+    "content": {
+      "taskCost": 665,
+      "taskAssignee": "Ken",
+      "taskName": "TASK: Tax Document Upload",
+      "team": "teamC",
+      "priority": "Medium",
+      "taskId": 4524,
+      "taskStatus": "In Progress",
+      "Profile": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFuJTIwYXZhdGFyfGVufDB8fDB8fHww"
+    }
+  },
+  {
+    "rid": "507d7664-e3e5-484f-81ad-04ef26b708ad",
+    "content": {
+      "taskCost": 235,
+      "taskAssignee": "Nadia",
+      "taskName": "TASK: Profit & Loss Data Entry",
+      "team": "teamC",
+      "priority": "Low",
+      "taskId": 3345,
+      "taskStatus": "In Progress"
+    }
+  },
+  {
+    "rid": "a11889b5-908a-48be-9a5b-c19754de9c19",
+    "content": {
+      "taskCost": 155,
+      "taskAssignee": "Paul",
+      "taskName": "TASK: Payment History Recording",
+      "team": "teamA",
+      "priority": "Closed",
+      "taskId": 9975,
+      "taskStatus": "Complete",
+      "Profile": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBhdmF0YXJ8ZW58MHx8MHx8fDA%3D"
+    }
+  },
+  {
+    "rid": "a86167e1-3989-4478-b357-3101bebd058d",
+    "content": {
+      "taskCost": 425,
+      "taskAssignee": "John",
+      "taskName": "TASK: Bank Reconciliation Data Input",
+      "team": "teamA",
+      "priority": "Low",
+      "taskId": 12343,
+      "taskStatus": "Not Started"
+    }
+  },
+  {
+    "rid": "c42f22d0-0b78-4070-aa35-80a6415e81a6",
+    "content": {
+      "taskCost": 789,
+      "taskAssignee": "Paul",
+      "taskName": "TASK: Credit Score Retrieval Integration",
+      "team": "teamA",
+      "priority": "Closed",
+      "taskId": 23455,
+      "taskStatus": "Complete",
+      "Profile": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBhdmF0YXJ8ZW58MHx8MHx8fDA%3D"
+    }
+  },
+  {
+    "rid": "cfcf1868-20b5-4619-927a-b1198b626e1d",
+    "content": {
+      "taskCost": 234,
+      "taskAssignee": "Paul",
+      "taskName": "TASK: Investment Portfolio Data Import",
+      "team": "teamA",
+      "priority": "Closed",
+      "taskId": 5877,
+      "taskStatus": "Complete",
+      "Profile": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBhdmF0YXJ8ZW58MHx8MHx8fDA%3D"
+    }
+  },
+  {
+    "rid": "ee776242-6c02-445e-81d5-00c1b82feb49",
+    "content": {
+      "taskCost": 145,
+      "taskAssignee": "Simon",
+      "taskName": "TASK: Loan Application Data Capture",
+      "team": "teamB",
+      "priority": "High",
+      "Profile": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVuJTIwYXZhdGFyc3xlbnwwfHwwfHx8MA%3D%3D",
+      "taskId": 34565,
+      "taskStatus": "In Progress"
+    }
+  },
+  {
+    "rid": "fd91f331-9556-4ca6-8867-e0a391964de5",
+    "content": {
+      "taskCost": 670,
+      "taskAssignee": "Jane",
+      "taskName": "TASK: Invoice Data Automation",
+      "team": "teamA",
+      "priority": "Closed",
+      "taskId": 5890,
+      "taskStatus": "Complete"
+    }
+  }
+]

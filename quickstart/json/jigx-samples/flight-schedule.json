@@ -1,0 +1,104 @@
+[
+  {
+    "rid": "370f2671-cd21-4e69-9e81-6a149dccbff6",
+    "content": {
+      "date": "30.Jul",
+      "seat": "6C",
+      "flight": "A 8273",
+      "disembark": "19:03",
+      "name": "Luke Jones",
+      "from": "Nevada",
+      "fromabrv": "LAS",
+      "gate": "12",
+      "to": "Wisconson",
+      "toabrv": "AUW",
+      "airline": "Get Stuff Done Airlines",
+      "board": "3:47"
+    }
+  },
+  {
+    "rid": "4a158ec0-7653-4e0d-b8df-c34c3def0df0",
+    "content": {
+      "date": "30.Jul",
+      "seat": "13F",
+      "flight": "A 1123",
+      "disembark": "19:59",
+      "name": "Tracy Matthews",
+      "from": "Iowa",
+      "fromabrv": "DSM",
+      "gate": "15",
+      "to": "Ohio",
+      "toabrv": "DAY",
+      "airline": "Get Stuff Done Airlines",
+      "board": "14:00"
+    }
+  },
+  {
+    "rid": "9cbff43f-30a0-4c13-a56e-2e7b88b02e62",
+    "content": {
+      "date": "30.Jul",
+      "seat": "3B",
+      "flight": "A 1182",
+      "disembark": "7:46",
+      "name": "Andy Smith",
+      "from": "Daytona Beach",
+      "fromabrv": "DAB",
+      "gate": "5",
+      "to": "Charlotte",
+      "toabrv": "CLT",
+      "airline": "Get Stuff Done Airlines",
+      "board": "6:02"
+    }
+  },
+  {
+    "rid": "a0e0d424-e3e8-4bb8-b4c4-2faddc560395",
+    "content": {
+      "date": "30.Jul",
+      "seat": "12F",
+      "flight": "A 0123",
+      "disembark": "12:30",
+      "name": "July Nelson",
+      "from": "Hawaii",
+      "fromabrv": "HNL",
+      "gate": "16",
+      "to": "New York",
+      "toabrv": "JFK",
+      "airline": "Get Stuff Done Airlines",
+      "board": "11:30"
+    }
+  },
+  {
+    "rid": "cf86beaf-75d1-4758-a3b9-b65695b4b5b7",
+    "content": {
+      "date": "30.Jul",
+      "seat": "27A",
+      "flight": "A 5738",
+      "disembark": "10:45",
+      "name": "Nora Gordon",
+      "from": "Phoenix",
+      "fromabrv": "PHX",
+      "gate": "2",
+      "to": "Alabama",
+      "toabrv": "MCZ",
+      "airline": "Get Stuff Done Airlines",
+      "board": "8:10"
+    }
+  },
+  {
+    "rid": "e35283f4-1b3b-4c36-b8c0-265d2d5ee147",
+    "content": {
+      "date": "30.Jul",
+      "seat": "24C",
+      "flight": "A 2876",
+      "disembark": "6:15",
+      "name": "Jane Stevens",
+      "from": "Connecticut",
+      "fromabrv": "HVN",
+      "gate": "7",
+      "to": "South Carolina",
+      "toabrv": "CAE",
+      "airline": "Get Stuff Done Airlines",
+      "board": "2:00"
+    }
+  }
+]

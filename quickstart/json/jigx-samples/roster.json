@@ -1,0 +1,61 @@
+[
+  {
+    "rid": "02c99f5f-6356-4c27-a5d5-2b4a33a6319a",
+    "content": {
+      "TechnicianName": "Aiden M.",
+      "Monday": "8 – 4",
+      "Thursday": "10 – 6",
+      "Friday": "8 – 4",
+      "Wednesday": "Off",
+      "Tuesday": "8 – 4",
+      "Notes": "On-call Wed"
+    }
+  },
+  {
+    "rid": "180da43c-3fad-4f5b-9258-11bf1558d135",
+    "content": {
+      "TechnicianName": "Sofia T.",
+      "Monday": "Off",
+      "Thursday": "10 – 6",
+      "Friday": "8 – 2",
+      "Wednesday": "8  – 4",
+      "Tuesday": "8  – 4",
+      "Notes": "Backup for Aiden Thursday"
+    }
+  },
+  {
+    "rid": "5623a53c-ccf4-47f7-aefb-0ba243faa231",
+    "content": {
+      "TechnicianName": "Luis K.",
+      "Tuesday": "7 – 3",
+      "Monday": "7 – 3",
+      "Thursday": "Off",
+      "Friday": "7 – 3",
+      "Wednesday": "7 – 3"
+    }
+  },
+  {
+    "rid": "648acea7-ce1b-4c80-a4f3-5256f983448c",
+    "content": {
+      "TechnicianName": "Marcus D.",
+      "Monday": "10 – 6",
+      "Thursday": "8 – 4",
+      "Friday": "8 – 4",
+      "Wednesday": "8 – 4",
+      "Tuesday": "Off",
+      "Notes": "Late start Tuesday"
+    }
+  },
+  {
+    "rid": "970e1b65-040d-4b92-a360-bc3b81e8e771",
+    "content": {
+      "TechnicianName": "Priya R.",
+      "Monday": "9 – 5",
+      "Thursday": "9 – 1",
+      "Friday": "Off",
+      "Wednesday": "9 – 5",
+      "Tuesday": "9  – 5",
+      "Notes": "Training Friday"
+    }
+  }
+]

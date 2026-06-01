@@ -1,0 +1,57 @@
+[
+  {
+    "rid": "2a2f420a-c57f-4b70-a5fc-4fdd63d99066",
+    "content": {
+      "lastName": "Jefferson",
+      "firstName": "Allan",
+      "phone": 767783245,
+      "email": "ajefferson@ent.com",
+      "companyName": "AB Enterprise",
+      "jobTitle": "Accountant"
+    }
+  },
+  {
+    "rid": "3fbf6cf8-1366-4c3c-bfda-dc2297c54833",
+    "content": {
+      "firstName": "Hazel",
+      "lastName": "Wetton",
+      "phone": 654678896,
+      "email": "hazel@wdesign.com",
+      "jobTitle": "Marketing Manager",
+      "companyName": "Wetton Designs"
+    }
+  },
+  {
+    "rid": "75cb24c2-a41d-4caf-8948-64c51d390097",
+    "content": {
+      "firstName": "Ken",
+      "lastName": "Muller",
+      "phone": 6775448367,
+      "email": "ken@poolsolutions.com",
+      "companyName": "Pool Solutions",
+      "jobTitle": "Pool Designer"
+    }
+  },
+  {
+    "rid": "7d8a2cd5-e13e-4382-b1a0-219ecdd886e7",
+    "content": {
+      "firstName": "Jane",
+      "lastName": "Alistar",
+      "phone": 23445256,
+      "email": "janeM@paint.com",
+      "companyName": "Paint Pty Ltd",
+      "jobTitle": "Sales representative"
+    }
+  },
+  {
+    "rid": "a7a469f6-5943-417f-b115-75f0b0ad2f6a",
+    "content": {
+      "firstName": "Harry",
+      "lastName": "Gordan",
+      "phone": 4567890,
+      "email": "harry@global.com",
+      "jobTitle": "Store Manager",
+      "companyName": "Global Inc"
+    }
+  }
+]

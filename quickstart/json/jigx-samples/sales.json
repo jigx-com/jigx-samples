@@ -1,0 +1,90 @@
+[
+  {
+    "rid": "0aa53d70-1e3e-4660-a5ef-aa6a5c549b8e",
+    "content": {
+      "Product": "Air Filter (16x25x1)",
+      "UnitsSold": 85,
+      "TotalRevenue": 1700
+    }
+  },
+  {
+    "rid": "24eb7b44-830c-4904-bb44-f97804f541ed",
+    "content": {
+      "Product": "Blower Motor",
+      "UnitsSold": 95,
+      "TotalRevenue": 1900
+    }
+  },
+  {
+    "rid": "3a9471be-c9b0-4907-8433-b818e47cd5c9",
+    "content": {
+      "Product": "Condenser Coil",
+      "UnitsSold": 150,
+      "TotalRevenue": 3000
+    }
+  },
+  {
+    "rid": "73540bbf-f239-4541-9f7f-27ae88f431cb",
+    "content": {
+      "Product": "Thermostat",
+      "UnitsSold": 120,
+      "TotalRevenue": 2400
+    }
+  },
+  {
+    "rid": "8784a96b-21c7-4496-966b-05cea699d8fc",
+    "content": {
+      "Product": "Door handles",
+      "UnitsSold": 12,
+      "TotalRevenue": 50
+    }
+  },
+  {
+    "rid": "959540b6-c8e0-40a2-83d7-3d01644ca69b",
+    "content": {
+      "Product": "Fan",
+      "UnitsSold": 2,
+      "TotalRevenue": 205
+    }
+  },
+  {
+    "rid": "b7ba04dd-6420-4c6c-bc77-411b1d53127a",
+    "content": {
+      "Product": "Compressor Unit",
+      "UnitsSold": 60,
+      "TotalRevenue": 1200
+    }
+  },
+  {
+    "rid": "c43330df-efbb-4d1e-9291-b9540a9667af",
+    "content": {
+      "Product": "Evaporator Coil",
+      "UnitsSold": 45,
+      "TotalRevenue": 900
+    }
+  },
+  {
+    "rid": "db41f330-9449-4c03-b659-b89c36c410c5",
+    "content": {
+      "Product": "Nails (50mm x 100)",
+      "UnitsSold": 4,
+      "TotalRevenue": 180
+    }
+  },
+  {
+    "rid": "ec69bdc0-f092-4aa0-a33c-1360d70d5370",
+    "content": {
+      "Product": "Refrigerant (R-410A)",
+      "UnitsSold": 200,
+      "TotalRevenue": 4000
+    }
+  },
+  {
+    "rid": "ee82b1eb-b3ac-427a-88e5-d24678a6a419",
+    "content": {
+      "Product": "Flexible duct",
+      "UnitsSold": 40,
+      "TotalRevenue": 250
+    }
+  }
+]

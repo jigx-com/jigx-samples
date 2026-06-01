@@ -1,0 +1,34 @@
+[
+  {
+    "rid": "4fddd41b-7c5e-45a4-806f-1e5fbe246cf4",
+    "content": {
+      "address": "Národní 135/14, 110 00 Praha",
+      "lng": "144.970952",
+      "address-us": "768 5th Ave, New York, US",
+      "lat-us": "-37.841873",
+      "category": "location",
+      "lat": "-37.848319",
+      "lng-us": "144.965644"
+    }
+  },
+  {
+    "rid": "79fcd26c-a0ae-485d-af13-b5f1c634173b",
+    "content": {
+      "country": "United states",
+      "category": "location",
+      "city": "Seattle",
+      "street": "1483 Alaskan Way Pier 59"
+    }
+  },
+  {
+    "rid": "80ba1a41-1c33-4d48-94ce-635bfb2344eb",
+    "content": {
+      "image": "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80",
+      "address": "Národní 135/14, 110 00 110 00 Nové Město, Czechia",
+      "title": "Work productivity",
+      "category": "titles",
+      "locationtitle": "Co-working space",
+      "locationsubtitle": "Prague Czech Republic"
+    }
+  }
+]

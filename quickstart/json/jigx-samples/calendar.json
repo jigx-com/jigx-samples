@@ -1,0 +1,246 @@
+[
+  {
+    "rid": "0e729c61-6cdf-4ac7-8300-b05a5dc9b213",
+    "content": {
+      "time": "1",
+      "color": "color2",
+      "title": "Negotiation",
+      "category": "tag"
+    }
+  },
+  {
+    "rid": "173071b9-9586-4d5e-aa91-91386e0b7384",
+    "content": {
+      "location": "Redmond, WA",
+      "time": "1",
+      "title": "Negotiation with Microsoft",
+      "category": "event"
+    }
+  },
+  {
+    "rid": "1b359eb1-c22a-48b9-a313-963df9825e1c",
+    "content": {
+      "time": "2",
+      "color": "color5",
+      "title": "Qualification",
+      "category": "tag"
+    }
+  },
+  {
+    "rid": "2",
+    "content": {
+      "userEmail": "autom8@jigx.com",
+      "userPhoto": "jigx://3e01ff7c7c98f80f8bdb3b61b0518a172e510a75.jpg",
+      "userName": "Test Autom8",
+      "userPhone": 45850647517550
+    }
+  },
+  {
+    "rid": "28db7fc9-5ba3-4120-ae50-479fc8ed3a16",
+    "content": {
+      "location": "Palo Alto, CA",
+      "time": "2",
+      "title": "Demo for Facebook",
+      "category": "event"
+    }
+  },
+  {
+    "rid": "3d404281-cbd0-400f-a7d1-41653bed4ed9",
+    "content": {
+      "color": "color6",
+      "location": "Prague",
+      "date-from": "2023-06-29T07:18:00.000Z",
+      "category": "update",
+      "title": "Test",
+      "date-to": "2023-06-30T07:18:00.000Z",
+      "email": "demo+nora@jigx.com",
+      "tags": "N"
+    }
+  },
+  {
+    "rid": "5a27bd71-5d54-4d0d-9e9a-a96b45daae31",
+    "content": {
+      "eventEnd": "2",
+      "color": "color2",
+      "location": "Redmond, WA",
+      "eventStart": "1",
+      "fullname": "Tim Cook",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+      "time": "1",
+      "category": "people",
+      "title": "Negotiation with Microsoft",
+      "tags": "Negotiation"
+    }
+  },
+  {
+    "rid": "6caf0a91-8446-4bbd-871f-65d3b3ef6837",
+    "content": {
+      "color": "color6",
+      "description": "Everyone in the company is welcome",
+      "from": "2023-04-07T01:02:00.000Z",
+      "to": "2023-04-07T01:02:00.000Z",
+      "category": "event",
+      "title": "Elderi’s Brithday",
+      "tags": "Birthdays"
+    }
+  },
+  {
+    "rid": "8a2c982c-8c41-48fa-89ff-e779cc6be8f6",
+    "content": {
+      "eventEnd": "2",
+      "color": "color2",
+      "description": "Discussion of subsidies",
+      "date-from": "2022-10-25T08:00:00",
+      "location": "4 Great Jones Alley, NY",
+      "eventStart": "1",
+      "time": "1",
+      "category": "meeting",
+      "date-to": "2022-10-25T09:30:00",
+      "title": "Meeting with the mayor",
+      "tags": "important"
+    }
+  },
+  {
+    "rid": "8ac3f3c2-3409-4894-84dc-3ab8728b1430",
+    "content": {
+      "time": "3",
+      "color": "color6",
+      "title": "Verbal",
+      "category": "tag"
+    }
+  },
+  {
+    "rid": "92d6cc62-db26-4a84-a653-ab2953386eb6",
+    "content": {
+      "color": "color6",
+      "description": "Taesting",
+      "from": "2023-05-11T12:15:58.397Z",
+      "to": "2023-05-12T12:16:01.075Z",
+      "category": "event",
+      "title": "Elderi Birthday",
+      "tags": "QA"
+    }
+  },
+  {
+    "rid": "a4771e20-bd9a-4d46-b215-c43000fc5fda",
+    "content": {
+      "color": "color6",
+      "description": "Creating a new event",
+      "from": "2023-05-11T12:12:00.000Z",
+      "to": "2023-05-12T12:12:00.000Z",
+      "category": "event",
+      "title": "Elderi Testing",
+      "tags": "QA"
+    }
+  },
+  {
+    "rid": "bab48ba6-7df0-4b72-89ab-9870a8b27374",
+    "content": {
+      "location": "Menlo Park, CA",
+      "time": "3",
+      "title": "Sign contract",
+      "category": "event"
+    }
+  },
+  {
+    "rid": "c9921cd6-9816-4715-a84f-6be53f2c9d74",
+    "content": {
+      "eventEnd": "4",
+      "color": "color5",
+      "location": "Palo Alto, CA",
+      "eventStart": "2",
+      "fullname": "Michael Tong",
+      "avatar": "https://jollycontrarian.com/images/6/6c/Rickroll.jpg",
+      "time": "2",
+      "category": "people",
+      "title": "Demo for Facebook",
+      "tags": "Qualification"
+    }
+  },
+  {
+    "rid": "d543bf9b-5895-4ea0-b4b6-5d2d242494ce",
+    "content": {
+      "color": "color6",
+      "description": "Test",
+      "from": "2023-03-22T13:35:45.816Z",
+      "to": "2023-03-23T13:35:49.761Z",
+      "category": "event",
+      "title": "Test",
+      "tags": "Testing"
+    }
+  },
+  {
+    "rid": "db7c1c6d-f578-4d02-ad3b-327706c64609",
+    "content": {
+      "fullname": "John Doe",
+      "avatar": "https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "time": "1",
+      "category": "meeting-people"
+    }
+  },
+  {
+    "rid": "dcce745f-8b50-4684-bde6-efa26e5e08c8",
+    "content": {
+      "fullname": "July Nelson",
+      "avatar": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "time": "1",
+      "category": "meeting-people"
+    }
+  },
+  {
+    "rid": "e919837e-a357-43d0-98e6-b47606fd039b",
+    "content": {
+      "eventEnd": "25",
+      "color": "color6",
+      "location": "Menlo Park, CA",
+      "eventStart": "24",
+      "fullname": "Michael Tong",
+      "avatar": "https://profile-images.xing.com/images/96508f00bdc74c9f2ffd7f63010ea5bd-5/markus-dopp.1024x1024.jpg",
+      "time": "3",
+      "category": "people",
+      "title": "Sign contract",
+      "tags": "Verbal"
+    }
+  },
+  {
+    "rid": "ed8857d8-b827-49e3-a43d-c1e0db47e617",
+    "content": {
+      "eventEnd": "168",
+      "location": "Blue Room",
+      "eventStart": "0",
+      "title": "Onboarding/Induction Training",
+      "category": "meeting-event"
+    }
+  },
+  {
+    "rid": "eeac39ac-569b-4980-a74c-e5714d2e4ba4",
+    "content": {
+      "fullname": "Karl Fisher",
+      "avatar": "https://images.unsplash.com/photo-1591084728795-1149f32d9866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+      "time": "1",
+      "category": "meeting-people"
+    }
+  },
+  {
+    "rid": "f82bc95d-5432-4974-ab09-7b78936f6509",
+    "content": {
+      "color": "color6",
+      "location": "Test",
+      "date-from": "2023-06-28T07:12:13.531Z",
+      "category": "update",
+      "title": "Test",
+      "date-to": "2023-06-28T07:12:15.200Z",
+      "email": "demo+tracy@jigx.com",
+      "tags": "Test"
+    }
+  },
+  {
+    "rid": "ffa1008b-5481-4101-b98e-754a489806c5",
+    "content": {
+      "fullname": "Andrew Williams",
+      "avatar": "https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80",
+      "time": "1",
+      "category": "meeting-people"
+    }
+  }
+]

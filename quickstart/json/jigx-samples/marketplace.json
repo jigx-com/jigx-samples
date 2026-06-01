@@ -1,0 +1,242 @@
+[
+  {
+    "rid": "075dbeba-633b-46a4-b1bd-ac2cf4c40c4f",
+    "content": {
+      "quantity": 75,
+      "image_uri": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "price": 199,
+      "name": "Indoor Potted Plant",
+      "discount": 0,
+      "tag": "decor",
+      "category": "homeware"
+    }
+  },
+  {
+    "rid": "142c5d36-3c2d-4a7c-81ef-8b863cc6e8a4",
+    "content": {
+      "quantity": 20,
+      "image_uri": "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800",
+      "price": 8999,
+      "name": "4K Ultra HD TV 55\"",
+      "discount": 8,
+      "tag": "tv",
+      "category": "electronics"
+    }
+  },
+  {
+    "rid": "21c1b722-592c-414c-8080-635ca3c46d79",
+    "content": {
+      "quantity": 60,
+      "image_uri": "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800",
+      "price": 799,
+      "name": "Ceramic Dinner Plate Set",
+      "discount": 10,
+      "tag": "kitchen",
+      "category": "homeware"
+    }
+  },
+  {
+    "rid": "32674802-b1bf-4db9-8af4-c84d66de9ff1",
+    "content": {
+      "quantity": 100,
+      "image_uri": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800",
+      "price": 899,
+      "name": "Bluetooth Speaker Mini",
+      "discount": 0,
+      "tag": "speaker",
+      "category": "electronics"
+    }
+  },
+  {
+    "rid": "343f4164-e6ce-4217-b809-18c743001b40",
+    "content": {
+      "quantity": 28,
+      "image_uri": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800",
+      "price": 1299,
+      "name": "Premium Hiking Backpack",
+      "discount": 12,
+      "tag": "hiking",
+      "category": "outdoor"
+    }
+  },
+  {
+    "rid": "391968ba-9e56-4b6a-8470-f60a9002b442",
+    "content": {
+      "quantity": 40,
+      "image_uri": "https://unsplash.com/photos/a-woman-walking-across-a-lush-green-field-A0DJMWF33HE",
+      "price": 699,
+      "name": "Lightweight Summer Dress",
+      "discount": 12,
+      "tag": "dress",
+      "category": "clothing"
+    }
+  },
+  {
+    "rid": "5244d2b0-4f45-42a0-83d7-a3854a3fbbf4",
+    "content": {
+      "quantity": 45,
+      "image_uri": "https://unsplash.com/photos/a-couch-with-a-blanket-on-top-of-it-VSRjzIj0148",
+      "price": 499,
+      "name": "Soft Knitted Throw Blanket",
+      "discount": 5,
+      "tag": "bedding",
+      "category": "homeware"
+    }
+  },
+  {
+    "rid": "5338a0d8-375e-4462-ab77-e24909fc1656",
+    "content": {
+      "quantity": 15,
+      "image_uri": "https://images.unsplash.com/photo-1501707336005-e76ec2661a47?w=800",
+      "price": 2199,
+      "name": "Two-Person Tent",
+      "discount": 10,
+      "tag": "tent",
+      "category": "outdoor"
+    }
+  },
+  {
+    "rid": "59c81c3e-9db9-4da1-befa-1f4dc3ae37e7",
+    "content": {
+      "quantity": 120,
+      "image_uri": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800",
+      "price": 199,
+      "name": "Cotton Crewneck T-Shirt",
+      "discount": 0,
+      "tag": "t-shirt",
+      "category": "clothing"
+    }
+  },
+  {
+    "rid": "5f874bb7-c066-47f5-9288-0478e8ea46f4",
+    "content": {
+      "quantity": 55,
+      "image_uri": "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?w=800",
+      "price": 299,
+      "name": "Outdoor LED Lantern",
+      "discount": 0,
+      "tag": "lighting",
+      "category": "outdoor"
+    }
+  },
+  {
+    "rid": "672ece57-d821-4bf8-a3a6-d1f436a3f44d",
+    "content": {
+      "quantity": 60,
+      "image_uri": "https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=800",
+      "price": 549,
+      "name": "Slim Fit Chino Pants",
+      "discount": 15,
+      "tag": "pants",
+      "category": "clothing"
+    }
+  },
+  {
+    "rid": "73956129-b57c-4014-9444-b513e23dd0d5",
+    "content": {
+      "quantity": 50,
+      "image_uri": "https://images.unsplash.com/photo-1512499617640-c2f999098c01?w=800",
+      "price": 12999,
+      "name": "Smartphone Pro X",
+      "discount": 5,
+      "tag": "mobile",
+      "category": "electronics"
+    }
+  },
+  {
+    "rid": "85cf5fc3-a577-4121-a873-b7c82d0a104b",
+    "content": {
+      "quantity": 18,
+      "image_uri": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800",
+      "price": 15999,
+      "name": "Laptop Air 14\"",
+      "discount": 7,
+      "tag": "laptop",
+      "category": "electronics"
+    }
+  },
+  {
+    "rid": "85eab40c-74a2-4f18-b267-6b2a1684f8fd",
+    "content": {
+      "quantity": 30,
+      "image_uri": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800",
+      "price": 349,
+      "name": "Modern Table Lamp",
+      "discount": 0,
+      "tag": "lighting",
+      "category": "homeware"
+    }
+  },
+  {
+    "rid": "86124706-4494-425f-8d31-f9695eac203d",
+    "content": {
+      "quantity": 140,
+      "image_uri": "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=800",
+      "price": 249,
+      "name": "Stainless Steel Water Bottle",
+      "discount": 0,
+      "tag": "hydration",
+      "category": "outdoor"
+    }
+  },
+  {
+    "rid": "a8ae3a40-ed60-40ca-9e6d-33544c12f714",
+    "content": {
+      "quantity": 25,
+      "image_uri": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800",
+      "price": 899,
+      "name": "Classic Denim Jacket",
+      "discount": 10,
+      "tag": "jacket",
+      "category": "clothing"
+    }
+  },
+  {
+    "rid": "c41c9d69-5675-4d02-8ae4-da521579a2ea",
+    "content": {
+      "quantity": 35,
+      "image_uri": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800",
+      "price": 2499,
+      "name": "Wireless Noise-Cancelling Headphones",
+      "discount": 10,
+      "tag": "audio",
+      "category": "electronics"
+    }
+  },
+  {
+    "rid": "dc82e8f0-52aa-44ab-93a6-06eaabfd0f45",
+    "content": {
+      "quantity": 40,
+      "image_uri": "https://images.unsplash.com/photo-1506377283977-350b9e3f2b41?w=800",
+      "price": 599,
+      "name": "Foldable Camping Chair",
+      "discount": 10,
+      "tag": "camping",
+      "category": "outdoor"
+    }
+  },
+  {
+    "rid": "f04d7135-3ac1-4222-bde9-018495a10b95",
+    "content": {
+      "quantity": 80,
+      "image_uri": "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?w=800",
+      "price": 399,
+      "name": "Hooded Sweatshirt",
+      "discount": 5,
+      "tag": "hoodie",
+      "category": "clothing"
+    }
+  },
+  {
+    "rid": "f4571c79-2037-4696-9e17-c9c691507691",
+    "content": {
+      "quantity": 90,
+      "image_uri": "https://images.unsplash.com/photo-1601049676869-702ea24cfd20?w=800",
+      "price": 259,
+      "name": "Glass Storage Jar Set",
+      "discount": 8,
+      "tag": "storage",
+      "category": "homeware"
+    }
+  }
+]
