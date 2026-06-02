@@ -79,3 +79,9 @@ options:
     - title: List with rating, tags and badges
       link: list-with-tags-rating
       color: color9
+    - color: color10
+      link: list-with-listheader
+      title: List with listHeader
+    - color: color11
+      link: list-listheader-jigheader
+      title: List with jigHeader & listHeader

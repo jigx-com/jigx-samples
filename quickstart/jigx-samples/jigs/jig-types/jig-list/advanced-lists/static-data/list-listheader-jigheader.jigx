@@ -1,0 +1,87 @@
+title: Global online store
+type: jig.list
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1763872038252-e6c4e0a11067?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+datasources:
+  products-items:
+    type: datasource.static
+    options:
+      data:
+        - id: 1
+          name: Brass WH-1000XM4 Wireless Noise-Canceling Headphones
+          image: https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+          price: $275
+        - id: 2
+          name: iphone 14
+          image: https://images.unsplash.com/photo-1609692814988-576d087865ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          price: $900
+        - id: 3
+          name: M1 Bluetooth Wireless Mouse
+          image: https://images.unsplash.com/photo-1611850698562-ae3d28934080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+          price: $250
+        - id: 4
+          name: Headphones WH-1000XM4
+          image: https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80
+          price: $176
+        - id: 5
+          name: Macbook Pro
+          image: https://images.unsplash.com/photo-1541807084-5c52b6b3adef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80
+          price: $1750
+        - id: 6
+          name: Apple AirPods Max Wireless Headphones
+          image: https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D
+          price: $780
+        - id: 7
+          name: Pure Bass Bluetooth Wireless Headphones
+          image: https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+          price: $170
+listHeader:
+  children:
+    - type: component.banner
+      options:
+        title:
+          text: Sale
+          fontSize: medium
+          color: negative
+          isSubtle: false
+          isBold: true
+          numberOfLines: 1
+          transform: uppercase
+        subtitle: Save 20% on all headphones. Offer ends Sunday.
+        style:
+          isNegative: true
+        leftElement:
+          element: icon
+          icon: headphones-1
+          color: negative
+          type: contained
+          shape: rounded
+
+data: =@ctx.datasources.products-items
+item:
+  type: component.list-item
+  options:
+    isContained: true
+    leftElement:
+      element: image
+      text: ""
+      size: small
+      uri: =@ctx.current.item.image
+    rightElement:
+      element: value
+      text: =@ctx.current.item.price
+    title:
+      text: =@ctx.current.item.name
+      fontSize: regular
+      isSubtle: false
+      isBold: false
+      numberOfLines: 2
+      transform: none

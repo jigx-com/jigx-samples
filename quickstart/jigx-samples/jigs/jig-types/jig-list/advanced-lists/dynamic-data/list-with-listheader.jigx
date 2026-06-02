@@ -1,0 +1,98 @@
+title: Sales Orders
+type: jig.list
+
+datasources:
+  orders:
+    type: datasource.sqlite
+    options:
+      provider: DATA_PROVIDER_DYNAMIC
+      entities:
+        - default/orders
+      query: |
+        SELECT 
+          id,
+          '$.customer', 
+          '$.orderNumber',
+          '$.totalAmount', 
+          '$.status',  
+          '$.dueDate' 
+        FROM [default/orders]
+
+listHeader:
+  children:
+    - type: component.card
+      options:
+        color: color14
+        children:
+          - type: component.section
+            options:
+              title:
+                text: Sales Overview
+                fontSize: medium
+                color: color1
+                isBold: true
+                isSubtle: false
+              children:
+                - type: component.entity
+                  options:
+                    children:
+                      # --- Row 1: Primary KPIs — the two numbers a sales manager checks first ---
+                      - type: component.field-row
+                        options:
+                          children:
+                            - type: component.entity-field
+                              options:
+                                label: Total Orders
+                                # Bold so it reads as the headline figure
+                                value: =$count(@ctx.datasources.orders)
+
+                            - type: component.entity-field
+                              options:
+                                label: Total Value
+                                # Sum all order amounts and format as currency
+                                value: ='$ ' & $sum(@ctx.datasources.orders.totalAmount)
+
+                      # --- Row 2: Status breakdown — color-coded for instant triage ---
+                      - type: component.field-row
+                        options:
+                          children:
+                            - type: component.entity-field
+                              options:
+                                label: Open
+                                value: =$count(@ctx.datasources.orders[status = 'Open'])
+                                # Green tint signals healthy/active pipeline
+                                style:
+                                  isWarning: true
+                            - type: component.entity-field
+                              options:
+                                label: Overdue
+                                value: =$count(@ctx.datasources.orders[status = 'Overdue'])
+                                # Red tint makes overdue count impossible to ignore
+                                style:
+                                  isNegative: true
+                            - type: component.entity-field
+                              options:
+                                label: Closed
+                                value: =$count(@ctx.datasources.orders[status = 'Closed'])
+                                # Subtle positive — done is good, but not the focus
+                                style:
+                                  isPositive: true
+
+data: =@ctx.datasources.orders
+item:
+  type: component.list-item
+  options:
+    title: =@ctx.current.item.customer
+    # Combine order number + due date so the user never has to tap in to know urgency
+    subtitle: ='#' & @ctx.current.item.orderNumber & '   ·   Due ' & @ctx.current.item.dueDate
+
+    rightElement:
+      element: value
+      # Currency prefix makes the amount scannable without opening the order
+      text: ='$ ' & $string(@ctx.current.item.totalAmount)
+
+    # Avatar color reflects overdue status — visual encoding before the user reads a word
+    leftElement:
+      element: avatar
+      text: =@ctx.current.item.customer
+      color: =@ctx.current.item.status = 'Overdue' ? 'color4' :'color1'
