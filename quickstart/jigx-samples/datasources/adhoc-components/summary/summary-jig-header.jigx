@@ -29,3 +29,19 @@ options:
       icon: maps-mark
       typeLink: jig-header-location-medium
       type: Jig header with location (medium)
+    - color: color7
+      icon: logo-logo
+      typeLink: jig-header-logo
+      type: Jig header with logo
+    - color: color8
+      icon: logo-logo
+      typeLink: jig-header-logo-title
+      type: Jig header with logo  and title
+    - color: color9
+      icon: logout
+      typeLink: jig-header-logo-title-children
+      type: Jig header with logo, title and children
+    - color: color10
+      icon: logic-chart-organize
+      typeLink: jig-header-logo-action
+      type: Jig header with logo and action

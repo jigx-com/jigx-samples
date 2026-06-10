@@ -1,0 +1,24 @@
+title: Logo in header
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    # height: medium
+    isTitleVisible: false
+    logo:
+      source:
+        uri: https://s3.us-east-1.amazonaws.com/docs.jigx.com/general-images/AiGawLogo.png
+
+placeholders:
+  - title: Placeholder
+    icon: hourglass-1-alternate
+    when: true
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: No data available at this time
+            value: No data available at this time

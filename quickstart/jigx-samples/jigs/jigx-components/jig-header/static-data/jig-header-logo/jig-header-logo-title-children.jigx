@@ -1,0 +1,30 @@
+title: Logo, title and image in header
+type: jig.default
+
+header:
+  type: component.jig-header
+  options:
+    height: small
+    isTitleVisible: true
+    logo:
+      source:
+        uri: https://s3.us-east-1.amazonaws.com/docs.jigx.com/general-images/AiGawLogo.png
+
+    children:
+      type: component.image
+      options:
+        source:
+          uri: https://images.unsplash.com/photo-1640102371408-5fc0c42a8792?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEwfHxiYWNrZ3JvdW5kJTIwc2ltcGxlJTIwY29sb3J8ZW58MHx8MHx8fDA%3D
+
+placeholders:
+  - title: Placeholder
+    icon: hourglass-1-alternate
+    when: true
+children:
+  - type: component.entity
+    options:
+      children:
+        - type: component.entity-field
+          options:
+            label: No data available at this time
+            value: No data available at this time
